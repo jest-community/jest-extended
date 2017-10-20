@@ -18,6 +18,18 @@ Thanks for being willing to contribute!
  - Any relevant documentation should be updated
  - No linting warnings/errors should be introduced
 
+### New Matchers
+
+ - Each matcher should be placed in it's own directory inside of the `matchers` directory.
+ - A matcher directory should contain the following:
+   * index.js - An export of the matcher in the format expected by Jest. See the docs for an [example](http://facebook.github.io/jest/docs/en/expect.html#expectextendmatchers). Note: the test outcome messages must be a function that returns a string (this caught me out 😉)
+   * index.test.js - Tests that uses the new matcher and make sure it passes
+   * predicate.js - The function that tests the actual value meets the expected value / behavior
+   * predicate.test.js - Tests for the predicate both true/false cases must be covered
+ - [`jest-matchers-utils`](https://github.com/facebook/jest/tree/master/packages/jest-matcher-utils) is being used for syntax highlighting of error messages
+ - Once a matcher has been created it needs to be added to the `src/matchers/index.js` re-export
+ - Docs for the new matcher should be added to the README under the API section
+
 ## Committing and Pushing changes
 
 Once you are ready to commit the changes, please use the below commands

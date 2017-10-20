@@ -15,7 +15,8 @@
 [![MIT License](https://img.shields.io/npm/l/jest-extended.svg?style=flat-square)](https://github.com/mattphillips/jest-extended/blob/master/LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![Roadmap](https://img.shields.io/badge/%F0%9F%93%94-roadmap-CD9523.svg?style=flat-square)](https://github.com/mattphillips/jest-extended/blob/master/docs/ROADMAP.md)
-[![Examples](https://img.shields.io/badge/%F0%9F%92%A1-examples-ff615b.svg?style=flat-square)](https://github.com/mattphillips/jest-extended/block/master/docs/EXAMPLES.md)
+[![Examples](https://img.shields.io/badge/%F0%9F%92%A1-examples-ff615b.svg?style=flat-square)](https://github.com/mattphillips/jest-extended/blob/master/docs/EXAMPLES.md)
+
 
 ## Problem
 
@@ -25,6 +26,10 @@ having more specific matchers (assertions) would be far more convenient.
 ## Solution
 
 jest-extended aims to add additional matchers to Jest's default ones making it easy to test everything 🙌
+
+## Contributing
+
+If you've come here to help contribute - Thanks! Take a look at the [contributing](/CONTRIBUTING.md) docs as a way of getting started.
 
 ## Installation
 
