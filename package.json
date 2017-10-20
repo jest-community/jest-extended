@@ -4,6 +4,8 @@
   "description": "Additional Jest matchers",
   "main": "dist/index.js",
   "scripts": {
+    "precommit": "lint-staged",
+    "prettier": "prettier 'src/**/*.js' --write --single-quote=true --print-width=120"
   },
   "keywords": [
     "jest",
@@ -23,5 +25,16 @@
   "bugs": {
     "url": "https://github.com/mattphillips/jest-extended/issues"
   },
-  "homepage": "https://github.com/mattphillips/jest-extended#readme"
+  "homepage": "https://github.com/mattphillips/jest-extended#readme",
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "lint-staged": "^4.3.0",
+    "prettier": "^1.7.4"
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn prettier",
+      "git add"
+    ]
+  }
 }
