@@ -4,7 +4,7 @@ import matcher from './';
 
 expect.extend(matcher);
 
-describe('toBeTrue', () => {
+describe('.toBeTrue', () => {
   it('passes when given true', () => {
     expect(true).toBeTrue();
   });

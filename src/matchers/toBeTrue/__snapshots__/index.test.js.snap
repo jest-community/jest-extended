@@ -3,12 +3,11 @@
 exports[`.not.toBeTrue fails when given true 1`] = `
 "<dim>expect(</><red>received</><dim>).not.toBeTrue(</><dim>)</>
 
-Expected value to not be true:
-Received:
+Expected value to not be true received:
   <red>true</>"
 `;
 
-exports[`toBeTrue fails when not given true 1`] = `
+exports[`.toBeTrue fails when not given true 1`] = `
 "<dim>expect(</><red>received</><dim>).toBeTrue(</><dim>)</>
 
 Expected value to be true:

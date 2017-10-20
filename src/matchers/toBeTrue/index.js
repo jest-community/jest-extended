@@ -5,8 +5,7 @@ import predicate from './predicate';
 const passMessage = received => () =>
   matcherHint('.not.toBeTrue', 'received', '') +
   '\n\n' +
-  'Expected value to not be true:\n' +
-  'Received:\n' +
+  'Expected value to not be true received:\n' +
   `  ${printReceived(received)}`;
 
 const failMessage = received => () =>
