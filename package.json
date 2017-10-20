@@ -5,6 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "babel src -d dist --ignore *.test.js",
+    "contributor": "all-contributors add",
+    "contributor:gen": "all-contributors generate",
     "lint": "eslint src",
     "lint:fix": "yarn lint -- --fix",
     "precommit": "lint-staged",
@@ -34,6 +36,7 @@
   },
   "homepage": "https://github.com/mattphillips/jest-extended#readme",
   "devDependencies": {
+    "all-contributors-cli": "^4.5.1",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
