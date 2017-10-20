@@ -16,9 +16,15 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![Roadmap](https://img.shields.io/badge/%F0%9F%93%94-roadmap-CD9523.svg?style=flat-square)](https://github.com/mattphillips/jest-extended/blob/master/docs/ROADMAP.md)
 [![Examples](https://img.shields.io/badge/%F0%9F%92%A1-examples-ff615b.svg?style=flat-square)](https://github.com/mattphillips/jest-extended/block/master/docs/EXAMPLES.md)
+
 ## Problem
 
+Jest is an amazing test running and has some awesome assertion APIs built in by default. However there are times when
+having more specific matchers (assertions) would be far more convenient.
+
 ## Solution
+
+jest-extended aims to add additional matchers to Jest's default ones making it easy to test everything 🙌
 
 ## Installation
 
@@ -34,7 +40,25 @@ yarn add -D jest-extended
 
 ## Setup
 
-## Usage
+Add jest-extended to your Jest setupTestFrameworkScriptFile configuration. [See for help](http://facebook.github.io/jest/docs/en/configuration.html#setuptestframeworkscriptfile-string)
+
+``` json
+"jest": {
+  "setupTestFrameworkScriptFile": "jest-extended"
+}
+```
+
+## API
+
+### .toBeTrue()
+
+Use .toBeTrue when checking a value is `true`
+
+```js
+test('is jest cool', () => {
+  expect(isJestCool()).toBeTrue();
+});
+```
 
 ## Contributors
 
