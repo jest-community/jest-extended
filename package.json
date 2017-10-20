@@ -3,12 +3,18 @@
   "version": "0.0.1",
   "description": "Additional Jest matchers",
   "main": "dist/index.js",
+  "files":[
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "babel src -d dist --ignore *.test.js",
     "contributor": "all-contributors add",
     "contributor:gen": "all-contributors generate",
     "lint": "eslint src",
     "lint:fix": "yarn lint -- --fix",
+    "prepublishOnly": "yarn build",
     "precommit": "lint-staged",
     "prettier": "prettier 'src/**/*.js' --write --single-quote=true --print-width=120",
     "test": "jest",
