@@ -4,10 +4,15 @@
   "description": "Additional Jest matchers",
   "main": "dist/index.js",
   "scripts": {
+    "build": "babel src -d dist --ignore *.test.js",
     "lint": "eslint src",
     "lint:fix": "yarn lint -- --fix",
     "precommit": "lint-staged",
-    "prettier": "prettier 'src/**/*.js' --write --single-quote=true --print-width=120"
+    "prettier": "prettier 'src/**/*.js' --write --single-quote=true --print-width=120",
+    "test": "jest",
+    "test:coverage": "yarn test -- --coverage",
+    "test:report": "codecov",
+    "test:watch": "yarn test -- --watch"
   },
   "keywords": [
     "jest",
@@ -29,17 +34,54 @@
   },
   "homepage": "https://github.com/mattphillips/jest-extended#readme",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
+    "babel-jest": "^21.2.0",
+    "babel-jest-assertions": "^0.0.2",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "codecov": "^2.3.1",
     "eslint": "^4.9.0",
     "eslint-plugin-import": "^2.8.0",
     "husky": "^0.14.3",
+    "jest": "^21.2.1",
+    "jest-each": "^0.3.1",
     "lint-staged": "^4.3.0",
     "prettier": "^1.7.4"
+  },
+  "dependencies": {
+    "jest-matcher-utils": "^21.2.1"
   },
   "lint-staged": {
     "*.js": [
       "yarn prettier",
       "git add"
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/fixtures/"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
+  },
+  "babel": {
+    "plugins": [
+      "babel-plugin-transform-es2015-modules-commonjs",
+      "transform-object-rest-spread",
+      "babel-jest-assertions"
     ]
   }
 }
