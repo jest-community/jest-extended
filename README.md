@@ -55,6 +55,16 @@ Add jest-extended to your Jest setupTestFrameworkScriptFile configuration. [See 
 
 ## API
 
+### .toBeFalse()
+
+Use .toBeFalse when checking a value is `false`
+
+```js
+test('is api loading', () => {
+  expect(isApiLoading()).toBeFalse();
+});
+```
+
 ### .toBeTrue()
 
 Use .toBeTrue when checking a value is `true`
