@@ -6,7 +6,6 @@ const passMessage = received => () =>
   matcherHint('.not.toBeTrue', 'received', '') +
   '\n\n' +
   'Expected value to not be true:\n' +
-  `  ${printExpected(true)}\n` +
   'Received:\n' +
   `  ${printReceived(received)}`;
 

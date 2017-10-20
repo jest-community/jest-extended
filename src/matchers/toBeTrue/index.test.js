@@ -1,16 +1,16 @@
 import each from 'jest-each';
 
-import toBeTrue from './';
+import matcher from './';
 
 describe('toBeTrue', () => {
-  expect.extend(toBeTrue);
+  expect.extend(matcher);
 
-  it('returns true when given true', () => {
+  it('passes when given true', () => {
     expect(true).toBeTrue();
   });
 
   each([[false], [''], [0], [{}], [[]], [() => {}], [undefined], [null], [NaN]]).it(
-    'returns false when given: %s',
+    'passes when not given true: %s',
     given => {
       expect(given).not.toBeTrue();
     }
