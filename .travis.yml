@@ -5,5 +5,7 @@ node_js:
 cache:
   directories:
     - node_modules
-script: 'yarn test:coverage'
+script:
+  - 'yarn test:coverage'
+  - 'yarn lint'
 after_success: 'yarn test:report'
