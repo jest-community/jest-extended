@@ -79,6 +79,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
   * [.toIncludeRepeated(substring, times)](#toincluderepeatedsubstring-times)
   * [.toIncludeMultiple([substring])](#toincludemultiplesubstring)
   * [.toEqualCaseInsensitive(string)](#toequalcaseinsensitive)
+  * [.toBePositive(value)](#tobepositive)
 - [Contributors](#contributors)
 - [LICENSE](#license)
 
@@ -726,6 +727,22 @@ test('passes when strings are equal ignoring case', () => {
   expect('HELLO WORLD').toEqualCaseInsensitive('hello world');
   expect('hello world').toEqualCaseInsensitive('HELLO WORLD');
   expect('hello world').not.toEqualCaseInsensitive('hello');
+});
+
+### .toBePositive(value)
+
+Use `.toBePositive` when checking if a value is positive.
+
+```js
+test('passes when values are positive', () => {
+  expect(1).toBePositive();
+  expect(3.14159).toBePositive();
+  expect([123]).toBePositive();
+  expect(Infinity).not.toBePositive('hello');
+  expect(-1).not.toBePositive('hello');
+  expect([]).not.toBePositive('hello');
+  expect(0).not.toBePositive('hello');
+  expect(0).not.toBePositive('hello');
 });
 ```
 
