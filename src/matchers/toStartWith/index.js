@@ -5,7 +5,9 @@ import predicate from './predicate';
 const passMessage = (prefix, string) => () =>
   matcherHint('.not.toStartWith', 'received', '') +
   '\n\n' +
-  'Expected string to not start with received:\n' +
+  'Expected string to not start with:\n' +
+  `  ${printReceived(prefix)}\n` +
+  'Received:\n' +
   `  ${printReceived(prefix)}`;
 
 const failMessage = (prefix, string) => () =>

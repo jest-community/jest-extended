@@ -3,7 +3,9 @@
 exports[`.not.toStartWith fails when string starts with given prefix 1`] = `
 "<dim>expect(</><red>received</><dim>).not.toStartWith(</><dim>)</>
 
-Expected string to not start with received:
+Expected string to not start with:
+  <red>\\"hello\\"</>
+Received:
   <red>\\"hello\\"</>"
 `;
 
