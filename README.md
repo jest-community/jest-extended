@@ -17,7 +17,6 @@
 [![Roadmap](https://img.shields.io/badge/%F0%9F%93%94-roadmap-CD9523.svg?style=flat-square)](https://github.com/mattphillips/jest-extended/blob/master/docs/ROADMAP.md)
 [![Examples](https://img.shields.io/badge/%F0%9F%92%A1-examples-ff615b.svg?style=flat-square)](https://github.com/mattphillips/jest-extended/blob/master/docs/EXAMPLES.md)
 
-
 ## Problem
 
 Jest is an amazing test running and has some awesome assertion APIs built in by default. However there are times when
@@ -30,6 +29,58 @@ jest-extended aims to add additional matchers to Jest's default ones making it e
 ## Contributing
 
 If you've come here to help contribute - Thanks! Take a look at the [contributing](/CONTRIBUTING.md) docs as a way of getting started.
+
+---
+
+- [Installation](#installation)
+- [Setup](#setup)
+- [API](#api)
+  * [.toBeTrue()](#tobetrue)
+  * [.toBeFalse()](#tobefalse)
+  * [.pass(message)](#passmessage)
+  * [.fail(message)](#failmessage)
+  * [.toBeNil()](#tobenil)
+  * [.toBeNaN()](#tobenan)
+  * [.toBeEmpty()](#tobeempty)
+  * [.toBeWithin(start, end)](#tobewithinstart-end)
+  * [.toContainKey(key)](#tocontainkeykey)
+  * [.toContainKeys([keys])](#tocontainkeyskeys)
+  * [.toContainAllKeys([keys])](#tocontainallkeyskeys)
+  * [.toContainAnyKeys([keys])](#tocontainanykeyskeys)
+  * [.toContainValue(value)](#tocontainvaluevalue)
+  * [.toContainValues([values])](#tocontainvaluesvalues)
+  * [.toContainAllValues([values])](#tocontainallvaluesvalues)
+  * [.toContainAnyValues([values])](#tocontainanyvaluesvalues)
+  * [.toContainEntry([key, value])](#tocontainentrykey-value)
+  * [.toContainEntries([[key, value]])](#tocontainentrieskey-value)
+  * [.toContainAllEntries([[key, value]])](#tocontainallentrieskey-value)
+  * [.toContainAnyEntries([[key, value]])](#tocontainanyentrieskey-value)
+  * [.toSatisfy(predicate)](#tosatisfypredicate)
+  * [.toHaveAllMembers([members])](#tohaveallmembersmembers)
+  * [.toHaveSomeMembers([members])](#tohavesomemembersmembers)
+  * [.toBeOneOf([members])](#tobeoneofmembers)
+  * [.toBeExtensible()](#tobeextensible)
+  * [.toBeSealed()](#tobesealed)
+  * [.toBeFrozen()](#tobefrozen)
+  * [.toBeFinite()](#tobefinite)
+  * [.toBePositive()](#tobepositive)
+  * [.toBeNegative()](#tobenegative)
+  * [.toBeEven()](#tobeeven)
+  * [.toBeOdd()](#tobeodd)
+  * [.toBeFunction()](#tobefunction)
+  * [.toBeObject()](#tobeobject)
+  * [.toBeArray()](#tobearray)
+  * [.toBeString()](#tobestring)
+  * [.toBeNumber()](#tobenumber)
+  * [.toBeBoolean()](#tobeboolean)
+  * [.toStartWith(prefix)](#tostartwithprefix)
+  * [.toEndWith(suffix)](#toendwithsuffix)
+  * [.toInclude(substring)](#toincludesubstring)
+  * [.toIncludeRepeated(substring, times)](#toincluderepeatedsubstring-times)
+  * [.toIncludeMultiple([substring])](#toincludemultiplesubstring)
+  * [.toEqualIgnoringCase(string)](#toequalignoringcasestring)
+- [Contributors](#contributors)
+- [LICENSE](#license)
 
 ## Installation
 
@@ -66,25 +117,9 @@ test('is jest cool', () => {
 });
 ```
 
-## Unimplemented API
-
-### .pass(message)
-
-Passing assertion.
-
-```js
-expect().pass('should pass');
-```
-
-### .fail(message)
-
-Failing assertion.
-
-```js
-expect().fail('test should fail');
-```
-
 ### .toBeFalse()
+
+_Note: Currently unimplemented_
 
 Use `.toBeFalse` when checking a value is equal (===) to `false`.
 
@@ -95,7 +130,29 @@ test('returns false', () => {
 });
 ```
 
+### .pass(message)
+
+_Note: Currently unimplemented_
+
+Passing assertion.
+
+```js
+expect().pass('should pass');
+```
+
+### .fail(message)
+
+_Note: Currently unimplemented_
+
+Failing assertion.
+
+```js
+expect().fail('test should fail');
+```
+
 ### .toBeNil()
+
+_Note: Currently unimplemented_
 
 Use `.toBeNil` when checking a value is `null` or `undefined`.
 
@@ -109,6 +166,8 @@ test('passes when value is null or undefined', () => {
 
 ### .toBeNaN()
 
+_Note: Currently unimplemented_
+
 Use `.toBeNaN` when checking a value is `NaN`.
 
 ```js
@@ -119,6 +178,8 @@ test('passes when value is NaN', () => {
 ```
 
 ### .toBeEmpty()
+
+_Note: Currently unimplemented_
 
 Use `.toBeEmpty` when checking if a `String` `''`, `Array` `[]` or `Object` `{}` is empty.
 
@@ -136,6 +197,8 @@ test('passes when given an empty array', () => {
 
 ### .toBeWithin(start, end)
 
+_Note: Currently unimplemented_
+
 Use `.toBeWithin` when checking if a number is in between the given bounds of: start (inclusive) and end (exclusive).
 
 ```js
@@ -147,6 +210,8 @@ test('passes when number is within given bounds', () => {
 ```
 
 ### .toContainKey(key)
+
+_Note: Currently unimplemented_
 
 Use `.toContainKey` when checking if an object contains the provided key.
 
@@ -162,6 +227,8 @@ test('passes when object contains the given key', () => {
 
 ### .toContainKeys([keys])
 
+_Note: Currently unimplemented_
+
 Use `.toContainKeys` when checking if an object has all of the provided keys.
 
 ```js
@@ -175,6 +242,8 @@ test('passes when object contains all keys', () => {
 
 ### .toContainAllKeys([keys])
 
+_Note: Currently unimplemented_
+
 Use `.toContainAllKeys` when checking if an object only contains all of the provided keys.
 
 ```js
@@ -187,6 +256,8 @@ test('passes when object only contains all keys', () => {
 ```
 
 ### .toContainAnyKeys([keys])
+
+_Note: Currently unimplemented_
 
 Use `.toContainAnyKeys` when checking if an object contains at least one of the provided keys.
 
@@ -202,6 +273,8 @@ test('passes when object contains at least one matching key', () => {
 
 ### .toContainValue(value)
 
+_Note: Currently unimplemented_
+
 Use `.toContainValue` when checking if an object contains the provided value.
 
 ```js
@@ -214,6 +287,8 @@ test('passes when object contains given value', () => {
 ```
 
 ### .toContainValues([values])
+
+_Note: Currently unimplemented_
 
 Use `.toContainValues` when checking if an object contains all of the provided values.
 
@@ -228,6 +303,8 @@ test('passes when object contains all of the given values', () => {
 
 ### .toContainAllValues([values])
 
+_Note: Currently unimplemented_
+
 Use `.toContainAllValues` when checking if an object only contains all of the provided values.
 
 ```js
@@ -240,6 +317,8 @@ test('passes when object only contains all of the given values', () => {
 ```
 
 ### .toContainAnyValues([values])
+
+_Note: Currently unimplemented_
 
 Use `.toContainAnyValues` when checking if an object contains at least one of the provided values.
 
@@ -255,6 +334,8 @@ test('passes when object contains at least one of the given values', () => {
 
 ### .toContainEntry([key, value])
 
+_Note: Currently unimplemented_
+
 Use `.toContainEntry` when checking if an object contains the provided entry.
 
 ```js
@@ -269,6 +350,8 @@ test('passes when object contains given entry', () => {
 
 ### .toContainEntries([[key, value]])
 
+_Note: Currently unimplemented_
+
 Use `.toContainEntries` when checking if an object contains all of the provided entries.
 
 ```js
@@ -282,6 +365,8 @@ test('passes when object contains all of the given entries', () => {
 
 ### .toContainAllEntries([[key, value]])
 
+_Note: Currently unimplemented_
+
 Use `.toContainAllEntries` when checking if an object only contains all of the provided entries.
 
 ```js
@@ -293,6 +378,8 @@ test('passes when object only contains all of the given entries', () => {
 ```
 
 ### .toContainAnyEntries([[key, value]])
+
+_Note: Currently unimplemented_
 
 Use `.toContainAnyEntries` when checking if an object contains at least one of the provided entries.
 
@@ -308,6 +395,8 @@ test('passes when object contains at least one of the given entries', () => {
 
 ### .toSatisfy(predicate)
 
+_Note: Currently unimplemented_
+
 Use `.toSatisfy` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean`.
 
 ```js
@@ -321,6 +410,8 @@ test('passes when value passes given predicate', () => {
 
 ### .toHaveAllMembers([members])
 
+_Note: Currently unimplemented_
+
 Use `.toHaveAllMembers` when checking if an `Array` contains all of the same members of a given set.
 
 ```js
@@ -331,6 +422,8 @@ test('passes when given array values match the members of the set', () => {
 ```
 
 ### .toHaveSomeMembers([members])
+
+_Note: Currently unimplemented_
 
 Use `.toHaveSomeMembers` when checking if an `Array` contains some of the members of a given set.
 
@@ -344,6 +437,8 @@ test('passes when given array values match the members of the set', () => {
 
 ### .toBeOneOf([members])
 
+_Note: Currently unimplemented_
+
 Use `.toBeOneOf` when checking if a value is a member of a given `Array`.
 
 ```js
@@ -355,6 +450,8 @@ test('passes when value is in given array', () => {
 
 ### .toBeExtensible()
 
+_Note: Currently unimplemented_
+
 Use `.toBeExtensible` when checking if an object is extensible.
 
 ```js
@@ -365,6 +462,8 @@ test('passes when value is extensible', () => {
 ```
 
 ### .toBeSealed()
+
+_Note: Currently unimplemented_
 
 Use `.toBeSealed` when checking if an object is sealed.
 
@@ -378,6 +477,8 @@ test('passes when value is sealed', () => {
 
 ### .toBeFrozen()
 
+_Note: Currently unimplemented_
+
 Use `.toBeFrozen` when checking if an object is frozon.
 
 ```js
@@ -390,6 +491,8 @@ test('passes when value is frozen', () => {
 
 ### .toBeFinite()
 
+_Note: Currently unimplemented_
+
 Use `.toBeFinite` when checking if a value is a `Number`, not `NaN` or `Infinity`.
 
 ```js
@@ -401,6 +504,8 @@ test('passes when value is a finite number', () => {
 ```
 
 ### .toBePositive()
+
+_Note: Currently unimplemented_
 
 Use `.toBePositive` when checking if a value is a positive `Number`.
 
@@ -415,6 +520,8 @@ test('passes when value is a positive number', () => {
 
 ### .toBeNegative()
 
+_Note: Currently unimplemented_
+
 Use `.toBeNegative` when checking if a value is a negative `Number`.
 
 ```js
@@ -428,6 +535,8 @@ test('passes when value is a negative number', () => {
 
 ### .toBeEven()
 
+_Note: Currently unimplemented_
+
 Use `.toBeEven` when checking if a value is an even `Number`.
 
 ```js
@@ -440,6 +549,8 @@ test('passes when value is an even number', () => {
 
 ### .toBeOdd()
 
+_Note: Currently unimplemented_
+
 Use `.toBeOdd` when checking if a value is an odd `Number`.
 
 ```js
@@ -451,6 +562,8 @@ test('passes when value is an odd number', () => {
 ```
 
 ### .toBeFunction()
+
+_Note: Currently unimplemented_
 
 Use `.toBeFunction` when checking if a value is a `Function`.
 
@@ -466,6 +579,8 @@ test('passes when value is a function', () => {
 
 ### .toBeObject()
 
+_Note: Currently unimplemented_
+
 Use `.toBeObject` when checking if a value is an `Object`.
 
 ```js
@@ -477,6 +592,8 @@ test('passes when value is an object', () => {
 ```
 
 ### .toBeArray()
+
+_Note: Currently unimplemented_
 
 Use `.toBeArray` when checking if a value is an `Array`.
 
@@ -490,6 +607,8 @@ test('passes when value is an array', () => {
 
 ### .toBeString()
 
+_Note: Currently unimplemented_
+
 Use `.toBeString` when checking if a value is a `String`.
 
 ```js
@@ -501,6 +620,8 @@ test('passes when value is a string', () => {
 ```
 
 ### .toBeNumber()
+
+_Note: Currently unimplemented_
 
 Use `.toBeNumber` when checking if a value is a `Number`.
 
@@ -515,6 +636,8 @@ test('passes when value is a number', () => {
 
 ### .toBeBoolean()
 
+_Note: Currently unimplemented_
+
 Use `.toBeBoolean` when checking if a value is a `Boolean`.
 
 ```js
@@ -528,6 +651,8 @@ test('passes when value is a boolean', () => {
 
 ### .toStartWith(prefix)
 
+_Note: Currently unimplemented_
+
 Use `.toStartWith` when checking if a `String` starts with a given `String` prefix.
 
 ```js
@@ -538,6 +663,8 @@ test('passes when value is starts with given string', () => {
 ```
 
 ### .toEndWith(suffix)
+
+_Note: Currently unimplemented_
 
 Use `.toEndWith` when checking if a `String` ends with a given `String` suffix.
 
@@ -550,6 +677,8 @@ test('passes when value is ends with given string', () => {
 
 ### .toInclude(substring)
 
+_Note: Currently unimplemented_
+
 Use `.toInclude` when checking if a `String` includes the given `String` substring.
 
 ```js
@@ -560,6 +689,8 @@ test('passes when value includes substring', () => {
 ```
 
 ### .toIncludeRepeated(substring, times)
+
+_Note: Currently unimplemented_
 
 Use `.toIncludeRepeated` when checking if a `String` includes the given `String` substring the correct number of times.
 
@@ -572,6 +703,8 @@ test('passes when value includes substring n times', () => {
 
 ### .toIncludeMultiple([substring])
 
+_Note: Currently unimplemented_
+
 Use `.toIncludeMultiple` when checking if a `String` includes all of the given substrings.
 
 ```js
@@ -582,6 +715,8 @@ test('passes when value includes all substrings', () => {
 ```
 
 ### .toEqualIgnoringCase(string)
+
+_Note: Currently unimplemented_
 
 Use `.toEqualIgnoringCase` when checking if a string is equal (===) to another ignoring the casing of both strings.
 
