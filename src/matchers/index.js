@@ -1,3 +1,4 @@
 import toBeTrue from './toBeTrue';
+import toSatisfy from './toSatisfy';
 
-export default [toBeTrue].reduce((acc, matcher) => ({ ...acc, ...matcher }), {});
+export default [toBeTrue, toSatisfy].reduce((acc, matcher) => ({ ...acc, ...matcher }), {});
