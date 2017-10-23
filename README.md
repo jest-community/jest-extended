@@ -400,8 +400,6 @@ test('passes when object contains at least one of the given entries', () => {
 
 ### .toSatisfy(predicate)
 
-_Note: Currently unimplemented_
-
 Use `.toSatisfy` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean`.
 
 ```js
