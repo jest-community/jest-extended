@@ -20,6 +20,15 @@
         "infra",
         "test"
       ]
+    },
+    {
+      "login": "stofolus",
+      "name": "Christoffer Hasselberg",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/5880416?v=4",
+      "profile": "https://github.com/stofolus",
+      "contributions": [
+        "code"
+      ]
     }
   ]
 }

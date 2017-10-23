@@ -594,8 +594,6 @@ test('passes when value is an object', () => {
 
 ### .toBeArray()
 
-_Note: Currently unimplemented_
-
 Use `.toBeArray` when checking if a value is an `Array`.
 
 ```js
