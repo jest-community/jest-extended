@@ -278,8 +278,6 @@ test('passes when object contains at least one matching key', () => {
 
 ### .toContainValue(value)
 
-_Note: Currently unimplemented_
-
 Use `.toContainValue` when checking if an object contains the provided value.
 
 ```js
