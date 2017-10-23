@@ -12,7 +12,7 @@ const failMessage = received => () =>
   matcherHint('.toBeString', 'received', '') +
   '\n\n' +
   'Expected value to be of type string:\n' +
-  `  ${printExpected(string)}\n` +
+  `  ${printExpected('type of string')}\n` +
   'Received:\n' +
   `  ${printReceived(typeof received)}`;
 
