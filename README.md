@@ -193,6 +193,11 @@ test('passes when given an empty array', () => {
   expect([]).toBeEmpty();
   expect(['hello']).not.toBeEmpty();
 });
+
+test('passes when given an empty object', () => {
+  expect({}).toBeEmpty();
+  expect({ hello: 'world' }).not.toBeEmpty();
+});
 ```
 
 ### .toBeWithin(start, end)
