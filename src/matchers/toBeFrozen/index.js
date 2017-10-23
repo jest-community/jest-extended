@@ -1,4 +1,4 @@
-import { matcherHint, printExpected, printReceived } from 'jest-matcher-utils';
+import { matcherHint } from 'jest-matcher-utils';
 
 import predicate from './predicate';
 
