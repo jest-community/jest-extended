@@ -608,8 +608,6 @@ test('passes when value is an array', () => {
 
 ### .toBeString()
 
-_Note: Currently unimplemented_
-
 Use `.toBeString` when checking if a value is a `String`.
 
 ```js
