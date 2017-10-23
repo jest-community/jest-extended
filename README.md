@@ -291,8 +291,6 @@ test('passes when object contains given value', () => {
 
 ### .toContainValues([values])
 
-_Note: Currently unimplemented_
-
 Use `.toContainValues` when checking if an object contains all of the provided values.
 
 ```js
