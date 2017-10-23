@@ -1,4 +1,5 @@
 import toBeTrue from './toBeTrue';
 import toContainValue from './toContainValue';
+import toBeFrozen from './toBeFrozen';
 
-export default [toBeTrue, toContainValue].reduce((acc, matcher) => ({ ...acc, ...matcher }), {});
+export default [toBeTrue, toContainValue, toBeFrozen].reduce((acc, matcher) => ({ ...acc, ...matcher }), {});
