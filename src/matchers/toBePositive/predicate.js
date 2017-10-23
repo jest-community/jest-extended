@@ -1,1 +1,1 @@
-export default expected => !isNaN(expected) && expected !== Infinity && expected > 0;
+export default expected => expected !== true && !isNaN(expected) && expected !== Infinity && expected > 0;
