@@ -120,7 +120,7 @@ test('passes when value is NaN', () => {
 
 ### .toBeEmpty()
 
-Use `.toBeEmpty` when checking if a `String` or `Array`'s length property is equal (===) to 0.
+Use `.toBeEmpty` when checking if a `String` `''`, `Array` `[]` or `Object` `{}` is empty.
 
 ```js
 test('passes when given an empty string', () => {
