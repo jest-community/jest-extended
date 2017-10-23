@@ -622,8 +622,6 @@ test('passes when value is a string', () => {
 
 ### .toBeNumber()
 
-_Note: Currently unimplemented_
-
 Use `.toBeNumber` when checking if a value is a `Number`.
 
 ```js
