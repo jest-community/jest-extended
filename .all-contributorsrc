@@ -30,6 +30,15 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "vteremasov",
+      "name": "Vitaly Teremasov",
+      "profile": "https://github.com/vteremasov",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ]
 }
