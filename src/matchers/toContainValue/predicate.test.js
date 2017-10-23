@@ -1,14 +1,18 @@
+import each from 'jest-each';
 import predicate from './predicate';
 
 describe('toContainValue Predicate', () => {
-  const shallow = { hello: 'world' };
-  const deep = { message: shallow };
-  const deepArray = { message: [shallow] };
+  const shallow = { hello: 'world', bool: false, nothing: undefined, absent: null, empty: '', zero: 0 };
+  const deep = { message: { hello: 'world' } };
+  const deepArray = { message: [{ hello: 'world' }] };
 
   describe('returns true', () => {
-    it('when given object contains primitive value', () => {
-      expect(predicate(shallow, 'world')).toBe(true);
-    });
+    each([['world'], [false], [undefined], [null], [''], [0]]).it(
+      'when given object contains primitive value: %s',
+      () => {
+        expect(predicate(shallow, 'world')).toBe(true);
+      }
+    );
 
     it('when given object contains object value', () => {
       expect(predicate(deep, { hello: 'world' })).toBe(true);

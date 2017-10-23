@@ -11,6 +11,10 @@ describe('.toContainValue', () => {
     expect(shallow).toContainValue('world');
   });
 
+  it('passes when given object contains falsy primitive value', () => {
+    expect({ foo: false }).toContainValue(false);
+  });
+
   it('passes when given object contains object value', () => {
     expect(deep).toContainValue({ hello: 'world' });
   });
