@@ -480,8 +480,6 @@ test('passes when value is sealed', () => {
 
 ### .toBeFrozen()
 
-_Note: Currently unimplemented_
-
 Use `.toBeFrozen` when checking if an object is frozon.
 
 ```js
