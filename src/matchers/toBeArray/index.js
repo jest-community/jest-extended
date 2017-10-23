@@ -5,13 +5,13 @@ import predicate from './predicate';
 const passMessage = received => () =>
   matcherHint('.not.toBeArray', 'received', '') +
   '\n\n' +
-  'Expected value to not be a string received:\n' +
+  'Expected value to not be an array received:\n' +
   `  ${printReceived(received)}`;
 
 const failMessage = received => () =>
   matcherHint('.toBeArray', 'received', '') +
   '\n\n' +
-  'Expected value to be a string:\n' +
+  'Expected value to be an array:\n' +
   `  ${printExpected(true)}\n` +
   'Received:\n' +
   `  ${printReceived(received)}`;
