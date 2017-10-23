@@ -19,3 +19,4 @@ with the contributing guidelines (found in the CONTRIBUTING.md file).
 - [ ] Unit tests
 - [ ] Documentation is up to date
 - [ ] No additional lint warnings
+- [ ] Add yourself to contributors list (`yarn contributor`)

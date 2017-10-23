@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toContainValues fails when given object contains all values including arrays 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toContainValues(</><green>expected</><dim>)</>
+
+Expected object to not contain all values:
+  <green>[\\"duck\\", [{\\"bar\\": false, \\"foo\\": 0, \\"hello\\": \\"world\\"}]]</>
+Received:
+  <red>{\\"donald\\": \\"duck\\", \\"message\\": [{\\"bar\\": false, \\"foo\\": 0, \\"hello\\": \\"world\\"}]}</>"
+`;
+
+exports[`.not.toContainValues fails when given object contains all values including objects 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toContainValues(</><green>expected</><dim>)</>
+
+Expected object to not contain all values:
+  <green>[{\\"bar\\": false, \\"foo\\": 0, \\"hello\\": \\"world\\"}, \\"duck\\"]</>
+Received:
+  <red>{\\"donald\\": \\"duck\\", \\"message\\": {\\"bar\\": false, \\"foo\\": 0, \\"hello\\": \\"world\\"}}</>"
+`;
+
+exports[`.not.toContainValues fails when given object contains primitive values 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toContainValues(</><green>expected</><dim>)</>
+
+Expected object to not contain all values:
+  <green>[\\"world\\", false]</>
+Received:
+  <red>{\\"bar\\": false, \\"foo\\": 0, \\"hello\\": \\"world\\"}</>"
+`;
+
+exports[`.toContainValues fails when given object does not contain all primitive values 1`] = `
+"<dim>expect(</><red>received</><dim>).toContainValues(</><green>expected</><dim>)</>
+
+Expected object to contain all values:
+  <green>[\\"hello\\", 0, false]</>
+Received:
+  <red>{\\"bar\\": false, \\"foo\\": 0, \\"hello\\": \\"world\\"}</>"
+`;
+
+exports[`.toContainValues fails when given object does not contain all values including arrays 1`] = `
+"<dim>expect(</><red>received</><dim>).toContainValues(</><green>expected</><dim>)</>
+
+Expected object to contain all values:
+  <green>[\\"duck\\", [{\\"hello\\": \\"world\\"}]]</>
+Received:
+  <red>{\\"donald\\": \\"duck\\", \\"message\\": [{\\"bar\\": false, \\"foo\\": 0, \\"hello\\": \\"world\\"}]}</>"
+`;
+
+exports[`.toContainValues fails when given object does not contain all values including objects 1`] = `
+"<dim>expect(</><red>received</><dim>).toContainValues(</><green>expected</><dim>)</>
+
+Expected object to contain all values:
+  <green>[{\\"hello\\": \\"world\\"}]</>
+Received:
+  <red>{\\"donald\\": \\"duck\\", \\"message\\": {\\"bar\\": false, \\"foo\\": 0, \\"hello\\": \\"world\\"}}</>"
+`;
