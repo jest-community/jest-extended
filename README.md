@@ -492,8 +492,6 @@ test('passes when value is frozen', () => {
 
 ### .toBeFinite()
 
-_Note: Currently unimplemented_
-
 Use `.toBeFinite` when checking if a value is a `Number`, not `NaN` or `Infinity`.
 
 ```js
@@ -732,8 +730,8 @@ test('passes when strings are equal ignoring case', () => {
 ## Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-| [<img src="https://avatars0.githubusercontent.com/u/5610087?v=4" width="100px;"/><br /><sub>Matt Phillips</sub>](http://mattphillips.io)<br />[📝](#blog-mattphillips "Blogposts") [💻](https://github.com/mattphillips/jest-extended/commits?author=mattphillips "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=mattphillips "Documentation") [💡](#example-mattphillips "Examples") [🚇](#infra-mattphillips "Infrastructure (Hosting, Build-Tools, etc)") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=mattphillips "Tests") | [<img src="https://avatars1.githubusercontent.com/u/20847518?v=4" width="100px;"/><br /><sub>Brandon Newton</sub>](https://btnwtn.com)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=btnwtn "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=btnwtn "Documentation") |
-| :---: | :---: |
+| [<img src="https://avatars0.githubusercontent.com/u/5610087?v=4" width="100px;"/><br /><sub>Matt Phillips</sub>](http://mattphillips.io)<br />[📝](#blog-mattphillips "Blogposts") [💻](https://github.com/mattphillips/jest-extended/commits?author=mattphillips "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=mattphillips "Documentation") [💡](#example-mattphillips "Examples") [🚇](#infra-mattphillips "Infrastructure (Hosting, Build-Tools, etc)") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=mattphillips "Tests") | [<img src="https://avatars1.githubusercontent.com/u/20847518?v=4" width="100px;"/><br /><sub>Brandon Newton</sub>](https://btnwtn.com)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=btnwtn "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=btnwtn "Documentation") | [<img src="https://avatars1.githubusercontent.com/u/4359781?v=4" width="100px;"/><br /><sub>Chris Hut</sub>](https://github.com/tophernuts)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=tophernuts "Code") |
+| :---: | :---: | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## LICENSE
