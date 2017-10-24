@@ -78,7 +78,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
   * [.toInclude(substring)](#toincludesubstring)
   * [.toIncludeRepeated(substring, times)](#toincluderepeatedsubstring-times)
   * [.toIncludeMultiple([substring])](#toincludemultiplesubstring)
-  * [.toEqualCaseInsensitive(string)](#toequalcaseinsensitive)
+  * [.toEqualCaseInsensitive(string)](#toequalcaseinsensitivestring)
 - [Contributors](#contributors)
 - [LICENSE](#license)
 
@@ -201,8 +201,6 @@ test('passes when given an empty object', () => {
 ```
 
 ### .toBeWithin(start, end)
-
-_Note: Currently unimplemented_
 
 Use `.toBeWithin` when checking if a number is in between the given bounds of: start (inclusive) and end (exclusive).
 
@@ -446,8 +444,6 @@ test('passes when value is in given array', () => {
 
 ### .toBeExtensible()
 
-_Note: Currently unimplemented_
-
 Use `.toBeExtensible` when checking if an object is extensible.
 
 ```js
@@ -602,14 +598,13 @@ test('passes when value is an array', () => {
 
 ### .toBeString()
 
-_Note: Currently unimplemented_
-
 Use `.toBeString` when checking if a value is a `String`.
 
 ```js
 test('passes when value is a string', () => {
   expect('').toBeString();
   expect('hello').toBeString();
+  expect(new String('hello')).toBeString();
   expect(true).not.toBeString();
 });
 ```
@@ -657,8 +652,6 @@ test('passes when value is starts with given string', () => {
 
 ### .toEndWith(suffix)
 
-_Note: Currently unimplemented_
-
 Use `.toEndWith` when checking if a `String` ends with a given `String` suffix.
 
 ```js
@@ -696,8 +689,6 @@ test('passes when value includes substring n times', () => {
 
 ### .toIncludeMultiple([substring])
 
-_Note: Currently unimplemented_
-
 Use `.toIncludeMultiple` when checking if a `String` includes all of the given substrings.
 
 ```js
@@ -724,8 +715,9 @@ test('passes when strings are equal ignoring case', () => {
 ## Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-| [<img src="https://avatars0.githubusercontent.com/u/5610087?v=4" width="100px;"/><br /><sub>Matt Phillips</sub>](http://mattphillips.io)<br />[📝](#blog-mattphillips "Blogposts") [💻](https://github.com/mattphillips/jest-extended/commits?author=mattphillips "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=mattphillips "Documentation") [💡](#example-mattphillips "Examples") [🚇](#infra-mattphillips "Infrastructure (Hosting, Build-Tools, etc)") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=mattphillips "Tests") | [<img src="https://avatars1.githubusercontent.com/u/20847518?v=4" width="100px;"/><br /><sub>Brandon Newton</sub>](https://btnwtn.com)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=btnwtn "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=btnwtn "Documentation") | [<img src="https://avatars2.githubusercontent.com/u/8472688?v=4" width="100px;"/><br /><sub>Gary Leutheuser</sub>](https://GaryLeutheuser.github.io)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=GaryLeutheuser "Code") | [<img src="https://avatars3.githubusercontent.com/u/24882614?v=4" width="100px;"/><br /><sub>Johan Lindgren</sub>](https://github.com/lindgr3n)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=lindgr3n "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=lindgr3n "Documentation") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=lindgr3n "Tests") | [<img src="https://avatars1.githubusercontent.com/u/159848?v=4" width="100px;"/><br /><sub>Andrew Hayward</sub>](http://andrewhayward.net)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=andrewhayward "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=andrewhayward "Tests") | [<img src="https://avatars1.githubusercontent.com/u/2027003?v=4" width="100px;"/><br /><sub>vikneshwar</sub>](https://github.com/vikneshwar)<br /> |
-| :---: | :---: | :---: | :---: | :---: | :---: |
+
+| [<img src="https://avatars0.githubusercontent.com/u/5610087?v=4" width="100px;"/><br /><sub>Matt Phillips</sub>](http://mattphillips.io)<br />[📝](#blog-mattphillips "Blogposts") [💻](https://github.com/mattphillips/jest-extended/commits?author=mattphillips "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=mattphillips "Documentation") [💡](#example-mattphillips "Examples") [🚇](#infra-mattphillips "Infrastructure (Hosting, Build-Tools, etc)") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=mattphillips "Tests") | [<img src="https://avatars1.githubusercontent.com/u/20847518?v=4" width="100px;"/><br /><sub>Brandon Newton</sub>](https://btnwtn.com)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=btnwtn "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=btnwtn "Documentation") | [<img src="https://avatars2.githubusercontent.com/u/8472688?v=4" width="100px;"/><br /><sub>Gary Leutheuser</sub>](https://GaryLeutheuser.github.io)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=GaryLeutheuser "Code") | [<img src="https://avatars3.githubusercontent.com/u/24882614?v=4" width="100px;"/><br /><sub>Johan Lindgren</sub>](https://github.com/lindgr3n)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=lindgr3n "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=lindgr3n "Documentation") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=lindgr3n "Tests") | [<img src="https://avatars1.githubusercontent.com/u/159848?v=4" width="100px;"/><br /><sub>Andrew Hayward</sub>](http://andrewhayward.net)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=andrewhayward "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=andrewhayward "Tests") | [<img src="https://avatars3.githubusercontent.com/u/6209178?v=4" width="100px;"/><br /><sub>Oliver Schneider</sub>](https://ols.io)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=olsio "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=olsio "Tests") | [<img src="https://avatars1.githubusercontent.com/u/22359375?s=460&v=4" width="100px;"/><br /><sub>Tyle Whalen</sub>](https://github.com/tjwhalen16)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=tjwhalen16 "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=tjwhalen16 "Documentation") | [<img src="https://avatars2.githubusercontent.com/u/17944339?v=4" width="100px;"/><br /><sub>Martius</sub>](https://github.com/martiuslim)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=martiuslim "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=martiuslim "Tests") | [<img src="https://avatars2.githubusercontent.com/u/10856932?v=4" width="100px;"/><br /><sub>Eli Collis</sub>](https://github.com/ecollis6)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=ecollis6 "Code") | [<img src="https://avatars0.githubusercontent.com/u/10706203?v=4" width="100px;"/><br /><sub>Marcin Lichwała</sub>](https://github.com/marcinlichwala)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=marcinlichwala "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=marcinlichwala "Tests") | [<img src="https://avatars1.githubusercontent.com/u/2027003?v=4" width="100px;"/><br /><sub>vikneshwar</sub>](https://github.com/vikneshwar)<br />
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## LICENSE
