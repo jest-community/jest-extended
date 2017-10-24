@@ -6,6 +6,11 @@ import toStartWith from './toStartWith';
 import toBeNegative from './toBeNegative';
 import toBeOneOf from './toBeOneOf';
 import toContainKey from './toContainKey';
+import toBeString from './toBeString';
+import toBeExtensible from './toBeExtensible';
+import toBeWithin from './toBeWithin';
+import toIncludeMultiple from './toIncludeMultiple';
+import toEndWith from './toEndWith';
 import toContainAnyEntries from './toContainAnyEntries';
 
 export default [
@@ -17,5 +22,10 @@ export default [
   toBeNegative,
   toBeOneOf,
   toContainKey,
+  toBeString,
+  toBeExtensible,
+  toBeWithin,
+  toIncludeMultiple,
+  toEndWith,
   toContainAnyEntries
 ].reduce((acc, matcher) => ({ ...acc, ...matcher }), {});
