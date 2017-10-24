@@ -3,7 +3,7 @@ import { matcherHint, printExpected, printReceived } from 'jest-matcher-utils';
 import predicate from './predicate';
 
 const passMessage = (actual, expected) => () =>
-  matcherHint('.not.toInclueMultiple') +
+  matcherHint('.not.toIncludeMultiple') +
   '\n\n' +
   'Expected string to not contain all substrings: \n' +
   `  ${printExpected(expected)}\n` +

@@ -9,6 +9,7 @@ import toContainKey from './toContainKey';
 import toBeString from './toBeString';
 import toBeExtensible from './toBeExtensible';
 import toBeWithin from './toBeWithin';
+import toIncludeMultiple from './toIncludeMultiple';
 
 export default [
   toBeTrue,
@@ -21,5 +22,6 @@ export default [
   toContainKey,
   toBeString,
   toBeExtensible,
-  toBeWithin
+  toBeWithin,
+  toIncludeMultiple
 ].reduce((acc, matcher) => ({ ...acc, ...matcher }), {});
