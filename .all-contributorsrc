@@ -32,6 +32,56 @@
       ]
     },
     {
+      "login": "GaryLeutheuser",
+      "name": "Gary Leutheuser",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/8472688?v=4",
+      "profile": "https://GaryLeutheuser.github.io",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "lindgr3n",
+      "name": "Johan Lindgren",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/24882614?v=4",
+      "profile": "https://github.com/lindgr3n",
+      "contributions": [
+        "code",
+        "doc",
+        "test"
+      ]
+    },
+    {
+      "login": "andrewhayward",
+      "name": "Andrew Hayward",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/159848?v=4",
+      "profile": "http://andrewhayward.net",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "olsio",
+      "name": "Oliver Schneider",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/6209178?v=4",
+      "profile": "https://ols.io",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "tjwhalen16",
+      "name": "Tyle Whalen",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/22359375?s=460&v=4",
+      "profile": "https://github.com/tjwhalen16",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
       "login": "cactorium",
       "name": "Kelvin Ly",
       "avatar_url": "https://avatars2.githubusercontent.com/u/1513183?v=4",
