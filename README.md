@@ -604,14 +604,13 @@ test('passes when value is an array', () => {
 
 ### .toBeString()
 
-_Note: Currently unimplemented_
-
 Use `.toBeString` when checking if a value is a `String`.
 
 ```js
 test('passes when value is a string', () => {
   expect('').toBeString();
   expect('hello').toBeString();
+  expect(new String('hello')).toBeString();
   expect(true).not.toBeString();
 });
 ```
