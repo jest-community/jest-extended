@@ -78,7 +78,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
   * [.toInclude(substring)](#toincludesubstring)
   * [.toIncludeRepeated(substring, times)](#toincluderepeatedsubstring-times)
   * [.toIncludeMultiple([substring])](#toincludemultiplesubstring)
-  * [.toEqualIgnoringCase(string)](#toequalignoringcasestring)
+  * [.toEqualCaseInsensitive(string)](#toequalcaseinsensitive)
 - [Contributors](#contributors)
 - [LICENSE](#license)
 
@@ -216,7 +216,6 @@ test('passes when number is within given bounds', () => {
 
 ### .toContainKey(key)
 
-_Note: Currently unimplemented_
 
 Use `.toContainKey` when checking if an object contains the provided key.
 
@@ -438,8 +437,6 @@ test('passes when given array values match the members of the set', () => {
 
 ### .toBeOneOf([members])
 
-_Note: Currently unimplemented_
-
 Use `.toBeOneOf` when checking if a value is a member of a given `Array`.
 
 ```js
@@ -521,7 +518,6 @@ test('passes when value is a positive number', () => {
 
 ### .toBeNegative()
 
-_Note: Currently unimplemented_
 
 Use `.toBeNegative` when checking if a value is a negative `Number`.
 
@@ -651,8 +647,6 @@ test('passes when value is a boolean', () => {
 
 ### .toStartWith(prefix)
 
-_Note: Currently unimplemented_
-
 Use `.toStartWith` when checking if a `String` starts with a given `String` prefix.
 
 ```js
@@ -714,27 +708,25 @@ test('passes when value includes all substrings', () => {
 });
 ```
 
-### .toEqualIgnoringCase(string)
+### .toEqualCaseInsensitive(string)
 
-_Note: Currently unimplemented_
-
-Use `.toEqualIgnoringCase` when checking if a string is equal (===) to another ignoring the casing of both strings.
+Use `.toEqualCaseInsensitive` when checking if a string is equal (===) to another ignoring the casing of both strings.
 
 ```js
 test('passes when strings are equal ignoring case', () => {
-  expect('hello world').toEqualIgnoringCase('hello world');
-  expect('hello WORLD').toEqualIgnoringCase('HELLO world');
-  expect('HELLO WORLD').toEqualIgnoringCase('hello world');
-  expect('hello world').toEqualIgnoringCase('HELLO WORLD');
-  expect('hello world').not.toEqualIgnoringCase('hello');
+  expect('hello world').toEqualCaseInsensitive('hello world');
+  expect('hello WORLD').toEqualCaseInsensitive('HELLO world');
+  expect('HELLO WORLD').toEqualCaseInsensitive('hello world');
+  expect('hello world').toEqualCaseInsensitive('HELLO WORLD');
+  expect('hello world').not.toEqualCaseInsensitive('hello');
 });
 ```
 
 ## Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-| [<img src="https://avatars0.githubusercontent.com/u/5610087?v=4" width="100px;"/><br /><sub>Matt Phillips</sub>](http://mattphillips.io)<br />[📝](#blog-mattphillips "Blogposts") [💻](https://github.com/mattphillips/jest-extended/commits?author=mattphillips "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=mattphillips "Documentation") [💡](#example-mattphillips "Examples") [🚇](#infra-mattphillips "Infrastructure (Hosting, Build-Tools, etc)") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=mattphillips "Tests") |
-| :---: |
+| [<img src="https://avatars0.githubusercontent.com/u/5610087?v=4" width="100px;"/><br /><sub>Matt Phillips</sub>](http://mattphillips.io)<br />[📝](#blog-mattphillips "Blogposts") [💻](https://github.com/mattphillips/jest-extended/commits?author=mattphillips "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=mattphillips "Documentation") [💡](#example-mattphillips "Examples") [🚇](#infra-mattphillips "Infrastructure (Hosting, Build-Tools, etc)") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=mattphillips "Tests") | [<img src="https://avatars1.githubusercontent.com/u/20847518?v=4" width="100px;"/><br /><sub>Brandon Newton</sub>](https://btnwtn.com)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=btnwtn "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=btnwtn "Documentation") | [<img src="https://avatars2.githubusercontent.com/u/8472688?v=4" width="100px;"/><br /><sub>Gary Leutheuser</sub>](https://GaryLeutheuser.github.io)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=GaryLeutheuser "Code") | [<img src="https://avatars3.githubusercontent.com/u/24882614?v=4" width="100px;"/><br /><sub>Johan Lindgren</sub>](https://github.com/lindgr3n)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=lindgr3n "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=lindgr3n "Documentation") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=lindgr3n "Tests") | [<img src="https://avatars1.githubusercontent.com/u/159848?v=4" width="100px;"/><br /><sub>Andrew Hayward</sub>](http://andrewhayward.net)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=andrewhayward "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=andrewhayward "Tests") |
+| :---: | :---: | :---: | :---: | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## LICENSE

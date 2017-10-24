@@ -59,7 +59,7 @@ yarn contributor <YOUR_GITHUB_USERNAME>
 Follow the prompt. If you've already added yourself to the list and are making a
 new type of contribution, you can run it again and select the added contribution
 type. If you need to edit the `.all-contributorsrc` file by hand that's fine
-too, just run `yarn contributor:generate` to regenerate the table
+too, just run `yarn contributor:gen` to regenerate the table
 
 ## Help needed
 
