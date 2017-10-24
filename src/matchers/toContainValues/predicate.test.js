@@ -31,7 +31,7 @@ describe('toContainValue Predicate', () => {
 
   describe('returns false', () => {
     it('when given object does not contain all primitive value', () => {
-      expect(predicate(shallow, [100])).toBe(false);
+      expect(predicate(shallow, [false, undefined])).toBe(false);
     });
 
     it('when given object does not contain all values including objects', () => {
