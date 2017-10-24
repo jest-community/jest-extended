@@ -2,12 +2,13 @@ import toBeTrue from './toBeTrue';
 import toContainValue from './toContainValue';
 import toContainValues from './toContainValues';
 import toEqualCaseInsensitive from './toEqualCaseInsensitive';
-import toBeExtensible from './toBeExtensible';
 import toStartWith from './toStartWith';
 import toBeNegative from './toBeNegative';
 import toBeOneOf from './toBeOneOf';
 import toContainKey from './toContainKey';
 import toBeString from './toBeString';
+import toBeExtensible from './toBeExtensible';
+import toBeWithin from './toBeWithin';
 import toHaveSomeMembers from './toHaveSomeMembers';
 
 export default [
@@ -21,5 +22,6 @@ export default [
   toContainKey,
   toBeString,
   toBeExtensible,
+  toBeWithin,
   toHaveSomeMembers
 ].reduce((acc, matcher) => ({ ...acc, ...matcher }), {});
