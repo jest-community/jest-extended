@@ -28,7 +28,8 @@
       "profile": "https://btnwtn.com",
       "contributions": [
         "code",
-        "doc"
+        "doc",
+        "test"
       ]
     },
     {
@@ -86,6 +87,25 @@
       "name": "Martius",
       "avatar_url": "https://avatars2.githubusercontent.com/u/17944339?v=4",
       "profile": "https://github.com/martiuslim",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "ecollis6",
+      "name": "Eli Collis",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/10856932?v=4",
+      "profile": "https://github.com/ecollis6",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "marcinlichwala",
+      "name": "Marcin Lichwała",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/10706203?v=4",
+      "profile": "https://github.com/marcinlichwala",
       "contributions": [
         "code",
         "test"
