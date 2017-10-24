@@ -2,7 +2,22 @@ import matcher from './';
 
 expect.extend(matcher);
 
-test('passes when value includes all substrings', () => {
-  expect('hello world').toIncludeMultiple(['world', 'hello']);
-  expect('hello world').not.toIncludeMultiple(['world', 'hello', 'bob']);
+describe('.toIncludeMultiple', () => {
+  it('passes when string includes all substrings', () => {
+    expect('hello world').toIncludeMultiple(['world', 'hello']);
+  });
+
+  it('fails when string does not include all substrings', () => {
+    expect(() => expect('hello world').toIncludeMultiple(['hello', 'world', 'bob'])).toThrowErrorMatchingSnapshot();
+  });
+});
+
+describe('.toIncludeMultiple', () => {
+  it('passes when string does not include all substrings', () => {
+    expect('hello world').not.toIncludeMultiple(['world', 'hello', 'bob']);
+  });
+
+  it('fails when string includes all substrings', () => {
+    expect(() => expect('hello world').not.toIncludeMultiple(['hello', 'world'])).toThrowErrorMatchingSnapshot();
+  });
 });
