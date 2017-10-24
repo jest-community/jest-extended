@@ -6,6 +6,7 @@ import toStartWith from './toStartWith';
 import toBeNegative from './toBeNegative';
 import toBeOneOf from './toBeOneOf';
 import toContainKey from './toContainKey';
+import toContainAnyEntries from './toContainAnyEntries';
 
 export default [
   toBeTrue,
@@ -15,5 +16,6 @@ export default [
   toStartWith,
   toBeNegative,
   toBeOneOf,
-  toContainKey
+  toContainKey,
+  toContainAnyEntries
 ].reduce((acc, matcher) => ({ ...acc, ...matcher }), {});
