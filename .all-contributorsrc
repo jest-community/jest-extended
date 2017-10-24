@@ -39,6 +39,17 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "lindgr3n",
+      "name": "Johan Lindgren",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/24882614?v=4",
+      "profile": "https://github.com/lindgr3n",
+      "contributions": [
+        "code",
+        "doc",
+        "test"
+      ]
     }
   ]
 }
