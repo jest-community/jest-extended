@@ -9,8 +9,8 @@ describe('toContainValue Predicate', () => {
   describe('returns true', () => {
     each([['world'], [false], [undefined], [null], [''], [0]]).it(
       'when given object contains primitive value: %s',
-      () => {
-        expect(predicate(shallow, 'world')).toBe(true);
+      value => {
+        expect(predicate(shallow, value)).toBe(true);
       }
     );
 
@@ -24,8 +24,15 @@ describe('toContainValue Predicate', () => {
   });
 
   describe('returns false', () => {
-    it('when given object does not contain primitive value', () => {
-      expect(predicate(shallow, 100)).toBe(false);
+    each([
+      ['world'],
+      [false],
+      [undefined],
+      [null],
+      [''],
+      [0]
+    ]).it('when given object does not contain primitive value: %s', value => {
+      expect(predicate({}, value)).toBe(false);
     });
 
     it('when given object does not contain object value', () => {
