@@ -78,7 +78,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
   * [.toInclude(substring)](#toincludesubstring)
   * [.toIncludeRepeated(substring, times)](#toincluderepeatedsubstring-times)
   * [.toIncludeMultiple([substring])](#toincludemultiplesubstring)
-  * [.toEqualCaseInsensitive(string)](#toequalcaseinsensitive)
+  * [.toEqualCaseInsensitive(string)](#toequalcaseinsensitivestring)
 - [Contributors](#contributors)
 - [LICENSE](#license)
 
