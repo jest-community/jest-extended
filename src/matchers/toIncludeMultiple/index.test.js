@@ -12,7 +12,7 @@ describe('.toIncludeMultiple', () => {
   });
 });
 
-describe('.toIncludeMultiple', () => {
+describe('.not.toIncludeMultiple', () => {
   it('passes when string does not include all substrings', () => {
     expect('hello world').not.toIncludeMultiple(['world', 'hello', 'bob']);
   });
