@@ -60,6 +60,16 @@
         "code",
         "test"
       ]
+    },
+    {
+      "login": "olsio",
+      "name": "Oliver Schneider",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/6209178?v=4",
+      "profile": "https://ols.io",
+      "contributions": [
+        "code",
+        "test"
+      ]
     }
   ]
 }
