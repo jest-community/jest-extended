@@ -654,8 +654,6 @@ test('passes when value is starts with given string', () => {
 
 ### .toEndWith(suffix)
 
-_Note: Currently unimplemented_
-
 Use `.toEndWith` when checking if a `String` ends with a given `String` suffix.
 
 ```js
