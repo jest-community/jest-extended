@@ -216,7 +216,6 @@ test('passes when number is within given bounds', () => {
 
 ### .toContainKey(key)
 
-_Note: Currently unimplemented_
 
 Use `.toContainKey` when checking if an object contains the provided key.
 
@@ -437,8 +436,6 @@ test('passes when given array values match the members of the set', () => {
 ```
 
 ### .toBeOneOf([members])
-
-_Note: Currently unimplemented_
 
 Use `.toBeOneOf` when checking if a value is a member of a given `Array`.
 
