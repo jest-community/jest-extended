@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toEqualCaseInsensitive fails if strings do not match 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toEqualCaseInsensitive(</><green>expected</><dim>)</>
+
+Expected values to not be equal while ignoring case (using ===):
+  <green>\\"aaaa\\"</>
+Received:
+  <red>\\"aaaa\\"</>"
+`;
+
+exports[`.toEqualCaseInsensitive passes if strings are equal despite case 1`] = `
+"<dim>expect(</><red>received</><dim>).toEqualCaseInsensitive(</><green>expected</><dim>)</>
+
+Expected values to be equal while ignoring case (using ===):
+  <green>\\"bbbb\\"</>
+Received:
+  <red>\\"aaaa\\"</>"
+`;

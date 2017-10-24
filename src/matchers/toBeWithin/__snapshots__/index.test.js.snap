@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toBeWithin fails when given number is within the given bounds of start (inclusive) and end (exclusive) 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toBeWithin(</><green>expected</><dim>)</>
+
+Expected number to not be within start (inclusive) and end (exclusive):
+  start: <green>1</>  end: <green>3</>
+Received:
+  <red>1</>"
+`;
+
+exports[`.toBeWithin fails when given number is not within the given bounds of start (inclusive) and end (exclusive) 1`] = `
+"<dim>expect(</><red>received</><dim>).toBeWithin(</><green>expected</><dim>)</>
+
+Expected number to be within start (inclusive) and end (exclusive):
+  start: <green>1</>  end: <green>3</>
+Received:
+  <red>3</>"
+`;
