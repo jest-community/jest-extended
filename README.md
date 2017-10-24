@@ -262,8 +262,6 @@ test('passes when object only contains all keys', () => {
 
 ### .toContainAnyKeys([keys])
 
-_Note: Currently unimplemented_
-
 Use `.toContainAnyKeys` when checking if an object contains at least one of the provided keys.
 
 ```js
