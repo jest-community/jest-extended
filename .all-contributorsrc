@@ -80,6 +80,16 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "martiuslim",
+      "name": "Martius",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/17944339?v=4",
+      "profile": "https://github.com/martiuslim",
+      "contributions": [
+        "code",
+        "test"
+      ]
     }
   ]
 }
