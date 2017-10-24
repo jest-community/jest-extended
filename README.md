@@ -179,8 +179,6 @@ test('passes when value is NaN', () => {
 
 ### .toBeEmpty()
 
-_Note: Currently unimplemented_
-
 Use `.toBeEmpty` when checking if a `String` `''`, `Array` `[]` or `Object` `{}` is empty.
 
 ```js
