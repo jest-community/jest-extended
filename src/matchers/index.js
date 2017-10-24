@@ -8,6 +8,7 @@ import toBeNegative from './toBeNegative';
 import toBeOneOf from './toBeOneOf';
 import toContainKey from './toContainKey';
 import toBeString from './toBeString';
+import toContainEntries from './toContainEntries';
 
 export default [
   toBeTrue,
@@ -20,4 +21,5 @@ export default [
   toContainKey,
   toBeString,
   toBeExtensible,
+  toContainEntries
 ].reduce((acc, matcher) => ({ ...acc, ...matcher }), {});

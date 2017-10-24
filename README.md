@@ -350,8 +350,6 @@ test('passes when object contains given entry', () => {
 
 ### .toContainEntries([[key, value]])
 
-_Note: Currently unimplemented_
-
 Use `.toContainEntries` when checking if an object contains all of the provided entries.
 
 ```js
