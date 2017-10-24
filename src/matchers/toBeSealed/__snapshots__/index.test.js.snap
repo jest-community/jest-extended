@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.toBeSealed fails when given a non-sealed object 1`] = `
+"<dim>expect(</><red>received</><dim>).toBeSealed(</><green>expected</><dim>)</>
+
+Expected object to not sealed"
+`;
