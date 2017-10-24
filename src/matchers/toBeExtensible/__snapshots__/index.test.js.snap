@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toBeExtensible fails when given an extensible object:  1`] = `
+"<dim>expect(</><red>recieved</><dim>).not.toBeExtensible(</><dim>)</>
+
+Expected values to not be extensible (false) recieved:
+  <green>[]</>
+"
+`;
+
+exports[`.not.toBeExtensible fails when given an extensible object: [object Object] 1`] = `
+"<dim>expect(</><red>recieved</><dim>).not.toBeExtensible(</><dim>)</>
+
+Expected values to not be extensible (false) recieved:
+  <green>{}</>
+"
+`;
+
+exports[`.not.toBeExtensible fails when given an extensible object: undefined 1`] = `
+"<dim>expect(</><red>recieved</><dim>).not.toBeExtensible(</><dim>)</>
+
+Expected values to not be extensible (false) recieved:
+  <green>[Function anonymous]</>
+"
+`;
+
+exports[`.toBeExtensible fails when not given an extensible object:  1`] = `
+"<dim>expect(</><red>recieved</><dim>).toBeExtensible(</><dim>)</>
+
+Expected values to be extensible (true):
+  <green>true</>
+Received:
+  <red>\\"\\"</>"
+`;
+
+exports[`.toBeExtensible fails when not given an extensible object: 0 1`] = `
+"<dim>expect(</><red>recieved</><dim>).toBeExtensible(</><dim>)</>
+
+Expected values to be extensible (true):
+  <green>true</>
+Received:
+  <red>0</>"
+`;
+
+exports[`.toBeExtensible fails when not given an extensible object: NaN 1`] = `
+"<dim>expect(</><red>recieved</><dim>).toBeExtensible(</><dim>)</>
+
+Expected values to be extensible (true):
+  <green>true</>
+Received:
+  <red>NaN</>"
+`;
+
+exports[`.toBeExtensible fails when not given an extensible object: false 1`] = `
+"<dim>expect(</><red>recieved</><dim>).toBeExtensible(</><dim>)</>
+
+Expected values to be extensible (true):
+  <green>true</>
+Received:
+  <red>false</>"
+`;
+
+exports[`.toBeExtensible fails when not given an extensible object: null 1`] = `
+"<dim>expect(</><red>recieved</><dim>).toBeExtensible(</><dim>)</>
+
+Expected values to be extensible (true):
+  <green>true</>
+Received:
+  <red>null</>"
+`;
+
+exports[`.toBeExtensible fails when not given an extensible object: undefined 1`] = `
+"<dim>expect(</><red>recieved</><dim>).toBeExtensible(</><dim>)</>
+
+Expected values to be extensible (true):
+  <green>true</>
+Received:
+  <red>undefined</>"
+`;
