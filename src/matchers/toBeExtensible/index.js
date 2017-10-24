@@ -4,20 +4,18 @@ import predicate from './predicate';
 
 const passMessage = received => () => {
   return (
-    matcherHint('.not.toBeExtensible', 'recieved', '') +
+    matcherHint('.not.toBeExtensible', 'received', '') +
     '\n\n' +
-    'Expected values to not be extensible (false) recieved:\n' +
+    'Expected value to not be extensible received:\n' +
     `  ${printExpected(received)}\n`
   );
 };
 
 const failMessage = received => () => {
   return (
-    matcherHint('.toBeExtensible', 'recieved', '') +
+    matcherHint('.toBeExtensible', 'received', '') +
     '\n\n' +
-    'Expected values to be extensible (true):\n' +
-    `  ${printExpected(true)}\n` +
-    'Received:\n' +
+    'Expected value to be extensible received:\n' +
     `  ${printReceived(received)}`
   );
 };
