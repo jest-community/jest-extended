@@ -60,6 +60,17 @@
         "code",
         "test"
       ]
+    },
+    {
+      "login": "garmeeh",
+      "name": "Gary Meehan",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13333582?v=4",
+      "profile": "https://github.com/garmeeh",
+      "contributions": [
+        "code",
+        "doc",
+        "test"
+      ]
     }
   ]
 }

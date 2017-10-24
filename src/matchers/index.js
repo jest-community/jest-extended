@@ -1,3 +1,4 @@
+import toBeEven from './toBeEven';
 import toBeTrue from './toBeTrue';
 import toContainValue from './toContainValue';
 import toContainValues from './toContainValues';
@@ -8,6 +9,7 @@ import toBeOneOf from './toBeOneOf';
 import toContainKey from './toContainKey';
 
 export default [
+  toBeEven,
   toBeTrue,
   toContainValue,
   toContainValues,
