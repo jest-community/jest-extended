@@ -90,6 +90,13 @@
         "code",
         "test"
       ]
+    },
+    {
+      "login": "GitHug",
+      "name": "Fredrik Mäkilä",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/3191489?v=4",
+      "profile": "https://github.com/GitHug",
+      "contributions": []
     }
   ]
 }
