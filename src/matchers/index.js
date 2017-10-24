@@ -5,6 +5,11 @@ import toEqualCaseInsensitive from './toEqualCaseInsensitive';
 import toStartWith from './toStartWith';
 import toEndWith from './toEndWith';
 import toBeNegative from './toBeNegative';
+import toBeOneOf from './toBeOneOf';
+import toContainKey from './toContainKey';
+import toBeString from './toBeString';
+import toBeExtensible from './toBeExtensible';
+import toBeWithin from './toBeWithin';
 
 export default [
   toBeTrue,
@@ -13,5 +18,9 @@ export default [
   toEqualCaseInsensitive,
   toStartWith,
   toEndWith,
-  toBeNegative
+  toBeOneOf,
+  toContainKey,
+  toBeString,
+  toBeExtensible,
+  toBeWithin
 ].reduce((acc, matcher) => ({ ...acc, ...matcher }), {});

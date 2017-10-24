@@ -1,1 +1,3 @@
-export default (a, b) => b.indexOf(a) > -1;
+import { contains } from '../../utils';
+
+export default (value, list) => contains(list, value);

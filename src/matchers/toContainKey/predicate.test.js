@@ -2,7 +2,7 @@ import predicate from './predicate';
 
 const data = { hello: 'world' };
 
-describe('.toBeOneOf', () => {
+describe('.toContainKey', () => {
   it('passes when given object contains key', () => {
     expect(predicate(data, 'hello')).toBe(true);
   });

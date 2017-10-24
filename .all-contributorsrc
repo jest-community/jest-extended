@@ -60,6 +60,36 @@
         "code",
         "test"
       ]
+    },
+    {
+      "login": "olsio",
+      "name": "Oliver Schneider",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/6209178?v=4",
+      "profile": "https://ols.io",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "tjwhalen16",
+      "name": "Tyle Whalen",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/22359375?s=460&v=4",
+      "profile": "https://github.com/tjwhalen16",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "martiuslim",
+      "name": "Martius",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/17944339?v=4",
+      "profile": "https://github.com/martiuslim",
+      "contributions": [
+        "code",
+        "test"
+      ]
     }
   ]
 }
