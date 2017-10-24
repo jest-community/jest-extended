@@ -4,7 +4,7 @@ expect.extend(matcher);
 
 const data = { hello: 'world' };
 
-describe('.toBeOneOf', () => {
+describe('.toContainKey', () => {
   it('passes when given object contains key', () => {
     expect(data).toContainKey('hello');
   });
