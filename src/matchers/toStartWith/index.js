@@ -3,20 +3,20 @@ import { matcherHint, printExpected, printReceived } from 'jest-matcher-utils';
 import predicate from './predicate';
 
 const passMessage = (prefix, string) => () =>
-  matcherHint('.not.toStartWith', 'received', '') +
+  matcherHint('.not.toStartWith') +
   '\n\n' +
   'Expected string to not start with:\n' +
-  `  ${printReceived(prefix)}\n` +
+  `  ${printExpected(prefix)}\n` +
   'Received:\n' +
-  `  ${printReceived(prefix)}`;
+  `  ${printReceived(string)}`;
 
 const failMessage = (prefix, string) => () =>
-  matcherHint('.toStartWith', 'received', '') +
+  matcherHint('.toStartWith') +
   '\n\n' +
   'Expected string to start with:\n' +
   `  ${printExpected(prefix)}\n` +
-  'String started with:\n' +
-  `  ${printReceived(string.substring(0, prefix.length))}`;
+  'Received:\n' +
+  `  ${printReceived(string)}`;
 
 export default {
   toStartWith: (string, prefix) => {
