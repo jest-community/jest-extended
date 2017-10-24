@@ -1,3 +1,4 @@
+import toBeTrue from './toBeTrue';
 import toContainValue from './toContainValue';
 import toContainValues from './toContainValues';
 import toEqualCaseInsensitive from './toEqualCaseInsensitive';
