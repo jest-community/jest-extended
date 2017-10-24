@@ -11,7 +11,7 @@ const passMessage = received => () =>
 const failMessage = received => () =>
   matcherHint('.toBeArray', 'received', '') +
   '\n\n' +
-  'Expected value to be an array:\n' +
+  'Expected value to be an array received:\n' +
   `  ${printExpected(true)}\n` +
   'Received:\n' +
   `  ${printReceived(received)}`;
