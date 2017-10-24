@@ -50,6 +50,16 @@
         "doc",
         "test"
       ]
+    },
+    {
+      "login": "andrewhayward",
+      "name": "Andrew Hayward",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/159848?v=4",
+      "profile": "http://andrewhayward.net",
+      "contributions": [
+        "code",
+        "test"
+      ]
     }
   ]
 }
