@@ -448,8 +448,6 @@ test('passes when value is in given array', () => {
 
 ### .toBeExtensible()
 
-_Note: Currently unimplemented_
-
 Use `.toBeExtensible` when checking if an object is extensible.
 
 ```js
