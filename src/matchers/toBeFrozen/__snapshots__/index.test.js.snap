@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.toBeFrozen fails when given a non-frozen object 1`] = `
+"<dim>expect(</><red>received</><dim>).toBeFrozen(</><green>expected</><dim>)</>
+
+Expected object to be frozen"
+`;

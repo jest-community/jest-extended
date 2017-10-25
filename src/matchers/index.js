@@ -11,6 +11,7 @@ import toBeExtensible from './toBeExtensible';
 import toBeWithin from './toBeWithin';
 import toIncludeMultiple from './toIncludeMultiple';
 import toEndWith from './toEndWith';
+import toBeFrozen from './toBeFrozen';
 
 export default [
   toBeTrue,
@@ -25,5 +26,6 @@ export default [
   toBeExtensible,
   toBeWithin,
   toIncludeMultiple,
-  toEndWith
+  toEndWith,
+  toBeFrozen
 ].reduce((acc, matcher) => ({ ...acc, ...matcher }), {});
