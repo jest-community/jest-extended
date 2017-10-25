@@ -112,6 +112,27 @@
       ]
     },
     {
+      "login": "mprencipe",
+      "name": "Massimo Prencipe",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1984733?v=4",
+      "profile": "https://github.com/mprencipe",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "garmeeh",
+      "name": "Gary Meehan",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13333582?v=4",
+      "profile": "https://github.com/garmeeh",
+      "contributions": [
+        "code",
+        "doc",
+        "test"
+      ]
+    },
+    {
       "login": "GitHug",
       "name": "Fredrik Mäkilä",
       "avatar_url": "https://avatars2.githubusercontent.com/u/3191489?v=4",
