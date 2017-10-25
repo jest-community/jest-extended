@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toContainKey fails when given object contains key 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toContainKey(</><green>expected</><dim>)</>
+
+Expected object to not contain key:
+  <green>\\"hello\\"</>
+Received:
+  <red>{\\"hello\\": \\"world\\"}</>"
+`;
+
+exports[`.toContainKey fails when given object does not contain key 1`] = `
+"<dim>expect(</><red>received</><dim>).toContainKey(</><green>expected</><dim>)</>
+
+Expected object to contain key:
+  <green>\\"missing\\"</>
+Received:
+  <red>{\\"hello\\": \\"world\\"}</>"
+`;
