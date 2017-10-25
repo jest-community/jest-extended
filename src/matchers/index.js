@@ -1,5 +1,33 @@
 import toBeTrue from './toBeTrue';
 import toContainValue from './toContainValue';
+import toContainValues from './toContainValues';
+import toEqualCaseInsensitive from './toEqualCaseInsensitive';
+import toStartWith from './toStartWith';
+import toBeNegative from './toBeNegative';
+import toBeOneOf from './toBeOneOf';
+import toContainKey from './toContainKey';
+import toBeString from './toBeString';
+import toBeExtensible from './toBeExtensible';
+import toBeWithin from './toBeWithin';
+import toIncludeMultiple from './toIncludeMultiple';
+import toEndWith from './toEndWith';
+import toBeFrozen from './toBeFrozen';
 import toBeObject from './toBeObject';
 
-export default [toBeTrue, toContainValue, toBeObject].reduce((acc, matcher) => ({ ...acc, ...matcher }), {});
+export default [
+  toBeTrue,
+  toContainValue,
+  toContainValues,
+  toEqualCaseInsensitive,
+  toStartWith,
+  toBeNegative,
+  toBeOneOf,
+  toContainKey,
+  toBeString,
+  toBeExtensible,
+  toBeWithin,
+  toIncludeMultiple,
+  toEndWith,
+  toBeFrozen,
+  toBeObject
+].reduce((acc, matcher) => ({ ...acc, ...matcher }), {});
