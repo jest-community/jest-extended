@@ -568,8 +568,6 @@ test('passes when value is a function', () => {
 
 ### .toBeObject()
 
-_Note: Currently unimplemented_
-
 Use `.toBeObject` when checking if a value is an `Object`.
 
 ```js
