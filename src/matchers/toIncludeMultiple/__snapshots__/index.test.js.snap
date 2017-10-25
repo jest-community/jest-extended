@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toIncludeMultiple fails when string includes all substrings 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toIncludeMultiple(</><green>expected</><dim>)</>
+
+Expected string to not contain all substrings: 
+  <green>[\\"hello\\", \\"world\\"]</>
+Received: 
+  <red>\\"hello world\\"</>"
+`;
+
+exports[`.toIncludeMultiple fails when string does not include all substrings 1`] = `
+"<dim>expect(</><red>received</><dim>).toIncludeMultiple(</><green>expected</><dim>)</>
+
+Expected string to contain all substrings: 
+  <green>[\\"hello\\", \\"world\\", \\"bob\\"]</>
+Received:
+  <red>\\"hello world\\"</>"
+`;
