@@ -28,7 +28,8 @@
       "profile": "https://btnwtn.com",
       "contributions": [
         "code",
-        "doc"
+        "doc",
+        "test"
       ]
     },
     {
@@ -56,6 +57,65 @@
       "name": "Andrew Hayward",
       "avatar_url": "https://avatars1.githubusercontent.com/u/159848?v=4",
       "profile": "http://andrewhayward.net",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "olsio",
+      "name": "Oliver Schneider",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/6209178?v=4",
+      "profile": "https://ols.io",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "tjwhalen16",
+      "name": "Tyle Whalen",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/22359375?s=460&v=4",
+      "profile": "https://github.com/tjwhalen16",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "martiuslim",
+      "name": "Martius",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/17944339?v=4",
+      "profile": "https://github.com/martiuslim",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "ecollis6",
+      "name": "Eli Collis",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/10856932?v=4",
+      "profile": "https://github.com/ecollis6",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "marcinlichwala",
+      "name": "Marcin Lichwała",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/10706203?v=4",
+      "profile": "https://github.com/marcinlichwala",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "mprencipe",
+      "name": "Massimo Prencipe",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1984733?v=4",
+      "profile": "https://github.com/mprencipe",
       "contributions": [
         "code",
         "test"
