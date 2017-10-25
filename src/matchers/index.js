@@ -15,6 +15,7 @@ import toEndWith from './toEndWith';
 import toBeFrozen from './toBeFrozen';
 import toBeObject from './toBeObject';
 import toContainAllKeys from './toContainAllKeys';
+import toContainAnyKeys from './toContainAnyKeys';
 
 export default [
   toBeEven,
@@ -33,5 +34,6 @@ export default [
   toEndWith,
   toBeFrozen,
   toBeObject,
-  toContainAllKeys
+  toContainAllKeys,
+  toContainAnyKeys
 ].reduce((acc, matcher) => ({ ...acc, ...matcher }), {});

@@ -12,7 +12,7 @@ Received:
 exports[`.toContainAnyKeys fails when object does not contain any keys 1`] = `
 "<dim>expect(</><red>received</><dim>).toContainValue(</><green>expected</><dim>)</>
 
-Expected object to contain one of the following keys:
+Expected object to contain any of the following keys:
   <green>[\\"occupation\\"]</>
 Received:
   <red>{\\"age\\": 37, \\"name\\": \\"Steve the Pirate\\"}</>"

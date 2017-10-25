@@ -13,7 +13,7 @@ const passMessage = (actual, expected) => () =>
 const failMessage = (actual, expected) => () =>
   matcherHint('.toContainValue') +
   '\n\n' +
-  'Expected object to contain one of the following keys:\n' +
+  'Expected object to contain any of the following keys:\n' +
   `  ${printExpected(expected)}\n` +
   'Received:\n' +
   `  ${printReceived(actual)}`;
