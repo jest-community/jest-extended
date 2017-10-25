@@ -151,6 +151,16 @@
         "code",
         "test"
       ]
+    },
+    {
+      "login": "tophernuts",
+      "name": "Chris Hut",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/4359781?v=4",
+      "profile": "https://github.com/tophernuts",
+      "contributions": [
+        "code",
+        "test"
+      ]
     }
   ]
 }

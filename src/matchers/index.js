@@ -17,6 +17,7 @@ import toBeObject from './toBeObject';
 import toContainAllKeys from './toContainAllKeys';
 import toContainAnyKeys from './toContainAnyKeys';
 import toContainKeys from './toContainKeys';
+import toBeFinite from './toBeFinite';
 
 export default [
   toBeEven,
@@ -37,5 +38,6 @@ export default [
   toBeObject,
   toContainAllKeys,
   toContainAnyKeys,
-  toContainKeys
+  toContainKeys,
+  toBeFinite
 ].reduce((acc, matcher) => ({ ...acc, ...matcher }), {});
