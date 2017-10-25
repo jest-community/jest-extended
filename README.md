@@ -214,7 +214,6 @@ test('passes when number is within given bounds', () => {
 
 ### .toContainKey(key)
 
-
 Use `.toContainKey` when checking if an object contains the provided key.
 
 ```js
@@ -513,7 +512,6 @@ test('passes when value is a positive number', () => {
 ```
 
 ### .toBeNegative()
-
 
 Use `.toBeNegative` when checking if a value is a negative `Number`.
 
