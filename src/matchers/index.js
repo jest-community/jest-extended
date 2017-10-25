@@ -1,3 +1,4 @@
+import toBeEven from './toBeEven';
 import toBeTrue from './toBeTrue';
 import toContainValue from './toContainValue';
 import toContainValues from './toContainValues';
@@ -15,6 +16,7 @@ import toBeFrozen from './toBeFrozen';
 import toBeObject from './toBeObject';
 
 export default [
+  toBeEven,
   toBeTrue,
   toContainValue,
   toContainValues,
