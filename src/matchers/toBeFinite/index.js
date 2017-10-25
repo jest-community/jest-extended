@@ -12,7 +12,6 @@ const failMessage = received => () =>
   matcherHint('.toBeFinite', 'received', '') +
   '\n\n' +
   'Expected value to be finite:\n' +
-  `  ${printExpected(1)}\n` +
   'Received:\n' +
   `  ${printReceived(received)}`;
 
