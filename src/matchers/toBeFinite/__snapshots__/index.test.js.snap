@@ -11,7 +11,6 @@ exports[`.toBeFinite fails when not given Infinity 1`] = `
 "<dim>expect(</><red>received</><dim>).toBeFinite(</><dim>)</>
 
 Expected value to be finite:
-  <green>1</>
 Received:
   <red>Infinity</>"
 `;
@@ -20,7 +19,6 @@ exports[`.toBeFinite fails when not given NaN 1`] = `
 "<dim>expect(</><red>received</><dim>).toBeFinite(</><dim>)</>
 
 Expected value to be finite:
-  <green>1</>
 Received:
   <red>NaN</>"
 `;
