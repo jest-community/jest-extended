@@ -619,8 +619,6 @@ test('passes when value is a number', () => {
 
 ### .toBeBoolean()
 
-_Note: Currently unimplemented_
-
 Use `.toBeBoolean` when checking if a value is a `Boolean`.
 
 ```js
