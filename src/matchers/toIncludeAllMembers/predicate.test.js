@@ -1,6 +1,6 @@
 import predicate from './predicate';
 
-describe('toHaveAllMembers Predicate', () => {
+describe('toIncludeAllMembers Predicate', () => {
   const array1 = [1, 2, 3];
   const set1 = [2, 1, 3];
   const array2 = [4, 5, 6];

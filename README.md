@@ -56,8 +56,8 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
   * [.toContainAllEntries([[key, value]])](#tocontainallentrieskey-value)
   * [.toContainAnyEntries([[key, value]])](#tocontainanyentrieskey-value)
   * [.toSatisfy(predicate)](#tosatisfypredicate)
-  * [.toHaveAllMembers([members])](#tohaveallmembersmembers)
-  * [.toHaveSomeMembers([members])](#tohavesomemembersmembers)
+  * [.toIncludeAllMembers([members])](#toincludeallmembersmembers)
+  * [.toIncludeAnyMembers([members])](#toincludeanymbersmembers)
   * [.toBeOneOf([members])](#tobeoneofmembers)
   * [.toBeExtensible()](#tobeextensible)
   * [.toBeSealed()](#tobesealed)
@@ -399,16 +399,14 @@ test('passes when value passes given predicate', () => {
 });
 ```
 
-### .toHaveAllMembers([members])
+### .toIncludeAllMembers([members])
 
-_Note: Currently unimplemented_
-
-Use `.toHaveAllMembers` when checking if an `Array` contains all of the same members of a given set.
+Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
 
 ```js
 test('passes when given array values match the members of the set', () => {
-  expect([1, 2, 3]).toHaveAllMembers([2, 1, 3]);
-  expect([1, 2, 2]).toHaveAllMembers([2, 1]);
+  expect([1, 2, 3]).toIncludeAllMembers([2, 1, 3]);
+  expect([1, 2, 2]).toIncludeAllMembers([2, 1]);
 });
 ```
 

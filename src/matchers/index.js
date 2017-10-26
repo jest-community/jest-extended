@@ -19,7 +19,7 @@ import toContainAnyKeys from './toContainAnyKeys';
 import toContainKeys from './toContainKeys';
 import toBeFinite from './toBeFinite';
 import toIncludeAnyMembers from './toIncludeAnyMembers';
-import toHaveAllMembers from './toHaveAllMembers';
+import toIncludeAllMembers from './toIncludeAllMembers';
 
 export default [
   toBeEven,
@@ -43,5 +43,5 @@ export default [
   toContainKeys,
   toBeFinite,
   toIncludeAnyMembers,
-  toHaveAllMembers
+  toIncludeAllMembers
 ].reduce((acc, matcher) => ({ ...acc, ...matcher }), {});
