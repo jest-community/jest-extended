@@ -161,6 +161,16 @@
         "code",
         "test"
       ]
+    },
+    {
+      "login": "cactorium",
+      "name": "Kelvin Ly",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1513183?v=4",
+      "profile": "https://github.com/cactorium",
+      "contributions": [
+        "code",
+        "test"
+      ]
     }
   ]
 }
