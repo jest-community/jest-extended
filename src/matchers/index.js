@@ -22,6 +22,7 @@ import toIncludeAnyMembers from './toIncludeAnyMembers';
 import toIncludeAllMembers from './toIncludeAllMembers';
 import toBeNaN from './toBeNaN';
 import toBePositive from './toBePositive';
+import toInclude from './toInclude';
 
 export default [
   toBeEven,
@@ -47,5 +48,6 @@ export default [
   toIncludeAnyMembers,
   toIncludeAllMembers,
   toBeNaN,
-  toBePositive
+  toBePositive,
+  toInclude
 ].reduce((acc, matcher) => ({ ...acc, ...matcher }), {});
