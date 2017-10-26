@@ -2,14 +2,13 @@ import { matcherHint, printExpected, printReceived } from 'jest-matcher-utils';
 
 import predicate from './predicate';
 
-const passMessage = (actual, expected) => () => {
+const passMessage = (actual, expected) => () =>
   matcherHint('.not.toInclude') +
-    '\n\n' +
-    'Expected string to not include:\n' +
-    `  ${printExpected(expected)}\n` +
-    'Received:\n' +
-    `  ${printReceived(actual)}`;
-};
+  '\n\n' +
+  'Expected string to not include:\n' +
+  `  ${printExpected(expected)}\n` +
+  'Received:\n' +
+  `  ${printReceived(actual)}`;
 
 const failMessage = (actual, expected) => () =>
   matcherHint('.toInclude') +
