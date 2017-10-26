@@ -28,7 +28,158 @@
       "profile": "https://btnwtn.com",
       "contributions": [
         "code",
+        "doc",
+        "test"
+      ]
+    },
+    {
+      "login": "GaryLeutheuser",
+      "name": "Gary Leutheuser",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/8472688?v=4",
+      "profile": "https://GaryLeutheuser.github.io",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "lindgr3n",
+      "name": "Johan Lindgren",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/24882614?v=4",
+      "profile": "https://github.com/lindgr3n",
+      "contributions": [
+        "code",
+        "doc",
+        "test"
+      ]
+    },
+    {
+      "login": "andrewhayward",
+      "name": "Andrew Hayward",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/159848?v=4",
+      "profile": "http://andrewhayward.net",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "olsio",
+      "name": "Oliver Schneider",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/6209178?v=4",
+      "profile": "https://ols.io",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "tjwhalen16",
+      "name": "Tyle Whalen",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/22359375?s=460&v=4",
+      "profile": "https://github.com/tjwhalen16",
+      "contributions": [
+        "code",
         "doc"
+      ]
+    },
+    {
+      "login": "martiuslim",
+      "name": "Martius",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/17944339?v=4",
+      "profile": "https://github.com/martiuslim",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "ecollis6",
+      "name": "Eli Collis",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/10856932?v=4",
+      "profile": "https://github.com/ecollis6",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "marcinlichwala",
+      "name": "Marcin Lichwała",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/10706203?v=4",
+      "profile": "https://github.com/marcinlichwala",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "mprencipe",
+      "name": "Massimo Prencipe",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1984733?v=4",
+      "profile": "https://github.com/mprencipe",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "garmeeh",
+      "name": "Gary Meehan",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13333582?v=4",
+      "profile": "https://github.com/garmeeh",
+      "contributions": [
+        "code",
+        "doc",
+        "test"
+      ]
+    },
+    {
+      "login": "GitHug",
+      "name": "Fredrik Mäkilä",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/3191489?v=4",
+      "profile": "https://github.com/GitHug",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "danielr18",
+      "name": "Daniel Reinoso",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/9046616?v=4",
+      "profile": "http://kloc.io/",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "tophernuts",
+      "name": "Chris Hut",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/4359781?v=4",
+      "profile": "https://github.com/tophernuts",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "cactorium",
+      "name": "Kelvin Ly",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1513183?v=4",
+      "profile": "https://github.com/cactorium",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "francisngo",
+      "name": "Francis Ngo",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/11182826?v=4",
+      "profile": "https://github.com/francisngo",
+      "contributions": [
+        "code",
+        "test"
       ]
     }
   ]
