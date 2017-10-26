@@ -17,15 +17,13 @@ describe('.toBeBoolean', () => {
     expect(1 === 1).toBeBoolean();
   });
 
-  if (
-    ('passes when given an object of type Boolean',
-    () => {
-      expect(new Boolean()).toBeBoolean();
-    })
-  )
-    it('fails when not given a boolean', () => {
-      expect(() => expect(1).toBeBoolean()).toThrowErrorMatchingSnapshot();
-    });
+  it('passes when given an object of type Boolean', () => {
+    expect(new Boolean()).toBeBoolean();
+  });
+
+  it('fails when not given a boolean', () => {
+    expect(() => expect(1).toBeBoolean()).toThrowErrorMatchingSnapshot();
+  });
 });
 
 describe('.not.toBeBoolean', () => {
