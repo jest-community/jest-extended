@@ -1,7 +1,5 @@
-import { equals } from 'expect/build/jasmine_utils';
+import { contains } from '../../utils';
 
-export default (actual, ary) => {
-  const result =
-    Array.isArray(actual) && Array.isArray(ary) && actual.some(elem => ary.some(aryElem => equals(elem, aryElem)));
-  return result;
+export default (array, members) => {
+  return Array.isArray(array) && Array.isArray(members) && members.some(member => contains(array, member));
 };

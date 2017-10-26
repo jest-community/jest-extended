@@ -3,7 +3,7 @@
 exports[`.not.toHaveSomeMembers fails when given array contains array value 1`] = `
 "<dim>expect(</><red>received</><dim>).not.toHaveSomeMembers(</><green>expected</><dim>)</>
 
-Expected list to not have any members of:
+Expected list to not have some members of:
   <green>[[{\\"hello\\": \\"world\\"}], 7]</>
 Received:
   <red>[[{\\"hello\\": \\"world\\"}]]</>"
@@ -12,7 +12,7 @@ Received:
 exports[`.not.toHaveSomeMembers fails when given array contains object value 1`] = `
 "<dim>expect(</><red>received</><dim>).not.toHaveSomeMembers(</><green>expected</><dim>)</>
 
-Expected list to not have any members of:
+Expected list to not have some members of:
   <green>[{\\"foo\\": \\"bar\\"}]</>
 Received:
   <red>[{\\"foo\\": \\"bar\\"}]</>"
@@ -21,7 +21,7 @@ Received:
 exports[`.not.toHaveSomeMembers fails when given object contains primitive value 1`] = `
 "<dim>expect(</><red>received</><dim>).not.toHaveSomeMembers(</><green>expected</><dim>)</>
 
-Expected list to not have any members of:
+Expected list to not have some members of:
   <green>[7, 8]</>
 Received:
   <red>[7]</>"
@@ -30,7 +30,7 @@ Received:
 exports[`.toHaveSomeMembers fails when expected object does not contain array value 1`] = `
 "<dim>expect(</><red>received</><dim>).toHaveSomeMembers(</><green>expected</><dim>)</>
 
-Expected object to have some member of :
+Expected list to have some member of :
   <green>\\"world\\"</>
 Received:
   <red>[1, 2, 3]</>"
@@ -39,7 +39,7 @@ Received:
 exports[`.toHaveSomeMembers fails when given array does not contain any members  1`] = `
 "<dim>expect(</><red>received</><dim>).toHaveSomeMembers(</><green>expected</><dim>)</>
 
-Expected object to have some member of :
+Expected list to have some member of :
   <green>[1, 2, 3]</>
 Received:
   <red>[4, 5, 6]</>"
@@ -48,7 +48,7 @@ Received:
 exports[`.toHaveSomeMembers fails when given object is not an array 1`] = `
 "<dim>expect(</><red>received</><dim>).toHaveSomeMembers(</><green>expected</><dim>)</>
 
-Expected object to have some member of :
+Expected list to have some member of :
   <green>[1, 2, 3]</>
 Received:
   <red>7</>"

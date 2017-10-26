@@ -5,7 +5,7 @@ import predicate from './predicate';
 const passMessage = (actual, expected) => () =>
   matcherHint('.not.toHaveSomeMembers') +
   '\n\n' +
-  'Expected list to not have any members of:\n' +
+  'Expected list to not have some members of:\n' +
   `  ${printExpected(expected)}\n` +
   'Received:\n' +
   `  ${printReceived(actual)}`;
@@ -13,7 +13,7 @@ const passMessage = (actual, expected) => () =>
 const failMessage = (actual, expected) => () =>
   matcherHint('.toHaveSomeMembers') +
   '\n\n' +
-  'Expected object to have some member of :\n' +
+  'Expected list to have some member of :\n' +
   `  ${printExpected(expected)}\n` +
   'Received:\n' +
   `  ${printReceived(actual)}`;
