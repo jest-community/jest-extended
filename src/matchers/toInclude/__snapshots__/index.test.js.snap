@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.toInclude .not.toInclude fails when a string does have a given substring 1`] = `"<red>No message was specified for this matcher.</>"`;
+
+exports[`.toInclude fails when a string does not have a given substring 1`] = `
+"<dim>expect(</><red>received</><dim>).toInclude(</><green>expected</><dim>)</>
+
+Expected string to include:
+  <green>\\"bob\\"</>
+Received:
+  <red>\\"hello world\\"</>"
+`;
