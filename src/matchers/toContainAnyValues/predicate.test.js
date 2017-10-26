@@ -1,10 +1,8 @@
 import predicate from './predicate';
 
-const data = { hello: 'world' };
+const data = { a: 'foo', b: 'bar', c: 'baz' };
 
 describe('toContainAnyValues Predicate', () => {
-  const data = { a: 'foo', b: 'bar', c: 'baz' };
-
   it('passes when object contains at least one of the given values ', () => {
     expect(predicate(data, ['qux', 'foo'])).toBe(true);
     expect(predicate(data, ['qux', 'bar'])).toBe(true);
