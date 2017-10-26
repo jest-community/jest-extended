@@ -1,4 +1,4 @@
-import { matcherHint, printExpected, printReceived } from 'jest-matcher-utils';
+import { matcherHint, printReceived } from 'jest-matcher-utils';
 
 import predicate from './predicate';
 
@@ -11,8 +11,7 @@ const passMessage = received => () =>
 const failMessage = received => () =>
   matcherHint('.toBeFinite', 'received', '') +
   '\n\n' +
-  'Expected value to be finite:\n' +
-  'Received:\n' +
+  'Expected value to be finite received:\n' +
   `  ${printReceived(received)}`;
 
 export default {
