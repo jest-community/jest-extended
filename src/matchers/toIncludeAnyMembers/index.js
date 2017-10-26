@@ -3,23 +3,23 @@ import { matcherHint, printExpected, printReceived } from 'jest-matcher-utils';
 import predicate from './predicate';
 
 const passMessage = (actual, expected) => () =>
-  matcherHint('.not.toHaveSomeMembers') +
+  matcherHint('.not.toIncludeAnyMembers') +
   '\n\n' +
-  'Expected list to not have some members of:\n' +
+  'Expected list to not include any of the following members:\n' +
   `  ${printExpected(expected)}\n` +
   'Received:\n' +
   `  ${printReceived(actual)}`;
 
 const failMessage = (actual, expected) => () =>
-  matcherHint('.toHaveSomeMembers') +
+  matcherHint('.toIncludeAnyMembers') +
   '\n\n' +
-  'Expected list to have some member of :\n' +
+  'Expected list to include any of the following members:\n' +
   `  ${printExpected(expected)}\n` +
   'Received:\n' +
   `  ${printReceived(actual)}`;
 
 export default {
-  toHaveSomeMembers: (actual, expected) => {
+  toIncludeAnyMembers: (actual, expected) => {
     const pass = predicate(actual, expected);
     if (pass) {
       return { pass: true, message: passMessage(actual, expected) };

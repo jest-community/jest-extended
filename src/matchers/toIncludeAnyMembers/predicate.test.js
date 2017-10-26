@@ -1,7 +1,7 @@
 import each from 'jest-each';
 import predicate from './predicate';
 
-describe('toHaveSomeMembers Predicate', () => {
+describe('toIncludeAnyMembers Predicate', () => {
   const array = ['world', false, undefined, null, '', 0];
   const shallow = { hello: 'world' };
 
