@@ -10,8 +10,6 @@ Expected value to not be positive received:
 exports[`.toBePositive fails when not given a positive number 1`] = `
 "<dim>expect(</><red>received</><dim>).toBePositive(</><dim>)</>
 
-Expected value to be positive:
-  <green>true</>
-Received:
+Expected value to be positive received:
   <red>-1</>"
 `;
