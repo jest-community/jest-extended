@@ -9,6 +9,7 @@ describe('.toHaveAllMembers', () => {
   it('passes when array values matches the members of the set', () => {
     expect(array1).toHaveAllMembers([2, 1, 3]);
     expect(array2).toHaveAllMembers([2, 1]);
+    expect([{ foo: 'bar' }, { baz: 'qux' }]).toHaveAllMembers([{ foo: 'bar' }]);
   });
 
   it('fails when array values do not contain any of the members of the set', () => {
@@ -29,6 +30,7 @@ describe('.not.toHaveAllMembers', () => {
 
   it('passes when array values does not contain any members of the set', () => {
     expect(array1).not.toHaveAllMembers([4, 5, 6]);
+    expect([{ foo: 'bar' }, { baz: 'qux' }]).not.toHaveAllMembers([{ hello: 'world' }]);
   });
 
   it('passes when given object is not an array', () => {

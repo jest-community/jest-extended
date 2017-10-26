@@ -1,22 +1,22 @@
-import { matcherHint, printExpected, printRecieved } from 'jest-matcher-utils';
+import { matcherHint, printExpected, printReceived } from 'jest-matcher-utils';
 
 import predicate from './predicate';
 
 const passMessage = (actual, expected) => () =>
   matcherHint('.not.toHaveAllMembers') +
   '\n\n' +
-  'Expected collection to not have any members of:\n' +
+  'Expected list to not have all of the following members:\n' +
   `  ${printExpected(expected)}\n` +
-  'Recieved:\n' +
-  `  ${printRecieved(actual)}`;
+  'Received:\n' +
+  `  ${printReceived(actual)}`;
 
 const failMessage = (actual, expected) => () =>
   matcherHint('.toHaveAllMembers') +
   '\n\n' +
-  'Expected collection to have all members of:\n' +
+  'Expected list to have all of the following members:\n' +
   `  ${printExpected(expected)}\n` +
-  'Recieved:\n' +
-  `  ${printRecieved(actual)}`;
+  'Received:\n' +
+  `  ${printReceived(actual)}`;
 
 export default {
   toHaveAllMembers: (actual, expected) => {
