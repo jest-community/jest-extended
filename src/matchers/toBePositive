@@ -1,0 +1,15 @@
+function toBePositive(val){
+      if(Math.sign(val) <= -1){
+        
+       return 'please put a positive number';
+      } else if(val == Infinity){
+        return 'please put a positive number';
+      }else if(isNaN(val)){
+        return 'please put a positive number';
+      }
+      return val + ' is a positive Number';
+}
+  
+  
+  
+toBePositive(1);
