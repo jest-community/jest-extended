@@ -166,8 +166,6 @@ test('passes when value is null or undefined', () => {
 
 ### .toBeNaN()
 
-_Note: Currently unimplemented_
-
 Use `.toBeNaN` when checking a value is `NaN`.
 
 ```js
