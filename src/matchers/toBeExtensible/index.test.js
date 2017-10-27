@@ -9,13 +9,31 @@ describe('.toBeExtensible', () => {
     expect(given).toBeExtensible();
   });
 
-  each([[false], [''], [0], [undefined], [null], [NaN]]).it('fails when not given an extensible object: %s', given => {
+  each([
+    [false],
+    [''],
+    [0],
+    [undefined],
+    [null],
+    [NaN],
+    [Object.seal({})],
+    [Object.freeze({})]
+  ]).it('fails when not given an extensible object: %s', given => {
     expect(() => expect(given).toBeExtensible()).toThrowErrorMatchingSnapshot();
   });
 });
 
 describe('.not.toBeExtensible', () => {
-  each([[false], [''], [0], [undefined], [null], [NaN]]).it('passes when not given extensible object: %s', given => {
+  each([
+    [false],
+    [''],
+    [0],
+    [undefined],
+    [null],
+    [NaN],
+    [Object.seal({})],
+    [Object.freeze({})]
+  ]).it('passes when not given extensible object: %s', given => {
     expect(given).not.toBeExtensible();
   });
 
