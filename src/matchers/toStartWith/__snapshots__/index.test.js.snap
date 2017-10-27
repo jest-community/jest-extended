@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toStartWith fails when string starts with given prefix 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toStartWith(</><green>expected</><dim>)</>
+
+Expected string to not start with:
+  <green>\\"hello\\"</>
+Received:
+  <red>\\"hello world\\"</>"
+`;
+
+exports[`.toStartWith fails when string does not start with the given prefix 1`] = `
+"<dim>expect(</><red>received</><dim>).toStartWith(</><green>expected</><dim>)</>
+
+Expected string to start with:
+  <green>\\"world\\"</>
+Received:
+  <red>\\"hello world\\"</>"
+`;
+
+exports[`.toStartWith fails when the string is shorter than the given prefix 1`] = `
+"<dim>expect(</><red>received</><dim>).toStartWith(</><green>expected</><dim>)</>
+
+Expected string to start with:
+  <green>\\"hello world\\"</>
+Received:
+  <red>\\"hello\\"</>"
+`;

@@ -1,9 +1,6 @@
-import { equals } from 'expect/build/jasmine_utils';
+import { contains } from '../../utils';
 
 export default (actual, value) => {
-  const result = Object.keys(actual)
-    .map(k => actual[k])
-    .find(v => equals(v, value));
-
-  return result !== undefined || value === undefined;
+  const objectValues = Object.keys(actual).map(k => actual[k]);
+  return contains(objectValues, value);
 };
