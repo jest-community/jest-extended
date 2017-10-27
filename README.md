@@ -119,8 +119,6 @@ test('is jest cool', () => {
 
 ### .toBeFalse()
 
-_Note: Currently unimplemented_
-
 Use `.toBeFalse` when checking a value is equal (===) to `false`.
 
 ```js
