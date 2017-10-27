@@ -2,7 +2,7 @@ import each from 'jest-each';
 import predicate from './predicate';
 
 describe('toBeArray Predicate', () => {
-  it('returns true when given a string', () => {
+  it('returns true when given an array', () => {
     expect(predicate(['an array'])).toBe(true);
   });
 

@@ -1,4 +1,4 @@
-import { matcherHint, printExpected, printReceived } from 'jest-matcher-utils';
+import { matcherHint, printReceived } from 'jest-matcher-utils';
 
 import predicate from './predicate';
 
@@ -12,8 +12,6 @@ const failMessage = received => () =>
   matcherHint('.toBeArray', 'received', '') +
   '\n\n' +
   'Expected value to be an array received:\n' +
-  `  ${printExpected(true)}\n` +
-  'Received:\n' +
   `  ${printReceived(received)}`;
 
 export default {

@@ -11,7 +11,5 @@ exports[`.toBeArray fails when not given an array 1`] = `
 "<dim>expect(</><red>received</><dim>).toBeArray(</><dim>)</>
 
 Expected value to be an array received:
-  <green>true</>
-Received:
   <red>false</>"
 `;
