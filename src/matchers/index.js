@@ -1,4 +1,5 @@
 import toBeTrue from './toBeTrue';
+import toBeFalse from './toBeFalse';
 import toContainValue from './toContainValue';
 import toContainValues from './toContainValues';
 import toEqualCaseInsensitive from './toEqualCaseInsensitive';
@@ -15,6 +16,7 @@ import toBeFrozen from './toBeFrozen';
 
 export default [
   toBeTrue,
+  toBeFalse,
   toContainValue,
   toContainValues,
   toEqualCaseInsensitive,
