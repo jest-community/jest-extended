@@ -30,6 +30,7 @@ import toBeFunction from './toBeFunction';
 import toBeNumber from './toBeNumber';
 import toBeOdd from './toBeOdd';
 import toContainAllValues from './toContainAllValues';
+import toContainEntry from './toContainEntry';
 
 export default [
   toBeEven,
@@ -63,5 +64,6 @@ export default [
   toBeFunction,
   toBeNumber,
   toBeOdd,
-  toContainAllValues
+  toContainAllValues,
+  toContainEntry
 ].reduce((acc, matcher) => ({ ...acc, ...matcher }), {});
