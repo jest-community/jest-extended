@@ -16,7 +16,7 @@ describe('.toBeNumber', () => {
 
 describe('.not.toBeNumber', () => {
   each([[false], [true], [[]], [{}], [() => {}], [undefined], [null], [NaN]]).it(
-    'passes when not given an array: %s',
+    'passes when not given a number: %s',
     given => {
       expect(given).not.toBeNumber();
     }

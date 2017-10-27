@@ -10,8 +10,6 @@ Expected value to not be a number received:
 exports[`.toBeNumber fails when not given a number 1`] = `
 "<dim>expect(</><red>received</><dim>).toBeNumber(</><dim>)</>
 
-Expected value to be a number:
-  <green>true</>
-Received:
+Expected value to be a number received:
   <red>false</>"
 `;
