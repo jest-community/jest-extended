@@ -1,3 +1,4 @@
+import toBeEven from './toBeEven';
 import toBeTrue from './toBeTrue';
 import toContainValue from './toContainValue';
 import toContainValues from './toContainValues';
@@ -12,8 +13,19 @@ import toBeWithin from './toBeWithin';
 import toIncludeMultiple from './toIncludeMultiple';
 import toEndWith from './toEndWith';
 import toBeFrozen from './toBeFrozen';
+import toBeObject from './toBeObject';
+import toContainAllKeys from './toContainAllKeys';
+import toContainAnyKeys from './toContainAnyKeys';
+import toContainKeys from './toContainKeys';
+import toBeFinite from './toBeFinite';
+import toIncludeAnyMembers from './toIncludeAnyMembers';
+import toIncludeAllMembers from './toIncludeAllMembers';
+import toBeNaN from './toBeNaN';
+import toBePositive from './toBePositive';
+import toInclude from './toInclude';
 
 export default [
+  toBeEven,
   toBeTrue,
   toContainValue,
   toContainValues,
@@ -27,5 +39,15 @@ export default [
   toBeWithin,
   toIncludeMultiple,
   toEndWith,
-  toBeFrozen
+  toBeFrozen,
+  toBeObject,
+  toContainAllKeys,
+  toContainAnyKeys,
+  toContainKeys,
+  toBeFinite,
+  toIncludeAnyMembers,
+  toIncludeAllMembers,
+  toBeNaN,
+  toBePositive,
+  toInclude
 ].reduce((acc, matcher) => ({ ...acc, ...matcher }), {});
