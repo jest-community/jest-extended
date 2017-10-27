@@ -10,80 +10,62 @@ Expected value to not be odd received:
 exports[`.toBeOdd fails when given not given an odd number 1`] = `
 "<dim>expect(</><red>received</><dim>).toBeOdd(</><dim>)</>
 
-Expected value to be odd:
-  <green>true</>
-Received:
+Expected value to be odd received:
   <red>false</>"
 `;
 
 exports[`.toBeOdd fails when given not given an odd number 2`] = `
 "<dim>expect(</><red>received</><dim>).toBeOdd(</><dim>)</>
 
-Expected value to be odd:
-  <green>true</>
-Received:
+Expected value to be odd received:
   <red>true</>"
 `;
 
 exports[`.toBeOdd fails when given not given an odd number 3`] = `
 "<dim>expect(</><red>received</><dim>).toBeOdd(</><dim>)</>
 
-Expected value to be odd:
-  <green>true</>
-Received:
+Expected value to be odd received:
   <red>\\"\\"</>"
 `;
 
 exports[`.toBeOdd fails when given not given an odd number 4`] = `
 "<dim>expect(</><red>received</><dim>).toBeOdd(</><dim>)</>
 
-Expected value to be odd:
-  <green>true</>
-Received:
+Expected value to be odd received:
   <red>2</>"
 `;
 
 exports[`.toBeOdd fails when given not given an odd number 5`] = `
 "<dim>expect(</><red>received</><dim>).toBeOdd(</><dim>)</>
 
-Expected value to be odd:
-  <green>true</>
-Received:
+Expected value to be odd received:
   <red>{}</>"
 `;
 
 exports[`.toBeOdd fails when given not given an odd number 6`] = `
 "<dim>expect(</><red>received</><dim>).toBeOdd(</><dim>)</>
 
-Expected value to be odd:
-  <green>true</>
-Received:
+Expected value to be odd received:
   <red>[Function anonymous]</>"
 `;
 
 exports[`.toBeOdd fails when given not given an odd number 7`] = `
 "<dim>expect(</><red>received</><dim>).toBeOdd(</><dim>)</>
 
-Expected value to be odd:
-  <green>true</>
-Received:
+Expected value to be odd received:
   <red>undefined</>"
 `;
 
 exports[`.toBeOdd fails when given not given an odd number 8`] = `
 "<dim>expect(</><red>received</><dim>).toBeOdd(</><dim>)</>
 
-Expected value to be odd:
-  <green>true</>
-Received:
+Expected value to be odd received:
   <red>null</>"
 `;
 
 exports[`.toBeOdd fails when given not given an odd number 9`] = `
 "<dim>expect(</><red>received</><dim>).toBeOdd(</><dim>)</>
 
-Expected value to be odd:
-  <green>true</>
-Received:
+Expected value to be odd received:
   <red>NaN</>"
 `;

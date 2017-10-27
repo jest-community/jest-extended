@@ -1,4 +1,4 @@
-import { matcherHint, printExpected, printReceived } from 'jest-matcher-utils';
+import { matcherHint, printReceived } from 'jest-matcher-utils';
 
 import predicate from './predicate';
 
@@ -11,9 +11,7 @@ const passMessage = received => () =>
 const failMessage = received => () =>
   matcherHint('.toBeOdd', 'received', '') +
   '\n\n' +
-  'Expected value to be odd:\n' +
-  `  ${printExpected(true)}\n` +
-  'Received:\n' +
+  'Expected value to be odd received:\n' +
   `  ${printReceived(received)}`;
 
 export default {
