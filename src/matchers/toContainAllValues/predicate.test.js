@@ -30,6 +30,10 @@ describe('toContainAllValues Predicate', () => {
   });
 
   describe('returns false', () => {
+    it('returns false when object does not contain all values', () => {
+      const o = { a: 'foo', b: 'bar', c: 'baz' };
+      expect(predicate(o, ['foo', 'bar', 'baz', 'qux'])).toBe(false);
+    });
     it('when given object does not contain all primitive value', () => {
       expect(predicate(shallow, ['world', false])).toBe(false);
     });
