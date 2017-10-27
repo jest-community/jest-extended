@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`.not.toBeFunction fails when given true 1`] = `
+exports[`.not.toBeFunction fails when given a function 1`] = `
 "<dim>expect(</><red>received</><dim>).not.toBeFunction(</><dim>)</>
 
 Expected value to not be a function, received:

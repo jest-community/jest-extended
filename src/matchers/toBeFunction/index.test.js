@@ -15,11 +15,14 @@ describe('.toBeFunction', () => {
 });
 
 describe('.not.toBeFunction', () => {
-  each([[false], [''], [0], [{}], [[]], [undefined], [null], [NaN]]).it('passes when not given true: %s', given => {
-    expect(given).not.toBeFunction();
-  });
+  each([[false], [''], [0], [{}], [[]], [undefined], [null], [NaN]]).it(
+    'passes when not given a function: %s',
+    given => {
+      expect(given).not.toBeFunction();
+    }
+  );
 
-  it('fails when given true', () => {
+  it('fails when given a function', () => {
     expect(() => expect(() => {}).not.toBeFunction()).toThrowErrorMatchingSnapshot();
   });
 });
