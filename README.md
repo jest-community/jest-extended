@@ -523,8 +523,6 @@ test('passes when value is an odd number', () => {
 
 ### .toBeFunction()
 
-_Note: Currently unimplemented_
-
 Use `.toBeFunction` when checking if a value is a `Function`.
 
 ```js
