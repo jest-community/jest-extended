@@ -348,8 +348,6 @@ test('passes when object contains all of the given entries', () => {
 
 ### .toContainAllEntries([[key, value]])
 
-_Note: Currently unimplemented_
-
 Use `.toContainAllEntries` when checking if an object only contains all of the provided entries.
 
 ```js

@@ -31,6 +31,7 @@ import toBeNumber from './toBeNumber';
 import toBeOdd from './toBeOdd';
 import toContainAllValues from './toContainAllValues';
 import toContainEntry from './toContainEntry';
+import toContainAllEntries from './toContainAllEntries';
 
 export default [
   toBeEven,
@@ -44,8 +45,8 @@ export default [
   toBeNegative,
   toBeOneOf,
   toContainKey,
-  toBeString,
   toBeExtensible,
+  toBeString,
   toBeWithin,
   toIncludeMultiple,
   toEndWith,
@@ -65,5 +66,6 @@ export default [
   toBeNumber,
   toBeOdd,
   toContainAllValues,
-  toContainEntry
+  toContainEntry,
+  toContainAllEntries
 ].reduce((acc, matcher) => ({ ...acc, ...matcher }), {});
