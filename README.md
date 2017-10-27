@@ -35,50 +35,62 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
 - [Installation](#installation)
 - [Setup](#setup)
 - [API](#api)
-  * [.toBeTrue()](#tobetrue)
-  * [.toBeFalse()](#tobefalse)
   * [.pass(message)](#passmessage)
   * [.fail(message)](#failmessage)
-  * [.toBeNil()](#tobenil)
-  * [.toBeNaN()](#tobenan)
   * [.toBeEmpty()](#tobeempty)
-  * [.toBeWithin(start, end)](#tobewithinstart-end)
-  * [.toContainKey(key)](#tocontainkeykey)
-  * [.toContainKeys([keys])](#tocontainkeyskeys)
-  * [.toContainAllKeys([keys])](#tocontainallkeyskeys)
-  * [.toContainAnyKeys([keys])](#tocontainanykeyskeys)
-  * [.toContainValue(value)](#tocontainvaluevalue)
-  * [.toContainValues([values])](#tocontainvaluesvalues)
-  * [.toContainAllValues([values])](#tocontainallvaluesvalues)
-  * [.toContainAnyValues([values])](#tocontainanyvaluesvalues)
-  * [.toContainEntry([key, value])](#tocontainentrykey-value)
-  * [.toContainEntries([[key, value]])](#tocontainentrieskey-value)
-  * [.toContainAllEntries([[key, value]])](#tocontainallentrieskey-value)
-  * [.toContainAnyEntries([[key, value]])](#tocontainanyentrieskey-value)
-  * [.toSatisfy(predicate)](#tosatisfypredicate)
-  * [.toIncludeAllMembers([members])](#toincludeallmembersmembers)
-  * [.toIncludeAnyMembers([members])](#toincludeanymbersmembers)
   * [.toBeOneOf([members])](#tobeoneofmembers)
-  * [.toBeExtensible()](#tobeextensible)
-  * [.toBeSealed()](#tobesealed)
-  * [.toBeFrozen()](#tobefrozen)
-  * [.toBeFinite()](#tobefinite)
-  * [.toBePositive()](#tobepositive)
-  * [.toBeNegative()](#tobenegative)
-  * [.toBeEven()](#tobeeven)
-  * [.toBeOdd()](#tobeodd)
-  * [.toBeFunction()](#tobefunction)
-  * [.toBeObject()](#tobeobject)
-  * [.toBeArray()](#tobearray)
-  * [.toBeString()](#tobestring)
-  * [.toBeNumber()](#tobenumber)
-  * [.toBeBoolean()](#tobeboolean)
-  * [.toStartWith(prefix)](#tostartwithprefix)
-  * [.toEndWith(suffix)](#toendwithsuffix)
-  * [.toInclude(substring)](#toincludesubstring)
-  * [.toIncludeRepeated(substring, times)](#toincluderepeatedsubstring-times)
-  * [.toIncludeMultiple([substring])](#toincludemultiplesubstring)
-  * [.toEqualCaseInsensitive(string)](#toequalcaseinsensitivestring)
+  * [.toBeNil()](#tobenil)
+  * [Array](#array)
+    * [.toBeArray()](#tobearray)
+    * [.toIncludeAllMembers([members])](#toincludeallmembersmembers)
+    * [.toIncludeAnyMembers([members])](#toincludeanymbersmembers)
+  * [Boolean](#boolean)
+    * [.toBeBoolean()](#tobeboolean)
+    * [.toBeTrue()](#tobetrue)
+    * [.toBeFalse()](#tobefalse)
+  * [~~Date~~](#date)
+    * _No APIs proposed yet_
+  * [Function](#function)
+    * [.toBeFunction()](#tobefunction)
+    * [.toSatisfy(predicate)](#tosatisfypredicate)
+  * [~~Mock~~](#mock)
+    * _No APIs proposed yet_
+  * [Number](#number)
+    * [.toBeNumber()](#tobenumber)
+    * [.toBeNaN()](#tobenan)
+    * [.toBeFinite()](#tobefinite)
+    * [.toBePositive()](#tobepositive)
+    * [.toBeNegative()](#tobenegative)
+    * [.toBeEven()](#tobeeven)
+    * [.toBeOdd()](#tobeodd)
+    * [.toBeWithin(start, end)](#tobewithinstart-end)
+  * [Object](#object)
+    * [.toBeObject()](#tobeobject)
+    * [.toContainKey(key)](#tocontainkeykey)
+    * [.toContainKeys([keys])](#tocontainkeyskeys)
+    * [.toContainAllKeys([keys])](#tocontainallkeyskeys)
+    * [.toContainAnyKeys([keys])](#tocontainanykeyskeys)
+    * [.toContainValue(value)](#tocontainvaluevalue)
+    * [.toContainValues([values])](#tocontainvaluesvalues)
+    * [.toContainAllValues([values])](#tocontainallvaluesvalues)
+    * [.toContainAnyValues([values])](#tocontainanyvaluesvalues)
+    * [.toContainEntry([key, value])](#tocontainentrykey-value)
+    * [.toContainEntries([[key, value]])](#tocontainentrieskey-value)
+    * [.toContainAllEntries([[key, value]])](#tocontainallentrieskey-value)
+    * [.toContainAnyEntries([[key, value]])](#tocontainanyentrieskey-value)
+    * [.toBeExtensible()](#tobeextensible)
+    * [.toBeFrozen()](#tobefrozen)
+    * [.toBeSealed()](#tobesealed)
+  * [~~Promise~~](#promise)
+    * _No APIs proposed yet_
+  * [String](#string)
+    * [.toBeString()](#tobestring)
+    * [.toEqualCaseInsensitive(string)](#toequalcaseinsensitivestring)
+    * [.toStartWith(prefix)](#tostartwithprefix)
+    * [.toEndWith(suffix)](#toendwithsuffix)
+    * [.toInclude(substring)](#toincludesubstring)
+    * [.toIncludeRepeated(substring, times)](#toincluderepeatedsubstring-times)
+    * [.toIncludeMultiple([substring])](#toincludemultiplesubstring)
 - [Contributors](#contributors)
 - [LICENSE](#license)
 
@@ -106,29 +118,7 @@ Add jest-extended to your Jest setupTestFrameworkScriptFile configuration. [See 
 
 ## API
 
-### .toBeTrue()
-
-Use `.toBeTrue` when checking a value is equal (===) to `true`.
-
-```js
-test('is jest cool', () => {
-  expect(isJestCool()).toBeTrue();
-  expect(false).not.toBeTrue();
-});
-```
-
-### .toBeFalse()
-
-Use `.toBeFalse` when checking a value is equal (===) to `false`.
-
-```js
-test('returns false', () => {
-  expect(areWeThereYet()).toBeFalse();
-  expect(true).not.toBeFalse();
-});
-```
-
-### .pass(message)
+#### .pass(message)
 
 _Note: Currently unimplemented_
 
@@ -138,7 +128,7 @@ Passing assertion.
 expect().pass('should pass');
 ```
 
-### .fail(message)
+#### .fail(message)
 
 _Note: Currently unimplemented_
 
@@ -148,32 +138,7 @@ Failing assertion.
 expect().fail('test should fail');
 ```
 
-### .toBeNil()
-
-_Note: Currently unimplemented_
-
-Use `.toBeNil` when checking a value is `null` or `undefined`.
-
-```js
-test('passes when value is null or undefined', () => {
-  expect(null).toBeNil();
-  expect(undefined).toBeNil();
-  expect(true).not.toBeNil();
-});
-```
-
-### .toBeNaN()
-
-Use `.toBeNaN` when checking a value is `NaN`.
-
-```js
-test('passes when value is NaN', () => {
-  expect(NaN).toBeNaN();
-  expect(1).not.toBeNaN();
-});
-```
-
-### .toBeEmpty()
+#### .toBeEmpty()
 
 _Note: Currently unimplemented_
 
@@ -196,7 +161,234 @@ test('passes when given an empty object', () => {
 });
 ```
 
-### .toBeWithin(start, end)
+#### .toBeOneOf([members])
+
+Use `.toBeOneOf` when checking if a value is a member of a given `Array`.
+
+```js
+test('passes when value is in given array', () => {
+  expect(1).toBeOneOf([1, 2, 3]);
+  expect(4).not.toBeOneOf([1, 2, 3]);
+});
+```
+
+#### .toBeNil()
+
+_Note: Currently unimplemented_
+
+Use `.toBeNil` when checking a value is `null` or `undefined`.
+
+```js
+test('passes when value is null or undefined', () => {
+  expect(null).toBeNil();
+  expect(undefined).toBeNil();
+  expect(true).not.toBeNil();
+});
+```
+
+### Array
+
+#### .toBeArray()
+
+Use `.toBeArray` when checking if a value is an `Array`.
+
+```js
+test('passes when value is an array', () => {
+  expect([]).toBeArray();
+  expect([1]).toBeArray();
+  expect(true).not.toBeArray();
+});
+```
+
+#### .toIncludeAllMembers([members])
+
+Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
+
+```js
+test('passes when given array values match the members of the set', () => {
+  expect([1, 2, 3]).toIncludeAllMembers([2, 1, 3]);
+  expect([1, 2, 2]).toIncludeAllMembers([2, 1]);
+});
+```
+
+#### .toIncludeAnyMembers([members])
+
+Use `.toIncludeAnyMembers` when checking if an `Array` contains any of the members of a given set.
+
+```js
+test('passes when given array values match any of the members in the set', () => {
+  expect([1, 2, 3]).toIncludeAnyMembers([2, 1, 3]);
+  expect([1, 2, 2]).toIncludeAnyMembers([2]);
+  expect([1, 2, 2]).not.toIncludeAnyMembers([3]);
+});
+```
+
+### Boolean
+
+#### .toBeBoolean()
+
+Use `.toBeBoolean` when checking if a value is a `Boolean`.
+
+```js
+test('passes when value is a boolean', () => {
+  expect(false).toBeBoolean();
+  expect(true).toBeBoolean();
+  expect(1 === 1).toBeBoolean();
+  expect(1).not.toBeBoolean();
+});
+```
+
+#### .toBeTrue()
+
+Use `.toBeTrue` when checking a value is equal (===) to `true`.
+
+```js
+test('is jest cool', () => {
+  expect(isJestCool()).toBeTrue();
+  expect(false).not.toBeTrue();
+});
+```
+
+#### .toBeFalse()
+
+Use `.toBeFalse` when checking a value is equal (===) to `false`.
+
+```js
+test('returns false', () => {
+  expect(areWeThereYet()).toBeFalse();
+  expect(true).not.toBeFalse();
+});
+```
+
+### ~~Date~~
+
+_No APIs proposed yet_
+
+### Function
+
+#### .toBeFunction()
+
+Use `.toBeFunction` when checking if a value is a `Function`.
+
+```js
+test('passes when value is a function', () => {
+  function noop = () {};
+  expect(() => {}).toBeFunction();
+  expect(function() {}).not.toBeFunction();
+  expect(noop).toBeFunction();
+  expect(true).not.toBeFunction();
+});
+```
+
+#### .toSatisfy(predicate)
+
+_Note: Currently unimplemented_
+
+Use `.toSatisfy` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean`.
+
+```js
+test('passes when value passes given predicate', () => {
+  const greaterThanOneButNotThree = n => n > 1 && n !== 3;
+  expect(100).toSatisfy(greaterThanOneButNotThree);
+  expect(0).not.toSatisfy(greaterThanOneButNotThree);
+  expect(3).not.toSatisfy(greaterThanOneButNotThree);
+});
+```
+
+### ~~Mock~~
+
+_No APIs proposed yet_
+
+### Number
+
+#### .toBeNumber()
+
+Use `.toBeNumber` when checking if a value is a `Number`.
+
+```js
+test('passes when value is a number', () => {
+  expect(1).toBeNumber();
+  expect(NaN).toBeNumber();
+  expect(Infinity).toBeNumber();
+  expect(true).not.toBeNumber();
+});
+```
+
+#### .toBeNaN()
+
+Use `.toBeNaN` when checking a value is `NaN`.
+
+```js
+test('passes when value is NaN', () => {
+  expect(NaN).toBeNaN();
+  expect(1).not.toBeNaN();
+});
+```
+
+#### .toBeFinite()
+
+Use `.toBeFinite` when checking if a value is a `Number`, not `NaN` or `Infinity`.
+
+```js
+test('passes when value is a finite number', () => {
+  expect(1).toBeFinite();
+  expect(Infinity).not.toBeFinite();
+  expect(NaN).not.toBeFinite();
+});
+```
+
+#### .toBePositive()
+
+Use `.toBePositive` when checking if a value is a positive `Number`.
+
+```js
+test('passes when value is a positive number', () => {
+  expect(1).toBePositive();
+  expect(Infinity).not.toBePositive();
+  expect(-1).not.toBePositive();
+  expect(NaN).not.toBePositive();
+});
+```
+
+#### .toBeNegative()
+
+Use `.toBeNegative` when checking if a value is a negative `Number`.
+
+```js
+test('passes when value is a negative number', () => {
+  expect(-1).toBeNegative();
+  expect(-Infinity).not.toBeNegative();
+  expect(1).not.toBeNegative();
+  expect(NaN).not.toBeNegative();
+});
+```
+
+#### .toBeEven()
+
+
+Use `.toBeEven` when checking if a value is an even `Number`.
+
+```js
+test('passes when value is an even number', () => {
+  expect(2).toBeEven();
+  expect(1).not.toBeEven();
+  expect(NaN).not.toBeEven();
+});
+```
+
+#### .toBeOdd()
+
+Use `.toBeOdd` when checking if a value is an odd `Number`.
+
+```js
+test('passes when value is an odd number', () => {
+  expect(1).toBeOdd();
+  expect(2).not.toBeOdd();
+  expect(NaN).not.toBeOdd();
+});
+```
+
+#### .toBeWithin(start, end)
 
 Use `.toBeWithin` when checking if a number is in between the given bounds of: start (inclusive) and end (exclusive).
 
@@ -208,7 +400,21 @@ test('passes when number is within given bounds', () => {
 });
 ```
 
-### .toContainKey(key)
+### Object
+
+#### .toBeObject()
+
+Use `.toBeObject` when checking if a value is an `Object`.
+
+```js
+test('passes when value is an object', () => {
+  expect({}).toBeObject();
+  expect({ a: 'hello' }).toBeObject();
+  expect(true).not.toBeObject();
+});
+```
+
+#### .toContainKey(key)
 
 Use `.toContainKey` when checking if an object contains the provided key.
 
@@ -222,7 +428,7 @@ test('passes when object contains the given key', () => {
 });
 ```
 
-### .toContainKeys([keys])
+#### .toContainKeys([keys])
 
 Use `.toContainKeys` when checking if an object has all of the provided keys.
 
@@ -235,7 +441,7 @@ test('passes when object contains all keys', () => {
 });
 ```
 
-### .toContainAllKeys([keys])
+#### .toContainAllKeys([keys])
 
 Use `.toContainAllKeys` when checking if an object only contains all of the provided keys.
 
@@ -248,7 +454,7 @@ test('passes when object only contains all keys', () => {
 });
 ```
 
-### .toContainAnyKeys([keys])
+#### .toContainAnyKeys([keys])
 
 Use `.toContainAnyKeys` when checking if an object contains at least one of the provided keys.
 
@@ -262,7 +468,7 @@ test('passes when object contains at least one matching key', () => {
 });
 ```
 
-### .toContainValue(value)
+#### .toContainValue(value)
 
 Use `.toContainValue` when checking if an object contains the provided value.
 
@@ -275,7 +481,7 @@ test('passes when object contains given value', () => {
 });
 ```
 
-### .toContainValues([values])
+#### .toContainValues([values])
 
 Use `.toContainValues` when checking if an object contains all of the provided values.
 
@@ -288,7 +494,7 @@ test('passes when object contains all of the given values', () => {
 });
 ```
 
-### .toContainAllValues([values])
+#### .toContainAllValues([values])
 
 Use `.toContainAllValues` when checking if an object only contains all of the provided values.
 
@@ -301,7 +507,7 @@ test('passes when object only contains all of the given values', () => {
 });
 ```
 
-### .toContainAnyValues([values])
+#### .toContainAnyValues([values])
 
 _Note: Currently unimplemented_
 
@@ -317,7 +523,7 @@ test('passes when object contains at least one of the given values', () => {
 });
 ```
 
-### .toContainEntry([key, value])
+#### .toContainEntry([key, value])
 
 Use `.toContainEntry` when checking if an object contains the provided entry.
 
@@ -331,7 +537,7 @@ test('passes when object contains given entry', () => {
 });
 ```
 
-### .toContainEntries([[key, value]])
+#### .toContainEntries([[key, value]])
 
 Use `.toContainEntries` when checking if an object contains all of the provided entries.
 
@@ -344,7 +550,7 @@ test('passes when object contains all of the given entries', () => {
 });
 ```
 
-### .toContainAllEntries([[key, value]])
+#### .toContainAllEntries([[key, value]])
 
 Use `.toContainAllEntries` when checking if an object only contains all of the provided entries.
 
@@ -356,7 +562,7 @@ test('passes when object only contains all of the given entries', () => {
 });
 ```
 
-### .toContainAnyEntries([[key, value]])
+#### .toContainAnyEntries([[key, value]])
 
 _Note: Currently unimplemented_
 
@@ -372,56 +578,7 @@ test('passes when object contains at least one of the given entries', () => {
 });
 ```
 
-### .toSatisfy(predicate)
-
-_Note: Currently unimplemented_
-
-Use `.toSatisfy` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean`.
-
-```js
-test('passes when value passes given predicate', () => {
-  const greaterThanOneButNotThree = n => n > 1 && n !== 3;
-  expect(100).toSatisfy(greaterThanOneButNotThree);
-  expect(0).not.toSatisfy(greaterThanOneButNotThree);
-  expect(3).not.toSatisfy(greaterThanOneButNotThree);
-});
-```
-
-### .toIncludeAllMembers([members])
-
-Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
-
-```js
-test('passes when given array values match the members of the set', () => {
-  expect([1, 2, 3]).toIncludeAllMembers([2, 1, 3]);
-  expect([1, 2, 2]).toIncludeAllMembers([2, 1]);
-});
-```
-
-### .toIncludeAnyMembers([members])
-
-Use `.toIncludeAnyMembers` when checking if an `Array` contains any of the members of a given set.
-
-```js
-test('passes when given array values match any of the members in the set', () => {
-  expect([1, 2, 3]).toIncludeAnyMembers([2, 1, 3]);
-  expect([1, 2, 2]).toIncludeAnyMembers([2]);
-  expect([1, 2, 2]).not.toIncludeAnyMembers([3]);
-});
-```
-
-### .toBeOneOf([members])
-
-Use `.toBeOneOf` when checking if a value is a member of a given `Array`.
-
-```js
-test('passes when value is in given array', () => {
-  expect(1).toBeOneOf([1, 2, 3]);
-  expect(4).not.toBeOneOf([1, 2, 3]);
-});
-```
-
-### .toBeExtensible()
+#### .toBeExtensible()
 
 Use `.toBeExtensible` when checking if an object is extensible.
 
@@ -432,7 +589,19 @@ test('passes when value is extensible', () => {
 });
 ```
 
-### .toBeSealed()
+#### .toBeFrozen()
+
+Use `.toBeFrozen` when checking if an object is frozon.
+
+```js
+test('passes when value is frozen', () => {
+  expect(Object.frozen({})).toBeFrozen();
+  expect({}).not.toBeFrozen();
+  expect(1).not.toBeFrozen();
+});
+```
+
+#### .toBeSealed()
 
 _Note: Currently unimplemented_
 
@@ -446,120 +615,13 @@ test('passes when value is sealed', () => {
 });
 ```
 
-### .toBeFrozen()
+### ~~Promise~~
 
-Use `.toBeFrozen` when checking if an object is frozon.
+_No APIs proposed yet_
 
-```js
-test('passes when value is frozen', () => {
-  expect(Object.frozen({})).toBeFrozen();
-  expect({}).not.toBeFrozen();
-  expect(1).not.toBeFrozen();
-});
-```
+### String
 
-### .toBeFinite()
-
-Use `.toBeFinite` when checking if a value is a `Number`, not `NaN` or `Infinity`.
-
-```js
-test('passes when value is a finite number', () => {
-  expect(1).toBeFinite();
-  expect(Infinity).not.toBeFinite();
-  expect(NaN).not.toBeFinite();
-});
-```
-
-### .toBePositive()
-
-Use `.toBePositive` when checking if a value is a positive `Number`.
-
-```js
-test('passes when value is a positive number', () => {
-  expect(1).toBePositive();
-  expect(Infinity).not.toBePositive();
-  expect(-1).not.toBePositive();
-  expect(NaN).not.toBePositive();
-});
-```
-
-### .toBeNegative()
-
-Use `.toBeNegative` when checking if a value is a negative `Number`.
-
-```js
-test('passes when value is a negative number', () => {
-  expect(-1).toBeNegative();
-  expect(-Infinity).not.toBeNegative();
-  expect(1).not.toBeNegative();
-  expect(NaN).not.toBeNegative();
-});
-```
-
-### .toBeEven()
-
-
-Use `.toBeEven` when checking if a value is an even `Number`.
-
-```js
-test('passes when value is an even number', () => {
-  expect(2).toBeEven();
-  expect(1).not.toBeEven();
-  expect(NaN).not.toBeEven();
-});
-```
-
-### .toBeOdd()
-
-Use `.toBeOdd` when checking if a value is an odd `Number`.
-
-```js
-test('passes when value is an odd number', () => {
-  expect(1).toBeOdd();
-  expect(2).not.toBeOdd();
-  expect(NaN).not.toBeOdd();
-});
-```
-
-### .toBeFunction()
-
-Use `.toBeFunction` when checking if a value is a `Function`.
-
-```js
-test('passes when value is a function', () => {
-  function noop = () {};
-  expect(() => {}).toBeFunction();
-  expect(function() {}).not.toBeFunction();
-  expect(noop).toBeFunction();
-  expect(true).not.toBeFunction();
-});
-```
-
-### .toBeObject()
-
-Use `.toBeObject` when checking if a value is an `Object`.
-
-```js
-test('passes when value is an object', () => {
-  expect({}).toBeObject();
-  expect({ a: 'hello' }).toBeObject();
-  expect(true).not.toBeObject();
-});
-```
-
-### .toBeArray()
-
-Use `.toBeArray` when checking if a value is an `Array`.
-
-```js
-test('passes when value is an array', () => {
-  expect([]).toBeArray();
-  expect([1]).toBeArray();
-  expect(true).not.toBeArray();
-});
-```
-
-### .toBeString()
+#### .toBeString()
 
 Use `.toBeString` when checking if a value is a `String`.
 
@@ -572,33 +634,21 @@ test('passes when value is a string', () => {
 });
 ```
 
-### .toBeNumber()
+#### .toEqualCaseInsensitive(string)
 
-Use `.toBeNumber` when checking if a value is a `Number`.
+Use `.toEqualCaseInsensitive` when checking if a string is equal (===) to another ignoring the casing of both strings.
 
 ```js
-test('passes when value is a number', () => {
-  expect(1).toBeNumber();
-  expect(NaN).toBeNumber();
-  expect(Infinity).toBeNumber();
-  expect(true).not.toBeNumber();
+test('passes when strings are equal ignoring case', () => {
+  expect('hello world').toEqualCaseInsensitive('hello world');
+  expect('hello WORLD').toEqualCaseInsensitive('HELLO world');
+  expect('HELLO WORLD').toEqualCaseInsensitive('hello world');
+  expect('hello world').toEqualCaseInsensitive('HELLO WORLD');
+  expect('hello world').not.toEqualCaseInsensitive('hello');
 });
 ```
 
-### .toBeBoolean()
-
-Use `.toBeBoolean` when checking if a value is a `Boolean`.
-
-```js
-test('passes when value is a boolean', () => {
-  expect(false).toBeBoolean();
-  expect(true).toBeBoolean();
-  expect(1 === 1).toBeBoolean();
-  expect(1).not.toBeBoolean();
-});
-```
-
-### .toStartWith(prefix)
+#### .toStartWith(prefix)
 
 Use `.toStartWith` when checking if a `String` starts with a given `String` prefix.
 
@@ -609,7 +659,7 @@ test('passes when value is starts with given string', () => {
 });
 ```
 
-### .toEndWith(suffix)
+#### .toEndWith(suffix)
 
 Use `.toEndWith` when checking if a `String` ends with a given `String` suffix.
 
@@ -620,7 +670,7 @@ test('passes when value is ends with given string', () => {
 });
 ```
 
-### .toInclude(substring)
+#### .toInclude(substring)
 
 Use `.toInclude` when checking if a `String` includes the given `String` substring.
 
@@ -631,7 +681,7 @@ test('passes when value includes substring', () => {
 });
 ```
 
-### .toIncludeRepeated(substring, times)
+#### .toIncludeRepeated(substring, times)
 
 _Note: Currently unimplemented_
 
@@ -644,7 +694,7 @@ test('passes when value includes substring n times', () => {
 });
 ```
 
-### .toIncludeMultiple([substring])
+#### .toIncludeMultiple([substring])
 
 Use `.toIncludeMultiple` when checking if a `String` includes all of the given substrings.
 
@@ -652,20 +702,6 @@ Use `.toIncludeMultiple` when checking if a `String` includes all of the given s
 test('passes when value includes all substrings', () => {
   expect('hello world').toInclude(['world', 'hello']);
   expect('hello world').not.toInclude(['world', 'hello', 'bob']);
-});
-```
-
-### .toEqualCaseInsensitive(string)
-
-Use `.toEqualCaseInsensitive` when checking if a string is equal (===) to another ignoring the casing of both strings.
-
-```js
-test('passes when strings are equal ignoring case', () => {
-  expect('hello world').toEqualCaseInsensitive('hello world');
-  expect('hello WORLD').toEqualCaseInsensitive('HELLO world');
-  expect('HELLO WORLD').toEqualCaseInsensitive('hello world');
-  expect('hello world').toEqualCaseInsensitive('HELLO WORLD');
-  expect('hello world').not.toEqualCaseInsensitive('hello');
 });
 ```
 
