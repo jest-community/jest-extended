@@ -206,7 +206,7 @@
       "name": "Amish Shah",
       "avatar_url": "https://avatars1.githubusercontent.com/u/10330923?v=4",
       "profile": "https://hydrabolt.me/",
-        "contributions": [
+      "contributions": [
         "code",
         "test"
       ]
@@ -216,6 +216,16 @@
       "name": "Dave Cooper",
       "avatar_url": "https://avatars3.githubusercontent.com/u/2045206?v=4",
       "profile": "http://davecooper.org",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "soueuls",
+      "name": "Swann Polydor",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/3630495?v=4",
+      "profile": "https://github.com/soueuls",
       "contributions": [
         "code",
         "test"
