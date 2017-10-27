@@ -9,6 +9,10 @@ describe('.toContainEntry', () => {
     expect(predicate(data, ['c', 'baz'])).toBe(true);
   });
 
+  it('passes when object contain given entry with nested value', () => {
+    expect(predicate({ data }, ['data', data])).toBe(true);
+  });
+
   it('fails when object does not contain given entry', () => {
     expect(predicate(data, ['a', 'qux'])).toBe(false);
   });

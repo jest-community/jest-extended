@@ -319,8 +319,6 @@ test('passes when object contains at least one of the given values', () => {
 
 ### .toContainEntry([key, value])
 
-_Note: Currently unimplemented_
-
 Use `.toContainEntry` when checking if an object contains the provided entry.
 
 ```js

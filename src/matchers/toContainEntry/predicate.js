@@ -1,1 +1,3 @@
-export default (obj, [key, value]) => obj.hasOwnProperty && obj.hasOwnProperty(key) && obj[key] === value;
+import { equals } from 'expect/build/jasmine_utils';
+
+export default (obj, [key, value]) => obj.hasOwnProperty && obj.hasOwnProperty(key) && equals(obj[key], value);
