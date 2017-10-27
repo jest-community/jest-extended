@@ -3,6 +3,7 @@ import toBeTrue from './toBeTrue';
 import toBeFalse from './toBeFalse';
 import toContainValue from './toContainValue';
 import toContainValues from './toContainValues';
+import toBeArray from './toBeArray';
 import toEqualCaseInsensitive from './toEqualCaseInsensitive';
 import toStartWith from './toStartWith';
 import toBeNegative from './toBeNegative';
@@ -33,6 +34,7 @@ export default [
   toBeFalse,
   toContainValue,
   toContainValues,
+  toBeArray,
   toEqualCaseInsensitive,
   toStartWith,
   toBeNegative,
