@@ -290,8 +290,6 @@ test('passes when object contains all of the given values', () => {
 
 ### .toContainAllValues([values])
 
-_Note: Currently unimplemented_
-
 Use `.toContainAllValues` when checking if an object only contains all of the provided values.
 
 ```js
