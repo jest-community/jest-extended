@@ -130,6 +130,87 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "garmeeh",
+      "name": "Gary Meehan",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13333582?v=4",
+      "profile": "https://github.com/garmeeh",
+      "contributions": [
+        "code",
+        "doc",
+        "test"
+      ]
+    },
+    {
+      "login": "GitHug",
+      "name": "Fredrik Mäkilä",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/3191489?v=4",
+      "profile": "https://github.com/GitHug",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "danielr18",
+      "name": "Daniel Reinoso",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/9046616?v=4",
+      "profile": "http://kloc.io/",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "tophernuts",
+      "name": "Chris Hut",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/4359781?v=4",
+      "profile": "https://github.com/tophernuts",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "cactorium",
+      "name": "Kelvin Ly",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1513183?v=4",
+      "profile": "https://github.com/cactorium",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "francisngo",
+      "name": "Francis Ngo",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/11182826?v=4",
+      "profile": "https://github.com/francisngo",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "hydrabolt",
+      "name": "Amish Shah",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/10330923?v=4",
+      "profile": "https://hydrabolt.me/",
+        "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "grug",
+      "name": "Dave Cooper",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/2045206?v=4",
+      "profile": "http://davecooper.org",
+      "contributions": [
+        "code",
+        "test"
+      ]
     }
   ]
 }
