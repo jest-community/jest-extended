@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`.not.toContainKey fails when given object contains key 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toContainKey(</><green>expected</><dim>)</>
+exports[`.not.toContainAnyEntries fails when given object contains atleast one of the given entries 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toContainAnyEntries(</><green>expected</><dim>)</>
 
-Expected object to not contain key:
-  <green>\\"hello\\"</>
+Expected object should not contain any of the provided entries:
+  <green>[[\\"a\\", \\"qux\\"], [\\"a\\", \\"foo\\"]]</>
 Received:
-  <red>{\\"hello\\": \\"world\\"}</>"
+  <red>{\\"a\\": \\"foo\\", \\"b\\": \\"bar\\", \\"c\\": \\"baz\\"}</>"
 `;
 
-exports[`.toContainKey fails when given object does not contain key 1`] = `
-"<dim>expect(</><red>received</><dim>).toContainKey(</><green>expected</><dim>)</>
+exports[`.toContainAnyEntries fails when given object does not contain any of the given entries 1`] = `
+"<dim>expect(</><red>received</><dim>).toContainAnyEntries(</><green>expected</><dim>)</>
 
-Expected object to contain key:
-  <green>\\"missing\\"</>
+Expected object should contain atleast one of the provided entries:
+  <green>[[\\"a\\", \\"qux\\"], [\\"b\\", \\"foo\\"]]</>
 Received:
-  <red>{\\"hello\\": \\"world\\"}</>"
+  <red>{\\"a\\": \\"foo\\", \\"b\\": \\"bar\\", \\"c\\": \\"baz\\"}</>"
 `;
