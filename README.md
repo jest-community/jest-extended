@@ -19,7 +19,7 @@
 
 ## Problem
 
-Jest is an amazing test running and has some awesome assertion APIs built in by default. However there are times when
+Jest is an amazing test runner and has some awesome assertion APIs built in by default. However there are times when
 having more specific matchers (assertions) would be far more convenient.
 
 ## Solution
