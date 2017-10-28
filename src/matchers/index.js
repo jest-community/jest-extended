@@ -33,6 +33,7 @@ import toContainAllValues from './toContainAllValues';
 import toContainEntry from './toContainEntry';
 import toContainAllEntries from './toContainAllEntries';
 import toContainEntries from './toContainEntries';
+import toContainAnyEntries from './toContainAnyEntries';
 
 export default [
   toBeEven,
@@ -69,5 +70,6 @@ export default [
   toContainAllValues,
   toContainEntry,
   toContainAllEntries,
-  toContainEntries
+  toContainEntries,
+  toContainAnyEntries
 ].reduce((acc, matcher) => ({ ...acc, ...matcher }), {});
