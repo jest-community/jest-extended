@@ -1,9 +1,6 @@
+import { contains } from '../../utils';
+
 export default (object, entries) => {
-  return entries.some(entry => {
-    if (entry[0] in object) {
-      return object[entry[0]] == entry[1];
-    } else {
-      return false;
-    }
-  });
+  const objectEntries = Object.keys(object).map(k => [k, object[k]]);
+  return entries.some(entry => contains(objectEntries, entry));
 };
