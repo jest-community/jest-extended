@@ -22,6 +22,15 @@
       ]
     },
     {
+      "login": "stofolus",
+      "name": "Christoffer Hasselberg",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/5880416?v=4",
+      "profile": "https://github.com/stofolus",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
       "login": "btnwtn",
       "name": "Brandon Newton",
       "avatar_url": "https://avatars1.githubusercontent.com/u/20847518?v=4",
@@ -122,6 +131,16 @@
       ]
     },
     {
+      "login": "mjmiles",
+      "name": "mjmiles",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/33098064?v=4",
+      "profile": "https://github.com/mjmiles",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
       "login": "garmeeh",
       "name": "Gary Meehan",
       "avatar_url": "https://avatars1.githubusercontent.com/u/13333582?v=4",
@@ -193,11 +212,44 @@
       ]
     },
     {
+      "login": "grug",
+      "name": "Dave Cooper",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/2045206?v=4",
+      "profile": "http://davecooper.org",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "soueuls",
+      "name": "Swann Polydor",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/3630495?v=4",
+      "profile": "https://github.com/soueuls",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "vikneshwar",
+      "name": "vikneshwar",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/2027003?v=4",
+      "profile": "https://github.com/vikneshwar",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
       "login": "deerawan",
       "name": "Budi Irawan",
       "avatar_url": "https://avatars1.githubusercontent.com/u/1243921?v=4",
       "profile": "http://budiirawan.com",
-      "contributions": []
+      "contributions": [
+        "code",
+        "test"
+      ]
     }
   ]
 }

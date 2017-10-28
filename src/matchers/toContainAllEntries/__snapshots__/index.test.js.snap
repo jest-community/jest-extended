@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toContainAllEntries fails when object only contains all of the given entries 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toContainAllEntries(</><green>expected</><dim>)</>
+
+Expected object to not only contain all of the given entries:
+  <green>[[\\"b\\", \\"bar\\"], [\\"a\\", \\"foo\\"], [\\"c\\", \\"baz\\"]]</>
+Received:
+  <red>{\\"a\\": \\"foo\\", \\"b\\": \\"bar\\", \\"c\\": \\"baz\\"}</>"
+`;
+
+exports[`.toContainAllEntries fails when object does not only contain all of the given entries 1`] = `
+"<dim>expect(</><red>received</><dim>).toContainAllEntries(</><green>expected</><dim>)</>
+
+Expected object to only contain all of the given entries:
+  <green>[[\\"a\\", \\"foo\\"], [\\"b\\", \\"bar\\"]]</>
+Received:
+  <red>{\\"a\\": \\"foo\\", \\"b\\": \\"bar\\", \\"c\\": \\"baz\\"}</>"
+`;
