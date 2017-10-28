@@ -240,6 +240,16 @@
         "code",
         "test"
       ]
+    },
+    {
+      "login": "deerawan",
+      "name": "Budi Irawan",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1243921?v=4",
+      "profile": "http://budiirawan.com",
+      "contributions": [
+        "code",
+        "test"
+      ]
     }
   ]
 }
