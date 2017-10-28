@@ -1,8 +1,8 @@
 import { contains } from '../../utils';
 
 /**
- * @params {Object} actual
- * @params {string[]|number[]} value
+ * @params {Object} object
+ * @params {Array} values
  */
 export default (object, values) => {
   const objectValues = Object.keys(object).map(k => object[k]);

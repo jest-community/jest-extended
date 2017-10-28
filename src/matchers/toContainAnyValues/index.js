@@ -5,7 +5,7 @@ import predicate from './predicate';
 const passMessage = (actual, expected) => () =>
   matcherHint('.not.toContainAnyValues') +
   '\n\n' +
-  'Expected object to not contain value:\n' +
+  'Expected object to not contain any of the following values:\n' +
   `  ${printExpected(expected)}\n` +
   'Received:\n' +
   `  ${printReceived(actual)}`;
@@ -13,7 +13,7 @@ const passMessage = (actual, expected) => () =>
 const failMessage = (actual, expected) => () =>
   matcherHint('.toContainAnyValues') +
   '\n\n' +
-  'Expected object to contain any value:\n' +
+  'Expected object to contain any of the following values:\n' +
   `  ${printExpected(expected)}\n` +
   'Received:\n' +
   `  ${printReceived(actual)}`;
