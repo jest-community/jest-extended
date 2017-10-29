@@ -1,3 +1,1 @@
-export default received => {
-  return received == undefined || received == null;
-};
+export default value => value === undefined || value === null;

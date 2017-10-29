@@ -2,11 +2,11 @@ import each from 'jest-each';
 import predicate from './predicate';
 
 describe('toBeNil', () => {
-  it('returns true when given empty', () => {
+  it('returns true when value is undefined', () => {
     expect(predicate(undefined)).toBe(true);
   });
 
-  it('returns true when given an Array is empty', () => {
+  it('returns true when value is null', () => {
     expect(predicate(null)).toBe(true);
   });
 
