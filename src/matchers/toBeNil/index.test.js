@@ -17,8 +17,7 @@ describe('.toBeNil', () => {
 describe('.not.toBeNil', () => {
   each([
     ['true'],
-    [{'hello':'world'}],
-    [['hello', 'world']]
+    [{}]
   ]).it('passes when item is not null or undefined : %s', given => {
     expect(given).not.toBeNil();
   });
