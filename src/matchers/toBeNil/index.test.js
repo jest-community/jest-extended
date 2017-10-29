@@ -18,11 +18,7 @@ describe('.toBeNil', () => {
 });
 
 describe('.not.toBeNil', () => {
-  each([
-    ['true'],
-    [{}],
-    [true]
-  ]).it('passes when item is not null or undefined : %s', given => {
+  each([['true'], [{}], [true]]).it('passes when item is not null or undefined : %s', given => {
     expect(given).not.toBeNil();
   });
 
