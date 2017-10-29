@@ -9,7 +9,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "babel src -d dist --ignore *.test.js",
+    "build": "NODE_ENV=production rollup --config rollup.config.js",
     "contributor": "all-contributors add",
     "contributor:gen": "all-contributors generate",
     "lint": "eslint src",
@@ -48,8 +48,9 @@
     "babel-eslint": "^8.0.1",
     "babel-jest": "^21.2.0",
     "babel-jest-assertions": "^0.0.2",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "codecov": "^2.3.1",
     "eslint": "^4.9.0",
     "eslint-plugin-import": "^2.8.0",
@@ -59,7 +60,11 @@
     "jest-each": "^0.3.1",
     "lint-staged": "^4.3.0",
     "prettier": "^1.7.4",
-    "pretty-format": "^21.2.1"
+    "pretty-format": "^21.2.1",
+    "rollup": "^0.50.0",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-commonjs": "^8.2.5",
+    "rollup-plugin-node-resolve": "^3.0.0"
   },
   "dependencies": {
     "chalk": "^2.2.0",
@@ -94,10 +99,40 @@
     }
   },
   "babel": {
-    "plugins": [
-      "babel-plugin-transform-es2015-modules-commonjs",
-      "transform-object-rest-spread",
-      "babel-jest-assertions"
-    ]
+    "env": {
+      "production": {
+        "presets": [
+          [
+            "env",
+            {
+              "modules": false,
+              "targets": {
+                "node": "current"
+              }
+            }
+          ]
+        ],
+        "plugins": [
+          "transform-object-rest-spread",
+          "external-helpers"
+        ]
+      },
+      "test": {
+        "presets": [
+          [
+            "env",
+            {
+              "targets": {
+                "node": "current"
+              }
+            }
+          ]
+        ],
+        "plugins": [
+          "transform-object-rest-spread",
+          "babel-jest-assertions"
+        ]
+      }
+    }
   }
 }
