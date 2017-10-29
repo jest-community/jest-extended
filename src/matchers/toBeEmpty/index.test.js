@@ -5,15 +5,15 @@ import matcher from './';
 expect.extend(matcher);
 
 describe('.toBeEmpty', () => {
-  test('passes when given empty', () => {
+  it('passes when given empty', () => {
     expect('').toBeEmpty();
   });
 
-  test('passes when empty array is given', () => {
+  it('passes when empty array is given', () => {
     expect([]).toBeEmpty();
   });
 
-  test('passes when empty object is given', () => {
+  it('passes when empty object is given', () => {
     expect({}).toBeEmpty();
   });
 });
@@ -26,7 +26,7 @@ describe('.not.toBeEmpty', () => {
     [undefined],
     [null],
     [NaN]
-  ]).test('passes when item is not empty or size>0: %s', given => {
+  ]).it('passes when item is not empty or size>0: %s', given => {
     expect(given).not.toBeEmpty();
   });
 });
