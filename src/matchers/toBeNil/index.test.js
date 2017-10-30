@@ -22,7 +22,7 @@ describe('.not.toBeNil', () => {
     expect(given).not.toBeNil();
   });
 
-  it('passes when null is given', () => {
+  it('fails when null is given', () => {
     expect(() => expect(null).not.toBeNil()).toThrowErrorMatchingSnapshot();
   });
 });
