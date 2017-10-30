@@ -44,6 +44,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     * [.toBeArray()](#tobearray)
     * [.toIncludeAllMembers([members])](#toincludeallmembersmembers)
     * [.toIncludeAnyMembers([members])](#toincludeanymbersmembers)
+    * [.toSatisfyAll(predicate)](#tosatisfyallpredicate)
   * [Boolean](#boolean)
     * [.toBeBoolean()](#tobeboolean)
     * [.toBeTrue()](#tobetrue)
@@ -174,8 +175,6 @@ test('passes when value is in given array', () => {
 
 #### .toBeNil()
 
-_Note: Currently unimplemented_
-
 Use `.toBeNil` when checking a value is `null` or `undefined`.
 
 ```js
@@ -220,6 +219,19 @@ test('passes when given array values match any of the members in the set', () =>
   expect([1, 2, 3]).toIncludeAnyMembers([2, 1, 3]);
   expect([1, 2, 2]).toIncludeAnyMembers([2]);
   expect([1, 2, 2]).not.toIncludeAnyMembers([3]);
+});
+```
+
+
+#### .toSatisfyAll(predicate)
+
+Use `.toSatisfyAll` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean` for all values in an array.
+
+```js
+test('passes when all values in array pass given predicate', () => {
+  const isOdd = el => el % 2 === 1;
+  expect([1,3,5,7]).toSatisfyAll(isOdd);
+  expect([1,3,4,5,7]).not.toSatisfyAll(isOdd);
 });
 ```
 
@@ -710,7 +722,7 @@ test('passes when value includes all substrings', () => {
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | [<img src="https://avatars1.githubusercontent.com/u/22359375?s=460&v=4" width="100px;"/><br /><sub>Tyle Whalen</sub>](https://github.com/tjwhalen16)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=tjwhalen16 "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=tjwhalen16 "Documentation") | [<img src="https://avatars2.githubusercontent.com/u/17944339?v=4" width="100px;"/><br /><sub>Martius</sub>](https://github.com/martiuslim)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=martiuslim "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=martiuslim "Tests") | [<img src="https://avatars2.githubusercontent.com/u/10856932?v=4" width="100px;"/><br /><sub>Eli Collis</sub>](https://github.com/ecollis6)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=ecollis6 "Code") | [<img src="https://avatars0.githubusercontent.com/u/10706203?v=4" width="100px;"/><br /><sub>Marcin Lichwała</sub>](https://github.com/marcinlichwala)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=marcinlichwala "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=marcinlichwala "Tests") | [<img src="https://avatars3.githubusercontent.com/u/1984733?v=4" width="100px;"/><br /><sub>Massimo Prencipe</sub>](https://github.com/mprencipe)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=mprencipe "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=mprencipe "Tests") | [<img src="https://avatars2.githubusercontent.com/u/33098064?v=4" width="100px;"/><br /><sub>mjmiles</sub>](https://github.com/mjmiles)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=mjmiles "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=mjmiles "Documentation") | [<img src="https://avatars1.githubusercontent.com/u/13333582?v=4" width="100px;"/><br /><sub>Gary Meehan</sub>](https://github.com/garmeeh)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=garmeeh "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=garmeeh "Documentation") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=garmeeh "Tests") |
 | [<img src="https://avatars2.githubusercontent.com/u/3191489?v=4" width="100px;"/><br /><sub>Fredrik Mäkilä</sub>](https://github.com/GitHug)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=GitHug "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=GitHug "Tests") | [<img src="https://avatars2.githubusercontent.com/u/9046616?v=4" width="100px;"/><br /><sub>Daniel Reinoso</sub>](http://kloc.io/)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=danielr18 "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=danielr18 "Tests") | [<img src="https://avatars1.githubusercontent.com/u/4359781?v=4" width="100px;"/><br /><sub>Chris Hut</sub>](https://github.com/tophernuts)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=tophernuts "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=tophernuts "Tests") | [<img src="https://avatars2.githubusercontent.com/u/1513183?v=4" width="100px;"/><br /><sub>Kelvin Ly</sub>](https://github.com/cactorium)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=cactorium "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=cactorium "Tests") | [<img src="https://avatars0.githubusercontent.com/u/11182826?v=4" width="100px;"/><br /><sub>Francis Ngo</sub>](https://github.com/francisngo)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=francisngo "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=francisngo "Tests") | [<img src="https://avatars1.githubusercontent.com/u/10330923?v=4" width="100px;"/><br /><sub>Amish Shah</sub>](https://hydrabolt.me/)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=hydrabolt "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=hydrabolt "Tests") | [<img src="https://avatars3.githubusercontent.com/u/2045206?v=4" width="100px;"/><br /><sub>Dave Cooper</sub>](http://davecooper.org)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=grug "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=grug "Tests") |
-| [<img src="https://avatars3.githubusercontent.com/u/3630495?v=4" width="100px;"/><br /><sub>Swann Polydor</sub>](https://github.com/soueuls)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=soueuls "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=soueuls "Tests") | [<img src="https://avatars1.githubusercontent.com/u/2027003?v=4" width="100px;"/><br /><sub>vikneshwar</sub>](https://github.com/vikneshwar)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=vikneshwar "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=vikneshwar "Tests") | [<img src="https://avatars1.githubusercontent.com/u/1243921?v=4" width="100px;"/><br /><sub>Budi Irawan</sub>](http://budiirawan.com)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=deerawan "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=deerawan "Tests") | [<img src="https://avatars2.githubusercontent.com/u/13134653?v=4" width="100px;"/><br /><sub>Subinoy Ghosh</sub>](https://github.com/subinoy7)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=subinoy7 "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=subinoy7 "Tests") |
+| [<img src="https://avatars3.githubusercontent.com/u/3630495?v=4" width="100px;"/><br /><sub>Swann Polydor</sub>](https://github.com/soueuls)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=soueuls "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=soueuls "Tests") | [<img src="https://avatars1.githubusercontent.com/u/2027003?v=4" width="100px;"/><br /><sub>vikneshwar</sub>](https://github.com/vikneshwar)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=vikneshwar "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=vikneshwar "Tests") | [<img src="https://avatars1.githubusercontent.com/u/1243921?v=4" width="100px;"/><br /><sub>Budi Irawan</sub>](http://budiirawan.com)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=deerawan "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=deerawan "Tests") | [<img src="https://avatars2.githubusercontent.com/u/980783?v=4" width="100px;"/><br /><sub>Tejas Bubane</sub>](http://foss-geek.blogspot.com/)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=tejasbubane "Code") | [<img src="https://avatars2.githubusercontent.com/u/13134653?v=4" width="100px;"/><br /><sub>Subinoy Ghosh</sub>](https://github.com/subinoy7)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=subinoy7 "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=subinoy7 "Tests") |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## LICENSE
