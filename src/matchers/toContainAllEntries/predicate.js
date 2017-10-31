@@ -1,4 +1,4 @@
-import { equals } from 'expect/build/jasmine_utils';
+import { equals } from '../../utils';
 
 export default (obj, entries) => {
   if (!obj.hasOwnProperty || entries.length != Object.keys(obj).length) {
