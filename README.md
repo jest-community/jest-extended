@@ -40,6 +40,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
   * [.toBeEmpty()](#tobeempty)
   * [.toBeOneOf([members])](#tobeoneofmembers)
   * [.toBeNil()](#tobenil)
+  * [.toSatisfy(predicate)](#tosatisfypredicate)
   * [Array](#array)
     * [.toBeArray()](#tobearray)
     * [.toIncludeAllMembers([members])](#toincludeallmembersmembers)
@@ -53,7 +54,6 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     * _No APIs proposed yet_
   * [Function](#function)
     * [.toBeFunction()](#tobefunction)
-    * [.toSatisfy(predicate)](#tosatisfypredicate)
   * [~~Mock~~](#mock)
     * _No APIs proposed yet_
   * [Number](#number)
@@ -183,6 +183,19 @@ test('passes when value is null or undefined', () => {
 });
 ```
 
+#### .toSatisfy(predicate)
+
+Use `.toSatisfy` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean`.
+
+```js
+test('passes when value passes given predicate', () => {
+  const greaterThanOneButNotThree = n => n > 1 && n !== 3;
+  expect(100).toSatisfy(greaterThanOneButNotThree);
+  expect(0).not.toSatisfy(greaterThanOneButNotThree);
+  expect(3).not.toSatisfy(greaterThanOneButNotThree);
+});
+```
+
 ### Array
 
 #### .toBeArray()
@@ -287,21 +300,6 @@ test('passes when value is a function', () => {
   expect(function() {}).not.toBeFunction();
   expect(noop).toBeFunction();
   expect(true).not.toBeFunction();
-});
-```
-
-#### .toSatisfy(predicate)
-
-_Note: Currently unimplemented_
-
-Use `.toSatisfy` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean`.
-
-```js
-test('passes when value passes given predicate', () => {
-  const greaterThanOneButNotThree = n => n > 1 && n !== 3;
-  expect(100).toSatisfy(greaterThanOneButNotThree);
-  expect(0).not.toSatisfy(greaterThanOneButNotThree);
-  expect(3).not.toSatisfy(greaterThanOneButNotThree);
 });
 ```
 
