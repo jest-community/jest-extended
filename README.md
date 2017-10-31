@@ -141,8 +141,6 @@ expect().fail('test should fail');
 
 #### .toBeEmpty()
 
-_Note: Currently unimplemented_
-
 Use `.toBeEmpty` when checking if a `String` `''`, `Array` `[]` or `Object` `{}` is empty.
 
 ```js

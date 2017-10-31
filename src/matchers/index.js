@@ -37,6 +37,7 @@ import toContainAnyEntries from './toContainAnyEntries';
 import toContainAnyValues from './toContainAnyValues';
 import toBeNil from './toBeNil';
 import toSatisfyAll from './toSatisfyAll';
+import toBeEmpty from './toBeEmpty';
 
 export default [
   toBeEven,
@@ -77,5 +78,6 @@ export default [
   toContainAnyEntries,
   toContainAnyValues,
   toBeNil,
-  toSatisfyAll
+  toSatisfyAll,
+  toBeEmpty
 ].reduce((acc, matcher) => ({ ...acc, ...matcher }), {});
