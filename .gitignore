@@ -3,4 +3,5 @@ dist
 .DS_Store
 *.log
 coverage
+.idea
 package-lock.json

@@ -1,5 +1,6 @@
 import toBeEven from './toBeEven';
 import toBeTrue from './toBeTrue';
+import toSatisfy from './toSatisfy';
 import toBeFalse from './toBeFalse';
 import toContainValue from './toContainValue';
 import toContainValues from './toContainValues';
@@ -81,5 +82,6 @@ export default [
   toBeNil,
   toSatisfyAll,
   toBeEmpty,
-  toBeSealed
+  toBeSealed,
+  toSatisfy
 ].reduce((acc, matcher) => ({ ...acc, ...matcher }), {});

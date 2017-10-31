@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toSatisfy fails when given a function that returns true 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toSatisfy(</><dim>)</>
+
+Expected value to not satisfy isTrue received:
+  <red>true</>"
+`;
+
+exports[`.toSatisfy fails when given function that returns false 1`] = `
+"<dim>expect(</><red>received</><dim>).toSatisfy(</><dim>)</>
+
+Expected value to satisfy is2:
+  <green>3</>
+Received:
+  <red>false</>"
+`;
