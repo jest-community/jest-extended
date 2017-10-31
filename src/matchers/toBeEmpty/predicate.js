@@ -1,3 +1,3 @@
-import _ from 'lodash';
+import { equals } from 'expect/build/jasmine_utils';
 
-export default value => _.isEmpty(value);
+export default value => equals([], value) || equals('', value) || equals({}, value);
