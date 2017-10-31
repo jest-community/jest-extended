@@ -22,13 +22,23 @@
       ]
     },
     {
+      "login": "stofolus",
+      "name": "Christoffer Hasselberg",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/5880416?v=4",
+      "profile": "https://github.com/stofolus",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
       "login": "btnwtn",
       "name": "Brandon Newton",
       "avatar_url": "https://avatars1.githubusercontent.com/u/20847518?v=4",
       "profile": "https://btnwtn.com",
       "contributions": [
         "code",
-        "doc"
+        "doc",
+        "test"
       ]
     },
     {
@@ -66,6 +76,205 @@
       "name": "Andrew Hayward",
       "avatar_url": "https://avatars1.githubusercontent.com/u/159848?v=4",
       "profile": "http://andrewhayward.net",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "olsio",
+      "name": "Oliver Schneider",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/6209178?v=4",
+      "profile": "https://ols.io",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "tjwhalen16",
+      "name": "Tyle Whalen",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/22359375?s=460&v=4",
+      "profile": "https://github.com/tjwhalen16",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "martiuslim",
+      "name": "Martius",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/17944339?v=4",
+      "profile": "https://github.com/martiuslim",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "ecollis6",
+      "name": "Eli Collis",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/10856932?v=4",
+      "profile": "https://github.com/ecollis6",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "marcinlichwala",
+      "name": "Marcin Lichwała",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/10706203?v=4",
+      "profile": "https://github.com/marcinlichwala",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "mprencipe",
+      "name": "Massimo Prencipe",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1984733?v=4",
+      "profile": "https://github.com/mprencipe",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "mjmiles",
+      "name": "mjmiles",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/33098064?v=4",
+      "profile": "https://github.com/mjmiles",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "garmeeh",
+      "name": "Gary Meehan",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13333582?v=4",
+      "profile": "https://github.com/garmeeh",
+      "contributions": [
+        "code",
+        "doc",
+        "test"
+      ]
+    },
+    {
+      "login": "GitHug",
+      "name": "Fredrik Mäkilä",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/3191489?v=4",
+      "profile": "https://github.com/GitHug",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "danielr18",
+      "name": "Daniel Reinoso",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/9046616?v=4",
+      "profile": "http://kloc.io/",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "tophernuts",
+      "name": "Chris Hut",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/4359781?v=4",
+      "profile": "https://github.com/tophernuts",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "cactorium",
+      "name": "Kelvin Ly",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1513183?v=4",
+      "profile": "https://github.com/cactorium",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "francisngo",
+      "name": "Francis Ngo",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/11182826?v=4",
+      "profile": "https://github.com/francisngo",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "hydrabolt",
+      "name": "Amish Shah",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/10330923?v=4",
+      "profile": "https://hydrabolt.me/",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "grug",
+      "name": "Dave Cooper",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/2045206?v=4",
+      "profile": "http://davecooper.org",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "soueuls",
+      "name": "Swann Polydor",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/3630495?v=4",
+      "profile": "https://github.com/soueuls",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "vikneshwar",
+      "name": "vikneshwar",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/2027003?v=4",
+      "profile": "https://github.com/vikneshwar",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "deerawan",
+      "name": "Budi Irawan",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1243921?v=4",
+      "profile": "http://budiirawan.com",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "tejasbubane",
+      "name": "Tejas Bubane",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/980783?v=4",
+      "profile": "http://foss-geek.blogspot.com/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "subinoy7",
+      "name": "Subinoy Ghosh",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/13134653?v=4",
+      "profile": "https://github.com/subinoy7",
       "contributions": [
         "code",
         "test"
