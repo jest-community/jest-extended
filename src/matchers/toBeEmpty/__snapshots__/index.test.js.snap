@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toBeEmpty fails when given empty string 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toBeEmpty(</><dim>)</>
+
+Expected value to not be empty received:
+  <red>\\"\\"</>"
+`;
+
+exports[`.toBeEmpty fails when given non-empty string 1`] = `
+"<dim>expect(</><red>received</><dim>).toBeEmpty(</><dim>)</>
+
+Expected value to be empty received:
+  <red>\\"string\\"</>"
+`;

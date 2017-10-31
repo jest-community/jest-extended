@@ -4,3 +4,4 @@ dist
 *.log
 coverage
 .idea
+package-lock.json
