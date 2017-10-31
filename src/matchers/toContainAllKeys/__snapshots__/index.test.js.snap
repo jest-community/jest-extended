@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toContainAllKeys fails when given object contains all keys 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toContainAllKeys(</><green>expected</><dim>)</>
+
+Expected object to not contain all keys:
+  <green>[\\"b\\", \\"a\\"]</>
+Received:
+  <red>[\\"a\\", \\"b\\"]</>"
+`;
+
+exports[`.toContainAllKeys fails when given object does not contain all keys 1`] = `
+"<dim>expect(</><red>received</><dim>).toContainAllKeys(</><green>expected</><dim>)</>
+
+Expected object to contain all keys:
+  <green>[\\"a\\"]</>
+Received:
+  <red>[\\"a\\", \\"b\\"]</>"
+`;

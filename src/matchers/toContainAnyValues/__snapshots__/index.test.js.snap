@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toContainAnyValues fails when given object contains value 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toContainAnyValues(</><green>expected</><dim>)</>
+
+Expected object to not contain any of the following values:
+  <green>[\\"baz\\"]</>
+Received:
+  <red>{\\"a\\": \\"foo\\", \\"b\\": \\"bar\\", \\"c\\": \\"baz\\"}</>"
+`;
+
+exports[`.not.toContainAnyValues fails when given object contains value 2`] = `
+"<dim>expect(</><red>received</><dim>).not.toContainAnyValues(</><green>expected</><dim>)</>
+
+Expected object to not contain any of the following values:
+  <green>[\\"foo\\", \\"bar\\"]</>
+Received:
+  <red>{\\"a\\": \\"foo\\", \\"b\\": \\"bar\\", \\"c\\": \\"baz\\"}</>"
+`;
+
+exports[`.toContainAnyValues fails when given object does not contain value 1`] = `
+"<dim>expect(</><red>received</><dim>).toContainAnyValues(</><green>expected</><dim>)</>
+
+Expected object to contain any of the following values:
+  <green>[\\"fax\\"]</>
+Received:
+  <red>{\\"a\\": \\"foo\\", \\"b\\": \\"bar\\", \\"c\\": \\"baz\\"}</>"
+`;
+
+exports[`.toContainAnyValues fails when given object does not contain value 2`] = `
+"<dim>expect(</><red>received</><dim>).toContainAnyValues(</><green>expected</><dim>)</>
+
+Expected object to contain any of the following values:
+  <green>[\\"fax\\", \\"rom\\"]</>
+Received:
+  <red>{\\"a\\": \\"foo\\", \\"b\\": \\"bar\\", \\"c\\": \\"baz\\"}</>"
+`;
+
+exports[`.toContainAnyValues fails when given object does not contain value 3`] = `
+"<dim>expect(</><red>received</><dim>).toContainAnyValues(</><green>expected</><dim>)</>
+
+Expected object to contain any of the following values:
+  <green>[\\"dae\\", \\"mur\\", \\"zoe\\"]</>
+Received:
+  <red>{\\"a\\": \\"foo\\", \\"b\\": \\"bar\\", \\"c\\": \\"baz\\"}</>"
+`;
