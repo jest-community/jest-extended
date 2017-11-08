@@ -8,8 +8,8 @@
 
 <hr />
 
-[![Build Status](https://img.shields.io/travis/mattphillips/jest-extended.svg?style=flat-square)](https://travis-ci.org/mattphillips/jest-extended)
-[![Code Coverage](https://img.shields.io/codecov/c/github/mattphillips/jest-extended.svg?style=flat-square)](https://codecov.io/github/mattphillips/jest-extended)
+[![Build Status](https://img.shields.io/travis/jest-community/jest-extended.svg?style=flat-square)](https://travis-ci.org/mattphillips/jest-extended)
+[![Code Coverage](https://img.shields.io/codecov/c/github/jest-community/jest-extended.svg?style=flat-square)](https://codecov.io/github/mattphillips/jest-extended)
 [![version](https://img.shields.io/npm/v/jest-extended.svg?style=flat-square)](https://www.npmjs.com/package/jest-extended)
 [![downloads](https://img.shields.io/npm/dm/jest-extended.svg?style=flat-square)](http://npm-stat.com/charts.html?package=jest-extended&from=2017-09-14)
 [![MIT License](https://img.shields.io/npm/l/jest-extended.svg?style=flat-square)](https://github.com/mattphillips/jest-extended/blob/master/LICENSE)
