@@ -33,14 +33,7 @@
   ],
   "author": "Matt Phillips <matt@mattphillips.io> (mattphillips.io)",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mattphillips/jest-extended.git"
-  },
-  "bugs": {
-    "url": "https://github.com/mattphillips/jest-extended/issues"
-  },
-  "homepage": "https://github.com/mattphillips/jest-extended#readme",
+  "repository": "jest-community/jest-extended",
   "devDependencies": {
     "all-contributors-cli": "^4.5.1",
     "babel-cli": "^6.26.0",
