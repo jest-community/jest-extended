@@ -19,6 +19,8 @@
 
 ## Problem
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/jest-community/jest-extended.svg)](https://greenkeeper.io/)
+
 Jest is an amazing test runner and has some awesome assertion APIs built in by default. However there are times when
 having more specific matchers (assertions) would be far more convenient.
 
