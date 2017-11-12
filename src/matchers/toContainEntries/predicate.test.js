@@ -12,6 +12,6 @@ describe('.toContainEntries', () => {
   });
 
   it('fails when object does not contain given entry', () => {
-    expect(predicate(data, [['a', 'qux']])).toBe(false);
+    expect(predicate(data, [['a', 'qux'], ['b', 'bar']])).toBe(false);
   });
 });
