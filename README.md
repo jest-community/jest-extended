@@ -724,4 +724,4 @@ test('passes when value includes all substrings', () => {
 
 ## LICENSE
 
-MIT
+[MIT](/LICENSE)
