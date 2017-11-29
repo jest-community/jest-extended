@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toIncludeRepeated fails when string includes substring equal times 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toIncludeRepeated(</><green>expected</><dim>)</>
+
+Expected string to not contain the following substring repeated 2 times: 
+  <green>\\"hello\\"</>
+Received: 
+  <red>\\"hello hello world\\"</>"
+`;
+
+exports[`.toIncludeRepeated fails when string includes substring less times 1`] = `
+"<dim>expect(</><red>received</><dim>).toIncludeRepeated(</><green>expected</><dim>)</>
+
+Expected string to contain following substring repeated 2 times: 
+  <green>\\"hello\\"</>
+Received:
+  <red>\\"hello world\\"</>"
+`;
+
+exports[`.toIncludeRepeated fails when string includes substring more times 1`] = `
+"<dim>expect(</><red>received</><dim>).toIncludeRepeated(</><green>expected</><dim>)</>
+
+Expected string to contain following substring repeated 2 times: 
+  <green>\\"hello\\"</>
+Received:
+  <red>\\"hello hello hello world\\"</>"
+`;

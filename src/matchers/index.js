@@ -14,6 +14,7 @@ import toBeString from './toBeString';
 import toBeExtensible from './toBeExtensible';
 import toBeWithin from './toBeWithin';
 import toIncludeMultiple from './toIncludeMultiple';
+import toIncludeRepeated from './toIncludeRepeated';
 import toEndWith from './toEndWith';
 import toBeFrozen from './toBeFrozen';
 import toBeObject from './toBeObject';
