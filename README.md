@@ -689,8 +689,6 @@ test('passes when value includes substring', () => {
 
 #### .toIncludeRepeated(substring, times)
 
-_Note: Currently unimplemented_
-
 Use `.toIncludeRepeated` when checking if a `String` includes the given `String` substring the correct number of times.
 
 ```js

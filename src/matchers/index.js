@@ -40,6 +40,7 @@ import toBeNil from './toBeNil';
 import toSatisfyAll from './toSatisfyAll';
 import toBeEmpty from './toBeEmpty';
 import toBeSealed from './toBeSealed';
+import toIncludeRepeated from './toIncludeRepeated';
 
 export default [
   toBeEven,
@@ -83,5 +84,6 @@ export default [
   toSatisfyAll,
   toBeEmpty,
   toBeSealed,
-  toSatisfy
+  toSatisfy,
+  toIncludeRepeated
 ].reduce((acc, matcher) => ({ ...acc, ...matcher }), {});
