@@ -517,8 +517,6 @@ test('passes when object only contains all of the given values', () => {
 
 #### .toContainAnyValues([values])
 
-_Note: Currently unimplemented_
-
 Use `.toContainAnyValues` when checking if an object contains at least one of the provided values.
 
 ```js
@@ -597,7 +595,7 @@ test('passes when value is extensible', () => {
 
 #### .toBeFrozen()
 
-Use `.toBeFrozen` when checking if an object is frozon.
+Use `.toBeFrozen` when checking if an object is frozen.
 
 ```js
 test('passes when value is frozen', () => {
@@ -608,8 +606,6 @@ test('passes when value is frozen', () => {
 ```
 
 #### .toBeSealed()
-
-_Note: Currently unimplemented_
 
 Use `.toBeSealed` when checking if an object is sealed.
 
