@@ -8,21 +8,21 @@ const testObject = {
 };
 
 describe('.toContainAnyKeys', () => {
-  it('passes when object contains one or more keys', () => {
+  test('passes when object contains one or more keys', () => {
     expect(testObject).toContainAnyKeys(['name']);
   });
 
-  it('fails when object does not contain any keys', () => {
+  test('fails when object does not contain any keys', () => {
     expect(() => expect(testObject).toContainAnyKeys(['occupation'])).toThrowErrorMatchingSnapshot();
   });
 });
 
 describe('.not.toContainAnyKeys', () => {
-  it('passes when object does not contain any keys', () => {
+  test('passes when object does not contain any keys', () => {
     expect(testObject).not.toContainAnyKeys(['occupation']);
   });
 
-  it('fails when object contains one or more keys', () => {
+  test('fails when object contains one or more keys', () => {
     expect(() => expect(testObject).not.toContainAnyKeys(['name', 'age'])).toThrowErrorMatchingSnapshot();
   });
 });

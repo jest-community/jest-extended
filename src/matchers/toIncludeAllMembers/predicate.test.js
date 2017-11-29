@@ -7,21 +7,21 @@ describe('toIncludeAllMembers Predicate', () => {
   const set2 = [1, 2, 3];
 
   describe('returns true', () => {
-    it('when Array contains all the same members of given set', () => {
+    test('when Array contains all the same members of given set', () => {
       expect(predicate(array1, set1)).toBe(true);
     });
 
-    it('when Array contains all of the same nested members of given set', () => {
+    test('when Array contains all of the same nested members of given set', () => {
       expect(predicate([{ hello: 'world' }, { foo: 'bar' }], [{ foo: 'bar' }])).toBe(true);
     });
   });
 
   describe('returns false', () => {
-    it('when Array does not contain any of the members of given set', () => {
+    test('when Array does not contain any of the members of given set', () => {
       expect(predicate(array2, set2)).toBe(false);
     });
 
-    it('when Array contains does not contain all of the same nested members of given set', () => {
+    test('when Array contains does not contain all of the same nested members of given set', () => {
       expect(predicate([{ hello: 'world' }, { foo: 'bar' }], [{ foo: 'qux' }])).toBe(false);
     });
   });

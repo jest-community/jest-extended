@@ -2,7 +2,7 @@ import predicate from './predicate';
 
 describe('toContainAnyKeys Predicate', () => {
   describe('returns true', () => {
-    it('when one or more key is found in the object', () => {
+    test('when one or more key is found in the object', () => {
       var test = predicate(
         {
           name: 'Steve the Pirate'
@@ -15,7 +15,7 @@ describe('toContainAnyKeys Predicate', () => {
   });
 
   describe('returns false', () => {
-    it('when no keys are found in the object', () => {
+    test('when no keys are found in the object', () => {
       var test = predicate(
         {
           name: 'Steve the Pirate'

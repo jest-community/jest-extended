@@ -5,7 +5,7 @@ import matcher from './';
 expect.extend(matcher);
 
 describe('.toBeEven', () => {
-  it('passes when given even number', () => {
+  test('passes when given even number', () => {
     expect(2).toBeEven();
   });
 
@@ -19,13 +19,13 @@ describe('.toBeEven', () => {
     [undefined],
     [null],
     [NaN]
-  ]).it('fails when not given an even number', given => {
+  ]).test('fails when not given an even number', given => {
     expect(() => expect(given).toBeEven()).toThrowErrorMatchingSnapshot();
   });
 });
 
 describe('.not.toBeEven', () => {
-  it('fails when given an even number', () => {
+  test('fails when given an even number', () => {
     expect(() => expect(2).not.toBeEven()).toThrowErrorMatchingSnapshot();
   });
 
@@ -40,7 +40,7 @@ describe('.not.toBeEven', () => {
     [undefined],
     [null],
     [NaN]
-  ]).it('passes when not given an even number: %s', given => {
+  ]).test('passes when not given an even number: %s', given => {
     expect(given).not.toBeEven();
   });
 });

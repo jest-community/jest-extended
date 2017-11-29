@@ -5,7 +5,7 @@ import matcher from './';
 expect.extend(matcher);
 
 describe('.toBeExtensible', () => {
-  each([[{}], [[]], [() => {}]]).it('passes when given an extensible object: %s', given => {
+  each([[{}], [[]], [() => {}]]).test('passes when given an extensible object: %s', given => {
     expect(given).toBeExtensible();
   });
 
@@ -18,7 +18,7 @@ describe('.toBeExtensible', () => {
     [NaN],
     [Object.seal({})],
     [Object.freeze({})]
-  ]).it('fails when not given an extensible object: %s', given => {
+  ]).test('fails when not given an extensible object: %s', given => {
     expect(() => expect(given).toBeExtensible()).toThrowErrorMatchingSnapshot();
   });
 });
@@ -33,11 +33,11 @@ describe('.not.toBeExtensible', () => {
     [NaN],
     [Object.seal({})],
     [Object.freeze({})]
-  ]).it('passes when not given extensible object: %s', given => {
+  ]).test('passes when not given extensible object: %s', given => {
     expect(given).not.toBeExtensible();
   });
 
-  each([[{}], [[]], [() => {}]]).it('fails when given an extensible object: %s', given => {
+  each([[{}], [[]], [() => {}]]).test('fails when given an extensible object: %s', given => {
     expect(() => expect(given).not.toBeExtensible()).toThrowErrorMatchingSnapshot();
   });
 });
