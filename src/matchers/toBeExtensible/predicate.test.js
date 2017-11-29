@@ -2,7 +2,7 @@ import each from 'jest-each';
 import predicate from './predicate';
 
 describe('toBeExpected Predicate', () => {
-  each([[{}], [[]], [() => {}]]).it('returns true when given extensible object: %s', given => {
+  each([[{}], [[]], [() => {}]]).test('returns true when given extensible object: %s', given => {
     expect(predicate(given)).toBe(true);
   });
 
@@ -15,7 +15,7 @@ describe('toBeExpected Predicate', () => {
     [NaN],
     [Object.seal({})],
     [Object.freeze({})]
-  ]).it('returns false when given non-extensible object: %s', given => {
+  ]).test('returns false when given non-extensible object: %s', given => {
     expect(predicate(given)).toBe(false);
   });
 });

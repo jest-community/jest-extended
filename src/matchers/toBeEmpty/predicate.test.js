@@ -2,37 +2,37 @@ import predicate from './predicate';
 
 describe('toBeEmpty Predicate', () => {
   describe('returns true', () => {
-    it('When empty string is passed', () => {
+    test('When empty string is passed', () => {
       expect(predicate('')).toBe(true);
     });
 
-    it('When empty string object is passed', () => {
+    test('When empty string object is passed', () => {
       expect(predicate(new String(''))).toBe(true);
     });
 
-    it('When empty array is passed', () => {
+    test('When empty array is passed', () => {
       expect(predicate([])).toBe(true);
     });
 
-    it('When empty object is passed', () => {
+    test('When empty object is passed', () => {
       expect(predicate({})).toBe(true);
     });
   });
 
   describe('return false', () => {
-    it('When array with members is passed', () => {
+    test('When array with members is passed', () => {
       expect(predicate(['1'])).toBe(false);
     });
 
-    it('When non-empty string is passed', () => {
+    test('When non-empty string is passed', () => {
       expect(predicate('string')).toBe(false);
     });
 
-    it('When non-empty string object is passed', () => {
+    test('When non-empty string object is passed', () => {
       expect(predicate(new String('string'))).toBe(false);
     });
 
-    it('When object with members is passed', () => {
+    test('When object with members is passed', () => {
       expect(predicate({ foo: 'bar' })).toBe(false);
     });
   });
