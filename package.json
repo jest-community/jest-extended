@@ -56,7 +56,7 @@
   },
   "dependencies": {
     "chalk": "^2.3.0",
-    "expect": "^21.2.1",
+    "expect": "^22.0.0",
     "jest-matcher-utils": "^22.0.0"
   },
   "lint-staged": {
