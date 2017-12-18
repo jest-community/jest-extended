@@ -52,7 +52,7 @@
     "jest-each": "^0.3.1",
     "lint-staged": "^6.0.0",
     "prettier": "^1.7.4",
-    "pretty-format": "^21.2.1"
+    "pretty-format": "^22.0.0"
   },
   "dependencies": {
     "chalk": "^2.3.0",
