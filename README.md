@@ -54,8 +54,8 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     * _No APIs proposed yet_
   * [Function](#function)
     * [.toBeFunction()](#tobefunction)
-  * [~~Mock~~](#mock)
-    * _No APIs proposed yet_
+  * [Mock](#mock)
+    * [.toHaveBeenCalledBefore()](#toHaveBeenCalledBefore)
   * [Number](#number)
     * [.toBeNumber()](#tobenumber)
     * [.toBeNaN()](#tobenan)
@@ -303,9 +303,30 @@ test('passes when value is a function', () => {
 });
 ```
 
-### ~~Mock~~
+### Mock
 
-_No APIs proposed yet_
+#### .toHaveBeenCalledBefore()
+
+Use `.toHaveBeenCalledBefore` when checking if a `Mock` was called before another `Mock`.
+
+_Note: Required Jest version >22_
+_Note: Your mock functions will have to be asynchronous to cause the timestamps inside of Jest to occur in a different
+JS event loop, otherwise the mock timestamps will all be the same_
+
+```js
+const timeout = time => () => new Promise(res => setTimeout(() => res()), time);
+
+it('calls mock1 before mock2', async () => {
+  const mock1 = jest.fn(timeout(1));
+  const mock2 = jest.fn(timeout(1));
+
+  await mock1();
+  await mock2();
+  await mock1();
+
+  expect(mock1).toHaveBeenCalledBefore(mock2);
+});
+```
 
 ### Number
 
