@@ -18,7 +18,7 @@
     "precommit": "lint-staged",
     "prettier": "prettier 'src/**/*.js' --write --single-quote=true --print-width=120",
     "test": "jest",
-    "test:coverage": "yarn test -- --coverage",
+    "test:coverage": "yarn test -- --coverage --no-colors",
     "test:report": "codecov",
     "test:watch": "yarn test -- --watch"
   },
