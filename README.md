@@ -55,7 +55,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
   * [Function](#function)
     * [.toBeFunction()](#tobefunction)
   * [Mock](#mock)
-    * [.toHaveBeenCalledBefore()](#toHaveBeenCalledBefore)
+    * [.toHaveBeenCalledBefore()](#tohavebeencalledbefore)
   * [Number](#number)
     * [.toBeNumber()](#tobenumber)
     * [.toBeNaN()](#tobenan)
@@ -310,6 +310,7 @@ test('passes when value is a function', () => {
 Use `.toHaveBeenCalledBefore` when checking if a `Mock` was called before another `Mock`.
 
 _Note: Required Jest version >22_
+
 _Note: Your mock functions will have to be asynchronous to cause the timestamps inside of Jest to occur in a different
 JS event loop, otherwise the mock timestamps will all be the same_
 
