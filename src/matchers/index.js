@@ -5,6 +5,7 @@ import toBeFalse from './toBeFalse';
 import toContainValue from './toContainValue';
 import toContainValues from './toContainValues';
 import toBeArray from './toBeArray';
+import toBeArrayOfSize from './toBeArrayOfSize';
 import toEqualCaseInsensitive from './toEqualCaseInsensitive';
 import toStartWith from './toStartWith';
 import toBeNegative from './toBeNegative';
@@ -50,6 +51,7 @@ export default [
   toContainValue,
   toContainValues,
   toBeArray,
+  toBeArrayOfSize,
   toEqualCaseInsensitive,
   toStartWith,
   toBeNegative,
