@@ -17,7 +17,7 @@ Expected value to be an array of size:
   ${printExpected(expected)}
 Received:
   value: ${printReceived(actual)}
-  length: ${printReceived(actual && actual.length ? actual.length : 'Not Accessible')}`;
+  length: ${printReceived(determinePropertyMessage(actual, 'length'))}`;
 
 export default {
   toBeArrayOfSize: (actual, expected) => {
