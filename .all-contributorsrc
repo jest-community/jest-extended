@@ -307,6 +307,18 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "jsdevtom",
+      "name": "Tom",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/17221813?v=4",
+      "profile": "https://jsdevtom.com",
+      "contributions": [
+        "code",
+        "doc",
+        "example",
+        "test"
+      ]
     }
   ]
 }
