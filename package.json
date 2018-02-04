@@ -41,6 +41,7 @@
     "babel-eslint": "^8.0.1",
     "babel-jest": "^22.1.0",
     "babel-jest-assertions": "^0.1.0",
+    "babel-plugin-gwt": "^1.0.0",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
@@ -92,7 +93,8 @@
       "babel-plugin-transform-es2015-modules-commonjs",
       "transform-object-rest-spread",
       "transform-async-to-generator",
-      "babel-jest-assertions"
+      "babel-jest-assertions",
+      "gwt"
     ]
   }
 }
