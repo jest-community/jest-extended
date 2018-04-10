@@ -1,4 +1,4 @@
-/// <reference path="/node_modules/@types/jest/index.d.ts" />
+/// <reference types="jest" />
 
 declare namespace jest {
   // noinspection JSUnusedGlobalSymbols

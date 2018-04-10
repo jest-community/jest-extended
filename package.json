@@ -3,6 +3,7 @@
   "version": "0.6.0",
   "description": "Additional Jest matchers",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist",
     "README.md",
@@ -10,6 +11,7 @@
   ],
   "scripts": {
     "build": "babel src -d dist --ignore *.test.js",
+    "postbuild": "cp types/index.d.ts dist/index.d.ts",
     "contributor": "all-contributors add",
     "contributor:gen": "all-contributors generate",
     "lint": "eslint src",
