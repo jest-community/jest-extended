@@ -35,6 +35,7 @@
   "license": "MIT",
   "repository": "jest-community/jest-extended",
   "devDependencies": {
+    "@types/jest": "^22.2.2",
     "all-contributors-cli": "^4.5.1",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
