@@ -52,7 +52,8 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     * [.toBeTrue()](#tobetrue)
     * [.toBeFalse()](#tobefalse)
   * [~~Date~~](#date)
-    * _No APIs proposed yet_
+    * Proposal in #117 (under development)
+
   * [Function](#function)
     * [.toBeFunction()](#tobefunction)
   * [Mock](#mock)
@@ -298,7 +299,20 @@ test('returns false', () => {
 
 ### ~~Date~~
 
-_No APIs proposed yet_
+Proposal in #117 (*under development*)
+
+### .toBeDate()
+
+Use `.toBeDate` when checking if a value is a `Date`.
+
+```js
+test('passes when value is a date', () => {
+  expect(new Date()).toBeDate();
+  expect('01/01/2018').not.toBeDate();
+  expect(new Date('01/01/2018').toBeDate();
+  expect(undefined).not.toBeDate();
+});
+```
 
 ### Function
 
