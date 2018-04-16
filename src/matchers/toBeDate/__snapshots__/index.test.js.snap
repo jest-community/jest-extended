@@ -4,7 +4,7 @@ exports[`.not.toBeDate fails when given a date 1`] = `
 "<dim>expect(</><red>received</><dim>).not.toBeDate(</><dim>)</>
 
 Expected value to not be a date received:
-  <red>2018-04-16T19:50:46.285Z</>"
+  <red>2018-01-01T13:00:00.000Z</>"
 `;
 
 exports[`.toBeDate fails when not given a date 1`] = `
