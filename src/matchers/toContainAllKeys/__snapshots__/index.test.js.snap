@@ -9,11 +9,29 @@ Received:
   <red>[\\"a\\", \\"b\\"]</>"
 `;
 
+exports[`.toContainAllKeys fails when given an empty object 1`] = `
+"<dim>expect(</><red>received</><dim>).toContainAllKeys(</><green>expected</><dim>)</>
+
+Expected object to contain all keys:
+  <green>[\\"a\\"]</>
+Received:
+  <red>[]</>"
+`;
+
 exports[`.toContainAllKeys fails when given object does not contain all keys 1`] = `
 "<dim>expect(</><red>received</><dim>).toContainAllKeys(</><green>expected</><dim>)</>
 
 Expected object to contain all keys:
   <green>[\\"a\\"]</>
+Received:
+  <red>[\\"a\\", \\"b\\"]</>"
+`;
+
+exports[`.toContainAllKeys fails when object does not contain one of the provided keys 1`] = `
+"<dim>expect(</><red>received</><dim>).toContainAllKeys(</><green>expected</><dim>)</>
+
+Expected object to contain all keys:
+  <green>[\\"a\\", \\"c\\"]</>
 Received:
   <red>[\\"a\\", \\"b\\"]</>"
 `;
