@@ -319,6 +319,16 @@
         "example",
         "test"
       ]
+    },
+    {
+      "login": "denizdogan",
+      "name": "Deniz Dogan",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/50928?v=4",
+      "profile": "https://github.com/denizdogan",
+      "contributions": [
+        "code",
+        "test"
+      ]
     }
   ]
 }

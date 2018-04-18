@@ -43,6 +43,7 @@ import toBeEmpty from './toBeEmpty';
 import toBeSealed from './toBeSealed';
 import toIncludeRepeated from './toIncludeRepeated';
 import toHaveBeenCalledBefore from './toHaveBeenCalledBefore';
+import toMatchArray from './toMatchArray';
 
 export default [
   toBeEven,
@@ -89,5 +90,6 @@ export default [
   toBeSealed,
   toSatisfy,
   toIncludeRepeated,
-  toHaveBeenCalledBefore
+  toHaveBeenCalledBefore,
+  toMatchArray
 ].reduce((acc, matcher) => ({ ...acc, ...matcher }), {});
