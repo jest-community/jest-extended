@@ -246,6 +246,17 @@ test('passes when given array values match any of the members in the set', () =>
 });
 ```
 
+#### .toMatchArray([members])
+
+Use `.toMatchArray` when checking if two arrays contain equal values, in any order.
+
+```js
+test('passes when arrays match in a different order', () => {
+  expect([1, 2, 3]).toMatchArray([3, 1, 2]);
+  expect([{ foo: 'bar' }, { baz: 'qux' }]).toMatchArray([{ baz: 'qux' }, { foo: 'bar' }]);
+});
+```
+
 
 #### .toSatisfyAll(predicate)
 
