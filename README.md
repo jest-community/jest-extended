@@ -51,9 +51,9 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     * [.toBeBoolean()](#tobeboolean)
     * [.toBeTrue()](#tobetrue)
     * [.toBeFalse()](#tobefalse)
-  * [~~Date~~](#date)
-    * Proposal in #117 (under development)
-
+  * [Date](#date)
+    * [.toBeDate()](#tobedate)
+    * Further proposals in [#117](https://github.com/jest-community/jest-extended/issues/117) PRs welcome
   * [Function](#function)
     * [.toBeFunction()](#tobefunction)
   * [Mock](#mock)
