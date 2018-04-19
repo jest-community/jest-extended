@@ -86,6 +86,11 @@ declare namespace jest {
     toBeFalse(): R;
 
     /**
+     * Use .toBeDate when checking if a value is a Date.
+     */
+    toBeDate(): R;
+
+    /**
      * Use `.toBeFunction` when checking if a value is a `Function`.
      */
     toBeFunction(): R;
