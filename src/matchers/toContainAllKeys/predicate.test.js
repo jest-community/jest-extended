@@ -14,4 +14,12 @@ describe('.toContainAllKeys', () => {
   test('fails when given object does not contain all keys', () => {
     expect(predicate(data, ['b'])).toBe(false);
   });
+
+  test('fails when given an empty object', () => {
+    expect(predicate({}, ['b'])).toBe(false);
+  });
+
+  test('fails when all of the object keys are matched, but there are additional keys ', () => {
+    expect(predicate(data, ['a', 'b', 'c'])).toBe(false);
+  });
 });
