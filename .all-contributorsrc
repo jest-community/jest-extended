@@ -339,6 +339,16 @@
         "ideas",
         "test"
       ]
+    },
+    {
+      "login": "xprn",
+      "name": "Ragnar Laud",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3042904?v=4",
+      "profile": "https://github.com/xprn",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ]
 }
