@@ -20,3 +20,4 @@ with the contributing guidelines (found in the CONTRIBUTING.md file).
 - [ ] Documentation is up to date
 - [ ] No additional lint warnings
 - [ ] Add yourself to contributors list (`yarn contributor`)
+- [ ] [Typescript definitions](https://github.com/jest-community/jest-extended/blob/master/types/index.d.ts) are added/updated where relevant
