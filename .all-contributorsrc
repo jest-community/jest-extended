@@ -326,6 +326,19 @@
       "avatar_url": "https://avatars0.githubusercontent.com/u/15064535?v=4",
       "profile": "https://github.com/LucianBuzzo",
       "contributions": []
+    },
+    {
+      "login": "thiagodp",
+      "name": "Thiago Delgado Pinto",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/2997844?v=4",
+      "profile": "https://github.com/thiagodp",
+      "contributions": [
+        "code",
+        "doc",
+        "example",
+        "ideas",
+        "test"
+      ]
     }
   ]
 }
