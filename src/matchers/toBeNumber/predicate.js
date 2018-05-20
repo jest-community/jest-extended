@@ -1,1 +1,1 @@
-export default expected => !isNaN(parseFloat(expected)) && isFinite(expected);
+export default expected => typeof expected === 'number';
