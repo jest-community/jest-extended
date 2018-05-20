@@ -2016,9 +2016,9 @@ jest-docblock@^22.1.0:
   dependencies:
     detect-newline "^2.1.0"
 
-jest-each@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/jest-each/-/jest-each-0.3.1.tgz#524f16be24f0e54b2dc54f4281bcac6d3a16c1c6"
+jest-each@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/jest-each/-/jest-each-0.5.0.tgz#7065a599e18349163d0dcde40f49f09df6901666"
   dependencies:
     sprintf-js "^1.0.3"
 
