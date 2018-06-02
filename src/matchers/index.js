@@ -44,6 +44,7 @@ import toBeSealed from './toBeSealed';
 import toIncludeRepeated from './toIncludeRepeated';
 import toHaveBeenCalledBefore from './toHaveBeenCalledBefore';
 import toBeDate from './toBeDate';
+import toBeValidDate from './toBeValidDate';
 
 export default [
   toBeEven,
@@ -91,5 +92,6 @@ export default [
   toSatisfy,
   toIncludeRepeated,
   toHaveBeenCalledBefore,
-  toBeDate
+  toBeDate,
+  toBeValidDate
 ].reduce((acc, matcher) => ({ ...acc, ...matcher }), {});
