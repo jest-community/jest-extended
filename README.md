@@ -53,6 +53,8 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     * [.toBeFalse()](#tobefalse)
   * [Date](#date)
     * [.toBeDate()](#tobedate)
+    * [.toBeAfter(date)](#tobeafterdate)
+    * [.toBeBefore(date)](#tobebeforedate)
     * Further proposals in [#117](https://github.com/jest-community/jest-extended/issues/117) PRs welcome
   * [Function](#function)
     * [.toBeFunction()](#tobefunction)
@@ -329,6 +331,28 @@ test('passes when value is a date', () => {
   expect('01/01/2018').not.toBeDate();
   expect(new Date('01/01/2018').toBeDate();
   expect(undefined).not.toBeDate();
+});
+```
+
+### .toBeAfter(date)
+
+Use `.toBeAfter` when checking if a date occurs after `date`.
+
+```js
+test('passes when input is after date', () => {
+  expect(new Date('01/01/2019')).toBeAfter(new Date('01/01/2018'));
+  expect('01/01/2018').not.toBeAfter(new Date('01/01/2019'));
+});
+```
+
+### .toBeBefore(date)
+
+Use `.toBeBefore` when checking if a date occurs before `date`.
+
+```js
+test('passes when input is before date', () => {
+  expect(new Date('01/01/2018')).toBeBefore(new Date('01/01/2019'));
+  expect('01/01/2019').not.toBeBefore(new Date('01/01/2018'));
 });
 ```
 

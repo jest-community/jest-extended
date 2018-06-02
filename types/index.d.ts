@@ -53,6 +53,18 @@ declare namespace jest {
     toBeArrayOfSize(x: number): R;
 
     /**
+     * Use `.toBeAfter` when checking if a date occurs after `date`.
+     * @param {Date} date
+     */
+    toBeAfter(date: Date): R;
+
+    /**
+     * Use `.toBeBefore` when checking if a date occurs before `date`.
+     * @param {Date} date
+     */
+    toBeBefore(date: Date): R;
+
+    /**
      * Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
      * @param {Array.<*>} members
      */
@@ -301,4 +313,3 @@ declare namespace jest {
     toIncludeMultiple(substring: string[]): R;
   }
 }
-
