@@ -2,8 +2,8 @@ import matcher from './';
 
 expect.extend(matcher);
 
-const EARLIER = new Date('06/02/2018');
-const LATER = new Date('07/02/2018');
+const EARLIER = new Date('2018-06-01T22:00:00.000Z');
+const LATER = new Date('2018-06-02T22:00:00.000Z');
 
 describe('.toBeBefore', () => {
   test('passes when given an earlier date', () => {
