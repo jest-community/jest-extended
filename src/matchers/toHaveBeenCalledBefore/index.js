@@ -2,31 +2,31 @@ import { matcherHint, printExpected, printReceived } from 'jest-matcher-utils';
 
 import predicate from './predicate';
 
-const passMessage = (firsTimestamps, secondTimestamps) => () =>
+const passMessage = (firstInvocationCallOrder, secondInvocationCallOrder) => () =>
   matcherHint('.not.toHaveBeenCalledBefore') +
   '\n\n' +
-  'Expected first mock to not have been called before, timestamps:\n' +
-  `  ${printExpected(firsTimestamps)}\n` +
-  'Received second mock with timestamps:\n' +
-  `  ${printReceived(secondTimestamps)}`;
+  'Expected first mock to not have been called before, invocationCallOrder:\n' +
+  `  ${printExpected(firstInvocationCallOrder)}\n` +
+  'Received second mock with invocationCallOrder:\n' +
+  `  ${printReceived(secondInvocationCallOrder)}`;
 
-const failMessage = (firsTimestamps, secondTimestamps) => () =>
+const failMessage = (firstInvocationCallOrder, secondInvocationCallOrder) => () =>
   matcherHint('.toHaveBeenCalledBefore') +
   '\n\n' +
-  'Expected first mock to have been called before, timestamps:\n' +
-  `  ${printExpected(firsTimestamps)}\n` +
-  'Received second mock with timestamps:\n' +
-  `  ${printReceived(secondTimestamps)}`;
+  'Expected first mock to have been called before, invocationCallOrder:\n' +
+  `  ${printExpected(firstInvocationCallOrder)}\n` +
+  'Received second mock with invocationCallOrder:\n' +
+  `  ${printReceived(secondInvocationCallOrder)}`;
 
 export default {
   toHaveBeenCalledBefore: (firstMock, secondMock) => {
-    const firsTimestamps = firstMock.mock.timestamps;
-    const secondTimestamps = secondMock.mock.timestamps;
-    const pass = predicate(firstMock.mock.timestamps, secondTimestamps);
+    const firstInvocationCallOrder = firstMock.mock.invocationCallOrder;
+    const secondInvocationCallOrder = secondMock.mock.invocationCallOrder;
+    const pass = predicate(firstInvocationCallOrder, secondInvocationCallOrder);
     if (pass) {
-      return { pass: true, message: passMessage(firsTimestamps, secondTimestamps) };
+      return { pass: true, message: passMessage(firstInvocationCallOrder, secondInvocationCallOrder) };
     }
 
-    return { pass: false, message: failMessage(firsTimestamps, secondTimestamps) };
+    return { pass: false, message: failMessage(firstInvocationCallOrder, secondInvocationCallOrder) };
   }
 };
