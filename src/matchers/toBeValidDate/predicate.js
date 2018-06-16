@@ -1,7 +1,7 @@
-let is = type => value => Object.prototype.toString.call(value) === `[object ${type}]`;
+import { is } from '../../utils';
 
-let hasDateType = is('Date');
+const hasDateType = is('Date');
 
-let isValidDate = value => hasDateType(value) && !isNaN(value) && !isNaN(value.getTime());
+const isValidDate = value => hasDateType(value) && !isNaN(value) && !isNaN(value.getTime());
 
-export default expected => isValidDate(expected);
+export default isValidDate;
