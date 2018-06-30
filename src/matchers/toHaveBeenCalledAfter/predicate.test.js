@@ -5,8 +5,8 @@ describe('.toHaveBeenCalledAfter predicate', () => {
   const lessThan = now - 100;
   const greaterThan = now + 100;
 
-  test('returns false when given an empty array as the first time stamps', () => {
-    expect(predicate([])).toBe(false);
+  test('returns true when given an empty array as the first time stamps', () => {
+    expect(predicate([])).toBe(true);
   });
 
   test('returns true when given first timestamps is an empty array and given second time stamps', () => {
