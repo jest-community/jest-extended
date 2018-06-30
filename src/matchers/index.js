@@ -43,6 +43,7 @@ import toBeEmpty from './toBeEmpty';
 import toBeSealed from './toBeSealed';
 import toIncludeRepeated from './toIncludeRepeated';
 import toHaveBeenCalledBefore from './toHaveBeenCalledBefore';
+import toHaveBeenCalledAfter from './toHaveBeenCalledAfter';
 import toBeDate from './toBeDate';
 
 export default [
@@ -91,5 +92,6 @@ export default [
   toSatisfy,
   toIncludeRepeated,
   toHaveBeenCalledBefore,
+  toHaveBeenCalledAfter,
   toBeDate
 ].reduce((acc, matcher) => ({ ...acc, ...matcher }), {});
