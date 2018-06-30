@@ -7,5 +7,5 @@ export default (firstInvocationCallOrder, secondInvocationCallOrder) => {
   const firstSmallest = smallest(firstInvocationCallOrder);
   const secondSmallest = smallest(secondInvocationCallOrder);
 
-  return firstSmallest < secondSmallest;
+  return firstSmallest > secondSmallest;
 };
