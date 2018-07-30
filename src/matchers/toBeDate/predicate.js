@@ -1,11 +1,5 @@
-function is(type) {
-  return value => Object.prototype.toString.call(value) === `[object ${type}]`;
-}
+import getType from 'jest-get-type';
 
-let hasDateType = is('Date');
+const isDate = value => getType(value) === 'date' && !isNaN(value);
 
-function isDate(value) {
-  return hasDateType(value) && !isNaN(value);
-}
-
-export default expected => isDate(expected);
+export default isDate;

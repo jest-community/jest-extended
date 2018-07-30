@@ -98,9 +98,14 @@ declare namespace jest {
     toBeFalse(): R;
 
     /**
-     * Use .toBeDate when checking if a value is a Date.
+     * Use `.toBeDate` when checking if a value is a `Date`.
      */
     toBeDate(): R;
+
+    /**
+     * Use `.toBeValidDate` when checking if a value is a `valid Date`.
+     */
+    toBeValidDate(): R;
 
     /**
      * Use `.toBeFunction` when checking if a value is a `Function`.
@@ -110,12 +115,20 @@ declare namespace jest {
     /**
      * Use `.toHaveBeenCalledBefore` when checking if a `Mock` was called before another `Mock`.
      *
-     * Note: Required Jest version >22
-     * Note: Your mock functions will have to be asynchronous to cause the timestamps inside of Jest to occur in a differentJS event loop, otherwise the mock timestamps will all be the same
+     * Note: Required Jest version >=23
      *
      * @param {Mock} mock
      */
     toHaveBeenCalledBefore(mock: jest.Mock): R;
+
+    /**
+     * Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another `Mock`.
+     *
+     * Note: Required Jest version >=23
+     *
+     * @param {Mock} mock
+     */
+    toHaveBeenCalledAfter(mock: jest.Mock): R;
 
     /**
      * Use `.toBeNumber` when checking if a value is a `Number`.

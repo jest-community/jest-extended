@@ -277,7 +277,9 @@
       "avatar_url": "https://avatars2.githubusercontent.com/u/980783?v=4",
       "profile": "http://foss-geek.blogspot.com/",
       "contributions": [
-        "code"
+        "code",
+        "test",
+        "doc"
       ]
     },
     {
@@ -345,6 +347,35 @@
       "name": "Ragnar Laud",
       "avatar_url": "https://avatars0.githubusercontent.com/u/3042904?v=4",
       "profile": "https://github.com/xprn",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "blikblum",
+      "name": "Luiz Américo",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3047126?v=4",
+      "profile": "https://github.com/blikblum",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "frederickfogerty",
+      "name": "Frederick Fogerty",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/615334?v=4",
+      "profile": "https://github.com/frederickfogerty",
+      "contributions": [
+        "code",
+        "ideas"
+      ]
+    },
+    {
+      "login": "benjaminkay93",
+      "name": "Benjamin Kay",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/10714808?v=4",
+      "profile": "https://github.com/benjaminkay93",
       "contributions": [
         "code",
         "doc"

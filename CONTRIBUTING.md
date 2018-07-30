@@ -34,7 +34,6 @@ Head over to [here](https://hacktoberfest.digitalocean.com/sign_up/register) to 
    * See the Jest docs for an [example usage](https://facebook.github.io/jest/docs/en/expect.html#thisutils)
  - Jest's [`expect`](https://github.com/facebook/jest/tree/master/packages/expect) package is being used to access their deep `equals` function.
    * `import { equals } from 'expect/build/jasmine_utils';`
- - Once a matcher has been created it needs to be added to the `src/matchers/index.js` re-export.
  - Docs for the new matcher should be updated in the API section of the `README.md` to no longer say `Unimplemented`.
  - Type definitions for the new matchers should be added to `types/index.d.ts`.
 

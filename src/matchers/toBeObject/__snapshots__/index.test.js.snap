@@ -21,6 +21,13 @@ Expected value to be an object, received:
   <red>0</>"
 `;
 
+exports[`.toBeObject fails when not given an object: 1,2,3 1`] = `
+"<dim>expect(</><red>received</><dim>).toBeObject(</><dim>)</>
+
+Expected value to be an object, received:
+  <red>[1, 2, 3]</>"
+`;
+
 exports[`.toBeObject fails when not given an object: NaN 1`] = `
 "<dim>expect(</><red>received</><dim>).toBeObject(</><dim>)</>
 
