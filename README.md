@@ -54,8 +54,10 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toBeBoolean()](#tobeboolean)
     - [.toBeTrue()](#tobetrue)
     - [.toBeFalse()](#tobefalse)
-  - [~~Date~~](#date)
-  - [.toBeDate()](#tobedate)
+  - [Date](#date)
+    - [.toBeDate()](#tobedate)
+    - [.toBeValidDate()](#tobevaliddate)
+    - Further proposals in [#117](https://github.com/jest-community/jest-extended/issues/117) PRs welcome
   - [Function](#function)
     - [.toBeFunction()](#tobefunction)
   - [Mock](#mock)
@@ -330,6 +332,20 @@ test('passes when value is a date', () => {
   expect('01/01/2018').not.toBeDate();
   expect(new Date('01/01/2018').toBeDate();
   expect(undefined).not.toBeDate();
+});
+```
+
+### .toBeValidDate()
+
+Use `.toBeValidDate` when checking if a given `Date` object is valid.
+
+```
+test('passes when Date is valid', () => {
+  expect(new Date()).toBeValidDate();
+  expect('01/01/2018').not.toBeValidDate();
+  expect(new Date('01/01/2018').toBeValidDate();
+  expect(new Date('01/90/2018').not.toBeValidDate();
+  expect(undefined).not.toBeValidDate();
 });
 ```
 
