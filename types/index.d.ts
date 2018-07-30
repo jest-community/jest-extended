@@ -77,6 +77,12 @@ declare namespace jest {
     toIncludeAnyMembers(members: any[]): R;
 
     /**
+     * Use `.toIncludeSameMembers` when checking if two arrays contain equal values, in any order.
+     * @param {Array.<*>} members
+     */
+    toIncludeSameMembers(members: any[]): R;
+
+    /**
      * Use `.toSatisfyAll` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean` for all values in an array.
      * @param {Function} predicate
      */
