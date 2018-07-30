@@ -111,6 +111,16 @@ declare namespace jest {
     toHaveBeenCalledBefore(mock: jest.Mock): R;
 
     /**
+     * Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another `Mock`.
+     *
+     * Note: Required Jest version >22
+     * Note: Your mock functions will have to be asynchronous to cause the timestamps inside of Jest to occur in a differentJS event loop, otherwise the mock timestamps will all be the same
+     *
+     * @param {Mock} mock
+     */
+    toHaveBeenCalledAfter(mock: jest.Mock): R;
+
+    /**
      * Use `.toBeNumber` when checking if a value is a `Number`.
      */
     toBeNumber(): R;
