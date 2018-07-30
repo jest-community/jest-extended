@@ -277,7 +277,9 @@
       "avatar_url": "https://avatars2.githubusercontent.com/u/980783?v=4",
       "profile": "http://foss-geek.blogspot.com/",
       "contributions": [
-        "code"
+        "code",
+        "test",
+        "doc"
       ]
     },
     {
