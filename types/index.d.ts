@@ -103,8 +103,7 @@ declare namespace jest {
     /**
      * Use `.toHaveBeenCalledBefore` when checking if a `Mock` was called before another `Mock`.
      *
-     * Note: Required Jest version >22
-     * Note: Your mock functions will have to be asynchronous to cause the timestamps inside of Jest to occur in a differentJS event loop, otherwise the mock timestamps will all be the same
+     * Note: Required Jest version >=23
      *
      * @param {Mock} mock
      */
@@ -113,8 +112,7 @@ declare namespace jest {
     /**
      * Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another `Mock`.
      *
-     * Note: Required Jest version >22
-     * Note: Your mock functions will have to be asynchronous to cause the timestamps inside of Jest to occur in a differentJS event loop, otherwise the mock timestamps will all be the same
+     * Note: Required Jest version >=23
      *
      * @param {Mock} mock
      */
