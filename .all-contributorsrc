@@ -380,6 +380,17 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "gillesdemey",
+      "name": "Gilles De Mey",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/868844?v=4",
+      "profile": "https://demey.io",
+      "contributions": [
+        "code",
+        "doc",
+        "test"
+      ]
     }
   ]
 }
