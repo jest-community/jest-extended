@@ -277,7 +277,9 @@
       "avatar_url": "https://avatars2.githubusercontent.com/u/980783?v=4",
       "profile": "http://foss-geek.blogspot.com/",
       "contributions": [
-        "code"
+        "code",
+        "test",
+        "doc"
       ]
     },
     {
@@ -357,6 +359,16 @@
       "profile": "https://github.com/blikblum",
       "contributions": [
         "code"
+      ]
+    },
+    {
+      "login": "frederickfogerty",
+      "name": "Frederick Fogerty",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/615334?v=4",
+      "profile": "https://github.com/frederickfogerty",
+      "contributions": [
+        "code",
+        "ideas"
       ]
     },
     {

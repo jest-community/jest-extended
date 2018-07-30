@@ -86,9 +86,14 @@ declare namespace jest {
     toBeFalse(): R;
 
     /**
-     * Use .toBeDate when checking if a value is a Date.
+     * Use `.toBeDate` when checking if a value is a `Date`.
      */
     toBeDate(): R;
+
+    /**
+     * Use `.toBeValidDate` when checking if a value is a `valid Date`.
+     */
+    toBeValidDate(): R;
 
     /**
      * Use `.toBeFunction` when checking if a value is a `Function`.
@@ -311,4 +316,3 @@ declare namespace jest {
     toIncludeMultiple(substring: string[]): R;
   }
 }
-
