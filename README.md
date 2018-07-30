@@ -49,6 +49,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toBeArrayOfSize()](#tobearrayofsize)
     - [.toIncludeAllMembers([members])](#toincludeallmembersmembers)
     - [.toIncludeAnyMembers([members])](#toincludeanymembersmembers)
+    - [.toIncludeSameMembers([members])](#toincludesamemembersmembers)
     - [.toSatisfyAll(predicate)](#tosatisfyallpredicate)
   - [Boolean](#boolean)
     - [.toBeBoolean()](#tobeboolean)
