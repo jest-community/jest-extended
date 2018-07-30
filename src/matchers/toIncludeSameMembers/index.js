@@ -3,7 +3,7 @@ import { matcherHint, printExpected, printReceived } from 'jest-matcher-utils';
 import predicate from './predicate';
 
 const passMessage = (actual, expected) => () =>
-  matcherHint('.not.toMatchArray') +
+  matcherHint('.not.toIncludeSameMembers') +
   '\n\n' +
   'Expected list to not exactly match the members of:\n' +
   `  ${printExpected(expected)}\n` +
@@ -11,7 +11,7 @@ const passMessage = (actual, expected) => () =>
   `  ${printReceived(actual)}`;
 
 const failMessage = (actual, expected) => () =>
-  matcherHint('.toMatchArray') +
+  matcherHint('.toIncludeSameMembers') +
   '\n\n' +
   'Expected list to have the following members and no more:\n' +
   `  ${printExpected(expected)}\n` +
@@ -19,7 +19,7 @@ const failMessage = (actual, expected) => () =>
   `  ${printReceived(actual)}`;
 
 export default {
-  toMatchArray: (actual, expected) => {
+  toIncludeSameMembers: (actual, expected) => {
     const pass = predicate(actual, expected);
     if (pass) {
       return { pass: true, message: passMessage(actual, expected) };

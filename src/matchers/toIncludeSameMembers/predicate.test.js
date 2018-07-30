@@ -1,6 +1,6 @@
 import predicate from './predicate';
 
-describe('toMatchArray Predicate', () => {
+describe('toIncludeSameMembers Predicate', () => {
   test('returns true when arrays are empty', () => {
     expect(predicate([], [])).toBe(true);
   });
