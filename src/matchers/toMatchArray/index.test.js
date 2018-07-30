@@ -23,6 +23,10 @@ describe('.toMatchArray', () => {
 });
 
 describe('.not.toMatchArray', () => {
+  test('fails when array contents match', () => {
+    expect(() => expect([1]).not.toMatchArray([1])).toThrowErrorMatchingSnapshot();
+  });
+
   test('passes when the arrays are different in length', () => {
     expect([1, 2, 3]).not.toMatchArray([1, 2]);
     expect([{ foo: 'bar' }, { baz: 'qux' }]).not.toMatchArray([{ hello: 'world' }]);
