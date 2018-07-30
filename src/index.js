@@ -1,5 +1,3 @@
-import { red } from 'chalk';
-
 import matchers from './matchers';
 
 const jestExpect = global.expect;
