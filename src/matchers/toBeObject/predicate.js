@@ -1,1 +1,3 @@
-export default expected => typeof expected === 'object';
+import getType from 'jest-get-type';
+
+export default expected => getType(expected) === 'object';

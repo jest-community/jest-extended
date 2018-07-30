@@ -1,12 +1,14 @@
 {
   "name": "jest-extended",
-  "version": "0.6.0",
+  "version": "0.7.2",
   "description": "Additional Jest matchers",
   "main": "dist/index.js",
+  "types": "types/index.d.ts",
   "files": [
     "dist",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "types/index.d.ts"
   ],
   "scripts": {
     "build": "babel src -d dist --ignore *.test.js",
@@ -35,11 +37,12 @@
   "license": "MIT",
   "repository": "jest-community/jest-extended",
   "devDependencies": {
+    "@types/jest": "^22.2.2",
     "all-contributors-cli": "^4.5.1",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
-    "babel-jest": "^22.1.0",
+    "babel-jest": "^23.0.1",
     "babel-jest-assertions": "^0.1.0",
     "babel-plugin-gwt": "^1.0.0",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
@@ -50,15 +53,17 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jest": "^21.2.0",
     "husky": "^0.14.3",
-    "jest": "^22.1.4",
-    "jest-each": "^0.3.1",
+    "import-all.macro": "^2.0.3",
+    "jest": "^23.0.1",
+    "jest-each": "^0.5.0",
+    "jest-watch-typeahead": "^0.2.0",
     "lint-staged": "^6.0.0",
     "prettier": "^1.7.4",
     "pretty-format": "^22.1.0"
   },
   "dependencies": {
-    "chalk": "^2.3.0",
     "expect": "^22.1.0",
+    "jest-get-type": "^22.4.3",
     "jest-matcher-utils": "^22.0.0"
   },
   "lint-staged": {
@@ -86,7 +91,11 @@
         "lines": 100,
         "statements": 100
       }
-    }
+    },
+    "watchPlugins": [
+      "jest-watch-typeahead/filename",
+      "jest-watch-typeahead/testname"
+    ]
   },
   "babel": {
     "plugins": [
@@ -94,7 +103,8 @@
       "transform-object-rest-spread",
       "transform-async-to-generator",
       "babel-jest-assertions",
-      "gwt"
+      "gwt",
+      "macros"
     ]
   }
 }

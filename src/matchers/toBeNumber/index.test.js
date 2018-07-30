@@ -5,8 +5,14 @@ import matcher from './';
 expect.extend(matcher);
 
 describe('.toBeNumber', () => {
-  test('passes when given a number', () => {
-    expect(1).toBeNumber();
+  each`
+  number
+  ${10}
+  ${NaN}
+  ${Infinity}
+  ${-Infinity}
+  `.test('passes when given: $number', ({ number }) => {
+    expect(number).toBeNumber();
   });
 
   test('fails when not given a number', () => {
@@ -15,12 +21,18 @@ describe('.toBeNumber', () => {
 });
 
 describe('.not.toBeNumber', () => {
-  each([[false], [true], [[]], [{}], [() => {}], [undefined], [null], [NaN]]).test(
-    'passes when not given a number: %s',
-    given => {
-      expect(given).not.toBeNumber();
-    }
-  );
+  each([
+    [false],
+    [true],
+    [[]],
+    [{}],
+    [() => {}],
+    [undefined],
+    [null],
+    ['10']
+  ]).test('passes when not given a number: %s', given => {
+    expect(given).not.toBeNumber();
+  });
 
   test('fails when given a number', () => {
     expect(() => expect(1).not.toBeNumber()).toThrowErrorMatchingSnapshot();
