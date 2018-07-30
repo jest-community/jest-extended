@@ -63,6 +63,7 @@
   "dependencies": {
     "chalk": "^2.3.0",
     "expect": "^22.1.0",
+    "jest-get-type": "^22.4.3",
     "jest-matcher-utils": "^22.0.0"
   },
   "lint-staged": {
