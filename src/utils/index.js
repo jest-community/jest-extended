@@ -8,6 +8,4 @@ export const determinePropertyMessage = (actual, property, message = 'Not Access
   return actual && actual[property] ? actual[property] : message;
 };
 
-export const is = type => value => Object.prototype.toString.call(value) === `[object ${type}]`;
-
 export { equals };

@@ -1,7 +1,5 @@
-import { is } from '../../utils';
+import getType from 'jest-get-type';
 
-const hasDateType = is('Date');
-
-const isValidDate = value => hasDateType(value) && !isNaN(value) && !isNaN(value.getTime());
+const isValidDate = value => getType(value) === 'date' && !isNaN(value) && !isNaN(value.getTime());
 
 export default isValidDate;
