@@ -25,7 +25,7 @@ describe('.not.toBeHexadecimal', () => {
     expect(1).not.toBeHexadecimal();
   });
 
-  test('passes when given invalid hexadecimal', () => {
-    expect('#eeggee').not.toBeHexadecimal();
+  test('fails when given valid hexadecimal', () => {
+    expect(() => expect('#eeffee').not.toBeHexadecimal()).toThrowErrorMatchingSnapshot();
   });
 });
