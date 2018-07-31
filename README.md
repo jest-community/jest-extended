@@ -95,7 +95,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
   - [~~Promise~~](#promise)
   - [String](#string)
     - [.toBeString()](#tobestring)
-    = [.toBeHexadecimal()](#tobehexadecimal)
+    - [.toBeHexadecimal(string)](#tobehexadecimal)
     - [.toEqualCaseInsensitive(string)](#toequalcaseinsensitivestring)
     - [.toStartWith(prefix)](#tostartwithprefix)
     - [.toEndWith(suffix)](#toendwithsuffix)
