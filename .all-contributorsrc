@@ -400,6 +400,17 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "mvpowers",
+      "name": "Mikey Powers",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13043635?v=4",
+      "profile": "https://github.com/mvpowers",
+      "contributions": [
+        "code",
+        "doc",
+        "test"
+      ]
     }
   ]
 }
