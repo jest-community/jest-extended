@@ -119,6 +119,11 @@ declare namespace jest {
     toBeFunction(): R;
 
     /**
+     * Use `.toBeHexadecimal` when checking if a value is a valid HTML hex color.
+     */
+    toBeHexadecimal(): R;
+
+    /**
      * Use `.toHaveBeenCalledBefore` when checking if a `Mock` was called before another `Mock`.
      *
      * Note: Required Jest version >=23
