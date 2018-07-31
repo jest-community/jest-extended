@@ -2,4 +2,6 @@ import importAll from 'import-all.macro';
 
 const imports = importAll.sync('./*/index.js');
 
-export default Object.values(imports).reduce((acc, matcher) => ({ ...acc, ...matcher.default }), {});
+export default Object.keys(imports)
+  .map(key => imports[key])
+  .reduce((acc, matcher) => ({ ...acc, ...matcher.default }), {});
