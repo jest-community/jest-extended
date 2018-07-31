@@ -120,8 +120,10 @@ declare namespace jest {
 
     /**
      * Use `.toBeHexadecimal` when checking if a value is a valid HTML hex color.
+     *
+     * @param {String} string
      */
-    toBeHexadecimal(): R;
+    toBeHexadecimal(string: string): R;
 
     /**
      * Use `.toHaveBeenCalledBefore` when checking if a `Mock` was called before another `Mock`.

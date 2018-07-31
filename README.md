@@ -95,6 +95,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
   - [~~Promise~~](#promise)
   - [String](#string)
     - [.toBeString()](#tobestring)
+    = [.toBeHexadecimal()](#tobehexadecimal)
     - [.toEqualCaseInsensitive(string)](#toequalcaseinsensitivestring)
     - [.toStartWith(prefix)](#tostartwithprefix)
     - [.toEndWith(suffix)](#toendwithsuffix)
@@ -767,6 +768,19 @@ test('passes when value is a string', () => {
   expect('hello').toBeString();
   expect(new String('hello')).toBeString();
   expect(true).not.toBeString();
+});
+```
+
+#### .toBeHexadecimal(string)
+
+Use `.toBeHexadecimal` when checking if a value is a valid HTML hexadecimal color.
+
+```js
+test('passes when value is a valid hexadecimal', () => {
+  expect('#abc123').toBeHexadecimal();
+  expect('#FFF').toBeHexadecimal();
+  expect('#000000').toBeHexadecimal();
+  expect('#123ffg').not.toBeHexadecimal();
 });
 ```
 
