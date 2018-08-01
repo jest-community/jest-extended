@@ -11,10 +11,6 @@ describe('.toBeHexadecimal', () => {
     expect('#000').toBeHexadecimal();
   });
 
-  test('fails when given invalid hexadecimal', () => {
-    expect(() => expect('#eeggee').toBeHexadecimal()).toThrowErrorMatchingSnapshot();
-  });
-
   test('fails when given non-string', () => {
     expect(() => expect(true).toBeHexadecimal()).toThrowErrorMatchingSnapshot();
   });
