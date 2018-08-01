@@ -1,25 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`.not.toHaveBeenCalledOnce should fail when given a mock that has been called exactly once 1`] = `
+exports[`.not.toHaveBeenCalledOnceWith should fail when given a mock that has been called exactly once 1`] = `
 "<dim>expect(</><red>received</><dim>).not.toHaveBeenCalledOnce(</><green>expected</><dim>)</>
 
-Expected mock to not have been called once, mock called with:
-  <red>[[1]]</>
-"
+Expected mock to not have been called once with:
+  <green>[1]</>
+Mock called <red>1</> times with:
+  <red>[[1]]</>"
 `;
 
-exports[`.toHaveBeenCalledOnce should fail when given a mock that has been called more than once 1`] = `
+exports[`.toHaveBeenCalledOnceWith should fail when given a mock that has been called exactly once with multiple arguments but expected one 1`] = `
 "<dim>expect(</><red>received</><dim>).toHaveBeenCalledOnce(</><green>expected</><dim>)</>
 
-Expected mock to have been called once, mock called with:
-  <red>[[1], [2]]</>
-"
+Expected mock to have been called once with:
+  <green>[1]</>
+Mock called <red>1</> times with:
+  <red>[[1, 2]]</>"
 `;
 
-exports[`.toHaveBeenCalledOnce should fail when given a mock that has not been called 1`] = `
+exports[`.toHaveBeenCalledOnceWith should fail when given a mock that has been called exactly once with one argument but expected multiple 1`] = `
 "<dim>expect(</><red>received</><dim>).toHaveBeenCalledOnce(</><green>expected</><dim>)</>
 
-Expected mock to have been called once, mock called with:
-  <red>[]</>
-"
+Expected mock to have been called once with:
+  <green>[1, 2]</>
+Mock called <red>1</> times with:
+  <red>[[1]]</>"
+`;
+
+exports[`.toHaveBeenCalledOnceWith should fail when given a mock that has been called more than once 1`] = `
+"<dim>expect(</><red>received</><dim>).toHaveBeenCalledOnce(</><green>expected</><dim>)</>
+
+Expected the expected value to have been passed as a:
+  <green>\\"Array\\"</>
+Recieved the expected value of type:
+  <red>\\"undefined\\"</>"
+`;
+
+exports[`.toHaveBeenCalledOnceWith should fail when given a mock that has not been called 1`] = `
+"<dim>expect(</><red>received</><dim>).toHaveBeenCalledOnce(</><green>expected</><dim>)</>
+
+Expected the expected value to have been passed as a:
+  <green>\\"Array\\"</>
+Recieved the expected value of type:
+  <red>\\"undefined\\"</>"
+`;
+
+exports[`.toHaveBeenCalledOnceWith should fail when given an expected value that isn't an array 1`] = `
+"<dim>expect(</><red>received</><dim>).toHaveBeenCalledOnce(</><green>expected</><dim>)</>
+
+Expected the expected value to have been passed as a:
+  <green>\\"Array\\"</>
+Recieved the expected value of type:
+  <red>\\"number\\"</>"
 `;

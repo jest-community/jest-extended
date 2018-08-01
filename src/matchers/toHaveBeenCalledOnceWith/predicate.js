@@ -8,17 +8,20 @@ const callsPredicate = recievedCalls => {
 };
 
 const equalityPredicate = (recievedCalls, expectedCalls) => {
-  const filteredRecieve = recievedCalls.filter((item, index) => {
+  const filteredRecievedCalls = recievedCalls.filter((item, index) => {
     return equals(item, expectedCalls[index]);
   });
 
-  return filteredRecieve.length === recievedCalls.length;
+  const checkNoneFiltered = recievedCalls.length === expectedCalls.length;
+  const checkFiltered = filteredRecievedCalls.length === expectedCalls.length;
+
+  return checkNoneFiltered && checkFiltered;
 };
 
 export default (recieved, expectedCalls) => {
   const recievedCalls = recieved.mock.calls;
 
-  return callsPredicate(recievedCalls) && equalityPredicate(recievedCalls, expectedCalls);
+  return callsPredicate(recievedCalls) && equalityPredicate(recievedCalls[0], expectedCalls);
 };
 
 export { callsPredicate, equalityPredicate };

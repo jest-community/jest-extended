@@ -76,6 +76,14 @@ describe('.toHaveBeenCalledOnceWith', () => {
       };
       expect(equalityPredicate([object], [1])).toBe(false);
     });
+
+    test('should return false when mock called with one argument but expecting multiple', () => {
+      expect(equalityPredicate([1], [1, 2])).toBe(false);
+    });
+
+    test('should return false when mock called with multiple arguments but expecting one', () => {
+      expect(equalityPredicate([1, 2], [1])).toBe(false);
+    });
   });
 
   describe('predicate', () => {
@@ -91,7 +99,7 @@ describe('.toHaveBeenCalledOnceWith', () => {
     test('should return false when passed an expected arrray that differs from recieved calls', () => {
       const mockFunc = {
         mock: {
-          calls: [1]
+          calls: [[1]]
         }
       };
       expect(predicate(mockFunc, [2])).toBe(false);
@@ -100,7 +108,7 @@ describe('.toHaveBeenCalledOnceWith', () => {
     test('should return true when passed a mock that has been called', () => {
       const mockFunc = {
         mock: {
-          calls: [1]
+          calls: [[1]]
         }
       };
       expect(predicate(mockFunc, [1])).toBe(true);
