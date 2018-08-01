@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toHaveBeenCalledOnce should fail when given a mock that has been called exactly once 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toHaveBeenCalledOnce(</><green>expected</><dim>)</>
+
+Expected mock to not have been called once, mock called with:
+  <red>[[1]]</>
+"
+`;
+
+exports[`.toHaveBeenCalledOnce should fail when given a mock that has been called more than once 1`] = `
+"<dim>expect(</><red>received</><dim>).toHaveBeenCalledOnce(</><green>expected</><dim>)</>
+
+Expected mock to have been called once, mock called with:
+  <red>[[1], [2]]</>
+"
+`;
+
+exports[`.toHaveBeenCalledOnce should fail when given a mock that has not been called 1`] = `
+"<dim>expect(</><red>received</><dim>).toHaveBeenCalledOnce(</><green>expected</><dim>)</>
+
+Expected mock to have been called once, mock called with:
+  <red>[]</>
+"
+`;
