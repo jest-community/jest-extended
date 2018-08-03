@@ -1,11 +1,6 @@
 import { equals } from '../../utils/index';
 
-const callsPredicate = recievedCalls => {
-  if (recievedCalls.length === 0) return false;
-  if (recievedCalls.length > 1) return false;
-
-  return recievedCalls.length === 1;
-};
+const callsPredicate = recievedCalls => recievedCalls.length === 1;
 
 const equalityPredicate = (recievedCalls, expectedCalls) => {
   const filteredRecievedCalls = recievedCalls.filter((item, index) => {
