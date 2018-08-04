@@ -3,13 +3,13 @@ import { matcherHint, printReceived } from 'jest-matcher-utils';
 import predicate from './predicate';
 
 const passMessage = mockCalls => () =>
-  matcherHint('.not.toHaveBeenCalledOnce') +
+  matcherHint('.not.toHaveBeenCalledOnce', 'received', '') +
   '\n\n' +
   'Expected mock to not have been called once, mock called with:\n' +
   `  ${printReceived(mockCalls)}\n`;
 
 const failMessage = mockCalls => () =>
-  matcherHint('.toHaveBeenCalledOnce') +
+  matcherHint('.toHaveBeenCalledOnce', 'received', '') +
   '\n\n' +
   'Expected mock to have been called once, mock called with:\n' +
   `  ${printReceived(mockCalls)}\n`;
