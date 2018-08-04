@@ -30,26 +30,26 @@ Mock called <red>1</> times with:
 exports[`.toHaveBeenCalledOnceWith should fail when given a mock that has been called more than once 1`] = `
 "<dim>expect(</><red>received</><dim>).toHaveBeenCalledOnce(</><green>expected</><dim>)</>
 
-Expected the expected value to have been passed as a:
-  <green>\\"Array\\"</>
-Recieved the expected value of type:
-  <red>\\"undefined\\"</>"
+Expected mock to have been called once with:
+  <green>[]</>
+Mock called <red>2</> times with:
+  <red>[[1], [2]]</>"
 `;
 
 exports[`.toHaveBeenCalledOnceWith should fail when given a mock that has not been called 1`] = `
 "<dim>expect(</><red>received</><dim>).toHaveBeenCalledOnce(</><green>expected</><dim>)</>
 
-Expected the expected value to have been passed as a:
-  <green>\\"Array\\"</>
-Recieved the expected value of type:
-  <red>\\"undefined\\"</>"
+Expected mock to have been called once with:
+  <green>[]</>
+Mock called <red>0</> times with:
+  <red>[]</>"
 `;
 
 exports[`.toHaveBeenCalledOnceWith should fail when given an expected value that isn't an array 1`] = `
 "<dim>expect(</><red>received</><dim>).toHaveBeenCalledOnce(</><green>expected</><dim>)</>
 
-Expected the expected value to have been passed as a:
-  <green>\\"Array\\"</>
-Recieved the expected value of type:
-  <red>\\"number\\"</>"
+Expected mock to have been called once with:
+  <green>[1]</>
+Mock called <red>1</> times with:
+  <red>[[1, 2]]</>"
 `;

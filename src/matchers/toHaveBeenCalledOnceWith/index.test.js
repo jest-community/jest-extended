@@ -18,25 +18,25 @@ describe('.toHaveBeenCalledOnceWith', () => {
   test('should pass when given a mock that has been called exactly once with value matching call from mock', () => {
     const mock = jest.fn();
     mock(1);
-    expect(mock).toHaveBeenCalledOnceWith([1]);
+    expect(mock).toHaveBeenCalledOnceWith(1);
   });
 
   test('should fail when given a mock that has been called exactly once with one argument but expected multiple', () => {
     const mock = jest.fn();
     mock(1);
-    expect(() => expect(mock).toHaveBeenCalledOnceWith([1, 2])).toThrowErrorMatchingSnapshot();
+    expect(() => expect(mock).toHaveBeenCalledOnceWith(1, 2)).toThrowErrorMatchingSnapshot();
   });
 
   test('should fail when given a mock that has been called exactly once with multiple arguments but expected one', () => {
     const mock = jest.fn();
     mock(1, 2);
-    expect(() => expect(mock).toHaveBeenCalledOnceWith([1])).toThrowErrorMatchingSnapshot();
+    expect(() => expect(mock).toHaveBeenCalledOnceWith(1)).toThrowErrorMatchingSnapshot();
   });
 
   test('should pass when given a mock that has been called exactly once with multiple arguments', () => {
     const mock = jest.fn();
     mock(1, 2);
-    expect(mock).toHaveBeenCalledOnceWith([1, 2]);
+    expect(mock).toHaveBeenCalledOnceWith(1, 2);
   });
 
   test("should fail when given an expected value that isn't an array", () => {
@@ -62,6 +62,6 @@ describe('.not.toHaveBeenCalledOnceWith', () => {
   test('should fail when given a mock that has been called exactly once', () => {
     const mock = jest.fn();
     mock(1);
-    expect(() => expect(mock).not.toHaveBeenCalledOnceWith([1])).toThrowErrorMatchingSnapshot();
+    expect(() => expect(mock).not.toHaveBeenCalledOnceWith(1)).toThrowErrorMatchingSnapshot();
   });
 });
