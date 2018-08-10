@@ -6,6 +6,8 @@ const expectedTrue = [
 ];
 
 const expectedFail = [
+  ['SomePrefix-2018-12-31T23:59:59.999Z', 'fail on a prefix'],
+  ['2018-12-31T23:59:59.999Z-SomeSuffix', 'fail on a suffix'],
   ['2018-01-01 24:00:00.000Z', 'fail on missing T'],
   ['2018-01-01T24:00:00.000 ', 'fail on missing Z'],
   ['2018-01-01 24:00:00.000 ', 'fail on missing T and Z'],
