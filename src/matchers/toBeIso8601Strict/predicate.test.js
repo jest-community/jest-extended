@@ -38,3 +38,8 @@ test.each(expectedFail)('should return false for %s, it should %s', (expected, m
   //eslint-disable-line no-unused-vars
   expect(predicate(expected)).toBe(false);
 });
+
+test('should handle ISO8601 dates from the js date libary', () => {
+  const dateObject = new Date('2018-01-01');
+  expect(predicate(dateObject.toISOString())).toBe(true);
+});
