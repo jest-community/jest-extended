@@ -22,6 +22,10 @@ describe('toBeEmpty Predicate', () => {
       expect(predicate(new Set())).toBe(true);
     });
 
+    test('When empty Map is passed', () => {
+      expect(predicate(new Map([]))).toBe(true);
+    });
+
     test('When empty generator is passed', () => {
       function* yieldsNothing() {}
 
@@ -48,6 +52,14 @@ describe('toBeEmpty Predicate', () => {
 
     test('When object with members is passed', () => {
       expect(predicate({ foo: 'bar' })).toBe(false);
+    });
+
+    test('When non-empty Set is passed', () => {
+      expect(predicate(new Set(['']))).toBe(false);
+    });
+
+    test('When non-empty Map is passed', () => {
+      expect(predicate(new Map([['k', 'v']]))).toBe(false);
     });
 
     test('When non-empty generator is passed', () => {
