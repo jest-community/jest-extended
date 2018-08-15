@@ -169,7 +169,7 @@ expect().fail('test should fail');
 
 #### .toBeEmpty()
 
-Use `.toBeEmpty` when checking if a `String` `''`, `Array` `[]` or `Object` `{}` is empty.
+Use `.toBeEmpty` when checking if a `String` `''`, `Array` `[]`, `Object` `{}`, or any `[Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#Built-in_iterables)` is empty. Because `toBeEmpty` supports checking for emptiness of Iterables, you can use it to check whether a `Map`, or `Set` is empty, as well as checking that a generator yields no values. 
 
 ```js
 test('passes when given an empty string', () => {
