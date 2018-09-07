@@ -65,6 +65,11 @@ declare namespace jest {
     toBeBefore(date: Date): R;
 
     /**
+     * Use `.toBeIso8601Strict` when checking if a date string is of the format `YYYY-MM-DDThh:mm:ss.SSSZ`.
+     */
+    toBeIso8601Strict(): R;
+
+    /**
      * Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
      * @param {Array.<*>} members
      */

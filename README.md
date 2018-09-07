@@ -60,6 +60,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toBeValidDate()](#tobevaliddate)
     - [.toBeAfter(date)](#tobeafterdate)
     - [.toBeBefore(date)](#tobebeforedate)
+    - [.toBeIso8601Strict()](#tobeiso8601strict)
     - Further proposals in [#117](https://github.com/jest-community/jest-extended/issues/117) PRs welcome
   - [Function](#function)
     - [.toBeFunction()](#tobefunction)
@@ -378,6 +379,16 @@ test('passes when input is after date', () => {
 test('passes when input is before date', () => {
   expect(new Date('01/01/2018')).toBeBefore(new Date('01/01/2019'));
   expect('01/01/2019').not.toBeBefore(new Date('01/01/2018'));
+});
+```
+
+### toBeIso8601Strict(string)
+Use `.toBeIso8601Strict` when checking if a date string is of the format `YYYY-MM-DDThh:mm:ss.SSSZ`.
+
+```js
+test('passes when input is a string in the format of YYYY-MM-DDThh:mm:ss.SSSZ', () => {
+  expect('2018-01-01T23:59:59.999Z').toBeIso8601Strict();
+  expect('01/01/2019').not.toBeIso8601Strict();
 });
 ```
 
