@@ -411,6 +411,15 @@
         "doc",
         "test"
       ]
+    },
+    {
+      "login": "tony19",
+      "name": "Tony Trinh",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/26580?v=4",
+      "profile": "https://github.com/tony19",
+      "contributions": [
+        "code"
+      ]
     }
   ]
 }
