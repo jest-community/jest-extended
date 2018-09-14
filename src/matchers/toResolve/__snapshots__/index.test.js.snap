@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toIncludeSameMembers fails when array contents match 1`] = `"expect(...).not.toIncludeSameMembers is not a function"`;
