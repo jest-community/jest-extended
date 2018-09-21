@@ -1,3 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`.not.toIncludeSameMembers fails when array contents match 1`] = `"expect(...).not.toIncludeSameMembers is not a function"`;
+exports[`.not.toResolve fails when passed a promise that resolved 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toResolve(</><green>expected</><dim>)</>
+
+Expected promise to <green>\\"reject\\"</>, however it <red>\\"resolved\\"</>.
+"
+`;
+
+exports[`.toResolve fails when passed a promise that rejects 1`] = `
+"<dim>expect(</><red>received</><dim>).toResolve(</><green>expected</><dim>)</>
+
+Expected promise to <green>\\"resolve\\"</>, however it <red>\\"rejected\\"</>.
+"
+`;
