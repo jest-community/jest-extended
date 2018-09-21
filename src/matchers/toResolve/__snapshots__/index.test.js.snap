@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toResolve fails when passed a promise that resolved 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toResolve(</><green>expected</><dim>)</>
+"<dim>expect(</><red>received</><dim>).not.toResolve(</><dim>)</>
 
-Expected promise to <green>\\"reject\\"</>, however it <red>\\"resolved\\"</>.
+Expected promise to reject, however it resolved.
 "
 `;
 
 exports[`.toResolve fails when passed a promise that rejects 1`] = `
-"<dim>expect(</><red>received</><dim>).toResolve(</><green>expected</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toResolve(</><dim>)</>
 
-Expected promise to <green>\\"resolve\\"</>, however it <red>\\"rejected\\"</>.
+Expected promise to resolve, however it rejected.
 "
 `;

@@ -1,16 +1,12 @@
-import { matcherHint, printExpected, printReceived } from 'jest-matcher-utils';
+import { matcherHint } from 'jest-matcher-utils';
 
 import predicate from './predicate';
 
 const passMessage = () => () =>
-  matcherHint('.not.toResolve') +
-  '\n\n' +
-  `Expected promise to ${printExpected('reject')}, however it ${printReceived('resolved')}.\n`;
+  matcherHint('.not.toResolve', 'received', '') + '\n\n' + 'Expected promise to reject, however it resolved.\n';
 
 const failMessage = () => () =>
-  matcherHint('.toResolve') +
-  '\n\n' +
-  `Expected promise to ${printExpected('resolve')}, however it ${printReceived('rejected')}.\n`;
+  matcherHint('.toResolve', 'received', '') + '\n\n' + 'Expected promise to resolve, however it rejected.\n';
 
 export default {
   toResolve: async promise => {
