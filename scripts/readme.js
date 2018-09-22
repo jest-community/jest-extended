@@ -34,7 +34,7 @@ rl
 
       readme += comments.split(COMMENT_START)[1].trim() + '\n';
       readme += '\n```js\n' + `${code.trim()}\n` + '```\n';
-      readme += `\n[Open ${matcher} in repl](${SANDBOX_URL}?module=${module})\n`;
+      readme += `\n[Open ${matcher} in REPL](${SANDBOX_URL}?module=${module})\n`;
       return;
     }
 

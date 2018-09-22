@@ -188,7 +188,7 @@ test('passes when given an empty object', () => {
 });
 ```
 
-[Open toBeEmpty in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2FtoBeEmpty.test.js)
+[Open toBeEmpty in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2FtoBeEmpty.test.js)
 
 #### .toBeOneOf([members])
 
@@ -201,7 +201,7 @@ test('passes when value is in given array', () => {
 });
 ```
 
-[Open toBeOneOf in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2FtoBeOneOf.test.js)
+[Open toBeOneOf in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2FtoBeOneOf.test.js)
 
 #### .toBeNil()
 
@@ -215,7 +215,7 @@ test('passes when value is null or undefined', () => {
 });
 ```
 
-[Open toBeNil in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2FtoBeNil.test.js)
+[Open toBeNil in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2FtoBeNil.test.js)
 
 #### .toSatisfy(predicate)
 
@@ -230,7 +230,7 @@ test('passes when value passes given predicate', () => {
 });
 ```
 
-[Open toSatisfy in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2FtoSatisfy.test.js)
+[Open toSatisfy in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2FtoSatisfy.test.js)
 
 ### Array
 
@@ -246,7 +246,7 @@ test('passes when value is an array', () => {
 });
 ```
 
-[Open toBeArray in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Farray%2FtoBeArray.test.js)
+[Open toBeArray in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Farray%2FtoBeArray.test.js)
 
 #### .toBeArrayOfSize()
 
@@ -260,7 +260,7 @@ test('passes when value is an array', () => {
 });
 ```
 
-[Open toBeArrayOfSize in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Farray%2FtoBeArrayOfSize.test.js)
+[Open toBeArrayOfSize in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Farray%2FtoBeArrayOfSize.test.js)
 
 #### .toIncludeAllMembers([members])
 
@@ -273,7 +273,7 @@ test('passes when given array values match the members of the set', () => {
 });
 ```
 
-[Open toIncludeAllMembers in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Farray%2FtoIncludeAllMembers.test.js)
+[Open toIncludeAllMembers in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Farray%2FtoIncludeAllMembers.test.js)
 
 #### .toIncludeAnyMembers([members])
 
@@ -287,7 +287,7 @@ test('passes when given array values match any of the members in the set', () =>
 });
 ```
 
-[Open toIncludeAnyMembers in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Farray%2FtoIncludeAnyMembers.test.js)
+[Open toIncludeAnyMembers in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Farray%2FtoIncludeAnyMembers.test.js)
 
 #### .toIncludeSameMembers([members])
 
@@ -300,7 +300,7 @@ test('passes when arrays match in a different order', () => {
 });
 ```
 
-[Open toIncludeSameMembers in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Farray%2FtoIncludeSameMembers.test.js)
+[Open toIncludeSameMembers in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Farray%2FtoIncludeSameMembers.test.js)
 
 #### .toSatisfyAll(predicate)
 
@@ -314,7 +314,7 @@ test('passes when all values in array pass given predicate', () => {
 });
 ```
 
-[Open toSatisfyAll in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Farray%2FtoSatisfyAll.test.js)
+[Open toSatisfyAll in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Farray%2FtoSatisfyAll.test.js)
 
 ### Boolean
 
@@ -331,7 +331,7 @@ test('passes when value is a boolean', () => {
 });
 ```
 
-[Open toBeBoolean in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fboolean%2FtoBeBoolean.test.js)
+[Open toBeBoolean in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fboolean%2FtoBeBoolean.test.js)
 
 #### .toBeTrue()
 
@@ -345,7 +345,7 @@ test('is jest cool', () => {
 });
 ```
 
-[Open toBeTrue in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fboolean%2FtoBeTrue.test.js)
+[Open toBeTrue in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fboolean%2FtoBeTrue.test.js)
 
 #### .toBeFalse()
 
@@ -358,7 +358,7 @@ test('returns false', () => {
 });
 ```
 
-[Open toBeFalse in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fboolean%2FtoBeFalse.test.js)
+[Open toBeFalse in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fboolean%2FtoBeFalse.test.js)
 
 ### ~~Date~~
 
@@ -377,7 +377,7 @@ test('passes when value is a date', () => {
 });
 ```
 
-[Open toBeDate in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fdate%2FtoBeDate.test.js)
+[Open toBeDate in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fdate%2FtoBeDate.test.js)
 
 #### .toBeValidDate()
 
@@ -393,7 +393,7 @@ test('passes when Date is valid', () => {
 });
 ```
 
-[Open toBeValidDate in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fdate%2FtoBeValidDate.test.js)
+[Open toBeValidDate in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fdate%2FtoBeValidDate.test.js)
 
 #### .toBeAfter(date)
 
@@ -406,7 +406,7 @@ test('passes when input is after date', () => {
 });
 ```
 
-[Open toBeAfter in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fdate%2FtoBeAfter.test.js)
+[Open toBeAfter in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fdate%2FtoBeAfter.test.js)
 
 #### .toBeBefore(date)
 
@@ -419,7 +419,7 @@ test('passes when input is before date', () => {
 });
 ```
 
-[Open toBeBefore in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fdate%2FtoBeBefore.test.js)
+[Open toBeBefore in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fdate%2FtoBeBefore.test.js)
 
 ### Function
 
@@ -436,7 +436,7 @@ test('passes when value is a function', () => {
 });
 ```
 
-[Open toBeFunction in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Ffunction%2FtoBeFunction.test.js)
+[Open toBeFunction in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Ffunction%2FtoBeFunction.test.js)
 
 ### Mock
 
@@ -459,8 +459,6 @@ it('calls mock1 before mock2', () => {
 });
 ```
 
-[Open toHaveBeenCalledBefore in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fmock%2FtoHaveBeenCalledBefore.test.js)
-
 #### .toHaveBeenCalledAfter()
 
 Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another `Mock`.
@@ -480,8 +478,6 @@ it('calls mock1 after mock2', () => {
 });
 ```
 
-[Open toHaveBeenCalledAfter in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fmock%2FtoHaveBeenCalledAfter.test.js)
-
 ### Number
 
 #### .toBeNumber()
@@ -497,7 +493,7 @@ test('passes when value is a number', () => {
 });
 ```
 
-[Open toBeNumber in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fnumber%2FtoBeNumber.test.js)
+[Open toBeNumber in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fnumber%2FtoBeNumber.test.js)
 
 #### .toBeNaN()
 
@@ -510,7 +506,7 @@ test('passes when value is NaN', () => {
 });
 ```
 
-[Open toBeNaN in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fnumber%2FtoBeNaN.test.js)
+[Open toBeNaN in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fnumber%2FtoBeNaN.test.js)
 
 #### .toBeFinite()
 
@@ -524,7 +520,7 @@ test('passes when value is a finite number', () => {
 });
 ```
 
-[Open toBeFinite in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fnumber%2FtoBeFinite.test.js)
+[Open toBeFinite in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fnumber%2FtoBeFinite.test.js)
 
 #### .toBePositive()
 
@@ -539,7 +535,7 @@ test('passes when value is a positive number', () => {
 });
 ```
 
-[Open toBePositive in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fnumber%2FtoBePositive.test.js)
+[Open toBePositive in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fnumber%2FtoBePositive.test.js)
 
 #### .toBeNegative()
 
@@ -554,7 +550,7 @@ test('passes when value is a negative number', () => {
 });
 ```
 
-[Open toBeNegative in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fnumber%2FtoBeNegative.test.js)
+[Open toBeNegative in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fnumber%2FtoBeNegative.test.js)
 
 #### .toBeEven()
 
@@ -568,7 +564,7 @@ test('passes when value is an even number', () => {
 });
 ```
 
-[Open toBeEven in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fnumber%2FtoBeEven.test.js)
+[Open toBeEven in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fnumber%2FtoBeEven.test.js)
 
 #### .toBeOdd()
 
@@ -582,7 +578,7 @@ test('passes when value is an odd number', () => {
 });
 ```
 
-[Open toBeOdd in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fnumber%2FtoBeOdd.test.js)
+[Open toBeOdd in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fnumber%2FtoBeOdd.test.js)
 
 #### .toBeWithin(start, end)
 
@@ -596,7 +592,7 @@ test('passes when number is within given bounds', () => {
 });
 ```
 
-[Open toBeWithin in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fnumber%2FtoBeWithin.test.js)
+[Open toBeWithin in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fnumber%2FtoBeWithin.test.js)
 
 ### Object
 
@@ -612,7 +608,7 @@ test('passes when value is an object', () => {
 });
 ```
 
-[Open toBeObject in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoBeObject.test.js)
+[Open toBeObject in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoBeObject.test.js)
 
 #### .toContainKey(key)
 
@@ -628,7 +624,7 @@ test('passes when object contains the given key', () => {
 });
 ```
 
-[Open toContainKey in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainKey.test.js)
+[Open toContainKey in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainKey.test.js)
 
 #### .toContainKeys([keys])
 
@@ -643,7 +639,7 @@ test('passes when object contains all keys', () => {
 });
 ```
 
-[Open toContainKeys in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainKeys.test.js)
+[Open toContainKeys in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainKeys.test.js)
 
 #### .toContainAllKeys([keys])
 
@@ -658,7 +654,7 @@ test('passes when object only contains all keys', () => {
 });
 ```
 
-[Open toContainAllKeys in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainAllKeys.test.js)
+[Open toContainAllKeys in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainAllKeys.test.js)
 
 #### .toContainAnyKeys([keys])
 
@@ -674,7 +670,7 @@ test('passes when object contains at least one matching key', () => {
 });
 ```
 
-[Open toContainAnyKeys in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainAnyKeys.test.js)
+[Open toContainAnyKeys in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainAnyKeys.test.js)
 
 #### .toContainValue(value)
 
@@ -689,7 +685,7 @@ test('passes when object contains given value', () => {
 });
 ```
 
-[Open toContainValue in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainValue.test.js)
+[Open toContainValue in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainValue.test.js)
 
 #### .toContainValues([values])
 
@@ -704,7 +700,7 @@ test('passes when object contains all of the given values', () => {
 });
 ```
 
-[Open toContainValues in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainValues.test.js)
+[Open toContainValues in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainValues.test.js)
 
 #### .toContainAllValues([values])
 
@@ -719,7 +715,7 @@ test('passes when object only contains all of the given values', () => {
 });
 ```
 
-[Open toContainAllValues in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainAllValues.test.js)
+[Open toContainAllValues in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainAllValues.test.js)
 
 #### .toContainAnyValues([values])
 
@@ -735,7 +731,7 @@ test('passes when object contains at least one of the given values', () => {
 });
 ```
 
-[Open toContainAnyValues in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainAnyValues.test.js)
+[Open toContainAnyValues in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainAnyValues.test.js)
 
 #### .toContainEntry([key, value])
 
@@ -751,7 +747,7 @@ test('passes when object contains given entry', () => {
 });
 ```
 
-[Open toContainEntry in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainEntry.test.js)
+[Open toContainEntry in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainEntry.test.js)
 
 #### .toContainEntries([[key, value]])
 
@@ -766,7 +762,7 @@ test('passes when object contains all of the given entries', () => {
 });
 ```
 
-[Open toContainEntries in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainEntries.test.js)
+[Open toContainEntries in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainEntries.test.js)
 
 #### .toContainAllEntries([[key, value]])
 
@@ -780,7 +776,7 @@ test('passes when object only contains all of the given entries', () => {
 });
 ```
 
-[Open toContainAllEntries in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainAllEntries.test.js)
+[Open toContainAllEntries in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainAllEntries.test.js)
 
 #### .toContainAnyEntries([[key, value]])
 
@@ -796,7 +792,7 @@ test('passes when object contains at least one of the given entries', () => {
 });
 ```
 
-[Open toContainAnyEntries in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainAnyEntries.test.js)
+[Open toContainAnyEntries in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainAnyEntries.test.js)
 
 #### .toBeExtensible()
 
@@ -809,7 +805,7 @@ test('passes when value is extensible', () => {
 });
 ```
 
-[Open toBeExtensible in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoBeExtensible.test.js)
+[Open toBeExtensible in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoBeExtensible.test.js)
 
 #### .toBeFrozen()
 
@@ -823,8 +819,6 @@ test('passes when value is frozen', () => {
 });
 ```
 
-[Open toBeFrozen in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoBeFrozen.test.js)
-
 #### .toBeSealed()
 
 Use `.toBeSealed` when checking if an object is sealed.
@@ -836,8 +830,6 @@ test('passes when value is sealed', () => {
   expect(1).not.toBeSealed();
 });
 ```
-
-[Open toBeSealed in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoBeSealed.test.js)
 
 ### ~~Promise~~
 
@@ -858,7 +850,7 @@ test('passes when value is a string', () => {
 });
 ```
 
-[Open toBeString in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fstring%2FtoBeString.test.js)
+[Open toBeString in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fstring%2FtoBeString.test.js)
 
 #### .toBeHexadecimal(string)
 
@@ -873,7 +865,7 @@ test('passes when value is a valid hexadecimal', () => {
 });
 ```
 
-[Open toBeHexadecimal in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fstring%2FtoBeHexadecimal.test.js)
+[Open toBeHexadecimal in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fstring%2FtoBeHexadecimal.test.js)
 
 #### .toEqualCaseInsensitive(string)
 
@@ -889,7 +881,7 @@ test('passes when strings are equal ignoring case', () => {
 });
 ```
 
-[Open toEqualCaseInsensitive in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fstring%2FtoEqualCaseInsensitive.test.js)
+[Open toEqualCaseInsensitive in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fstring%2FtoEqualCaseInsensitive.test.js)
 
 #### .toStartWith(prefix)
 
@@ -902,7 +894,7 @@ test('passes when value is starts with given string', () => {
 });
 ```
 
-[Open toStartWith in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fstring%2FtoStartWith.test.js)
+[Open toStartWith in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fstring%2FtoStartWith.test.js)
 
 #### .toEndWith(suffix)
 
@@ -915,7 +907,7 @@ test('passes when value is ends with given string', () => {
 });
 ```
 
-[Open toEndWith in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fstring%2FtoEndWith.test.js)
+[Open toEndWith in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fstring%2FtoEndWith.test.js)
 
 #### .toInclude(substring)
 
@@ -928,7 +920,7 @@ test('passes when value includes substring', () => {
 });
 ```
 
-[Open toInclude in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fstring%2FtoInclude.test.js)
+[Open toInclude in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fstring%2FtoInclude.test.js)
 
 #### .toIncludeRepeated(substring, times)
 
@@ -941,7 +933,7 @@ test('passes when value includes substring n times', () => {
 });
 ```
 
-[Open toIncludeRepeated in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fstring%2FtoIncludeRepeated.test.js)
+[Open toIncludeRepeated in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fstring%2FtoIncludeRepeated.test.js)
 
 #### .toIncludeMultiple([substring])
 
@@ -954,7 +946,7 @@ test('passes when value includes all substrings', () => {
 });
 ```
 
-[Open toIncludeMultiple in repl](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fstring%2FtoIncludeMultiple.test.js)
+[Open toIncludeMultiple in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fstring%2FtoIncludeMultiple.test.js)
 
 ## Contributors
 

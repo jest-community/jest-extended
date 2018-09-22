@@ -215,9 +215,43 @@ Proposal in #117 (*under development*)
 
 ### Mock
 
-{{sandbox/matchers/mock/toHaveBeenCalledBefore.test.js}}
+#### .toHaveBeenCalledBefore()
 
-{{sandbox/matchers/mock/toHaveBeenCalledAfter.test.js}}
+Use `.toHaveBeenCalledBefore` when checking if a `Mock` was called before another `Mock`.
+
+_Note: Required Jest version >=23_
+
+```js
+it('calls mock1 before mock2', () => {
+  const mock1 = jest.fn();
+  const mock2 = jest.fn();
+
+  mock1();
+  mock2();
+  mock1();
+
+  expect(mock1).toHaveBeenCalledBefore(mock2);
+});
+```
+
+#### .toHaveBeenCalledAfter()
+
+Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another `Mock`.
+
+_Note: Required Jest version >=23_
+
+```js
+it('calls mock1 after mock2', () => {
+  const mock1 = jest.fn();
+  const mock2 = jest.fn();
+
+  mock2();
+  mock1();
+  mock2();
+
+  expect(mock1).toHaveBeenCalledAfter(mock2);
+});
+```
 
 ### Number
 
@@ -267,9 +301,29 @@ Proposal in #117 (*under development*)
 
 {{sandbox/matchers/object/toBeExtensible.test.js}}
 
-{{sandbox/matchers/object/toBeFrozen.test.js}}
+#### .toBeFrozen()
 
-{{sandbox/matchers/object/toBeSealed.test.js}}
+Use `.toBeFrozen` when checking if an object is frozen.
+
+```js
+test('passes when value is frozen', () => {
+  expect(Object.frozen({})).toBeFrozen();
+  expect({}).not.toBeFrozen();
+  expect(1).not.toBeFrozen();
+});
+```
+
+#### .toBeSealed()
+
+Use `.toBeSealed` when checking if an object is sealed.
+
+```js
+test('passes when value is sealed', () => {
+  expect(Object.seal({})).toBeSealed();
+  expect({}).not.toBeSealed();
+  expect(1).not.toBeSealed();
+});
+```
 
 ### ~~Promise~~
 
