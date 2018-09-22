@@ -63,6 +63,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - Further proposals in [#117](https://github.com/jest-community/jest-extended/issues/117) PRs welcome
   - [Function](#function)
     - [.toBeFunction()](#tobefunction)
+    - [.toThrowWithMessage()](#tothrowwithmessagetype-message)
   - [Mock](#mock)
     - [.toHaveBeenCalledBefore()](#tohavebeencalledbefore)
     - [.toHaveBeenCalledAfter()](#tohavebeencalledafter)
@@ -395,6 +396,30 @@ test('passes when value is a function', () => {
   expect(function() {}).not.toBeFunction();
   expect(noop).toBeFunction();
   expect(true).not.toBeFunction();
+});
+```
+
+#### .toThrowWithMessage(type, message)
+
+Use `.toThrowWithMessage` when checking if a callback function throws an error with a given error type and given error message.
+
+```js
+test('throws an error of type TypeError with message "hello world"', () => {
+  expect(() => {
+    throw TypeError("hello world");
+  }).toThrowWithMessage(TypeError, "hello world");
+
+  expect(() => {
+    throw TypeError("hello world");
+  }).toThrowWithMessage(TypeError, /hello world/);
+
+  expect(() => {
+    throw TypeError("hello world 2");
+  }).not.toThrowWithMessage(TypeError, "hello world");
+
+  expect(() => {
+    throw TypeError("hello world 2");
+  }).not.toThrowWithMessage(TypeError, /hello world/);
 });
 ```
 
