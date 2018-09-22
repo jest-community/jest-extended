@@ -20,7 +20,7 @@
     "prepublishOnly": "yarn build",
     "precommit": "lint-staged",
     "prettier": "prettier 'src/**/*.js' --write --single-quote=true --print-width=120",
-    "test": "jest",
+    "test": "jest src",
     "test:coverage": "yarn test -- --coverage",
     "test:report": "codecov",
     "test:watch": "yarn test -- --watch"
