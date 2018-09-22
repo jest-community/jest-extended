@@ -317,6 +317,7 @@ Use `.toBeTrue` when checking a value is equal (===) to `true`.
 
 ```js
 test('is jest cool', () => {
+  const isJestCool = () => true;
   expect(isJestCool()).toBeTrue();
   expect(false).not.toBeTrue();
 });
@@ -328,7 +329,7 @@ Use `.toBeFalse` when checking a value is equal (===) to `false`.
 
 ```js
 test('returns false', () => {
-  expect(areWeThereYet()).toBeFalse();
+  expect(false).toBeFalse();
   expect(true).not.toBeFalse();
 });
 ```
@@ -396,7 +397,6 @@ Use `.toBeFunction` when checking if a value is a `Function`.
 test('passes when value is a function', () => {
   function noop() {}
   expect(() => {}).toBeFunction();
-  expect(function() {}).not.toBeFunction();
   expect(noop).toBeFunction();
   expect(true).not.toBeFunction();
 });
