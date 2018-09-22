@@ -34,7 +34,12 @@ Head over to [here](https://hacktoberfest.digitalocean.com/sign_up/register) to 
    * See the Jest docs for an [example usage](https://facebook.github.io/jest/docs/en/expect.html#thisutils)
  - Jest's [`expect`](https://github.com/facebook/jest/tree/master/packages/expect) package is being used to access their deep `equals` function.
    * `import { equals } from 'expect/build/jasmine_utils';`
- - Docs for the new matcher should be updated in the API section of the `README.md` to no longer say `Unimplemented`.
+ - Docs for new matchers should be added to `/docs/sandbox/matchers/[matcher.test.js]`, with a comment explaining the matcher and a code example of how to use the matcher.
+ - To add the matcher to the README you will need to link the docs in `docs/README.template.md` with the following syntax:
+ ```
+ {{/sandbox/matchers/myNewMatcherName.test.js}}
+ ```
+ - Once you have linked it in the template you can regenerate the README by running `yarn generate-readme`.
  - Type definitions for the new matchers should be added to `types/index.d.ts`.
 
 ## Committing and Pushing changes

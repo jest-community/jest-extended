@@ -37,6 +37,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
 - [Contributing](#contributing)
 - [Installation](#installation)
 - [Setup](#setup)
+- [jest-extended REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2FtoBeEmpty.test.js)
 - [API](#api)
     - [.pass(message)](#passmessage)
     - [.fail(message)](#failmessage)
@@ -188,6 +189,8 @@ test('passes when given an empty object', () => {
 });
 ```
 
+[Open toBeEmpty in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2FtoBeEmpty.test.js)
+
 #### .toBeOneOf([members])
 
 Use `.toBeOneOf` when checking if a value is a member of a given `Array`.
@@ -198,6 +201,8 @@ test('passes when value is in given array', () => {
   expect(4).not.toBeOneOf([1, 2, 3]);
 });
 ```
+
+[Open toBeOneOf in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2FtoBeOneOf.test.js)
 
 #### .toBeNil()
 
@@ -211,6 +216,8 @@ test('passes when value is null or undefined', () => {
 });
 ```
 
+[Open toBeNil in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2FtoBeNil.test.js)
+
 #### .toSatisfy(predicate)
 
 Use `.toSatisfy` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean`.
@@ -223,6 +230,8 @@ test('passes when value passes given predicate', () => {
   expect(3).not.toSatisfy(greaterThanOneButNotThree);
 });
 ```
+
+[Open toSatisfy in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2FtoSatisfy.test.js)
 
 ### Array
 
@@ -238,6 +247,8 @@ test('passes when value is an array', () => {
 });
 ```
 
+[Open toBeArray in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Farray%2FtoBeArray.test.js)
+
 #### .toBeArrayOfSize()
 
 Use `.toBeArrayOfSize` when checking if a value is an `Array` of size x.
@@ -250,6 +261,8 @@ test('passes when value is an array', () => {
 });
 ```
 
+[Open toBeArrayOfSize in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Farray%2FtoBeArrayOfSize.test.js)
+
 #### .toIncludeAllMembers([members])
 
 Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
@@ -260,6 +273,8 @@ test('passes when given array values match the members of the set', () => {
   expect([1, 2, 2]).toIncludeAllMembers([2, 1]);
 });
 ```
+
+[Open toIncludeAllMembers in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Farray%2FtoIncludeAllMembers.test.js)
 
 #### .toIncludeAnyMembers([members])
 
@@ -273,6 +288,8 @@ test('passes when given array values match any of the members in the set', () =>
 });
 ```
 
+[Open toIncludeAnyMembers in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Farray%2FtoIncludeAnyMembers.test.js)
+
 #### .toIncludeSameMembers([members])
 
 Use `.toIncludeSameMembers` when checking if two arrays contain equal values, in any order.
@@ -284,6 +301,7 @@ test('passes when arrays match in a different order', () => {
 });
 ```
 
+[Open toIncludeSameMembers in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Farray%2FtoIncludeSameMembers.test.js)
 
 #### .toSatisfyAll(predicate)
 
@@ -292,10 +310,12 @@ Use `.toSatisfyAll` when you want to use a custom matcher by supplying a predica
 ```js
 test('passes when all values in array pass given predicate', () => {
   const isOdd = el => el % 2 === 1;
-  expect([1,3,5,7]).toSatisfyAll(isOdd);
-  expect([1,3,4,5,7]).not.toSatisfyAll(isOdd);
+  expect([1, 3, 5, 7]).toSatisfyAll(isOdd);
+  expect([1, 3, 4, 5, 7]).not.toSatisfyAll(isOdd);
 });
 ```
+
+[Open toSatisfyAll in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Farray%2FtoSatisfyAll.test.js)
 
 ### Boolean
 
@@ -312,16 +332,21 @@ test('passes when value is a boolean', () => {
 });
 ```
 
+[Open toBeBoolean in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fboolean%2FtoBeBoolean.test.js)
+
 #### .toBeTrue()
 
 Use `.toBeTrue` when checking a value is equal (===) to `true`.
 
 ```js
 test('is jest cool', () => {
+  const isJestCool = () => true;
   expect(isJestCool()).toBeTrue();
   expect(false).not.toBeTrue();
 });
 ```
+
+[Open toBeTrue in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fboolean%2FtoBeTrue.test.js)
 
 #### .toBeFalse()
 
@@ -329,16 +354,18 @@ Use `.toBeFalse` when checking a value is equal (===) to `false`.
 
 ```js
 test('returns false', () => {
-  expect(areWeThereYet()).toBeFalse();
+  expect(false).toBeFalse();
   expect(true).not.toBeFalse();
 });
 ```
+
+[Open toBeFalse in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fboolean%2FtoBeFalse.test.js)
 
 ### ~~Date~~
 
 Proposal in #117 (*under development*)
 
-### .toBeDate()
+#### .toBeDate()
 
 Use `.toBeDate` when checking if a value is a `Date`.
 
@@ -346,41 +373,54 @@ Use `.toBeDate` when checking if a value is a `Date`.
 test('passes when value is a date', () => {
   expect(new Date()).toBeDate();
   expect('01/01/2018').not.toBeDate();
-  expect(new Date('01/01/2018').toBeDate();
+  expect(new Date('01/01/2018')).toBeDate();
   expect(undefined).not.toBeDate();
 });
 ```
 
-### .toBeValidDate()
+[Open toBeDate in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fdate%2FtoBeDate.test.js)
+
+#### .toBeValidDate()
 
 Use `.toBeValidDate` when checking if a given `Date` object is valid.
 
-```
+```js
 test('passes when Date is valid', () => {
   expect(new Date()).toBeValidDate();
   expect('01/01/2018').not.toBeValidDate();
-  expect(new Date('01/01/2018').toBeValidDate();
-  expect(new Date('01/90/2018').not.toBeValidDate();
+  expect(new Date('01/01/2018')).toBeValidDate();
+  expect(new Date('01/90/2018')).not.toBeValidDate();
   expect(undefined).not.toBeValidDate();
 });
 ```
 
-### .toBeAfter(date)
- Use `.toBeAfter` when checking if a date occurs after `date`.
- ```js
+[Open toBeValidDate in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fdate%2FtoBeValidDate.test.js)
+
+#### .toBeAfter(date)
+
+Use `.toBeAfter` when checking if a date occurs after `date`.
+
+```js
 test('passes when input is after date', () => {
   expect(new Date('01/01/2019')).toBeAfter(new Date('01/01/2018'));
   expect('01/01/2018').not.toBeAfter(new Date('01/01/2019'));
 });
 ```
- ### .toBeBefore(date)
- Use `.toBeBefore` when checking if a date occurs before `date`.
- ```js
+
+[Open toBeAfter in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fdate%2FtoBeAfter.test.js)
+
+#### .toBeBefore(date)
+
+Use `.toBeBefore` when checking if a date occurs before `date`.
+
+```js
 test('passes when input is before date', () => {
   expect(new Date('01/01/2018')).toBeBefore(new Date('01/01/2019'));
   expect('01/01/2019').not.toBeBefore(new Date('01/01/2018'));
 });
 ```
+
+[Open toBeBefore in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fdate%2FtoBeBefore.test.js)
 
 ### Function
 
@@ -390,13 +430,14 @@ Use `.toBeFunction` when checking if a value is a `Function`.
 
 ```js
 test('passes when value is a function', () => {
-  function noop = () {};
+  function noop() {}
   expect(() => {}).toBeFunction();
-  expect(function() {}).not.toBeFunction();
   expect(noop).toBeFunction();
   expect(true).not.toBeFunction();
 });
 ```
+
+[Open toBeFunction in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Ffunction%2FtoBeFunction.test.js)
 
 ### Mock
 
@@ -406,9 +447,7 @@ Use `.toHaveBeenCalledBefore` when checking if a `Mock` was called before anothe
 
 _Note: Required Jest version >=23_
 
-
 ```js
-
 it('calls mock1 before mock2', () => {
   const mock1 = jest.fn();
   const mock2 = jest.fn();
@@ -427,9 +466,7 @@ Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another 
 
 _Note: Required Jest version >=23_
 
-
 ```js
-
 it('calls mock1 after mock2', () => {
   const mock1 = jest.fn();
   const mock2 = jest.fn();
@@ -457,6 +494,8 @@ test('passes when value is a number', () => {
 });
 ```
 
+[Open toBeNumber in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fnumber%2FtoBeNumber.test.js)
+
 #### .toBeNaN()
 
 Use `.toBeNaN` when checking a value is `NaN`.
@@ -467,6 +506,8 @@ test('passes when value is NaN', () => {
   expect(1).not.toBeNaN();
 });
 ```
+
+[Open toBeNaN in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fnumber%2FtoBeNaN.test.js)
 
 #### .toBeFinite()
 
@@ -479,6 +520,8 @@ test('passes when value is a finite number', () => {
   expect(NaN).not.toBeFinite();
 });
 ```
+
+[Open toBeFinite in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fnumber%2FtoBeFinite.test.js)
 
 #### .toBePositive()
 
@@ -493,6 +536,8 @@ test('passes when value is a positive number', () => {
 });
 ```
 
+[Open toBePositive in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fnumber%2FtoBePositive.test.js)
+
 #### .toBeNegative()
 
 Use `.toBeNegative` when checking if a value is a negative `Number`.
@@ -506,8 +551,9 @@ test('passes when value is a negative number', () => {
 });
 ```
 
-#### .toBeEven()
+[Open toBeNegative in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fnumber%2FtoBeNegative.test.js)
 
+#### .toBeEven()
 
 Use `.toBeEven` when checking if a value is an even `Number`.
 
@@ -518,6 +564,8 @@ test('passes when value is an even number', () => {
   expect(NaN).not.toBeEven();
 });
 ```
+
+[Open toBeEven in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fnumber%2FtoBeEven.test.js)
 
 #### .toBeOdd()
 
@@ -531,6 +579,8 @@ test('passes when value is an odd number', () => {
 });
 ```
 
+[Open toBeOdd in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fnumber%2FtoBeOdd.test.js)
+
 #### .toBeWithin(start, end)
 
 Use `.toBeWithin` when checking if a number is in between the given bounds of: start (inclusive) and end (exclusive).
@@ -542,6 +592,8 @@ test('passes when number is within given bounds', () => {
   expect(3).not.toBeWithin(1, 3);
 });
 ```
+
+[Open toBeWithin in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fnumber%2FtoBeWithin.test.js)
 
 ### Object
 
@@ -557,6 +609,8 @@ test('passes when value is an object', () => {
 });
 ```
 
+[Open toBeObject in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoBeObject.test.js)
+
 #### .toContainKey(key)
 
 Use `.toContainKey` when checking if an object contains the provided key.
@@ -571,6 +625,8 @@ test('passes when object contains the given key', () => {
 });
 ```
 
+[Open toContainKey in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainKey.test.js)
+
 #### .toContainKeys([keys])
 
 Use `.toContainKeys` when checking if an object has all of the provided keys.
@@ -584,6 +640,8 @@ test('passes when object contains all keys', () => {
 });
 ```
 
+[Open toContainKeys in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainKeys.test.js)
+
 #### .toContainAllKeys([keys])
 
 Use `.toContainAllKeys` when checking if an object only contains all of the provided keys.
@@ -596,6 +654,8 @@ test('passes when object only contains all keys', () => {
   expect(o).not.toContainAllKeys(['b']);
 });
 ```
+
+[Open toContainAllKeys in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainAllKeys.test.js)
 
 #### .toContainAnyKeys([keys])
 
@@ -611,6 +671,8 @@ test('passes when object contains at least one matching key', () => {
 });
 ```
 
+[Open toContainAnyKeys in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainAnyKeys.test.js)
+
 #### .toContainValue(value)
 
 Use `.toContainValue` when checking if an object contains the provided value.
@@ -623,6 +685,8 @@ test('passes when object contains given value', () => {
   expect(o).not.toContainValue('qux');
 });
 ```
+
+[Open toContainValue in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainValue.test.js)
 
 #### .toContainValues([values])
 
@@ -637,6 +701,8 @@ test('passes when object contains all of the given values', () => {
 });
 ```
 
+[Open toContainValues in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainValues.test.js)
+
 #### .toContainAllValues([values])
 
 Use `.toContainAllValues` when checking if an object only contains all of the provided values.
@@ -649,6 +715,8 @@ test('passes when object only contains all of the given values', () => {
   expect(o).not.toContainAllValues(['bar', 'foo']);
 });
 ```
+
+[Open toContainAllValues in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainAllValues.test.js)
 
 #### .toContainAnyValues([values])
 
@@ -664,6 +732,8 @@ test('passes when object contains at least one of the given values', () => {
 });
 ```
 
+[Open toContainAnyValues in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainAnyValues.test.js)
+
 #### .toContainEntry([key, value])
 
 Use `.toContainEntry` when checking if an object contains the provided entry.
@@ -678,6 +748,8 @@ test('passes when object contains given entry', () => {
 });
 ```
 
+[Open toContainEntry in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainEntry.test.js)
+
 #### .toContainEntries([[key, value]])
 
 Use `.toContainEntries` when checking if an object contains all of the provided entries.
@@ -691,6 +763,8 @@ test('passes when object contains all of the given entries', () => {
 });
 ```
 
+[Open toContainEntries in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainEntries.test.js)
+
 #### .toContainAllEntries([[key, value]])
 
 Use `.toContainAllEntries` when checking if an object only contains all of the provided entries.
@@ -702,6 +776,8 @@ test('passes when object only contains all of the given entries', () => {
   expect(o).not.toContainAllEntries([['a', 'foo'], ['b', 'bar']]);
 });
 ```
+
+[Open toContainAllEntries in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainAllEntries.test.js)
 
 #### .toContainAnyEntries([[key, value]])
 
@@ -717,16 +793,20 @@ test('passes when object contains at least one of the given entries', () => {
 });
 ```
 
+[Open toContainAnyEntries in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoContainAnyEntries.test.js)
+
 #### .toBeExtensible()
 
 Use `.toBeExtensible` when checking if an object is extensible.
 
 ```js
 test('passes when value is extensible', () => {
-  expect({a: 1}).toBeExtensible();
+  expect({ a: 1 }).toBeExtensible();
   expect(1).not.toBeExtensible();
 });
 ```
+
+[Open toBeExtensible in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fobject%2FtoBeExtensible.test.js)
 
 #### .toBeFrozen()
 
@@ -771,6 +851,8 @@ test('passes when value is a string', () => {
 });
 ```
 
+[Open toBeString in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fstring%2FtoBeString.test.js)
+
 #### .toBeHexadecimal(string)
 
 Use `.toBeHexadecimal` when checking if a value is a valid HTML hexadecimal color.
@@ -783,6 +865,8 @@ test('passes when value is a valid hexadecimal', () => {
   expect('#123ffg').not.toBeHexadecimal();
 });
 ```
+
+[Open toBeHexadecimal in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fstring%2FtoBeHexadecimal.test.js)
 
 #### .toEqualCaseInsensitive(string)
 
@@ -798,6 +882,8 @@ test('passes when strings are equal ignoring case', () => {
 });
 ```
 
+[Open toEqualCaseInsensitive in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fstring%2FtoEqualCaseInsensitive.test.js)
+
 #### .toStartWith(prefix)
 
 Use `.toStartWith` when checking if a `String` starts with a given `String` prefix.
@@ -808,6 +894,8 @@ test('passes when value is starts with given string', () => {
   expect('hello world').not.toStartWith('world');
 });
 ```
+
+[Open toStartWith in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fstring%2FtoStartWith.test.js)
 
 #### .toEndWith(suffix)
 
@@ -820,6 +908,8 @@ test('passes when value is ends with given string', () => {
 });
 ```
 
+[Open toEndWith in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fstring%2FtoEndWith.test.js)
+
 #### .toInclude(substring)
 
 Use `.toInclude` when checking if a `String` includes the given `String` substring.
@@ -830,6 +920,8 @@ test('passes when value includes substring', () => {
   expect('hello world').not.toInclude('bob');
 });
 ```
+
+[Open toInclude in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fstring%2FtoInclude.test.js)
 
 #### .toIncludeRepeated(substring, times)
 
@@ -842,6 +934,8 @@ test('passes when value includes substring n times', () => {
 });
 ```
 
+[Open toIncludeRepeated in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fstring%2FtoIncludeRepeated.test.js)
+
 #### .toIncludeMultiple([substring])
 
 Use `.toIncludeMultiple` when checking if a `String` includes all of the given substrings.
@@ -852,6 +946,8 @@ test('passes when value includes all substrings', () => {
   expect('hello world').not.toIncludeMultiple(['world', 'hello', 'bob']);
 });
 ```
+
+[Open toIncludeMultiple in REPL](https://codesandbox.io/s/github/jest-community/jest-extended/tree/master/docs/sandbox?module=%2Fmatchers%2Fstring%2FtoIncludeMultiple.test.js)
 
 ## Contributors
 
