@@ -284,7 +284,6 @@ test('passes when arrays match in a different order', () => {
 });
 ```
 
-
 #### .toSatisfyAll(predicate)
 
 Use `.toSatisfyAll` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean` for all values in an array.
@@ -292,8 +291,8 @@ Use `.toSatisfyAll` when you want to use a custom matcher by supplying a predica
 ```js
 test('passes when all values in array pass given predicate', () => {
   const isOdd = el => el % 2 === 1;
-  expect([1,3,5,7]).toSatisfyAll(isOdd);
-  expect([1,3,4,5,7]).not.toSatisfyAll(isOdd);
+  expect([1, 3, 5, 7]).toSatisfyAll(isOdd);
+  expect([1, 3, 4, 5, 7]).not.toSatisfyAll(isOdd);
 });
 ```
 
@@ -338,7 +337,7 @@ test('returns false', () => {
 
 Proposal in #117 (*under development*)
 
-### .toBeDate()
+#### .toBeDate()
 
 Use `.toBeDate` when checking if a value is a `Date`.
 
@@ -346,36 +345,41 @@ Use `.toBeDate` when checking if a value is a `Date`.
 test('passes when value is a date', () => {
   expect(new Date()).toBeDate();
   expect('01/01/2018').not.toBeDate();
-  expect(new Date('01/01/2018').toBeDate();
+  expect(new Date('01/01/2018')).toBeDate();
   expect(undefined).not.toBeDate();
 });
 ```
 
-### .toBeValidDate()
+#### .toBeValidDate()
 
 Use `.toBeValidDate` when checking if a given `Date` object is valid.
 
-```
+```js
 test('passes when Date is valid', () => {
   expect(new Date()).toBeValidDate();
   expect('01/01/2018').not.toBeValidDate();
-  expect(new Date('01/01/2018').toBeValidDate();
-  expect(new Date('01/90/2018').not.toBeValidDate();
+  expect(new Date('01/01/2018')).toBeValidDate();
+  expect(new Date('01/90/2018')).not.toBeValidDate();
   expect(undefined).not.toBeValidDate();
 });
 ```
 
-### .toBeAfter(date)
- Use `.toBeAfter` when checking if a date occurs after `date`.
- ```js
+#### .toBeAfter(date)
+
+Use `.toBeAfter` when checking if a date occurs after `date`.
+
+```js
 test('passes when input is after date', () => {
   expect(new Date('01/01/2019')).toBeAfter(new Date('01/01/2018'));
   expect('01/01/2018').not.toBeAfter(new Date('01/01/2019'));
 });
 ```
- ### .toBeBefore(date)
- Use `.toBeBefore` when checking if a date occurs before `date`.
- ```js
+
+#### .toBeBefore(date)
+
+Use `.toBeBefore` when checking if a date occurs before `date`.
+
+```js
 test('passes when input is before date', () => {
   expect(new Date('01/01/2018')).toBeBefore(new Date('01/01/2019'));
   expect('01/01/2019').not.toBeBefore(new Date('01/01/2018'));
@@ -390,7 +394,7 @@ Use `.toBeFunction` when checking if a value is a `Function`.
 
 ```js
 test('passes when value is a function', () => {
-  function noop = () {};
+  function noop() {}
   expect(() => {}).toBeFunction();
   expect(function() {}).not.toBeFunction();
   expect(noop).toBeFunction();
@@ -406,9 +410,7 @@ Use `.toHaveBeenCalledBefore` when checking if a `Mock` was called before anothe
 
 _Note: Required Jest version >=23_
 
-
 ```js
-
 it('calls mock1 before mock2', () => {
   const mock1 = jest.fn();
   const mock2 = jest.fn();
@@ -427,9 +429,7 @@ Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another 
 
 _Note: Required Jest version >=23_
 
-
 ```js
-
 it('calls mock1 after mock2', () => {
   const mock1 = jest.fn();
   const mock2 = jest.fn();
@@ -507,7 +507,6 @@ test('passes when value is a negative number', () => {
 ```
 
 #### .toBeEven()
-
 
 Use `.toBeEven` when checking if a value is an even `Number`.
 
@@ -723,7 +722,7 @@ Use `.toBeExtensible` when checking if an object is extensible.
 
 ```js
 test('passes when value is extensible', () => {
-  expect({a: 1}).toBeExtensible();
+  expect({ a: 1 }).toBeExtensible();
   expect(1).not.toBeExtensible();
 });
 ```
