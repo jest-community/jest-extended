@@ -14,6 +14,7 @@
     "build": "babel src -d dist --ignore *.test.js",
     "contributor": "all-contributors add",
     "contributor:gen": "all-contributors generate",
+    "generate-readme": "node scripts/readme.js",
     "lint": "eslint src",
     "lint:fix": "yarn lint -- --fix",
     "prepublishOnly": "yarn build",
