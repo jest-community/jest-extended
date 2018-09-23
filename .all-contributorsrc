@@ -413,6 +413,24 @@
       ]
     },
     {
+      "login": "tony19",
+      "name": "Tony Trinh",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/26580?v=4",
+      "profile": "https://github.com/tony19",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "NikitaKurpas",
+      "name": "Nikita Kurpas",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2844046?v=4",
+      "profile": "https://github.com/NikitaKurpas",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
       "login": "moredip",
       "name": "Pete Hodgson",
       "avatar_url": "https://avatars1.githubusercontent.com/u/65444?v=4",
@@ -421,5 +439,6 @@
         "code"
       ]
     }
-  ]
+  ],
+  "repoType": "github"
 }
