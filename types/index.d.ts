@@ -346,4 +346,342 @@ declare namespace jest {
      */
     toThrowWithMessage(type: Function, message: string | RegExp): R;
   }
+
+  // noinspection JSUnusedGlobalSymbols
+  interface Expect {
+    /**
+     * Note: Currently unimplemented
+     * Passing assertion
+     *
+     * @param {String} message
+     */
+    pass(message: string): any;
+
+    /**
+     * Note: Currently unimplemented
+     * Failing assertion
+     *
+     * @param {String} message
+     */
+    fail(message: string): any;
+
+    /**
+     * Use .toBeEmpty when checking if a String '', Array [] or Object {} is empty.
+     */
+    toBeEmpty(): any;
+
+    /**
+     * Use .toBeOneOf when checking if a value is a member of a given Array.
+     * @param {Array.<*>} members
+     */
+    toBeOneOf(members: any[]): any;
+
+    /**
+     * Use `.toBeNil` when checking a value is `null` or `undefined`.
+     */
+    toBeNil(): any;
+
+    /**
+     * Use `.toSatisfy` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean`.
+     * @param {Function} predicate
+     */
+    toSatisfy(predicate: (x: any) => boolean): any;
+
+    /**
+     * Use `.toBeArray` when checking if a value is an `Array`.
+     */
+    toBeArray(): any;
+
+    /**
+     * Use `.toBeArrayOfSize` when checking if a value is an `Array` of size x.
+     * @param {Number} x
+     */
+    toBeArrayOfSize(x: number): any;
+
+    /**
+     * Use `.toBeAfter` when checking if a date occurs after `date`.
+     * @param {Date} date
+     */
+    toBeAfter(date: Date): any;
+
+    /**
+     * Use `.toBeBefore` when checking if a date occurs before `date`.
+     * @param {Date} date
+     */
+    toBeBefore(date: Date): any;
+
+    /**
+     * Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
+     * @param {Array.<*>} members
+     */
+    toIncludeAllMembers(members: any[]): any;
+
+    /**
+     * Use `.toIncludeAnyMembers` when checking if an `Array` contains any of the members of a given set.
+     * @param {Array.<*>} members
+     */
+    toIncludeAnyMembers(members: any[]): any;
+
+    /**
+     * Use `.toIncludeSameMembers` when checking if two arrays contain equal values, in any order.
+     * @param {Array.<*>} members
+     */
+    toIncludeSameMembers(members: any[]): any;
+
+    /**
+     * Use `.toSatisfyAll` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean` for all values in an array.
+     * @param {Function} predicate
+     */
+    toSatisfyAll(predicate: (x: any) => boolean): any;
+
+    /**
+     * Use `.toBeBoolean` when checking if a value is a `Boolean`.
+     */
+    toBeBoolean(): any;
+
+    /**
+     * Use `.toBeTrue` when checking a value is equal (===) to `true`.
+     */
+    toBeTrue(): any;
+
+    /**
+     * Use `.toBeFalse` when checking a value is equal (===) to `false`.
+     */
+    toBeFalse(): any;
+
+    /**
+     * Use `.toBeDate` when checking if a value is a `Date`.
+     */
+    toBeDate(): any;
+
+    /**
+     * Use `.toBeValidDate` when checking if a value is a `valid Date`.
+     */
+    toBeValidDate(): any;
+
+    /**
+     * Use `.toBeFunction` when checking if a value is a `Function`.
+     */
+    toBeFunction(): any;
+
+    /**
+     * Use `.toBeHexadecimal` when checking if a value is a valid HTML hex color.
+     *
+     * @param {String} string
+     */
+    toBeHexadecimal(string: string): any;
+
+    /**
+     * Use `.toHaveBeenCalledBefore` when checking if a `Mock` was called before another `Mock`.
+     *
+     * Note: Required Jest version >=23
+     *
+     * @param {Mock} mock
+     */
+    toHaveBeenCalledBefore(mock: jest.Mock): any;
+
+    /**
+     * Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another `Mock`.
+     *
+     * Note: Required Jest version >=23
+     *
+     * @param {Mock} mock
+     */
+    toHaveBeenCalledAfter(mock: jest.Mock): any;
+
+    /**
+     * Use `.toBeNumber` when checking if a value is a `Number`.
+     */
+    toBeNumber(): any;
+
+    /**
+     * Use `.toBeNaN` when checking a value is `NaN`.
+     */
+    toBeNaN(): any;
+
+    /**
+     * Use `.toBeFinite` when checking if a value is a `Number`, not `NaN` or `Infinity`.
+     */
+    toBeFinite(): any;
+
+    /**
+     * Use `.toBePositive` when checking if a value is a positive `Number`.
+     */
+    toBePositive(): any;
+
+    /**
+     * Use `.toBeNegative` when checking if a value is a negative `Number`.
+     */
+    toBeNegative(): any;
+
+    /**
+     * Use `.toBeEven` when checking if a value is an even `Number`.
+     */
+    toBeEven(): any;
+
+    /**
+     * Use `.toBeOdd` when checking if a value is an odd `Number`.
+     */
+    toBeOdd(): any;
+
+    /**
+     * Use `.toBeWithin` when checking if a number is in between the given bounds of: start (inclusive) and end (exclusive).
+     *
+     * @param {Number} start
+     * @param {Number} end
+     */
+    toBeWithin(start: number, end: number): any;
+
+    /**
+     * Use `.toBeObject` when checking if a value is an `Object`.
+     */
+    toBeObject(): any;
+
+    /**
+     * Use `.toContainKey` when checking if an object contains the provided key.
+     *
+     * @param {String} key
+     */
+    toContainKey(key: string): any;
+
+    /**
+     * Use `.toContainKeys` when checking if an object has all of the provided keys.
+     *
+     * @param {Array.<String>} keys
+     */
+    toContainKeys(keys: string[]): any;
+
+    /**
+     * Use `.toContainAllKeys` when checking if an object only contains all of the provided keys.
+     *
+     * @param {Array.<String>} keys
+     */
+    toContainAllKeys(keys: string[]): any;
+
+    /**
+     * Use `.toContainAnyKeys` when checking if an object contains at least one of the provided keys.
+     *
+     * @param {Array.<String>} keys
+     */
+    toContainAnyKeys(keys: string[]): any;
+
+    /**
+     * Use `.toContainValue` when checking if an object contains the provided value.
+     *
+     * @param {*} value
+     */
+    toContainValue(value: any): any;
+
+    /**
+     * Use `.toContainValues` when checking if an object contains all of the provided values.
+     *
+     * @param {Array.<*>} values
+     */
+    toContainValues(values: any[]): any;
+
+    /**
+     * Use `.toContainAllValues` when checking if an object only contains all of the provided values.
+     *
+     * @param {Array.<*>} values
+     */
+    toContainAllValues(values: any[]): any;
+
+    /**
+     * Use `.toContainAnyValues` when checking if an object contains at least one of the provided values.
+     *
+     * @param {Array.<*>} values
+     */
+    toContainAnyValues(values: any[]): any;
+
+    /**
+     * Use `.toContainEntry` when checking if an object contains the provided entry.
+     *
+     * @param {Array.<String, String>} entry
+     */
+    toContainEntry(entry: [string, string]): any;
+
+    /**
+     * Use `.toContainEntries` when checking if an object contains all of the provided entries.
+     *
+     * @param {Array.<Array.<String, String>>} entries
+     */
+    toContainEntries(entries: [string, string][]): any;
+
+    /**
+     * Use `.toContainAllEntries` when checking if an object only contains all of the provided entries.
+     *
+     * @param {Array.<Array.<String, String>>} entries
+     */
+    toContainAllEntries(entries: [string, string][]): any;
+
+    /**
+     * Use `.toContainAnyEntries` when checking if an object contains at least one of the provided entries.
+     *
+     * @param {Array.<Array.<String, String>>} entries
+     */
+    toContainAnyEntries(entries: [string, string][]): any;
+
+    /**
+     * Use `.toBeExtensible` when checking if an object is extensible.
+     */
+    toBeExtensible(): any;
+
+    /**
+     * Use `.toBeFrozen` when checking if an object is frozen.
+     */
+    toBeFrozen(): any;
+
+    /**
+     * Use `.toBeSealed` when checking if an object is sealed.
+     */
+    toBeSealed(): any;
+
+    /**
+     * Use `.toBeString` when checking if a value is a `String`.
+     */
+    toBeString(): any;
+
+    /**
+     * Use `.toEqualCaseInsensitive` when checking if a string is equal (===) to another ignoring the casing of both strings.
+     *
+     * @param {String} string
+     */
+    toEqualCaseInsensitive(string: string): any;
+
+    /**
+     * Use `.toStartWith` when checking if a `String` starts with a given `String` prefix.
+     *
+     * @param {String} prefix
+     */
+    toStartWith(prefix: string): any;
+
+    /**
+     * Use `.toEndWith` when checking if a `String` ends with a given `String` suffix.
+     *
+     * @param {String} suffix
+     */
+    toEndWith(suffix: string): any;
+
+    /**
+     * Use `.toInclude` when checking if a `String` includes the given `String` substring.
+     *
+     * @param {String} substring
+     */
+    toInclude(substring: string): any;
+
+    /**
+     * Use `.toIncludeRepeated` when checking if a `String` includes the given `String` substring the correct number of times.
+     *
+     * @param {String} substring
+     * @param {Number} times
+     */
+    toIncludeRepeated(substring: string, times: number): any;
+
+    /**
+     * Use `.toIncludeMultiple` when checking if a `String` includes all of the given substrings.
+     *
+     * @param {Array.<String>} substring
+     */
+    toIncludeMultiple(substring: string[]): any;
+  }
 }

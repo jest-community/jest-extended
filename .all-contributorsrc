@@ -422,6 +422,15 @@
       ]
     },
     {
+      "login": "NikitaKurpas",
+      "name": "Nikita Kurpas",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2844046?v=4",
+      "profile": "https://github.com/NikitaKurpas",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
       "login": "natealcedo",
       "name": "Alcedo Nathaniel De Guzman Jr",
       "avatar_url": "https://avatars0.githubusercontent.com/u/18214059?v=4",
@@ -429,9 +438,10 @@
       "contributions": [
         "code",
         "doc",
-        "test",
-        "example"
+        "example",
+        "test"
       ]
     }
-  ]
+  ],
+  "repoType": "github"
 }
