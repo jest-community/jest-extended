@@ -20,7 +20,7 @@ declare namespace jest {
     fail(message: string): R;
 
     /**
-     * Use .toBeEmpty when checking if a String '', Array [] or Object {} is empty.
+     * Use .toBeEmpty when checking if a String '', Array [], Object {} or Iterable (i.e. Map, Set) is empty.
      */
     toBeEmpty(): R;
 

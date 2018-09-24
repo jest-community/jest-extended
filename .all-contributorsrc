@@ -440,6 +440,15 @@
         "doc",
         "example",
         "test"
+      ],
+    },
+    {
+      "login": "moredip",
+      "name": "Pete Hodgson",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/65444?v=4",
+      "profile": "http://thepete.net",
+      "contributions": [
+        "code"
       ]
     }
   ],

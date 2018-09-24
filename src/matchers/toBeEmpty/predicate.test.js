@@ -17,6 +17,20 @@ describe('toBeEmpty Predicate', () => {
     test('When empty object is passed', () => {
       expect(predicate({})).toBe(true);
     });
+
+    test('When empty Set is passed', () => {
+      expect(predicate(new Set())).toBe(true);
+    });
+
+    test('When empty Map is passed', () => {
+      expect(predicate(new Map([]))).toBe(true);
+    });
+
+    test('When empty generator is passed', () => {
+      function* yieldsNothing() {}
+
+      expect(predicate(yieldsNothing())).toBe(true);
+    });
   });
 
   describe('return false', () => {
@@ -28,12 +42,32 @@ describe('toBeEmpty Predicate', () => {
       expect(predicate('string')).toBe(false);
     });
 
+    test('When blank string is passed', () => {
+      expect(predicate(' ')).toBe(false);
+    });
+
     test('When non-empty string object is passed', () => {
       expect(predicate(new String('string'))).toBe(false);
     });
 
     test('When object with members is passed', () => {
       expect(predicate({ foo: 'bar' })).toBe(false);
+    });
+
+    test('When non-empty Set is passed', () => {
+      expect(predicate(new Set(['']))).toBe(false);
+    });
+
+    test('When non-empty Map is passed', () => {
+      expect(predicate(new Map([['k', 'v']]))).toBe(false);
+    });
+
+    test('When non-empty generator is passed', () => {
+      function* yieldsSomething() {
+        yield 'a thing';
+      }
+
+      expect(predicate(yieldsSomething())).toBe(false);
     });
   });
 });
