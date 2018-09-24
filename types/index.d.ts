@@ -683,5 +683,13 @@ declare namespace jest {
      * @param {Array.<String>} substring
      */
     toIncludeMultiple(substring: string[]): any;
+
+    /**
+     * Use `.toThrowWithMessage` when checking if a callback function throws an error of a given type with a given error message.
+     *
+     * @param {Function} type
+     * @param {String | RegExp} message
+     */
+    toThrowWithMessage(type: Function, message: string | RegExp): R;
   }
 }
