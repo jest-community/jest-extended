@@ -412,7 +412,7 @@ test('passes when value is a function', () => {
 
 #### .toThrowWithMessage(type, message)
 
-Use `.toThrowWithMessage` when checking if a callback function throws an error with a given error type and given error message.
+Use `.toThrowWithMessage` when checking if a callback function throws an error with a given error type and given error message. Message can either be a `String` or a `RegExp`.
 
 ```js
 test('throws an error of type TypeError with message "hello world"', () => {
