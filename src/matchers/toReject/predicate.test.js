@@ -1,6 +1,6 @@
 import predicate from './predicate';
 
-describe('toResolve predicate', () => {
+describe('toReject predicate', () => {
   test('should return true when passed a promise that rejects', async () => {
     const promise = Promise.reject();
     expect(await predicate(promise)).toBe(true);
