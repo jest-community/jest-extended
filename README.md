@@ -94,7 +94,9 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toBeExtensible()](#tobeextensible)
     - [.toBeFrozen()](#tobefrozen)
     - [.toBeSealed()](#tobesealed)
-  - [~~Promise~~](#promise)
+  - [Promise](#promise)
+    - [.toResolve()](#toresolve)
+    - [.toReject()](#toreject)
   - [String](#string)
     - [.toBeString()](#tobestring)
     - [.toBeHexadecimal(string)](#tobehexadecimal)
@@ -788,9 +790,27 @@ test('passes when value is sealed', () => {
 });
 ```
 
-### ~~Promise~~
+### Promise
 
-_No APIs proposed yet_
+#### .toResolve()
+
+Use `.toResolve` when checking if a promise is resolved.
+
+```js
+test('passes when a promise resolves', async () => {
+  await expect(Promise.resolve()).toResolve();
+});
+```
+
+#### .toReject()
+
+Use `.toReject` when checking if a promise is rejected.
+
+```js
+test('passes when a promise rejects', async () => {
+  await expect(Promise.reject()).toReject();
+});
+```
 
 ### String
 
