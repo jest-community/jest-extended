@@ -469,7 +469,7 @@ it('calls mock exactly once with the value 1', () => {
 
   mock(1);
 
-  expect(mock).toHaveBeenCalledOnce([1]);
+  expect(mock).toHaveBeenCalledOnceWith(1);
 });
 ```
 
@@ -480,7 +480,7 @@ it('calls mock exactly once with the values of 1 and 2', () => {
 
   mock(1, 2);
 
-  expect(mock).toHaveBeenCalledOnce([1, 2]);
+  expect(mock).toHaveBeenCalledOnceWith(1, 2);
 });
 ```
 
