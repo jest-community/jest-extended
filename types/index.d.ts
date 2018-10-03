@@ -647,6 +647,16 @@ declare namespace jest {
     toBeSealed(): any;
 
     /**
+     * Use `.toResolve` when checking if a promise resolves.
+     */
+    toResolve(): any;
+
+    /**
+     * Use `.toReject` when checking if a promise rejects.
+     */
+    toReject(): any;
+
+    /**
      * Use `.toBeString` when checking if a value is a `String`.
      */
     toBeString(): any;
@@ -700,6 +710,6 @@ declare namespace jest {
      * @param {Function} type
      * @param {String | RegExp} message
      */
-    toThrowWithMessage(type: Function, message: string | RegExp): R;
+    toThrowWithMessage(type: Function, message: string | RegExp): any;
   }
 }
