@@ -143,9 +143,9 @@ declare namespace jest {
 
     /**
      * Use `.toHaveBeenCalledOnceWith` when checking if a `Mock` was called once with expected values.
-     * @param {Array.<*>} expected
+     * @param {<*>} args
      */
-    toHaveBeenCalledOnceWith(expected: any[]): R;
+    toHaveBeenCalledOnceWith(...args: any[]): R;
 
     /**
      * Use `.toBeNumber` when checking if a value is a `Number`.
