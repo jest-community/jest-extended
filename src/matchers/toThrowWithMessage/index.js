@@ -22,37 +22,34 @@ const failMessage = (received, expected) => () =>
   `  ${printReceived(received)}\n`;
 
 export default {
-  toThrowWithMessage: (callback, type, message) => {
+  toThrowWithMessage(callback, type, message) {
+    const hint = this.isNot ? negativeHint : positiveHint;
     if (!callback || typeof callback !== 'function') {
       return {
-        pass: false,
-        message: () => positiveHint + '\n\n' + `Received value must be a function but instead "${callback}" was found`
+        pass: this.isNot,
+        message: () => hint + '\n\n' + `Received value must be a function but instead "${callback}" was found`
       };
     }
 
     if (!type || typeof type !== 'function') {
       return {
-        pass: false,
-        message: () => positiveHint + '\n\n' + `Expected type to be a function but instead "${type}" was found`
+        pass: this.isNot,
+        message: () => hint + '\n\n' + `Expected type to be a function but instead "${type}" was found`
       };
     }
 
     if (!message) {
       return {
-        pass: false,
-        message: () => positiveHint + '\n\n' + ' Message argument is required. '
+        pass: this.isNot,
+        message: () => hint + '\n\n' + ' Message argument is required. '
       };
     }
 
     if (typeof message !== 'string' && !(message instanceof RegExp)) {
       return {
-        pass: false,
+        pass: this.isNot,
         message: () =>
-          positiveHint +
-          '\n\n' +
-          'Unexpected argument for message\n' +
-          'Expected: "string" or "regexp\n' +
-          `Got: "${message}"`
+          hint + '\n\n' + 'Unexpected argument for message\n' + 'Expected: "string" or "regexp\n' + `Got: "${message}"`
       };
     }
 
@@ -65,7 +62,7 @@ export default {
 
     if (!error) {
       return {
-        pass: false,
+        pass: this.isNot,
         message: () => 'Expected the function to throw an error.\n' + "But it didn't throw anything."
       };
     }
