@@ -187,6 +187,14 @@ declare namespace jest {
     toBeWithin(start: number, end: number): R;
 
     /**
+     * Use `.toBeNear` when checking if a number is a given offset away from a given value.
+     *
+     * @param {Number} value
+     * @param {Number} offset
+     */
+    toBeNear(value: number, offset: number): R;
+
+    /**
      * Use `.toBeObject` when checking if a value is an `Object`.
      */
     toBeObject(): R;

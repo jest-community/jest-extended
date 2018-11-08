@@ -450,6 +450,18 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "phapp88",
+      "name": "Paul Happ",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/14202662?s=460&v=4",
+      "profile": "https://github.com/phapp88",
+      "contributions": [
+        "code",
+        "doc",
+        "example",
+        "test"
+      ]
     }
   ],
   "repoType": "github"

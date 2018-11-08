@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.toBeNear fails when the given number is not between \`value - offset\` and \`value + offset\` inclusive 1`] = `
+"<dim>expect(</><red>received</><dim>).toBeNear(</><green>value</>, <green>offset</><dim>)</>
+
+Value:    <green>2</>
+Offset:   <green>1</>
+Interval: [<green>1</>, <green>3</>]
+Received: <red>0</>"
+`;
+
+exports[`not.toBeNear fails when the given number is between \`value - offset\` and \`value + offset\` inclusive 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toBeNear(</><green>value</>, <green>offset</><dim>)</>
+
+Value:    <green>2</>
+Offset:   <green>1</>
+Interval: [<green>1</>, <green>3</>]
+Received: <red>3</>"
+`;
