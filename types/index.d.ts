@@ -252,28 +252,28 @@ declare namespace jest {
      *
      * @param {Array.<String, String>} entry
      */
-    toContainEntry(entry: [string, string]): R;
+    toContainEntry<T>(entry: [keyof T, T[keyof T]]): R;
 
     /**
      * Use `.toContainEntries` when checking if an object contains all of the provided entries.
      *
-     * @param {Array.<Array.<String, String>>} entries
+     * @param {Array.<Array.<keyof T, T[keyof T]>>} entries
      */
-    toContainEntries(entries: [string, string][]): R;
+    toContainEntries<T>(entries: [keyof T, T[keyof T]][]): R;
 
     /**
      * Use `.toContainAllEntries` when checking if an object only contains all of the provided entries.
      *
-     * @param {Array.<Array.<String, String>>} entries
+     * @param {Array.<Array.<keyof T, T[keyof T]>>} entries
      */
-    toContainAllEntries(entries: [string, string][]): R;
+    toContainAllEntries<T>(entries: [keyof T, T[keyof T]][]): R;
 
     /**
      * Use `.toContainAnyEntries` when checking if an object contains at least one of the provided entries.
      *
-     * @param {Array.<Array.<String, String>>} entries
+     * @param {Array.<Array.<keyof T, T[keyof T]>>} entries
      */
-    toContainAnyEntries(entries: [string, string][]): R;
+    toContainAnyEntries<T>(entries: [keyof T, T[keyof T]][]): R;
 
     /**
      * Use `.toBeExtensible` when checking if an object is extensible.
@@ -606,30 +606,30 @@ declare namespace jest {
     /**
      * Use `.toContainEntry` when checking if an object contains the provided entry.
      *
-     * @param {Array.<String, String>} entry
+     * @param {Array.<[keyof T, T[keyof T]>} entry
      */
-    toContainEntry(entry: [string, string]): any;
+    toContainEntry<T>(entry: [keyof T, T[keyof T]]): any;
 
     /**
      * Use `.toContainEntries` when checking if an object contains all of the provided entries.
      *
-     * @param {Array.<Array.<String, String>>} entries
+     * @param {Array.<Array.<keyof T, T[keyof T]>>} entries
      */
-    toContainEntries(entries: [string, string][]): any;
+    toContainEntries<T>(entries: [keyof T, T[keyof T]][]): any;
 
     /**
      * Use `.toContainAllEntries` when checking if an object only contains all of the provided entries.
      *
-     * @param {Array.<Array.<String, String>>} entries
+     * @param {Array.<Array.<keyof T, T[keyof T]>>} entries
      */
-    toContainAllEntries(entries: [string, string][]): any;
+    toContainAllEntries<T>(entries: [keyof T, T[keyof T]][]): any;
 
     /**
      * Use `.toContainAnyEntries` when checking if an object contains at least one of the provided entries.
      *
-     * @param {Array.<Array.<String, String>>} entries
+     * @param {Array.<Array.<keyof T, T[keyof T]>>} entries
      */
-    toContainAnyEntries(entries: [string, string][]): any;
+    toContainAnyEntries<T>(entries: [keyof T, T[keyof T]][]): any;
 
     /**
      * Use `.toBeExtensible` when checking if an object is extensible.
