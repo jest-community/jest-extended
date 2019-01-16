@@ -149,6 +149,12 @@ Then in your Jest config:
 }
 ```
 
+If you are using Typescript `jest-extended` already comes with types definition but you need to import it in your test files:
+
+```js
+import "jest-extended";
+```
+
 ## Asymmetric matchers
 
 All matchers described in the API are also asymmetrical since [jest version 23](https://jestjs.io/blog/2018/05/29/jest-23-blazing-fast-delightful-testing#custom-asymmetric-matchers):
