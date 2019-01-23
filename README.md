@@ -149,6 +149,14 @@ Then in your Jest config:
 }
 ```
 
+### Typescript
+
+If your editor does not recognise the custom `jest-extended` matchers, add a `global.d.ts` file to your project with:
+
+```ts
+import 'jest-extended';
+```
+
 ## Asymmetric matchers
 
 All matchers described in the API are also asymmetrical since [jest version 23](https://jestjs.io/blog/2018/05/29/jest-23-blazing-fast-delightful-testing#custom-asymmetric-matchers):
