@@ -440,7 +440,7 @@
         "doc",
         "example",
         "test"
-      ],
+      ]
     },
     {
       "login": "moredip",
@@ -449,6 +449,15 @@
       "profile": "http://thepete.net",
       "contributions": [
         "code"
+      ]
+    },
+    {
+      "login": "abdelrahman-elkady",
+      "name": "Abdelrahman Elkady",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/10640699?v=4",
+      "profile": "https://www.abdelrahman-elkady.me/",
+      "contributions": [
+        "doc"
       ]
     }
   ],
