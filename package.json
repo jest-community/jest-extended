@@ -62,7 +62,7 @@
     "pretty-format": "^22.1.0"
   },
   "dependencies": {
-    "expect": "^23.6.0",
+    "expect": "^24.1.0",
     "jest-get-type": "^22.4.3",
     "jest-matcher-utils": "^22.0.0"
   },
