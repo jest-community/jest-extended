@@ -450,6 +450,18 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "danielpmichalski",
+      "name": "Daniel Michalski",
+      "avatar_url": "",
+      "profile": "",
+      "contributions": [
+        "code",
+        "doc",
+        "example",
+        "test"
+      ]
     }
   ],
   "repoType": "github"
