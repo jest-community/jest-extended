@@ -275,7 +275,7 @@ test('passes when value is an array', () => {
 
 #### .toBeArrayWithFloats([members], ?precision)
 
-Use `.toBeArrayWithFloats` when comparing arrays of floating-point numbers with chosen precision.
+Use `.toBeArrayWithFloats` when comparing arrays of floating-point numbers with chosen precision in the same order.
 
 ```js
 test('passes when arrays have same floats', () => {
