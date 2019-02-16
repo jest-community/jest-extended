@@ -273,6 +273,17 @@ test('passes when value is an array', () => {
 });
 ```
 
+#### .toBeArrayWithFloats([members], ?precision)
+
+Use `.toBeArrayWithFloats` when comparing arrays of floating-point numbers with chosen precision.
+
+```js
+test('passes when arrays have same floats', () => {
+  expect([1.11112, 2.22221]).toBeArrayWithFloats([1.11114, 2.22223]); // default 4-digit decimal precision
+  expect([1.112]).not.toBeArrayWithFloats([1.111], 3); // specified 3-digit decimal precision
+});
+```
+
 #### .toIncludeAllMembers([members])
 
 Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
