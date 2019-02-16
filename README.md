@@ -48,7 +48,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
   - [Array](#array)
     - [.toBeArray()](#tobearray)
     - [.toBeArrayOfSize()](#tobearrayofsize)
-    - [.toBeArrayWithFloats([members], ?precision)](#tobearraywithfloatsmembersprecision)
+    - [.toBeArrayWithFloats([members], ?precision)](#tobearraywithfloatsmembers-precision)
     - [.toIncludeAllMembers([members])](#toincludeallmembersmembers)
     - [.toIncludeAnyMembers([members])](#toincludeanymembersmembers)
     - [.toIncludeSameMembers([members])](#toincludesamemembersmembers)
