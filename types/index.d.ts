@@ -53,6 +53,13 @@ declare namespace jest {
     toBeArrayOfSize(x: number): R;
 
     /**
+     * Use `.toBeArrayWithFloats` when checking if a value is an `Array` with floating-point numbers. Equality is checked using default or specified precision.
+     * @param {Array.<Number>} expected
+     * @param {Number} precision, i.e. decimal places taken into account during number comparison (1.0001 is not 1.00016, but 1.0001 is 1.00015 for precision = 4)
+     */
+    toBeArrayWithFloats(expected: number[], precision: number = 4): R;
+
+    /**
      * Use `.toBeAfter` when checking if a date occurs after `date`.
      * @param {Date} date
      */
