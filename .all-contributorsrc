@@ -454,12 +454,11 @@
     {
       "login": "danielpmichalski",
       "name": "Daniel Michalski",
-      "avatar_url": "",
-      "profile": "https://github.com/danielpmichalski",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/5457711?v=4",
+      "profile": "https://twitter.com/crazyPolishDan",
       "contributions": [
         "code",
         "doc",
-        "example",
         "test"
       ]
     }
