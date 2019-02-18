@@ -2,7 +2,7 @@ const isUndefined = function(obj) {
   return typeof obj === 'undefined';
 };
 
-const someUndefined = function(...objects) {
+const someUndefined = function(objects) {
   let check = false;
   objects.forEach(item => (check = check || isUndefined(item)));
   return check;
@@ -18,11 +18,11 @@ const areArrays = function(...objects) {
   return allArrays;
 };
 
-const cutDecimals = function(num, precision = 4) {
+const cutDecimals = function(num, precision) {
   return Number.parseFloat(Number.parseFloat(num).toFixed(precision));
 };
 
-const floatsEqual = function(float1, float2, precision = 4) {
+const floatsEqual = function(float1, float2, precision) {
   let a = cutDecimals(float1, precision);
   let b = cutDecimals(float2, precision);
 
@@ -35,7 +35,7 @@ const floatsEqual = function(float1, float2, precision = 4) {
   }
 };
 
-const arrayWithFloatsEquals = function(array1, array2, precision = 4) {
+const arrayWithFloatsEquals = function(array1, array2, precision) {
   if (array1.length !== array2.length) {
     return false;
   }
