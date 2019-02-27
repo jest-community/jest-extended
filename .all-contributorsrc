@@ -450,6 +450,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "acostalima",
+      "name": "André Costa Lima",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2727522?v=4",
+      "profile": "https://github.com/acostalima",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "repoType": "github"
