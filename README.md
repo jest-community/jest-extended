@@ -56,6 +56,8 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toBeBoolean()](#tobeboolean)
     - [.toBeTrue()](#tobetrue)
     - [.toBeFalse()](#tobefalse)
+  - [Console](#console)
+    - [.toLog()](#tolog)
   - [Date](#date)
     - [.toBeDate()](#tobedate)
     - [.toBeValidDate()](#tobevaliddate)
@@ -354,6 +356,21 @@ test('returns false', () => {
   expect(areWeThereYet()).toBeFalse();
   expect(true).not.toBeFalse();
 });
+```
+
+### Console
+
+#### .toLog()
+
+Use `.toLog` when checking if a callback function outputs a message to the console. The specified console method is mocked during execution so nothing will be printed to the console.
+
+```js
+expect(() => {
+  console.log('a message');
+}).toLog('a message');
+
+expect(someFunction).toLog('some deprecation warning', 'warn')
+expect(someOtherFunction).not.toLog('an error message', 'error')
 ```
 
 ### ~~Date~~
