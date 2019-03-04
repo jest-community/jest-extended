@@ -171,7 +171,6 @@ test('passes when using an asymmetrical matcher', () => {
 
 #### .pass(message)
 
-_Note: Currently unimplemented_
 
 Passing assertion.
 
@@ -181,7 +180,6 @@ expect().pass('should pass');
 
 #### .fail(message)
 
-_Note: Currently unimplemented_
 
 Failing assertion.
 

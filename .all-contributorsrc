@@ -450,7 +450,16 @@
       "contributions": [
         "code"
       ]
-    }
+    },
+        {
+          "login": "williamrchr",
+          "name": "William Archer",
+          "avatar_url": "https://avatars2.githubusercontent.com/u/7919424?s=460&v=4",
+          "profile": "https://github.com/williamrchr",
+          "contributions": [
+            "code"
+          ]
+        }
   ],
   "repoType": "github"
 }
