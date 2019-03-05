@@ -1,11 +1,7 @@
 import predicate from './predicate';
 
 describe('true Predicate', () => {
-  test('returns true when given nothing', () => {
+  test('returns true', () => {
     expect(predicate()).toBe(true);
-  });
-
-  test('returns true when given a value', () => {
-    expect(predicate('', 'test')).toBe(true);
   });
 });

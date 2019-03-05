@@ -1,1 +1,1 @@
-export default (expected, message) => false;
+export default () => false;
