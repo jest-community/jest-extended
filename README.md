@@ -377,7 +377,7 @@ test('passes when value is a date', () => {
 
 Use `.toBeValidDate` when checking if a given `Date` object is valid.
 
-```
+```js
 test('passes when Date is valid', () => {
   expect(new Date()).toBeValidDate();
   expect('01/01/2018').not.toBeValidDate();
