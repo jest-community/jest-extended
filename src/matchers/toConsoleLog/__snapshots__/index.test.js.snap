@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toConsoleError fails when the callback function outputs the expected message 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toConsoleError(</><green>expected</><dim>)</>
+
+Expected console.error not to have been called with:
+  <green>\\"console-error\\"</>
+But it was called with:
+  <red>[[\\"console-error\\"]]</>"
+`;
+
+exports[`.not.toConsoleInfo fails when the callback function outputs the expected message 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toConsoleInfo(</><green>expected</><dim>)</>
+
+Expected console.info not to have been called with:
+  <green>\\"console-info\\"</>
+But it was called with:
+  <red>[[\\"console-info\\"]]</>"
+`;
+
+exports[`.not.toConsoleLog fails when the callback function outputs the expected message 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toConsoleLog(</><green>expected</><dim>)</>
+
+Expected console.log not to have been called with:
+  <green>\\"console-log\\"</>
+But it was called with:
+  <red>[[\\"console-log\\"]]</>"
+`;
+
+exports[`.toConsoleError fails when the callback function does not output any message 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toConsoleError(</><green>expected</><dim>)</>
+
+Expected console.error to have been called with:
+  <green>\\"something\\"</>
+But it was not called"
+`;
+
+exports[`.toConsoleError fails when the callback function does not output the expected message 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toConsoleError(</><green>expected</><dim>)</>
+
+Expected console.error to have been called with:
+  <green>\\"something\\"</>
+But it was called with:
+  <red>[[\\"console-error\\"]]</>"
+`;
+
+exports[`.toConsoleInfo fails when the callback function does not output any message 1`] = `
+"<dim>expect(</><red>received</><dim>).toConsoleInfo(</><green>expected</><dim>)</>
+
+Expected console.info to have been called with:
+  <green>\\"something\\"</>
+But it was not called"
+`;
+
+exports[`.toConsoleInfo fails when the callback function does not output the expected message 1`] = `
+"<dim>expect(</><red>received</><dim>).toConsoleInfo(</><green>expected</><dim>)</>
+
+Expected console.info to have been called with:
+  <green>\\"something\\"</>
+But it was called with:
+  <red>[[\\"console-info\\"]]</>"
+`;
+
+exports[`.toConsoleLog fails when the callback function does not output any message 1`] = `
+"<dim>expect(</><red>received</><dim>).toConsoleLog(</><green>expected</><dim>)</>
+
+Expected console.log to have been called with:
+  <green>\\"something\\"</>
+But it was not called"
+`;
+
+exports[`.toConsoleLog fails when the callback function does not output the expected message 1`] = `
+"<dim>expect(</><red>received</><dim>).toConsoleLog(</><green>expected</><dim>)</>
+
+Expected console.log to have been called with:
+  <green>\\"something\\"</>
+But it was called with:
+  <red>[[\\"console-log\\"]]</>"
+`;
+
+exports[`.toConsoleLog fails when the callback function does not output the expected message 2`] = `
+"<dim>expect(</><red>received</><dim>).toConsoleLog(</><green>expected</><dim>)</>
+
+Expected console.log to have been called with:
+  <green>\\"something\\"</>
+But it was called with:
+  <red>[[\\"a\\", \\"b\\", \\"c\\"], [\\"console-log\\"]]</>"
+`;
