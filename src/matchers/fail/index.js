@@ -2,7 +2,7 @@ import predicate from './predicate';
 
 const failMessage = message => {
   if (message) return () => message;
-  else return () => 'Failure!';
+  else return () => 'fails by .fail() assertion';
 };
 
 export default {

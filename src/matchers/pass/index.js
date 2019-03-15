@@ -2,7 +2,7 @@ import predicate from './predicate';
 
 const passMessage = message => {
   if (message) return () => message;
-  else return () => 'Passed!';
+  else return () => 'passes by .pass() assertion';
 };
 
 export default {
