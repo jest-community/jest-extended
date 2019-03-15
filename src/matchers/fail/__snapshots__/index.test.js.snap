@@ -2,4 +2,4 @@
 
 exports[`.fail fails with message 1`] = `"This shouldn't fail!"`;
 
-exports[`.fail fails without message 1`] = `"Failure!"`;
+exports[`.fail fails without message 1`] = `"fails by .fail() assertion"`;
