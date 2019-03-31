@@ -8,6 +8,10 @@ const rejectsWithUnexpected = Promise.reject(new Error('unexpected error'));
 const resolvedPromise = Promise.resolve('resolved value');
 
 describe('.toRejectWith', () => {
+  it('fails when no expected error is specified', async () => {
+    await expect(expect(rejectsWithExpected).toRejectWith()).rejects.toThrowErrorMatchingSnapshot();
+  });
+
   it('fails when passed a promise which resolves', async () => {
     await expect(expect(resolvedPromise).toRejectWith(expectedError)).rejects.toThrowErrorMatchingSnapshot();
   });

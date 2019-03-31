@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`.toRejectWith fails when no expected error is specified 1`] = `
+"<dim>expect(</><red>received</><dim>).toRejectWith(</><dim>)</>
+
+Expected error not specified, however promise rejected with:
+  <red>[Error: expected error]</>
+"
+`;
+
 exports[`.toRejectWith fails when passed a promise which resolves 1`] = `
 "<dim>expect(</><red>received</><dim>).toRejectWith(</><dim>)</>
 

@@ -23,6 +23,12 @@ const rejectedWithUnexpectedMessage = (error, caught) => () =>
   'However it rejected with:\n' +
   `  ${printReceived(caught)}\n`;
 
+const errorNotDefined = caught => () =>
+  matcherHint('.toRejectWith', 'received', '') +
+  '\n\n' +
+  'Expected error not specified, however promise rejected with:\n' +
+  `  ${printReceived(caught)}\n`;
+
 export default {
   toRejectWith: async (promise, error, comparer) => {
     try {
@@ -33,6 +39,14 @@ export default {
       };
     } catch (caught) {
       comparer = typeof comparer === 'function' ? comparer : Object.is;
+
+      if (typeof error === 'undefined') {
+        return {
+          pass: false,
+          message: errorNotDefined(caught)
+        };
+      }
+
       const pass = comparer(error, caught);
       const message = pass ? passMessage(error) : rejectedWithUnexpectedMessage(error, caught);
       return { pass, message };
