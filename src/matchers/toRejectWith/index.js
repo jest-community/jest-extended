@@ -23,7 +23,7 @@ const rejectedWithUnexpectedMessage = (error, caught) => () =>
   'However it rejected with:\n' +
   `  ${printReceived(caught)}\n`;
 
-const errorNotDefined = caught => () =>
+const errorNotDefinedMessage = caught => () =>
   matcherHint('.toRejectWith', 'received', '') +
   '\n\n' +
   'Expected error not specified, however promise rejected with:\n' +
@@ -43,7 +43,7 @@ export default {
       if (typeof error === 'undefined') {
         return {
           pass: false,
-          message: errorNotDefined(caught)
+          message: errorNotDefinedMessage(caught)
         };
       }
 
