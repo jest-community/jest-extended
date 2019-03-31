@@ -301,6 +301,14 @@ declare namespace jest {
     toReject(): R;
 
     /**
+     * Use `.toRejectWith` when checking if a promise rejects with a specific error.
+     * 
+     * @param {any} error - error which the promise should reject with.
+     * @param {Function} comparer - compares between two errors. Defaults to Object.is
+     */
+    toRejectWith(error: any, comparer?: (a: any, b: any) => boolean): R;
+
+    /**
      * Use `.toBeString` when checking if a value is a `String`.
      */
     toBeString(): R;

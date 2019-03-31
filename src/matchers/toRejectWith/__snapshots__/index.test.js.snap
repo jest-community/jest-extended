@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.toRejectWith fails when passed a promise which resolves 1`] = `
+"<dim>expect(</><red>received</><dim>).toRejectWith(</><dim>)</>
+
+Expected promise to reject with:
+  <green>[Error: expected error]</>
+However it resolved with:
+  <red>\\"resolved value\\"</>
+"
+`;
+
+exports[`.toRejectWith when passed a promise which rejects fails if error was not expected 1`] = `
+"<dim>expect(</><red>received</><dim>).toRejectWith(</><dim>)</>
+
+Expected promise to reject with:
+  <green>[Error: expected error]</>
+However it rejected with:
+  <red>[Error: unexpected error]</>
+"
+`;
+
+exports[`.toRejectWith when passed a promise which rejects fails if error was not expected according to custom comparer 1`] = `
+"<dim>expect(</><red>received</><dim>).toRejectWith(</><dim>)</>
+
+Expected promise to reject with:
+  <green>[Error: expected error]</>
+However it rejected with:
+  <red>[Error: expected error]</>
+"
+`;
+
+exports[`not.toRejectWith when passed a promise which rejects fails if error was expected 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toRejectWith(</><dim>)</>
+
+Expected promise not to reject with:
+  <red>[Error: expected error]</>
+But it did."
+`;
+
+exports[`not.toRejectWith when passed a promise which rejects fails if error was expected according to custom comparer 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toRejectWith(</><dim>)</>
+
+Expected promise not to reject with:
+  <red>[Error: expected error]</>
+But it did."
+`;

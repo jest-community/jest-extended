@@ -97,6 +97,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
   - [Promise](#promise)
     - [.toResolve()](#toresolve)
     - [.toReject()](#toreject)
+    - [.toRejectWith(error,comparer)](#torejectwitherror--comparer)
   - [String](#string)
     - [.toBeString()](#tobestring)
     - [.toBeHexadecimal(string)](#tobehexadecimal)
@@ -817,6 +818,27 @@ Use `.toReject` when checking if a promise is rejected.
 ```js
 test('passes when a promise rejects', async () => {
   await expect(Promise.reject()).toReject();
+});
+```
+
+#### .toRejectWith(error, predicate)
+
+Use `.toRejectWith` when checking if a promise is rejected with a specific error.
+
+```js
+test('passes when a promise rejects with a specific error', async () => {
+  const error = new Error('I am an error');
+  await expect(Promise.reject(error)).toRejectWith(error);
+});
+```
+
+Pass your own custom error comparer (Defaults to Object.is).
+
+```js
+test('passes when a promise rejects with a specific error', async () => {
+  const error = new Error('I am an error');
+  const comparer = (a,b) => a.message === b.message;
+  await expect(Promise.reject(error)).toRejectWith(new Error('I am an error'), comparer);
 });
 ```
 
