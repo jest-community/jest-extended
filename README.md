@@ -300,7 +300,9 @@ Use `.toIncludeAllPartialMembers` when checking if an `Array` contains all of th
 
 ```js
 test('passes when given array values match the partial members of the set', () => {
-  expect([{ foo: 'bar', baz: 'qux' }]).toIncludeAllMembers([{ foo: 'bar' }]);
+  expect([{ foo: 'bar', baz: 'qux' }]).toIncludeAllPartialMembers([
+    { foo: 'bar' },
+  ]);
 });
 ```
 
