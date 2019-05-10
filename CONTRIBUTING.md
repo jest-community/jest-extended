@@ -33,7 +33,7 @@ Head over to [here](https://hacktoberfest.digitalocean.com/sign_up/register) to 
  - [`jest-matchers-utils`](https://github.com/facebook/jest/tree/master/packages/jest-matcher-utils) is being used for syntax highlighting of error messages.
    * See the Jest docs for an [example usage](https://facebook.github.io/jest/docs/en/expect.html#thisutils)
  - Jest's [`expect`](https://github.com/facebook/jest/tree/master/packages/expect) package is being used to access their deep `equals` function.
-   * `import { equals } from 'expect/build/jasmine_utils';`
+   * `import { equals } from 'expect/build/jasmineUtils';`
  - Docs for the new matcher should be updated in the API section of the `README.md` to no longer say `Unimplemented`.
  - Type definitions for the new matchers should be added to `types/index.d.ts`.
 
