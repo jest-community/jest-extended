@@ -46,21 +46,6 @@ Once you are ready to commit the changes, please use the below commands
 
 *Note: please use present tense in commit messages i.e. `Add feature X` and not ~`Added feature X`~*
 
-## Add yourself as a contributor
-
-This project follows the [all contributors](https://github.com/kentcdodds/all-contributors)
-specification. To add yourself to the table of contributors on the `README.md`, please use
-the automated script as part of your PR:
-
-```console
-yarn contributor <YOUR_GITHUB_USERNAME>
-```
-
-Follow the prompt. If you've already added yourself to the list and are making a
-new type of contribution, you can run it again and select the added contribution
-type. If you need to edit the `.all-contributorsrc` file by hand that's fine
-too, just run `yarn contributor:gen` to regenerate the table
-
 ## Help needed
 
 Please checkout the [ROADMAP](docs/ROADMAP.md) and raise an issue to discuss

@@ -106,7 +106,6 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toInclude(substring)](#toincludesubstring)
     - [.toIncludeRepeated(substring, times)](#toincluderepeatedsubstring--times)
     - [.toIncludeMultiple([substring])](#toincludemultiplesubstring)
-- [Contributors](#contributors)
 - [LICENSE](#license)
 
 ## Installation
@@ -916,11 +915,6 @@ test('passes when value includes all substrings', () => {
   expect('hello world').not.toIncludeMultiple(['world', 'hello', 'bob']);
 });
 ```
-
-## Contributors
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## LICENSE
 
