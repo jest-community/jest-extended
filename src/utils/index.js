@@ -1,4 +1,4 @@
-import { equals } from 'expect/build/jasmine_utils';
+import { equals } from 'expect/build/jasmineUtils';
 
 export const contains = (list, value) => {
   return list.findIndex(item => equals(item, value)) > -1;

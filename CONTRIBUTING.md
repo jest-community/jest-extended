@@ -33,7 +33,7 @@ Head over to [here](https://hacktoberfest.digitalocean.com/sign_up/register) to 
  - [`jest-matchers-utils`](https://github.com/facebook/jest/tree/master/packages/jest-matcher-utils) is being used for syntax highlighting of error messages.
    * See the Jest docs for an [example usage](https://facebook.github.io/jest/docs/en/expect.html#thisutils)
  - Jest's [`expect`](https://github.com/facebook/jest/tree/master/packages/expect) package is being used to access their deep `equals` function.
-   * `import { equals } from 'expect/build/jasmine_utils';`
+   * `import { equals } from 'expect/build/jasmineUtils';`
  - Docs for the new matcher should be updated in the API section of the `README.md` to no longer say `Unimplemented`.
  - Type definitions for the new matchers should be added to `types/index.d.ts`.
 
@@ -45,21 +45,6 @@ Once you are ready to commit the changes, please use the below commands
 2. `git commit -m 'A meaningful message`
 
 *Note: please use present tense in commit messages i.e. `Add feature X` and not ~`Added feature X`~*
-
-## Add yourself as a contributor
-
-This project follows the [all contributors](https://github.com/kentcdodds/all-contributors)
-specification. To add yourself to the table of contributors on the `README.md`, please use
-the automated script as part of your PR:
-
-```console
-yarn contributor <YOUR_GITHUB_USERNAME>
-```
-
-Follow the prompt. If you've already added yourself to the list and are making a
-new type of contribution, you can run it again and select the added contribution
-type. If you need to edit the `.all-contributorsrc` file by hand that's fine
-too, just run `yarn contributor:gen` to regenerate the table
 
 ## Help needed
 
