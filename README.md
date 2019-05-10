@@ -146,7 +146,7 @@ For example:
 
 ```js
 // ./testSetup.js
-require('jest-expected');
+require('jest-extended');
 require('jest-chain');
 require('any other test framework libraries you are using');
 ```
