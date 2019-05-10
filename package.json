@@ -12,8 +12,6 @@
   ],
   "scripts": {
     "build": "babel src -d dist --ignore *.test.js",
-    "contributor": "all-contributors add",
-    "contributor:gen": "all-contributors generate",
     "lint": "eslint src",
     "lint:fix": "yarn lint -- --fix",
     "prepublishOnly": "yarn build",
@@ -38,7 +36,6 @@
   "repository": "jest-community/jest-extended",
   "devDependencies": {
     "@types/jest": "^23.3.2",
-    "all-contributors-cli": "^4.5.1",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
@@ -62,7 +59,7 @@
     "pretty-format": "^22.1.0"
   },
   "dependencies": {
-    "expect": "^23.6.0",
+    "expect": "^24.1.0",
     "jest-get-type": "^22.4.3",
     "jest-matcher-utils": "^22.0.0"
   },
