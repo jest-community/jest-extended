@@ -122,9 +122,19 @@ yarn add -D jest-extended
 
 ## Setup
 
-Add jest-extended to your Jest setupTestFrameworkScriptFile configuration. [See for help](http://facebook.github.io/jest/docs/en/configuration.html#setuptestframeworkscriptfile-string)
+### Jest >v24
+
+Add `jest-extended` to your Jest `setupFilesAfterEnv` configuration. [See for help](https://jestjs.io/docs/en/configuration.html#setupfilesafterenv-array)
 
 ``` json
+"jest": {
+  "setupFilesAfterEnv": ["jest-extended"]
+}
+```
+
+### Jest <v23
+
+```json
 "jest": {
   "setupTestFrameworkScriptFile": "jest-extended"
 }
@@ -137,6 +147,7 @@ For example:
 ```js
 // ./testSetup.js
 require('jest-extended');
+require('jest-chain');
 require('any other test framework libraries you are using');
 ```
 
