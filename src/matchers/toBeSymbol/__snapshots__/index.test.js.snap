@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toBeSymbol fails when given a symbol 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toBeSymbol(</><dim>)</>
+
+Expected value to not be a symbol, received:
+  <red>Symbol()</>"
+`;
+
+exports[`.toBeSymbol fails when not given a symbol 1`] = `
+"<dim>expect(</><red>received</><dim>).toBeSymbol(</><dim>)</>
+
+Expected to receive a symbol, received:
+  <red>false</>"
+`;

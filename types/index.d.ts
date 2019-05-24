@@ -355,6 +355,11 @@ declare namespace jest {
      * @param {String | RegExp} message
      */
     toThrowWithMessage(type: Function, message: string | RegExp): R;
+
+    /**
+     * Use `.toBeSymbol` when checking if a value is a `Symbol`.
+     */
+    toBeSymbol(): R;
   }
 
   // noinspection JSUnusedGlobalSymbols
@@ -711,5 +716,10 @@ declare namespace jest {
      * @param {String | RegExp} message
      */
     toThrowWithMessage(type: Function, message: string | RegExp): any;
+
+    /**
+     * Use `.toBeSymbol` when checking if a value is a `Symbol`.
+     */
+    toBeSymbol(): any;
   }
 }
