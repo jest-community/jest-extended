@@ -711,5 +711,24 @@ declare namespace jest {
      * @param {String | RegExp} message
      */
     toThrowWithMessage(type: Function, message: string | RegExp): any;
+
+    /**
+     * Use `.toBeBetween` when checking if a date occurs between `startDate` and `endDate`.
+     * @param {Date} startDate
+     * @param {Date} endDate
+     */
+    toBeBetween(startDate: Date, endDate: Date): R;
+
+    /**
+     * Use `.toBeBeforeOrEqualTo` when checking if a date equals to or occurs before `date`.
+     * @param {Date} date
+     */
+    toBeBeforeOrEqualTo(date: Date): any;
+
+    /**
+     * Use `.toBeAfterOrEqualTo` when checking if a date equals to or occurs after `date`.
+     * @param {Date} date
+     */
+    toBeAfterOrEqualTo(date: Date): any;
   }
 }
