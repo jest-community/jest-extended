@@ -23,58 +23,65 @@ const failMessage = (received, expected) => () =>
 
 export default {
   toThrowWithMessage: (callback, type, message) => {
-    if (!callback || typeof callback !== 'function') {
+    const isCallback = callback && typeof callback === 'function'
+    const isPromise = typeof callback === 'object' && typeof callback.then === 'function'
+    if (!isCallback && !isPromise) {
       return {
         pass: false,
         message: () => positiveHint + '\n\n' + `Received value must be a function but instead "${callback}" was found`
       };
     }
-
     if (!type || typeof type !== 'function') {
       return {
         pass: false,
         message: () => positiveHint + '\n\n' + `Expected type to be a function but instead "${type}" was found`
       };
     }
-
     if (!message) {
       return {
         pass: false,
         message: () => positiveHint + '\n\n' + ' Message argument is required. '
       };
     }
-
     if (typeof message !== 'string' && !(message instanceof RegExp)) {
       return {
         pass: false,
-        message: () =>
-          positiveHint +
-          '\n\n' +
-          'Unexpected argument for message\n' +
-          'Expected: "string" or "regexp\n' +
-          `Got: "${message}"`
+        message: () => positiveHint + '\n\n' + 'Unexpected argument for message\n' + 'Expected: "string" or "regexp\n' + `Got: "${message}"`
       };
     }
-
+    if (isPromise) {
+      return callback
+        .catch(err => err)
+        .then(error => {
+          if (!error) {
+            return {
+              pass: false,
+              message: () => 'Expected the function to throw an error.\n' + "But it didn't throw anything."
+            };
+          }
+          const pass = (0, _predicate2.default)(error, type, message);
+          if (pass) {
+            return { pass: true, message: passMessage(error, new type(message)) };
+          }
+          return { pass: false, message: failMessage(error, new type(message)) };
+        });
+    }
     let error;
     try {
       callback();
-    } catch (e) {
-      error = e;
+    } catch(err) {
+      error = err;
     }
-
     if (!error) {
       return {
         pass: false,
         message: () => 'Expected the function to throw an error.\n' + "But it didn't throw anything."
       };
     }
-
-    const pass = predicate(error, type, message);
+    const pass = (0, _predicate2.default)(error, type, message);
     if (pass) {
       return { pass: true, message: passMessage(error, new type(message)) };
     }
-
     return { pass: false, message: failMessage(error, new type(message)) };
   }
 };
