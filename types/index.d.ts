@@ -711,5 +711,11 @@ declare namespace jest {
      * @param {String | RegExp} message
      */
     toThrowWithMessage(type: Function, message: string | RegExp): any;
+
+    /**
+     * Use `.toSatisfyAny` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean` for any value in an array.
+     * @param {Function} predicate
+     */
+    toSatisfyAny(predicate: (x: any) => boolean): R;
   }
 }
