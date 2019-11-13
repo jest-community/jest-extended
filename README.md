@@ -52,6 +52,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toIncludeAnyMembers([members])](#toincludeanymembersmembers)
     - [.toIncludeSameMembers([members])](#toincludesamemembersmembers)
     - [.toSatisfyAll(predicate)](#tosatisfyallpredicate)
+    - [.toSatisfyAny(predicate)](#tosatisfyanypredicate)
   - [Boolean](#boolean)
     - [.toBeBoolean()](#tobeboolean)
     - [.toBeTrue()](#tobetrue)
@@ -329,6 +330,18 @@ test('passes when all values in array pass given predicate', () => {
 });
 ```
 
+
+#### .toSatisfyAny(predicate)
+
+Use `.toSatisfyAny` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean` for any value in an array.
+
+```js
+test('passes when any value in array passes given predicate', () => {
+  const isOdd = el => el % 2 === 1;
+  expect([1,2,3,4]).toSatisfyAny(isOdd);
+  expect([2,4,6,8]).not.toSatisfyAny(isOdd);
+});
+```
 ### Boolean
 
 #### .toBeBoolean()
