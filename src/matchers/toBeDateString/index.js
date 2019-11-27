@@ -3,13 +3,13 @@ import { matcherHint, printReceived } from 'jest-matcher-utils';
 import predicate from './predicate';
 
 const passMessage = received => () =>
-  matcherHint('.not.toBeDateDateString', 'received', '') +
+  matcherHint('.not.toBeDateString', 'received', '') +
   '\n\n' +
   'Expected value to not be a date string received:\n' +
   `  ${printReceived(received)}`;
 
 const failMessage = received => () =>
-  matcherHint('.toBeDateDateString', 'received', '') +
+  matcherHint('.toBeDateString', 'received', '') +
   '\n\n' +
   'Expected value to be a date string received:\n' +
   `  ${printReceived(received)}`;
