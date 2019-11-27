@@ -100,6 +100,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
   - [String](#string)
     - [.toBeString()](#tobestring)
     - [.toBeHexadecimal(string)](#tobehexadecimal)
+    - [.toBeDateString(string)](#tobedatestringstring)
     - [.toEqualCaseInsensitive(string)](#toequalcaseinsensitivestring)
     - [.toStartWith(prefix)](#tostartwithprefix)
     - [.toEndWith(suffix)](#toendwithsuffix)
@@ -855,6 +856,18 @@ test('passes when value is a valid hexadecimal', () => {
   expect('#FFF').toBeHexadecimal();
   expect('#000000').toBeHexadecimal();
   expect('#123ffg').not.toBeHexadecimal();
+});
+```
+
+#### .toBeDateString(string)
+
+Use `.toBeDateString` when checking if a value is a valid date string.
+
+```js
+test('passes when value is a valid toBeDateString', () => {
+  expect('2019-11-27T14:05:07.520Z').toBeDateString();
+  expect('11/12/21').toBeDateString();
+  expect('not a date').not.toBeDateString();
 });
 ```
 
