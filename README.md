@@ -79,6 +79,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toBeWithin(start, end)](#tobewithinstart-end)
   - [Object](#object)
     - [.toBeObject()](#tobeobject)
+    - [.toBeEmptyObject()](#tobeemptyobject)
     - [.toContainKey(key)](#tocontainkeykey)
     - [.toContainKeys([keys])](#tocontainkeyskeys)
     - [.toContainAllKeys([keys])](#tocontainallkeyskeys)
@@ -600,6 +601,17 @@ test('passes when number is within given bounds', () => {
 ```
 
 ### Object
+
+#### .toBeEmptyObject()
+
+Use `.toBeEmptyObject` when checking if a value is an empty `Object`.
+
+```js
+test('passes when value is an empty object', () => {
+  expect({}).toBeEmptyObject();
+  expect({ a: 'hello' }).not.toBeEmptyObject();
+});
+```
 
 #### .toBeObject()
 
