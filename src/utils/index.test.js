@@ -34,11 +34,19 @@ describe('Utils', () => {
     }
 
     {
-      const fn = () => {};
+      const arr = new Array();
+
+      test('returns property when it has a falsy one', () => {
+        expect(determinePropertyMessage(arr, 'length')).toBe(0);
+      });
+    }
+
+    {
+      const date = new Date();
       const errorMessage = 'bob';
 
       test('returns custom error message when it is passed one', () => {
-        expect(determinePropertyMessage(fn, 'length', errorMessage)).toBe(errorMessage);
+        expect(determinePropertyMessage(date, 'length', errorMessage)).toBe(errorMessage);
       });
     }
   });
