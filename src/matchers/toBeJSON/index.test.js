@@ -15,9 +15,12 @@ describe('.toBeJSON', () => {
 });
 
 describe('.not.toBeJSON', () => {
-  each([[{ key: 'value' }], ['{"bad_json":*}'], [''], ['hello'], [12], [null]]).test('passes when given non valid JSON: %s', given => {
-    expect(given).not.toBeJSON();
-  });
+  each([[{ key: 'value' }], ['{"bad_json":*}'], [''], ['hello'], [12], [null]]).test(
+    'passes when given non valid JSON: %s',
+    given => {
+      expect(given).not.toBeJSON();
+    }
+  );
 
   test('fails when given a valid JSON', () => {
     expect(() => expect('{"key":"value"}').not.toBeJSON()).toThrowErrorMatchingSnapshot();

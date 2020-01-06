@@ -16,13 +16,14 @@ export default {
     }
 
     const pass = !error;
-    const message = () => [
-      matcherHint(pass ? '.not.toBeJSON' : '.toBeJSON', 'received', ''),
-      '',
-      pass ? 'Expected value not to be valid JSON:' : 'Expected value to be valid JSON:',
-      `  ${printReceived(received)}`,
-      pass ? '' : `  Error: ${error.message}`
-    ].join('\n');
+    const message = () =>
+      [
+        matcherHint(pass ? '.not.toBeJSON' : '.toBeJSON', 'received', ''),
+        '',
+        pass ? 'Expected value not to be valid JSON:' : 'Expected value to be valid JSON:',
+        `  ${printReceived(received)}`,
+        pass ? '' : `  Error: ${error.message}`
+      ].join('\n');
 
     return {
       message,
