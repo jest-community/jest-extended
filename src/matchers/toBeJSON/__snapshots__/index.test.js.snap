@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toBeJSON fails when given a valid JSON 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toBeJSON(</><dim>)</>
+
+Expected value not to be valid JSON:
+  <red>\\"{\\\\\\"key\\\\\\":\\\\\\"value\\\\\\"}\\"</>
+"
+`;
+
+exports[`.toBeJSON fails when given a bad JSON 1`] = `
+"<dim>expect(</><red>received</><dim>).toBeJSON(</><dim>)</>
+
+Expected value to be valid JSON:
+  <red>\\"{\\\\\\"key\\\\\\"}\\"</>
+  Error: Unexpected token } in JSON at position 6"
+`;

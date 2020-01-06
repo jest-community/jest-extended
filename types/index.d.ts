@@ -657,6 +657,11 @@ declare namespace jest {
     toReject(): any;
 
     /**
+     * Use `.toBeJSON` to validate input is valid JSON.
+     */
+    toBeJSON(): any;
+
+    /**
      * Use `.toBeString` when checking if a value is a `String`.
      */
     toBeString(): any;

@@ -98,6 +98,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toResolve()](#toresolve)
     - [.toReject()](#toreject)
   - [String](#string)
+    - [.toBeJSON()](#tobejson)
     - [.toBeString()](#tobestring)
     - [.toBeHexadecimal(string)](#tobehexadecimal)
     - [.toEqualCaseInsensitive(string)](#toequalcaseinsensitivestring)
@@ -831,6 +832,23 @@ test('passes when a promise rejects', async () => {
 ```
 
 ### String
+
+### .toBeJSON()
+
+Use `.toBeJSON` to validate input is valid JSON.
+
+```js
+test('passes when value is a valid JSON', () => {
+  expect('{"key":"value"}').toBeJSON();
+  expect('[1,2,3]').toBeJSON();
+  expect({key: 'value'}).not.toBeJSON();
+  expect('{"key"}').not.toBeJSON();
+  expect('{"key":broken}').not.toBeJSON();
+  expect('hello').not.toBeJSON();
+  expect(12).not.toBeJSON();
+  expect(null).not.toBeJSON();
+});
+```
 
 #### .toBeString()
 
