@@ -293,12 +293,12 @@ declare namespace jest {
     /**
      * Use `.toResolve` when checking if a promise resolves.
      */
-    toResolve(): R;
+    toResolve(): Promise<R>;
 
     /**
      * Use `.toReject` when checking if a promise rejects.
      */
-    toReject(): R;
+    toReject(): Promise<R>;
 
     /**
      * Use `.toBeString` when checking if a value is a `String`.
