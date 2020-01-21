@@ -2,7 +2,7 @@
 
 declare namespace jest {
   // noinspection JSUnusedGlobalSymbols
-  interface Matchers<R, T> {
+  interface Matchers<R, T = void> {
     /**
      * Note: Currently unimplemented
      * Passing assertion
