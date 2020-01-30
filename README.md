@@ -106,6 +106,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toInclude(substring)](#toincludesubstring)
     - [.toIncludeRepeated(substring, times)](#toincluderepeatedsubstring-times)
     - [.toIncludeMultiple([substring])](#toincludemultiplesubstring)
+    - [.toBeSimilar(substring)](#tobesimilarstring)
 - [LICENSE](#license)
 
 ## Installation
@@ -924,6 +925,28 @@ Use `.toIncludeMultiple` when checking if a `String` includes all of the given s
 test('passes when value includes all substrings', () => {
   expect('hello world').toIncludeMultiple(['world', 'hello']);
   expect('hello world').not.toIncludeMultiple(['world', 'hello', 'bob']);
+});
+```
+
+#### .toBeSimilar(string)
+
+Use `.toBeSimilar` when checking if a string is equal (===) to another string irrespective of whitespaces.
+
+```js
+test('passes if strings are equal irrespective of whitespaces', () => {
+    expect('hello world').toBeSimilar(`
+        hello
+        world
+    `);
+    expect('SELECT * FROM TABLE WHERE CONDITION').toBeSimilar(`
+        SELECT * FROM TABLE
+        WHERE CONDITION
+    `);
+    expect('.class { cssRule: value }').not.toBeSimilar(`
+        #id {
+            cssRule: value
+        }
+    `);
 });
 ```
 
