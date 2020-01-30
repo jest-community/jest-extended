@@ -378,6 +378,13 @@ declare namespace jest {
     toIncludeMultiple(substring: string[]): R;
 
     /**
+     * Use .toBeSimilar when checking if a string is equal (===) to another string irrespective of whitespaces.
+     *
+     * @param {String} string
+     */
+    toBeSimilar(string: string): R;
+
+    /**
      * Use `.toThrowWithMessage` when checking if a callback function throws an error of a given type with a given error message.
      *
      * @param {Function} type
