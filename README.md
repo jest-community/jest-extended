@@ -116,6 +116,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toInclude(substring)](#toincludesubstring)
     - [.toIncludeRepeated(substring, times)](#toincluderepeatedsubstring-times)
     - [.toIncludeMultiple([substring])](#toincludemultiplesubstring)
+    - [.toBeSimilar(substring)](#tobesimilarstring)
   - [Symbol](#symbol)
     - [.toBeSymbol()](#tobesymbol)
 - [LICENSE](#license)
@@ -1088,6 +1089,28 @@ test('passes when value includes all substrings', () => {
 });
 ```
 
+#### .toBeSimilar(string)
+
+Use `.toBeSimilar` when checking if a string is equal (===) to another string irrespective of whitespaces.
+
+```js
+test('passes if strings are equal irrespective of whitespaces', () => {
+    expect('hello world').toBeSimilar(`
+        hello
+        world
+    `);
+    expect('SELECT * FROM TABLE WHERE CONDITION').toBeSimilar(`
+        SELECT * FROM TABLE
+        WHERE CONDITION
+    `);
+    expect('.class { cssRule: value }').not.toBeSimilar(`
+        #id {
+            cssRule: value
+        }
+    `);
+});
+```
+
 ### Symbol
 
 #### .toBeSymbol()
@@ -1098,8 +1121,6 @@ Use `.toBeSymbol` when checking if a value is a `Symbol`.
 test('passes when value is a symbol', () => {
   expect(Symbol()).toBeSymbol();
   expect(true).not.toBeSymbol();
-});
-```
 
 ## LICENSE
 
