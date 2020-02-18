@@ -20,7 +20,8 @@
     "test": "jest",
     "test:coverage": "yarn test -- --coverage",
     "test:report": "codecov",
-    "test:watch": "yarn test -- --watch"
+    "test:watch": "yarn test -- --watch",
+    "typecheck": "tsc --noEmit types/index.d.ts"
   },
   "keywords": [
     "jest",
@@ -35,7 +36,7 @@
   "license": "MIT",
   "repository": "jest-community/jest-extended",
   "devDependencies": {
-    "@types/jest": "^23.3.2",
+    "@types/jest": "^24.0.23",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
@@ -56,7 +57,8 @@
     "jest-watch-typeahead": "^0.2.0",
     "lint-staged": "^6.0.0",
     "prettier": "^1.7.4",
-    "pretty-format": "^22.1.0"
+    "pretty-format": "^22.1.0",
+    "typescript": "^3.7.2"
   },
   "dependencies": {
     "expect": "^24.1.0",
