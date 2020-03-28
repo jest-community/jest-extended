@@ -68,6 +68,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
   - [Mock](#mock)
     - [.toHaveBeenCalledBefore()](#tohavebeencalledbefore)
     - [.toHaveBeenCalledAfter()](#tohavebeencalledafter)
+    - [.toHaveBeenCalledOnce()](#tohavebeencalledonce)
   - [Number](#number)
     - [.toBeNumber()](#tobenumber)
     - [.toBeNaN()](#tobenan)
@@ -495,6 +496,20 @@ it('calls mock1 after mock2', () => {
   mock2();
 
   expect(mock1).toHaveBeenCalledAfter(mock2);
+});
+```
+
+#### .toHaveBeenCalledOnce()
+
+Use `.toHaveBeenCalledOnce` to check if a `Mock` was called exactly one time.
+
+```js
+it('passes only if mock was called exactly once', () => {
+  const mock = jest.fn();
+
+  expect(mock).not.toHaveBeenCalled();
+  mock();
+  expect(mock).toHaveBeenCalledOnce();
 });
 ```
 
