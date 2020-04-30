@@ -77,6 +77,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toBeEven()](#tobeeven)
     - [.toBeOdd()](#tobeodd)
     - [.toBeWithin(start, end)](#tobewithinstart-end)
+    - [.toBeInteger()](#tobeinteger)
   - [Object](#object)
     - [.toBeObject()](#tobeobject)
     - [.toContainKey(key)](#tocontainkeykey)
@@ -596,6 +597,18 @@ test('passes when number is within given bounds', () => {
   expect(1).toBeWithin(1, 3);
   expect(2).toBeWithin(1, 3);
   expect(3).not.toBeWithin(1, 3);
+});
+```
+
+#### .toBeInteger()
+
+Use `.toBeInteger` when checking if a number is an integer.
+
+```js
+test('passes when value is an integer', () => {
+  expect(1).toBeInteger();
+  expect(1.0).toBeInteger();
+  expect(1.1).not.toBeInteger();
 });
 ```
 
