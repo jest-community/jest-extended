@@ -167,6 +167,22 @@ If your editor does not recognise the custom `jest-extended` matchers, add a `gl
 import 'jest-extended';
 ```
 
+_Note: When using `ts-jest >= 25.5.0`_
+
+Since the [breaking changes]() in `25.5.0` you also need to update you `tsconfig.json` to include the new `global.d.ts` file in the `files` property like so:
+
+```json
+{
+  "compilerOptions": {
+    ...
+  },
+  ...
+  "files": ["global.d.ts"]
+}
+```
+
+Also note that when adding this for the first time this affects which files are compiled by the typescript compiler and you might need to add the `include` property as well. See the [typescript docs](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) for more details.
+
 ## Asymmetric matchers
 
 All matchers described in the API are also asymmetrical since [jest version 23](https://jestjs.io/blog/2018/05/29/jest-23-blazing-fast-delightful-testing#custom-asymmetric-matchers):
