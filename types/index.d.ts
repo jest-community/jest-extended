@@ -132,7 +132,7 @@ declare namespace jest {
      *
      * @param {Mock} mock
      */
-    toHaveBeenCalledBefore(mock: jest.Mock): R;
+    toHaveBeenCalledBefore(mock: jest.MockInstance<any, any>): R;
 
     /**
      * Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another `Mock`.
@@ -141,7 +141,7 @@ declare namespace jest {
      *
      * @param {Mock} mock
      */
-    toHaveBeenCalledAfter(mock: jest.Mock): R;
+    toHaveBeenCalledAfter(mock: jest.MockInstance<any, any>): R;
 
     /**
      * Use `.toBeNumber` when checking if a value is a `Number`.
@@ -488,7 +488,7 @@ declare namespace jest {
      *
      * @param {Mock} mock
      */
-    toHaveBeenCalledBefore(mock: jest.Mock): any;
+    toHaveBeenCalledBefore(mock: jest.MockInstance<any, any>): any;
 
     /**
      * Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another `Mock`.
@@ -497,7 +497,7 @@ declare namespace jest {
      *
      * @param {Mock} mock
      */
-    toHaveBeenCalledAfter(mock: jest.Mock): any;
+    toHaveBeenCalledAfter(mock: jest.MockInstance<any, any>): any;
 
     /**
      * Use `.toBeNumber` when checking if a value is a `Number`.
