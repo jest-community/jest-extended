@@ -1,3 +1,4 @@
 import { equals } from '../../utils';
 
-export default (obj, [key, value]) => obj.hasOwnProperty && obj.hasOwnProperty(key) && equals(obj[key], value);
+export default (obj, [key, value]) =>
+  Object.prototype.hasOwnProperty.call(obj, key) && equals(obj[key], value);

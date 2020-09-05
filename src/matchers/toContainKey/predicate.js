@@ -1,1 +1,1 @@
-export default (obj, key) => obj.hasOwnProperty && obj.hasOwnProperty(key);
+export default (obj, key) => Object.prototype.hasOwnProperty.call(obj, key);

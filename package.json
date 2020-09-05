@@ -18,9 +18,9 @@
     "precommit": "lint-staged",
     "prettier": "prettier 'src/**/*.js' --write --single-quote=true --print-width=120 --arrow-parens avoid --trailing-comma none",
     "test": "jest",
-    "test:coverage": "yarn test -- --coverage",
+    "test:coverage": "yarn test --coverage",
     "test:report": "codecov",
-    "test:watch": "yarn test -- --watch"
+    "test:watch": "yarn test --watch"
   },
   "keywords": [
     "jest",
@@ -74,7 +74,7 @@
       "/node_modules/"
     ],
     "snapshotSerializers": [
-      "pretty-format/build/plugins/convertAnsi.js"
+      "pretty-format/build/plugins/ConvertAnsi.js"
     ],
     "coverageThreshold": {
       "global": {
