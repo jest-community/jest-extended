@@ -15,19 +15,12 @@ describe('.toBeDate', () => {
 });
 
 describe('.not.toBeDate', () => {
-  each([
-    [false],
-    [true],
-    [0],
-    [''],
-    [{}],
-    [() => {}],
-    [undefined],
-    [null],
-    [NaN]
-  ]).test('passes when not given a date: %s', given => {
-    expect(given).not.toBeDate();
-  });
+  each([[false], [true], [0], [''], [{}], [() => {}], [undefined], [null], [NaN]]).test(
+    'passes when not given a date: %s',
+    given => {
+      expect(given).not.toBeDate();
+    }
+  );
 
   test('fails when given a date', () => {
     expect(() => expect(new Date('2018-01-01T13:00:00.000Z')).not.toBeDate()).toThrowErrorMatchingSnapshot();

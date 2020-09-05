@@ -6,19 +6,10 @@ describe('toBePositive Predicate', () => {
     expect(predicate(1)).toBe(true);
   });
 
-  each([
-    [false],
-    [''],
-    [-1],
-    [0],
-    [{}],
-    [[]],
-    [() => {}],
-    [undefined],
-    [null],
-    [NaN],
-    [Infinity]
-  ]).test('returns false when given: %s', given => {
-    expect(predicate(given)).toBe(false);
-  });
+  each([[false], [''], [-1], [0], [{}], [[]], [() => {}], [undefined], [null], [NaN], [Infinity]]).test(
+    'returns false when given: %s',
+    given => {
+      expect(predicate(given)).toBe(false);
+    }
+  );
 });

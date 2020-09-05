@@ -21,18 +21,12 @@ describe('.toBeNumber', () => {
 });
 
 describe('.not.toBeNumber', () => {
-  each([
-    [false],
-    [true],
-    [[]],
-    [{}],
-    [() => {}],
-    [undefined],
-    [null],
-    ['10']
-  ]).test('passes when not given a number: %s', given => {
-    expect(given).not.toBeNumber();
-  });
+  each([[false], [true], [[]], [{}], [() => {}], [undefined], [null], ['10']]).test(
+    'passes when not given a number: %s',
+    given => {
+      expect(given).not.toBeNumber();
+    }
+  );
 
   test('fails when given a number', () => {
     expect(() => expect(1).not.toBeNumber()).toThrowErrorMatchingSnapshot();

@@ -15,21 +15,12 @@ describe('.toBePositive', () => {
 });
 
 describe('.not.toBePositive', () => {
-  each([
-    [false],
-    [''],
-    [-1],
-    [0],
-    [{}],
-    [[]],
-    [() => {}],
-    [undefined],
-    [null],
-    [NaN],
-    [Infinity]
-  ]).test('passes when not given a positive number: %s', given => {
-    expect(given).not.toBePositive();
-  });
+  each([[false], [''], [-1], [0], [{}], [[]], [() => {}], [undefined], [null], [NaN], [Infinity]]).test(
+    'passes when not given a positive number: %s',
+    given => {
+      expect(given).not.toBePositive();
+    }
+  );
 
   test('fails when given a positive number', () => {
     expect(() => expect(5).not.toBePositive()).toThrowErrorMatchingSnapshot();

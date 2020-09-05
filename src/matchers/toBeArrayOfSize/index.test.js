@@ -22,18 +22,12 @@ describe('.toBeArrayOfSize', () => {
     expect(() => expect(false).toBeArrayOfSize(1)).toThrowErrorMatchingSnapshot();
   });
 
-  each([
-    [false],
-    [true],
-    [0],
-    [{}],
-    [() => {}],
-    [undefined],
-    [null],
-    [NaN]
-  ]).test('fails when given type of %s which is not an array', given => {
-    expect(() => expect(given).toBeArrayOfSize(1)).toThrowErrorMatchingSnapshot();
-  });
+  each([[false], [true], [0], [{}], [() => {}], [undefined], [null], [NaN]]).test(
+    'fails when given type of %s which is not an array',
+    given => {
+      expect(() => expect(given).toBeArrayOfSize(1)).toThrowErrorMatchingSnapshot();
+    }
+  );
 
   test('fails when not given an array', () => {
     expect(() => expect().toBeArrayOfSize(5)).toThrowErrorMatchingSnapshot();
