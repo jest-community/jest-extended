@@ -7,22 +7,28 @@ describe('toIncludeAllMembers Predicate', () => {
   const set2 = [1, 2, 3];
 
   describe('returns true', () => {
-    test('when Array contains all the same members of given set', () => {
+    test('when iterable contains all the same members of given set', () => {
       expect(predicate(array1, set1)).toBe(true);
+      expect(predicate(new Set(array1), set1)).toBe(true);
+      expect(predicate(new Set(array1), new Set(set1))).toBe(true);
     });
 
-    test('when Array contains all of the same nested members of given set', () => {
+    test('when iterable contains all of the same nested members of given set', () => {
       expect(predicate([{ hello: 'world' }, { foo: 'bar' }], [{ foo: 'bar' }])).toBe(true);
+      expect(predicate(new Set([{ hello: 'world' }, { foo: 'bar' }]), [{ foo: 'bar' }])).toBe(true);
     });
   });
 
   describe('returns false', () => {
-    test('when Array does not contain any of the members of given set', () => {
+    test('when iterable does not contain any of the members of given set', () => {
       expect(predicate(array2, set2)).toBe(false);
+      expect(predicate(new Set(array2), set2)).toBe(false);
+      expect(predicate(new Set(array2), new Set(set2))).toBe(false);
     });
 
-    test('when Array contains does not contain all of the same nested members of given set', () => {
+    test('when iterable contains does not contain all of the same nested members of given set', () => {
       expect(predicate([{ hello: 'world' }, { foo: 'bar' }], [{ foo: 'qux' }])).toBe(false);
+      expect(predicate(new Set([{ hello: 'world' }, { foo: 'bar' }]), new Set([{ foo: 'qux' }]))).toBe(false);
     });
   });
 });

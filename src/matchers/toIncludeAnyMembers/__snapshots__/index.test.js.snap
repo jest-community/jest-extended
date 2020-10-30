@@ -9,6 +9,15 @@ Received:
   <red>[[{\\"hello\\": \\"world\\"}]]</>"
 `;
 
+exports[`.not.toIncludeAnyMembers fails when given array contains array value 2`] = `
+"<dim>expect(</><red>received</><dim>).not.toIncludeAnyMembers(</><green>expected</><dim>)</>
+
+Expected list to not include any of the following members:
+  <green>[[{\\"hello\\": \\"world\\"}], 7]</>
+Received:
+  <red>Set {[{\\"hello\\": \\"world\\"}]}</>"
+`;
+
 exports[`.not.toIncludeAnyMembers fails when given array contains object value 1`] = `
 "<dim>expect(</><red>received</><dim>).not.toIncludeAnyMembers(</><green>expected</><dim>)</>
 
@@ -16,6 +25,15 @@ Expected list to not include any of the following members:
   <green>[{\\"foo\\": \\"bar\\"}]</>
 Received:
   <red>[{\\"foo\\": \\"bar\\"}]</>"
+`;
+
+exports[`.not.toIncludeAnyMembers fails when given array contains object value 2`] = `
+"<dim>expect(</><red>received</><dim>).not.toIncludeAnyMembers(</><green>expected</><dim>)</>
+
+Expected list to not include any of the following members:
+  <green>[{\\"foo\\": \\"bar\\"}]</>
+Received:
+  <red>Set {{\\"foo\\": \\"bar\\"}}</>"
 `;
 
 exports[`.not.toIncludeAnyMembers fails when given object contains primitive value 1`] = `
@@ -27,6 +45,15 @@ Received:
   <red>[7]</>"
 `;
 
+exports[`.not.toIncludeAnyMembers fails when given object contains primitive value 2`] = `
+"<dim>expect(</><red>received</><dim>).not.toIncludeAnyMembers(</><green>expected</><dim>)</>
+
+Expected list to not include any of the following members:
+  <green>[7, 8]</>
+Received:
+  <red>Set {7}</>"
+`;
+
 exports[`.toIncludeAnyMembers fails when expected object does not contain array value 1`] = `
 "<dim>expect(</><red>received</><dim>).toIncludeAnyMembers(</><green>expected</><dim>)</>
 
@@ -36,7 +63,7 @@ Received:
   <red>[1, 2, 3]</>"
 `;
 
-exports[`.toIncludeAnyMembers fails when given array does not contain any members  1`] = `
+exports[`.toIncludeAnyMembers fails when given iterables does not contain any members  1`] = `
 "<dim>expect(</><red>received</><dim>).toIncludeAnyMembers(</><green>expected</><dim>)</>
 
 Expected list to include any of the following members:
@@ -45,7 +72,16 @@ Received:
   <red>[4, 5, 6]</>"
 `;
 
-exports[`.toIncludeAnyMembers fails when given object is not an array 1`] = `
+exports[`.toIncludeAnyMembers fails when given iterables does not contain any members  2`] = `
+"<dim>expect(</><red>received</><dim>).toIncludeAnyMembers(</><green>expected</><dim>)</>
+
+Expected list to include any of the following members:
+  <green>[1, 2, 3]</>
+Received:
+  <red>Set {4, 5, 6}</>"
+`;
+
+exports[`.toIncludeAnyMembers fails when given object is not an iterable 1`] = `
 "<dim>expect(</><red>received</><dim>).toIncludeAnyMembers(</><green>expected</><dim>)</>
 
 Expected list to include any of the following members:
