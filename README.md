@@ -77,6 +77,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toBeEven()](#tobeeven)
     - [.toBeOdd()](#tobeodd)
     - [.toBeWithin(start, end)](#tobewithinstart-end)
+    - [.toBeWithinPercent(mid, percent)](#tobewithinpercentmid-percent)
   - [Object](#object)
     - [.toBeObject()](#tobeobject)
     - [.toContainKey(key)](#tocontainkeykey)
@@ -596,6 +597,18 @@ test('passes when number is within given bounds', () => {
   expect(1).toBeWithin(1, 3);
   expect(2).toBeWithin(1, 3);
   expect(3).not.toBeWithin(1, 3);
+});
+```
+
+#### .toBeWithinPercent(mid, percent)
+
+Use `.toBeWithinPercent` when checking if a number is within x percent of a midpoint number.
+
+```js
+test('passes when number is within x percent of mid', () => {
+  expect(55).toBeWithinPercent(50, 10);
+  expect(20).toBeWithinPercent(10, 100);
+  expect(100).not.toBeWithinPercent(10, 5);
 });
 ```
 
