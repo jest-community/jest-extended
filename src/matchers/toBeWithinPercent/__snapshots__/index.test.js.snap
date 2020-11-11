@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toBeWithinPercent fails when given number is within x percent of the mid number 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toBeWithinPercent(</><green>expected</><dim>)</>
+
+Expected number to not be within percent of mid:
+  mid: <green>20</>  percent: <green>100</>%
+Received:
+  <red>25</>"
+`;
+
+exports[`.not.toBeWithinPercent fails when given number is within x percent of the mid number 20`] = `
+"<dim>expect(</><red>received</><dim>).not.toBeWithinPercent(</><green>expected</><dim>)</>
+
+Expected number to not be within percent of mid:
+  mid: <green>20</>  percent: <green>5</>%
+Received:
+  <red>100</>"
+`;
+
+exports[`.toBeWithinPercent fails when given number is not within x percent of the mid number 1`] = `
+"<dim>expect(</><red>received</><dim>).toBeWithinPercent(</><green>expected</><dim>)</>
+
+Expected number to be within percent of mid:
+  mid: <green>20</>  percent: <green>100</>%
+Received:
+  <red>25</>"
+`;
