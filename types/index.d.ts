@@ -221,7 +221,7 @@ declare namespace jest {
     toContainKeysWithinPercent(keys: object[]): R;
 
     /**
-     * Use `.toContainAllKeys` when checking if an object only contains all of the provided keys.
+     * Use `.toContainAllKeys` when checking if an object only contains all of the provided keys and these keys' values are within x percent of a target value.
      *
      * @param {Array.<String>} keys
      */
