@@ -1,8 +1,7 @@
 import predicate from './predicate';
 
 const data1 = { a: 55, b: 5, c: 1 };
-
-const data2 = { a: 55, b: 6, c: 1 };
+const data2 = { a: 56, b: 5, c: 1 };
 
 const keys = [
   {
@@ -22,7 +21,7 @@ const keys = [
   }
 ];
 
-describe('.toContainKeys', () => {
+describe('.toContainKeysWithinPercent', () => {
   test('passes when object contains all keys and they are within x percent of target', () => {
     expect(predicate(data1, keys)).toBe(true);
   });
