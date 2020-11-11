@@ -602,10 +602,10 @@ test('passes when number is within given bounds', () => {
 
 #### .toBeWithinPercent(mid, percent)
 
-Use `.toBeWithinPercent` when checking if a number is within x percent of a midpoint number.
+Use `.toBeWithinPercent` when checking if a number is within x percent of a target number.
 
 ```js
-test('passes when number is within x percent of mid', () => {
+test('passes when number is within x percent of target', () => {
   expect(55).toBeWithinPercent(50, 10);
   expect(20).toBeWithinPercent(10, 100);
   expect(100).not.toBeWithinPercent(10, 5);

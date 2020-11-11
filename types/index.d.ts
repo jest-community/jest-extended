@@ -187,6 +187,14 @@ declare namespace jest {
     toBeWithin(start: number, end: number): R;
 
     /**
+     * Use `.toBeWithinPercent` when checking if a number is within x percent of a target number.
+     *
+     * @param {Number} target
+     * @param {Number} percent
+     */
+    toBeWithinPercent(target: number, percent: number): R;
+
+    /**
      * Use `.toBeObject` when checking if a value is an `Object`.
      */
     toBeObject(): R;
