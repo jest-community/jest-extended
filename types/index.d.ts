@@ -552,6 +552,15 @@ declare namespace jest {
     toBeWithin(start: number, end: number): any;
 
     /**
+     * Use `.toBeAround` when checking if a number is equal to the rounded expected number.
+     *
+     * @param {Number} actual
+     * @param {Number} expected
+     * @param {Number} precision
+     */
+    toBeAround(actual: number, expected: number, precision?: number): any;
+
+    /**
      * Use `.toBeObject` when checking if a value is an `Object`.
      */
     toBeObject(): any;
