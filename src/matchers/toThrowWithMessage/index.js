@@ -1,6 +1,7 @@
 import { matcherHint, printExpected, printReceived } from 'jest-matcher-utils';
 
 import predicate from './predicate';
+import { inspect } from 'util';
 
 const positiveHint = matcherHint('.toThrowWithMessage', 'function', 'type', { secondArgument: 'message' });
 const negativeHint = matcherHint('.not.toThrowWithMessage', 'function', 'type', { secondArgument: 'message' });
@@ -22,11 +23,13 @@ const failMessage = (received, expected) => () =>
   `  ${printReceived(received)}\n`;
 
 export default {
-  toThrowWithMessage: (callback, type, message) => {
-    if (!callback || typeof callback !== 'function') {
+  toThrowWithMessage(callbackOrPromiseReturn, type, message) {
+    const isFromReject = this && this.promise === 'rejects'; // See https://github.com/facebook/jest/pull/7621#issue-244312550
+    if ((!callbackOrPromiseReturn || typeof callbackOrPromiseReturn !== 'function') && !isFromReject) {
       return {
         pass: false,
-        message: () => positiveHint + '\n\n' + `Received value must be a function but instead "${callback}" was found`
+        message: () =>
+          positiveHint + '\n\n' + `Received value must be a function but instead "${callbackOrPromiseReturn}" was found`
       };
     }
 
@@ -57,12 +60,15 @@ export default {
     }
 
     let error;
-    try {
-      callback();
-    } catch (e) {
-      error = e;
+    if (isFromReject) {
+      error = callbackOrPromiseReturn;
+    } else {
+      try {
+        callbackOrPromiseReturn();
+      } catch (e) {
+        error = e;
+      }
     }
-
     if (!error) {
       return {
         pass: false,
@@ -78,3 +84,5 @@ export default {
     return { pass: false, message: failMessage(error, new type(message)) };
   }
 };
+
+const checkPredicate = (error, type, message) => {};
