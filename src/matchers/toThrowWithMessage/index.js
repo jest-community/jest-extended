@@ -1,7 +1,6 @@
 import { matcherHint, printExpected, printReceived } from 'jest-matcher-utils';
 
 import predicate from './predicate';
-import { inspect } from 'util';
 
 const positiveHint = matcherHint('.toThrowWithMessage', 'function', 'type', { secondArgument: 'message' });
 const negativeHint = matcherHint('.not.toThrowWithMessage', 'function', 'type', { secondArgument: 'message' });
@@ -84,5 +83,3 @@ export default {
     return { pass: false, message: failMessage(error, new type(message)) };
   }
 };
-
-const checkPredicate = (error, type, message) => {};
