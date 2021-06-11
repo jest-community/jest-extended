@@ -1,37 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toIncludeRepeated fails when given string includes given substring 1 time 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toIncludeRepeated(</><green>expected</><dim>)</>
+"expect(received).not.toIncludeRepeated(expected)
 
 Expected string to not include repeated 1 times:
-  <green>\\"ell\\"</>
+  \\"ell\\"
 Received:
-  <red>\\"hello world\\"</>"
+  \\"hello world\\""
 `;
 
 exports[`.not.toIncludeRepeated fails when given string includes given substring to the given occurrences 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toIncludeRepeated(</><green>expected</><dim>)</>
+"expect(received).not.toIncludeRepeated(expected)
 
 Expected string to not include repeated 3 times:
-  <green>\\"l\\"</>
+  \\"l\\"
 Received:
-  <red>\\"hello world\\"</>"
+  \\"hello world\\""
 `;
 
 exports[`.toIncludeRepeated fails when given string does not have a given substring the correct number of times 1`] = `
-"<dim>expect(</><red>received</><dim>).toIncludeRepeated(</><green>expected</><dim>)</>
+"expect(received).toIncludeRepeated(expected)
 
 Expected string to include repeated 2 times:
-  <green>\\"world\\"</>
+  \\"world\\"
 Received:
-  <red>\\"hello world\\"</>"
+  \\"hello world\\""
 `;
 
 exports[`.toIncludeRepeated fails when given string does not include given substring 1`] = `
-"<dim>expect(</><red>received</><dim>).toIncludeRepeated(</><green>expected</><dim>)</>
+"expect(received).toIncludeRepeated(expected)
 
 Expected string to include repeated 1 times:
-  <green>\\"bob\\"</>
+  \\"bob\\"
 Received:
-  <red>\\"hello world\\"</>"
+  \\"hello world\\""
 `;

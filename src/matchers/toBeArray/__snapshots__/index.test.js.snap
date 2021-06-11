@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toBeArray fails when given an array 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBeArray(</><dim>)</>
+"expect(received).not.toBeArray()
 
 Expected value to not be an array received:
-  <red>[]</>"
+  []"
 `;
 
 exports[`.toBeArray fails when not given an array 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeArray(</><dim>)</>
+"expect(received).toBeArray()
 
 Expected value to be an array received:
-  <red>false</>"
+  false"
 `;

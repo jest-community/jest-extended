@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toContainAnyEntries fails when given object contains atleast one of the given entries 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toContainAnyEntries(</><green>expected</><dim>)</>
+"expect(received).not.toContainAnyEntries(expected)
 
 Expected object to not contain any of the provided entries:
-  <green>[[\\"a\\", \\"qux\\"], [\\"a\\", \\"foo\\"]]</>
+  [[\\"a\\", \\"qux\\"], [\\"a\\", \\"foo\\"]]
 Received:
-  <red>{\\"a\\": \\"foo\\", \\"b\\": \\"bar\\", \\"c\\": \\"baz\\"}</>"
+  {\\"a\\": \\"foo\\", \\"b\\": \\"bar\\", \\"c\\": \\"baz\\"}"
 `;
 
 exports[`.toContainAnyEntries fails when given object does not contain any of the given entries 1`] = `
-"<dim>expect(</><red>received</><dim>).toContainAnyEntries(</><green>expected</><dim>)</>
+"expect(received).toContainAnyEntries(expected)
 
 Expected object to contain any of the provided entries:
-  <green>[[\\"a\\", \\"qux\\"], [\\"b\\", \\"foo\\"]]</>
+  [[\\"a\\", \\"qux\\"], [\\"b\\", \\"foo\\"]]
 Received:
-  <red>{\\"a\\": \\"foo\\", \\"b\\": \\"bar\\", \\"c\\": \\"baz\\"}</>"
+  {\\"a\\": \\"foo\\", \\"b\\": \\"bar\\", \\"c\\": \\"baz\\"}"
 `;

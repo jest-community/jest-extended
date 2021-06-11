@@ -1,55 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toContainValue fails when given object contains array value 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toContainValue(</><green>expected</><dim>)</>
+"expect(received).not.toContainValue(expected)
 
 Expected object to not contain value:
-  <green>[{\\"hello\\": \\"world\\"}]</>
+  [{\\"hello\\": \\"world\\"}]
 Received:
-  <red>{\\"message\\": [{\\"hello\\": \\"world\\"}]}</>"
+  {\\"message\\": [{\\"hello\\": \\"world\\"}]}"
 `;
 
 exports[`.not.toContainValue fails when given object contains object value 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toContainValue(</><green>expected</><dim>)</>
+"expect(received).not.toContainValue(expected)
 
 Expected object to not contain value:
-  <green>{\\"hello\\": \\"world\\"}</>
+  {\\"hello\\": \\"world\\"}
 Received:
-  <red>{\\"message\\": {\\"hello\\": \\"world\\"}}</>"
+  {\\"message\\": {\\"hello\\": \\"world\\"}}"
 `;
 
 exports[`.not.toContainValue fails when given object contains primitive value 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toContainValue(</><green>expected</><dim>)</>
+"expect(received).not.toContainValue(expected)
 
 Expected object to not contain value:
-  <green>\\"world\\"</>
+  \\"world\\"
 Received:
-  <red>{\\"hello\\": \\"world\\"}</>"
+  {\\"hello\\": \\"world\\"}"
 `;
 
 exports[`.toContainValue fails when given object does not contain array value 1`] = `
-"<dim>expect(</><red>received</><dim>).toContainValue(</><green>expected</><dim>)</>
+"expect(received).toContainValue(expected)
 
 Expected object to contain value:
-  <green>[{\\"world\\": \\"hello\\"}]</>
+  [{\\"world\\": \\"hello\\"}]
 Received:
-  <red>{\\"message\\": [{\\"hello\\": \\"world\\"}]}</>"
+  {\\"message\\": [{\\"hello\\": \\"world\\"}]}"
 `;
 
 exports[`.toContainValue fails when given object does not contain object value 1`] = `
-"<dim>expect(</><red>received</><dim>).toContainValue(</><green>expected</><dim>)</>
+"expect(received).toContainValue(expected)
 
 Expected object to contain value:
-  <green>{\\"world\\": \\"hello\\"}</>
+  {\\"world\\": \\"hello\\"}
 Received:
-  <red>{\\"message\\": {\\"hello\\": \\"world\\"}}</>"
+  {\\"message\\": {\\"hello\\": \\"world\\"}}"
 `;
 
 exports[`.toContainValue fails when given object does not contain primitive value 1`] = `
-"<dim>expect(</><red>received</><dim>).toContainValue(</><green>expected</><dim>)</>
+"expect(received).toContainValue(expected)
 
 Expected object to contain value:
-  <green>\\"hello\\"</>
+  \\"hello\\"
 Received:
-  <red>{\\"hello\\": \\"world\\"}</>"
+  {\\"hello\\": \\"world\\"}"
 `;

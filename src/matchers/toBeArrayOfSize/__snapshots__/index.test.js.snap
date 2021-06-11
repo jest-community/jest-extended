@@ -1,131 +1,131 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toBeArrayOfSize fails when given an array of size 0 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBeArrayOfSize(</><green>expected</><dim>)</>
+"expect(received).not.toBeArrayOfSize(expected)
 
 Expected value to not be an array of size:
-  <green>0</>
+  0
 Received:
-  value: <red>[]</>
-  length: <red>\\"Not Accessible\\"</>"
+  value: []
+  length: \\"Not Accessible\\""
 `;
 
 exports[`.toBeArrayOfSize fails when given neither a parameter nor an array 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeArrayOfSize(</><green>expected</><dim>)</>
+"expect(received).toBeArrayOfSize(expected)
 
 Expected value to be an array of size:
-  <green>undefined</>
+  undefined
 Received:
-  value: <red>[]</>
-  length: <red>\\"Not Accessible\\"</>"
+  value: []
+  length: \\"Not Accessible\\""
 `;
 
 exports[`.toBeArrayOfSize fails when given type of [object Object] which is not an array 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeArrayOfSize(</><green>expected</><dim>)</>
+"expect(received).toBeArrayOfSize(expected)
 
 Expected value to be an array of size:
-  <green>1</>
+  1
 Received:
-  value: <red>{}</>
-  length: <red>\\"Not Accessible\\"</>"
+  value: {}
+  length: \\"Not Accessible\\""
 `;
 
 exports[`.toBeArrayOfSize fails when given type of 0 which is not an array 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeArrayOfSize(</><green>expected</><dim>)</>
+"expect(received).toBeArrayOfSize(expected)
 
 Expected value to be an array of size:
-  <green>1</>
+  1
 Received:
-  value: <red>0</>
-  length: <red>\\"Not Accessible\\"</>"
+  value: 0
+  length: \\"Not Accessible\\""
 `;
 
 exports[`.toBeArrayOfSize fails when given type of NaN which is not an array 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeArrayOfSize(</><green>expected</><dim>)</>
+"expect(received).toBeArrayOfSize(expected)
 
 Expected value to be an array of size:
-  <green>1</>
+  1
 Received:
-  value: <red>NaN</>
-  length: <red>\\"Not Accessible\\"</>"
+  value: NaN
+  length: \\"Not Accessible\\""
 `;
 
 exports[`.toBeArrayOfSize fails when given type of false which is not an array 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeArrayOfSize(</><green>expected</><dim>)</>
+"expect(received).toBeArrayOfSize(expected)
 
 Expected value to be an array of size:
-  <green>1</>
+  1
 Received:
-  value: <red>false</>
-  length: <red>\\"Not Accessible\\"</>"
+  value: false
+  length: \\"Not Accessible\\""
 `;
 
 exports[`.toBeArrayOfSize fails when given type of null which is not an array 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeArrayOfSize(</><green>expected</><dim>)</>
+"expect(received).toBeArrayOfSize(expected)
 
 Expected value to be an array of size:
-  <green>1</>
+  1
 Received:
-  value: <red>null</>
-  length: <red>\\"Not Accessible\\"</>"
+  value: null
+  length: \\"Not Accessible\\""
 `;
 
 exports[`.toBeArrayOfSize fails when given type of true which is not an array 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeArrayOfSize(</><green>expected</><dim>)</>
+"expect(received).toBeArrayOfSize(expected)
 
 Expected value to be an array of size:
-  <green>1</>
+  1
 Received:
-  value: <red>true</>
-  length: <red>\\"Not Accessible\\"</>"
+  value: true
+  length: \\"Not Accessible\\""
 `;
 
 exports[`.toBeArrayOfSize fails when given type of undefined which is not an array 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeArrayOfSize(</><green>expected</><dim>)</>
+"expect(received).toBeArrayOfSize(expected)
 
 Expected value to be an array of size:
-  <green>1</>
+  1
 Received:
-  value: <red>[Function anonymous]</>
-  length: <red>\\"Not Accessible\\"</>"
+  value: [Function anonymous]
+  length: \\"Not Accessible\\""
 `;
 
 exports[`.toBeArrayOfSize fails when given type of undefined which is not an array 2`] = `
-"<dim>expect(</><red>received</><dim>).toBeArrayOfSize(</><green>expected</><dim>)</>
+"expect(received).toBeArrayOfSize(expected)
 
 Expected value to be an array of size:
-  <green>1</>
+  1
 Received:
-  value: <red>undefined</>
-  length: <red>\\"Not Accessible\\"</>"
+  value: undefined
+  length: \\"Not Accessible\\""
 `;
 
 exports[`.toBeArrayOfSize fails when given type which is not an array 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeArrayOfSize(</><green>expected</><dim>)</>
+"expect(received).toBeArrayOfSize(expected)
 
 Expected value to be an array of size:
-  <green>1</>
+  1
 Received:
-  value: <red>false</>
-  length: <red>\\"Not Accessible\\"</>"
+  value: false
+  length: \\"Not Accessible\\""
 `;
 
 exports[`.toBeArrayOfSize fails when not given a parameter 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeArrayOfSize(</><green>expected</><dim>)</>
+"expect(received).toBeArrayOfSize(expected)
 
 Expected value to be an array of size:
-  <green>undefined</>
+  undefined
 Received:
-  value: <red>[1]</>
-  length: <red>1</>"
+  value: [1]
+  length: 1"
 `;
 
 exports[`.toBeArrayOfSize fails when not given an array 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeArrayOfSize(</><green>expected</><dim>)</>
+"expect(received).toBeArrayOfSize(expected)
 
 Expected value to be an array of size:
-  <green>5</>
+  5
 Received:
-  value: <red>undefined</>
-  length: <red>\\"Not Accessible\\"</>"
+  value: undefined
+  length: \\"Not Accessible\\""
 `;

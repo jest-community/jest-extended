@@ -1,55 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toIncludeAnyMembers fails when given array contains array value 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toIncludeAnyMembers(</><green>expected</><dim>)</>
+"expect(received).not.toIncludeAnyMembers(expected)
 
 Expected list to not include any of the following members:
-  <green>[[{\\"hello\\": \\"world\\"}], 7]</>
+  [[{\\"hello\\": \\"world\\"}], 7]
 Received:
-  <red>[[{\\"hello\\": \\"world\\"}]]</>"
+  [[{\\"hello\\": \\"world\\"}]]"
 `;
 
 exports[`.not.toIncludeAnyMembers fails when given array contains object value 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toIncludeAnyMembers(</><green>expected</><dim>)</>
+"expect(received).not.toIncludeAnyMembers(expected)
 
 Expected list to not include any of the following members:
-  <green>[{\\"foo\\": \\"bar\\"}]</>
+  [{\\"foo\\": \\"bar\\"}]
 Received:
-  <red>[{\\"foo\\": \\"bar\\"}]</>"
+  [{\\"foo\\": \\"bar\\"}]"
 `;
 
 exports[`.not.toIncludeAnyMembers fails when given object contains primitive value 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toIncludeAnyMembers(</><green>expected</><dim>)</>
+"expect(received).not.toIncludeAnyMembers(expected)
 
 Expected list to not include any of the following members:
-  <green>[7, 8]</>
+  [7, 8]
 Received:
-  <red>[7]</>"
+  [7]"
 `;
 
 exports[`.toIncludeAnyMembers fails when expected object does not contain array value 1`] = `
-"<dim>expect(</><red>received</><dim>).toIncludeAnyMembers(</><green>expected</><dim>)</>
+"expect(received).toIncludeAnyMembers(expected)
 
 Expected list to include any of the following members:
-  <green>\\"world\\"</>
+  \\"world\\"
 Received:
-  <red>[1, 2, 3]</>"
+  [1, 2, 3]"
 `;
 
 exports[`.toIncludeAnyMembers fails when given array does not contain any members  1`] = `
-"<dim>expect(</><red>received</><dim>).toIncludeAnyMembers(</><green>expected</><dim>)</>
+"expect(received).toIncludeAnyMembers(expected)
 
 Expected list to include any of the following members:
-  <green>[1, 2, 3]</>
+  [1, 2, 3]
 Received:
-  <red>[4, 5, 6]</>"
+  [4, 5, 6]"
 `;
 
 exports[`.toIncludeAnyMembers fails when given object is not an array 1`] = `
-"<dim>expect(</><red>received</><dim>).toIncludeAnyMembers(</><green>expected</><dim>)</>
+"expect(received).toIncludeAnyMembers(expected)
 
 Expected list to include any of the following members:
-  <green>[1, 2, 3]</>
+  [1, 2, 3]
 Received:
-  <red>7</>"
+  7"
 `;
