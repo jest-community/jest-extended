@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toContainEntry fails when object contains given entry 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toContainEntry(</><green>expected</><dim>)</>
+"expect(received).not.toContainEntry(expected)
 
 Expected object to not contain entry:
-  <green>[\\"b\\", \\"bar\\"]</>
+  [\\"b\\", \\"bar\\"]
 Received:
-  <red>{\\"a\\": \\"foo\\", \\"b\\": \\"bar\\", \\"c\\": \\"baz\\"}</>"
+  {\\"a\\": \\"foo\\", \\"b\\": \\"bar\\", \\"c\\": \\"baz\\"}"
 `;
 
 exports[`.toContainEntry fails when object does not contain given entry 1`] = `
-"<dim>expect(</><red>received</><dim>).toContainEntry(</><green>expected</><dim>)</>
+"expect(received).toContainEntry(expected)
 
 Expected object to contain entry:
-  <green>[\\"b\\", \\"foo\\"]</>
+  [\\"b\\", \\"foo\\"]
 Received:
-  <red>{\\"a\\": \\"foo\\", \\"b\\": \\"bar\\", \\"c\\": \\"baz\\"}</>"
+  {\\"a\\": \\"foo\\", \\"b\\": \\"bar\\", \\"c\\": \\"baz\\"}"
 `;
