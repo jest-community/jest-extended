@@ -17,7 +17,7 @@
     "prepublishOnly": "yarn build",
     "precommit": "lint-staged",
     "prettier": "prettier 'src/**/*.js' --write --single-quote=true --print-width=120",
-    "test": "jest",
+    "test": "jest --color=true",
     "test:coverage": "yarn test -- --coverage",
     "test:report": "codecov",
     "test:watch": "yarn test -- --watch"
@@ -35,11 +35,11 @@
   "license": "MIT",
   "repository": "jest-community/jest-extended",
   "devDependencies": {
-    "@types/jest": "^23.3.2",
+    "@types/jest": "^24.0.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
-    "babel-jest": "^23.0.1",
+    "babel-jest": "^24.0.0",
     "babel-jest-assertions": "^0.1.0",
     "babel-plugin-gwt": "^1.0.0",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
@@ -51,7 +51,7 @@
     "eslint-plugin-jest": "^21.2.0",
     "husky": "^0.14.3",
     "import-all.macro": "^2.0.3",
-    "jest": "^23.0.1",
+    "jest": "^24.0.0",
     "jest-each": "^0.5.0",
     "jest-watch-typeahead": "^0.2.0",
     "lint-staged": "^6.0.0",
@@ -99,7 +99,7 @@
       "babel-plugin-transform-es2015-modules-commonjs",
       "transform-object-rest-spread",
       "transform-async-to-generator",
-      "babel-jest-assertions",
+      "./node_modules/babel-jest-assertions",
       "gwt",
       "macros"
     ]
