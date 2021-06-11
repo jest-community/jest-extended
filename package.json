@@ -33,7 +33,7 @@
   ],
   "author": "Matt Phillips <matt@mattphillips.io> (mattphillips.io)",
   "license": "MIT",
-  "repository": "jest-community/jest-extended",
+  "repository": "keeganwitt/jest-extended",
   "devDependencies": {
     "@types/jest": "^24.0.0",
     "babel-cli": "^6.26.0",
