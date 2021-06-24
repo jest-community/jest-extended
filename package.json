@@ -13,14 +13,14 @@
   "scripts": {
     "build": "babel src -d dist --ignore *.test.js",
     "lint": "eslint src",
-    "lint:fix": "yarn lint -- --fix",
+    "lint:fix": "yarn lint --fix",
     "prepublishOnly": "yarn build",
     "precommit": "lint-staged",
     "prettier": "prettier 'src/**/*.js' --write --single-quote=true --print-width=120",
     "test": "jest --color=true",
-    "test:coverage": "yarn test -- --coverage",
+    "test:coverage": "yarn test --coverage",
     "test:report": "codecov",
-    "test:watch": "yarn test -- --watch"
+    "test:watch": "yarn test --watch"
   },
   "keywords": [
     "jest",
