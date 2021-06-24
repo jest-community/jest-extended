@@ -63,6 +63,9 @@
     "jest-get-type": "^22.4.3",
     "jest-matcher-utils": "^22.0.0"
   },
+  "engines": {
+    "node": ">=12"
+  },
   "lint-staged": {
     "*.js": [
       "yarn prettier",
