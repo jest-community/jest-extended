@@ -9,19 +9,12 @@ describe('.toBeEven', () => {
     expect(2).toBeEven();
   });
 
-  each([
-    [false],
-    [true],
-    [''],
-    [1],
-    [{}],
-    [() => {}],
-    [undefined],
-    [null],
-    [NaN]
-  ]).test('fails when not given an even number', given => {
-    expect(() => expect(given).toBeEven()).toThrowErrorMatchingSnapshot();
-  });
+  each([[false], [true], [''], [1], [{}], [() => {}], [undefined], [null], [NaN]]).test(
+    'fails when not given an even number',
+    given => {
+      expect(() => expect(given).toBeEven()).toThrowErrorMatchingSnapshot();
+    }
+  );
 });
 
 describe('.not.toBeEven', () => {
@@ -29,18 +22,10 @@ describe('.not.toBeEven', () => {
     expect(() => expect(2).not.toBeEven()).toThrowErrorMatchingSnapshot();
   });
 
-  each([
-    [false],
-    [true],
-    [''],
-    [1],
-    [[]],
-    [{}],
-    [() => {}],
-    [undefined],
-    [null],
-    [NaN]
-  ]).test('passes when not given an even number: %s', given => {
-    expect(given).not.toBeEven();
-  });
+  each([[false], [true], [''], [1], [[]], [{}], [() => {}], [undefined], [null], [NaN]]).test(
+    'passes when not given an even number: %s',
+    given => {
+      expect(given).not.toBeEven();
+    }
+  );
 });

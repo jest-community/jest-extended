@@ -13,15 +13,10 @@ describe('.toBeOneOf', () => {
     expect(predicate(value, [1, 2, { hello: 'world' }, ['foo']])).toBe(true);
   });
 
-  each([
-    [0],
-    [null],
-    [undefined],
-    [false],
-    [''],
-    [{ hello: 'world' }],
-    [['foo']]
-  ]).test('returns false when value: %s is not in given array', value => {
-    expect(predicate(value, [1, 2, 3])).toBe(false);
-  });
+  each([[0], [null], [undefined], [false], [''], [{ hello: 'world' }], [['foo']]]).test(
+    'returns false when value: %s is not in given array',
+    value => {
+      expect(predicate(value, [1, 2, 3])).toBe(false);
+    }
+  );
 });
