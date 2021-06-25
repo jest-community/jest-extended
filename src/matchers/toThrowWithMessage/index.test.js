@@ -1,85 +1,117 @@
 import matcher from './';
-const { toThrowWithMessage } = matcher;
 
 expect.extend(matcher);
 
 describe('.toThrowWithMessage', () => {
-  test('fails when callback function is not provided', () => {
-    const { pass, message } = toThrowWithMessage();
-    expect(pass).toBe(false);
-    expect(message()).toMatchSnapshot();
+  describe('validation', () => {
+    test('fails when callback function is not provided', () => {
+      expect(() => expect().toThrowWithMessage(TypeError, 'Expected message')).toThrowErrorMatchingSnapshot();
+
+      expect(() => expect().not.toThrowWithMessage(TypeError, 'Expected message')).toThrowErrorMatchingSnapshot();
+    });
+
+    test('fails when callback function is not a function', () => {
+      expect(() => expect(2).toThrowWithMessage(TypeError, 'Expected message')).toThrowErrorMatchingSnapshot();
+
+      expect(() => expect(2).not.toThrowWithMessage(TypeError, 'Expected message')).toThrowErrorMatchingSnapshot();
+    });
+
+    test('fails when error not thrown', () => {
+      expect(() => expect(() => {}).toThrowWithMessage(TypeError, 'Expected message')).toThrowErrorMatchingSnapshot();
+
+      expect(() =>
+        expect(() => {}).not.toThrowWithMessage(TypeError, 'Expected message')
+      ).toThrowErrorMatchingSnapshot();
+    });
+
+    test('fails when a type is not a function', () => {
+      expect(() =>
+        expect(() => {
+          throw new Error();
+        }).toThrowWithMessage()
+      ).toThrowErrorMatchingSnapshot();
+
+      expect(() =>
+        expect(() => {
+          throw new Error();
+        }).not.toThrowWithMessage()
+      ).toThrowErrorMatchingSnapshot();
+    });
+
+    test('fails when a message is not provided', () => {
+      expect(() =>
+        expect(() => {
+          throw new Error();
+        }).toThrowWithMessage(Error)
+      ).toThrowErrorMatchingSnapshot();
+
+      expect(() =>
+        expect(() => {
+          throw new Error();
+        }).not.toThrowWithMessage(Error)
+      ).toThrowErrorMatchingSnapshot();
+    });
+
+    test('fails when a message is not string or regexp', () => {
+      expect(() =>
+        expect(() => {
+          throw new Error();
+        }).toThrowWithMessage(Error, 2)
+      ).toThrowErrorMatchingSnapshot();
+
+      expect(() =>
+        expect(() => {
+          throw new Error();
+        }).not.toThrowWithMessage(Error, 2)
+      ).toThrowErrorMatchingSnapshot();
+    });
   });
 
-  test('fails when a callback function is not a function', () => {
-    const { pass, message } = toThrowWithMessage(2);
-    expect(pass).toBe(false);
-    expect(message()).toMatchSnapshot();
+  test('passes when given an message string and test case passes', () => {
+    expect(() =>
+      expect(() => {
+        throw TypeError('Expected message');
+      }).toThrowWithMessage(TypeError, 'Expected message')
+    ).not.toThrowError();
   });
 
-  test('fails when error message is not provided', () => {
-    const callback = () => {};
-    const { pass, message } = toThrowWithMessage(callback, Error);
-    expect(pass).toBe(false);
-    expect(message()).toMatchSnapshot();
+  test('passes when given a message regex and test case passes', () => {
+    expect(() =>
+      expect(() => {
+        throw TypeError('Expected message');
+      }).toThrowWithMessage(TypeError, /Expected message/)
+    ).not.toThrowError();
   });
 
-  test('fails when error type is not provided', () => {
-    const callback = () => {};
-    const { pass, message } = toThrowWithMessage(callback);
-    expect(pass).toBe(false);
-    expect(message()).toMatchSnapshot();
+  test('fails when given an message string and test case fails', () => {
+    expect(() =>
+      expect(() => {
+        throw TypeError('Expected');
+      }).toThrowWithMessage(TypeError, 'Expected message')
+    ).toThrowErrorMatchingSnapshot();
   });
 
-  test('fails when error message provided is not a string or regex', () => {
-    const callback = () => {};
-    const { pass, message } = toThrowWithMessage(callback, Error, 2);
-    expect(pass).toBe(false);
-    expect(message()).toMatchSnapshot();
+  test('fails when given an message regex and test case fails', () => {
+    expect(() =>
+      expect(() => {
+        throw TypeError('Expected');
+      }).toThrowWithMessage(TypeError, /Expected message/)
+    ).toThrowErrorMatchingSnapshot();
   });
 
-  test('fails when a callback provided doesnt throw an error', () => {
-    const callback = () => {};
-    const { pass, message } = toThrowWithMessage(callback, Error, 'error');
-    expect(pass).toBe(false);
-    expect(message()).toMatchSnapshot();
+  test('fails when given an Error with a string error message', () => {
+    expect(() =>
+      expect(() => {
+        throw TypeError('Expected message');
+      }).not.toThrowWithMessage(TypeError, 'Expected message')
+    ).toThrowErrorMatchingSnapshot();
   });
 
-  test('fails when a wrong type of error is thrown', () => {
-    const callback = () => {
-      throw SyntaxError('Expected message');
-    };
-    const { pass, message } = toThrowWithMessage(callback, TypeError, 'Expected message');
-    expect(pass).toBe(false);
-    expect(message()).toMatchSnapshot();
-  });
-
-  test('passes when given an Error with a string error message', () => {
-    const callback = () => {
-      throw TypeError('Expected message');
-    };
-    const { pass, message } = toThrowWithMessage(callback, TypeError, 'Expected message');
-    expect(pass).toBe(true);
-    expect(message()).toMatchSnapshot();
-  });
-
-  test('passes when given an Error with a regex error message', () => {
-    const callback = () => {
-      throw TypeError('Expected message');
-    };
-    const { pass, message } = toThrowWithMessage(callback, TypeError, /Expected message/);
-    expect(pass).toBe(true);
-    expect(message()).toMatchSnapshot();
-  });
-
-  test('passes when given an Error with a string error message: end to end', () => {
-    expect(() => {
-      throw new TypeError('Expected message');
-    }).toThrowWithMessage(TypeError, 'Expected message');
-  });
-
-  test('passes when given an Error with a regex error message: end to end', () => {
-    expect(() => {
-      throw new SyntaxError('Expected message');
-    }).toThrowWithMessage(SyntaxError, /Expected message/);
+  test('fails when given an Error with a regex error message', () => {
+    expect(() =>
+      expect(() => {
+        throw TypeError('Expected message');
+      }).not.toThrowWithMessage(TypeError, /Expected message/)
+    ).toThrowErrorMatchingSnapshot();
   });
 });

@@ -1,53 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`.toThrowWithMessage fails when a callback function is not a function 1`] = `
-"<dim>expect(</><red>function</><dim>).toThrowWithMessage(</><green>type</>, <green>message</><dim>)</>
-
-Received value must be a function but instead \\"2\\" was found"
-`;
-
-exports[`.toThrowWithMessage fails when a callback provided doesnt throw an error 1`] = `
-"Expected the function to throw an error.
-But it didn't throw anything."
-`;
-
-exports[`.toThrowWithMessage fails when a wrong type of error is thrown 1`] = `
-"<dim>expect(</><red>function</><dim>).toThrowWithMessage(</><green>type</>, <green>message</><dim>)</>
-
-Expected to throw:
-  <green>[TypeError: Expected message]</>
-Thrown:
-  <red>[SyntaxError: Expected message]</>
-"
-`;
-
-exports[`.toThrowWithMessage fails when callback function is not provided 1`] = `
-"<dim>expect(</><red>function</><dim>).toThrowWithMessage(</><green>type</>, <green>message</><dim>)</>
-
-Received value must be a function but instead \\"undefined\\" was found"
-`;
-
-exports[`.toThrowWithMessage fails when error message is not provided 1`] = `
-"<dim>expect(</><red>function</><dim>).toThrowWithMessage(</><green>type</>, <green>message</><dim>)</>
-
- Message argument is required. "
-`;
-
-exports[`.toThrowWithMessage fails when error message provided is not a string or regex 1`] = `
-"<dim>expect(</><red>function</><dim>).toThrowWithMessage(</><green>type</>, <green>message</><dim>)</>
-
-Unexpected argument for message
-Expected: \\"string\\" or \\"regexp
-Got: \\"2\\""
-`;
-
-exports[`.toThrowWithMessage fails when error type is not provided 1`] = `
-"<dim>expect(</><red>function</><dim>).toThrowWithMessage(</><green>type</>, <green>message</><dim>)</>
-
-Expected type to be a function but instead \\"undefined\\" was found"
-`;
-
-exports[`.toThrowWithMessage passes when given an Error with a regex error message 1`] = `
+exports[`.toThrowWithMessage fails when given an Error with a regex error message 1`] = `
 "<dim>expect(</><red>function</><dim>).not.toThrowWithMessage(</><green>type</>, <green>message</><dim>)</>
 
 Expected not to throw:
@@ -57,7 +10,7 @@ Thrown:
 "
 `;
 
-exports[`.toThrowWithMessage passes when given an Error with a string error message 1`] = `
+exports[`.toThrowWithMessage fails when given an Error with a string error message 1`] = `
 "<dim>expect(</><red>function</><dim>).not.toThrowWithMessage(</><green>type</>, <green>message</><dim>)</>
 
 Expected not to throw:
@@ -65,4 +18,98 @@ Expected not to throw:
 Thrown:
   <red>[TypeError: Expected message]</>
 "
+`;
+
+exports[`.toThrowWithMessage fails when given an message regex and test case fails 1`] = `
+"<dim>expect(</><red>function</><dim>).toThrowWithMessage(</><green>type</>, <green>message</><dim>)</>
+
+Expected to throw:
+  <green>[TypeError: /Expected message/]</>
+Thrown:
+  <red>[TypeError: Expected]</>
+"
+`;
+
+exports[`.toThrowWithMessage fails when given an message string and test case fails 1`] = `
+"<dim>expect(</><red>function</><dim>).toThrowWithMessage(</><green>type</>, <green>message</><dim>)</>
+
+Expected to throw:
+  <green>[TypeError: Expected message]</>
+Thrown:
+  <red>[TypeError: Expected]</>
+"
+`;
+
+exports[`.toThrowWithMessage validation fails when a message is not provided 1`] = `
+"<dim>expect(</><red>function</><dim>).toThrowWithMessage(</><green>type</>, <green>message</><dim>)</>
+
+ Message argument is required. "
+`;
+
+exports[`.toThrowWithMessage validation fails when a message is not provided 2`] = `
+"<dim>expect(</><red>function</><dim>).not.toThrowWithMessage(</><green>type</>, <green>message</><dim>)</>
+
+ Message argument is required. "
+`;
+
+exports[`.toThrowWithMessage validation fails when a message is not string or regexp 1`] = `
+"<dim>expect(</><red>function</><dim>).toThrowWithMessage(</><green>type</>, <green>message</><dim>)</>
+
+Unexpected argument for message
+Expected: \\"string\\" or \\"regexp
+Got: \\"2\\""
+`;
+
+exports[`.toThrowWithMessage validation fails when a message is not string or regexp 2`] = `
+"<dim>expect(</><red>function</><dim>).not.toThrowWithMessage(</><green>type</>, <green>message</><dim>)</>
+
+Unexpected argument for message
+Expected: \\"string\\" or \\"regexp
+Got: \\"2\\""
+`;
+
+exports[`.toThrowWithMessage validation fails when a type is not a function 1`] = `
+"<dim>expect(</><red>function</><dim>).toThrowWithMessage(</><green>type</>, <green>message</><dim>)</>
+
+Expected type to be a function but instead \\"undefined\\" was found"
+`;
+
+exports[`.toThrowWithMessage validation fails when a type is not a function 2`] = `
+"<dim>expect(</><red>function</><dim>).not.toThrowWithMessage(</><green>type</>, <green>message</><dim>)</>
+
+Expected type to be a function but instead \\"undefined\\" was found"
+`;
+
+exports[`.toThrowWithMessage validation fails when callback function is not a function 1`] = `
+"<dim>expect(</><red>function</><dim>).toThrowWithMessage(</><green>type</>, <green>message</><dim>)</>
+
+Received value must be a function but instead \\"2\\" was found"
+`;
+
+exports[`.toThrowWithMessage validation fails when callback function is not a function 2`] = `
+"<dim>expect(</><red>function</><dim>).not.toThrowWithMessage(</><green>type</>, <green>message</><dim>)</>
+
+Received value must be a function but instead \\"2\\" was found"
+`;
+
+exports[`.toThrowWithMessage validation fails when callback function is not provided 1`] = `
+"<dim>expect(</><red>function</><dim>).toThrowWithMessage(</><green>type</>, <green>message</><dim>)</>
+
+Received value must be a function but instead \\"undefined\\" was found"
+`;
+
+exports[`.toThrowWithMessage validation fails when callback function is not provided 2`] = `
+"<dim>expect(</><red>function</><dim>).not.toThrowWithMessage(</><green>type</>, <green>message</><dim>)</>
+
+Received value must be a function but instead \\"undefined\\" was found"
+`;
+
+exports[`.toThrowWithMessage validation fails when error not thrown 1`] = `
+"Expected the function to throw an error.
+But it didn't throw anything."
+`;
+
+exports[`.toThrowWithMessage validation fails when error not thrown 2`] = `
+"Expected the function to throw an error.
+But it didn't throw anything."
 `;
