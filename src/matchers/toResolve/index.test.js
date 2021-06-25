@@ -12,6 +12,11 @@ describe('.toResolve', () => {
     const promise = Promise.reject();
     await expect(expect(promise).toResolve()).rejects.toThrowErrorMatchingSnapshot();
   });
+
+  test('fails when passed a promise that rejects with an error object', async () => {
+    const promise = Promise.reject(new Error());
+    await expect(expect(promise).toResolve()).rejects.toThrowErrorMatchingSnapshot();
+  });
 });
 
 describe('.not.toResolve', () => {
@@ -22,6 +27,11 @@ describe('.not.toResolve', () => {
 
   test('passes when passed a promise that rejects', async () => {
     const promise = Promise.reject();
+    await expect(promise).not.toResolve();
+  });
+
+  test('fails when passed a promise that rejects with an error object', async () => {
+    const promise = Promise.reject(new Error());
     await expect(promise).not.toResolve();
   });
 });

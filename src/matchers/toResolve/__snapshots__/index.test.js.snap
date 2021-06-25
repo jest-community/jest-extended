@@ -13,3 +13,13 @@ exports[`.toResolve fails when passed a promise that rejects 1`] = `
 Expected promise to resolve, however it rejected.
 "
 `;
+
+exports[`.toResolve fails when passed a promise that rejects with an error object 1`] = `
+"<dim>expect(</><red>received</><dim>).toResolve(</><dim>)</>
+
+Expected promise to resolve, however it rejected.
+
+
+Error:
+Error"
+`;

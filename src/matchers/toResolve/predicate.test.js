@@ -1,13 +1,14 @@
 import predicate from './predicate';
 
 describe('toResolve predicate', () => {
-  test('should return true when passed a promise that resolves', async () => {
+  test('should return undefined when passed a promise that resolves', async () => {
     const promise = Promise.resolve();
-    expect(await predicate(promise)).toBe(true);
+    expect(await predicate(promise)).toStrictEqual({ pass: true });
   });
 
-  test('should return false when passed a promise that rejects', async () => {
-    const promise = Promise.reject();
-    expect(await predicate(promise)).toBe(false);
+  test('should resolve with the error when passed a promise that rejects', async () => {
+    const error = new Error();
+    const promise = Promise.reject(error);
+    expect(await predicate(promise)).toStrictEqual({ pass: false, error });
   });
 });
