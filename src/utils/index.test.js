@@ -1,3 +1,4 @@
+import { equals } from 'expect/build/jasmineUtils';
 import each from 'jest-each';
 
 import { contains, determinePropertyMessage } from './';
@@ -9,11 +10,11 @@ describe('Utils', () => {
     const testRows = array.map(item => [item]);
 
     each(testRows).test('returns true when array contains given value: %s', value => {
-      expect(contains(array, value)).toBe(true);
+      expect(contains(equals, array, value)).toBe(true);
     });
 
     each(testRows).test('returns false when array does not contain given value: %s', value => {
-      expect(contains([], value)).toBe(false);
+      expect(contains(equals, [], value)).toBe(false);
     });
   });
 

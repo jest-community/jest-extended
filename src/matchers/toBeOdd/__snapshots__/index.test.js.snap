@@ -1,70 +1,70 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toBeOdd fails when given an odd number 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBeOdd(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).not.toBeOdd()</>
 
 Expected value to not be odd received:
   <red>1</>"
 `;
 
 exports[`.toBeOdd fails when given not given an odd number 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeOdd(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeOdd()</>
 
 Expected value to be odd received:
   <red>false</>"
 `;
 
 exports[`.toBeOdd fails when given not given an odd number 2`] = `
-"<dim>expect(</><red>received</><dim>).toBeOdd(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeOdd()</>
 
 Expected value to be odd received:
   <red>true</>"
 `;
 
 exports[`.toBeOdd fails when given not given an odd number 3`] = `
-"<dim>expect(</><red>received</><dim>).toBeOdd(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeOdd()</>
 
 Expected value to be odd received:
   <red>\\"\\"</>"
 `;
 
 exports[`.toBeOdd fails when given not given an odd number 4`] = `
-"<dim>expect(</><red>received</><dim>).toBeOdd(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeOdd()</>
 
 Expected value to be odd received:
   <red>2</>"
 `;
 
 exports[`.toBeOdd fails when given not given an odd number 5`] = `
-"<dim>expect(</><red>received</><dim>).toBeOdd(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeOdd()</>
 
 Expected value to be odd received:
   <red>{}</>"
 `;
 
 exports[`.toBeOdd fails when given not given an odd number 6`] = `
-"<dim>expect(</><red>received</><dim>).toBeOdd(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeOdd()</>
 
 Expected value to be odd received:
   <red>[Function anonymous]</>"
 `;
 
 exports[`.toBeOdd fails when given not given an odd number 7`] = `
-"<dim>expect(</><red>received</><dim>).toBeOdd(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeOdd()</>
 
 Expected value to be odd received:
   <red>undefined</>"
 `;
 
 exports[`.toBeOdd fails when given not given an odd number 8`] = `
-"<dim>expect(</><red>received</><dim>).toBeOdd(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeOdd()</>
 
 Expected value to be odd received:
   <red>null</>"
 `;
 
 exports[`.toBeOdd fails when given not given an odd number 9`] = `
-"<dim>expect(</><red>received</><dim>).toBeOdd(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeOdd()</>
 
 Expected value to be odd received:
   <red>NaN</>"

@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toBeAfter fails when given a later date 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBeAfter(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).not.toBeAfter()</>
 
 Expected date to be after <red>2018-06-01T22:00:00.000Z</> but received:
   <red>2018-06-02T22:00:00.000Z</>"
 `;
 
 exports[`.toBeAfter fails when given an earlier date 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeAfter(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeAfter()</>
 
 Expected date to be after <red>2018-06-02T22:00:00.000Z</> but received:
   <red>2018-06-01T22:00:00.000Z</>"

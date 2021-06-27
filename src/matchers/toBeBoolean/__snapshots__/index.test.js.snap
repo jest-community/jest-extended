@@ -1,21 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toBeBoolean fails when given a boolean 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBeBoolean(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).not.toBeBoolean()</>
 
 Expected value to not be of type boolean, received:
   <red>true</>"
 `;
 
 exports[`.not.toBeBoolean fails when given an object of type boolean 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBeBoolean(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).not.toBeBoolean()</>
 
 Expected value to not be of type boolean, received:
   <red>{}</>"
 `;
 
 exports[`.toBeBoolean fails when not given a boolean 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeBoolean(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeBoolean()</>
 
 Expected value to be of type boolean, received:
   <red>1</>"
