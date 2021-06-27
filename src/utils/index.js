@@ -1,6 +1,4 @@
-import { equals } from 'expect/build/jasmineUtils';
-
-export const contains = (list, value) => {
+export const contains = (equals, list, value) => {
   return list.findIndex(item => equals(item, value)) > -1;
 };
 
@@ -11,5 +9,3 @@ export const determinePropertyMessage = (actual, property, message = 'Not Access
 export const isJestMockOrSpy = value => {
   return !!(value && value._isMockFunction === true && typeof value.mock === 'object');
 };
-
-export { equals };

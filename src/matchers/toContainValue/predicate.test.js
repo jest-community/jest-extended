@@ -1,3 +1,4 @@
+import { equals } from 'expect/build/jasmineUtils';
 import predicate from './predicate';
 
 describe('toContainValue Predicate', () => {
@@ -9,16 +10,16 @@ describe('toContainValue Predicate', () => {
     test.each([['world'], [false], [undefined], [null], [''], [0]])(
       'when given object contains primitive value: %s',
       value => {
-        expect(predicate(shallow, value)).toBe(true);
+        expect(predicate(equals, shallow, value)).toBe(true);
       },
     );
 
     test('when given object contains object value', () => {
-      expect(predicate(deep, { hello: 'world' })).toBe(true);
+      expect(predicate(equals, deep, { hello: 'world' })).toBe(true);
     });
 
     test('when given object contains array value', () => {
-      expect(predicate(deepArray, [{ hello: 'world' }])).toBe(true);
+      expect(predicate(equals, deepArray, [{ hello: 'world' }])).toBe(true);
     });
   });
 
@@ -26,16 +27,16 @@ describe('toContainValue Predicate', () => {
     test.each([['world'], [false], [undefined], [null], [''], [0]])(
       'when given object does not contain primitive value: %s',
       value => {
-        expect(predicate({}, value)).toBe(false);
+        expect(predicate(equals, {}, value)).toBe(false);
       },
     );
 
     test('when given object does not contain object value', () => {
-      expect(predicate(deep, { foo: 'bar' })).toBe(false);
+      expect(predicate(equals, deep, { foo: 'bar' })).toBe(false);
     });
 
     test('when given object does not contain array value', () => {
-      expect(predicate(deepArray, [{ bar: 'foo' }])).toBe(false);
+      expect(predicate(equals, deepArray, [{ bar: 'foo' }])).toBe(false);
     });
   });
 });

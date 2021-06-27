@@ -1,28 +1,26 @@
-import { matcherHint, printExpected, printReceived } from 'jest-matcher-utils';
-
 import predicate from './predicate';
 
-const passMessage = (suffix, string) => () =>
-  matcherHint('.not.toEndWith') +
+const passMessage = (utils, suffix, string) => () =>
+  utils.matcherHint('.not.toEndWith') +
   '\n\n' +
   'Expected string to not end with:\n' +
-  `  ${printExpected(suffix)}\n` +
+  `  ${utils.printExpected(suffix)}\n` +
   'Received:\n' +
-  `  ${printReceived(string)}`;
+  `  ${utils.printReceived(string)}`;
 
-const failMessage = (suffix, string) => () =>
-  matcherHint('.toEndWith') +
+const failMessage = (utils, suffix, string) => () =>
+  utils.matcherHint('.toEndWith') +
   '\n\n' +
   'Expected string to end with:\n' +
-  `  ${printExpected(suffix)}\n` +
+  `  ${utils.printExpected(suffix)}\n` +
   'Received:\n' +
-  `  ${printReceived(string)}`;
+  `  ${utils.printReceived(string)}`;
 
 export function toEndWith(string, suffix) {
   const pass = predicate(suffix, string);
   if (pass) {
-    return { pass: true, message: passMessage(suffix, string) };
+    return { pass: true, message: passMessage(this.utils, suffix, string) };
   }
 
-  return { pass: false, message: failMessage(suffix, string) };
+  return { pass: false, message: failMessage(this.utils, suffix, string) };
 }

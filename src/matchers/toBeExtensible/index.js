@@ -1,22 +1,20 @@
-import { matcherHint, printExpected, printReceived } from 'jest-matcher-utils';
-
 import predicate from './predicate';
 
-const passMessage = received => () => {
+const passMessage = (utils, received) => () => {
   return (
-    matcherHint('.not.toBeExtensible', 'received', '') +
+    utils.matcherHint('.not.toBeExtensible', 'received', '') +
     '\n\n' +
     'Expected value to not be extensible received:\n' +
-    `  ${printExpected(received)}\n`
+    `  ${utils.printExpected(received)}\n`
   );
 };
 
-const failMessage = received => () => {
+const failMessage = (utils, received) => () => {
   return (
-    matcherHint('.toBeExtensible', 'received', '') +
+    utils.matcherHint('.toBeExtensible', 'received', '') +
     '\n\n' +
     'Expected value to be extensible received:\n' +
-    `  ${printReceived(received)}`
+    `  ${utils.printReceived(received)}`
   );
 };
 
@@ -24,6 +22,6 @@ export function toBeExtensible(expected) {
   const pass = predicate(expected);
   return {
     pass,
-    message: pass ? passMessage(expected) : failMessage(expected),
+    message: pass ? passMessage(this.utils, expected) : failMessage(this.utils, expected),
   };
 }

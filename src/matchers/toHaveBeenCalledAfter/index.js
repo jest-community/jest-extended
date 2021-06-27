@@ -1,53 +1,51 @@
-import { matcherHint, printExpected, printReceived, printWithType } from 'jest-matcher-utils';
-
 import { isJestMockOrSpy } from '../../utils';
 
 import predicate from './predicate';
 
-const passMessage = (firstInvocationCallOrder, secondInvocationCallOrder) => () =>
-  matcherHint('.not.toHaveBeenCalledAfter') +
+const passMessage = (utils, firstInvocationCallOrder, secondInvocationCallOrder) => () =>
+  utils.matcherHint('.not.toHaveBeenCalledAfter') +
   '\n\n' +
   'Expected first mock to not have been called after, invocationCallOrder:\n' +
-  `  ${printExpected(firstInvocationCallOrder)}\n` +
+  `  ${utils.printExpected(firstInvocationCallOrder)}\n` +
   'Received second mock with invocationCallOrder:\n' +
-  `  ${printReceived(secondInvocationCallOrder)}`;
+  `  ${utils.printReceived(secondInvocationCallOrder)}`;
 
-const failMessage = (firstInvocationCallOrder, secondInvocationCallOrder) => () =>
-  matcherHint('.toHaveBeenCalledAfter') +
+const failMessage = (utils, firstInvocationCallOrder, secondInvocationCallOrder) => () =>
+  utils.matcherHint('.toHaveBeenCalledAfter') +
   '\n\n' +
   'Expected first mock to have been called after, invocationCallOrder:\n' +
-  `  ${printExpected(firstInvocationCallOrder)}\n` +
+  `  ${utils.printExpected(firstInvocationCallOrder)}\n` +
   'Received second mock with invocationCallOrder:\n' +
-  `  ${printReceived(secondInvocationCallOrder)}`;
+  `  ${utils.printReceived(secondInvocationCallOrder)}`;
 
-const mockCheckFailMessage = (value, isReceivedValue) => () => {
+const mockCheckFailMessage = (utils, value, isReceivedValue) => () => {
   const valueKind = isReceivedValue ? 'Received' : 'Expected';
-  const valueKindPrintFunc = isReceivedValue ? printReceived : printExpected;
+  const valueKindPrintFunc = isReceivedValue ? utils.printReceived : utils.printExpected;
 
   return (
-    matcherHint('.toHaveBeenCalledAfter') +
+    utils.matcherHint('.toHaveBeenCalledAfter') +
     '\n\n' +
     `Matcher error: ${valueKindPrintFunc(valueKind.toLowerCase())} must be a mock or spy function` +
     '\n\n' +
-    printWithType(valueKind, value, valueKindPrintFunc)
+    utils.printWithType(valueKind, value, valueKindPrintFunc)
   );
 };
 
 export function toHaveBeenCalledAfter(firstMock, secondMock) {
   if (!isJestMockOrSpy(firstMock)) {
-    return { pass: false, message: mockCheckFailMessage(firstMock, true) };
+    return { pass: false, message: mockCheckFailMessage(this.utils, firstMock, true) };
   }
 
   if (!isJestMockOrSpy(secondMock)) {
-    return { pass: false, message: mockCheckFailMessage(secondMock, false) };
+    return { pass: false, message: mockCheckFailMessage(this.utils, secondMock, false) };
   }
 
   const firstInvocationCallOrder = firstMock.mock.invocationCallOrder;
   const secondInvocationCallOrder = secondMock.mock.invocationCallOrder;
   const pass = predicate(firstInvocationCallOrder, secondInvocationCallOrder);
   if (pass) {
-    return { pass: true, message: passMessage(firstInvocationCallOrder, secondInvocationCallOrder) };
+    return { pass: true, message: passMessage(this.utils, firstInvocationCallOrder, secondInvocationCallOrder) };
   }
 
-  return { pass: false, message: failMessage(firstInvocationCallOrder, secondInvocationCallOrder) };
+  return { pass: false, message: failMessage(this.utils, firstInvocationCallOrder, secondInvocationCallOrder) };
 }

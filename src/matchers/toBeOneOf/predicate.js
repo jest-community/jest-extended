@@ -1,3 +1,3 @@
 import { contains } from '../../utils';
 
-export default (value, list) => contains(list, value);
+export default (equals, value, list) => contains(equals, list, value);

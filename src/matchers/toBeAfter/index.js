@@ -1,24 +1,22 @@
-import { matcherHint, printReceived } from 'jest-matcher-utils';
-
 import predicate from './predicate';
 
-const passMessage = (received, after) => () =>
-  matcherHint('.not.toBeAfter', 'received', '') +
+const passMessage = (utils, received, after) => () =>
+  utils.matcherHint('.not.toBeAfter', 'received', '') +
   '\n\n' +
-  `Expected date to be after ${printReceived(after)} but received:\n` +
-  `  ${printReceived(received)}`;
+  `Expected date to be after ${utils.printReceived(after)} but received:\n` +
+  `  ${utils.printReceived(received)}`;
 
-const failMessage = (received, after) => () =>
-  matcherHint('.toBeAfter', 'received', '') +
+const failMessage = (utils, received, after) => () =>
+  utils.matcherHint('.toBeAfter', 'received', '') +
   '\n\n' +
-  `Expected date to be after ${printReceived(after)} but received:\n` +
-  `  ${printReceived(received)}`;
+  `Expected date to be after ${utils.printReceived(after)} but received:\n` +
+  `  ${utils.printReceived(received)}`;
 
 export function toBeAfter(date, after) {
   const pass = predicate(date, after);
   if (pass) {
-    return { pass: true, message: passMessage(date, after) };
+    return { pass: true, message: passMessage(this.utils, date, after) };
   }
 
-  return { pass: false, message: failMessage(date, after) };
+  return { pass: false, message: failMessage(this.utils, date, after) };
 }

@@ -1,5 +1,4 @@
 import { DIFF_DELETE, DIFF_EQUAL, DIFF_INSERT } from 'jest-diff';
-import { EXPECTED_COLOR, INVERTED_COLOR, RECEIVED_COLOR } from 'jest-matcher-utils';
 
 export const tokenize = str => {
   const isWhitespace = char => /\s/.test(char);
@@ -40,22 +39,24 @@ const colorTokens = (str, color) => {
   return tokens.reduce((acc, { value, isWhitespace }) => acc + (isWhitespace ? value : color(value)), '');
 };
 
-export const printExpected = diff =>
+export const printExpected = (utils, diff) =>
   diff.reduce((acc, diffObject) => {
     const operation = diffObject[0];
     const value = diffObject[1];
 
-    if (operation === DIFF_EQUAL) return acc + colorTokens(value, EXPECTED_COLOR);
-    if (operation === DIFF_DELETE) return acc + colorTokens(value, str => INVERTED_COLOR(EXPECTED_COLOR(str)));
+    if (operation === DIFF_EQUAL) return acc + colorTokens(value, utils.EXPECTED_COLOR);
+    if (operation === DIFF_DELETE)
+      return acc + colorTokens(value, str => utils.INVERTED_COLOR(utils.EXPECTED_COLOR(str)));
     return acc;
   }, '');
 
-export const printReceived = diff =>
+export const printReceived = (utils, diff) =>
   diff.reduce((acc, diffObject) => {
     const operation = diffObject[0];
     const value = diffObject[1];
 
-    if (operation === DIFF_EQUAL) return acc + colorTokens(value, RECEIVED_COLOR);
-    if (operation === DIFF_INSERT) return acc + colorTokens(value, str => INVERTED_COLOR(RECEIVED_COLOR(str)));
+    if (operation === DIFF_EQUAL) return acc + colorTokens(value, utils.RECEIVED_COLOR);
+    if (operation === DIFF_INSERT)
+      return acc + colorTokens(value, str => utils.INVERTED_COLOR(utils.RECEIVED_COLOR(str)));
     return acc;
   }, '');

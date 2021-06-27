@@ -1,28 +1,26 @@
-import { matcherHint, printExpected, printReceived } from 'jest-matcher-utils';
-
 import predicate from './predicate';
 
-const passMessage = (actual, expected) => () =>
-  matcherHint('.not.toInclude') +
+const passMessage = (utils, actual, expected) => () =>
+  utils.matcherHint('.not.toInclude') +
   '\n\n' +
   'Expected string to not include:\n' +
-  `  ${printExpected(expected)}\n` +
+  `  ${utils.printExpected(expected)}\n` +
   'Received:\n' +
-  `  ${printReceived(actual)}`;
+  `  ${utils.printReceived(actual)}`;
 
-const failMessage = (actual, expected) => () =>
-  matcherHint('.toInclude') +
+const failMessage = (utils, actual, expected) => () =>
+  utils.matcherHint('.toInclude') +
   '\n\n' +
   'Expected string to include:\n' +
-  `  ${printExpected(expected)}\n` +
+  `  ${utils.printExpected(expected)}\n` +
   'Received:\n' +
-  `  ${printReceived(actual)}`;
+  `  ${utils.printReceived(actual)}`;
 
 export function toInclude(actual, expected) {
   const pass = predicate(actual, expected);
   if (pass) {
-    return { pass: true, message: passMessage(actual, expected) };
+    return { pass: true, message: passMessage(this.utils, actual, expected) };
   }
 
-  return { pass: false, message: failMessage(actual, expected) };
+  return { pass: false, message: failMessage(this.utils, actual, expected) };
 }

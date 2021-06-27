@@ -1,9 +1,9 @@
 import toContainEntries from '../toContainEntries/predicate';
 
-export default (obj, entries) => {
+export default (equals, obj, entries) => {
   if (!obj.hasOwnProperty || entries.length != Object.keys(obj).length) {
     return false;
   }
 
-  return toContainEntries(obj, entries);
+  return toContainEntries(equals, obj, entries);
 };

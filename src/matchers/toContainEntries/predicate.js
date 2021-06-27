@@ -1,3 +1,3 @@
 import toContainEntry from '../toContainEntry/predicate';
 
-export default (obj, entries) => entries.every(entry => toContainEntry(obj, entry));
+export default (equals, obj, entries) => entries.every(entry => toContainEntry(equals, obj, entry));
