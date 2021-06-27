@@ -20,25 +20,23 @@ describe('negative matcher', () => {
 describe('asymmetric matchers', () => {
   describe('positive matchers', () => {
     test('.toSatisfy', () => {
-      expect(4).toEqual(expect.toSatisfy(num => num === 4));
+      expect(4).toSatisfy(num => num === 4);
     });
 
-    test('.toEqual', () => {
-      expect([]).toEqual(expect.toBeArray());
+    test('.toBeArray', () => {
+      expect([]).toBeArray();
     });
   });
 
   describe('negative matchers', () => {
     test('not.toInclude', () => {
       const data = 'bob';
-      expect(data).not.toEqual(expect.toInclude('alice'));
-      expect(data).toEqual(expect.not.toInclude('alice'));
+      expect(data).not.toInclude('alice');
     });
 
     test('not.toContainKey', () => {
       const data = { hello: 'world' };
-      expect(data).not.toEqual(expect.toContainKey('foo'));
-      expect('bob').toEqual(expect.not.toInclude('foo'));
+      expect(data).not.toContainKey('foo');
     });
   });
 });

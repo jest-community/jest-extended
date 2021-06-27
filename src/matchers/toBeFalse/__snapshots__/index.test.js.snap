@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toBeFalse fails when given false 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBeFalse(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).not.toBeFalse()</>
 
 Expected value to not be false received:
   <red>false</>"
 `;
 
 exports[`.toBeFalse fails when not given false 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeFalse(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeFalse()</>
 
 Expected value to be false:
   <green>false</>

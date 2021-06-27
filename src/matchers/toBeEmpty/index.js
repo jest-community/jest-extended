@@ -1,26 +1,24 @@
-import { matcherHint, printReceived } from 'jest-matcher-utils';
-
 import predicate from './predicate';
 
-const passMessage = received => () =>
-  matcherHint('.not.toBeEmpty', 'received', '') +
+const passMessage = (utils, received) => () =>
+  utils.matcherHint('.not.toBeEmpty', 'received', '') +
   '\n\n' +
   'Expected value to not be empty received:\n' +
-  `  ${printReceived(received)}`;
+  `  ${utils.printReceived(received)}`;
 
-const failMessage = received => () =>
-  matcherHint('.toBeEmpty', 'received', '') +
+const failMessage = (utils, received) => () =>
+  utils.matcherHint('.toBeEmpty', 'received', '') +
   '\n\n' +
   'Expected value to be empty received:\n' +
-  `  ${printReceived(received)}`;
+  `  ${utils.printReceived(received)}`;
 
 export default {
-  toBeEmpty: expected => {
-    const pass = predicate(expected);
+  toBeEmpty(expected) {
+    const pass = predicate(this.equals, expected);
     if (pass) {
-      return { pass: true, message: passMessage(expected) };
+      return { pass: true, message: passMessage(this.utils, expected) };
     }
 
-    return { pass: false, message: failMessage(expected) };
+    return { pass: false, message: failMessage(this.utils, expected) };
   },
 };
