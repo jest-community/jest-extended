@@ -1,26 +1,24 @@
-import { matcherHint, printExpected, printReceived } from 'jest-matcher-utils';
-
-const passMessage = (received, expected) => () =>
-  matcherHint('.not.toSatisfy', 'received', '') +
+const passMessage = (utils, received, expected) => () =>
+  utils.matcherHint('.not.toSatisfy', 'received', '') +
   '\n\n' +
   'Expected value to not satisfy:\n' +
-  `  ${printExpected(expected)}\n` +
+  `  ${utils.printExpected(expected)}\n` +
   'Received:\n' +
-  `  ${printReceived(received)}`;
+  `  ${utils.printReceived(received)}`;
 
-const failMessage = (received, expected) => () =>
-  matcherHint('.toSatisfy', 'received', '') +
+const failMessage = (utils, received, expected) => () =>
+  utils.matcherHint('.toSatisfy', 'received', '') +
   '\n\n' +
   'Expected value to satisfy:\n' +
-  `  ${printExpected(expected)}\n` +
+  `  ${utils.printExpected(expected)}\n` +
   'Received:\n' +
-  `  ${printReceived(received)}`;
+  `  ${utils.printReceived(received)}`;
 
 export function toSatisfy(actual, predicate) {
   const pass = predicate(actual);
   if (pass) {
-    return { pass: true, message: passMessage(actual, predicate) };
+    return { pass: true, message: passMessage(this.utils, actual, predicate) };
   }
 
-  return { pass: false, message: failMessage(actual, predicate) };
+  return { pass: false, message: failMessage(this.utils, actual, predicate) };
 }

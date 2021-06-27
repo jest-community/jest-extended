@@ -1,28 +1,26 @@
-import { matcherHint, printExpected, printReceived } from 'jest-matcher-utils';
-
 import predicate from './predicate';
 
-const passMessage = (actual, expected) => () =>
-  matcherHint('.not.toContainKey') +
+const passMessage = (utils, actual, expected) => () =>
+  utils.matcherHint('.not.toContainKey') +
   '\n\n' +
   'Expected object to not contain key:\n' +
-  `  ${printExpected(expected)}\n` +
+  `  ${utils.printExpected(expected)}\n` +
   'Received:\n' +
-  `  ${printReceived(actual)}`;
+  `  ${utils.printReceived(actual)}`;
 
-const failMessage = (actual, expected) => () =>
-  matcherHint('.toContainKey') +
+const failMessage = (utils, actual, expected) => () =>
+  utils.matcherHint('.toContainKey') +
   '\n\n' +
   'Expected object to contain key:\n' +
-  `  ${printExpected(expected)}\n` +
+  `  ${utils.printExpected(expected)}\n` +
   'Received:\n' +
-  `  ${printReceived(actual)}`;
+  `  ${utils.printReceived(actual)}`;
 
 export function toContainKey(actual, expected) {
   const pass = predicate(actual, expected);
   if (pass) {
-    return { pass: true, message: passMessage(actual, expected) };
+    return { pass: true, message: passMessage(this.utils, actual, expected) };
   }
 
-  return { pass: false, message: failMessage(actual, expected) };
+  return { pass: false, message: failMessage(this.utils, actual, expected) };
 }

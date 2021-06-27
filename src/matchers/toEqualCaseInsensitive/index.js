@@ -1,25 +1,24 @@
-import { matcherHint, printExpected, printReceived } from 'jest-matcher-utils';
 import predicate from './predicate';
 
-const passMessage = (received, expected) => () => {
+const passMessage = (utils, received, expected) => () => {
   return (
-    matcherHint('.not.toEqualCaseInsensitive') +
+    utils.matcherHint('.not.toEqualCaseInsensitive') +
     '\n\n' +
     'Expected values to not be equal while ignoring case (using ===):\n' +
-    `  ${printExpected(expected)}\n` +
+    `  ${utils.printExpected(expected)}\n` +
     'Received:\n' +
-    `  ${printReceived(received)}`
+    `  ${utils.printReceived(received)}`
   );
 };
 
-const failMessage = (received, expected) => () => {
+const failMessage = (utils, received, expected) => () => {
   return (
-    matcherHint('.toEqualCaseInsensitive') +
+    utils.matcherHint('.toEqualCaseInsensitive') +
     '\n\n' +
     'Expected values to be equal while ignoring case (using ===):\n' +
-    `  ${printExpected(expected)}\n` +
+    `  ${utils.printExpected(expected)}\n` +
     'Received:\n' +
-    `  ${printReceived(received)}`
+    `  ${utils.printReceived(received)}`
   );
 };
 
@@ -28,7 +27,7 @@ export function toEqualCaseInsensitive(received, expected) {
 
   return {
     pass,
-    message: pass ? passMessage(received, expected) : failMessage(received, expected),
+    message: pass ? passMessage(this.utils, received, expected) : failMessage(this.utils, received, expected),
     actual: received,
   };
 }

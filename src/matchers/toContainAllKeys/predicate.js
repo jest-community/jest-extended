@@ -1,7 +1,7 @@
 import { contains } from '../../utils';
 
-export default (object, keys) => {
+export default (equals, object, keys) => {
   const objectKeys = Object.keys(object);
 
-  return objectKeys.length === keys.length && keys.every(key => contains(objectKeys, key));
+  return objectKeys.length === keys.length && keys.every(key => contains(equals, objectKeys, key));
 };

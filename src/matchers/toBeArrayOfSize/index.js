@@ -1,31 +1,30 @@
-import { matcherHint, printExpected, printReceived } from 'jest-matcher-utils';
 import { determinePropertyMessage } from '../../utils';
 
 import predicate from './predicate';
 
-const passMessage = (actual, expected) => () =>
-  `${matcherHint('.not.toBeArrayOfSize')}
+const passMessage = (utils, actual, expected) => () =>
+  `${utils.matcherHint('.not.toBeArrayOfSize')}
 
 Expected value to not be an array of size:
-  ${printExpected(expected)}
+  ${utils.printExpected(expected)}
 Received:
-  value: ${printReceived(actual)}
-  length: ${printReceived(determinePropertyMessage(actual, 'length'))}`;
+  value: ${utils.printReceived(actual)}
+  length: ${utils.printReceived(determinePropertyMessage(actual, 'length'))}`;
 
-const failMessage = (actual, expected) => () =>
-  `${matcherHint('.toBeArrayOfSize')}
+const failMessage = (utils, actual, expected) => () =>
+  `${utils.matcherHint('.toBeArrayOfSize')}
 
 Expected value to be an array of size:
-  ${printExpected(expected)}
+  ${utils.printExpected(expected)}
 Received:
-  value: ${printReceived(actual)}
-  length: ${printReceived(determinePropertyMessage(actual, 'length'))}`;
+  value: ${utils.printReceived(actual)}
+  length: ${utils.printReceived(determinePropertyMessage(actual, 'length'))}`;
 
 export function toBeArrayOfSize(actual, expected) {
   const pass = predicate(actual, expected);
   if (pass) {
-    return { pass: true, message: passMessage(actual, expected) };
+    return { pass: true, message: passMessage(this.utils, actual, expected) };
   }
 
-  return { pass: false, message: failMessage(actual, expected) };
+  return { pass: false, message: failMessage(this.utils, actual, expected) };
 }
