@@ -37,6 +37,9 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
 - [Contributing](#contributing)
 - [Installation](#installation)
 - [Setup](#setup)
+  - [Jest >v24](#jest-v24)
+  - [Jest <v23](#jest-v23)
+  - [Typescript](#typescript)
 - [Asymmetric matchers](#asymmetric-matchers)
 - [API](#api)
     - [.pass(message)](#passmessage)
@@ -56,15 +59,14 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toBeBoolean()](#tobeboolean)
     - [.toBeTrue()](#tobetrue)
     - [.toBeFalse()](#tobefalse)
-  - [Date](#date)
-    - [.toBeDate()](#tobedate)
-    - [.toBeValidDate()](#tobevaliddate)
-    - [.toBeAfter(date)](#tobeafterdate)
-    - [.toBeBefore(date)](#tobebeforedate)
-    - Further proposals in [#117](https://github.com/jest-community/jest-extended/issues/117) PRs welcome
+  - [~~Date~~](#date)
+  - [.toBeDate()](#tobedate)
+  - [.toBeValidDate()](#tobevaliddate)
+  - [.toBeAfter(date)](#tobeafterdate)
+  - [.toBeBefore(date)](#tobebeforedate)
   - [Function](#function)
     - [.toBeFunction()](#tobefunction)
-    - [.toThrowWithMessage()](#tothrowwithmessagetype-message)
+    - [.toThrowWithMessage(type, message)](#tothrowwithmessagetype-message)
   - [Mock](#mock)
     - [.toHaveBeenCalledBefore()](#tohavebeencalledbefore)
     - [.toHaveBeenCalledAfter()](#tohavebeencalledafter)
@@ -99,7 +101,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toReject()](#toreject)
   - [String](#string)
     - [.toBeString()](#tobestring)
-    - [.toBeHexadecimal(string)](#tobehexadecimal)
+    - [.toBeHexadecimal(string)](#tobehexadecimalstring)
     - [.toEqualCaseInsensitive(string)](#toequalcaseinsensitivestring)
     - [.toStartWith(prefix)](#tostartwithprefix)
     - [.toEndWith(suffix)](#toendwithsuffix)
@@ -451,6 +453,16 @@ test('throws an error of type TypeError with message "hello world"', () => {
   expect(() => {
     throw TypeError("hello world 2");
   }).not.toThrowWithMessage(TypeError, /hello world/);
+
+  await expect(Promise.reject(new TypeError("hello world 3")).rejects.toThrowWithMessage(TypeError, /hello world/);
+});
+```
+
+This works for promise rejections too.
+
+```js
+test('throws an error of type TypeError with message "hello world"', async () => {
+  await expect(Promise.reject(new TypeError("hello world async")).rejects.toThrowWithMessage(TypeError, /hello world/);
 });
 ```
 

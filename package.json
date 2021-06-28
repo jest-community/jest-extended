@@ -36,16 +36,15 @@
   "repository": "jest-community/jest-extended",
   "devDependencies": {
     "@types/jest": "^24.0.0",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
     "babel-eslint": "^8.0.1",
     "babel-jest": "^24.0.0",
     "babel-jest-assertions": "^0.1.0",
     "babel-plugin-gwt": "^1.0.0",
-    "babel-plugin-transform-async-to-generator": "^6.24.1",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "codecov": "^3.0.0",
+    "core-js": "^3.11.0",
     "eslint": "^4.9.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jest": "^21.2.0",
@@ -95,11 +94,18 @@
     ]
   },
   "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "modules": "commonjs",
+          "useBuiltIns": "usage",
+          "corejs": "3.0"
+        }
+      ]
+    ],
     "plugins": [
-      "babel-plugin-transform-es2015-modules-commonjs",
-      "transform-object-rest-spread",
-      "transform-async-to-generator",
-      "./node_modules/babel-jest-assertions",
+      "module:babel-jest-assertions",
       "gwt",
       "macros"
     ]
