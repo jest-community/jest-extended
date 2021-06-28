@@ -437,7 +437,7 @@ test('passes when value is a function', () => {
 Use `.toThrowWithMessage` when checking if a callback function throws an error with a given error type and given error message. Message can either be a `String` or a `RegExp`.
 
 ```js
-test('throws an error of type TypeError with message "hello world"', async () => {
+test('throws an error of type TypeError with message "hello world"', () => {
   expect(() => {
     throw TypeError("hello world");
   }).toThrowWithMessage(TypeError, "hello world");
@@ -455,6 +455,14 @@ test('throws an error of type TypeError with message "hello world"', async () =>
   }).not.toThrowWithMessage(TypeError, /hello world/);
 
   await expect(Promise.reject(new TypeError("hello world 3")).rejects.toThrowWithMessage(TypeError, /hello world/);
+});
+```
+
+This works for promise rejections too.
+
+```js
+test('throws an error of type TypeError with message "hello world"', async () => {
+  await expect(Promise.reject(new TypeError("hello world async")).rejects.toThrowWithMessage(TypeError, /hello world/);
 });
 ```
 
