@@ -60,6 +60,14 @@
   "engines": {
     "node": "^12.13.0 || ^14.15.0 || >=16.0.0"
   },
+  "peerDependencies": {
+    "@types/jest": ">= 22.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/jest": {
+      "optional": true
+    }
+  },
   "lint-staged": {
     "*.js": "eslint --fix",
     "*.md": "prettier --write"
