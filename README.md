@@ -131,11 +131,31 @@ yarn add -D jest-extended
 
 Note that `jest-extended` only supports Jest version 24 and newer.
 
-Add `jest-extended` to your Jest `setupFilesAfterEnv` configuration. [See for help](https://jestjs.io/docs/en/configuration.html#setupfilesafterenv-array)
+```javascript
+// ./testSetup.js
+
+// add all jest-extended matchers
+import * as matchers from 'jest-extended';
+expect.extend(matchers);
+
+// or just add specific matchers
+import { toBeArray, toBeSealed } from 'jest-extended';
+expect.extend({ toBeArray, toBeSealed });
+```
+
+Add your setup script to your Jest `setupFilesAfterEnv` configuration. [See for help](https://jestjs.io/docs/en/configuration.html#setupfilesafterenv-array)
 
 ```json
 "jest": {
-  "setupFilesAfterEnv": ["jest-extended"]
+  "setupFilesAfterEnv": ["./testSetup.js"]
+}
+```
+
+To use the legacy behavior of automatically extending expect with all matchers, you can use
+
+```json
+"jest": {
+  "setupFilesAfterEnv": ["jest-extended/all"]
 }
 ```
 
