@@ -60,6 +60,14 @@
   "dependencies": {
     "jest-get-type": "^22.4.3"
   },
+  "peerDependencies": {
+    "@types/jest": ">= 22.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/jest": {
+      "optional": true
+    }
+  },
   "lint-staged": {
     "*.js": "eslint --fix",
     "*.md": "prettier --write"
