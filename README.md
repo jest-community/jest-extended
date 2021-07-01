@@ -125,13 +125,33 @@ yarn add -D jest-extended
 
 ## Setup
 
+```javascript
+// ./testSetup.js
+
+// add all jest-extended matchers
+import matchers from 'jest-extended';
+expect.extend(matchers);
+
+// or just add specific matchers
+import { toBeArray, toBeSealed } from 'jest-extended';
+expect.extend({ toBeArray, toBeSealed });
+```
+
 ### Jest >v24
 
-Add `jest-extended` to your Jest `setupFilesAfterEnv` configuration. [See for help](https://jestjs.io/docs/en/configuration.html#setupfilesafterenv-array)
+Add your setup script to your Jest `setupFilesAfterEnv` configuration. [See for help](https://jestjs.io/docs/en/configuration.html#setupfilesafterenv-array)
 
 ```json
 "jest": {
-  "setupFilesAfterEnv": ["jest-extended"]
+  "setupFilesAfterEnv": ["./testSetup.js"]
+}
+```
+
+To use the legacy behavior of automatically extending expect with all matchers, you can use
+
+```json
+"jest": {
+  "setupFilesAfterEnv": ["jest-extended/all"]
 }
 ```
 
@@ -139,19 +159,28 @@ Add `jest-extended` to your Jest `setupFilesAfterEnv` configuration. [See for he
 
 ```json
 "jest": {
-  "setupTestFrameworkScriptFile": "jest-extended"
+  "setupTestFrameworkScriptFile": "./testSetup.js"
 }
 ```
 
-If you are already using another test framework, like [jest-chain](https://github.com/mattphillips/jest-chain), then you should create a test setup file and `require` each of the frameworks you are using.
+To use the legacy behavior of automatically extending expect with all matchers, you can use
+
+```json
+"jest": {
+  "setupTestFrameworkScriptFile": "jest-extended/all"
+}
+```
+
+If you are already using another test framework, like [jest-chain](https://github.com/mattphillips/jest-chain), then you should `require` those in your test setup file also.
 
 For example:
 
 ```js
 // ./testSetup.js
-require('jest-extended');
 require('jest-chain');
-require('any other test framework libraries you are using');
+const jestExtended = require('jest-extended');
+
+expect.extend(jestExtended);
 ```
 
 Then in your Jest config:
