@@ -23,7 +23,7 @@ describe('.not.toBeString', () => {
     'passes when not item is not of type string: %s',
     given => {
       expect(given).not.toBeString();
-    }
+    },
   );
 
   test('fails when given a string literal', () => {

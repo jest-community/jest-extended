@@ -26,7 +26,7 @@ describe('.toBeArrayOfSize', () => {
     'fails when given type of %s which is not an array',
     given => {
       expect(() => expect(given).toBeArrayOfSize(1)).toThrowErrorMatchingSnapshot();
-    }
+    },
   );
 
   test('fails when not given an array', () => {
@@ -47,7 +47,7 @@ describe('.not.toBeArrayOfSize', () => {
     'passes when not given an array: %s',
     given => {
       expect(given).not.toBeArrayOfSize(2);
-    }
+    },
   );
   {
     const size = 0;

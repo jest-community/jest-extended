@@ -11,7 +11,7 @@ describe('toContainValue Predicate', () => {
       'when given object contains primitive value: %s',
       value => {
         expect(predicate(shallow, value)).toBe(true);
-      }
+      },
     );
 
     test('when given object contains object value', () => {
@@ -28,7 +28,7 @@ describe('toContainValue Predicate', () => {
       'when given object does not contain primitive value: %s',
       value => {
         expect(predicate({}, value)).toBe(false);
-      }
+      },
     );
 
     test('when given object does not contain object value', () => {

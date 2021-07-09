@@ -8,8 +8,8 @@ describe('.toContainAnyEntries', () => {
       predicate(data, [
         ['a', 'qux'],
         ['a', 'foo'],
-        ['x', 'foo']
-      ])
+        ['x', 'foo'],
+      ]),
     ).toBe(true);
   });
 
@@ -18,8 +18,8 @@ describe('.toContainAnyEntries', () => {
       predicate({ hello: { message: 'world' } }, [
         ['hello', { message: 'world' }],
         ['a', 'foo'],
-        ['x', 'foo']
-      ])
+        ['x', 'foo'],
+      ]),
     ).toBe(true);
   });
 
@@ -28,8 +28,8 @@ describe('.toContainAnyEntries', () => {
       predicate(data, [
         ['a', 'qux'],
         ['b', 'foo'],
-        ['x', 'foo']
-      ])
+        ['x', 'foo'],
+      ]),
     ).toBe(false);
   });
 });

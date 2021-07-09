@@ -19,7 +19,7 @@ describe('.not.toBePositive', () => {
     'passes when not given a positive number: %s',
     given => {
       expect(given).not.toBePositive();
-    }
+    },
   );
 
   test('fails when given a positive number', () => {

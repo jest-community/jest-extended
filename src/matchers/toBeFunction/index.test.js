@@ -19,7 +19,7 @@ describe('.not.toBeFunction', () => {
     'passes when not given a function: %s',
     given => {
       expect(given).not.toBeFunction();
-    }
+    },
   );
 
   test('fails when given a function', () => {

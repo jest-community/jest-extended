@@ -13,7 +13,7 @@ describe('.toBeEven', () => {
     'fails when not given an even number',
     given => {
       expect(() => expect(given).toBeEven()).toThrowErrorMatchingSnapshot();
-    }
+    },
   );
 });
 
@@ -26,6 +26,6 @@ describe('.not.toBeEven', () => {
     'passes when not given an even number: %s',
     given => {
       expect(given).not.toBeEven();
-    }
+    },
   );
 });

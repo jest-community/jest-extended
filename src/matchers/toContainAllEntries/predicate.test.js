@@ -11,8 +11,8 @@ describe('.toContainAllEntries', () => {
       predicate(data, [
         ['a', 'foo'],
         ['b', 'bar'],
-        ['c', 'baz']
-      ])
+        ['c', 'baz'],
+      ]),
     ).toBe(true);
   });
 
@@ -20,8 +20,8 @@ describe('.toContainAllEntries', () => {
     expect(
       predicate(data, [
         ['a', 'foo'],
-        ['b', 'bar']
-      ])
+        ['b', 'bar'],
+      ]),
     ).toBe(false);
   });
 
@@ -31,8 +31,8 @@ describe('.toContainAllEntries', () => {
         ['a', 'foo'],
         ['b', 'bar'],
         ['c', 'baz'],
-        ['d', 'qux']
-      ])
+        ['d', 'qux'],
+      ]),
     ).toBe(false);
   });
 });

@@ -8,7 +8,7 @@ describe('.toContainAnyEntries', () => {
   test('passes when given object contains atleast one of the given entries', () => {
     expect(data).toContainAnyEntries([
       ['a', 'qux'],
-      ['a', 'foo']
+      ['a', 'foo'],
     ]);
   });
 
@@ -16,8 +16,8 @@ describe('.toContainAnyEntries', () => {
     expect(() =>
       expect(data).toContainAnyEntries([
         ['a', 'qux'],
-        ['b', 'foo']
-      ])
+        ['b', 'foo'],
+      ]),
     ).toThrowErrorMatchingSnapshot();
   });
 });
@@ -26,7 +26,7 @@ describe('.not.toContainAnyEntries', () => {
   test('passes when given object does not contain any of the given entries', () => {
     expect(data).not.toContainAnyEntries([
       ['a', 'qux'],
-      ['b', 'foo']
+      ['b', 'foo'],
     ]);
   });
 
@@ -34,8 +34,8 @@ describe('.not.toContainAnyEntries', () => {
     expect(() =>
       expect(data).not.toContainAnyEntries([
         ['a', 'qux'],
-        ['a', 'foo']
-      ])
+        ['a', 'foo'],
+      ]),
     ).toThrowErrorMatchingSnapshot();
   });
 });

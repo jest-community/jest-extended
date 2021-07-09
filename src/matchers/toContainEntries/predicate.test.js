@@ -7,8 +7,8 @@ describe('.toContainEntries', () => {
     expect(
       predicate(data, [
         ['c', 'baz'],
-        ['a', 'foo']
-      ])
+        ['a', 'foo'],
+      ]),
     ).toBe(true);
   });
 
@@ -20,8 +20,8 @@ describe('.toContainEntries', () => {
     expect(
       predicate(data, [
         ['a', 'qux'],
-        ['b', 'bar']
-      ])
+        ['b', 'bar'],
+      ]),
     ).toBe(false);
   });
 });

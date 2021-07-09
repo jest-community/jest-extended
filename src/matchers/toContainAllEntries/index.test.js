@@ -9,7 +9,7 @@ describe('.toContainAllEntries', () => {
     expect(data).toContainAllEntries([
       ['a', 'foo'],
       ['b', 'bar'],
-      ['c', 'baz']
+      ['c', 'baz'],
     ]);
   });
 
@@ -17,8 +17,8 @@ describe('.toContainAllEntries', () => {
     expect(() =>
       expect(data).toContainAllEntries([
         ['a', 'foo'],
-        ['b', 'bar']
-      ])
+        ['b', 'bar'],
+      ]),
     ).toThrowErrorMatchingSnapshot();
   });
 });
@@ -28,7 +28,7 @@ describe('.not.toContainAllEntries', () => {
     expect(data).not.toContainAllEntries([
       ['a', 'qux'],
       ['b', 'bar'],
-      ['c', 'baz']
+      ['c', 'baz'],
     ]);
   });
 
@@ -37,8 +37,8 @@ describe('.not.toContainAllEntries', () => {
       expect(data).not.toContainAllEntries([
         ['b', 'bar'],
         ['a', 'foo'],
-        ['c', 'baz']
-      ])
+        ['c', 'baz'],
+      ]),
     ).toThrowErrorMatchingSnapshot();
   });
 });

@@ -17,7 +17,7 @@ describe('toBeDate Predicate', () => {
     [() => {}],
     [undefined],
     [null],
-    [NaN]
+    [NaN],
   ]).test('returns false when given: %s', given => {
     expect(predicate(given)).toBe(false);
   });

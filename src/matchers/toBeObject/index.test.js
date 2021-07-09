@@ -13,7 +13,7 @@ describe('.toBeObject', () => {
     'fails when not given an object: %s',
     given => {
       expect(() => expect(given).toBeObject()).toThrowErrorMatchingSnapshot();
-    }
+    },
   );
 });
 
@@ -22,7 +22,7 @@ describe('.not.toBeObject', () => {
     'passes when not given an object: %s',
     given => {
       expect(given).not.toBeObject();
-    }
+    },
   );
 
   test('fails when given an object', () => {

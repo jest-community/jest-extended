@@ -31,7 +31,7 @@ describe('.not.toBeBoolean', () => {
     'passes when item is not of type boolean: %s',
     given => {
       expect(given).not.toBeBoolean();
-    }
+    },
   );
 
   test('fails when given a boolean', () => {

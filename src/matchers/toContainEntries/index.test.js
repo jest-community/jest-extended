@@ -8,7 +8,7 @@ describe('.toContainEntries', () => {
   test('passes when object contains all of the given entries', () => {
     expect(data).toContainEntries([
       ['c', 'baz'],
-      ['a', 'foo']
+      ['a', 'foo'],
     ]);
   });
 
@@ -26,8 +26,8 @@ describe('.not.toContainEntries', () => {
     expect(() =>
       expect(data).not.toContainEntries([
         ['b', 'bar'],
-        ['c', 'baz']
-      ])
+        ['c', 'baz'],
+      ]),
     ).toThrowErrorMatchingSnapshot();
   });
 });

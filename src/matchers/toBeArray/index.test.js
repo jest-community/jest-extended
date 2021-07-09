@@ -19,7 +19,7 @@ describe('.not.toBeArray', () => {
     'passes when not given an array: %s',
     given => {
       expect(given).not.toBeArray();
-    }
+    },
   );
 
   test('fails when given an array', () => {
