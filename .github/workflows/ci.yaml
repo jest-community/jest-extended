@@ -20,4 +20,4 @@ jobs:
       - run: yarn install
       - run: yarn lint
       - run: yarn test:coverage
-      - run: yarn test:report
+      - uses: codecov/codecov-action@v1
