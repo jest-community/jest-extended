@@ -18,7 +18,6 @@
     "precommit": "lint-staged",
     "test": "jest --color=true",
     "test:coverage": "yarn test --coverage",
-    "test:report": "codecov",
     "test:watch": "yarn test --watch"
   },
   "keywords": [
@@ -42,7 +41,6 @@
     "babel-jest": "^24.0.0",
     "babel-jest-assertions": "^0.1.0",
     "babel-plugin-gwt": "^1.0.0",
-    "codecov": "^3.0.0",
     "eslint": "^7.30.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.8.0",
