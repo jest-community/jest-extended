@@ -1,5 +1,8 @@
-import { contains } from '../../utils';
+import { asArray, contains } from '../../utils';
 
-export default (array, members) => {
-  return Array.isArray(array) && Array.isArray(members) && members.some(member => contains(array, member));
+export default (iterable, members) => {
+  const first = asArray(iterable);
+  const second = first && asArray(members);
+
+  return first != null && second != null && second.some(val => contains(first, val));
 };

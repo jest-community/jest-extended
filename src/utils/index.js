@@ -1,5 +1,12 @@
 import { equals } from 'expect/build/jasmineUtils';
 
+export const asArray = value => {
+  if (Array.isArray(value)) return value;
+  if (value != null && typeof value[Symbol.iterator] === 'function') return [...value];
+
+  return undefined;
+};
+
 export const contains = (list, value) => {
   return list.findIndex(item => equals(item, value)) > -1;
 };

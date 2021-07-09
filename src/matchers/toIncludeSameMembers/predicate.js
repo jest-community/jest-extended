@@ -1,4 +1,4 @@
-import { equals } from '../../utils';
+import { asArray, equals } from '../../utils';
 
 const filterMatches = (first, second) =>
   second.reduce((remaining, secondValue) => {
@@ -13,10 +13,11 @@ const filterMatches = (first, second) =>
     return remaining.slice(0, index).concat(remaining.slice(index + 1));
   }, first);
 
-export default (first, second) => {
-  if (!Array.isArray(first) || !Array.isArray(second) || first.length !== second.length) {
-    return false;
-  }
+export default (iterable, members) => {
+  const first = asArray(iterable);
+  const second = first && asArray(members);
+
+  if (first == null || second == null || first.length !== second.length) return false;
 
   const remaining = filterMatches(first, second);
 

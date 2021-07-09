@@ -6,21 +6,25 @@ describe('.toIncludeAllMembers', () => {
   const array1 = [1, 2, 3];
   const array2 = [1, 2, 2];
 
-  test('passes when array values matches the members of the set', () => {
+  test('passes when iterable values matches the members of the set', () => {
     expect(array1).toIncludeAllMembers([2, 1, 3]);
     expect(array2).toIncludeAllMembers([2, 1]);
+    expect(new Set(array1)).toIncludeAllMembers([2, 1, 3]);
+    expect(new Set(array2)).toIncludeAllMembers([2, 1]);
+
     expect([{ foo: 'bar' }, { baz: 'qux' }]).toIncludeAllMembers([{ foo: 'bar' }]);
   });
 
-  test('fails when array values do not contain any of the members of the set', () => {
+  test('fails when iterable values do not contain any of the members of the set', () => {
     expect(() => expect([4, 5, 6]).toIncludeAllMembers([1, 2, 3])).toThrowErrorMatchingSnapshot();
+    expect(() => expect(new Set([4, 5, 6])).toIncludeAllMembers([1, 2, 3])).toThrowErrorMatchingSnapshot();
   });
 
-  test('fails when given object is not an array', () => {
+  test('fails when given object is not an iterable', () => {
     expect(() => expect(2).toIncludeAllMembers([1, 2, 3])).toThrowErrorMatchingSnapshot();
   });
 
-  test('fails when expected object is not an array', () => {
+  test('fails when expected object is not an iterable', () => {
     expect(() => expect(array1).toIncludeAllMembers(2)).toThrowErrorMatchingSnapshot();
   });
 });

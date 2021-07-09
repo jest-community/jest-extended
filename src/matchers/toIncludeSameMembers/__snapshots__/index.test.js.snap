@@ -9,11 +9,29 @@ Received:
   <red>[1]</>"
 `;
 
-exports[`.toIncludeSameMembers fails when the arrays are not equal in length 1`] = `
+exports[`.not.toIncludeSameMembers fails when array contents match 2`] = `
+"<dim>expect(</><red>received</><dim>).not.toIncludeSameMembers(</><green>expected</><dim>)</>
+
+Expected list to not exactly match the members of:
+  <green>[1]</>
+Received:
+  <red>Set {1}</>"
+`;
+
+exports[`.toIncludeSameMembers fails when the iterables are not equal in length 1`] = `
 "<dim>expect(</><red>received</><dim>).toIncludeSameMembers(</><green>expected</><dim>)</>
 
 Expected list to have the following members and no more:
   <green>[1]</>
 Received:
   <red>[1, 2]</>"
+`;
+
+exports[`.toIncludeSameMembers fails when the iterables are not equal in length 2`] = `
+"<dim>expect(</><red>received</><dim>).toIncludeSameMembers(</><green>expected</><dim>)</>
+
+Expected list to have the following members and no more:
+  <green>[1, 2, 2]</>
+Received:
+  <red>Set {1, 2}</>"
 `;

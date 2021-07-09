@@ -1,6 +1,6 @@
 import each from 'jest-each';
 
-import { contains, determinePropertyMessage } from './';
+import { asArray, contains, determinePropertyMessage } from './';
 
 describe('Utils', () => {
   describe('.contains', () => {
@@ -14,6 +14,31 @@ describe('Utils', () => {
 
     each(testRows).test('returns false when array does not contain given value: %s', value => {
       expect(contains([], value)).toBe(false);
+    });
+  });
+
+  describe('.asArray', () => {
+    test('returns the argument when given an array', () => {
+      const array = [1, 2, 3];
+
+      expect(asArray(array)).toBe(array);
+    });
+
+    test('returns a new array when given a non-array iterable', () => {
+      const set = new Set([1, 2, 3]);
+      const array = asArray(set);
+
+      expect(array).toBeInstanceOf(Array);
+      expect(array).toHaveLength(3);
+      expect(array).toContain(1);
+      expect(array).toContain(2);
+      expect(array).toContain(3);
+    });
+
+    test('returns undefined when given a non-iterable', () => {
+      expect(asArray(true)).toBeUndefined();
+      expect(asArray(123)).toBeUndefined();
+      expect(asArray({})).toBeUndefined();
     });
   });
 
