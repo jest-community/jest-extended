@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toContainKeys fails when object contains all keys and they are within x percent of target 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toContainKeysWithinPercent(</><green>expected</><dim>)</>
+
+Expected object to not contain all keys or the keys' values to not be within x percent of target:
+  <green>[{\\"key\\": \\"a\\", \\"percent\\": 10, \\"target\\": 50}, {\\"key\\": \\"b\\", \\"percent\\": 0, \\"target\\": 5}, {\\"key\\": \\"c\\", \\"percent\\": 100, \\"target\\": 1}]</>
+Received:
+  <red>{\\"a\\": 55, \\"b\\": 5, \\"c\\": 1}</>"
+`;
+
+exports[`.toContainKeys fails when object does not contain all keys or they are not within x percent of target 1`] = `
+"<dim>expect(</><red>received</><dim>).toContainKeysWithinPercent(</><green>expected</><dim>)</>
+
+Expected object to contain all keys and the keys' values to be within x percent of target:
+  <green>[{\\"key\\": \\"a\\", \\"percent\\": 10, \\"target\\": 50}, {\\"key\\": \\"b\\", \\"percent\\": 0, \\"target\\": 5}, {\\"key\\": \\"c\\", \\"percent\\": 100, \\"target\\": 1}]</>
+Received:
+  <red>{\\"a\\": 56, \\"b\\": 5, \\"c\\": 1}</>"
+`;

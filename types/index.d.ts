@@ -187,6 +187,14 @@ declare namespace jest {
     toBeWithin(start: number, end: number): R;
 
     /**
+     * Use `.toBeWithinPercent` when checking if a number is within x percent of a target number.
+     *
+     * @param {Number} target
+     * @param {Number} percent
+     */
+    toBeWithinPercent(target: number, percent: number): R;
+
+    /**
      * Use `.toBeObject` when checking if a value is an `Object`.
      */
     toBeObject(): R;
@@ -560,6 +568,13 @@ declare namespace jest {
      * @param {Array.<String>} keys
      */
     toContainKeys(keys: string[]): any;
+
+    /**
+     * Use `.toContainKeysWithinPercent` when checking if an object has all of the provided keys and the keys' values are within x percent of a target value.
+     *
+     * @param {Array.<Object>} keyObjects
+     */
+    toContainKeysWithinPercent(keyObjects: object[]): any;
 
     /**
      * Use `.toContainAllKeys` when checking if an object only contains all of the provided keys.
