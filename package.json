@@ -60,6 +60,9 @@
     "jest-get-type": "^22.4.3",
     "jest-matcher-utils": "^22.0.0"
   },
+  "engines": {
+    "node": "^12.13.0 || ^14.15.0 || >=16.0.0"
+  },
   "lint-staged": {
     "*.js": "eslint --fix",
     "*.md": "prettier --write"
