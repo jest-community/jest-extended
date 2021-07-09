@@ -10,7 +10,7 @@ describe('toIncludeAnyMembers Predicate', () => {
       'when given array contains primitive value: %s',
       given => {
         expect(predicate([given], array)).toBe(true);
-      }
+      },
     );
 
     test('when given array contains object value', () => {

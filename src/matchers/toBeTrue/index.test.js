@@ -19,7 +19,7 @@ describe('.not.toBeTrue', () => {
     'passes when not given true: %s',
     given => {
       expect(given).not.toBeTrue();
-    }
+    },
   );
 
   test('fails when given true', () => {

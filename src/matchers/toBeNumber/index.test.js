@@ -25,7 +25,7 @@ describe('.not.toBeNumber', () => {
     'passes when not given a number: %s',
     given => {
       expect(given).not.toBeNumber();
-    }
+    },
   );
 
   test('fails when given a number', () => {

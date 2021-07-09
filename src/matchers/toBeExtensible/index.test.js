@@ -13,7 +13,7 @@ describe('.toBeExtensible', () => {
     'fails when not given an extensible object: %s',
     given => {
       expect(() => expect(given).toBeExtensible()).toThrowErrorMatchingSnapshot();
-    }
+    },
   );
 });
 
@@ -22,7 +22,7 @@ describe('.not.toBeExtensible', () => {
     'passes when not given extensible object: %s',
     given => {
       expect(given).not.toBeExtensible();
-    }
+    },
   );
 
   each([[{}], [[]], [() => {}]]).test('fails when given an extensible object: %s', given => {

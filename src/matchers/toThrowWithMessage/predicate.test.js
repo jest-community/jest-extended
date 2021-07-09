@@ -11,8 +11,8 @@ describe('toThrowWithMessage Predicate for a string message and same type of err
     ${new SyntaxError('over')}     | ${SyntaxError}    | ${'over'}
     ${new URIError('the lazy')}    | ${URIError}       | ${'the lazy'}
   `('returns false when not instance of $type with the correct error message', ({ error, type, errorMessage }) => {
-  expect(predicate(error, type, errorMessage)).toBe(true);
-});
+    expect(predicate(error, type, errorMessage)).toBe(true);
+  });
 });
 
 describe('toThrowWithMessage Predicate for a regex message and same type of error returns true', () => {
@@ -26,8 +26,8 @@ describe('toThrowWithMessage Predicate for a regex message and same type of erro
     ${new SyntaxError('over')}     | ${SyntaxError}    | ${/over/}
     ${new URIError('the lazy')}    | ${URIError}       | ${/the lazy/}
   `('returns false when not instance of $type with the correct error message', ({ error, type, errorMessage }) => {
-  expect(predicate(error, type, errorMessage)).toBe(true);
-});
+    expect(predicate(error, type, errorMessage)).toBe(true);
+  });
 });
 
 describe('toThrowWithMessage Predicate for a string message and same type of error returns false', () => {
@@ -41,8 +41,8 @@ describe('toThrowWithMessage Predicate for a string message and same type of err
     ${new SyntaxError('over')}     | ${SyntaxError}    | ${'overs'}
     ${new URIError('the lazy')}    | ${URIError}       | ${'the lazys'}
   `('returns false when not instance of $type with the correct error message', ({ error, type, errorMessage }) => {
-  expect(predicate(error, type, errorMessage)).toBe(false);
-});
+    expect(predicate(error, type, errorMessage)).toBe(false);
+  });
 
   describe('toThrowWithMessage Predicate for a regex message and same type of error returns false', () => {
     test.each`
@@ -55,8 +55,8 @@ describe('toThrowWithMessage Predicate for a string message and same type of err
       ${new SyntaxError('over')}     | ${SyntaxError}    | ${/overs/}
       ${new URIError('the lazy')}    | ${URIError}       | ${/the lazys/}
     `('returns false when not instance of $type with the correct error message', ({ error, type, errorMessage }) => {
-  expect(predicate(error, type, errorMessage)).toBe(false);
-});
+      expect(predicate(error, type, errorMessage)).toBe(false);
+    });
   });
 
   describe('toThrowWithMessage Predicate for a regex message and not same type of error returns false', () => {
@@ -69,8 +69,8 @@ describe('toThrowWithMessage Predicate for a string message and same type of err
       ${new URIError('over')}        | ${SyntaxError}    | ${/over/}
       ${new SyntaxError('the lazy')} | ${URIError}       | ${/the lazy/}
     `('returns false when not instance of $type with the correct error message', ({ error, type, errorMessage }) => {
-  expect(predicate(error, type, errorMessage)).toBe(false);
-});
+      expect(predicate(error, type, errorMessage)).toBe(false);
+    });
   });
 
   describe('toThrowWithMessage Predicate for a string message and not same type of error returns false', () => {
@@ -83,7 +83,7 @@ describe('toThrowWithMessage Predicate for a string message and same type of err
       ${new URIError('over')}        | ${SyntaxError}    | ${'over'}
       ${new SyntaxError('the lazy')} | ${URIError}       | ${'the lazy'}
     `('returns false when not instance of $type with the correct error message', ({ error, type, errorMessage }) => {
-  expect(predicate(error, type, errorMessage)).toBe(false);
-});
+      expect(predicate(error, type, errorMessage)).toBe(false);
+    });
   });
 });

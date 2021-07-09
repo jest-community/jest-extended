@@ -30,7 +30,7 @@ describe('.not.toBeValidDate', () => {
     [() => {}],
     [undefined],
     [null],
-    [NaN]
+    [NaN],
   ]).test('passes when not given a date: %s', given => {
     expect(given).not.toBeValidDate();
   });

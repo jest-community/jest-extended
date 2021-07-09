@@ -19,7 +19,7 @@ describe('.not.toBeDate', () => {
     'passes when not given a date: %s',
     given => {
       expect(given).not.toBeDate();
-    }
+    },
   );
 
   test('fails when given a date', () => {

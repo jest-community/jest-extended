@@ -15,7 +15,7 @@ describe('toBeArrayOfSize Predicate', () => {
     [[() => {}], 6],
     [[undefined], 6],
     [[null], 6],
-    [[NaN], 6]
+    [[NaN], 6],
   ]).test('returns false when given: %s', (array, size) => {
     expect(predicate(array, size)).toBe(false);
   });

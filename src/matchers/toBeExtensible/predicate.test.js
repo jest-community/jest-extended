@@ -10,6 +10,6 @@ describe('toBeExpected Predicate', () => {
     'returns false when given non-extensible object: %s',
     given => {
       expect(predicate(given)).toBe(false);
-    }
+    },
   );
 });

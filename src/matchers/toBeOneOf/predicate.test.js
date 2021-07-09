@@ -6,7 +6,7 @@ describe('.toBeOneOf', () => {
     'returns true when primitive value: %s is in given array',
     value => {
       expect(predicate(value, [1, 2, 3, null, undefined, false, ''])).toBe(true);
-    }
+    },
   );
 
   each([[{ hello: 'world' }], [['foo']]]).test('returns true when nested value: %s is in given array', value => {
@@ -17,6 +17,6 @@ describe('.toBeOneOf', () => {
     'returns false when value: %s is not in given array',
     value => {
       expect(predicate(value, [1, 2, 3])).toBe(false);
-    }
+    },
   );
 });

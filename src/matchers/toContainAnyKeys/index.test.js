@@ -4,7 +4,7 @@ expect.extend(matcher);
 
 const testObject = {
   name: 'Steve the Pirate',
-  age: 37
+  age: 37,
 };
 
 describe('.toContainAnyKeys', () => {
