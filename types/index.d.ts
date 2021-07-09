@@ -187,6 +187,11 @@ declare namespace jest {
     toBeWithin(start: number, end: number): R;
 
     /**
+     * Use `.toBeInteger` when checking if a value is an integer.
+     */
+    toBeInteger(): R;
+
+    /**
      * Use `.toBeObject` when checking if a value is an `Object`.
      */
     toBeObject(): R;
