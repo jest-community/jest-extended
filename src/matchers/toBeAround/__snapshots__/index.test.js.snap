@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toBeAround fails when given number is equal to the rounded expected number 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toBeAround(</><green>expected</><dim>)</>
+
+expected 0.25 not to be around 0.25"
+`;
+
+exports[`.toBeAround fails when given number is not equal to the rounded expected number 1`] = `
+"<dim>expect(</><red>received</><dim>).toBeAround(</><green>expected</><dim>)</>
+
+expected 0.26 to be around 0.25"
+`;
