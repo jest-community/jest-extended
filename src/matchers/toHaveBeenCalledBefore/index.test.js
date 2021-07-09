@@ -58,6 +58,18 @@ describe('.toHaveBeenCalledBefore', () => {
     mock2.mock.invocationCallOrder[0] = 4000;
     expect(() => expect(mock1).toHaveBeenCalledBefore(mock2)).toThrowErrorMatchingSnapshot();
   });
+
+  test('fails when given first value is not a jest spy or mock', () => {
+    const mock1 = () => {};
+    const mock2 = jest.fn();
+    expect(() => expect(mock1).toHaveBeenCalledBefore(mock2)).toThrowErrorMatchingSnapshot();
+  });
+
+  test('fails when given second value is not a jest spy or mock', () => {
+    const mock1 = jest.fn();
+    const mock2 = () => {};
+    expect(() => expect(mock1).toHaveBeenCalledBefore(mock2)).toThrowErrorMatchingSnapshot();
+  });
 });
 
 describe('.not.toHaveBeenCalledBefore', () => {

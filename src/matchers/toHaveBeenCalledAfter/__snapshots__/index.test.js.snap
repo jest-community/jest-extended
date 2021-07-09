@@ -45,6 +45,15 @@ Received second mock with invocationCallOrder:
   <red>[]</>"
 `;
 
+exports[`.toHaveBeenCalledAfter fails when given first value is not a jest spy or mock 1`] = `
+"<dim>expect(</><red>received</><dim>).toHaveBeenCalledAfter(</><green>expected</><dim>)</>
+
+Matcher error: <red>\\"received\\"</> must be a mock or spy function
+
+Received:
+  function: <red>[Function mock1]</>"
+`;
+
 exports[`.toHaveBeenCalledAfter fails when given second mock is called after first mock 1`] = `
 "<dim>expect(</><red>received</><dim>).toHaveBeenCalledAfter(</><green>expected</><dim>)</>
 
@@ -52,4 +61,13 @@ Expected first mock to have been called after, invocationCallOrder:
   <green>[4000]</>
 Received second mock with invocationCallOrder:
   <red>[5000]</>"
+`;
+
+exports[`.toHaveBeenCalledAfter fails when given second value is not a jest spy or mock 1`] = `
+"<dim>expect(</><red>received</><dim>).toHaveBeenCalledAfter(</><green>expected</><dim>)</>
+
+Matcher error: <green>\\"expected\\"</> must be a mock or spy function
+
+Expected:
+  function: <green>[Function mock2]</>"
 `;
