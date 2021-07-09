@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toHaveBeenCalledOnce fails if mock was invoked exactly once 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toHaveBeenCalledOnce(</><green>expected</><dim>)</>
+
+Expected mock function to have been called any amount of times but one, but it was called exactly once."
+`;
+
+exports[`.toHaveBeenCalledOnce fails if mock was invoked more than once, indicating how many times it was invoked 1`] = `
+"<dim>expect(</><red>received</><dim>).toHaveBeenCalledOnce(</><green>expected</><dim>)</>
+
+Expected mock function to have been called exactly once, but it was called:
+  17 times"
+`;
+
+exports[`.toHaveBeenCalledOnce fails if mock was never invoked indicating that it was invoked 0 times 1`] = `
+"<dim>expect(</><red>received</><dim>).toHaveBeenCalledOnce(</><green>expected</><dim>)</>
+
+Expected mock function to have been called exactly once, but it was called:
+  0 times"
+`;
