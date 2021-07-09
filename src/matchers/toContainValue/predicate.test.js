@@ -24,16 +24,12 @@ describe('toContainValue Predicate', () => {
   });
 
   describe('returns false', () => {
-    each([
-      ['world'],
-      [false],
-      [undefined],
-      [null],
-      [''],
-      [0]
-    ]).test('when given object does not contain primitive value: %s', value => {
-      expect(predicate({}, value)).toBe(false);
-    });
+    each([['world'], [false], [undefined], [null], [''], [0]]).test(
+      'when given object does not contain primitive value: %s',
+      value => {
+        expect(predicate({}, value)).toBe(false);
+      }
+    );
 
     test('when given object does not contain object value', () => {
       expect(predicate(deep, { foo: 'bar' })).toBe(false);

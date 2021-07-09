@@ -6,16 +6,10 @@ describe('toBeExpected Predicate', () => {
     expect(predicate(given)).toBe(true);
   });
 
-  each([
-    [false],
-    [''],
-    [0],
-    [undefined],
-    [null],
-    [NaN],
-    [Object.seal({})],
-    [Object.freeze({})]
-  ]).test('returns false when given non-extensible object: %s', given => {
-    expect(predicate(given)).toBe(false);
-  });
+  each([[false], [''], [0], [undefined], [null], [NaN], [Object.seal({})], [Object.freeze({})]]).test(
+    'returns false when given non-extensible object: %s',
+    given => {
+      expect(predicate(given)).toBe(false);
+    }
+  );
 });
