@@ -5,7 +5,7 @@ export const contains = (list, value) => {
 };
 
 export const determinePropertyMessage = (actual, property, message = 'Not Accessible') => {
-  return actual && actual[property] ? actual[property] : message;
+  return actual && actual.hasOwnProperty(property) ? actual[property] : message;
 };
 
 export { equals };

@@ -7,7 +7,7 @@ Expected value to not be an array of size:
   <green>0</>
 Received:
   value: <red>[]</>
-  length: <red>\\"Not Accessible\\"</>"
+  length: <red>0</>"
 `;
 
 exports[`.toBeArrayOfSize fails when given neither a parameter nor an array 1`] = `
@@ -17,7 +17,7 @@ Expected value to be an array of size:
   <green>undefined</>
 Received:
   value: <red>[]</>
-  length: <red>\\"Not Accessible\\"</>"
+  length: <red>0</>"
 `;
 
 exports[`.toBeArrayOfSize fails when given type of [object Object] which is not an array 1`] = `
@@ -87,7 +87,7 @@ Expected value to be an array of size:
   <green>1</>
 Received:
   value: <red>[Function anonymous]</>
-  length: <red>\\"Not Accessible\\"</>"
+  length: <red>0</>"
 `;
 
 exports[`.toBeArrayOfSize fails when given type of undefined which is not an array 2`] = `
