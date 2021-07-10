@@ -1,5 +1,3 @@
-import { equals } from '../../utils';
-
 const isEmptyIterable = value => {
   if (typeof value[Symbol.iterator] !== 'function') {
     return false;
@@ -8,4 +6,4 @@ const isEmptyIterable = value => {
   return firstIteration.done;
 };
 
-export default value => equals({}, value) || isEmptyIterable(value);
+export default (equals, value) => equals({}, value) || isEmptyIterable(value);

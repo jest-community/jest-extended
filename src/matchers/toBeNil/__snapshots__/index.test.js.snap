@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toBeNil fails when null is given 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBeNil(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).not.toBeNil()</>
 
 Expected value not to be null or undefined, received:
   <red>null</>"
 `;
 
 exports[`.toBeNil fails when the value is not null or undefined 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeNil(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeNil()</>
 
 Expected value to be null or undefined, received:
   <red>\\"value\\"</>"

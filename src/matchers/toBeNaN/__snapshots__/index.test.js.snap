@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toBeNaN fails when given a non-number 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBeNaN(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).not.toBeNaN()</>
 
 Expected value to be a number received:
   <red>undefined</>"
 `;
 
 exports[`.toBeNaN fails when given a number 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeNaN(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeNaN()</>
 
 Expected value to not be a number received:
   <red>3</>"

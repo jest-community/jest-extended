@@ -1,32 +1,30 @@
-import { matcherHint, printExpected, printReceived } from 'jest-matcher-utils';
-
 import predicate from './predicate';
 
-const passMessage = (firstInvocationCallOrder, secondInvocationCallOrder) => () =>
-  matcherHint('.not.toHaveBeenCalledAfter') +
+const passMessage = (utils, firstInvocationCallOrder, secondInvocationCallOrder) => () =>
+  utils.matcherHint('.not.toHaveBeenCalledAfter') +
   '\n\n' +
   'Expected first mock to not have been called after, invocationCallOrder:\n' +
-  `  ${printExpected(firstInvocationCallOrder)}\n` +
+  `  ${utils.printExpected(firstInvocationCallOrder)}\n` +
   'Received second mock with invocationCallOrder:\n' +
-  `  ${printReceived(secondInvocationCallOrder)}`;
+  `  ${utils.printReceived(secondInvocationCallOrder)}`;
 
-const failMessage = (firstInvocationCallOrder, secondInvocationCallOrder) => () =>
-  matcherHint('.toHaveBeenCalledAfter') +
+const failMessage = (utils, firstInvocationCallOrder, secondInvocationCallOrder) => () =>
+  utils.matcherHint('.toHaveBeenCalledAfter') +
   '\n\n' +
   'Expected first mock to have been called after, invocationCallOrder:\n' +
-  `  ${printExpected(firstInvocationCallOrder)}\n` +
+  `  ${utils.printExpected(firstInvocationCallOrder)}\n` +
   'Received second mock with invocationCallOrder:\n' +
-  `  ${printReceived(secondInvocationCallOrder)}`;
+  `  ${utils.printReceived(secondInvocationCallOrder)}`;
 
 export default {
-  toHaveBeenCalledAfter: (firstMock, secondMock) => {
+  toHaveBeenCalledAfter(firstMock, secondMock) {
     const firstInvocationCallOrder = firstMock.mock.invocationCallOrder;
     const secondInvocationCallOrder = secondMock.mock.invocationCallOrder;
     const pass = predicate(firstInvocationCallOrder, secondInvocationCallOrder);
     if (pass) {
-      return { pass: true, message: passMessage(firstInvocationCallOrder, secondInvocationCallOrder) };
+      return { pass: true, message: passMessage(this.utils, firstInvocationCallOrder, secondInvocationCallOrder) };
     }
 
-    return { pass: false, message: failMessage(firstInvocationCallOrder, secondInvocationCallOrder) };
+    return { pass: false, message: failMessage(this.utils, firstInvocationCallOrder, secondInvocationCallOrder) };
   },
 };

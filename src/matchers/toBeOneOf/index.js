@@ -1,30 +1,28 @@
-import { matcherHint, printExpected, printReceived } from 'jest-matcher-utils';
-
 import predicate from './predicate';
 
-const passMessage = (item, list) => () =>
-  matcherHint('.not.toBeOneOf', 'item', 'list') +
+const passMessage = (utils, item, list) => () =>
+  utils.matcherHint('.not.toBeOneOf', 'item', 'list') +
   '\n\n' +
   'Expected value to not be in list:\n' +
-  `  ${printExpected(list)}\n` +
+  `  ${utils.printExpected(list)}\n` +
   'Received:\n' +
-  `  ${printReceived(item)}`;
+  `  ${utils.printReceived(item)}`;
 
-const failMessage = (item, list) => () =>
-  matcherHint('.toBeOneOf', 'item', 'list') +
+const failMessage = (utils, item, list) => () =>
+  utils.matcherHint('.toBeOneOf', 'item', 'list') +
   '\n\n' +
   'Expected value to be in list:\n' +
-  `  ${printExpected(list)}\n` +
+  `  ${utils.printExpected(list)}\n` +
   'Received:\n' +
-  `  ${printReceived(item)}`;
+  `  ${utils.printReceived(item)}`;
 
 export default {
-  toBeOneOf: (item, list) => {
-    const pass = predicate(item, list);
+  toBeOneOf(item, list) {
+    const pass = predicate(this.equals, item, list);
     if (pass) {
-      return { pass: true, message: passMessage(item, list) };
+      return { pass: true, message: passMessage(this.utils, item, list) };
     }
 
-    return { pass: false, message: failMessage(item, list) };
+    return { pass: false, message: failMessage(this.utils, item, list) };
   },
 };

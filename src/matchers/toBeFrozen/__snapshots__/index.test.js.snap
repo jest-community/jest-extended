@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toBeFrozen fails when given frozen object 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBeFrozen(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).not.toBeFrozen()</>
 
 Expected object to not be frozen"
 `;
 
 exports[`.toBeFrozen fails when given a non-frozen object 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeFrozen(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeFrozen()</>
 
 Expected object to be frozen"
 `;
