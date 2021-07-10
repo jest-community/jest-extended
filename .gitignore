@@ -4,4 +4,6 @@ dist
 *.log
 coverage
 .idea
+.vs
+.vscode
 package-lock.json
