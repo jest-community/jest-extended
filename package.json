@@ -110,6 +110,7 @@
     ]
   },
   "prettier": {
+    "endOfLine": "auto",
     "arrowParens": "avoid",
     "printWidth": 120,
     "singleQuote": true,
