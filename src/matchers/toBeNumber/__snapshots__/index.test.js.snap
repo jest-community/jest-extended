@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toBeNumber fails when given a number 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBeNumber(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).not.toBeNumber()</>
 
 Expected value to not be a number received:
   <red>1</>"
 `;
 
 exports[`.toBeNumber fails when not given a number 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeNumber(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeNumber()</>
 
 Expected value to be a number received:
   <red>false</>"

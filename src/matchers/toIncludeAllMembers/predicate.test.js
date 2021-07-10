@@ -1,3 +1,4 @@
+import { equals } from 'expect/build/jasmineUtils';
 import predicate from './predicate';
 
 describe('toIncludeAllMembers Predicate', () => {
@@ -8,21 +9,21 @@ describe('toIncludeAllMembers Predicate', () => {
 
   describe('returns true', () => {
     test('when Array contains all the same members of given set', () => {
-      expect(predicate(array1, set1)).toBe(true);
+      expect(predicate(equals, array1, set1)).toBe(true);
     });
 
     test('when Array contains all of the same nested members of given set', () => {
-      expect(predicate([{ hello: 'world' }, { foo: 'bar' }], [{ foo: 'bar' }])).toBe(true);
+      expect(predicate(equals, [{ hello: 'world' }, { foo: 'bar' }], [{ foo: 'bar' }])).toBe(true);
     });
   });
 
   describe('returns false', () => {
     test('when Array does not contain any of the members of given set', () => {
-      expect(predicate(array2, set2)).toBe(false);
+      expect(predicate(equals, array2, set2)).toBe(false);
     });
 
     test('when Array contains does not contain all of the same nested members of given set', () => {
-      expect(predicate([{ hello: 'world' }, { foo: 'bar' }], [{ foo: 'qux' }])).toBe(false);
+      expect(predicate(equals, [{ hello: 'world' }, { foo: 'bar' }], [{ foo: 'qux' }])).toBe(false);
     });
   });
 });

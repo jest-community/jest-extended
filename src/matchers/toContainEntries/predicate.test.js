@@ -1,3 +1,4 @@
+import { equals } from 'expect/build/jasmineUtils';
 import predicate from './predicate';
 
 const data = { a: 'foo', b: 'bar', c: 'baz' };
@@ -5,7 +6,7 @@ const data = { a: 'foo', b: 'bar', c: 'baz' };
 describe('.toContainEntries', () => {
   test('passes when object contains given entry', () => {
     expect(
-      predicate(data, [
+      predicate(equals, data, [
         ['c', 'baz'],
         ['a', 'foo'],
       ]),
@@ -13,12 +14,12 @@ describe('.toContainEntries', () => {
   });
 
   test('passes when given nested values', () => {
-    expect(predicate({ hello: { message: 'world' } }, [['hello', { message: 'world' }]])).toBe(true);
+    expect(predicate(equals, { hello: { message: 'world' } }, [['hello', { message: 'world' }]])).toBe(true);
   });
 
   test('fails when object does not contain given entry', () => {
     expect(
-      predicate(data, [
+      predicate(equals, data, [
         ['a', 'qux'],
         ['b', 'bar'],
       ]),
