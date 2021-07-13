@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toIncludeAllPartialMembers fails when array values matches the members of the set 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toIncludeAllPartialMembers(</><green>expected</><dim>)</>
+
+Expected list to not have all of the following partial members:
+  <green>[{\\"foo\\": \\"bar\\"}]</>
+Received:
+  <red>[{\\"hello\\": \\"world\\"}, {\\"baz\\": \\"qux\\", \\"foo\\": \\"bar\\"}]</>"
+`;
+
+exports[`.toIncludeAllPartialMembers fails when array values do not contain any of the members of the set 1`] = `
+"<dim>expect(</><red>received</><dim>).toIncludeAllPartialMembers(</><green>expected</><dim>)</>
+
+Expected list to have all of the following partial members:
+  <green>[{\\"foo\\": \\"qux\\"}]</>
+Received:
+  <red>[{\\"hello\\": \\"world\\"}, {\\"baz\\": \\"qux\\", \\"foo\\": \\"bar\\"}]</>"
+`;
+
+exports[`.toIncludeAllPartialMembers fails when expected object is not an array 1`] = `
+"<dim>expect(</><red>received</><dim>).toIncludeAllPartialMembers(</><green>expected</><dim>)</>
+
+Expected list to have all of the following partial members:
+  <green>1</>
+Received:
+  <red>[{\\"hello\\": \\"world\\"}, {\\"baz\\": \\"qux\\", \\"foo\\": \\"bar\\"}]</>"
+`;
+
+exports[`.toIncludeAllPartialMembers fails when given object is not an array 1`] = `
+"<dim>expect(</><red>received</><dim>).toIncludeAllPartialMembers(</><green>expected</><dim>)</>
+
+Expected list to have all of the following partial members:
+  <green>[{\\"foo\\": \\"bar\\"}]</>
+Received:
+  <red>1</>"
+`;
