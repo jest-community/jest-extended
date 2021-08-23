@@ -28,7 +28,7 @@ declare namespace jest {
      * Use .toBeOneOf when checking if a value is a member of a given Array.
      * @param {Array.<*>} members
      */
-    toBeOneOf(members: any[]): R;
+    toBeOneOf<E = any>(members: E[]): R;
 
     /**
      * Use `.toBeNil` when checking a value is `null` or `undefined`.
@@ -224,14 +224,14 @@ declare namespace jest {
      *
      * @param {*} value
      */
-    toContainValue(value: any): R;
+    toContainValue<E = any>(value: E): R;
 
     /**
      * Use `.toContainValues` when checking if an object contains all of the provided values.
      *
      * @param {Array.<*>} values
      */
-    toContainValues(values: any[]): R;
+    toContainValues<E = any>(values: E[]): R;
 
     /**
      * Use `.toContainAllValues` when checking if an object only contains all of the provided values.
