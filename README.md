@@ -170,6 +170,12 @@ If your editor does not recognise the custom `jest-extended` matchers, add a `gl
 import 'jest-extended';
 ```
 
+If the above import syntax does not work, replace it with the following:
+              
+```ts
+/// <reference types="jest-extended" />           
+```  
+              
 ## Asymmetric matchers
 
 All matchers described in the API are also asymmetrical since [jest version 23](https://jestjs.io/blog/2018/05/29/jest-23-blazing-fast-delightful-testing#custom-asymmetric-matchers):
