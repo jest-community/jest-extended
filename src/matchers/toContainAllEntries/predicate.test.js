@@ -7,14 +7,32 @@ describe('.toContainAllEntries', () => {
     expect(predicate({ hello: { message: 'world' } }, [['hello', { message: 'world' }]])).toBe(true);
   });
   test('passes when object only contains all of the given entries', () => {
-    expect(predicate(data, [['a', 'foo'], ['b', 'bar'], ['c', 'baz']])).toBe(true);
+    expect(
+      predicate(data, [
+        ['a', 'foo'],
+        ['b', 'bar'],
+        ['c', 'baz'],
+      ]),
+    ).toBe(true);
   });
 
   test('fails when object does not only contain all of the given entries', () => {
-    expect(predicate(data, [['a', 'foo'], ['b', 'bar']])).toBe(false);
+    expect(
+      predicate(data, [
+        ['a', 'foo'],
+        ['b', 'bar'],
+      ]),
+    ).toBe(false);
   });
 
   test('fails when object does not contain all of the given entries', () => {
-    expect(predicate(data, [['a', 'foo'], ['b', 'bar'], ['c', 'baz'], ['d', 'qux']])).toBe(false);
+    expect(
+      predicate(data, [
+        ['a', 'foo'],
+        ['b', 'bar'],
+        ['c', 'baz'],
+        ['d', 'qux'],
+      ]),
+    ).toBe(false);
   });
 });

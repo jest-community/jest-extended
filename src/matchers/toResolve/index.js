@@ -15,5 +15,5 @@ export default {
       return { pass: true, message: passMessage };
     }
     return { pass: false, message: failMessage };
-  }
+  },
 };

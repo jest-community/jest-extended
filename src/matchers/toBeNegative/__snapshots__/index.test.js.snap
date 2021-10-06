@@ -1,21 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toBeNegative fails when given negative number 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBeNegative(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).not.toBeNegative()</>
 
 Expected value to not be a negative number received:
   <red>-1</>"
 `;
 
 exports[`.toBeNegative fails when given Infinity 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeNegative(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeNegative()</>
 
 Expected value to be a negative number received:
   <red>Infinity</>"
 `;
 
 exports[`.toBeNegative fails when given positive number 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeNegative(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeNegative()</>
 
 Expected value to be a negative number received:
   <red>1</>"

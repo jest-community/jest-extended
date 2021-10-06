@@ -1,21 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toBeFinite fails when given a finite number 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBeFinite(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).not.toBeFinite()</>
 
 Expected value to not be finite received:
   <red>1</>"
 `;
 
 exports[`.toBeFinite fails when not given Infinity 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeFinite(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeFinite()</>
 
 Expected value to be finite received:
   <red>Infinity</>"
 `;
 
 exports[`.toBeFinite fails when not given NaN 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeFinite(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeFinite()</>
 
 Expected value to be finite received:
   <red>NaN</>"
