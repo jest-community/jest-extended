@@ -60,7 +60,7 @@ describe('.not.toIncludeAnyMembers', () => {
   test('fails when given array contains object value', () => {
     expect(() => expect([{ foo: 'bar' }]).not.toIncludeAnyMembers([{ foo: 'bar' }])).toThrowErrorMatchingSnapshot();
     expect(() =>
-      expect(new Set([{ foo: 'bar' }])).not.toIncludeAnyMembers([{ foo: 'bar' }])
+      expect(new Set([{ foo: 'bar' }])).not.toIncludeAnyMembers([{ foo: 'bar' }]),
     ).toThrowErrorMatchingSnapshot();
   });
 
