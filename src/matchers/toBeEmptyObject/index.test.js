@@ -1,5 +1,3 @@
-import each from 'jest-each';
-
 import matcher from './';
 
 expect.extend(matcher);
