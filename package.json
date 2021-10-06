@@ -48,7 +48,7 @@
     "eslint-plugin-jest": "^24.3.6",
     "eslint-plugin-prettier": "^4.0.0",
     "husky": "^7.0.1",
-    "import-all.macro": "^2.0.3",
+    "import-all.macro": "^3.0.0",
     "jest": "^24.0.0",
     "jest-watch-typeahead": "^0.6.0",
     "lint-staged": "^11.0.0",
