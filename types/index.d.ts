@@ -119,6 +119,13 @@ declare namespace jest {
     toBeFunction(): R;
 
     /**
+    * Use `.toBeDateString` when checking if a value is a valid date string.
+    *
+    * @param {String} string
+    */
+    toBeDateString(string: string): R;
+
+    /**
      * Use `.toBeHexadecimal` when checking if a value is a valid HTML hex color.
      *
      * @param {String} string
@@ -478,6 +485,13 @@ declare namespace jest {
      * Use `.toBeFunction` when checking if a value is a `Function`.
      */
     toBeFunction(): any;
+
+    /**
+    * Use `.toBeDateString` when checking if a value is a valid date string.
+    *
+    * @param {String} string
+    */
+    toBeDateString(string: string): any;
 
     /**
      * Use `.toBeHexadecimal` when checking if a value is a valid HTML hex color.
