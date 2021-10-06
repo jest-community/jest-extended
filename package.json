@@ -53,7 +53,7 @@
     "jest-watch-typeahead": "^0.6.0",
     "lint-staged": "^11.0.0",
     "prettier": "^2.3.2",
-    "pretty-format": "^22.1.0"
+    "pretty-format": "^24.9.0"
   },
   "dependencies": {
     "expect": "^24.1.0",
@@ -77,7 +77,7 @@
       "/node_modules/"
     ],
     "snapshotSerializers": [
-      "pretty-format/build/plugins/convert_ansi.js"
+      "pretty-format/build/plugins/ConvertAnsi.js"
     ],
     "coverageThreshold": {
       "global": {
