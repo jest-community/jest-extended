@@ -77,7 +77,7 @@
       "/node_modules/"
     ],
     "snapshotSerializers": [
-      "pretty-format/build/plugins/convertAnsi.js"
+      "pretty-format/build/plugins/ConvertAnsi.js"
     ],
     "coverageThreshold": {
       "global": {
