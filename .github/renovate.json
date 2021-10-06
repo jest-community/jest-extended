@@ -1,0 +1,6 @@
+{
+  "extends": ["config:base"],
+  "lockFileMaintenance": { "enabled": true, "automerge": true },
+  "rangeStrategy": "replace",
+  "postUpdateOptions": ["yarnDedupeHighest"]
+}

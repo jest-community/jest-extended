@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.toThrowWithMessage fails when a callback function is not a function 1`] = `
-"<dim>expect(</><red>function</><dim>).toThrowWithMessage(</><green>type</>, <green>message</><dim>)</>
+"<dim>expect(</><red>function</><dim>).toThrowWithMessage(</><green>type</><dim>, </><green>message</><dim>)</>
 
 Received value must be a function but instead \\"2\\" was found"
 `;
@@ -12,7 +12,7 @@ But it didn't throw anything."
 `;
 
 exports[`.toThrowWithMessage fails when a wrong type of error is thrown 1`] = `
-"<dim>expect(</><red>function</><dim>).toThrowWithMessage(</><green>type</>, <green>message</><dim>)</>
+"<dim>expect(</><red>function</><dim>).toThrowWithMessage(</><green>type</><dim>, </><green>message</><dim>)</>
 
 Expected to throw:
   <green>[TypeError: Expected message]</>
@@ -22,19 +22,19 @@ Thrown:
 `;
 
 exports[`.toThrowWithMessage fails when callback function is not provided 1`] = `
-"<dim>expect(</><red>function</><dim>).toThrowWithMessage(</><green>type</>, <green>message</><dim>)</>
+"<dim>expect(</><red>function</><dim>).toThrowWithMessage(</><green>type</><dim>, </><green>message</><dim>)</>
 
 Received value must be a function but instead \\"undefined\\" was found"
 `;
 
 exports[`.toThrowWithMessage fails when error message is not provided 1`] = `
-"<dim>expect(</><red>function</><dim>).toThrowWithMessage(</><green>type</>, <green>message</><dim>)</>
+"<dim>expect(</><red>function</><dim>).toThrowWithMessage(</><green>type</><dim>, </><green>message</><dim>)</>
 
  Message argument is required. "
 `;
 
 exports[`.toThrowWithMessage fails when error message provided is not a string or regex 1`] = `
-"<dim>expect(</><red>function</><dim>).toThrowWithMessage(</><green>type</>, <green>message</><dim>)</>
+"<dim>expect(</><red>function</><dim>).toThrowWithMessage(</><green>type</><dim>, </><green>message</><dim>)</>
 
 Unexpected argument for message
 Expected: \\"string\\" or \\"regexp
@@ -42,13 +42,13 @@ Got: \\"2\\""
 `;
 
 exports[`.toThrowWithMessage fails when error type is not provided 1`] = `
-"<dim>expect(</><red>function</><dim>).toThrowWithMessage(</><green>type</>, <green>message</><dim>)</>
+"<dim>expect(</><red>function</><dim>).toThrowWithMessage(</><green>type</><dim>, </><green>message</><dim>)</>
 
 Expected type to be a function but instead \\"undefined\\" was found"
 `;
 
 exports[`.toThrowWithMessage passes when given an Error with a regex error message 1`] = `
-"<dim>expect(</><red>function</><dim>).not.toThrowWithMessage(</><green>type</>, <green>message</><dim>)</>
+"<dim>expect(</><red>function</><dim>).not.toThrowWithMessage(</><green>type</><dim>, </><green>message</><dim>)</>
 
 Expected not to throw:
   <green>[TypeError: /Expected message/]</>
@@ -58,7 +58,7 @@ Thrown:
 `;
 
 exports[`.toThrowWithMessage passes when given an Error with a string error message 1`] = `
-"<dim>expect(</><red>function</><dim>).not.toThrowWithMessage(</><green>type</>, <green>message</><dim>)</>
+"<dim>expect(</><red>function</><dim>).not.toThrowWithMessage(</><green>type</><dim>, </><green>message</><dim>)</>
 
 Expected not to throw:
   <green>[TypeError: Expected message]</>
