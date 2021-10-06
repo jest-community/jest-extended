@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toBeDateString fails when given a date string 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBeDateString(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).not.toBeDateString()</>
 
 Expected value to not be a date string received:
   <red>\\"2018-01-01T13:00:00.000Z\\"</>"
 `;
 
 exports[`.toBeDateString fails when not given a date string 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeDateString(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeDateString()</>
 
 Expected value to be a date string received:
   <red>\\"not a date\\"</>"
