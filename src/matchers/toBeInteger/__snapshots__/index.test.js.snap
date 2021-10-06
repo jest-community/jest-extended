@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toBeInteger fails when given integer 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBeInteger(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).not.toBeInteger()</>
 
 Expected value to not be an integer received:
   <red>1</>"
 `;
 
 exports[`.toBeInteger fails when given fraction 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeInteger(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeInteger()</>
 
 Expected value to be an integer received:
   <red>1.5</>"
