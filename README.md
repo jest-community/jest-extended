@@ -125,40 +125,13 @@ yarn add -D jest-extended
 
 ## Setup
 
-### Jest >v24
+Note that `jest-extended` only supports Jest version 24 and newer.
 
 Add `jest-extended` to your Jest `setupFilesAfterEnv` configuration. [See for help](https://jestjs.io/docs/en/configuration.html#setupfilesafterenv-array)
 
 ```json
 "jest": {
   "setupFilesAfterEnv": ["jest-extended"]
-}
-```
-
-### Jest <v23
-
-```json
-"jest": {
-  "setupTestFrameworkScriptFile": "jest-extended"
-}
-```
-
-If you are already using another test framework, like [jest-chain](https://github.com/mattphillips/jest-chain), then you should create a test setup file and `require` each of the frameworks you are using.
-
-For example:
-
-```js
-// ./testSetup.js
-require('jest-extended');
-require('jest-chain');
-require('any other test framework libraries you are using');
-```
-
-Then in your Jest config:
-
-```json
-"jest": {
-  "setupTestFrameworkScriptFile": "./testSetup.js"
 }
 ```
 
