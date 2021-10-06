@@ -27,7 +27,6 @@ jobs:
           cache: yarn
       - name: install with jest@${{ matrix.jest-version }}
         run: yarn add --dev jest@${{ matrix.jest-version }} babel-jest@${{ matrix.jest-version }} pretty-format@${{ matrix.jest-version }} @types/jest@${{ matrix.jest-version }}
-      - run: yarn lint
       - run: yarn test:coverage
       - uses: codecov/codecov-action@v2
 
@@ -46,6 +45,16 @@ jobs:
           node-version: 14.x
           cache: yarn
       - run: yarn install
-      - run: yarn lint
       - run: yarn test:coverage
       - uses: codecov/codecov-action@v2
+
+  lint:
+    name: Run ESLint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+          cache: yarn
+      - run: yarn lint
