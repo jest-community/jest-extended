@@ -1,5 +1,3 @@
-import each from 'jest-each';
-
 import matcher from './';
 
 expect.extend(matcher);
@@ -15,7 +13,7 @@ describe('.toBeFunction', () => {
 });
 
 describe('.not.toBeFunction', () => {
-  each([[false], [''], [0], [{}], [[]], [undefined], [null], [NaN]]).test(
+  test.each([[false], [''], [0], [{}], [[]], [undefined], [null], [NaN]])(
     'passes when not given a function: %s',
     given => {
       expect(given).not.toBeFunction();

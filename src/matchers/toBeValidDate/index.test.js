@@ -1,5 +1,3 @@
-import each from 'jest-each';
-
 import matcher from './';
 
 expect.extend(matcher);
@@ -19,7 +17,7 @@ describe('.toBeValidDate', () => {
 });
 
 describe('.not.toBeValidDate', () => {
-  each([
+  test.each([
     [new Date('01/90/2018')],
     [new Date('32/01/2018')],
     [false],
@@ -31,7 +29,7 @@ describe('.not.toBeValidDate', () => {
     [undefined],
     [null],
     [NaN],
-  ]).test('passes when not given a date: %s', given => {
+  ])('passes when not given a date: %s', given => {
     expect(given).not.toBeValidDate();
   });
 

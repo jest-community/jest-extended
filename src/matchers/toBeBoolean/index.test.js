@@ -1,5 +1,3 @@
-import each from 'jest-each';
-
 import matcher from './';
 
 expect.extend(matcher);
@@ -27,7 +25,7 @@ describe('.toBeBoolean', () => {
 });
 
 describe('.not.toBeBoolean', () => {
-  each([['true'], [0], [{}], [[]], [() => {}], [undefined], [null], [NaN]]).test(
+  test.each([['true'], [0], [{}], [[]], [() => {}], [undefined], [null], [NaN]])(
     'passes when item is not of type boolean: %s',
     given => {
       expect(given).not.toBeBoolean();

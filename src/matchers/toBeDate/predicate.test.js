@@ -1,4 +1,3 @@
-import each from 'jest-each';
 import predicate from './predicate';
 
 describe('toBeDate Predicate', () => {
@@ -6,7 +5,7 @@ describe('toBeDate Predicate', () => {
     expect(predicate(new Date('12/25/2017'))).toBe(true);
   });
 
-  each([[true], [false], [''], [0], [{}], [() => {}], [undefined], [null], [NaN]]).test(
+  test.each([[true], [false], [''], [0], [{}], [() => {}], [undefined], [null], [NaN]])(
     'returns false when given: %s',
     given => {
       expect(predicate(given)).toBe(false);
