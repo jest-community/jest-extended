@@ -1,5 +1,3 @@
-import each from 'jest-each';
-
 import matcher from './';
 
 expect.extend(matcher);
@@ -22,7 +20,7 @@ describe('.toBeArrayOfSize', () => {
     expect(() => expect(false).toBeArrayOfSize(1)).toThrowErrorMatchingSnapshot();
   });
 
-  each([[false], [true], [0], [{}], [() => {}], [undefined], [null], [NaN]]).test(
+  test.each([[false], [true], [0], [{}], [() => {}], [undefined], [null], [NaN]])(
     'fails when given type of %s which is not an array',
     given => {
       expect(() => expect(given).toBeArrayOfSize(1)).toThrowErrorMatchingSnapshot();
@@ -43,12 +41,9 @@ describe('.toBeArrayOfSize', () => {
 });
 
 describe('.not.toBeArrayOfSize', () => {
-  each([[false], [true], [0], [{}], [() => {}], [undefined], [null], [NaN]]).test(
-    'passes when not given an array: %s',
-    given => {
-      expect(given).not.toBeArrayOfSize(2);
-    },
-  );
+  test.each([false, true, 0, {}, () => {}, undefined, null, NaN])('passes when not given an array: %s', given => {
+    expect(given).not.toBeArrayOfSize(2);
+  });
   {
     const size = 0;
     test(`fails when given an array of size ${size}`, () => {

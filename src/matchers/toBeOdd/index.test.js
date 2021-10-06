@@ -1,5 +1,3 @@
-import each from 'jest-each';
-
 import matcher from './';
 
 expect.extend(matcher);
@@ -9,7 +7,7 @@ describe('.toBeOdd', () => {
     expect(1).toBeOdd();
   });
 
-  each([[false], [true], [''], [2], [{}], [() => {}], [undefined], [null], [NaN]]).test(
+  test.each([[false], [true], [''], [2], [{}], [() => {}], [undefined], [null], [NaN]])(
     'fails when given not given an odd number',
     given => {
       expect(() => expect(given).toBeOdd()).toThrowErrorMatchingSnapshot();
@@ -18,7 +16,7 @@ describe('.toBeOdd', () => {
 });
 
 describe('.not.toBeOdd', () => {
-  each([[false], [true], [''], [2], [[]], [{}], [() => {}], [undefined], [null], [NaN]]).test(
+  test.each([[false], [true], [''], [2], [[]], [{}], [() => {}], [undefined], [null], [NaN]])(
     'passes when not given an odd number: %s',
     given => {
       expect(given).not.toBeOdd();

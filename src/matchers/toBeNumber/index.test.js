@@ -1,17 +1,15 @@
-import each from 'jest-each';
-
 import matcher from './';
 
 expect.extend(matcher);
 
 describe('.toBeNumber', () => {
-  each`
-  number
-  ${10}
-  ${NaN}
-  ${Infinity}
-  ${-Infinity}
-  `.test('passes when given: $number', ({ number }) => {
+  test.each`
+    number
+    ${10}
+    ${NaN}
+    ${Infinity}
+    ${-Infinity}
+  `('passes when given: $number', ({ number }) => {
     expect(number).toBeNumber();
   });
 
@@ -21,7 +19,7 @@ describe('.toBeNumber', () => {
 });
 
 describe('.not.toBeNumber', () => {
-  each([[false], [true], [[]], [{}], [() => {}], [undefined], [null], ['10']]).test(
+  test.each([[false], [true], [[]], [{}], [() => {}], [undefined], [null], ['10']])(
     'passes when not given a number: %s',
     given => {
       expect(given).not.toBeNumber();
