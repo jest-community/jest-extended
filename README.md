@@ -78,6 +78,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toBeEven()](#tobeeven)
     - [.toBeOdd()](#tobeodd)
     - [.toBeWithin(start, end)](#tobewithinstart-end)
+    - [.toBeWithinPercent(mid, percent)](#tobewithinpercentmid-percent)
   - [Object](#object)
     - [.toBeObject()](#tobeobject)
     - [.toContainKey(key)](#tocontainkeykey)
@@ -574,6 +575,18 @@ test('passes when number is within given bounds', () => {
 });
 ```
 
+#### .toBeWithinPercent(mid, percent)
+
+Use `.toBeWithinPercent` when checking if a number is within x percent of a target number.
+
+```js
+test('passes when number is within x percent of target', () => {
+  expect(55).toBeWithinPercent(50, 10);
+  expect(20).toBeWithinPercent(10, 100);
+  expect(100).not.toBeWithinPercent(10, 5);
+});
+```
+
 ### Object
 
 #### .toBeObject()
@@ -612,6 +625,25 @@ test('passes when object contains all keys', () => {
   expect(o).toContainKeys(['a', 'b']);
   expect(o).toContainKeys(['b', 'c']);
   expect(o).not.toContainKeys(['d']);
+});
+```
+
+#### .toContainKeysWithinPercent([keyObjects])
+
+Use `.toContainKeysWithinPercent` when checking if an object has all of the provided keys and that the value of these keys is within x percent of a target value.
+
+```js
+test('passes when object contains all keys', () => {
+  const data1 = { a: 55, b: 1 };
+  const data2 = { a: 45, b: 1 }
+  const data3 = { a: 20, b: 2 }
+  const data4 = { a: 50 }
+  const keys = [{key: "a", target: 50, percent: 10}, {key: "b", target: 1, percent: 0}]
+
+  expect(data1).toContainKeysWithinPercent(keys);
+  expect(data2).toContainKeysWithinPercent(keys);
+  expect(data3).not.toContainKeysWithinPercent(keys);
+  expect(data4).not.toContainKeysWithinPercent(keys);
 });
 ```
 
