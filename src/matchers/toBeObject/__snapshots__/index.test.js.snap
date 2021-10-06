@@ -14,18 +14,25 @@ Expected value to be an object, received:
   <red>\\"\\"</>"
 `;
 
+exports[`.toBeObject fails when not given an object: () => {} 1`] = `
+"<dim>expect(</><red>received</><dim>).toBeObject(</><dim>)</>
+
+Expected value to be an object, received:
+  <red>[Function anonymous]</>"
+`;
+
+exports[`.toBeObject fails when not given an object: [ 1, 2, 3 ] 1`] = `
+"<dim>expect(</><red>received</><dim>).toBeObject(</><dim>)</>
+
+Expected value to be an object, received:
+  <red>[1, 2, 3]</>"
+`;
+
 exports[`.toBeObject fails when not given an object: 0 1`] = `
 "<dim>expect(</><red>received</><dim>).toBeObject(</><dim>)</>
 
 Expected value to be an object, received:
   <red>0</>"
-`;
-
-exports[`.toBeObject fails when not given an object: 1,2,3 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeObject(</><dim>)</>
-
-Expected value to be an object, received:
-  <red>[1, 2, 3]</>"
 `;
 
 exports[`.toBeObject fails when not given an object: NaN 1`] = `
@@ -43,13 +50,6 @@ Expected value to be an object, received:
 `;
 
 exports[`.toBeObject fails when not given an object: undefined 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeObject(</><dim>)</>
-
-Expected value to be an object, received:
-  <red>[Function anonymous]</>"
-`;
-
-exports[`.toBeObject fails when not given an object: undefined 2`] = `
 "<dim>expect(</><red>received</><dim>).toBeObject(</><dim>)</>
 
 Expected value to be an object, received:

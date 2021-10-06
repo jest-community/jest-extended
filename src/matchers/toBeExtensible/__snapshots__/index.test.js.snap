@@ -1,6 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`.not.toBeExtensible fails when given an extensible object:  1`] = `
+exports[`.not.toBeExtensible fails when given an extensible object: () => {} 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toBeExtensible(</><dim>)</>
+
+Expected value to not be extensible received:
+  <green>[Function anonymous]</>
+"
+`;
+
+exports[`.not.toBeExtensible fails when given an extensible object: [] 1`] = `
 "<dim>expect(</><red>received</><dim>).not.toBeExtensible(</><dim>)</>
 
 Expected value to not be extensible received:
@@ -8,19 +16,11 @@ Expected value to not be extensible received:
 "
 `;
 
-exports[`.not.toBeExtensible fails when given an extensible object: [object Object] 1`] = `
+exports[`.not.toBeExtensible fails when given an extensible object: {} 1`] = `
 "<dim>expect(</><red>received</><dim>).not.toBeExtensible(</><dim>)</>
 
 Expected value to not be extensible received:
   <green>{}</>
-"
-`;
-
-exports[`.not.toBeExtensible fails when given an extensible object: undefined 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBeExtensible(</><dim>)</>
-
-Expected value to not be extensible received:
-  <green>[Function anonymous]</>
 "
 `;
 
@@ -31,14 +31,14 @@ Expected value to be extensible received:
   <red>\\"\\"</>"
 `;
 
-exports[`.toBeExtensible fails when not given an extensible object: [object Object] 1`] = `
+exports[`.toBeExtensible fails when not given an extensible object: {} 1`] = `
 "<dim>expect(</><red>received</><dim>).toBeExtensible(</><dim>)</>
 
 Expected value to be extensible received:
   <red>{}</>"
 `;
 
-exports[`.toBeExtensible fails when not given an extensible object: [object Object] 2`] = `
+exports[`.toBeExtensible fails when not given an extensible object: {} 2`] = `
 "<dim>expect(</><red>received</><dim>).toBeExtensible(</><dim>)</>
 
 Expected value to be extensible received:
