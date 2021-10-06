@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toBeHexadecimal fails when given valid hexadecimal 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBeHexadecimal(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).not.toBeHexadecimal()</>
 
 Expected value to not be a hexadecimal, received:
   <red>\\"#eeffee\\"</>"
 `;
 
 exports[`.toBeHexadecimal fails when given non-string 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeHexadecimal(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeHexadecimal()</>
 
 Expected value to be a hexadecimal, received:
   <red>true</>"

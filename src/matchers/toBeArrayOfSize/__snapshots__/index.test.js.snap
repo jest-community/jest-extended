@@ -20,7 +20,17 @@ Received:
   length: <red>\\"Not Accessible\\"</>"
 `;
 
-exports[`.toBeArrayOfSize fails when given type of [object Object] which is not an array 1`] = `
+exports[`.toBeArrayOfSize fails when given type of () => {} which is not an array 1`] = `
+"<dim>expect(</><red>received</><dim>).toBeArrayOfSize(</><green>expected</><dim>)</>
+
+Expected value to be an array of size:
+  <green>1</>
+Received:
+  value: <red>[Function anonymous]</>
+  length: <red>\\"Not Accessible\\"</>"
+`;
+
+exports[`.toBeArrayOfSize fails when given type of {} which is not an array 1`] = `
 "<dim>expect(</><red>received</><dim>).toBeArrayOfSize(</><green>expected</><dim>)</>
 
 Expected value to be an array of size:
@@ -81,16 +91,6 @@ Received:
 `;
 
 exports[`.toBeArrayOfSize fails when given type of undefined which is not an array 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeArrayOfSize(</><green>expected</><dim>)</>
-
-Expected value to be an array of size:
-  <green>1</>
-Received:
-  value: <red>[Function anonymous]</>
-  length: <red>\\"Not Accessible\\"</>"
-`;
-
-exports[`.toBeArrayOfSize fails when given type of undefined which is not an array 2`] = `
 "<dim>expect(</><red>received</><dim>).toBeArrayOfSize(</><green>expected</><dim>)</>
 
 Expected value to be an array of size:
