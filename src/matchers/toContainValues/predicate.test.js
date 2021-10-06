@@ -4,15 +4,15 @@ describe('toContainValue Predicate', () => {
   const shallow = {
     hello: 'world',
     foo: 0,
-    bar: false
+    bar: false,
   };
   const deep = {
     message: shallow,
-    donald: 'duck'
+    donald: 'duck',
   };
   const deepArray = {
     message: [shallow],
-    donald: 'duck'
+    donald: 'duck',
   };
 
   describe('returns true', () => {

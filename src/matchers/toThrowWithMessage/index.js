@@ -26,21 +26,21 @@ export default {
     if (!callback || typeof callback !== 'function') {
       return {
         pass: false,
-        message: () => positiveHint + '\n\n' + `Received value must be a function but instead "${callback}" was found`
+        message: () => positiveHint + '\n\n' + `Received value must be a function but instead "${callback}" was found`,
       };
     }
 
     if (!type || typeof type !== 'function') {
       return {
         pass: false,
-        message: () => positiveHint + '\n\n' + `Expected type to be a function but instead "${type}" was found`
+        message: () => positiveHint + '\n\n' + `Expected type to be a function but instead "${type}" was found`,
       };
     }
 
     if (!message) {
       return {
         pass: false,
-        message: () => positiveHint + '\n\n' + ' Message argument is required. '
+        message: () => positiveHint + '\n\n' + ' Message argument is required. ',
       };
     }
 
@@ -52,7 +52,7 @@ export default {
           '\n\n' +
           'Unexpected argument for message\n' +
           'Expected: "string" or "regexp\n' +
-          `Got: "${message}"`
+          `Got: "${message}"`,
       };
     }
 
@@ -66,7 +66,7 @@ export default {
     if (!error) {
       return {
         pass: false,
-        message: () => 'Expected the function to throw an error.\n' + "But it didn't throw anything."
+        message: () => 'Expected the function to throw an error.\n' + "But it didn't throw anything.",
       };
     }
 
@@ -76,5 +76,5 @@ export default {
     }
 
     return { pass: false, message: failMessage(error, new type(message)) };
-  }
+  },
 };

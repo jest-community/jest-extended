@@ -1,16 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toBeValidDate fails when given a valid date value 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBeValidDate(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).not.toBeValidDate()</>
 
 Expected value to not be a valid date received:
   <red>2018-01-01T13:00:00.000Z</>"
 `;
 
-exports[`.toBeValidDate fails when given an invalid date 1`] = `"Invalid time value"`;
+exports[`.toBeValidDate fails when given an invalid date 1`] = `
+"<dim>expect(</><red>received</><dim>).toBeValidDate()</>
+
+Expected value to be a valid date received:
+  <red>Date { NaN }</>"
+`;
 
 exports[`.toBeValidDate fails when not given non-date values 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeValidDate(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeValidDate()</>
 
 Expected value to be a valid date received:
   <red>1</>"
