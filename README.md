@@ -125,7 +125,7 @@ yarn add -D jest-extended
 
 ## Setup
 
-Note that `jest-extended` only supports Jest version 24 and newer
+Note that `jest-extended` only supports Jest version 24 and newer.
 
 Add `jest-extended` to your Jest `setupFilesAfterEnv` configuration. [See for help](https://jestjs.io/docs/en/configuration.html#setupfilesafterenv-array)
 
