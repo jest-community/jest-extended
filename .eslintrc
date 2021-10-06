@@ -1,5 +1,9 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
   "env": {
     "node": true,
     "es6": true,
@@ -11,19 +15,13 @@
     "it": true,
     "expect": true
   },
-  "plugins": [
-    "eslint-plugin-import",
-    "import",
-    "jest"
-  ],
-  "extends": "eslint:recommended",
+  "plugins": ["eslint-plugin-import", "import", "jest", "prettier"],
+  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
   "rules": {
-    "comma-spacing": [1, {"before": false, "after": true}],
+    "comma-spacing": [1, { "before": false, "after": true }],
     "eol-last": 1,
     "import/extensions": 1,
-    "import/order": ["warn", {
-      "groups": ["builtin", "external", "internal", "parent", "sibling", "index"]
-    }],
+    "import/order": ["warn", { "groups": ["builtin", "external", "internal", "parent", "sibling", "index"] }],
     "import/no-unresolved": ["error", { "commonjs": true, "caseSensitive": true }],
     "indent": ["warn", 2],
     "jest/no-disabled-tests": "warn",
@@ -36,6 +34,7 @@
     "no-trailing-spaces": 1,
     "object-curly-spacing": [1, "always"],
     "quotes": ["warn", "single", { "avoidEscape": true }],
-    "semi": 1
+    "semi": 1,
+    "prettier/prettier": "error"
   }
 }

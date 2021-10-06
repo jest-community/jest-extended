@@ -1,4 +1,3 @@
-import each from 'jest-each';
 import predicate from './predicate';
 
 describe('toIncludeAnyMembers Predicate', () => {
@@ -6,13 +5,13 @@ describe('toIncludeAnyMembers Predicate', () => {
   const shallow = { hello: 'world' };
 
   describe('returns true', () => {
-    each([['world'], [false], [undefined], [null], [''], [0]]).test(
+    test.each([['world'], [false], [undefined], [null], [''], [0]])(
       'when given array contains primitive value: %s',
       given => {
         expect(predicate([given], array)).toBe(true);
         expect(predicate(new Set([given]), array)).toBe(true);
         expect(predicate(new Set([given]), new Set(array))).toBe(true);
-      }
+      },
     );
 
     test('when given array contains object value', () => {

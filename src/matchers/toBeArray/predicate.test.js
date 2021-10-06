@@ -1,4 +1,3 @@
-import each from 'jest-each';
 import predicate from './predicate';
 
 describe('toBeArray Predicate', () => {
@@ -6,10 +5,10 @@ describe('toBeArray Predicate', () => {
     expect(predicate(['an array'])).toBe(true);
   });
 
-  each([[false], [''], [0], [{}], [() => {}], [undefined], [null], [NaN]]).test(
+  test.each([[false], [''], [0], [{}], [() => {}], [undefined], [null], [NaN]])(
     'returns false when given: %s',
     given => {
       expect(predicate(given)).toBe(false);
-    }
+    },
   );
 });
