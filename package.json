@@ -56,9 +56,9 @@
     "pretty-format": "^27.2.4"
   },
   "dependencies": {
-    "expect": "^24.1.0",
-    "jest-get-type": "^22.4.3",
-    "jest-matcher-utils": "^22.0.0"
+    "expect": "^26.6.2",
+    "jest-get-type": "^27.0.6",
+    "jest-matcher-utils": "^27.2.4"
   },
   "engines": {
     "node": "^12.13.0 || ^14.15.0 || >=16.0.0"
