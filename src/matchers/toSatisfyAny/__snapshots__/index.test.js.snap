@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toSatisfyAll fails when any value satisfies predicate 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toSatisfyAny(</><green>expected</><dim>)</>
+
+Expected array to not satisfy predicate for any value:
+  <green>[Function isOdd]</>
+Received:
+  <red>[2, 3, 6, 8]</>"
+`;
+
+exports[`.toSatisfyAny fails when no value satisfies the predicate 1`] = `
+"<dim>expect(</><red>received</><dim>).toSatisfyAny(</><green>expected</><dim>)</>
+
+Expected array to satisfy predicate for any values:
+  <green>[Function isOdd]</>
+Received:
+  <red>[2, 4, 6, 8]</>"
+`;

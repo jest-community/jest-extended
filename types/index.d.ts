@@ -89,6 +89,12 @@ declare namespace jest {
     toSatisfyAll<E = any>(predicate: (x: E) => boolean): R;
 
     /**
+     * Use `.toSatisfyAny` when you want to use a custom matcher by supplying a predicate function that returns `true` for any matching value in an array.
+     * @param {Function} predicate
+     */
+    toSatisfyAny(predicate: (x: any) => boolean): R;
+
+    /**
      * Use `.toBeBoolean` when checking if a value is a `Boolean`.
      */
     toBeBoolean(): R;
@@ -455,6 +461,12 @@ declare namespace jest {
      * @param {Function} predicate
      */
     toSatisfyAll<E = any>(predicate: (x: E) => boolean): any;
+
+    /**
+     * Use `.toSatisfyAny` when you want to use a custom matcher by supplying a predicate function that returns `true` for any matching value in an array.
+     * @param {Function} predicate
+     */
+    toSatisfyAny(predicate: (x: any) => boolean): any;
 
     /**
      * Use `.toBeBoolean` when checking if a value is a `Boolean`.
