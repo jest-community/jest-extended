@@ -14,6 +14,6 @@ describe('.toContainKeys', () => {
   test('does not throw when object is undefined', () => {
     expect(() => {
       predicate(undefined, ['d']);
-    }).not.toThrow("Cannot read property 'hasOwnProperty' of undefined");
+    }).not.toThrow();
   });
 });
