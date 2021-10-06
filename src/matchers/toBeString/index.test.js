@@ -1,5 +1,3 @@
-import each from 'jest-each';
-
 import matcher from './';
 
 expect.extend(matcher);
@@ -19,18 +17,12 @@ describe('.toBeString', () => {
 });
 
 describe('.not.toBeString', () => {
-  each([
-    [false],
-    [0],
-    [{}],
-    [[]],
-    [() => {}],
-    [undefined],
-    [null],
-    [NaN]
-  ]).test('passes when not item is not of type string: %s', given => {
-    expect(given).not.toBeString();
-  });
+  test.each([[false], [0], [{}], [[]], [() => {}], [undefined], [null], [NaN]])(
+    'passes when not item is not of type string: %s',
+    given => {
+      expect(given).not.toBeString();
+    },
+  );
 
   test('fails when given a string literal', () => {
     expect(() => expect('').not.toBeString()).toThrowErrorMatchingSnapshot();

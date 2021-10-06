@@ -1,5 +1,3 @@
-import each from 'jest-each';
-
 import matcher from './';
 
 expect.extend(matcher);
@@ -15,11 +13,11 @@ describe('.toBeTrue', () => {
 });
 
 describe('.not.toBeTrue', () => {
-  each([[false], [''], [0], [{}], [[]], [() => {}], [undefined], [null], [NaN]]).test(
+  test.each([[false], [''], [0], [{}], [[]], [() => {}], [undefined], [null], [NaN]])(
     'passes when not given true: %s',
     given => {
       expect(given).not.toBeTrue();
-    }
+    },
   );
 
   test('fails when given true', () => {

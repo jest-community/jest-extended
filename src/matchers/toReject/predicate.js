@@ -1,1 +1,5 @@
-export default promise => promise.then(() => false, () => true);
+export default promise =>
+  promise.then(
+    () => false,
+    () => true,
+  );

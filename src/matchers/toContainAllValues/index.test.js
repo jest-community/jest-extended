@@ -5,15 +5,15 @@ expect.extend(matcher);
 const shallow = {
   hello: 'world',
   foo: 0,
-  bar: false
+  bar: false,
 };
 const deep = {
   message: shallow,
-  donald: 'duck'
+  donald: 'duck',
 };
 const deepArray = {
   message: [shallow],
-  donald: 'duck'
+  donald: 'duck',
 };
 
 describe('.toContainAllValues', () => {
@@ -62,13 +62,13 @@ describe('.not.toContainAllValues', () => {
 
   test('fails when given object contains all values including objects', () => {
     expect(() =>
-      expect(deep).not.toContainAllValues([{ hello: 'world', foo: 0, bar: false }, 'duck'])
+      expect(deep).not.toContainAllValues([{ hello: 'world', foo: 0, bar: false }, 'duck']),
     ).toThrowErrorMatchingSnapshot();
   });
 
   test('fails when given object contains all values including arrays', () => {
     expect(() =>
-      expect(deepArray).not.toContainAllValues(['duck', [{ hello: 'world', foo: 0, bar: false }]])
+      expect(deepArray).not.toContainAllValues(['duck', [{ hello: 'world', foo: 0, bar: false }]]),
     ).toThrowErrorMatchingSnapshot();
   });
 });

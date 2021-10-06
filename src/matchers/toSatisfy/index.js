@@ -24,5 +24,5 @@ export default {
     }
 
     return { pass: false, message: failMessage(actual, predicate) };
-  }
+  },
 };
