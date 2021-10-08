@@ -1,7 +1,6 @@
 {
-  "parser": "@babel/eslint-parser",
   "parserOptions": {
-    "ecmaVersion": 6,
+    "ecmaVersion": 2020,
     "sourceType": "module"
   },
   "env": {
@@ -15,7 +14,7 @@
     "it": true,
     "expect": true
   },
-  "plugins": ["eslint-plugin-import", "import", "jest", "prettier"],
+  "plugins": ["eslint-plugin-import", "import", "jest"],
   "extends": ["eslint:recommended", "plugin:prettier/recommended"],
   "rules": {
     "comma-spacing": [1, { "before": false, "after": true }],
@@ -33,8 +32,6 @@
     "no-unused-vars": 1,
     "no-trailing-spaces": 1,
     "object-curly-spacing": [1, "always"],
-    "quotes": ["warn", "single", { "avoidEscape": true }],
-    "semi": 1,
-    "prettier/prettier": "error"
+    "quotes": ["warn", "single", { "avoidEscape": true }]
   }
 }
