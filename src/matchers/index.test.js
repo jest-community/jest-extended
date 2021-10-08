@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import matchers from './index';
+import * as matchers from './index';
 
 expect.extend(matchers);
 
@@ -49,4 +49,14 @@ test('all matchers must be exported', () => {
   const directories = fs.readdirSync(__dirname).filter(dir => fs.statSync(path.join(__dirname, dir)).isDirectory());
 
   expect(Object.keys(matchers)).toHaveLength(directories.length);
+});
+
+test('all matchers must be functions', () => {
+  const matcherNames = Object.values(matchers);
+
+  expect.assertions(matcherNames.length);
+
+  matcherNames.forEach(matcher => {
+    expect(typeof matcher).toBe('function');
+  });
 });
