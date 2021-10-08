@@ -1,3 +1,5 @@
+import * as fs from 'fs';
+import * as path from 'path';
 import matchers from './index';
 
 expect.extend(matchers);
@@ -41,4 +43,10 @@ describe('asymmetric matchers', () => {
       expect('bob').toEqual(expect.not.toInclude('foo'));
     });
   });
+});
+
+test('all matchers must be exported', () => {
+  const directories = fs.readdirSync(__dirname).filter(dir => fs.statSync(path.join(__dirname, dir)).isDirectory());
+
+  expect(Object.keys(matchers)).toHaveLength(directories.length);
 });
