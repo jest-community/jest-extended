@@ -45,18 +45,16 @@ describe('asymmetric matchers', () => {
   });
 });
 
-test('all matchers must be exported', () => {
-  const directories = fs.readdirSync(__dirname).filter(dir => fs.statSync(path.join(__dirname, dir)).isDirectory());
+describe('all matchers', () => {
+  test('must be exported', () => {
+    const directories = fs.readdirSync(__dirname).filter(dir => fs.statSync(path.join(__dirname, dir)).isDirectory());
 
-  expect(Object.keys(matchers)).toHaveLength(directories.length);
-});
+    expect(Object.keys(matchers)).toHaveLength(directories.length);
+  });
 
-test('all matchers must be functions', () => {
-  const matcherNames = Object.values(matchers);
-
-  expect.assertions(matcherNames.length);
-
-  matcherNames.forEach(matcher => {
-    expect(typeof matcher).toBe('function');
+  describe('must be functions', () => {
+    test.each(Object.entries(matchers))('%s', (_, matcher) => {
+      expect(typeof matcher).toBe('function');
+    });
   });
 });
