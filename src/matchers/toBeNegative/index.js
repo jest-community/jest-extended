@@ -14,13 +14,11 @@ const failMessage = received => () =>
   'Expected value to be a negative number received:\n' +
   `  ${printReceived(received)}`;
 
-export default {
-  toBeNegative: expected => {
-    const pass = predicate(expected);
-    if (pass) {
-      return { pass: true, message: passMessage(expected) };
-    }
+export function toBeNegative(expected) {
+  const pass = predicate(expected);
+  if (pass) {
+    return { pass: true, message: passMessage(expected) };
+  }
 
-    return { pass: false, message: failMessage(expected) };
-  },
-};
+  return { pass: false, message: failMessage(expected) };
+}

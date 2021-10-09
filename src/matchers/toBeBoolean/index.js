@@ -14,13 +14,11 @@ const failMessage = received => () =>
   'Expected value to be of type boolean, received:\n' +
   `  ${printReceived(received)}`;
 
-export default {
-  toBeBoolean: received => {
-    const pass = predicate(received);
-    if (pass) {
-      return { pass: true, message: passMessage(received) };
-    }
+export function toBeBoolean(received) {
+  const pass = predicate(received);
+  if (pass) {
+    return { pass: true, message: passMessage(received) };
+  }
 
-    return { pass: false, message: failMessage(received) };
-  },
-};
+  return { pass: false, message: failMessage(received) };
+}

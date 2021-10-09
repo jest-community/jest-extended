@@ -18,15 +18,13 @@ const failMessage = (firstInvocationCallOrder, secondInvocationCallOrder) => () 
   'Received second mock with invocationCallOrder:\n' +
   `  ${printReceived(secondInvocationCallOrder)}`;
 
-export default {
-  toHaveBeenCalledAfter: (firstMock, secondMock) => {
-    const firstInvocationCallOrder = firstMock.mock.invocationCallOrder;
-    const secondInvocationCallOrder = secondMock.mock.invocationCallOrder;
-    const pass = predicate(firstInvocationCallOrder, secondInvocationCallOrder);
-    if (pass) {
-      return { pass: true, message: passMessage(firstInvocationCallOrder, secondInvocationCallOrder) };
-    }
+export function toHaveBeenCalledAfter(firstMock, secondMock) {
+  const firstInvocationCallOrder = firstMock.mock.invocationCallOrder;
+  const secondInvocationCallOrder = secondMock.mock.invocationCallOrder;
+  const pass = predicate(firstInvocationCallOrder, secondInvocationCallOrder);
+  if (pass) {
+    return { pass: true, message: passMessage(firstInvocationCallOrder, secondInvocationCallOrder) };
+  }
 
-    return { pass: false, message: failMessage(firstInvocationCallOrder, secondInvocationCallOrder) };
-  },
-};
+  return { pass: false, message: failMessage(firstInvocationCallOrder, secondInvocationCallOrder) };
+}

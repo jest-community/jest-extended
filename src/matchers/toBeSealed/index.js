@@ -6,13 +6,11 @@ const passMessage = () => () => matcherHint('.not.toBeSealed', 'received', '') +
 
 const failMessage = () => () => matcherHint('.toBeSealed', 'received', '') + '\n\nExpected object to not sealed';
 
-export default {
-  toBeSealed: expected => {
-    const pass = predicate(expected);
-    if (pass) {
-      return { pass: true, message: passMessage() };
-    }
+export function toBeSealed(expected) {
+  const pass = predicate(expected);
+  if (pass) {
+    return { pass: true, message: passMessage() };
+  }
 
-    return { pass: false, message: failMessage() };
-  },
-};
+  return { pass: false, message: failMessage() };
+}

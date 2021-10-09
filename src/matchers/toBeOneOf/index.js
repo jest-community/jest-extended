@@ -18,13 +18,11 @@ const failMessage = (item, list) => () =>
   'Received:\n' +
   `  ${printReceived(item)}`;
 
-export default {
-  toBeOneOf: (item, list) => {
-    const pass = predicate(item, list);
-    if (pass) {
-      return { pass: true, message: passMessage(item, list) };
-    }
+export function toBeOneOf(item, list) {
+  const pass = predicate(item, list);
+  if (pass) {
+    return { pass: true, message: passMessage(item, list) };
+  }
 
-    return { pass: false, message: failMessage(item, list) };
-  },
-};
+  return { pass: false, message: failMessage(item, list) };
+}
