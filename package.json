@@ -40,14 +40,12 @@
     "@types/jest": "^27.0.2",
     "babel-jest": "^27.2.4",
     "babel-jest-assertions": "^0.1.0",
-    "babel-plugin-gwt": "^1.0.0",
     "eslint": "^7.30.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jest": "^24.3.6",
     "eslint-plugin-prettier": "^4.0.0",
     "husky": "^7.0.1",
-    "import-all.macro": "^3.0.0",
     "jest": "^27.2.4",
     "jest-watch-typeahead": "^1.0.0",
     "lint-staged": "^11.0.0",
@@ -104,9 +102,7 @@
       ]
     ],
     "plugins": [
-      "module:babel-jest-assertions",
-      "gwt",
-      "macros"
+      "module:babel-jest-assertions"
     ]
   },
   "prettier": {
