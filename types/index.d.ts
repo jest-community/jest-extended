@@ -389,6 +389,25 @@ declare namespace jest {
      * Use `.toBeSymbol` when checking if a value is a `Symbol`.
      */
     toBeSymbol(): R;
+
+    /**
+     * Use `.toBeBetween` when checking if a date occurs between `startDate` and `endDate`.
+     * @param {Date} startDate
+     * @param {Date} endDate
+     */
+    toBeBetween(startDate: Date, endDate: Date): R;
+
+    /**
+     * Use `.toBeBeforeOrEqualTo` when checking if a date equals to or occurs before `date`.
+     * @param {Date} date
+     */
+    toBeBeforeOrEqualTo(date: Date): R;
+
+    /**
+     * Use `.toBeAfterOrEqualTo` when checking if a date equals to or occurs after `date`.
+     * @param {Date} date
+     */
+    toBeAfterOrEqualTo(date: Date): R;
   }
 
   // noinspection JSUnusedGlobalSymbols
