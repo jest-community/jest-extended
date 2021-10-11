@@ -10,6 +10,6 @@ describe('toBeSymbol Predicate', () => {
     'returns false when given: %s',
     given => {
       expect(predicate(given)).toBe(false);
-    }
+    },
   );
 });
