@@ -64,6 +64,9 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toBeValidDate()](#tobevaliddate)
     - [.toBeAfter(date)](#tobeafterdate)
     - [.toBeBefore(date)](#tobebeforedate)
+    - [.toBeAfterOrEqualTo(date)](#tobeafterorequaltodate)
+    - [.toBeBeforeOrEqualTo(date)](#tobebeforeorequaltodate)
+    - [.toBeBetween(startDate, endDate)](#tobebetweenstartdate-enddate)
     - Further proposals in [#117](https://github.com/jest-community/jest-extended/issues/117) PRs welcome
   - [Function](#function)
     - [.toBeFunction()](#tobefunction)
@@ -459,6 +462,42 @@ Use `.toBeBefore` when checking if a date occurs before `date`.
 test('passes when input is before date', () => {
   expect(new Date('01/01/2018')).toBeBefore(new Date('01/01/2019'));
   expect('01/01/2019').not.toBeBefore(new Date('01/01/2018'));
+});
+```
+
+### .toBeAfterOrEqualTo(date)
+
+Use `.toBeAfterOrEqualTo` when checking if a date equals to or occurs after `date`.
+
+```js
+test('passes when input is equal to or after date', () => {
+  expect(new Date('01/01/2019')).toBeAfterOrEqualTo(new Date('01/01/2018'));
+  expect(new Date('01/01/2019')).toBeAfterOrEqualTo(new Date('01/01/2019'));
+  expect('01/01/2018').not.toBeAfterOrEqualTo(new Date('01/01/2019'));
+});
+```
+
+### .toBeBeforeOrEqualTo(date)
+
+Use `.toBeBeforeOrEqualTo` when checking if a date equals to or occurs before `date`.
+
+```js
+test('passes when input is equal to or before date', () => {
+  expect(new Date('01/01/2018')).toBeBeforeOrEqualTo(new Date('01/01/2019'));
+  expect(new Date('01/01/2018')).toBeBeforeOrEqualTo(new Date('01/01/2018'));
+  expect('01/01/2019').not.toBeBeforeOrEqualTo(new Date('01/01/2018'));
+});
+```
+
+### .toBeBetween(startDate, endDate)
+
+Use `.toBeBetween` when checking if a date equals or occurs after `startDate` and equals or occurs before `endDate`.
+
+```js
+test('passes when input is in given date range', () => {
+ expect(new Date('05/01/2019')).toBeBetween(new Date('01/01/2019'), new Date('10/01/2019');
+ expect(new Date('05/01/2019')).toBeBetween(new Date('05/01/2019'), new Date('10/01/2019');
+ expect(new Date('01/01/2019')).not.toBeBetween(new Date('05/01/2019'), new Date('10/01/2019'));
 });
 ```
 

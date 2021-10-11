@@ -1,9 +1,12 @@
 export { fail } from './fail';
 export { pass } from './pass';
 export { toBeAfter } from './toBeAfter';
+export { toBeAfterOrEqualTo } from './toBeAfterOrEqualTo';
 export { toBeArray } from './toBeArray';
 export { toBeArrayOfSize } from './toBeArrayOfSize';
 export { toBeBefore } from './toBeBefore';
+export { toBeBeforeOrEqualTo } from './toBeBeforeOrEqualTo';
+export { toBeBetween } from './toBeBetween';
 export { toBeBoolean } from './toBeBoolean';
 export { toBeDate } from './toBeDate';
 export { toBeDateString } from './toBeDateString';

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toBeBefore fails when date is in given range 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toBeBetween()</>
+
+Expected date to be between <red>2019-09-01T22:00:00.000Z</> and <red>2019-09-10T22:00:00.000Z</> but received:
+  <red>2019-09-03T22:00:00.000Z</>"
+`;
+
+exports[`.toBeBetween fails when date is not in given range 1`] = `
+"<dim>expect(</><red>received</><dim>).toBeBetween()</>
+
+Expected date to be between <red>2019-09-03T22:00:00.000Z</> and <red>2019-09-10T22:00:00.000Z</> but received:
+  <red>2019-09-01T22:00:00.000Z</>"
+`;
