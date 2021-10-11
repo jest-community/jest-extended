@@ -26,5 +26,5 @@ export default {
     }
 
     return { pass: false, message: failMessage(actual, expected, occurrences) };
-  }
+  },
 };

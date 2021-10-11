@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toSatisfy fails when given a function that returns true 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toSatisfy(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).not.toSatisfy()</>
 
 Expected value to not satisfy:
   <green>[Function isTrue]</>
@@ -10,7 +10,7 @@ Received:
 `;
 
 exports[`.toSatisfy fails when given function that returns false 1`] = `
-"<dim>expect(</><red>received</><dim>).toSatisfy(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toSatisfy()</>
 
 Expected value to satisfy:
   <green>[Function is2]</>

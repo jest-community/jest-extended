@@ -1,4 +1,3 @@
-import each from 'jest-each';
 import predicate from './predicate';
 
 describe('toBeEven Predicate', () => {
@@ -10,10 +9,10 @@ describe('toBeEven Predicate', () => {
     expect(predicate(1)).toBe(false);
   });
 
-  each([[false], [''], [[]], [{}], [() => {}], [undefined], [null], [NaN]]).test(
+  test.each([[false], [''], [[]], [{}], [() => {}], [undefined], [null], [NaN]])(
     'returns false when given: %s',
     given => {
       expect(predicate(given)).toBe(false);
-    }
+    },
   );
 });
