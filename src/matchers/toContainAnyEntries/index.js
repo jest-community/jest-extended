@@ -25,5 +25,5 @@ export default {
       return { pass: true, message: passMessage(object, entries) };
     }
     return { pass: false, message: failMessage(object, entries) };
-  }
+  },
 };

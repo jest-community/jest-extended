@@ -1,21 +1,22 @@
 <div align="center">
   <h1>jest-extended</h1>
 
-  🃏💪
+🃏💪
 
-  Additional Jest matchers
+Additional Jest matchers
+
 </div>
 
 <hr />
 
-[![Build Status](https://img.shields.io/travis/jest-community/jest-extended.svg?style=flat-square)](https://travis-ci.org/jest-community/jest-extended)
+[![Build Status](https://img.shields.io/github/workflow/status/jest-community/jest-extended/GitHub%20CI/main?style=flat-square)](https://github.com/jest-community/jest-extended/actions/workflows/ci.yaml)
 [![Code Coverage](https://img.shields.io/codecov/c/github/jest-community/jest-extended.svg?style=flat-square)](https://codecov.io/github/jest-community/jest-extended)
 [![version](https://img.shields.io/npm/v/jest-extended.svg?style=flat-square)](https://www.npmjs.com/package/jest-extended)
 [![downloads](https://img.shields.io/npm/dm/jest-extended.svg?style=flat-square)](http://npm-stat.com/charts.html?package=jest-extended&from=2017-09-14)
-[![MIT License](https://img.shields.io/npm/l/jest-extended.svg?style=flat-square)](https://github.com/jest-community/jest-extended/blob/master/LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![Roadmap](https://img.shields.io/badge/%F0%9F%93%94-roadmap-CD9523.svg?style=flat-square)](https://github.com/jest-community/jest-extended/blob/master/docs/ROADMAP.md)
-[![Examples](https://img.shields.io/badge/%F0%9F%92%A1-examples-ff615b.svg?style=flat-square)](https://github.com/jest-community/jest-extended/blob/master/docs/EXAMPLES.md)
+[![MIT License](https://img.shields.io/npm/l/jest-extended.svg?style=flat-square)](https://github.com/jest-community/jest-extended/blob/main/LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](./CONTRIBUTING.md)
+[![Roadmap](https://img.shields.io/badge/%F0%9F%93%94-roadmap-CD9523.svg?style=flat-square)](https://github.com/jest-community/jest-extended/blob/main/docs/ROADMAP.md)
+[![Examples](https://img.shields.io/badge/%F0%9F%92%A1-examples-ff615b.svg?style=flat-square)](https://github.com/jest-community/jest-extended/blob/main/docs/EXAMPLES.md)
 
 ## Problem
 
@@ -39,12 +40,12 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
 - [Setup](#setup)
 - [Asymmetric matchers](#asymmetric-matchers)
 - [API](#api)
-    - [.pass(message)](#passmessage)
-    - [.fail(message)](#failmessage)
-    - [.toBeEmpty()](#tobeempty)
-    - [.toBeOneOf([members])](#tobeoneofmembers)
-    - [.toBeNil()](#tobenil)
-    - [.toSatisfy(predicate)](#tosatisfypredicate)
+  - [.pass(message)](#passmessage)
+  - [.fail(message)](#failmessage)
+  - [.toBeEmpty()](#tobeempty)
+  - [.toBeOneOf([members])](#tobeoneofmembers)
+  - [.toBeNil()](#tobenil)
+  - [.toSatisfy(predicate)](#tosatisfypredicate)
   - [Array](#array)
     - [.toBeArray()](#tobearray)
     - [.toBeArrayOfSize()](#tobearrayofsize)
@@ -52,6 +53,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toIncludeAnyMembers([members])](#toincludeanymembersmembers)
     - [.toIncludeSameMembers([members])](#toincludesamemembersmembers)
     - [.toSatisfyAll(predicate)](#tosatisfyallpredicate)
+    - [.toSatisfyAny(predicate)](#tosatisfyanypredicate)
   - [Boolean](#boolean)
     - [.toBeBoolean()](#tobeboolean)
     - [.toBeTrue()](#tobetrue)
@@ -76,9 +78,11 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toBeNegative()](#tobenegative)
     - [.toBeEven()](#tobeeven)
     - [.toBeOdd()](#tobeodd)
-    - [.toBeWithin(start, end)](#tobewithinstart--end)
+    - [.toBeWithin(start, end)](#tobewithinstart-end)
+    - [.toBeInteger()](#tobeinteger)
   - [Object](#object)
     - [.toBeObject()](#tobeobject)
+    - [.toBeEmptyObject()](#tobeemptyobject)
     - [.toContainKey(key)](#tocontainkeykey)
     - [.toContainKeys([keys])](#tocontainkeyskeys)
     - [.toContainAllKeys([keys])](#tocontainallkeyskeys)
@@ -87,10 +91,10 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toContainValues([values])](#tocontainvaluesvalues)
     - [.toContainAllValues([values])](#tocontainallvaluesvalues)
     - [.toContainAnyValues([values])](#tocontainanyvaluesvalues)
-    - [.toContainEntry([key, value])](#tocontainentrykey--value)
-    - [.toContainEntries([[key, value]])](#tocontainentrieskey--value)
-    - [.toContainAllEntries([[key, value]])](#tocontainallentrieskey--value)
-    - [.toContainAnyEntries([[key, value]])](#tocontainanyentrieskey--value)
+    - [.toContainEntry([key, value])](#tocontainentrykey-value)
+    - [.toContainEntries([[key, value]])](#tocontainentrieskey-value)
+    - [.toContainAllEntries([[key, value]])](#tocontainallentrieskey-value)
+    - [.toContainAnyEntries([[key, value]])](#tocontainanyentrieskey-value)
     - [.toBeExtensible()](#tobeextensible)
     - [.toBeFrozen()](#tobefrozen)
     - [.toBeSealed()](#tobesealed)
@@ -100,53 +104,47 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
   - [String](#string)
     - [.toBeString()](#tobestring)
     - [.toBeHexadecimal(string)](#tobehexadecimal)
+    - [.toBeDateString(string)](#tobedatestringstring)
     - [.toEqualCaseInsensitive(string)](#toequalcaseinsensitivestring)
     - [.toStartWith(prefix)](#tostartwithprefix)
     - [.toEndWith(suffix)](#toendwithsuffix)
     - [.toInclude(substring)](#toincludesubstring)
-    - [.toIncludeRepeated(substring, times)](#toincluderepeatedsubstring--times)
+    - [.toIncludeRepeated(substring, times)](#toincluderepeatedsubstring-times)
     - [.toIncludeMultiple([substring])](#toincludemultiplesubstring)
-- [Contributors](#contributors)
 - [LICENSE](#license)
 
 ## Installation
 
 With npm:
+
 ```sh
 npm install --save-dev jest-extended
 ```
 
 With yarn:
+
 ```sh
 yarn add -D jest-extended
 ```
 
 ## Setup
 
-Add jest-extended to your Jest setupTestFrameworkScriptFile configuration. [See for help](http://facebook.github.io/jest/docs/en/configuration.html#setuptestframeworkscriptfile-string)
+Note that `jest-extended` only supports Jest version 24 and newer.
 
-``` json
-"jest": {
-  "setupTestFrameworkScriptFile": "jest-extended"
-}
-```
-
-If you are already using another test framework, like [jest-chain](https://github.com/mattphillips/jest-chain), then you should create a test setup file and `require` each of the frameworks you are using.
-
-For example:
-
-```js
-// ./testSetup.js
-require('jest-extended');
-require('any other test framework libraries you are using');
-```
-
-Then in your Jest config:
+Add `jest-extended` to your Jest `setupFilesAfterEnv` configuration. [See for help](https://jestjs.io/docs/en/configuration.html#setupfilesafterenv-array)
 
 ```json
 "jest": {
-  "setupTestFrameworkScriptFile": "./testSetup.js"
+  "setupFilesAfterEnv": ["jest-extended"]
 }
+```
+
+### Typescript
+
+If your editor does not recognise the custom `jest-extended` matchers, add a `global.d.ts` file to your project with:
+
+```ts
+import 'jest-extended';
 ```
 
 ## Asymmetric matchers
@@ -183,7 +181,7 @@ expect().fail('test should fail');
 
 #### .toBeEmpty()
 
-Use `.toBeEmpty` when checking if a `String` `''`, `Array` `[]`, `Object` `{}`, or `[Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#Built-in_iterables)` is empty. Because `toBeEmpty` supports checking for emptiness of Iterables, you can use it to check whether a `Map`, or `Set` is empty, as well as checking that a generator yields no values.
+Use `.toBeEmpty` when checking if a `String` `''`, `Array` `[]`, `Object` `{}`, or [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#Built-in_iterables) is empty. Because `toBeEmpty` supports checking for emptiness of Iterables, you can use it to check whether a `Map`, or `Set` is empty, as well as checking that a generator yields no values.
 
 ```js
 test('passes when given an empty string', () => {
@@ -298,7 +296,6 @@ test('passes when arrays match in a different order', () => {
 });
 ```
 
-
 #### .toSatisfyAll(predicate)
 
 Use `.toSatisfyAll` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean` for all values in an array.
@@ -306,8 +303,20 @@ Use `.toSatisfyAll` when you want to use a custom matcher by supplying a predica
 ```js
 test('passes when all values in array pass given predicate', () => {
   const isOdd = el => el % 2 === 1;
-  expect([1,3,5,7]).toSatisfyAll(isOdd);
-  expect([1,3,4,5,7]).not.toSatisfyAll(isOdd);
+  expect([1, 3, 5, 7]).toSatisfyAll(isOdd);
+  expect([1, 3, 4, 5, 7]).not.toSatisfyAll(isOdd);
+});
+```
+
+#### .toSatisfyAny(predicate)
+
+Use `.toSatisfyAny` when you want to use a custom matcher by supplying a predicate function that returns `true` for any matching value in an array.
+
+```js
+test('passes when any value in array pass given predicate', () => {
+  const isOdd = el => el % 2 === 1;
+  expect([2,3,6,8]).toSatisfyAny(isOdd);
+  expect([2,4,8,12]).not.toSatisfyAny(isOdd);
 });
 ```
 
@@ -350,7 +359,7 @@ test('returns false', () => {
 
 ### ~~Date~~
 
-Proposal in #117 (*under development*)
+Proposal in #117 (_under development_)
 
 ### .toBeDate()
 
@@ -360,7 +369,7 @@ Use `.toBeDate` when checking if a value is a `Date`.
 test('passes when value is a date', () => {
   expect(new Date()).toBeDate();
   expect('01/01/2018').not.toBeDate();
-  expect(new Date('01/01/2018').toBeDate();
+  expect(new Date('01/01/2018')).toBeDate();
   expect(undefined).not.toBeDate();
 });
 ```
@@ -369,27 +378,32 @@ test('passes when value is a date', () => {
 
 Use `.toBeValidDate` when checking if a given `Date` object is valid.
 
-```
+```js
 test('passes when Date is valid', () => {
   expect(new Date()).toBeValidDate();
   expect('01/01/2018').not.toBeValidDate();
-  expect(new Date('01/01/2018').toBeValidDate();
-  expect(new Date('01/90/2018').not.toBeValidDate();
+  expect(new Date('01/01/2018')).toBeValidDate();
+  expect(new Date('01/90/2018')).not.toBeValidDate();
   expect(undefined).not.toBeValidDate();
 });
 ```
 
 ### .toBeAfter(date)
- Use `.toBeAfter` when checking if a date occurs after `date`.
- ```js
+
+Use `.toBeAfter` when checking if a date occurs after `date`.
+
+```js
 test('passes when input is after date', () => {
   expect(new Date('01/01/2019')).toBeAfter(new Date('01/01/2018'));
   expect('01/01/2018').not.toBeAfter(new Date('01/01/2019'));
 });
 ```
- ### .toBeBefore(date)
- Use `.toBeBefore` when checking if a date occurs before `date`.
- ```js
+
+### .toBeBefore(date)
+
+Use `.toBeBefore` when checking if a date occurs before `date`.
+
+```js
 test('passes when input is before date', () => {
   expect(new Date('01/01/2018')).toBeBefore(new Date('01/01/2019'));
   expect('01/01/2019').not.toBeBefore(new Date('01/01/2018'));
@@ -404,9 +418,9 @@ Use `.toBeFunction` when checking if a value is a `Function`.
 
 ```js
 test('passes when value is a function', () => {
-  function noop = () {};
+  function noop() {}
   expect(() => {}).toBeFunction();
-  expect(function() {}).not.toBeFunction();
+  expect(function () {}).not.toBeFunction();
   expect(noop).toBeFunction();
   expect(true).not.toBeFunction();
 });
@@ -419,19 +433,19 @@ Use `.toThrowWithMessage` when checking if a callback function throws an error w
 ```js
 test('throws an error of type TypeError with message "hello world"', () => {
   expect(() => {
-    throw TypeError("hello world");
-  }).toThrowWithMessage(TypeError, "hello world");
+    throw TypeError('hello world');
+  }).toThrowWithMessage(TypeError, 'hello world');
 
   expect(() => {
-    throw TypeError("hello world");
+    throw TypeError('hello world');
   }).toThrowWithMessage(TypeError, /hello world/);
 
   expect(() => {
-    throw TypeError("hello world 2");
-  }).not.toThrowWithMessage(TypeError, "hello world");
+    throw TypeError('hello world 2');
+  }).not.toThrowWithMessage(TypeError, 'hello world');
 
   expect(() => {
-    throw TypeError("hello world 2");
+    throw TypeError('hello world 2');
   }).not.toThrowWithMessage(TypeError, /hello world/);
 });
 ```
@@ -444,9 +458,7 @@ Use `.toHaveBeenCalledBefore` when checking if a `Mock` was called before anothe
 
 _Note: Required Jest version >=23_
 
-
 ```js
-
 it('calls mock1 before mock2', () => {
   const mock1 = jest.fn();
   const mock2 = jest.fn();
@@ -465,9 +477,7 @@ Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another 
 
 _Note: Required Jest version >=23_
 
-
 ```js
-
 it('calls mock1 after mock2', () => {
   const mock1 = jest.fn();
   const mock2 = jest.fn();
@@ -546,7 +556,6 @@ test('passes when value is a negative number', () => {
 
 #### .toBeEven()
 
-
 Use `.toBeEven` when checking if a value is an even `Number`.
 
 ```js
@@ -581,7 +590,30 @@ test('passes when number is within given bounds', () => {
 });
 ```
 
+#### .toBeInteger()
+
+Use `.toBeInteger` when checking if a number is an integer.
+
+```js
+test('passes when value is an integer', () => {
+  expect(1).toBeInteger();
+  expect(1.0).toBeInteger();
+  expect(1.1).not.toBeInteger();
+});
+```
+
 ### Object
+
+#### .toBeEmptyObject()
+
+Use `.toBeEmptyObject` when checking if a value is an empty `Object`.
+
+```js
+test('passes when value is an empty object', () => {
+  expect({}).toBeEmptyObject();
+  expect({ a: 'hello' }).not.toBeEmptyObject();
+});
+```
 
 #### .toBeObject()
 
@@ -724,8 +756,14 @@ Use `.toContainEntries` when checking if an object contains all of the provided 
 test('passes when object contains all of the given entries', () => {
   const o = { a: 'foo', b: 'bar', c: 'baz' };
   expect(o).toContainEntries([['a', 'foo']]);
-  expect(o).toContainEntries([['c', 'baz'], ['a', 'foo']]);
-  expect(o).not.toContainEntries([['b', 'qux'], ['a', 'foo']]);
+  expect(o).toContainEntries([
+    ['c', 'baz'],
+    ['a', 'foo'],
+  ]);
+  expect(o).not.toContainEntries([
+    ['b', 'qux'],
+    ['a', 'foo'],
+  ]);
 });
 ```
 
@@ -736,8 +774,15 @@ Use `.toContainAllEntries` when checking if an object only contains all of the p
 ```js
 test('passes when object only contains all of the given entries', () => {
   const o = { a: 'foo', b: 'bar', c: 'baz' };
-  expect(o).toContainAllEntries([['a', 'foo'], ['b', 'bar'], ['c', 'baz']]);
-  expect(o).not.toContainAllEntries([['a', 'foo'], ['b', 'bar']]);
+  expect(o).toContainAllEntries([
+    ['a', 'foo'],
+    ['b', 'bar'],
+    ['c', 'baz'],
+  ]);
+  expect(o).not.toContainAllEntries([
+    ['a', 'foo'],
+    ['b', 'bar'],
+  ]);
 });
 ```
 
@@ -748,9 +793,18 @@ Use `.toContainAnyEntries` when checking if an object contains at least one of t
 ```js
 test('passes when object contains at least one of the given entries', () => {
   const o = { a: 'foo', b: 'bar', c: 'baz' };
-  expect(o).toContainAnyEntries([['a', 'qux'], ['a', 'foo']]);
-  expect(o).toContainAnyEntries([['a', 'qux'], ['b', 'bar']]);
-  expect(o).toContainAnyEntries([['a', 'qux'], ['c', 'baz']]);
+  expect(o).toContainAnyEntries([
+    ['a', 'qux'],
+    ['a', 'foo'],
+  ]);
+  expect(o).toContainAnyEntries([
+    ['a', 'qux'],
+    ['b', 'bar'],
+  ]);
+  expect(o).toContainAnyEntries([
+    ['a', 'qux'],
+    ['c', 'baz'],
+  ]);
   expect(o).not.toContainAnyEntries([['d', 'qux']]);
 });
 ```
@@ -761,7 +815,7 @@ Use `.toBeExtensible` when checking if an object is extensible.
 
 ```js
 test('passes when value is extensible', () => {
-  expect({a: 1}).toBeExtensible();
+  expect({ a: 1 }).toBeExtensible();
   expect(1).not.toBeExtensible();
 });
 ```
@@ -840,6 +894,18 @@ test('passes when value is a valid hexadecimal', () => {
 });
 ```
 
+#### .toBeDateString(string)
+
+Use `.toBeDateString` when checking if a value is a valid date string.
+
+```js
+test('passes when value is a valid toBeDateString', () => {
+  expect('2019-11-27T14:05:07.520Z').toBeDateString();
+  expect('11/12/21').toBeDateString();
+  expect('not a date').not.toBeDateString();
+});
+```
+
 #### .toEqualCaseInsensitive(string)
 
 Use `.toEqualCaseInsensitive` when checking if a string is equal (===) to another ignoring the casing of both strings.
@@ -908,19 +974,6 @@ test('passes when value includes all substrings', () => {
   expect('hello world').not.toIncludeMultiple(['world', 'hello', 'bob']);
 });
 ```
-
-## Contributors
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-| [<img src="https://avatars0.githubusercontent.com/u/5610087?v=4" width="100px;"/><br /><sub>Matt Phillips</sub>](http://mattphillips.io)<br />[📝](#blog-mattphillips "Blogposts") [💻](https://github.com/mattphillips/jest-extended/commits?author=mattphillips "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=mattphillips "Documentation") [💡](#example-mattphillips "Examples") [🚇](#infra-mattphillips "Infrastructure (Hosting, Build-Tools, etc)") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=mattphillips "Tests") | [<img src="https://avatars1.githubusercontent.com/u/611927?v=4" width="100px;"/><br /><sub>Stephen Bluck</sub>](https://github.com/stevebluck)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=stevebluck "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=stevebluck "Tests") | [<img src="https://avatars3.githubusercontent.com/u/5880416?v=4" width="100px;"/><br /><sub>Christoffer Hasselberg</sub>](https://github.com/stofolus)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=stofolus "Code") | [<img src="https://avatars1.githubusercontent.com/u/20847518?v=4" width="100px;"/><br /><sub>Brandon Newton</sub>](https://btnwtn.com)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=btnwtn "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=btnwtn "Documentation") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=btnwtn "Tests") | [<img src="https://avatars2.githubusercontent.com/u/4533277?v=4" width="100px;"/><br /><sub>Devan Patel</sub>](http://www.devanpatel.me)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=devanp92 "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=devanp92 "Documentation") | [<img src="https://avatars2.githubusercontent.com/u/8472688?v=4" width="100px;"/><br /><sub>Gary Leutheuser</sub>](https://GaryLeutheuser.github.io)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=GaryLeutheuser "Code") | [<img src="https://avatars3.githubusercontent.com/u/24882614?v=4" width="100px;"/><br /><sub>Johan Lindgren</sub>](https://github.com/lindgr3n)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=lindgr3n "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=lindgr3n "Documentation") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=lindgr3n "Tests") |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [<img src="https://avatars1.githubusercontent.com/u/159848?v=4" width="100px;"/><br /><sub>Andrew Hayward</sub>](http://andrewhayward.net)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=andrewhayward "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=andrewhayward "Tests") | [<img src="https://avatars3.githubusercontent.com/u/6209178?v=4" width="100px;"/><br /><sub>Oliver Schneider</sub>](https://ols.io)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=olsio "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=olsio "Tests") | [<img src="https://avatars1.githubusercontent.com/u/22359375?s=460&v=4" width="100px;"/><br /><sub>Tyle Whalen</sub>](https://github.com/tjwhalen16)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=tjwhalen16 "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=tjwhalen16 "Documentation") | [<img src="https://avatars2.githubusercontent.com/u/17944339?v=4" width="100px;"/><br /><sub>Martius</sub>](https://github.com/martiuslim)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=martiuslim "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=martiuslim "Tests") | [<img src="https://avatars2.githubusercontent.com/u/10856932?v=4" width="100px;"/><br /><sub>Eli Collis</sub>](https://github.com/ecollis6)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=ecollis6 "Code") | [<img src="https://avatars0.githubusercontent.com/u/10706203?v=4" width="100px;"/><br /><sub>Marcin Lichwała</sub>](https://github.com/marcinlichwala)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=marcinlichwala "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=marcinlichwala "Tests") | [<img src="https://avatars3.githubusercontent.com/u/1984733?v=4" width="100px;"/><br /><sub>Massimo Prencipe</sub>](https://github.com/mprencipe)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=mprencipe "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=mprencipe "Tests") |
-| [<img src="https://avatars2.githubusercontent.com/u/33098064?v=4" width="100px;"/><br /><sub>mjmiles</sub>](https://github.com/mjmiles)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=mjmiles "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=mjmiles "Documentation") | [<img src="https://avatars1.githubusercontent.com/u/13333582?v=4" width="100px;"/><br /><sub>Gary Meehan</sub>](https://github.com/garmeeh)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=garmeeh "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=garmeeh "Documentation") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=garmeeh "Tests") | [<img src="https://avatars2.githubusercontent.com/u/3191489?v=4" width="100px;"/><br /><sub>Fredrik Mäkilä</sub>](https://github.com/GitHug)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=GitHug "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=GitHug "Tests") | [<img src="https://avatars2.githubusercontent.com/u/9046616?v=4" width="100px;"/><br /><sub>Daniel Reinoso</sub>](http://kloc.io/)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=danielr18 "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=danielr18 "Tests") | [<img src="https://avatars1.githubusercontent.com/u/4359781?v=4" width="100px;"/><br /><sub>Chris Hut</sub>](https://github.com/tophernuts)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=tophernuts "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=tophernuts "Tests") | [<img src="https://avatars2.githubusercontent.com/u/1513183?v=4" width="100px;"/><br /><sub>Kelvin Ly</sub>](https://github.com/cactorium)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=cactorium "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=cactorium "Tests") | [<img src="https://avatars0.githubusercontent.com/u/11182826?v=4" width="100px;"/><br /><sub>Francis Ngo</sub>](https://github.com/francisngo)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=francisngo "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=francisngo "Tests") |
-| [<img src="https://avatars1.githubusercontent.com/u/10330923?v=4" width="100px;"/><br /><sub>Amish Shah</sub>](https://hydrabolt.me/)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=hydrabolt "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=hydrabolt "Tests") | [<img src="https://avatars3.githubusercontent.com/u/2045206?v=4" width="100px;"/><br /><sub>Dave Cooper</sub>](http://davecooper.org)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=grug "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=grug "Tests") | [<img src="https://avatars3.githubusercontent.com/u/3630495?v=4" width="100px;"/><br /><sub>Swann Polydor</sub>](https://github.com/soueuls)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=soueuls "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=soueuls "Tests") | [<img src="https://avatars1.githubusercontent.com/u/2027003?v=4" width="100px;"/><br /><sub>vikneshwar</sub>](https://github.com/vikneshwar)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=vikneshwar "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=vikneshwar "Tests") | [<img src="https://avatars1.githubusercontent.com/u/1243921?v=4" width="100px;"/><br /><sub>Budi Irawan</sub>](http://budiirawan.com)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=deerawan "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=deerawan "Tests") | [<img src="https://avatars2.githubusercontent.com/u/980783?v=4" width="100px;"/><br /><sub>Tejas Bubane</sub>](http://foss-geek.blogspot.com/)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=tejasbubane "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=tejasbubane "Tests") [📖](https://github.com/mattphillips/jest-extended/commits?author=tejasbubane "Documentation") | [<img src="https://avatars2.githubusercontent.com/u/13134653?v=4" width="100px;"/><br /><sub>Subinoy Ghosh</sub>](https://github.com/subinoy7)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=subinoy7 "Code") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=subinoy7 "Tests") |
-| [<img src="https://avatars1.githubusercontent.com/u/1404810?v=4" width="100px;"/><br /><sub>Simen Bekkhus</sub>](https://github.com/SimenB)<br />[📖](https://github.com/mattphillips/jest-extended/commits?author=SimenB "Documentation") | [<img src="https://avatars2.githubusercontent.com/u/49038?v=4" width="100px;"/><br /><sub>Orta</sub>](http://orta.io)<br />[📖](https://github.com/mattphillips/jest-extended/commits?author=orta "Documentation") | [<img src="https://avatars3.githubusercontent.com/u/17221813?v=4" width="100px;"/><br /><sub>Tom</sub>](https://jsdevtom.com)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=jsdevtom "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=jsdevtom "Documentation") [💡](#example-jsdevtom "Examples") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=jsdevtom "Tests") | [<img src="https://avatars0.githubusercontent.com/u/15064535?v=4" width="100px;"/><br /><sub>Lucian Buzzo</sub>](https://github.com/LucianBuzzo)<br /> | [<img src="https://avatars3.githubusercontent.com/u/2997844?v=4" width="100px;"/><br /><sub>Thiago Delgado Pinto</sub>](https://github.com/thiagodp)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=thiagodp "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=thiagodp "Documentation") [💡](#example-thiagodp "Examples") [🤔](#ideas-thiagodp "Ideas, Planning, & Feedback") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=thiagodp "Tests") | [<img src="https://avatars0.githubusercontent.com/u/3042904?v=4" width="100px;"/><br /><sub>Ragnar Laud</sub>](https://github.com/xprn)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=xprn "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=xprn "Documentation") | [<img src="https://avatars0.githubusercontent.com/u/3047126?v=4" width="100px;"/><br /><sub>Luiz Américo</sub>](https://github.com/blikblum)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=blikblum "Code") |
-| [<img src="https://avatars0.githubusercontent.com/u/615334?v=4" width="100px;"/><br /><sub>Frederick Fogerty</sub>](https://github.com/frederickfogerty)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=frederickfogerty "Code") [🤔](#ideas-frederickfogerty "Ideas, Planning, & Feedback") | [<img src="https://avatars1.githubusercontent.com/u/10714808?v=4" width="100px;"/><br /><sub>Benjamin Kay</sub>](https://github.com/benjaminkay93)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=benjaminkay93 "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=benjaminkay93 "Documentation") | [<img src="https://avatars1.githubusercontent.com/u/868844?v=4" width="100px;"/><br /><sub>Gilles De Mey</sub>](https://demey.io)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=gillesdemey "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=gillesdemey "Documentation") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=gillesdemey "Tests") | [<img src="https://avatars0.githubusercontent.com/u/50928?v=4" width="100px;"/><br /><sub>Deniz Dogan</sub>](https://github.com/denizdogan)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=denizdogan "Code") | [<img src="https://avatars1.githubusercontent.com/u/13043635?v=4" width="100px;"/><br /><sub>Mikey Powers</sub>](https://github.com/mvpowers)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=mvpowers "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=mvpowers "Documentation") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=mvpowers "Tests") | [<img src="https://avatars2.githubusercontent.com/u/26580?v=4" width="100px;"/><br /><sub>Tony Trinh</sub>](https://github.com/tony19)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=tony19 "Code") | [<img src="https://avatars2.githubusercontent.com/u/2844046?v=4" width="100px;"/><br /><sub>Nikita Kurpas</sub>](https://github.com/NikitaKurpas)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=NikitaKurpas "Code") |
-| [<img src="https://avatars0.githubusercontent.com/u/18214059?v=4" width="100px;"/><br /><sub>Alcedo Nathaniel De Guzman Jr</sub>](https://twitter.com/natealcedo)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=natealcedo "Code") [📖](https://github.com/mattphillips/jest-extended/commits?author=natealcedo "Documentation") [💡](#example-natealcedo "Examples") [⚠️](https://github.com/mattphillips/jest-extended/commits?author=natealcedo "Tests") | [<img src="https://avatars1.githubusercontent.com/u/65444?v=4" width="100px;"/><br /><sub>Pete Hodgson</sub>](http://thepete.net)<br />[💻](https://github.com/mattphillips/jest-extended/commits?author=moredip "Code") |
-<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## LICENSE
 

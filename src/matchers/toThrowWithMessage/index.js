@@ -27,21 +27,21 @@ export default {
     if (!callback || typeof callback !== 'function') {
       return {
         pass: this.isNot,
-        message: () => hint + '\n\n' + `Received value must be a function but instead "${callback}" was found`
+        message: () => hint + '\n\n' + `Received value must be a function but instead "${callback}" was found`,
       };
     }
 
     if (!type || typeof type !== 'function') {
       return {
         pass: this.isNot,
-        message: () => hint + '\n\n' + `Expected type to be a function but instead "${type}" was found`
+        message: () => hint + '\n\n' + `Expected type to be a function but instead "${type}" was found`,
       };
     }
 
     if (!message) {
       return {
         pass: this.isNot,
-        message: () => hint + '\n\n' + ' Message argument is required. '
+        message: () => hint + '\n\n' + ' Message argument is required. ',
       };
     }
 
@@ -49,7 +49,7 @@ export default {
       return {
         pass: this.isNot,
         message: () =>
-          hint + '\n\n' + 'Unexpected argument for message\n' + 'Expected: "string" or "regexp\n' + `Got: "${message}"`
+          hint + '\n\n' + 'Unexpected argument for message\n' + 'Expected: "string" or "regexp\n' + `Got: "${message}"`,
       };
     }
 
@@ -63,7 +63,7 @@ export default {
     if (!error) {
       return {
         pass: this.isNot,
-        message: () => 'Expected the function to throw an error.\n' + "But it didn't throw anything."
+        message: () => 'Expected the function to throw an error.\n' + "But it didn't throw anything.",
       };
     }
 
@@ -73,5 +73,5 @@ export default {
     }
 
     return { pass: false, message: failMessage(error, new type(message)) };
-  }
+  },
 };

@@ -1,5 +1,3 @@
-import each from 'jest-each';
-
 import { contains, determinePropertyMessage } from './';
 
 describe('Utils', () => {
@@ -8,11 +6,11 @@ describe('Utils', () => {
     const array = [1, 0, '', 'hello', false, true, undefined, null, NaN, fn, { foo: 'bar' }, ['foo']];
     const testRows = array.map(item => [item]);
 
-    each(testRows).test('returns true when array contains given value: %s', value => {
+    test.each(testRows)('returns true when array contains given value: %s', value => {
       expect(contains(array, value)).toBe(true);
     });
 
-    each(testRows).test('returns false when array does not contain given value: %s', value => {
+    test.each(testRows)('returns false when array does not contain given value: %s', value => {
       expect(contains([], value)).toBe(false);
     });
   });
@@ -34,11 +32,19 @@ describe('Utils', () => {
     }
 
     {
-      const fn = () => {};
+      const arr = new Array();
+
+      test('returns property when it has a falsy one', () => {
+        expect(determinePropertyMessage(arr, 'length')).toBe(0);
+      });
+    }
+
+    {
+      const date = new Date();
       const errorMessage = 'bob';
 
       test('returns custom error message when it is passed one', () => {
-        expect(determinePropertyMessage(fn, 'length', errorMessage)).toBe(errorMessage);
+        expect(determinePropertyMessage(date, 'length', errorMessage)).toBe(errorMessage);
       });
     }
   });

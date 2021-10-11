@@ -6,12 +6,15 @@ with the contributing guidelines (found in the CONTRIBUTING.md file).
 -->
 
 <!-- What changes are being made? (feature/bug) -->
+
 ### What
 
 <!-- Why are these changes necessary? Link any related issues -->
+
 ### Why
 
 <!-- If necessary add any additional notes on the implementation -->
+
 ### Notes
 
 ### Housekeeping
@@ -19,5 +22,4 @@ with the contributing guidelines (found in the CONTRIBUTING.md file).
 - [ ] Unit tests
 - [ ] Documentation is up to date
 - [ ] No additional lint warnings
-- [ ] Add yourself to contributors list (`yarn contributor`)
-- [ ] [Typescript definitions](https://github.com/jest-community/jest-extended/blob/master/types/index.d.ts) are added/updated where relevant
+- [ ] [Typescript definitions](https://github.com/jest-community/jest-extended/blob/main/types/index.d.ts) are added/updated where relevant
