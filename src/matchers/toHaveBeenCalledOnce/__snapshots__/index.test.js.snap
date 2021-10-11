@@ -10,12 +10,21 @@ exports[`.toHaveBeenCalledOnce fails if mock was invoked more than once, indicat
 "<dim>expect(</><red>received</><dim>).toHaveBeenCalledOnce(</><green>expected</><dim>)</>
 
 Expected mock function to have been called exactly once, but it was called:
-  17 times"
+  <red>17</> times"
 `;
 
 exports[`.toHaveBeenCalledOnce fails if mock was never invoked indicating that it was invoked 0 times 1`] = `
 "<dim>expect(</><red>received</><dim>).toHaveBeenCalledOnce(</><green>expected</><dim>)</>
 
 Expected mock function to have been called exactly once, but it was called:
-  0 times"
+  <red>0</> times"
+`;
+
+exports[`.toHaveBeenCalledOnce fails when given value is not a jest spy or mock 1`] = `
+"<dim>expect(</><red>received</><dim>).toHaveBeenCalledAfter(</><green>expected</><dim>)</>
+
+Matcher error: <red>\\"received\\"</> must be a mock or spy function
+
+Received has type:  function
+Received has value: <red>[Function mock1]</>"
 `;

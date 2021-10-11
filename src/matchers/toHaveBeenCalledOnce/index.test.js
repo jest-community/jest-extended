@@ -22,6 +22,11 @@ describe('.toHaveBeenCalledOnce', () => {
     new Array(17).fill(mock).forEach(e => e(Math.random()));
     expect(() => expect(mock).toHaveBeenCalledOnce()).toThrowErrorMatchingSnapshot();
   });
+
+  test('fails when given value is not a jest spy or mock', () => {
+    const mock1 = () => {};
+    expect(() => expect(mock1).toHaveBeenCalledOnce()).toThrowErrorMatchingSnapshot();
+  });
 });
 
 describe('.not.toHaveBeenCalledOnce', () => {
