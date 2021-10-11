@@ -52,7 +52,7 @@
     "lint-staged": "^11.0.0",
     "prettier": "^2.3.2",
     "pretty-format": "^27.2.4",
-    "typescript": "^3.7.2"
+    "typescript": "^4.4.3"
   },
   "dependencies": {
     "expect": "^26.6.2",
