@@ -24,7 +24,7 @@ export default {
 
     return {
       pass: pass,
-      message: pass ? passMessage(actual, expected) : failMessage(actual, expected)
+      message: pass ? passMessage(actual, expected) : failMessage(actual, expected),
     };
-  }
+  },
 };

@@ -1,21 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toBeString fails when given a string literal 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBeString(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).not.toBeString()</>
 
 Expected value to not be of type string received:
   <red>\\"\\"</>"
 `;
 
 exports[`.not.toBeString fails when given an object of type string 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBeString(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).not.toBeString()</>
 
 Expected value to not be of type string received:
   <red>{\\"0\\": \\"s\\", \\"1\\": \\"t\\", \\"10\\": \\"e\\", \\"2\\": \\"r\\", \\"3\\": \\"i\\", \\"4\\": \\"n\\", \\"5\\": \\"g\\", \\"6\\": \\" \\", \\"7\\": \\"t\\", \\"8\\": \\"y\\", \\"9\\": \\"p\\"}</>"
 `;
 
 exports[`.toBeString fails when not given a string 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeString(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeString()</>
 
 Expected value to be of type string:
   <green>\\"type of string\\"</>

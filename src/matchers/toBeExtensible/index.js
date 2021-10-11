@@ -25,7 +25,7 @@ export default {
     const pass = predicate(expected);
     return {
       pass,
-      message: pass ? passMessage(expected) : failMessage(expected)
+      message: pass ? passMessage(expected) : failMessage(expected),
     };
-  }
+  },
 };

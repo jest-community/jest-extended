@@ -1,70 +1,70 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toBeEven fails when given an even number 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBeEven(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).not.toBeEven()</>
 
 Expected value to not be an even number received:
  <red>2</>"
 `;
 
 exports[`.toBeEven fails when not given an even number 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeEven(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeEven()</>
 
 Expected value to be an even number received:
  <red>false</>"
 `;
 
 exports[`.toBeEven fails when not given an even number 2`] = `
-"<dim>expect(</><red>received</><dim>).toBeEven(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeEven()</>
 
 Expected value to be an even number received:
  <red>true</>"
 `;
 
 exports[`.toBeEven fails when not given an even number 3`] = `
-"<dim>expect(</><red>received</><dim>).toBeEven(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeEven()</>
 
 Expected value to be an even number received:
  <red>\\"\\"</>"
 `;
 
 exports[`.toBeEven fails when not given an even number 4`] = `
-"<dim>expect(</><red>received</><dim>).toBeEven(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeEven()</>
 
 Expected value to be an even number received:
  <red>1</>"
 `;
 
 exports[`.toBeEven fails when not given an even number 5`] = `
-"<dim>expect(</><red>received</><dim>).toBeEven(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeEven()</>
 
 Expected value to be an even number received:
  <red>{}</>"
 `;
 
 exports[`.toBeEven fails when not given an even number 6`] = `
-"<dim>expect(</><red>received</><dim>).toBeEven(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeEven()</>
 
 Expected value to be an even number received:
  <red>[Function anonymous]</>"
 `;
 
 exports[`.toBeEven fails when not given an even number 7`] = `
-"<dim>expect(</><red>received</><dim>).toBeEven(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeEven()</>
 
 Expected value to be an even number received:
  <red>undefined</>"
 `;
 
 exports[`.toBeEven fails when not given an even number 8`] = `
-"<dim>expect(</><red>received</><dim>).toBeEven(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeEven()</>
 
 Expected value to be an even number received:
  <red>null</>"
 `;
 
 exports[`.toBeEven fails when not given an even number 9`] = `
-"<dim>expect(</><red>received</><dim>).toBeEven(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeEven()</>
 
 Expected value to be an even number received:
  <red>NaN</>"
