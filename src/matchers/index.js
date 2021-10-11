@@ -1,3 +1,5 @@
+import failMatcher from './fail';
+import passMatcher from './pass';
 import toBeAfterMatcher from './toBeAfter';
 import toBeArrayMatcher from './toBeArray';
 import toBeArrayOfSizeMatcher from './toBeArrayOfSize';
@@ -60,6 +62,8 @@ import toThrowWithMessageMatcher from './toThrowWithMessage';
 
 // this is absolutely horrible, but all matchers are default exports of an object with the name of the matcher
 
+export const fail = failMatcher.fail;
+export const pass = passMatcher.pass;
 export const toBeAfter = toBeAfterMatcher.toBeAfter;
 export const toBeArray = toBeArrayMatcher.toBeArray;
 export const toBeArrayOfSize = toBeArrayOfSizeMatcher.toBeArrayOfSize;
