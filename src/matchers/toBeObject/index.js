@@ -14,13 +14,11 @@ const failMessage = received => () =>
   'Expected value to be an object, received:\n' +
   `  ${printReceived(received)}`;
 
-export default {
-  toBeObject: expected => {
-    const pass = predicate(expected);
-    if (pass) {
-      return { pass: true, message: passMessage(expected) };
-    }
-
-    return { pass: false, message: failMessage(expected) };
+export function toBeObject(expected) {
+  const pass = predicate(expected);
+  if (pass) {
+    return { pass: true, message: passMessage(expected) };
   }
-};
+
+  return { pass: false, message: failMessage(expected) };
+}

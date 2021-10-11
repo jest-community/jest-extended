@@ -20,12 +20,10 @@ const failMessage = received => () => {
   );
 };
 
-export default {
-  toBeExtensible(expected) {
-    const pass = predicate(expected);
-    return {
-      pass,
-      message: pass ? passMessage(expected) : failMessage(expected)
-    };
-  }
-};
+export function toBeExtensible(expected) {
+  const pass = predicate(expected);
+  return {
+    pass,
+    message: pass ? passMessage(expected) : failMessage(expected),
+  };
+}

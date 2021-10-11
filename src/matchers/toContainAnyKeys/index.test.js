@@ -1,10 +1,10 @@
-import matcher from './';
+import * as matcher from './';
 
 expect.extend(matcher);
 
 const testObject = {
   name: 'Steve the Pirate',
-  age: 37
+  age: 37,
 };
 
 describe('.toContainAnyKeys', () => {

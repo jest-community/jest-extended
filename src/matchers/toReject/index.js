@@ -8,12 +8,10 @@ const passMessage = () =>
 const failMessage = () =>
   matcherHint('.toReject', 'received', '') + '\n\n' + 'Expected promise to reject, however it resolved.\n';
 
-export default {
-  toReject: async promise => {
-    const pass = await predicate(promise);
-    if (pass) {
-      return { pass: true, message: passMessage };
-    }
-    return { pass: false, message: failMessage };
+export async function toReject(promise) {
+  const pass = await predicate(promise);
+  if (pass) {
+    return { pass: true, message: passMessage };
   }
-};
+  return { pass: false, message: failMessage };
+}

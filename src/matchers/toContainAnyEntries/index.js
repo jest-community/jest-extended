@@ -18,12 +18,10 @@ const failMessage = (object, entries) => () =>
   'Received:\n' +
   `  ${printReceived(object)}`;
 
-export default {
-  toContainAnyEntries: (object, entries) => {
-    const pass = predicate(object, entries);
-    if (pass) {
-      return { pass: true, message: passMessage(object, entries) };
-    }
-    return { pass: false, message: failMessage(object, entries) };
+export function toContainAnyEntries(object, entries) {
+  const pass = predicate(object, entries);
+  if (pass) {
+    return { pass: true, message: passMessage(object, entries) };
   }
-};
+  return { pass: false, message: failMessage(object, entries) };
+}

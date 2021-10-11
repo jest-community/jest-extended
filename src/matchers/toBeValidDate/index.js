@@ -14,13 +14,11 @@ const failMessage = received => () =>
   'Expected value to be a valid date received:\n' +
   `  ${printReceived(received)}`;
 
-export default {
-  toBeValidDate: expected => {
-    const pass = predicate(expected);
-    if (pass) {
-      return { pass: true, message: passMessage(expected) };
-    }
-
-    return { pass: false, message: failMessage(expected) };
+export function toBeValidDate(expected) {
+  const pass = predicate(expected);
+  if (pass) {
+    return { pass: true, message: passMessage(expected) };
   }
-};
+
+  return { pass: false, message: failMessage(expected) };
+}

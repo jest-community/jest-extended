@@ -18,13 +18,11 @@ const failMessage = (prefix, string) => () =>
   'Received:\n' +
   `  ${printReceived(string)}`;
 
-export default {
-  toStartWith: (string, prefix) => {
-    const pass = predicate(prefix, string);
-    if (pass) {
-      return { pass: true, message: passMessage(prefix, string) };
-    }
-
-    return { pass: false, message: failMessage(prefix, string) };
+export function toStartWith(string, prefix) {
+  const pass = predicate(prefix, string);
+  if (pass) {
+    return { pass: true, message: passMessage(prefix, string) };
   }
-};
+
+  return { pass: false, message: failMessage(prefix, string) };
+}

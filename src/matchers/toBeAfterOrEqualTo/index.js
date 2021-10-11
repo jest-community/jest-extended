@@ -14,13 +14,11 @@ const failMessage = (received, before) => () =>
   `Expected date to be after or equal to ${printReceived(before)} but received:\n` +
   `  ${printReceived(received)}`;
 
-export default {
-  toBeAfterOrEqualTo: (date, after) => {
-    const pass = predicate(date, after);
-    if (pass) {
-      return { pass: true, message: passMessage(date, after) };
-    }
-
-    return { pass: false, message: failMessage(date, after) };
+export function toBeAfterOrEqualTo(date, after) {
+  const pass = predicate(date, after);
+  if (pass) {
+    return { pass: true, message: passMessage(date, after) };
   }
-};
+
+  return { pass: false, message: failMessage(date, after) };
+}

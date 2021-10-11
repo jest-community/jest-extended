@@ -1,6 +1,4 @@
-import each from 'jest-each';
-
-import matcher from './';
+import * as matcher from './';
 
 expect.extend(matcher);
 
@@ -18,7 +16,7 @@ describe('.toBeNil', () => {
 });
 
 describe('.not.toBeNil', () => {
-  each([['true'], [{}], [true]]).test('passes when value is not null or undefined : %s', given => {
+  test.each([['true'], [{}], [true]])('passes when value is not null or undefined : %s', given => {
     expect(given).not.toBeNil();
   });
 

@@ -1,1 +1,1 @@
-export default (actual, values) => values.some(value => actual.hasOwnProperty(value));
+export default (actual, values) => values.some(value => Object.prototype.hasOwnProperty.call(actual, value));

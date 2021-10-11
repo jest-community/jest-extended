@@ -18,13 +18,11 @@ const failMessage = (number, start, end) => () =>
   'Received:\n' +
   `  ${printReceived(number)}`;
 
-export default {
-  toBeWithin: (number, start, end) => {
-    const pass = predicate(number, start, end);
-    if (pass) {
-      return { pass: true, message: passMessage(number, start, end) };
-    }
-
-    return { pass: false, message: failMessage(number, start, end) };
+export function toBeWithin(number, start, end) {
+  const pass = predicate(number, start, end);
+  if (pass) {
+    return { pass: true, message: passMessage(number, start, end) };
   }
-};
+
+  return { pass: false, message: failMessage(number, start, end) };
+}

@@ -16,13 +16,11 @@ const failMessage = (received, expected) => () =>
   'Received:\n' +
   `  ${printReceived(received)}`;
 
-export default {
-  toSatisfy: (actual, predicate) => {
-    const pass = predicate(actual);
-    if (pass) {
-      return { pass: true, message: passMessage(actual, predicate) };
-    }
-
-    return { pass: false, message: failMessage(actual, predicate) };
+export function toSatisfy(actual, predicate) {
+  const pass = predicate(actual);
+  if (pass) {
+    return { pass: true, message: passMessage(actual, predicate) };
   }
-};
+
+  return { pass: false, message: failMessage(actual, predicate) };
+}

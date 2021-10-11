@@ -1,21 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toBeAfterOrEqualTo fails when given a later date 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBeAfterOrEqualTo(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).not.toBeAfterOrEqualTo()</>
 
 Expected date to be after or equal to <red>2019-09-01T22:00:00.000Z</> but received:
   <red>2019-09-10T22:00:00.000Z</>"
 `;
 
 exports[`.not.toBeAfterOrEqualTo fails when given an equal date 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBeAfterOrEqualTo(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).not.toBeAfterOrEqualTo()</>
 
 Expected date to be after or equal to <red>2019-09-01T22:00:00.000Z</> but received:
   <red>2019-09-01T22:00:00.000Z</>"
 `;
 
 exports[`.toBeAfterOrEqualTo fails when given an earlier date 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeAfterOrEqualTo(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBeAfterOrEqualTo()</>
 
 Expected date to be after or equal to <red>2019-09-10T22:00:00.000Z</> but received:
   <red>2019-09-01T22:00:00.000Z</>"

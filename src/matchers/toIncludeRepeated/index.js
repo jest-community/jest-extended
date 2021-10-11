@@ -18,13 +18,11 @@ const failMessage = (actual, expected, occurrences) => () =>
   'Received:\n' +
   `  ${printReceived(actual)}`;
 
-export default {
-  toIncludeRepeated: (actual, expected, occurrences) => {
-    const pass = predicate(actual, expected, occurrences);
-    if (pass) {
-      return { pass: true, message: passMessage(actual, expected, occurrences) };
-    }
-
-    return { pass: false, message: failMessage(actual, expected, occurrences) };
+export function toIncludeRepeated(actual, expected, occurrences) {
+  const pass = predicate(actual, expected, occurrences);
+  if (pass) {
+    return { pass: true, message: passMessage(actual, expected, occurrences) };
   }
-};
+
+  return { pass: false, message: failMessage(actual, expected, occurrences) };
+}

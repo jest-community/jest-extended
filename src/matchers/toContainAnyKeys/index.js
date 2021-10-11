@@ -18,13 +18,11 @@ const failMessage = (actual, expected) => () =>
   'Received:\n' +
   `  ${printReceived(actual)}`;
 
-export default {
-  toContainAnyKeys: (actual, expected) => {
-    const pass = predicate(actual, expected);
+export function toContainAnyKeys(actual, expected) {
+  const pass = predicate(actual, expected);
 
-    return {
-      pass: pass,
-      message: pass ? passMessage(actual, expected) : failMessage(actual, expected)
-    };
-  }
-};
+  return {
+    pass: pass,
+    message: pass ? passMessage(actual, expected) : failMessage(actual, expected),
+  };
+}
