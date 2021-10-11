@@ -169,7 +169,7 @@ import 'jest-extended';
 
 _Note: When using `ts-jest >= 25.5.0`_
 
-Since the [breaking changes]() in `25.5.0` you also need to update you `tsconfig.json` to include the new `global.d.ts` file in the `files` property like so:
+Since the [breaking changes]() in `25.5.0` you may also need to update your `tsconfig.json` to include the new `global.d.ts` file in the `files` property like so:
 
 ```json
 {
