@@ -373,6 +373,15 @@ declare namespace jest {
      * @param {String | RegExp} message
      */
     toThrowWithMessage(type: Function, message: string | RegExp): R;
+
+    /**
+     * Use `.toLog` when checking if a callback function outputs a message to the console. 
+     * The specified console method is mocked during execution so nothing will be printed to the console.
+     * 
+     * @param {*} logOutput
+     * @param {String} [consoleMethod=log]
+     */
+    toLog(logOutput: any, consoleMethod?: string): R;
   }
 
   // noinspection JSUnusedGlobalSymbols

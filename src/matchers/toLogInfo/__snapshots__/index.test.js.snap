@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toLogInfo fails when the callback function outputs the expected message 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toLogInfo(</><green>expected</><dim>)</>
+
+Expected console.info not to have been called with:
+  <green>\\"console-info\\"</>
+But it was called with:
+  <red>[\\"console-info\\"]</>"
+`;
+
+exports[`.toLogInfo fails when the callback function does not output any message 1`] = `
+"<dim>expect(</><red>received</><dim>).toLogInfo(</><green>expected</><dim>)</>
+
+Expected console.info to have been called with:
+  <green>\\"something\\"</>
+But it was not called"
+`;
+
+exports[`.toLogInfo fails when the callback function does not output the expected message 1`] = `
+"<dim>expect(</><red>received</><dim>).toLogInfo(</><green>expected</><dim>)</>
+
+Expected console.info to have been called with:
+  <green>\\"something\\"</>
+But it was called with:
+  <red>[\\"console-info\\"]</>"
+`;
