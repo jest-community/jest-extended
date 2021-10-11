@@ -21,68 +21,64 @@ const failMessage = (received, expected) => () =>
   'Thrown:\n' +
   `  ${printReceived(received)}\n`;
 
-export default {
-  toThrowWithMessage(callbackOrPromiseReturn, type, message) {
-    const isFromReject = this && this.promise === 'rejects'; // See https://github.com/facebook/jest/pull/7621#issue-244312550
-    if ((!callbackOrPromiseReturn || typeof callbackOrPromiseReturn !== 'function') && !isFromReject) {
-      return {
-        pass: false,
-        message: () =>
-          positiveHint +
-          '\n\n' +
-          `Received value must be a function but instead "${callbackOrPromiseReturn}" was found`,
-      };
-    }
+export function toThrowWithMessage(callbackOrPromiseReturn, type, message) {
+  const isFromReject = this && this.promise === 'rejects'; // See https://github.com/facebook/jest/pull/7621#issue-244312550
+  if ((!callbackOrPromiseReturn || typeof callbackOrPromiseReturn !== 'function') && !isFromReject) {
+    return {
+      pass: false,
+      message: () =>
+        positiveHint + '\n\n' + `Received value must be a function but instead "${callbackOrPromiseReturn}" was found`,
+    };
+  }
 
-    if (!type || typeof type !== 'function') {
-      return {
-        pass: false,
-        message: () => positiveHint + '\n\n' + `Expected type to be a function but instead "${type}" was found`,
-      };
-    }
+  if (!type || typeof type !== 'function') {
+    return {
+      pass: false,
+      message: () => positiveHint + '\n\n' + `Expected type to be a function but instead "${type}" was found`,
+    };
+  }
 
-    if (!message) {
-      return {
-        pass: false,
-        message: () => positiveHint + '\n\n' + ' Message argument is required. ',
-      };
-    }
+  if (!message) {
+    return {
+      pass: false,
+      message: () => positiveHint + '\n\n' + ' Message argument is required. ',
+    };
+  }
 
-    if (typeof message !== 'string' && !(message instanceof RegExp)) {
-      return {
-        pass: false,
-        message: () =>
-          positiveHint +
-          '\n\n' +
-          'Unexpected argument for message\n' +
-          'Expected: "string" or "regexp\n' +
-          `Got: "${message}"`,
-      };
-    }
+  if (typeof message !== 'string' && !(message instanceof RegExp)) {
+    return {
+      pass: false,
+      message: () =>
+        positiveHint +
+        '\n\n' +
+        'Unexpected argument for message\n' +
+        'Expected: "string" or "regexp\n' +
+        `Got: "${message}"`,
+    };
+  }
 
-    let error;
-    if (isFromReject) {
-      error = callbackOrPromiseReturn;
-    } else {
-      try {
-        callbackOrPromiseReturn();
-      } catch (e) {
-        error = e;
-      }
+  let error;
+  if (isFromReject) {
+    error = callbackOrPromiseReturn;
+  } else {
+    try {
+      callbackOrPromiseReturn();
+    } catch (e) {
+      error = e;
     }
+  }
 
-    if (!error) {
-      return {
-        pass: false,
-        message: () => 'Expected the function to throw an error.\n' + "But it didn't throw anything.",
-      };
-    }
+  if (!error) {
+    return {
+      pass: false,
+      message: () => 'Expected the function to throw an error.\n' + "But it didn't throw anything.",
+    };
+  }
 
-    const pass = predicate(error, type, message);
-    if (pass) {
-      return { pass: true, message: passMessage(error, new type(message)) };
-    }
+  const pass = predicate(error, type, message);
+  if (pass) {
+    return { pass: true, message: passMessage(error, new type(message)) };
+  }
 
-    return { pass: false, message: failMessage(error, new type(message)) };
-  },
-};
+  return { pass: false, message: failMessage(error, new type(message)) };
+}

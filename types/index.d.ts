@@ -2,7 +2,7 @@
 
 declare namespace jest {
   // noinspection JSUnusedGlobalSymbols
-  interface Matchers<R> {
+  interface Matchers<R, T> {
     /**
      * Note: Currently unimplemented
      * Passing assertion
@@ -17,7 +17,7 @@ declare namespace jest {
      *
      * @param {String} message
      */
-    fail(message: string): R;
+    fail(message: string): never;
 
     /**
      * Use .toBeEmpty when checking if a String '', Array [], Object {} or Iterable (i.e. Map, Set) is empty.
@@ -69,6 +69,12 @@ declare namespace jest {
      * @param {Array.<*>} members
      */
     toIncludeAllMembers<E = any>(members: E[]): R;
+
+    /**
+     * Use `.toIncludeAllPartialMembers` when checking if an `Array` contains all of the same partial members of a given set.
+     * @param {Array.<*>} members
+     */
+    toIncludeAllMembers(members: any[]): R;
 
     /**
      * Use `.toIncludeAnyMembers` when checking if an `Array` contains any of the members of a given set.
@@ -155,6 +161,11 @@ declare namespace jest {
      * @param {Mock} mock
      */
     toHaveBeenCalledAfter(mock: jest.Mock): R;
+
+    /**
+     * Use `.toHaveBeenCalledOnce` to check if a `Mock` was called exactly one time.
+     */
+    toHaveBeenCalledOnce(): R;
 
     /**
      * Use `.toBeNumber` when checking if a value is a `Number`.
@@ -373,6 +384,11 @@ declare namespace jest {
      * @param {String | RegExp} message
      */
     toThrowWithMessage(type: Function, message: string | RegExp): R;
+
+    /**
+     * Use `.toBeSymbol` when checking if a value is a `Symbol`.
+     */
+    toBeSymbol(): R;
   }
 
   // noinspection JSUnusedGlobalSymbols
@@ -529,6 +545,11 @@ declare namespace jest {
      * @param {Mock} mock
      */
     toHaveBeenCalledAfter(mock: jest.Mock): any;
+
+    /**
+     * Use `.toHaveBeenCalledOnce` to check if a `Mock` was called exactly one time.
+     */
+    toHaveBeenCalledOnce(): any;
 
     /**
      * Use `.toBeNumber` when checking if a value is a `Number`.
@@ -746,6 +767,11 @@ declare namespace jest {
     /**
      * Use `.toBeEmptyObject` when checking if a value is an empty `Object`.
      */
-    toBeEmptyObject(): R;
+    toBeEmptyObject(): any;
+
+    /**
+     * Use `.toBeSymbol` when checking if a value is a `Symbol`.
+     */
+    toBeSymbol(): any;
   }
 }

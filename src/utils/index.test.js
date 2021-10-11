@@ -1,4 +1,4 @@
-import { contains, determinePropertyMessage } from './';
+import { contains, determinePropertyMessage, isJestMockOrSpy } from './';
 
 describe('Utils', () => {
   describe('.contains', () => {
@@ -47,5 +47,17 @@ describe('Utils', () => {
         expect(determinePropertyMessage(date, 'length', errorMessage)).toBe(errorMessage);
       });
     }
+  });
+
+  describe('.isJestMockOrSpy', () => {
+    test('returns true if value is a jest mock', () => {
+      const spy = jest.fn();
+      expect(isJestMockOrSpy(spy)).toBe(true);
+    });
+
+    test('returns false if value is not a jest mock', () => {
+      const fn = () => {};
+      expect(isJestMockOrSpy(fn)).toBe(false);
+    });
   });
 });

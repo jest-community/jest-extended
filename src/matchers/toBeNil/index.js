@@ -14,13 +14,11 @@ const failMessage = received => () =>
   'Expected value to be null or undefined, received:\n' +
   `  ${printReceived(received)}`;
 
-export default {
-  toBeNil: received => {
-    const pass = predicate(received);
-    if (pass) {
-      return { pass: true, message: passMessage(received) };
-    }
+export function toBeNil(received) {
+  const pass = predicate(received);
+  if (pass) {
+    return { pass: true, message: passMessage(received) };
+  }
 
-    return { pass: false, message: failMessage(received) };
-  },
-};
+  return { pass: false, message: failMessage(received) };
+}

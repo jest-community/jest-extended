@@ -14,13 +14,11 @@ const failMessage = received => () =>
   'Expected value to be an array received:\n' +
   `  ${printReceived(received)}`;
 
-export default {
-  toBeArray: expected => {
-    const pass = predicate(expected);
-    if (pass) {
-      return { pass: true, message: passMessage(expected) };
-    }
+export function toBeArray(expected) {
+  const pass = predicate(expected);
+  if (pass) {
+    return { pass: true, message: passMessage(expected) };
+  }
 
-    return { pass: false, message: failMessage(expected) };
-  },
-};
+  return { pass: false, message: failMessage(expected) };
+}

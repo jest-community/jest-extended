@@ -33,5 +33,13 @@
     "no-trailing-spaces": 1,
     "object-curly-spacing": [1, "always"],
     "quotes": ["warn", "single", { "avoidEscape": true }]
-  }
+  },
+  "overrides": [
+    {
+      "files": "src/matchers/*/index.js",
+      "rules": {
+        "import/no-default-export": "error"
+      }
+    }
+  ]
 }

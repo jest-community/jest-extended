@@ -23,14 +23,12 @@ const failMessage = (received, expected) => () => {
   );
 };
 
-export default {
-  toEqualCaseInsensitive(received, expected) {
-    const pass = predicate(received, expected);
+export function toEqualCaseInsensitive(received, expected) {
+  const pass = predicate(received, expected);
 
-    return {
-      pass,
-      message: pass ? passMessage(received, expected) : failMessage(received, expected),
-      actual: received,
-    };
-  },
-};
+  return {
+    pass,
+    message: pass ? passMessage(received, expected) : failMessage(received, expected),
+    actual: received,
+  };
+}

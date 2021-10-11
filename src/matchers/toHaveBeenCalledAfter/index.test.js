@@ -1,4 +1,4 @@
-import matcher from './';
+import * as matcher from './';
 
 expect.extend(matcher);
 
@@ -57,6 +57,18 @@ describe('.toHaveBeenCalledAfter', () => {
     mock1.mock.invocationCallOrder[2] = 7000;
     mock2.mock.invocationCallOrder[0] = 4000;
     expect(mock1).toHaveBeenCalledAfter(mock2);
+  });
+
+  test('fails when given first value is not a jest spy or mock', () => {
+    const mock1 = () => {};
+    const mock2 = jest.fn();
+    expect(() => expect(mock1).toHaveBeenCalledAfter(mock2)).toThrowErrorMatchingSnapshot();
+  });
+
+  test('fails when given second value is not a jest spy or mock', () => {
+    const mock1 = jest.fn();
+    const mock2 = () => {};
+    expect(() => expect(mock1).toHaveBeenCalledAfter(mock2)).toThrowErrorMatchingSnapshot();
   });
 });
 
