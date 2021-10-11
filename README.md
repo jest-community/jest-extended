@@ -181,7 +181,7 @@ Since the [breaking changes]() in `25.5.0` you may also need to update your `tsc
 }
 ```
 
-Also note that when adding this for the first time this affects which files are compiled by the typescript compiler and you might need to add the `include` property as well. See the [typescript docs](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) for more details.
+Also note that when adding this for the first time this affects which files are compiled by the TypeScript compiler and you might need to add the `include` property as well. See the [TypeScript docs](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) for more details.
 
 ## Asymmetric matchers
 
