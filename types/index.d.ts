@@ -17,7 +17,7 @@ declare namespace jest {
      *
      * @param {String} message
      */
-    fail(message: string): R;
+    fail(message: string): never;
 
     /**
      * Use .toBeEmpty when checking if a String '', Array [], Object {} or Iterable (i.e. Map, Set) is empty.
@@ -28,7 +28,7 @@ declare namespace jest {
      * Use .toBeOneOf when checking if a value is a member of a given Array.
      * @param {Array.<*>} members
      */
-    toBeOneOf(members: any[]): R;
+    toBeOneOf<E = any>(members: E[]): R;
 
     /**
      * Use `.toBeNil` when checking a value is `null` or `undefined`.
@@ -39,7 +39,7 @@ declare namespace jest {
      * Use `.toSatisfy` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean`.
      * @param {Function} predicate
      */
-    toSatisfy(predicate: (x: any) => boolean): R;
+    toSatisfy<E = any>(predicate: (x: E) => boolean): R;
 
     /**
      * Use `.toBeArray` when checking if a value is an `Array`.
@@ -68,7 +68,7 @@ declare namespace jest {
      * Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
      * @param {Array.<*>} members
      */
-    toIncludeAllMembers(members: any[]): R;
+    toIncludeAllMembers<E = any>(members: E[]): R;
 
     /**
      * Use `.toIncludeAllPartialMembers` when checking if an `Array` contains all of the same partial members of a given set.
@@ -80,19 +80,25 @@ declare namespace jest {
      * Use `.toIncludeAnyMembers` when checking if an `Array` contains any of the members of a given set.
      * @param {Array.<*>} members
      */
-    toIncludeAnyMembers(members: any[]): R;
+    toIncludeAnyMembers<E = any>(members: E[]): R;
 
     /**
      * Use `.toIncludeSameMembers` when checking if two arrays contain equal values, in any order.
      * @param {Array.<*>} members
      */
-    toIncludeSameMembers(members: any[]): R;
+    toIncludeSameMembers<E = any>(members: E[]): R;
 
     /**
      * Use `.toSatisfyAll` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean` for all values in an array.
      * @param {Function} predicate
      */
-    toSatisfyAll(predicate: (x: any) => boolean): R;
+    toSatisfyAll<E = any>(predicate: (x: E) => boolean): R;
+
+    /**
+     * Use `.toSatisfyAny` when you want to use a custom matcher by supplying a predicate function that returns `true` for any matching value in an array.
+     * @param {Function} predicate
+     */
+    toSatisfyAny(predicate: (x: any) => boolean): R;
 
     /**
      * Use `.toBeBoolean` when checking if a value is a `Boolean`.
@@ -123,6 +129,13 @@ declare namespace jest {
      * Use `.toBeFunction` when checking if a value is a `Function`.
      */
     toBeFunction(): R;
+
+    /**
+    * Use `.toBeDateString` when checking if a value is a valid date string.
+    *
+    * @param {String} string
+    */
+    toBeDateString(string: string): R;
 
     /**
      * Use `.toBeHexadecimal` when checking if a value is a valid HTML hex color.
@@ -193,6 +206,11 @@ declare namespace jest {
     toBeWithin(start: number, end: number): R;
 
     /**
+     * Use `.toBeInteger` when checking if a value is an integer.
+     */
+    toBeInteger(): R;
+
+    /**
      * Use `.toBeObject` when checking if a value is an `Object`.
      */
     toBeObject(): R;
@@ -202,84 +220,84 @@ declare namespace jest {
      *
      * @param {String} key
      */
-    toContainKey(key: string): R;
+    toContainKey<E = any>(key: keyof E | string): R;
 
     /**
      * Use `.toContainKeys` when checking if an object has all of the provided keys.
      *
      * @param {Array.<String>} keys
      */
-    toContainKeys(keys: string[]): R;
+    toContainKeys<E = any>(keys: (keyof E | string)[]): R;
 
     /**
      * Use `.toContainAllKeys` when checking if an object only contains all of the provided keys.
      *
      * @param {Array.<String>} keys
      */
-    toContainAllKeys(keys: string[]): R;
+    toContainAllKeys<E = any>(keys: (keyof E | string)[]): R;
 
     /**
      * Use `.toContainAnyKeys` when checking if an object contains at least one of the provided keys.
      *
      * @param {Array.<String>} keys
      */
-    toContainAnyKeys(keys: string[]): R;
+    toContainAnyKeys<E = any>(keys: (keyof E | string)[]): R;
 
     /**
      * Use `.toContainValue` when checking if an object contains the provided value.
      *
      * @param {*} value
      */
-    toContainValue(value: any): R;
+    toContainValue<E = any>(value: E): R;
 
     /**
      * Use `.toContainValues` when checking if an object contains all of the provided values.
      *
      * @param {Array.<*>} values
      */
-    toContainValues(values: any[]): R;
+    toContainValues<E = any>(values: E[]): R;
 
     /**
      * Use `.toContainAllValues` when checking if an object only contains all of the provided values.
      *
      * @param {Array.<*>} values
      */
-    toContainAllValues(values: any[]): R;
+    toContainAllValues<E = any>(values: E[]): R;
 
     /**
      * Use `.toContainAnyValues` when checking if an object contains at least one of the provided values.
      *
      * @param {Array.<*>} values
      */
-    toContainAnyValues(values: any[]): R;
+    toContainAnyValues<E = any>(values: E[]): R;
 
     /**
      * Use `.toContainEntry` when checking if an object contains the provided entry.
      *
      * @param {Array.<String, String>} entry
      */
-    toContainEntry<T>(entry: [keyof T, T[keyof T]]): R;
+    toContainEntry<E = any>(entry: [keyof E, E[keyof E]]): R;
 
     /**
      * Use `.toContainEntries` when checking if an object contains all of the provided entries.
      *
-     * @param {Array.<Array.<keyof T, T[keyof T]>>} entries
+     * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainEntries<T>(entries: [keyof T, T[keyof T]][]): R;
+    toContainEntries<E = any>(entries: [keyof E, E[keyof E]][]): R;
 
     /**
      * Use `.toContainAllEntries` when checking if an object only contains all of the provided entries.
      *
-     * @param {Array.<Array.<keyof T, T[keyof T]>>} entries
+     * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainAllEntries<T>(entries: [keyof T, T[keyof T]][]): R;
+    toContainAllEntries<E = any>(entries: [keyof E, E[keyof E]][]): R;
 
     /**
      * Use `.toContainAnyEntries` when checking if an object contains at least one of the provided entries.
      *
-     * @param {Array.<Array.<keyof T, T[keyof T]>>} entries
+     * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainAnyEntries<T>(entries: [keyof T, T[keyof T]][]): R;
+    toContainAnyEntries<E = any>(entries: [keyof E, E[keyof E]][]): R;
 
     /**
      * Use `.toBeExtensible` when checking if an object is extensible.
@@ -299,12 +317,12 @@ declare namespace jest {
     /**
      * Use `.toResolve` when checking if a promise resolves.
      */
-    toResolve(): R;
+    toResolve(): Promise<R>;
 
     /**
      * Use `.toReject` when checking if a promise rejects.
      */
-    toReject(): R;
+    toReject(): Promise<R>;
 
     /**
      * Use `.toBeString` when checking if a value is a `String`.
@@ -361,6 +379,11 @@ declare namespace jest {
      * @param {String | RegExp} message
      */
     toThrowWithMessage(type: Function, message: string | RegExp): R;
+
+    /**
+     * Use `.toBeSymbol` when checking if a value is a `Symbol`.
+     */
+    toBeSymbol(): R;
   }
 
   // noinspection JSUnusedGlobalSymbols
@@ -390,7 +413,7 @@ declare namespace jest {
      * Use .toBeOneOf when checking if a value is a member of a given Array.
      * @param {Array.<*>} members
      */
-    toBeOneOf(members: any[]): any;
+    toBeOneOf<E = any>(members: E[]): any;
 
     /**
      * Use `.toBeNil` when checking a value is `null` or `undefined`.
@@ -401,7 +424,7 @@ declare namespace jest {
      * Use `.toSatisfy` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean`.
      * @param {Function} predicate
      */
-    toSatisfy(predicate: (x: any) => boolean): any;
+    toSatisfy<E = any>(predicate: (x: E) => boolean): any;
 
     /**
      * Use `.toBeArray` when checking if a value is an `Array`.
@@ -430,25 +453,31 @@ declare namespace jest {
      * Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
      * @param {Array.<*>} members
      */
-    toIncludeAllMembers(members: any[]): any;
+    toIncludeAllMembers<E = any>(members: E[]): any;
 
     /**
      * Use `.toIncludeAnyMembers` when checking if an `Array` contains any of the members of a given set.
      * @param {Array.<*>} members
      */
-    toIncludeAnyMembers(members: any[]): any;
+    toIncludeAnyMembers<E = any>(members: E[]): any;
 
     /**
      * Use `.toIncludeSameMembers` when checking if two arrays contain equal values, in any order.
      * @param {Array.<*>} members
      */
-    toIncludeSameMembers(members: any[]): any;
+    toIncludeSameMembers<E = any>(members: E[]): any;
 
     /**
      * Use `.toSatisfyAll` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean` for all values in an array.
      * @param {Function} predicate
      */
-    toSatisfyAll(predicate: (x: any) => boolean): any;
+    toSatisfyAll<E = any>(predicate: (x: E) => boolean): any;
+
+    /**
+     * Use `.toSatisfyAny` when you want to use a custom matcher by supplying a predicate function that returns `true` for any matching value in an array.
+     * @param {Function} predicate
+     */
+    toSatisfyAny(predicate: (x: any) => boolean): any;
 
     /**
      * Use `.toBeBoolean` when checking if a value is a `Boolean`.
@@ -479,6 +508,13 @@ declare namespace jest {
      * Use `.toBeFunction` when checking if a value is a `Function`.
      */
     toBeFunction(): any;
+
+    /**
+    * Use `.toBeDateString` when checking if a value is a valid date string.
+    *
+    * @param {String} string
+    */
+    toBeDateString(string: string): any;
 
     /**
      * Use `.toBeHexadecimal` when checking if a value is a valid HTML hex color.
@@ -565,77 +601,77 @@ declare namespace jest {
      *
      * @param {Array.<String>} keys
      */
-    toContainKeys(keys: string[]): any;
+    toContainKeys<E = any>(keys: (keyof E | string)[]): any;
 
     /**
      * Use `.toContainAllKeys` when checking if an object only contains all of the provided keys.
      *
      * @param {Array.<String>} keys
      */
-    toContainAllKeys(keys: string[]): any;
+    toContainAllKeys<E = any>(keys: (keyof E | string)[]): any;
 
     /**
      * Use `.toContainAnyKeys` when checking if an object contains at least one of the provided keys.
      *
      * @param {Array.<String>} keys
      */
-    toContainAnyKeys(keys: string[]): any;
+    toContainAnyKeys<E = any>(keys: (keyof E | string)[]): any;
 
     /**
      * Use `.toContainValue` when checking if an object contains the provided value.
      *
      * @param {*} value
      */
-    toContainValue(value: any): any;
+    toContainValue<E = any>(value: E): any;
 
     /**
      * Use `.toContainValues` when checking if an object contains all of the provided values.
      *
      * @param {Array.<*>} values
      */
-    toContainValues(values: any[]): any;
+    toContainValues<E = any>(values: E[]): any;
 
     /**
      * Use `.toContainAllValues` when checking if an object only contains all of the provided values.
      *
      * @param {Array.<*>} values
      */
-    toContainAllValues(values: any[]): any;
+    toContainAllValues<E = any>(values: E[]): any;
 
     /**
      * Use `.toContainAnyValues` when checking if an object contains at least one of the provided values.
      *
      * @param {Array.<*>} values
      */
-    toContainAnyValues(values: any[]): any;
+    toContainAnyValues<E = any>(values: E[]): any;
 
     /**
      * Use `.toContainEntry` when checking if an object contains the provided entry.
      *
-     * @param {Array.<[keyof T, T[keyof T]>} entry
+     * @param {Array.<[keyof E, E[keyof E]>} entry
      */
-    toContainEntry<T>(entry: [keyof T, T[keyof T]]): any;
+    toContainEntry<E = any>(entry: [keyof E, E[keyof E]]): any;
 
     /**
      * Use `.toContainEntries` when checking if an object contains all of the provided entries.
      *
-     * @param {Array.<Array.<keyof T, T[keyof T]>>} entries
+     * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainEntries<T>(entries: [keyof T, T[keyof T]][]): any;
+    toContainEntries<E = any>(entries: [keyof E, E[keyof E]][]): any;
 
     /**
      * Use `.toContainAllEntries` when checking if an object only contains all of the provided entries.
      *
-     * @param {Array.<Array.<keyof T, T[keyof T]>>} entries
+     * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainAllEntries<T>(entries: [keyof T, T[keyof T]][]): any;
+    toContainAllEntries<E = any>(entries: [keyof E, E[keyof E]][]): any;
 
     /**
      * Use `.toContainAnyEntries` when checking if an object contains at least one of the provided entries.
      *
-     * @param {Array.<Array.<keyof T, T[keyof T]>>} entries
+     * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainAnyEntries<T>(entries: [keyof T, T[keyof T]][]): any;
+    toContainAnyEntries<E = any>(entries: [keyof E, E[keyof E]][]): any;
 
     /**
      * Use `.toBeExtensible` when checking if an object is extensible.
@@ -717,5 +753,15 @@ declare namespace jest {
      * @param {String | RegExp} message
      */
     toThrowWithMessage(type: Function, message: string | RegExp): any;
+
+    /**
+     * Use `.toBeEmptyObject` when checking if a value is an empty `Object`.
+     */
+    toBeEmptyObject(): any;
+
+    /**
+     * Use `.toBeSymbol` when checking if a value is a `Symbol`.
+     */
+    toBeSymbol(): any;
   }
 }

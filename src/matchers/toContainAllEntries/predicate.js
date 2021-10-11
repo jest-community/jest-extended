@@ -5,5 +5,5 @@ export default (obj, entries) => {
     return false;
   }
 
-  return entries.every(([key, value]) => obj.hasOwnProperty(key) && equals(obj[key], value));
+  return entries.every(([key, value]) => Object.prototype.hasOwnProperty.call(obj, key) && equals(obj[key], value));
 };

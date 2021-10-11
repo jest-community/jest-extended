@@ -1,4 +1,6 @@
-import matchers from './index';
+import * as fs from 'fs';
+import * as path from 'path';
+import * as matchers from './index';
 
 expect.extend(matchers);
 
@@ -39,6 +41,20 @@ describe('asymmetric matchers', () => {
       const data = { hello: 'world' };
       expect(data).not.toEqual(expect.toContainKey('foo'));
       expect('bob').toEqual(expect.not.toInclude('foo'));
+    });
+  });
+});
+
+describe('all matchers', () => {
+  test('must be exported', () => {
+    const directories = fs.readdirSync(__dirname).filter(dir => fs.statSync(path.join(__dirname, dir)).isDirectory());
+
+    expect(Object.keys(matchers)).toHaveLength(directories.length);
+  });
+
+  describe('must be functions', () => {
+    test.each(Object.entries(matchers))('%s', (_, matcher) => {
+      expect(typeof matcher).toBe('function');
     });
   });
 });

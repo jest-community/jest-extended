@@ -1,21 +1,22 @@
 <div align="center">
   <h1>jest-extended</h1>
 
-  🃏💪
+🃏💪
 
-  Additional Jest matchers
+Additional Jest matchers
+
 </div>
 
 <hr />
 
-[![Build Status](https://img.shields.io/travis/jest-community/jest-extended.svg?style=flat-square)](https://travis-ci.org/jest-community/jest-extended)
+[![Build Status](https://img.shields.io/github/workflow/status/jest-community/jest-extended/GitHub%20CI/main?style=flat-square)](https://github.com/jest-community/jest-extended/actions/workflows/ci.yaml)
 [![Code Coverage](https://img.shields.io/codecov/c/github/jest-community/jest-extended.svg?style=flat-square)](https://codecov.io/github/jest-community/jest-extended)
 [![version](https://img.shields.io/npm/v/jest-extended.svg?style=flat-square)](https://www.npmjs.com/package/jest-extended)
 [![downloads](https://img.shields.io/npm/dm/jest-extended.svg?style=flat-square)](http://npm-stat.com/charts.html?package=jest-extended&from=2017-09-14)
-[![MIT License](https://img.shields.io/npm/l/jest-extended.svg?style=flat-square)](https://github.com/jest-community/jest-extended/blob/master/LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![Roadmap](https://img.shields.io/badge/%F0%9F%93%94-roadmap-CD9523.svg?style=flat-square)](https://github.com/jest-community/jest-extended/blob/master/docs/ROADMAP.md)
-[![Examples](https://img.shields.io/badge/%F0%9F%92%A1-examples-ff615b.svg?style=flat-square)](https://github.com/jest-community/jest-extended/blob/master/docs/EXAMPLES.md)
+[![MIT License](https://img.shields.io/npm/l/jest-extended.svg?style=flat-square)](https://github.com/jest-community/jest-extended/blob/main/LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](./CONTRIBUTING.md)
+[![Roadmap](https://img.shields.io/badge/%F0%9F%93%94-roadmap-CD9523.svg?style=flat-square)](https://github.com/jest-community/jest-extended/blob/main/docs/ROADMAP.md)
+[![Examples](https://img.shields.io/badge/%F0%9F%92%A1-examples-ff615b.svg?style=flat-square)](https://github.com/jest-community/jest-extended/blob/main/docs/EXAMPLES.md)
 
 ## Problem
 
@@ -39,12 +40,12 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
 - [Setup](#setup)
 - [Asymmetric matchers](#asymmetric-matchers)
 - [API](#api)
-    - [.pass(message)](#passmessage)
-    - [.fail(message)](#failmessage)
-    - [.toBeEmpty()](#tobeempty)
-    - [.toBeOneOf([members])](#tobeoneofmembers)
-    - [.toBeNil()](#tobenil)
-    - [.toSatisfy(predicate)](#tosatisfypredicate)
+  - [.pass(message)](#passmessage)
+  - [.fail(message)](#failmessage)
+  - [.toBeEmpty()](#tobeempty)
+  - [.toBeOneOf([members])](#tobeoneofmembers)
+  - [.toBeNil()](#tobenil)
+  - [.toSatisfy(predicate)](#tosatisfypredicate)
   - [Array](#array)
     - [.toBeArray()](#tobearray)
     - [.toBeArrayOfSize()](#tobearrayofsize)
@@ -53,6 +54,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toIncludeAnyMembers([members])](#toincludeanymembersmembers)
     - [.toIncludeSameMembers([members])](#toincludesamemembersmembers)
     - [.toSatisfyAll(predicate)](#tosatisfyallpredicate)
+    - [.toSatisfyAny(predicate)](#tosatisfyanypredicate)
   - [Boolean](#boolean)
     - [.toBeBoolean()](#tobeboolean)
     - [.toBeTrue()](#tobetrue)
@@ -78,8 +80,10 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toBeEven()](#tobeeven)
     - [.toBeOdd()](#tobeodd)
     - [.toBeWithin(start, end)](#tobewithinstart-end)
+    - [.toBeInteger()](#tobeinteger)
   - [Object](#object)
     - [.toBeObject()](#tobeobject)
+    - [.toBeEmptyObject()](#tobeemptyobject)
     - [.toContainKey(key)](#tocontainkeykey)
     - [.toContainKeys([keys])](#tocontainkeyskeys)
     - [.toContainAllKeys([keys])](#tocontainallkeyskeys)
@@ -101,62 +105,40 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
   - [String](#string)
     - [.toBeString()](#tobestring)
     - [.toBeHexadecimal(string)](#tobehexadecimal)
+    - [.toBeDateString(string)](#tobedatestringstring)
     - [.toEqualCaseInsensitive(string)](#toequalcaseinsensitivestring)
     - [.toStartWith(prefix)](#tostartwithprefix)
     - [.toEndWith(suffix)](#toendwithsuffix)
     - [.toInclude(substring)](#toincludesubstring)
     - [.toIncludeRepeated(substring, times)](#toincluderepeatedsubstring-times)
     - [.toIncludeMultiple([substring])](#toincludemultiplesubstring)
+  - [Symbol](#symbol)
+    - [.toBeSymbol()](#tobesymbol)
 - [LICENSE](#license)
 
 ## Installation
 
 With npm:
+
 ```sh
 npm install --save-dev jest-extended
 ```
 
 With yarn:
+
 ```sh
 yarn add -D jest-extended
 ```
 
 ## Setup
 
-### Jest >v24
+Note that `jest-extended` only supports Jest version 24 and newer.
 
 Add `jest-extended` to your Jest `setupFilesAfterEnv` configuration. [See for help](https://jestjs.io/docs/en/configuration.html#setupfilesafterenv-array)
 
-``` json
+```json
 "jest": {
   "setupFilesAfterEnv": ["jest-extended"]
-}
-```
-
-### Jest <v23
-
-```json
-"jest": {
-  "setupTestFrameworkScriptFile": "jest-extended"
-}
-```
-
-If you are already using another test framework, like [jest-chain](https://github.com/mattphillips/jest-chain), then you should create a test setup file and `require` each of the frameworks you are using.
-
-For example:
-
-```js
-// ./testSetup.js
-require('jest-extended');
-require('jest-chain');
-require('any other test framework libraries you are using');
-```
-
-Then in your Jest config:
-
-```json
-"jest": {
-  "setupTestFrameworkScriptFile": "./testSetup.js"
 }
 ```
 
@@ -168,6 +150,28 @@ If your editor does not recognise the custom `jest-extended` matchers, add a `gl
 import 'jest-extended';
 ```
 
+_Note: When using `ts-jest >= 25.5.0`_
+
+Since the [breaking changes]() in `25.5.0` you may also need to update your `tsconfig.json` to include the new `global.d.ts` file in the `files` property like so:
+
+```json
+{
+  "compilerOptions": {
+    ...
+  },
+  ...
+  "files": ["global.d.ts"]
+}
+```
+
+Also note that when adding this for the first time this affects which files are compiled by the TypeScript compiler and you might need to add the `include` property as well. See the [TypeScript docs](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) for more details.
+
+If the above import syntax does not work, replace it with the following:
+              
+```ts
+/// <reference types="jest-extended" />           
+```  
+              
 ## Asymmetric matchers
 
 All matchers described in the API are also asymmetrical since [jest version 23](https://jestjs.io/blog/2018/05/29/jest-23-blazing-fast-delightful-testing#custom-asymmetric-matchers):
@@ -182,7 +186,6 @@ test('passes when using an asymmetrical matcher', () => {
 
 #### .pass(message)
 
-_Note: Currently unimplemented_
 
 Passing assertion.
 
@@ -192,7 +195,6 @@ expect().pass('should pass');
 
 #### .fail(message)
 
-_Note: Currently unimplemented_
 
 Failing assertion.
 
@@ -202,7 +204,7 @@ expect().fail('test should fail');
 
 #### .toBeEmpty()
 
-Use `.toBeEmpty` when checking if a `String` `''`, `Array` `[]`, `Object` `{}`, or `[Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#Built-in_iterables)` is empty. Because `toBeEmpty` supports checking for emptiness of Iterables, you can use it to check whether a `Map`, or `Set` is empty, as well as checking that a generator yields no values.
+Use `.toBeEmpty` when checking if a `String` `''`, `Array` `[]`, `Object` `{}`, or [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#Built-in_iterables) is empty. Because `toBeEmpty` supports checking for emptiness of Iterables, you can use it to check whether a `Map`, or `Set` is empty, as well as checking that a generator yields no values.
 
 ```js
 test('passes when given an empty string', () => {
@@ -329,7 +331,6 @@ test('passes when arrays match in a different order', () => {
 });
 ```
 
-
 #### .toSatisfyAll(predicate)
 
 Use `.toSatisfyAll` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean` for all values in an array.
@@ -337,8 +338,20 @@ Use `.toSatisfyAll` when you want to use a custom matcher by supplying a predica
 ```js
 test('passes when all values in array pass given predicate', () => {
   const isOdd = el => el % 2 === 1;
-  expect([1,3,5,7]).toSatisfyAll(isOdd);
-  expect([1,3,4,5,7]).not.toSatisfyAll(isOdd);
+  expect([1, 3, 5, 7]).toSatisfyAll(isOdd);
+  expect([1, 3, 4, 5, 7]).not.toSatisfyAll(isOdd);
+});
+```
+
+#### .toSatisfyAny(predicate)
+
+Use `.toSatisfyAny` when you want to use a custom matcher by supplying a predicate function that returns `true` for any matching value in an array.
+
+```js
+test('passes when any value in array pass given predicate', () => {
+  const isOdd = el => el % 2 === 1;
+  expect([2,3,6,8]).toSatisfyAny(isOdd);
+  expect([2,4,8,12]).not.toSatisfyAny(isOdd);
 });
 ```
 
@@ -381,7 +394,7 @@ test('returns false', () => {
 
 ### ~~Date~~
 
-Proposal in #117 (*under development*)
+Proposal in #117 (_under development_)
 
 ### .toBeDate()
 
@@ -391,7 +404,7 @@ Use `.toBeDate` when checking if a value is a `Date`.
 test('passes when value is a date', () => {
   expect(new Date()).toBeDate();
   expect('01/01/2018').not.toBeDate();
-  expect(new Date('01/01/2018').toBeDate();
+  expect(new Date('01/01/2018')).toBeDate();
   expect(undefined).not.toBeDate();
 });
 ```
@@ -404,23 +417,28 @@ Use `.toBeValidDate` when checking if a given `Date` object is valid.
 test('passes when Date is valid', () => {
   expect(new Date()).toBeValidDate();
   expect('01/01/2018').not.toBeValidDate();
-  expect(new Date('01/01/2018').toBeValidDate();
-  expect(new Date('01/90/2018').not.toBeValidDate();
+  expect(new Date('01/01/2018')).toBeValidDate();
+  expect(new Date('01/90/2018')).not.toBeValidDate();
   expect(undefined).not.toBeValidDate();
 });
 ```
 
 ### .toBeAfter(date)
- Use `.toBeAfter` when checking if a date occurs after `date`.
- ```js
+
+Use `.toBeAfter` when checking if a date occurs after `date`.
+
+```js
 test('passes when input is after date', () => {
   expect(new Date('01/01/2019')).toBeAfter(new Date('01/01/2018'));
   expect('01/01/2018').not.toBeAfter(new Date('01/01/2019'));
 });
 ```
- ### .toBeBefore(date)
- Use `.toBeBefore` when checking if a date occurs before `date`.
- ```js
+
+### .toBeBefore(date)
+
+Use `.toBeBefore` when checking if a date occurs before `date`.
+
+```js
 test('passes when input is before date', () => {
   expect(new Date('01/01/2018')).toBeBefore(new Date('01/01/2019'));
   expect('01/01/2019').not.toBeBefore(new Date('01/01/2018'));
@@ -435,9 +453,9 @@ Use `.toBeFunction` when checking if a value is a `Function`.
 
 ```js
 test('passes when value is a function', () => {
-  function noop = () {};
+  function noop() {}
   expect(() => {}).toBeFunction();
-  expect(function() {}).not.toBeFunction();
+  expect(function () {}).not.toBeFunction();
   expect(noop).toBeFunction();
   expect(true).not.toBeFunction();
 });
@@ -450,20 +468,28 @@ Use `.toThrowWithMessage` when checking if a callback function throws an error w
 ```js
 test('throws an error of type TypeError with message "hello world"', () => {
   expect(() => {
-    throw TypeError("hello world");
-  }).toThrowWithMessage(TypeError, "hello world");
+    throw TypeError('hello world');
+  }).toThrowWithMessage(TypeError, 'hello world');
 
   expect(() => {
-    throw TypeError("hello world");
+    throw TypeError('hello world');
   }).toThrowWithMessage(TypeError, /hello world/);
 
   expect(() => {
-    throw TypeError("hello world 2");
-  }).not.toThrowWithMessage(TypeError, "hello world");
+    throw TypeError('hello world 2');
+  }).not.toThrowWithMessage(TypeError, 'hello world');
 
   expect(() => {
-    throw TypeError("hello world 2");
+    throw TypeError('hello world 2');
   }).not.toThrowWithMessage(TypeError, /hello world/);
+});
+```
+
+This works for promise rejections too.
+
+```js
+test('throws an error of type TypeError with message "hello world"', async () => {
+  await expect(Promise.reject(new TypeError("hello world async")).rejects.toThrowWithMessage(TypeError, /hello world/);
 });
 ```
 
@@ -475,9 +501,7 @@ Use `.toHaveBeenCalledBefore` when checking if a `Mock` was called before anothe
 
 _Note: Required Jest version >=23_
 
-
 ```js
-
 it('calls mock1 before mock2', () => {
   const mock1 = jest.fn();
   const mock2 = jest.fn();
@@ -496,9 +520,7 @@ Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another 
 
 _Note: Required Jest version >=23_
 
-
 ```js
-
 it('calls mock1 after mock2', () => {
   const mock1 = jest.fn();
   const mock2 = jest.fn();
@@ -577,7 +599,6 @@ test('passes when value is a negative number', () => {
 
 #### .toBeEven()
 
-
 Use `.toBeEven` when checking if a value is an even `Number`.
 
 ```js
@@ -612,7 +633,30 @@ test('passes when number is within given bounds', () => {
 });
 ```
 
+#### .toBeInteger()
+
+Use `.toBeInteger` when checking if a number is an integer.
+
+```js
+test('passes when value is an integer', () => {
+  expect(1).toBeInteger();
+  expect(1.0).toBeInteger();
+  expect(1.1).not.toBeInteger();
+});
+```
+
 ### Object
+
+#### .toBeEmptyObject()
+
+Use `.toBeEmptyObject` when checking if a value is an empty `Object`.
+
+```js
+test('passes when value is an empty object', () => {
+  expect({}).toBeEmptyObject();
+  expect({ a: 'hello' }).not.toBeEmptyObject();
+});
+```
 
 #### .toBeObject()
 
@@ -755,8 +799,14 @@ Use `.toContainEntries` when checking if an object contains all of the provided 
 test('passes when object contains all of the given entries', () => {
   const o = { a: 'foo', b: 'bar', c: 'baz' };
   expect(o).toContainEntries([['a', 'foo']]);
-  expect(o).toContainEntries([['c', 'baz'], ['a', 'foo']]);
-  expect(o).not.toContainEntries([['b', 'qux'], ['a', 'foo']]);
+  expect(o).toContainEntries([
+    ['c', 'baz'],
+    ['a', 'foo'],
+  ]);
+  expect(o).not.toContainEntries([
+    ['b', 'qux'],
+    ['a', 'foo'],
+  ]);
 });
 ```
 
@@ -767,8 +817,15 @@ Use `.toContainAllEntries` when checking if an object only contains all of the p
 ```js
 test('passes when object only contains all of the given entries', () => {
   const o = { a: 'foo', b: 'bar', c: 'baz' };
-  expect(o).toContainAllEntries([['a', 'foo'], ['b', 'bar'], ['c', 'baz']]);
-  expect(o).not.toContainAllEntries([['a', 'foo'], ['b', 'bar']]);
+  expect(o).toContainAllEntries([
+    ['a', 'foo'],
+    ['b', 'bar'],
+    ['c', 'baz'],
+  ]);
+  expect(o).not.toContainAllEntries([
+    ['a', 'foo'],
+    ['b', 'bar'],
+  ]);
 });
 ```
 
@@ -779,9 +836,18 @@ Use `.toContainAnyEntries` when checking if an object contains at least one of t
 ```js
 test('passes when object contains at least one of the given entries', () => {
   const o = { a: 'foo', b: 'bar', c: 'baz' };
-  expect(o).toContainAnyEntries([['a', 'qux'], ['a', 'foo']]);
-  expect(o).toContainAnyEntries([['a', 'qux'], ['b', 'bar']]);
-  expect(o).toContainAnyEntries([['a', 'qux'], ['c', 'baz']]);
+  expect(o).toContainAnyEntries([
+    ['a', 'qux'],
+    ['a', 'foo'],
+  ]);
+  expect(o).toContainAnyEntries([
+    ['a', 'qux'],
+    ['b', 'bar'],
+  ]);
+  expect(o).toContainAnyEntries([
+    ['a', 'qux'],
+    ['c', 'baz'],
+  ]);
   expect(o).not.toContainAnyEntries([['d', 'qux']]);
 });
 ```
@@ -792,7 +858,7 @@ Use `.toBeExtensible` when checking if an object is extensible.
 
 ```js
 test('passes when value is extensible', () => {
-  expect({a: 1}).toBeExtensible();
+  expect({ a: 1 }).toBeExtensible();
   expect(1).not.toBeExtensible();
 });
 ```
@@ -871,6 +937,18 @@ test('passes when value is a valid hexadecimal', () => {
 });
 ```
 
+#### .toBeDateString(string)
+
+Use `.toBeDateString` when checking if a value is a valid date string.
+
+```js
+test('passes when value is a valid toBeDateString', () => {
+  expect('2019-11-27T14:05:07.520Z').toBeDateString();
+  expect('11/12/21').toBeDateString();
+  expect('not a date').not.toBeDateString();
+});
+```
+
 #### .toEqualCaseInsensitive(string)
 
 Use `.toEqualCaseInsensitive` when checking if a string is equal (===) to another ignoring the casing of both strings.
@@ -937,6 +1015,19 @@ Use `.toIncludeMultiple` when checking if a `String` includes all of the given s
 test('passes when value includes all substrings', () => {
   expect('hello world').toIncludeMultiple(['world', 'hello']);
   expect('hello world').not.toIncludeMultiple(['world', 'hello', 'bob']);
+});
+```
+
+### Symbol
+
+#### .toBeSymbol()
+
+Use `.toBeSymbol` when checking if a value is a `Symbol`.
+
+```js
+test('passes when value is a symbol', () => {
+  expect(Symbol()).toBeSymbol();
+  expect(true).not.toBeSymbol();
 });
 ```
 
