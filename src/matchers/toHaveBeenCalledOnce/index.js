@@ -25,7 +25,7 @@ export default {
     return {
       pass,
       message: pass ? passMessage(received) : failMessage(received),
-      actual: received
+      actual: received,
     };
-  }
+  },
 };
