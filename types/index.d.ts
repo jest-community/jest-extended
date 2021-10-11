@@ -65,22 +65,22 @@ declare namespace jest {
     toBeBefore(date: Date): R;
 
     /**
-     * Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
-     * @param {Array.<*>} members
+     * Use `.toIncludeAllMembers` when checking if an `Iterable` contains all of the same members of a given set.
+     * @param {Iterable.<*>} members
      */
-    toIncludeAllMembers<E = any>(members: E[]): R;
+    toIncludeAllMembers<E = any>(members: Iterable<E>): R;
 
     /**
-     * Use `.toIncludeAnyMembers` when checking if an `Array` contains any of the members of a given set.
-     * @param {Array.<*>} members
+     * Use `.toIncludeAnyMembers` when checking if an `Iterable` contains any of the members of a given set.
+     * @param {Iterable.<*>} members
      */
-    toIncludeAnyMembers<E = any>(members: E[]): R;
+    toIncludeAnyMembers<E = any>(members: Iterable<E>): R;
 
     /**
-     * Use `.toIncludeSameMembers` when checking if two arrays contain equal values, in any order.
-     * @param {Array.<*>} members
+     * Use `.toIncludeSameMembers` when checking if two `Iterable`s contain equal values, in any order.
+     * @param {Iterable.<*>} members
      */
-    toIncludeSameMembers<E = any>(members: E[]): R;
+    toIncludeSameMembers<E = any>(members: Iterable<E>): R;
 
     /**
      * Use `.toSatisfyAll` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean` for all values in an array.
@@ -444,22 +444,22 @@ declare namespace jest {
     toBeBefore(date: Date): any;
 
     /**
-     * Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
-     * @param {Array.<*>} members
+     * Use `.toIncludeAllMembers` when checking if an `Iterable` contains all of the same members of a given set.
+     * @param {Iterable.<*>} members
      */
-    toIncludeAllMembers<E = any>(members: E[]): any;
+    toIncludeAllMembers<E = any>(members: Iterable<E>): any;
 
     /**
-     * Use `.toIncludeAnyMembers` when checking if an `Array` contains any of the members of a given set.
-     * @param {Array.<*>} members
+     * Use `.toIncludeAnyMembers` when checking if an `Iterable` contains any of the members of a given set.
+     * @param {Iterable.<*>} members
      */
-    toIncludeAnyMembers<E = any>(members: E[]): any;
+    toIncludeAnyMembers<E = any>(members: Iterable<E>): any;
 
     /**
-     * Use `.toIncludeSameMembers` when checking if two arrays contain equal values, in any order.
-     * @param {Array.<*>} members
+     * Use `.toIncludeSameMembers` when checking if two `Iterable`s contain equal values, in any order.
+     * @param {Iterable.<*>} members
      */
-    toIncludeSameMembers<E = any>(members: E[]): any;
+    toIncludeSameMembers<E = any>(members: Iterable<E>): any;
 
     /**
      * Use `.toSatisfyAll` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean` for all values in an array.
