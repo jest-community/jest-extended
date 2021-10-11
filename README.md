@@ -450,6 +450,14 @@ test('throws an error of type TypeError with message "hello world"', () => {
 });
 ```
 
+This works for promise rejections too.
+
+```js
+test('throws an error of type TypeError with message "hello world"', async () => {
+  await expect(Promise.reject(new TypeError("hello world async")).rejects.toThrowWithMessage(TypeError, /hello world/);
+});
+```
+
 ### Mock
 
 #### .toHaveBeenCalledBefore()
