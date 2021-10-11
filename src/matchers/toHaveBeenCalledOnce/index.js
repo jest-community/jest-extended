@@ -28,18 +28,16 @@ const mockCheckFailMessage = value => () => {
   );
 };
 
-export default {
-  toHaveBeenCalledOnce: received => {
-    if (!isJestMockOrSpy(received)) {
-      return { pass: false, message: mockCheckFailMessage(received) };
-    }
+export function toHaveBeenCalledOnce(received) {
+  if (!isJestMockOrSpy(received)) {
+    return { pass: false, message: mockCheckFailMessage(received) };
+  }
 
-    const pass = predicate(received);
+  const pass = predicate(received);
 
-    return {
-      pass,
-      message: pass ? passMessage(received) : failMessage(received),
-      actual: received,
-    };
-  },
-};
+  return {
+    pass,
+    message: pass ? passMessage(received) : failMessage(received),
+    actual: received,
+  };
+}

@@ -48,8 +48,15 @@ describe('asymmetric matchers', () => {
 describe('all matchers', () => {
   test('must be exported', () => {
     const directories = fs.readdirSync(__dirname).filter(dir => fs.statSync(path.join(__dirname, dir)).isDirectory());
+    const namedMatchers = Object.keys(matchers);
 
-    expect(Object.keys(matchers)).toHaveLength(directories.length);
+    try {
+      expect(namedMatchers).toHaveLength(directories.length);
+    } catch (error) {
+      const missing = new Set(directories.filter(dir => !namedMatchers.includes(dir)));
+      console.error('Missing', missing);
+      throw error;
+    }
   });
 
   describe('must be functions', () => {

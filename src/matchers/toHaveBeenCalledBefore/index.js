@@ -33,23 +33,21 @@ const mockCheckFailMessage = (value, isReceivedValue) => () => {
   );
 };
 
-export default {
-  toHaveBeenCalledBefore: (firstMock, secondMock) => {
-    if (!isJestMockOrSpy(firstMock)) {
-      return { pass: false, message: mockCheckFailMessage(firstMock, true) };
-    }
+export function toHaveBeenCalledBefore(firstMock, secondMock) {
+  if (!isJestMockOrSpy(firstMock)) {
+    return { pass: false, message: mockCheckFailMessage(firstMock, true) };
+  }
 
-    if (!isJestMockOrSpy(secondMock)) {
-      return { pass: false, message: mockCheckFailMessage(secondMock, false) };
-    }
+  if (!isJestMockOrSpy(secondMock)) {
+    return { pass: false, message: mockCheckFailMessage(secondMock, false) };
+  }
 
-    const firstInvocationCallOrder = firstMock.mock.invocationCallOrder;
-    const secondInvocationCallOrder = secondMock.mock.invocationCallOrder;
-    const pass = predicate(firstInvocationCallOrder, secondInvocationCallOrder);
-    if (pass) {
-      return { pass: true, message: passMessage(firstInvocationCallOrder, secondInvocationCallOrder) };
-    }
+  const firstInvocationCallOrder = firstMock.mock.invocationCallOrder;
+  const secondInvocationCallOrder = secondMock.mock.invocationCallOrder;
+  const pass = predicate(firstInvocationCallOrder, secondInvocationCallOrder);
+  if (pass) {
+    return { pass: true, message: passMessage(firstInvocationCallOrder, secondInvocationCallOrder) };
+  }
 
-    return { pass: false, message: failMessage(firstInvocationCallOrder, secondInvocationCallOrder) };
-  },
-};
+  return { pass: false, message: failMessage(firstInvocationCallOrder, secondInvocationCallOrder) };
+}

@@ -5,6 +5,6 @@ const failMessage = message => {
   else return () => 'fails by .fail() assertion';
 };
 
-export default {
-  fail: (expected, message) => ({ pass: predicate(), message: failMessage(message) }),
-};
+export function fail(expected, message) {
+  return { pass: predicate(), message: failMessage(message) };
+}

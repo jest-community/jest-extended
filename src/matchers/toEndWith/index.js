@@ -18,13 +18,11 @@ const failMessage = (suffix, string) => () =>
   'Received:\n' +
   `  ${printReceived(string)}`;
 
-export default {
-  toEndWith: (string, suffix) => {
-    const pass = predicate(suffix, string);
-    if (pass) {
-      return { pass: true, message: passMessage(suffix, string) };
-    }
+export function toEndWith(string, suffix) {
+  const pass = predicate(suffix, string);
+  if (pass) {
+    return { pass: true, message: passMessage(suffix, string) };
+  }
 
-    return { pass: false, message: failMessage(suffix, string) };
-  },
-};
+  return { pass: false, message: failMessage(suffix, string) };
+}

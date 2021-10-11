@@ -14,13 +14,11 @@ const failMessage = (received, before) => () =>
   `Expected date to be before ${printReceived(before)} but received:\n` +
   `  ${printReceived(received)}`;
 
-export default {
-  toBeBefore: (date, before) => {
-    const pass = predicate(date, before);
-    if (pass) {
-      return { pass: true, message: passMessage(date, before) };
-    }
+export function toBeBefore(date, before) {
+  const pass = predicate(date, before);
+  if (pass) {
+    return { pass: true, message: passMessage(date, before) };
+  }
 
-    return { pass: false, message: failMessage(date, before) };
-  },
-};
+  return { pass: false, message: failMessage(date, before) };
+}

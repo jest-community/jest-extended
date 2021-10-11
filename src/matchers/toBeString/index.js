@@ -16,13 +16,11 @@ const failMessage = received => () =>
   'Received:\n' +
   `  ${printReceived(typeof received)}`;
 
-export default {
-  toBeString: expected => {
-    const pass = predicate(expected);
-    if (pass) {
-      return { pass: true, message: passMessage(expected) };
-    }
+export function toBeString(expected) {
+  const pass = predicate(expected);
+  if (pass) {
+    return { pass: true, message: passMessage(expected) };
+  }
 
-    return { pass: false, message: failMessage(expected) };
-  },
-};
+  return { pass: false, message: failMessage(expected) };
+}

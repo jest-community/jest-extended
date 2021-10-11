@@ -168,11 +168,11 @@ Since the [breaking changes]() in `25.5.0` you may also need to update your `tsc
 Also note that when adding this for the first time this affects which files are compiled by the TypeScript compiler and you might need to add the `include` property as well. See the [TypeScript docs](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) for more details.
 
 If the above import syntax does not work, replace it with the following:
-              
+
 ```ts
-/// <reference types="jest-extended" />           
-```  
-              
+/// <reference types="jest-extended" />
+```
+
 ## Asymmetric matchers
 
 All matchers described in the API are also asymmetrical since [jest version 23](https://jestjs.io/blog/2018/05/29/jest-23-blazing-fast-delightful-testing#custom-asymmetric-matchers):
@@ -187,7 +187,6 @@ test('passes when using an asymmetrical matcher', () => {
 
 #### .pass(message)
 
-
 Passing assertion.
 
 ```js
@@ -195,7 +194,6 @@ expect().pass('should pass');
 ```
 
 #### .fail(message)
-
 
 Failing assertion.
 
@@ -303,9 +301,7 @@ Use `.toIncludeAllPartialMembers` when checking if an `Array` contains all of th
 
 ```js
 test('passes when given array values match the partial members of the set', () => {
-  expect([{ foo: 'bar', baz: 'qux' }]).toIncludeAllPartialMembers([
-    { foo: 'bar' },
-  ]);
+  expect([{ foo: 'bar', baz: 'qux' }]).toIncludeAllPartialMembers([{ foo: 'bar' }]);
 });
 ```
 
@@ -351,8 +347,8 @@ Use `.toSatisfyAny` when you want to use a custom matcher by supplying a predica
 ```js
 test('passes when any value in array pass given predicate', () => {
   const isOdd = el => el % 2 === 1;
-  expect([2,3,6,8]).toSatisfyAny(isOdd);
-  expect([2,4,8,12]).not.toSatisfyAny(isOdd);
+  expect([2, 3, 6, 8]).toSatisfyAny(isOdd);
+  expect([2, 4, 8, 12]).not.toSatisfyAny(isOdd);
 });
 ```
 
