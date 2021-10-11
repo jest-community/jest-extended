@@ -50,6 +50,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toBeArray()](#tobearray)
     - [.toBeArrayOfSize()](#tobearrayofsize)
     - [.toIncludeAllMembers([members])](#toincludeallmembersmembers)
+    - [.toIncludeAllPartialMembers([members])](#toincludeallpartialmembersmembers)
     - [.toIncludeAnyMembers([members])](#toincludeanymembersmembers)
     - [.toIncludeSameMembers([members])](#toincludesamemembersmembers)
     - [.toSatisfyAll(predicate)](#tosatisfyallpredicate)
@@ -70,6 +71,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
   - [Mock](#mock)
     - [.toHaveBeenCalledBefore()](#tohavebeencalledbefore)
     - [.toHaveBeenCalledAfter()](#tohavebeencalledafter)
+    - [.toHaveBeenCalledOnce()](#tohavebeencalledonce)
   - [Number](#number)
     - [.toBeNumber()](#tobenumber)
     - [.toBeNaN()](#tobenan)
@@ -111,6 +113,8 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toInclude(substring)](#toincludesubstring)
     - [.toIncludeRepeated(substring, times)](#toincluderepeatedsubstring-times)
     - [.toIncludeMultiple([substring])](#toincludemultiplesubstring)
+  - [Symbol](#symbol)
+    - [.toBeSymbol()](#tobesymbol)
 - [LICENSE](#license)
 
 ## Installation
@@ -147,6 +151,28 @@ If your editor does not recognise the custom `jest-extended` matchers, add a `gl
 import 'jest-extended';
 ```
 
+_Note: When using `ts-jest >= 25.5.0`_
+
+Since the [breaking changes]() in `25.5.0` you may also need to update your `tsconfig.json` to include the new `global.d.ts` file in the `files` property like so:
+
+```json
+{
+  "compilerOptions": {
+    ...
+  },
+  ...
+  "files": ["global.d.ts"]
+}
+```
+
+Also note that when adding this for the first time this affects which files are compiled by the TypeScript compiler and you might need to add the `include` property as well. See the [TypeScript docs](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) for more details.
+
+If the above import syntax does not work, replace it with the following:
+
+```ts
+/// <reference types="jest-extended" />
+```
+
 ## Asymmetric matchers
 
 All matchers described in the API are also asymmetrical since [jest version 23](https://jestjs.io/blog/2018/05/29/jest-23-blazing-fast-delightful-testing#custom-asymmetric-matchers):
@@ -161,8 +187,6 @@ test('passes when using an asymmetrical matcher', () => {
 
 #### .pass(message)
 
-_Note: Currently unimplemented_
-
 Passing assertion.
 
 ```js
@@ -170,8 +194,6 @@ expect().pass('should pass');
 ```
 
 #### .fail(message)
-
-_Note: Currently unimplemented_
 
 Failing assertion.
 
@@ -273,6 +295,16 @@ test('passes when given array values match the members of the set', () => {
 });
 ```
 
+#### .toIncludeAllPartialMembers([members])
+
+Use `.toIncludeAllPartialMembers` when checking if an `Array` contains all of the same partial members of a given set.
+
+```js
+test('passes when given array values match the partial members of the set', () => {
+  expect([{ foo: 'bar', baz: 'qux' }]).toIncludeAllPartialMembers([{ foo: 'bar' }]);
+});
+```
+
 #### .toIncludeAnyMembers([members])
 
 Use `.toIncludeAnyMembers` when checking if an `Array` contains any of the members of a given set.
@@ -315,8 +347,8 @@ Use `.toSatisfyAny` when you want to use a custom matcher by supplying a predica
 ```js
 test('passes when any value in array pass given predicate', () => {
   const isOdd = el => el % 2 === 1;
-  expect([2,3,6,8]).toSatisfyAny(isOdd);
-  expect([2,4,8,12]).not.toSatisfyAny(isOdd);
+  expect([2, 3, 6, 8]).toSatisfyAny(isOdd);
+  expect([2, 4, 8, 12]).not.toSatisfyAny(isOdd);
 });
 ```
 
@@ -495,6 +527,20 @@ it('calls mock1 after mock2', () => {
   mock2();
 
   expect(mock1).toHaveBeenCalledAfter(mock2);
+});
+```
+
+#### .toHaveBeenCalledOnce()
+
+Use `.toHaveBeenCalledOnce` to check if a `Mock` was called exactly one time.
+
+```js
+it('passes only if mock was called exactly once', () => {
+  const mock = jest.fn();
+
+  expect(mock).not.toHaveBeenCalled();
+  mock();
+  expect(mock).toHaveBeenCalledOnce();
 });
 ```
 
@@ -980,6 +1026,19 @@ Use `.toIncludeMultiple` when checking if a `String` includes all of the given s
 test('passes when value includes all substrings', () => {
   expect('hello world').toIncludeMultiple(['world', 'hello']);
   expect('hello world').not.toIncludeMultiple(['world', 'hello', 'bob']);
+});
+```
+
+### Symbol
+
+#### .toBeSymbol()
+
+Use `.toBeSymbol` when checking if a value is a `Symbol`.
+
+```js
+test('passes when value is a symbol', () => {
+  expect(Symbol()).toBeSymbol();
+  expect(true).not.toBeSymbol();
 });
 ```
 

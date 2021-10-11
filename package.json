@@ -19,7 +19,8 @@
     "precommit": "lint-staged",
     "test": "jest --color=true",
     "test:coverage": "yarn test --coverage",
-    "test:watch": "yarn test --watch"
+    "test:watch": "yarn test --watch",
+    "typecheck": "tsc --noEmit types/index.d.ts"
   },
   "keywords": [
     "jest",
@@ -43,14 +44,15 @@
     "eslint": "^7.30.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-jest": "^25.0.0",
     "eslint-plugin-prettier": "^4.0.0",
     "husky": "^7.0.1",
     "jest": "^27.2.4",
     "jest-watch-typeahead": "^1.0.0",
     "lint-staged": "^11.0.0",
     "prettier": "^2.3.2",
-    "pretty-format": "^27.2.4"
+    "pretty-format": "^27.2.4",
+    "typescript": "^4.4.3"
   },
   "dependencies": {
     "expect": "^26.6.2",
