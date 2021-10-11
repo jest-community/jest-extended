@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toBePositive fails when given a positive number 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBePositive(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).not.toBePositive()</>
 
 Expected value to not be positive received:
   <red>5</>"
 `;
 
 exports[`.toBePositive fails when not given a positive number 1`] = `
-"<dim>expect(</><red>received</><dim>).toBePositive(</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toBePositive()</>
 
 Expected value to be positive received:
   <red>-1</>"

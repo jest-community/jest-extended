@@ -5,7 +5,11 @@ export const contains = (list, value) => {
 };
 
 export const determinePropertyMessage = (actual, property, message = 'Not Accessible') => {
-  return actual && actual[property] ? actual[property] : message;
+  return actual && Object.hasOwnProperty.call(actual, property) ? actual[property] : message;
+};
+
+export const isJestMockOrSpy = value => {
+  return !!(value && value._isMockFunction === true && typeof value.mock === 'object');
 };
 
 export { equals };
