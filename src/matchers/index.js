@@ -49,6 +49,7 @@ import toHaveBeenCalledAfterMatcher from './toHaveBeenCalledAfter';
 import toHaveBeenCalledBeforeMatcher from './toHaveBeenCalledBefore';
 import toIncludeMatcher from './toInclude';
 import toIncludeAllMembersMatcher from './toIncludeAllMembers';
+import toIncludeAllPartialMembersMatcher from './toIncludeAllPartialMembers';
 import toIncludeAnyMembersMatcher from './toIncludeAnyMembers';
 import toIncludeMultipleMatcher from './toIncludeMultiple';
 import toIncludeRepeatedMatcher from './toIncludeRepeated';
@@ -114,6 +115,7 @@ export const toHaveBeenCalledAfter = toHaveBeenCalledAfterMatcher.toHaveBeenCall
 export const toHaveBeenCalledBefore = toHaveBeenCalledBeforeMatcher.toHaveBeenCalledBefore;
 export const toInclude = toIncludeMatcher.toInclude;
 export const toIncludeAllMembers = toIncludeAllMembersMatcher.toIncludeAllMembers;
+export const toIncludeAllPartialMembers = toIncludeAllPartialMembersMatcher.toIncludeAllPartialMembers;
 export const toIncludeAnyMembers = toIncludeAnyMembersMatcher.toIncludeAnyMembers;
 export const toIncludeMultiple = toIncludeMultipleMatcher.toIncludeMultiple;
 export const toIncludeRepeated = toIncludeRepeatedMatcher.toIncludeRepeated;
