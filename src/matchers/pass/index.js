@@ -6,5 +6,5 @@ const passMessage = message => {
 };
 
 export default {
-  pass: (expected, message) => ({ pass: predicate(), message: passMessage(message) })
+  pass: (expected, message) => ({ pass: predicate(), message: passMessage(message) }),
 };

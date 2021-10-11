@@ -6,5 +6,5 @@ const failMessage = message => {
 };
 
 export default {
-  fail: (expected, message) => ({ pass: predicate(), message: failMessage(message) })
+  fail: (expected, message) => ({ pass: predicate(), message: failMessage(message) }),
 };
