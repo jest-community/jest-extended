@@ -155,7 +155,7 @@ Add your setup script to your Jest `setupFilesAfterEnv` configuration. [See for 
 }
 ```
 
-To use the legacy behavior of automatically extending expect with all matchers, you can use
+To automatically extend `expect` with all matchers, you can use
 
 ```json
 "jest": {
