@@ -50,6 +50,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toBeArray()](#tobearray)
     - [.toBeArrayOfSize()](#tobearrayofsize)
     - [.toIncludeAllMembers([members])](#toincludeallmembersmembers)
+    - [.toIncludeAllPartialMembers([members])](#toincludeallpartialmembersmembers)
     - [.toIncludeAnyMembers([members])](#toincludeanymembersmembers)
     - [.toIncludeSameMembers([members])](#toincludesamemembersmembers)
     - [.toSatisfyAll(predicate)](#tosatisfyallpredicate)
@@ -292,6 +293,18 @@ Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same 
 test('passes when given array values match the members of the set', () => {
   expect([1, 2, 3]).toIncludeAllMembers([2, 1, 3]);
   expect([1, 2, 2]).toIncludeAllMembers([2, 1]);
+});
+```
+
+#### .toIncludeAllPartialMembers([members])
+
+Use `.toIncludeAllPartialMembers` when checking if an `Array` contains all of the same partial members of a given set.
+
+```js
+test('passes when given array values match the partial members of the set', () => {
+  expect([{ foo: 'bar', baz: 'qux' }]).toIncludeAllPartialMembers([
+    { foo: 'bar' },
+  ]);
 });
 ```
 
