@@ -17,7 +17,7 @@ declare namespace jest {
      *
      * @param {String} message
      */
-    fail(message: string): R;
+    fail(message: string): never;
 
     /**
      * Use .toBeEmpty when checking if a String '', Array [], Object {} or Iterable (i.e. Map, Set) is empty.
