@@ -373,6 +373,11 @@ declare namespace jest {
      * @param {String | RegExp} message
      */
     toThrowWithMessage(type: Function, message: string | RegExp): R;
+
+    /**
+     * Use `.toBeSymbol` when checking if a value is a `Symbol`.
+     */
+    toBeSymbol(): R;
   }
 
   // noinspection JSUnusedGlobalSymbols
@@ -746,6 +751,11 @@ declare namespace jest {
     /**
      * Use `.toBeEmptyObject` when checking if a value is an empty `Object`.
      */
-    toBeEmptyObject(): R;
+    toBeEmptyObject(): any;
+
+    /**
+     * Use `.toBeSymbol` when checking if a value is a `Symbol`.
+     */
+    toBeSymbol(): any;
   }
 }
