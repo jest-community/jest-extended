@@ -19,7 +19,8 @@
     "precommit": "lint-staged",
     "test": "jest --color=true",
     "test:coverage": "yarn test --coverage",
-    "test:watch": "yarn test --watch"
+    "test:watch": "yarn test --watch",
+    "typecheck": "tsc --noEmit types/index.d.ts"
   },
   "keywords": [
     "jest",
@@ -50,7 +51,8 @@
     "jest-watch-typeahead": "^1.0.0",
     "lint-staged": "^11.0.0",
     "prettier": "^2.3.2",
-    "pretty-format": "^27.2.4"
+    "pretty-format": "^27.2.4",
+    "typescript": "^4.4.3"
   },
   "dependencies": {
     "expect": "^26.6.2",

@@ -49,7 +49,7 @@ jobs:
       - uses: codecov/codecov-action@v2
 
   lint:
-    name: Run ESLint
+    name: Run ESLint & TypeScript compiler
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -59,3 +59,4 @@ jobs:
           cache: yarn
       - run: yarn install
       - run: yarn lint
+      - run: yarn typecheck
