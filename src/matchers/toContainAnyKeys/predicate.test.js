@@ -5,9 +5,9 @@ describe('toContainAnyKeys Predicate', () => {
     test('when one or more key is found in the object', () => {
       var test = predicate(
         {
-          name: 'Steve the Pirate'
+          name: 'Steve the Pirate',
         },
-        ['name']
+        ['name'],
       );
 
       expect(test).toBe(true);
@@ -18,9 +18,9 @@ describe('toContainAnyKeys Predicate', () => {
     test('when no keys are found in the object', () => {
       var test = predicate(
         {
-          name: 'Steve the Pirate'
+          name: 'Steve the Pirate',
         },
-        ['age']
+        ['age'],
       );
 
       expect(test).toBe(false);
