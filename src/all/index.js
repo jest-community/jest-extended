@@ -1,4 +1,4 @@
-import matchers from '../matchers';
+import * as matchers from '../matchers';
 
 const jestExpect = global.expect;
 
