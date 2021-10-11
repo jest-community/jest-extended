@@ -59,8 +59,8 @@ exports[`.toHaveBeenCalledBefore fails when given first value is not a jest spy 
 
 Matcher error: <red>\\"received\\"</> must be a mock or spy function
 
-Received:
-  function: <red>[Function mock1]</>"
+Received has type:  function
+Received has value: <red>[Function mock1]</>"
 `;
 
 exports[`.toHaveBeenCalledBefore fails when given second value is not a jest spy or mock 1`] = `
@@ -68,6 +68,6 @@ exports[`.toHaveBeenCalledBefore fails when given second value is not a jest spy
 
 Matcher error: <green>\\"expected\\"</> must be a mock or spy function
 
-Expected:
-  function: <green>[Function mock2]</>"
+Expected has type:  function
+Expected has value: <green>[Function mock2]</>"
 `;

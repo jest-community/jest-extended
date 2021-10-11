@@ -51,5 +51,5 @@ export default {
     }
 
     return { pass: false, message: failMessage(firstInvocationCallOrder, secondInvocationCallOrder) };
-  }
+  },
 };
