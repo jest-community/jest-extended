@@ -1091,7 +1091,7 @@ test('passes when value includes all substrings', () => {
 
 #### .toBeSimilar(string)
 
-Use `.toBeSimilar` when checking if a string is equal (===) to another string irrespective of whitespaces.
+Use `.toBeSimilar` when checking if a `String` is similar to another `String` irrespective of whitespaces.
 
 ```js
 test('passes if strings are equal irrespective of whitespaces', () => {
@@ -1121,6 +1121,8 @@ Use `.toBeSymbol` when checking if a value is a `Symbol`.
 test('passes when value is a symbol', () => {
   expect(Symbol()).toBeSymbol();
   expect(true).not.toBeSymbol();
+});
+```
 
 ## LICENSE
 
