@@ -378,13 +378,6 @@ declare namespace jest {
     toIncludeMultiple(substring: string[]): R;
 
     /**
-     * Use .toBeSimilar when checking if a string is equal (===) to another string irrespective of whitespaces.
-     *
-     * @param {String} string
-     */
-    toBeSimilar(string: string): R;
-
-    /**
      * Use `.toThrowWithMessage` when checking if a callback function throws an error of a given type with a given error message.
      *
      * @param {Function} type
@@ -415,6 +408,13 @@ declare namespace jest {
      * @param {Date} date
      */
     toBeAfterOrEqualTo(date: Date): R;
+
+    /**
+     * Use `.toEqualIgnoringWhitespaces` when checking if a `String` is equal (===) to given `String` irrespective of whitespaces.
+     *
+     * @param {String} string
+     */
+     toEqualIgnoringWhitespaces(string: string): R;
   }
 
   // noinspection JSUnusedGlobalSymbols
@@ -818,5 +818,12 @@ declare namespace jest {
      * @param {Date} date
      */
     toBeAfterOrEqualTo(date: Date): any;
+
+    /**
+     * Use `.toEqualIgnoringWhitespaces` when checking if a `String` is equal (===) to given `String` irrespective of whitespaces.
+     *
+     * @param {String} string
+     */
+     toEqualIgnoringWhitespaces(string: string): any;
   }
 }
