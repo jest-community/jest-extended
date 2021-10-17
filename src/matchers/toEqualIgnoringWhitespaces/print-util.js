@@ -1,7 +1,7 @@
-import { DIFF_EQUAL, DIFF_INSERT } from 'jest-diff';
+import { DIFF_DELETE, DIFF_EQUAL, DIFF_INSERT } from 'jest-diff';
 import { EXPECTED_COLOR, INVERTED_COLOR, RECEIVED_COLOR } from 'jest-matcher-utils';
 
-const tokenize = (str, color) => {
+export const tokenize = str => {
   const isSpace = char => /\s/.test(char);
   const tokens = [];
   let idx = 0;
@@ -10,27 +10,20 @@ const tokenize = (str, color) => {
 
   while (idx < len) {
     const char = str.charAt(idx);
+    const isCurrentCharSpace = isSpace(char);
+
     if (token) {
-      if (token.isSpace) {
-        if (isSpace(char)) token.value += char;
-        else {
-          tokens.push(token);
-          token = null;
-          continue;
-        }
+      if (token.isSpace === isCurrentCharSpace) {
+        token.value += char;
       } else {
-        if (isSpace(char)) {
-          tokens.push(token);
-          token = null;
-          continue;
-        } else {
-          token.value += char;
-        }
+        tokens.push(token);
+        token = undefined;
+        continue;
       }
     } else {
       token = {
         value: char,
-        isSpace: isSpace(char),
+        isSpace: isCurrentCharSpace,
       };
     }
 
@@ -41,30 +34,32 @@ const tokenize = (str, color) => {
     tokens.push(token);
   }
 
-  return tokens.reduce((acc, { value, isSpace }) => {
-    if (isSpace) return acc + value;
-    return acc + color(value);
-  }, '');
+  return tokens;
+};
+
+const colorTokens = (str, color) => {
+  const tokens = tokenize(str);
+  return tokens.reduce((acc, { value, isSpace }) => acc + (isSpace ? value : color(value)), '');
 };
 
 export const printExpected = diff => {
   return diff.reduce((acc, diffObject) => {
-    const status = diffObject[0];
+    const operation = diffObject[0];
     const value = diffObject[1];
 
-    if (status === DIFF_EQUAL) return acc + tokenize(value, EXPECTED_COLOR);
-    if (status === DIFF_INSERT) return acc;
-    else return acc + tokenize(value, val => INVERTED_COLOR(EXPECTED_COLOR(val)));
+    if (operation === DIFF_EQUAL) return acc + colorTokens(value, EXPECTED_COLOR);
+    if (operation === DIFF_DELETE) return acc + colorTokens(value, str => INVERTED_COLOR(EXPECTED_COLOR(str)));
+    return acc;
   }, '');
 };
 
 export const printReceived = diff => {
   return diff.reduce((acc, diffObject) => {
-    const status = diffObject[0];
+    const operation = diffObject[0];
     const value = diffObject[1];
 
-    if (status === DIFF_EQUAL) return acc + tokenize(value, RECEIVED_COLOR);
-    if (status === DIFF_INSERT) return acc + tokenize(value, val => INVERTED_COLOR(RECEIVED_COLOR(val)));
+    if (operation === DIFF_EQUAL) return acc + colorTokens(value, RECEIVED_COLOR);
+    if (operation === DIFF_INSERT) return acc + colorTokens(value, str => INVERTED_COLOR(RECEIVED_COLOR(str)));
     else return acc;
   }, '');
 };
