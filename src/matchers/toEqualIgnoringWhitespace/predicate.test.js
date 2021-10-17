@@ -1,7 +1,7 @@
 import predicate from './predicate';
 
-describe('toEqualIgnoringWhitespaces predicate', () => {
-  it('should return true for pass when diff does not add anything than spaces', () => {
+describe('toEqualIgnoringWhitespace predicate', () => {
+  it('should generate correct pass and diff for inputs without white-space', () => {
     const { pass, diff } = predicate('inputs A', 'inputs B');
 
     expect(pass).toEqual(false);
@@ -21,7 +21,7 @@ describe('toEqualIgnoringWhitespaces predicate', () => {
     ]);
   });
 
-  it('should return false for pass when diff add or remove tokens', () => {
+  it('should generate correct pass and diff for inputs with white-space', () => {
     const { pass, diff } = predicate('    inputs A', 'input B    ');
 
     expect(pass).toEqual(false);

@@ -1,5 +1,3 @@
-import { isFunctionExpression } from 'typescript';
-
 export { fail } from './fail';
 export { pass } from './pass';
 export { toBeAfter } from './toBeAfter';
@@ -67,4 +65,4 @@ export { toSatisfyAll } from './toSatisfyAll';
 export { toSatisfyAny } from './toSatisfyAny';
 export { toStartWith } from './toStartWith';
 export { toThrowWithMessage } from './toThrowWithMessage';
-export { toEqualIgnoringWhitespaces } from './toEqualIgnoringWhitespaces';
+export { toEqualIgnoringWhitespace } from './toEqualIgnoringWhitespace';

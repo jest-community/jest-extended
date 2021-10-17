@@ -410,11 +410,11 @@ declare namespace jest {
     toBeAfterOrEqualTo(date: Date): R;
 
     /**
-     * Use `.toEqualIgnoringWhitespaces` when checking if a `String` is equal (===) to given `String` irrespective of whitespaces.
+     * Use `.toEqualIgnoringWhitespace` when checking if a `String` is equal (===) to given `String` ignoring white-space.
      *
      * @param {String} string
      */
-     toEqualIgnoringWhitespaces(string: string): R;
+     toEqualIgnoringWhitespace(string: string): R;
   }
 
   // noinspection JSUnusedGlobalSymbols
@@ -820,10 +820,10 @@ declare namespace jest {
     toBeAfterOrEqualTo(date: Date): any;
 
     /**
-     * Use `.toEqualIgnoringWhitespaces` when checking if a `String` is equal (===) to given `String` irrespective of whitespaces.
+     * Use `.toEqualIgnoringWhitespace` when checking if a `String` is equal (===) to given `String` ignoring white-space.
      *
      * @param {String} string
      */
-     toEqualIgnoringWhitespaces(string: string): any;
+     toEqualIgnoringWhitespace(string: string): any;
   }
 }

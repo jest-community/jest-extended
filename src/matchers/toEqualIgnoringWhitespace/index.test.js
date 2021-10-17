@@ -2,14 +2,14 @@ import * as matcher from '.';
 
 expect.extend(matcher);
 
-describe('.toEqualIgnoringWhitespaces   ', () => {
-  test('should pass if strings are equal irrespective of whitespaces', () => {
-    expect('SELECT * from TABLE WHERE CONDITION = "5"').toEqualIgnoringWhitespaces(`
+describe('.toEqualIgnoringWhitespace', () => {
+  it('should pass if strings are equal ignoring white-space', () => {
+    expect('SELECT * from TABLE WHERE CONDITION = "5"').toEqualIgnoringWhitespace(`
             SELECT * from TABLE
             WHERE CONDITION = "5"
         `);
 
-    expect('SELECT * from TABLE WHERE CONDITION = "5"').toEqualIgnoringWhitespaces(`
+    expect('SELECT * from TABLE WHERE CONDITION = "5"').toEqualIgnoringWhitespace(`
             SELECT 
             * 
             from 
@@ -24,7 +24,7 @@ describe('.toEqualIgnoringWhitespaces   ', () => {
                     return;
                 diffObject.added = diffObject.removed = undefined;
             });
-        `).toEqualIgnoringWhitespaces(`
+        `).toEqualIgnoringWhitespace(`
             diff.forEach((diffObject) => {
                 if(diffObject.value.trim()) return;
                 diffObject.added = diffObject.removed = undefined;
@@ -32,38 +32,38 @@ describe('.toEqualIgnoringWhitespaces   ', () => {
         `);
 
     expect(() =>
-      expect('.class { cssRule: value; }').toEqualIgnoringWhitespaces('#id { cssRule: value; }'),
+      expect('.class { cssRule: value; }').toEqualIgnoringWhitespace('#id { cssRule: value; }'),
     ).toThrowErrorMatchingSnapshot();
   });
 
-  test('should not pass if strings are not equal, not considering whitespaces', () => {
-    expect('SELECT * from TABLE WHERE CONDITION = "5"').not.toEqualIgnoringWhitespaces(`
+  it('should not pass if strings are not equal, ignoring white-space', () => {
+    expect('SELECT * from TABLE WHERE CONDITION = "5"').not.toEqualIgnoringWhitespace(`
             WHERE CONDITION = "5" 
             SELECT * from TABLE
         `);
 
-    expect('SELECT * from TABLE WHERE CONDITION = "5"').not.toEqualIgnoringWhitespaces(`
+    expect('SELECT * from TABLE WHERE CONDITION = "5"').not.toEqualIgnoringWhitespace(`
             SELECT * from TABLE
             WHERE CONDITION = "555"
         `);
 
-    expect('SELECT * from TABLE WHERE CONDITION = "5"').not.toEqualIgnoringWhitespaces(`
+    expect('SELECT * from TABLE WHERE CONDITION = "5"').not.toEqualIgnoringWhitespace(`
             WHERE CONDITION = "5"
         `);
 
-    expect('SELECT * from TABLE WHERE CONDITION = "5"').not.toEqualIgnoringWhitespaces(`
+    expect('SELECT * from TABLE WHERE CONDITION = "5"').not.toEqualIgnoringWhitespace(`
             select * from table 
             where condition="5"
     `);
 
     expect(`
             import React from 'react';
-        `).not.toEqualIgnoringWhitespaces(`
+        `).not.toEqualIgnoringWhitespace(`
             import {Component} from 'react';
         `);
 
     expect(() =>
-      expect('.class { cssRule: value; }').not.toEqualIgnoringWhitespaces(`
+      expect('.class { cssRule: value; }').not.toEqualIgnoringWhitespace(`
             .class { 
                 cssRule: value; 
             }

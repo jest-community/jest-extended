@@ -116,7 +116,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toInclude(substring)](#toincludesubstring)
     - [.toIncludeRepeated(substring, times)](#toincluderepeatedsubstring-times)
     - [.toIncludeMultiple([substring])](#toincludemultiplesubstring)
-    - [.toEqualIgnoringWhitespaces(substring)](#toEqualIgnoringWhitespaces)
+    - [.toEqualIgnoringWhitespace(string)](#toequalignoringwhitespacestring)
   - [Symbol](#symbol)
     - [.toBeSymbol()](#tobesymbol)
 - [LICENSE](#license)
@@ -1089,21 +1089,21 @@ test('passes when value includes all substrings', () => {
 });
 ```
 
-#### .toEqualIgnoringWhitespaces(string)
+#### .toEqualIgnoringWhitespace(string)
 
-Use `.toEqualIgnoringWhitespaces` when checking if a `String` is similar to another `String` irrespective of whitespaces.
+Use `.toEqualIgnoringWhitespace` when checking if a `String` is equal to another `String` ignoring white-space.
 
 ```js
-test('passes if strings are equal irrespective of whitespaces', () => {
-  expect('hello world').toEqualIgnoringWhitespaces(`
+test('passes if strings are equal ignoring white-space', () => {
+  expect('hello world').toEqualIgnoringWhitespace(`
         hello
         world
     `);
-  expect('SELECT * FROM TABLE WHERE CONDITION').toEqualIgnoringWhitespaces(`
+  expect('SELECT * FROM TABLE WHERE CONDITION').toEqualIgnoringWhitespace(`
         SELECT * FROM TABLE
         WHERE CONDITION
     `);
-  expect('.class { cssRule: value }').not.toEqualIgnoringWhitespaces(`
+  expect('.class { cssRule: value }').not.toEqualIgnoringWhitespace(`
         #id {
             cssRule: value
         }
