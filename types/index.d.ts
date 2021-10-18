@@ -74,7 +74,7 @@ declare namespace jest {
      * Use `.toIncludeAllPartialMembers` when checking if an `Array` contains all of the same partial members of a given set.
      * @param {Array.<*>} members
      */
-    toIncludeAllPartialMembers(members: any[]): R;
+    toIncludeAllPartialMembers<E = any>(members: E[]): R;
 
     /**
      * Use `.toIncludeAnyMembers` when checking if an `Array` contains any of the members of a given set.
