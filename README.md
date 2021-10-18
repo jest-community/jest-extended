@@ -116,6 +116,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toInclude(substring)](#toincludesubstring)
     - [.toIncludeRepeated(substring, times)](#toincluderepeatedsubstring-times)
     - [.toIncludeMultiple([substring])](#toincludemultiplesubstring)
+    - [.toEqualIgnoringWhitespace(string)](#toequalignoringwhitespacestring)
   - [Symbol](#symbol)
     - [.toBeSymbol()](#tobesymbol)
 - [LICENSE](#license)
@@ -1085,6 +1086,28 @@ Use `.toIncludeMultiple` when checking if a `String` includes all of the given s
 test('passes when value includes all substrings', () => {
   expect('hello world').toIncludeMultiple(['world', 'hello']);
   expect('hello world').not.toIncludeMultiple(['world', 'hello', 'bob']);
+});
+```
+
+#### .toEqualIgnoringWhitespace(string)
+
+Use `.toEqualIgnoringWhitespace` when checking if a `String` is equal to another `String` ignoring white-space.
+
+```js
+test('passes if strings are equal ignoring white-space', () => {
+  expect('hello world').toEqualIgnoringWhitespace(`
+        hello
+        world
+    `);
+  expect('SELECT * FROM TABLE WHERE CONDITION').toEqualIgnoringWhitespace(`
+        SELECT * FROM TABLE
+        WHERE CONDITION
+    `);
+  expect('.class { cssRule: value }').not.toEqualIgnoringWhitespace(`
+        #id {
+            cssRule: value
+        }
+    `);
 });
 ```
 

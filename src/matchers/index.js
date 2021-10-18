@@ -65,3 +65,4 @@ export { toSatisfyAll } from './toSatisfyAll';
 export { toSatisfyAny } from './toSatisfyAny';
 export { toStartWith } from './toStartWith';
 export { toThrowWithMessage } from './toThrowWithMessage';
+export { toEqualIgnoringWhitespace } from './toEqualIgnoringWhitespace';

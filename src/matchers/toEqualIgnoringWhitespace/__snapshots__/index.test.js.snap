@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.toEqualIgnoringWhitespace should not pass if strings are not equal, ignoring white-space 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toEqualIgnoringWhitespace(</><green>expected</><dim>)</>
+
+Expected values to not be equal while ignoring white-space (using ===):
+Expected: not  <green></>
+<green>            .class { </>
+<green>                cssRule: value; </>
+<green>            }</>
+<green>        </>
+
+"
+`;
+
+exports[`.toEqualIgnoringWhitespace should pass if strings are equal ignoring white-space 1`] = `
+"<dim>expect(</><red>received</><dim>).toEqualIgnoringWhitespace(</><green>expected</><dim>)</>
+
+Expected values to be equal while ignoring white-space (using ===):
+Expected:
+  <inverse><green>#id</></> <green>{</> <green>cssRule:</> <green>value;</> <green>}</>
+
+Received:
+  <inverse><red>.class</></> <red>{</> <red>cssRule:</> <red>value;</> <red>}</>"
+`;
