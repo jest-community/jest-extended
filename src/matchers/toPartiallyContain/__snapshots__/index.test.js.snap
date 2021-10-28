@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.toPartiallyContain .not.toPartiallyContain fails when a string does have a given substring 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toPartiallyContain(</><green>expected</><dim>)</>
+
+Expected array not to partially contain:
+  <green>{\\"baz\\": \\"qux\\", \\"foo\\": \\"bar\\"}</>
+Received:
+  <red>[{\\"bax\\": \\"zax\\", \\"baz\\": \\"qux\\", \\"foo\\": \\"bar\\"}]</>"
+`;
+
+exports[`.toPartiallyContain fails when a string does not have a given substring 1`] = `
+"<dim>expect(</><red>received</><dim>).toPartiallyContain(</><green>expected</><dim>)</>
+
+Expected array to partially contain:
+  <green>{\\"baz\\": \\"qux\\", \\"foo\\": \\"bar\\"}</>
+Received:
+  <red>[{\\"a\\": 1, \\"b\\": 2}]</>"
+`;
