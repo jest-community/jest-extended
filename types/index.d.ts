@@ -131,18 +131,14 @@ declare namespace jest {
     toBeFunction(): R;
 
     /**
-    * Use `.toBeDateString` when checking if a value is a valid date string.
-    *
-    * @param {String} string
-    */
-    toBeDateString(string: string): R;
+     * Use `.toBeDateString` when checking if a value is a valid date string.
+     */
+    toBeDateString(): R;
 
     /**
      * Use `.toBeHexadecimal` when checking if a value is a valid HTML hex color.
-     *
-     * @param {String} string
      */
-    toBeHexadecimal(string: string): R;
+    toBeHexadecimal(): R;
 
     /**
      * Use `.toHaveBeenCalledBefore` when checking if a `Mock` was called before another `Mock`.
@@ -418,7 +414,7 @@ declare namespace jest {
   }
 
   // noinspection JSUnusedGlobalSymbols
-  interface Expect {
+  interface AsymmetricMatchers {
     /**
      * Note: Currently unimplemented
      * Passing assertion
@@ -541,18 +537,14 @@ declare namespace jest {
     toBeFunction(): any;
 
     /**
-    * Use `.toBeDateString` when checking if a value is a valid date string.
-    *
-    * @param {String} string
-    */
-    toBeDateString(string: string): any;
+     * Use `.toBeDateString` when checking if a value is a valid date string.
+     */
+    toBeDateString(): any;
 
     /**
      * Use `.toBeHexadecimal` when checking if a value is a valid HTML hex color.
-     *
-     * @param {String} string
      */
-    toBeHexadecimal(string: string): any;
+    toBeHexadecimal(): any;
 
     /**
      * Use `.toHaveBeenCalledBefore` when checking if a `Mock` was called before another `Mock`.
@@ -826,4 +818,10 @@ declare namespace jest {
      */
      toEqualIgnoringWhitespace(string: string): any;
   }
+
+  // noinspection JSUnusedGlobalSymbols
+  interface Expect extends AsymmetricMatchers {}
+
+  // noinspection JSUnusedGlobalSymbols
+  interface InverseAsymmetricMatchers extends AsymmetricMatchers {}
 }
