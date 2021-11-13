@@ -845,4 +845,8 @@ declare namespace jest {
      */
     toEqualIgnoringWhitespace(string: string): any;
   }
+
+  // noinspection JSUnusedGlobalSymbols
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  interface InverseAsymmetricMatchers extends Expect {}
 }
