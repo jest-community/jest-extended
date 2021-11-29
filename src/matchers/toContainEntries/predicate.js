@@ -1,4 +1,3 @@
-import { equals } from '../../utils';
+import toContainEntry from '../toContainEntry/predicate';
 
-export default (obj, entries) =>
-  entries.every(([key, value]) => Object.prototype.hasOwnProperty.call(obj, key) && equals(obj[key], value));
+export default (obj, entries) => entries.every(entry => toContainEntry(obj, entry));
