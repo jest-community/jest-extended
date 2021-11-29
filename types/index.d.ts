@@ -131,18 +131,14 @@ declare namespace jest {
     toBeFunction(): R;
 
     /**
-    * Use `.toBeDateString` when checking if a value is a valid date string.
-    *
-    * @param {String} string
-    */
-    toBeDateString(string: string): R;
+     * Use `.toBeDateString` when checking if a value is a valid date string.
+     */
+    toBeDateString(): R;
 
     /**
      * Use `.toBeHexadecimal` when checking if a value is a valid HTML hex color.
-     *
-     * @param {String} string
      */
-    toBeHexadecimal(string: string): R;
+    toBeHexadecimal(): R;
 
     /**
      * Use `.toHaveBeenCalledBefore` when checking if a `Mock` was called before another `Mock`.
@@ -414,7 +410,7 @@ declare namespace jest {
      *
      * @param {String} string
      */
-     toEqualIgnoringWhitespace(string: string): R;
+    toEqualIgnoringWhitespace(string: string): R;
   }
 
   // noinspection JSUnusedGlobalSymbols
@@ -541,18 +537,14 @@ declare namespace jest {
     toBeFunction(): any;
 
     /**
-    * Use `.toBeDateString` when checking if a value is a valid date string.
-    *
-    * @param {String} string
-    */
-    toBeDateString(string: string): any;
+     * Use `.toBeDateString` when checking if a value is a valid date string.
+     */
+    toBeDateString(): any;
 
     /**
      * Use `.toBeHexadecimal` when checking if a value is a valid HTML hex color.
-     *
-     * @param {String} string
      */
-    toBeHexadecimal(string: string): any;
+    toBeHexadecimal(): any;
 
     /**
      * Use `.toHaveBeenCalledBefore` when checking if a `Mock` was called before another `Mock`.
@@ -824,6 +816,6 @@ declare namespace jest {
      *
      * @param {String} string
      */
-     toEqualIgnoringWhitespace(string: string): any;
+    toEqualIgnoringWhitespace(string: string): any;
   }
 }
