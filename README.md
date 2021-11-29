@@ -53,7 +53,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toIncludeAllPartialMembers([members])](#toincludeallpartialmembersmembers)
     - [.toIncludeAnyMembers([members])](#toincludeanymembersmembers)
     - [.toIncludeSameMembers([members])](#toincludesamemembersmembers)
-    - [.toPartiallyContain(member)](#topartiallycontain)
+    - [.toPartiallyContain(member)](#topartiallycontainmember)
     - [.toSatisfyAll(predicate)](#tosatisfyallpredicate)
     - [.toSatisfyAny(predicate)](#tosatisfyanypredicate)
   - [Boolean](#boolean)
