@@ -53,6 +53,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toIncludeAllPartialMembers([members])](#toincludeallpartialmembersmembers)
     - [.toIncludeAnyMembers([members])](#toincludeanymembersmembers)
     - [.toIncludeSameMembers([members])](#toincludesamemembersmembers)
+    - [.toPartiallyContain(member)](#topartiallycontain)
     - [.toSatisfyAll(predicate)](#tosatisfyallpredicate)
     - [.toSatisfyAny(predicate)](#tosatisfyanypredicate)
   - [Boolean](#boolean)
@@ -349,6 +350,18 @@ Use `.toIncludeSameMembers` when checking if two arrays contain equal values, in
 test('passes when arrays match in a different order', () => {
   expect([1, 2, 3]).toIncludeSameMembers([3, 1, 2]);
   expect([{ foo: 'bar' }, { baz: 'qux' }]).toIncludeSameMembers([{ baz: 'qux' }, { foo: 'bar' }]);
+});
+```
+
+#### .toPartiallyContain(member)
+
+Use `.toPartiallyContain` when checking if any array value matches the partial member.
+
+```js
+test('passes when a string has a given substring', () => {
+  expect([{ foo: 'bar', baz: 'qux', bax: 'zax' }]).toPartiallyContain({ foo: 'bar' });
+  expect([{ foo: 'bar', baz: 'qux', bax: 'zax' }]).toPartiallyContain({ baz: 'qux' });
+  expect([{ foo: 'bar', baz: 'qux', bax: 'zax' }]).not.toPartiallyContain({ foo: 'qux' });
 });
 ```
 
