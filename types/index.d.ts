@@ -501,6 +501,12 @@ declare namespace jest {
     toIncludeSameMembers<E = any>(members: E[]): any;
 
     /**
+     * Use `.toPartiallyContain` when checking if any array value matches the partial member.
+     * @param {*} member
+     */
+    toPartiallyContain<E = any>(member: E): any;
+    
+    /**
      * Use `.toSatisfyAll` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean` for all values in an array.
      * @param {Function} predicate
      */
