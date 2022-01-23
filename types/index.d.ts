@@ -388,6 +388,11 @@ declare namespace jest {
     toThrowWithMessage(type: Function, message: string | RegExp): R;
 
     /**
+     * Use `.toBeEmptyObject` when checking if a value is an empty `Object`.
+     */
+    toBeEmptyObject(): R;
+
+    /**
      * Use `.toBeSymbol` when checking if a value is a `Symbol`.
      */
     toBeSymbol(): R;
@@ -505,7 +510,7 @@ declare namespace jest {
      * @param {*} member
      */
     toPartiallyContain<E = any>(member: E): any;
-    
+
     /**
      * Use `.toSatisfyAll` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean` for all values in an array.
      * @param {Function} predicate
