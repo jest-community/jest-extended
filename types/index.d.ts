@@ -2,7 +2,7 @@
 
 declare namespace jest {
   // noinspection JSUnusedGlobalSymbols
-  interface Matchers<R> {
+  interface Matchers<R, T> {
     /**
      * Note: Currently unimplemented
      * Passing assertion
@@ -23,7 +23,7 @@ declare namespace jest {
     /**
      * Use .toBeOneOf when checking if a value is a member of a given Array.
      */
-    toBeOneOf<E = any>(members: E[]): R;
+    toBeOneOf(members: T[]): R;
 
     /**
      * Use `.toBeNil` when checking a value is `null` or `undefined`.
@@ -33,7 +33,7 @@ declare namespace jest {
     /**
      * Use `.toSatisfy` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean`.
      */
-    toSatisfy<E = any>(predicate: (x: E) => boolean): R;
+    toSatisfy(predicate: (x: T) => boolean): R;
 
     /**
      * Use `.toBeArray` when checking if a value is an `Array`.
@@ -58,37 +58,37 @@ declare namespace jest {
     /**
      * Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
      */
-    toIncludeAllMembers<E = any>(members: E[]): R;
+    toIncludeAllMembers(members: T): R;
 
     /**
      * Use `.toIncludeAllPartialMembers` when checking if an `Array` contains all of the same partial members of a given set.
      */
-    toIncludeAllPartialMembers<E = any>(members: E[]): R;
+    toIncludeAllPartialMembers(members: T): R;
 
     /**
      * Use `.toIncludeAnyMembers` when checking if an `Array` contains any of the members of a given set.
      */
-    toIncludeAnyMembers<E = any>(members: E[]): R;
+    toIncludeAnyMembers(members: T): R;
 
     /**
      * Use `.toIncludeSameMembers` when checking if two arrays contain equal values, in any order.
      */
-    toIncludeSameMembers<E = any>(members: E[]): R;
+    toIncludeSameMembers(members: T): R;
 
     /**
      * Use `.toPartiallyContain` when checking if any array value matches the partial member.
      */
-    toPartiallyContain<E = any>(member: E): R;
+    toPartiallyContain(member: Partial<T extends Array<infer U> ? U : never>): R;
 
     /**
      * Use `.toSatisfyAll` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean` for all values in an array.
      */
-    toSatisfyAll<E = any>(predicate: (x: E) => boolean): R;
+    toSatisfyAll(predicate: (x: T extends Array<infer U> ? U : never) => boolean): R;
 
     /**
      * Use `.toSatisfyAny` when you want to use a custom matcher by supplying a predicate function that returns `true` for any matching value in an array.
      */
-    toSatisfyAny(predicate: (x: any) => boolean): R;
+    toSatisfyAny(predicate: (x: T extends Array<infer U> ? U : never) => boolean): R;
 
     /**
      * Use `.toBeBoolean` when checking if a value is a `Boolean`.
@@ -135,14 +135,14 @@ declare namespace jest {
      *
      * Note: Required Jest version >=23
      */
-    toHaveBeenCalledBefore(mock: jest.Mock): R;
+    toHaveBeenCalledBefore(mock: Mock): R;
 
     /**
      * Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another `Mock`.
      *
      * Note: Required Jest version >=23
      */
-    toHaveBeenCalledAfter(mock: jest.Mock): R;
+    toHaveBeenCalledAfter(mock: Mock): R;
 
     /**
      * Use `.toHaveBeenCalledOnce` to check if a `Mock` was called exactly one time.
@@ -202,62 +202,62 @@ declare namespace jest {
     /**
      * Use `.toContainKey` when checking if an object contains the provided key.
      */
-    toContainKey<E = any>(key: keyof E | string): R;
+    toContainKey(key: keyof T): R;
 
     /**
      * Use `.toContainKeys` when checking if an object has all of the provided keys.
      */
-    toContainKeys<E = any>(keys: (keyof E | string)[]): R;
+    toContainKeys(keys: Array<keyof T>): R;
 
     /**
      * Use `.toContainAllKeys` when checking if an object only contains all of the provided keys.
      */
-    toContainAllKeys<E = any>(keys: (keyof E | string)[]): R;
+    toContainAllKeys(keys: Array<keyof T>): R;
 
     /**
      * Use `.toContainAnyKeys` when checking if an object contains at least one of the provided keys.
      */
-    toContainAnyKeys<E = any>(keys: (keyof E | string)[]): R;
+    toContainAnyKeys(keys: Array<keyof T>): R;
 
     /**
      * Use `.toContainValue` when checking if an object contains the provided value.
      */
-    toContainValue<E = any>(value: E): R;
+    toContainValue(value: T[keyof T]): R;
 
     /**
      * Use `.toContainValues` when checking if an object contains all of the provided values.
      */
-    toContainValues<E = any>(values: E[]): R;
+    toContainValues(values: Array<T[keyof T]>): R;
 
     /**
      * Use `.toContainAllValues` when checking if an object only contains all of the provided values.
      */
-    toContainAllValues<E = any>(values: E[]): R;
+    toContainAllValues(values: Array<T[keyof T]>): R;
 
     /**
      * Use `.toContainAnyValues` when checking if an object contains at least one of the provided values.
      */
-    toContainAnyValues<E = any>(values: E[]): R;
+    toContainAnyValues(values: Array<T[keyof T]>): R;
 
     /**
      * Use `.toContainEntry` when checking if an object contains the provided entry.
      */
-    toContainEntry<E = any>(entry: [keyof E, E[keyof E]]): R;
+    toContainEntry(entry: [keyof T, T[keyof T]]): R;
 
     /**
      * Use `.toContainEntries` when checking if an object contains all of the provided entries.
      */
-    toContainEntries<E = any>(entries: [keyof E, E[keyof E]][]): R;
+    toContainEntries(entries: Array<[keyof T, T[keyof T]]>): R;
 
     /**
      * Use `.toContainAllEntries` when checking if an object only contains all of the provided entries.
      */
-    toContainAllEntries<E = any>(entries: [keyof E, E[keyof E]][]): R;
+    toContainAllEntries(entries: Array<[keyof T, T[keyof T]]>): R;
 
     /**
      * Use `.toContainAnyEntries` when checking if an object contains at least one of the provided entries.
      */
-    toContainAnyEntries<E = any>(entries: [keyof E, E[keyof E]][]): R;
+    toContainAnyEntries(entries: Array<[keyof T, T[keyof T]]>): R;
 
     /**
      * Use `.toBeExtensible` when checking if an object is extensible.
@@ -322,7 +322,7 @@ declare namespace jest {
     /**
      * Use `.toThrowWithMessage` when checking if a callback function throws an error of a given type with a given error message.
      */
-    toThrowWithMessage(type: Function, message: string | RegExp): R;
+    toThrowWithMessage(type: () => void, message: string | RegExp): R;
 
     /**
      * Use `.toBeSymbol` when checking if a value is a `Symbol`.
@@ -372,7 +372,8 @@ declare namespace jest {
     /**
      * Use .toBeOneOf when checking if a value is a member of a given Array.
      */
-    toBeOneOf<E = any>(members: E[]): any;
+    // tslint:disable-next-line: no-unnecessary-generics
+    toBeOneOf<E = any[]>(members: E[]): any;
 
     /**
      * Use `.toBeNil` when checking a value is `null` or `undefined`.
@@ -382,6 +383,7 @@ declare namespace jest {
     /**
      * Use `.toSatisfy` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean`.
      */
+    // tslint:disable-next-line: no-unnecessary-generics
     toSatisfy<E = any>(predicate: (x: E) => boolean): any;
 
     /**
@@ -407,26 +409,31 @@ declare namespace jest {
     /**
      * Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
      */
+    // tslint:disable-next-line: no-unnecessary-generics
     toIncludeAllMembers<E = any>(members: E[]): any;
 
     /**
      * Use `.toIncludeAnyMembers` when checking if an `Array` contains any of the members of a given set.
      */
+    // tslint:disable-next-line: no-unnecessary-generics
     toIncludeAnyMembers<E = any>(members: E[]): any;
 
     /**
      * Use `.toIncludeSameMembers` when checking if two arrays contain equal values, in any order.
      */
+    // tslint:disable-next-line: no-unnecessary-generics
     toIncludeSameMembers<E = any>(members: E[]): any;
 
     /**
      * Use `.toPartiallyContain` when checking if any array value matches the partial member.
      */
+    // tslint:disable-next-line: no-unnecessary-generics
     toPartiallyContain<E = any>(member: E): any;
 
     /**
      * Use `.toSatisfyAll` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean` for all values in an array.
      */
+    // tslint:disable-next-line: no-unnecessary-generics
     toSatisfyAll<E = any>(predicate: (x: E) => boolean): any;
 
     /**
@@ -479,14 +486,14 @@ declare namespace jest {
      *
      * Note: Required Jest version >=23
      */
-    toHaveBeenCalledBefore(mock: jest.Mock): any;
+    toHaveBeenCalledBefore(mock: Mock): any;
 
     /**
      * Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another `Mock`.
      *
      * Note: Required Jest version >=23
      */
-    toHaveBeenCalledAfter(mock: jest.Mock): any;
+    toHaveBeenCalledAfter(mock: Mock): any;
 
     /**
      * Use `.toHaveBeenCalledOnce` to check if a `Mock` was called exactly one time.
@@ -530,7 +537,6 @@ declare namespace jest {
 
     /**
      * Use `.toBeWithin` when checking if a number is in between the given bounds of: start (inclusive) and end (exclusive).
-     *
      */
     toBeWithin(start: number, end: number): any;
 
@@ -547,57 +553,68 @@ declare namespace jest {
     /**
      * Use `.toContainKeys` when checking if an object has all of the provided keys.
      */
-    toContainKeys<E = any>(keys: (keyof E | string)[]): any;
+    // tslint:disable-next-line: no-unnecessary-generics
+    toContainKeys<E = any>(keys: Array<keyof E>): any;
 
     /**
      * Use `.toContainAllKeys` when checking if an object only contains all of the provided keys.
      */
-    toContainAllKeys<E = any>(keys: (keyof E | string)[]): any;
+    // tslint:disable-next-line: no-unnecessary-generics
+    toContainAllKeys<E = any>(keys: Array<keyof E>): any;
 
     /**
      * Use `.toContainAnyKeys` when checking if an object contains at least one of the provided keys.
      */
-    toContainAnyKeys<E = any>(keys: (keyof E | string)[]): any;
+    // tslint:disable-next-line: no-unnecessary-generics
+    toContainAnyKeys<E = any>(keys: Array<keyof E>): any;
 
     /**
      * Use `.toContainValue` when checking if an object contains the provided value.
      */
+    // tslint:disable-next-line: no-unnecessary-generics
     toContainValue<E = any>(value: E): any;
 
     /**
      * Use `.toContainValues` when checking if an object contains all of the provided values.
      */
+    // tslint:disable-next-line: no-unnecessary-generics
     toContainValues<E = any>(values: E[]): any;
 
     /**
      * Use `.toContainAllValues` when checking if an object only contains all of the provided values.
      */
+    // tslint:disable-next-line: no-unnecessary-generics
     toContainAllValues<E = any>(values: E[]): any;
 
     /**
      * Use `.toContainAnyValues` when checking if an object contains at least one of the provided values.
      */
+    // tslint:disable-next-line: no-unnecessary-generics
     toContainAnyValues<E = any>(values: E[]): any;
 
     /**
      * Use `.toContainEntry` when checking if an object contains the provided entry.
      */
+    // tslint:disable-next-line: no-unnecessary-generics
     toContainEntry<E = any>(entry: [keyof E, E[keyof E]]): any;
 
     /**
      * Use `.toContainEntries` when checking if an object contains all of the provided entries.
      */
-    toContainEntries<E = any>(entries: [keyof E, E[keyof E]][]): any;
+    // tslint:disable-next-line: no-unnecessary-generics
+    toContainEntries<E = any>(entries: Array<[keyof E, E[keyof E]]>): any;
 
     /**
      * Use `.toContainAllEntries` when checking if an object only contains all of the provided entries.
      */
-    toContainAllEntries<E = any>(entries: [keyof E, E[keyof E]][]): any;
+    // tslint:disable-next-line: no-unnecessary-generics
+    toContainAllEntries<E = any>(entries: Array<[keyof E, E[keyof E]]>): any;
 
     /**
      * Use `.toContainAnyEntries` when checking if an object contains at least one of the provided entries.
      */
-    toContainAnyEntries<E = any>(entries: [keyof E, E[keyof E]][]): any;
+    // tslint:disable-next-line: no-unnecessary-generics
+    toContainAnyEntries<E = any>(entries: Array<[keyof E, E[keyof E]]>): any;
 
     /**
      * Use `.toBeExtensible` when checking if an object is extensible.
@@ -662,7 +679,7 @@ declare namespace jest {
     /**
      * Use `.toThrowWithMessage` when checking if a callback function throws an error of a given type with a given error message.
      */
-    toThrowWithMessage(type: Function, message: string | RegExp): any;
+    toThrowWithMessage(type: () => void, message: string | RegExp): any;
 
     /**
      * Use `.toBeEmptyObject` when checking if a value is an empty `Object`.
