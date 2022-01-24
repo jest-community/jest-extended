@@ -78,17 +78,17 @@ declare namespace jest {
     /**
      * Use `.toPartiallyContain` when checking if any array value matches the partial member.
      */
-    toPartiallyContain(member: Partial<T extends Array<infer U> ? U : never>): R;
+    toPartiallyContain(member: Partial<T extends Array<infer U> ? U : T>): R;
 
     /**
      * Use `.toSatisfyAll` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean` for all values in an array.
      */
-    toSatisfyAll(predicate: (x: T extends Array<infer U> ? U : never) => boolean): R;
+    toSatisfyAll(predicate: (x: T extends Array<infer U> ? U : T) => boolean): R;
 
     /**
      * Use `.toSatisfyAny` when you want to use a custom matcher by supplying a predicate function that returns `true` for any matching value in an array.
      */
-    toSatisfyAny(predicate: (x: T extends Array<infer U> ? U : never) => boolean): R;
+    toSatisfyAny(predicate: (x: T extends Array<infer U> ? U : T) => boolean): R;
 
     /**
      * Use `.toBeBoolean` when checking if a value is a `Boolean`.
