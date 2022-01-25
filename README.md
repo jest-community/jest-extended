@@ -138,7 +138,7 @@ yarn add -D jest-extended
 
 ## Setup
 
-Note that `jest-extended` only supports Jest version 24 and newer.
+Note that `jest-extended` only supports Jest version 27 and newer. If you're using an older version of Jest, use 1.2.0.
 
 ```javascript
 // ./testSetup.js
@@ -569,8 +569,6 @@ test('throws an error of type TypeError with message "hello world"', async () =>
 
 Use `.toHaveBeenCalledBefore` when checking if a `Mock` was called before another `Mock`.
 
-_Note: Required Jest version >=23_
-
 ```js
 it('calls mock1 before mock2', () => {
   const mock1 = jest.fn();
@@ -587,8 +585,6 @@ it('calls mock1 before mock2', () => {
 #### .toHaveBeenCalledAfter()
 
 Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another `Mock`.
-
-_Note: Required Jest version >=23_
 
 ```js
 it('calls mock1 after mock2', () => {

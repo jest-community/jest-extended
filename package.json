@@ -46,7 +46,7 @@
     "eslint-plugin-jest": "^26.0.0",
     "eslint-plugin-prettier": "^4.0.0",
     "husky": "^7.0.1",
-    "jest": "^27.2.4",
+    "jest": "^27.2.5",
     "jest-watch-typeahead": "^1.0.0",
     "lint-staged": "^12.0.0",
     "prettier": "^2.3.2",
@@ -110,5 +110,8 @@
     "printWidth": 120,
     "singleQuote": true,
     "trailingComma": "all"
+  },
+  "peerDependencies": {
+    "jest": ">=27.2.5"
   }
 }
