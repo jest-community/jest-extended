@@ -1,6 +1,6 @@
 import { contains } from '../../utils';
 
-export default (actual, value) => {
+export default (equals, actual, value) => {
   const objectValues = Object.keys(actual).map(k => actual[k]);
-  return contains(objectValues, value);
+  return contains(equals, objectValues, value);
 };

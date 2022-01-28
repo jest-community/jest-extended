@@ -1,26 +1,24 @@
-import { matcherHint, printExpected, printReceived } from 'jest-matcher-utils';
-
 import predicate from './predicate';
 
-const passMessage = received => () =>
-  matcherHint('.not.toBeTrue', 'received', '') +
+const passMessage = (utils, received) => () =>
+  utils.matcherHint('.not.toBeTrue', 'received', '') +
   '\n\n' +
   'Expected value to not be true received:\n' +
-  `  ${printReceived(received)}`;
+  `  ${utils.printReceived(received)}`;
 
-const failMessage = received => () =>
-  matcherHint('.toBeTrue', 'received', '') +
+const failMessage = (utils, received) => () =>
+  utils.matcherHint('.toBeTrue', 'received', '') +
   '\n\n' +
   'Expected value to be true:\n' +
-  `  ${printExpected(true)}\n` +
+  `  ${utils.printExpected(true)}\n` +
   'Received:\n' +
-  `  ${printReceived(received)}`;
+  `  ${utils.printReceived(received)}`;
 
 export function toBeTrue(expected) {
   const pass = predicate(expected);
   if (pass) {
-    return { pass: true, message: passMessage(expected) };
+    return { pass: true, message: passMessage(this.utils, expected) };
   }
 
-  return { pass: false, message: failMessage(expected) };
+  return { pass: false, message: failMessage(this.utils, expected) };
 }

@@ -20,7 +20,7 @@ Additional Jest matchers
 
 ## Problem
 
-Jest is an amazing test runner and has some awesome assertion APIs built in by default. However there are times when
+Jest is an amazing test runner and has some awesome assertion APIs built in by default. However, there are times when
 having more specific matchers (assertions) would be far more convenient.
 
 ## Solution
@@ -139,7 +139,7 @@ yarn add -D jest-extended
 
 ## Setup
 
-Note that `jest-extended` only supports Jest version 24 and newer.
+Note that `jest-extended` only supports Jest version `27.2.5` and newer. If you're using an older version of Jest, use `1.2.0`.
 
 ```javascript
 // ./testSetup.js
@@ -179,7 +179,7 @@ import 'jest-extended';
 
 _Note: When using `ts-jest >= 25.5.0`_
 
-Since the [breaking changes]() in `25.5.0` you may also need to update your `tsconfig.json` to include the new `global.d.ts` file in the `files` property like so:
+Since the breaking changes in `25.5.0` you may also need to update your `tsconfig.json` to include the new `global.d.ts` file in the `files` property like so:
 
 ```json
 {
@@ -570,8 +570,6 @@ test('throws an error of type TypeError with message "hello world"', async () =>
 
 Use `.toHaveBeenCalledBefore` when checking if a `Mock` was called before another `Mock`.
 
-_Note: Required Jest version >=23_
-
 ```js
 it('calls mock1 before mock2', () => {
   const mock1 = jest.fn();
@@ -588,8 +586,6 @@ it('calls mock1 before mock2', () => {
 #### .toHaveBeenCalledAfter()
 
 Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another `Mock`.
-
-_Note: Required Jest version >=23_
 
 ```js
 it('calls mock1 after mock2', () => {

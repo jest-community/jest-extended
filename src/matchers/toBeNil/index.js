@@ -1,24 +1,22 @@
-import { matcherHint, printReceived } from 'jest-matcher-utils';
-
 import predicate from './predicate';
 
-const passMessage = received => () =>
-  matcherHint('.not.toBeNil', 'received', '') +
+const passMessage = (utils, received) => () =>
+  utils.matcherHint('.not.toBeNil', 'received', '') +
   '\n\n' +
   'Expected value not to be null or undefined, received:\n' +
-  `  ${printReceived(received)}`;
+  `  ${utils.printReceived(received)}`;
 
-const failMessage = received => () =>
-  matcherHint('.toBeNil', 'received', '') +
+const failMessage = (utils, received) => () =>
+  utils.matcherHint('.toBeNil', 'received', '') +
   '\n\n' +
   'Expected value to be null or undefined, received:\n' +
-  `  ${printReceived(received)}`;
+  `  ${utils.printReceived(received)}`;
 
 export function toBeNil(received) {
   const pass = predicate(received);
   if (pass) {
-    return { pass: true, message: passMessage(received) };
+    return { pass: true, message: passMessage(this.utils, received) };
   }
 
-  return { pass: false, message: failMessage(received) };
+  return { pass: false, message: failMessage(this.utils, received) };
 }

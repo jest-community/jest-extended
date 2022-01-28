@@ -1,43 +1,41 @@
-import { matcherHint, printReceived, printWithType } from 'jest-matcher-utils';
-
 import { isJestMockOrSpy } from '../../utils';
 
 import predicate from './predicate';
 
-const passMessage = () => () =>
-  matcherHint('.not.toHaveBeenCalledOnce') +
+const passMessage = utils => () =>
+  utils.matcherHint('.not.toHaveBeenCalledOnce') +
   '\n\n' +
   'Expected mock function to have been called any amount of times but one, but it was called exactly once.';
 
-const failMessage = mockFn => () => {
+const failMessage = (utils, mockFn) => () => {
   return (
-    matcherHint('.toHaveBeenCalledOnce') +
+    utils.matcherHint('.toHaveBeenCalledOnce') +
     '\n\n' +
     'Expected mock function to have been called exactly once, but it was called:\n' +
-    `  ${printReceived(mockFn.mock.calls.length)} times`
+    `  ${utils.printReceived(mockFn.mock.calls.length)} times`
   );
 };
 
-const mockCheckFailMessage = value => () => {
+const mockCheckFailMessage = (utils, value) => () => {
   return (
-    matcherHint('.toHaveBeenCalledAfter') +
+    utils.matcherHint('.toHaveBeenCalledAfter') +
     '\n\n' +
-    `Matcher error: ${printReceived('received')} must be a mock or spy function` +
+    `Matcher error: ${utils.printReceived('received')} must be a mock or spy function` +
     '\n\n' +
-    printWithType('Received', value, printReceived)
+    utils.printWithType('Received', value, utils.printReceived)
   );
 };
 
 export function toHaveBeenCalledOnce(received) {
   if (!isJestMockOrSpy(received)) {
-    return { pass: false, message: mockCheckFailMessage(received) };
+    return { pass: false, message: mockCheckFailMessage(this.utils, received) };
   }
 
   const pass = predicate(received);
 
   return {
     pass,
-    message: pass ? passMessage(received) : failMessage(received),
+    message: pass ? passMessage(this.utils, received) : failMessage(this.utils, received),
     actual: received,
   };
 }

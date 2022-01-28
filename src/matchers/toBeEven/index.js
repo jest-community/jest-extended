@@ -1,24 +1,22 @@
-import { matcherHint, printReceived } from 'jest-matcher-utils';
-
 import predicate from './predicate';
 
-const passMessage = received => () =>
-  matcherHint('.not.toBeEven', 'received', '') +
+const passMessage = (utils, received) => () =>
+  utils.matcherHint('.not.toBeEven', 'received', '') +
   '\n\n' +
   'Expected value to not be an even number received:\n' +
-  ` ${printReceived(received)}`;
+  ` ${utils.printReceived(received)}`;
 
-const failMessage = received => () =>
-  matcherHint('.toBeEven', 'received', '') +
+const failMessage = (utils, received) => () =>
+  utils.matcherHint('.toBeEven', 'received', '') +
   '\n\n' +
   'Expected value to be an even number received:\n' +
-  ` ${printReceived(received)}`;
+  ` ${utils.printReceived(received)}`;
 
 export function toBeEven(expected) {
   const pass = predicate(expected);
   if (pass) {
-    return { pass: true, message: passMessage(expected) };
+    return { pass: true, message: passMessage(this.utils, expected) };
   }
 
-  return { pass: false, message: failMessage(expected) };
+  return { pass: false, message: failMessage(this.utils, expected) };
 }

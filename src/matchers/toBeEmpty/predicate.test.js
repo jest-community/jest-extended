@@ -1,65 +1,66 @@
+import { equals } from 'expect/build/jasmineUtils';
 import predicate from './predicate';
 
 describe('toBeEmpty Predicate', () => {
   describe('returns true', () => {
     test('When empty string is passed', () => {
-      expect(predicate('')).toBe(true);
+      expect(predicate(equals, '')).toBe(true);
     });
 
     test('When empty string object is passed', () => {
-      expect(predicate(new String(''))).toBe(true);
+      expect(predicate(equals, new String(''))).toBe(true);
     });
 
     test('When empty array is passed', () => {
-      expect(predicate([])).toBe(true);
+      expect(predicate(equals, [])).toBe(true);
     });
 
     test('When empty object is passed', () => {
-      expect(predicate({})).toBe(true);
+      expect(predicate(equals, {})).toBe(true);
     });
 
     test('When empty Set is passed', () => {
-      expect(predicate(new Set())).toBe(true);
+      expect(predicate(equals, new Set())).toBe(true);
     });
 
     test('When empty Map is passed', () => {
-      expect(predicate(new Map([]))).toBe(true);
+      expect(predicate(equals, new Map([]))).toBe(true);
     });
 
     test('When empty generator is passed', () => {
       function* yieldsNothing() {}
 
-      expect(predicate(yieldsNothing())).toBe(true);
+      expect(predicate(equals, yieldsNothing())).toBe(true);
     });
   });
 
   describe('return false', () => {
     test('When array with members is passed', () => {
-      expect(predicate(['1'])).toBe(false);
+      expect(predicate(equals, ['1'])).toBe(false);
     });
 
     test('When non-empty string is passed', () => {
-      expect(predicate('string')).toBe(false);
+      expect(predicate(equals, 'string')).toBe(false);
     });
 
     test('When blank string is passed', () => {
-      expect(predicate(' ')).toBe(false);
+      expect(predicate(equals, ' ')).toBe(false);
     });
 
     test('When non-empty string object is passed', () => {
-      expect(predicate(new String('string'))).toBe(false);
+      expect(predicate(equals, new String('string'))).toBe(false);
     });
 
     test('When object with members is passed', () => {
-      expect(predicate({ foo: 'bar' })).toBe(false);
+      expect(predicate(equals, { foo: 'bar' })).toBe(false);
     });
 
     test('When non-empty Set is passed', () => {
-      expect(predicate(new Set(['']))).toBe(false);
+      expect(predicate(equals, new Set(['']))).toBe(false);
     });
 
     test('When non-empty Map is passed', () => {
-      expect(predicate(new Map([['k', 'v']]))).toBe(false);
+      expect(predicate(equals, new Map([['k', 'v']]))).toBe(false);
     });
 
     test('When non-empty generator is passed', () => {
@@ -67,7 +68,7 @@ describe('toBeEmpty Predicate', () => {
         yield 'a thing';
       }
 
-      expect(predicate(yieldsSomething())).toBe(false);
+      expect(predicate(equals, yieldsSomething())).toBe(false);
     });
   });
 });
