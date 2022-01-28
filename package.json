@@ -1,6 +1,6 @@
 {
   "name": "jest-extended",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Additional Jest matchers",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
@@ -67,6 +67,7 @@
   "jest": {
     "testEnvironment": "node",
     "testPathIgnorePatterns": [
+      "examples",
       "/node_modules/",
       "/fixtures/",
       "/dist/"

@@ -38,6 +38,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
 - [Contributing](#contributing)
 - [Installation](#installation)
 - [Setup](#setup)
+  - [Typescript](#typescript)
 - [Asymmetric matchers](#asymmetric-matchers)
 - [API](#api)
   - [.pass(message)](#passmessage)
