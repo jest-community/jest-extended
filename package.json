@@ -69,6 +69,7 @@
   "jest": {
     "testEnvironment": "node",
     "testPathIgnorePatterns": [
+      "examples",
       "/node_modules/",
       "/fixtures/",
       "/dist/"
