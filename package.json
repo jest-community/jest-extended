@@ -78,6 +78,9 @@
     "snapshotSerializers": [
       "pretty-format/build/plugins/ConvertAnsi.js"
     ],
+    "moduleNameMapper": {
+      "src/(.*)": "<rootDir>/src/$1"
+    },
     "coverageThreshold": {
       "global": {
         "branches": 100,

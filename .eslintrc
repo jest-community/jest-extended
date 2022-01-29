@@ -15,6 +15,13 @@
     "expect": true
   },
   "plugins": ["eslint-plugin-import", "import", "jest"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": ["./"]
+      }
+    }
+  },
   "extends": ["eslint:recommended", "plugin:prettier/recommended"],
   "rules": {
     "comma-spacing": [1, { "before": false, "after": true }],
