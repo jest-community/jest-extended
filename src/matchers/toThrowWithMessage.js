@@ -1,4 +1,9 @@
-import predicate from './predicate';
+const predicate = (error, type, message) => {
+  if (message instanceof RegExp) {
+    return error && error instanceof type && message.test(error.message);
+  }
+  return error && error instanceof type && error.message === message;
+};
 
 const positiveHint = utils =>
   utils.matcherHint('.toThrowWithMessage', 'function', 'type', { secondArgument: 'message' });

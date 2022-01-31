@@ -1,5 +1,5 @@
 import { matcherHint, printExpected, printReceived } from 'jest-matcher-utils';
-import * as matcher from './';
+import * as matcher from 'src/matchers/toThrowWithMessage';
 const { toThrowWithMessage } = matcher;
 
 expect.extend(matcher);
