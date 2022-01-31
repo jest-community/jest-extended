@@ -14,8 +14,6 @@ export function toBeExtensible(actual) {
     `  ${printReceived(actual)}`;
 
   const pass = Object.isExtensible(actual);
-  return {
-    pass,
-    message: () => (pass ? passMessage : failMessage),
-  };
+
+  return { pass, message: () => (pass ? passMessage : failMessage) };
 }
