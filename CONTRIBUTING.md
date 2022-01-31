@@ -12,10 +12,6 @@ Thanks for being willing to contribute!
 3. `$ yarn test` to validate you've got it working
 4. Create a branch for your PR
 
-## Here as part of Hacktoberfest?
-
-Head over to [here](https://hacktoberfest.digitalocean.com/sign_up/register) to signup if you haven't already
-
 ## Making changes
 
 - All changes should have unit tests
@@ -24,12 +20,10 @@ Head over to [here](https://hacktoberfest.digitalocean.com/sign_up/register) to 
 
 ### New Matchers
 
-- Each matcher should be placed in it's own directory inside of the `matchers` directory.
-- A matcher directory should contain the following:
-  - `index.js` - An export of the matcher in the format expected by Jest. See the docs for an [example](http://facebook.github.io/jest/docs/en/expect.html#expectextendmatchers). Note: the test outcome messages must be a function that returns a string (this caught me out 😉).
-  - `index.test.js` - Test suite that uses the new matcher and make sure it passes.
-  - `predicate.js` - The function that tests the actual value meets the expected value / behavior.
-  - `predicate.test.js` - Tests for the predicate both true/false cases must be covered.
+- Each matcher should be placed in it's own file inside of the `src/matchers/[matcher].js`.
+- A matcher should:
+  - Export the matcher in the format expected by Jest. See the docs for an [example](http://facebook.github.io/jest/docs/en/expect.html#expectextendmatchers). Note: the test outcome messages must be a function that returns a string (this caught me out 😉).
+- Tests for the matcher should go in `test/matchers/[matcher].test.js` - Test suite that uses the new matcher and make sure it passes.
 - Docs for the new matcher should be updated in the API section of the `README.md` to no longer say `Unimplemented`.
 - Type definitions for the new matchers should be added to `types/index.d.ts`.
 
