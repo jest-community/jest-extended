@@ -1,5 +1,5 @@
 import { diffStringsRaw, DIFF_EQUAL } from 'jest-diff';
-import { printExpected, printReceived } from '../utils/print-util';
+import { printExpected, printReceived } from '../utils/print';
 
 const removeWhitespace = str => str.trim().replace(/\s+/g, '');
 

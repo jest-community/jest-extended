@@ -1,4 +1,4 @@
-import { tokenize } from './print-util';
+import { tokenize } from 'src/utils/print';
 
 describe('print-util module', () => {
   it('should tokenize given string', () => {
