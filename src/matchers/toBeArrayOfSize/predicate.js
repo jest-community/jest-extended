@@ -1,8 +1,6 @@
-import toBeArray from '../toBeArray/predicate';
-
 /**
  * @param actual
  * @param size
  * @returns {boolean}
  */
-export default (actual, size) => toBeArray(actual) && actual.length === size;
+export default (actual, size) => Array.isArray(actual) && actual.length === size;
