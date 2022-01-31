@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import * as matchers from './index';
+import * as matchers from 'src/matchers/index';
 
 expect.extend(matchers);
 
@@ -46,9 +46,8 @@ describe('asymmetric matchers', () => {
 });
 
 describe('all matchers', () => {
-  /* eslint-disable */
-  test.skip('must be exported', () => {
-    const directories = fs.readdirSync(__dirname).filter(dir => fs.statSync(path.join(__dirname, dir)).isDirectory());
+  test('must be exported', () => {
+    const directories = fs.readdirSync(path.join(__dirname, '../../src/matchers')).filter(n => n !== 'index.js');
     const namedMatchers = Object.keys(matchers);
 
     try {
