@@ -1,4 +1,4 @@
-import * as matcher from './';
+import * as matcher from 'src/matchers/toBeOneOf';
 
 expect.extend(matcher);
 
