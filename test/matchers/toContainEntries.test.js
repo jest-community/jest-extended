@@ -1,4 +1,4 @@
-import * as matcher from './';
+import * as matcher from 'src/matchers/toContainEntries';
 
 expect.extend(matcher);
 
