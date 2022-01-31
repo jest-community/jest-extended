@@ -45,6 +45,20 @@ describe('.toHaveBeenCalledBefore', () => {
     expect(mock1).toHaveBeenCalledBefore(mock2);
   });
 
+  test('passes when given first timestamps does not contain a timestamp greater than any of the second timestamps', () => {
+    const now = Date.now();
+    const lessThan = now - 100;
+    const greaterThan = now + 100;
+
+    const mock1 = jest.fn();
+    const mock2 = jest.fn();
+    mock1.mock.invocationCallOrder[0] = lessThan; // amend the value for the snapshot
+    mock1.mock.invocationCallOrder[1] = now;
+    mock1.mock.invocationCallOrder[1] = lessThan;
+    mock2.mock.invocationCallOrder[0] = greaterThan;
+    expect(mock1).toHaveBeenCalledBefore(mock2);
+  });
+
   test('fails when given first mock is called after several calls to second mock', () => {
     const mock1 = jest.fn();
     const mock2 = jest.fn();

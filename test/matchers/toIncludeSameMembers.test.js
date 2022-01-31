@@ -42,4 +42,12 @@ describe('.not.toIncludeSameMembers', () => {
     expect([1, 2]).not.toIncludeSameMembers([1, 2, 2]);
     expect([1, 2, 3]).not.toIncludeSameMembers([2, 3, 4]);
   });
+
+  test('passes when no elements match', () => {
+    expect([1, 2]).not.toIncludeSameMembers([3, 4]);
+  });
+
+  test('passes when only one element matches', () => {
+    expect([1, 2, 3]).not.toIncludeSameMembers([3, 4, 5]);
+  });
 });

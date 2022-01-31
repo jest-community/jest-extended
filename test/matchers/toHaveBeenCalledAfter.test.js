@@ -70,6 +70,20 @@ describe('.toHaveBeenCalledAfter', () => {
     const mock2 = () => {};
     expect(() => expect(mock1).toHaveBeenCalledAfter(mock2)).toThrowErrorMatchingSnapshot();
   });
+
+  test('passes when given first timestamps does not contain a timestamp less than any of the second timestamps', () => {
+    const now = Date.now();
+    const lessThan = now - 100;
+    const greaterThan = now + 100;
+
+    const mock1 = jest.fn();
+    const mock2 = jest.fn();
+    mock1.mock.invocationCallOrder[0] = greaterThan; // amend the value for the snapshot
+    mock1.mock.invocationCallOrder[1] = now;
+    mock1.mock.invocationCallOrder[1] = greaterThan;
+    mock2.mock.invocationCallOrder[0] = lessThan;
+    expect(mock1).toHaveBeenCalledAfter(mock2);
+  });
 });
 
 describe('.not.toHaveBeenCalledAfter', () => {
