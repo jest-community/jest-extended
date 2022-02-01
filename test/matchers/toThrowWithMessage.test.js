@@ -81,6 +81,34 @@ describe('.toThrowWithMessage', () => {
     expect(message()).toMatchSnapshot();
   });
 
+  test('fails when error message does not match expected message', () => {
+    const callback = () => {
+      throw SyntaxError('Actual message');
+    };
+    const { pass, message } = toThrowWithMessage.call(
+      { utils: { matcherHint: matcherHint, printExpected: printExpected, printReceived: printReceived } },
+      callback,
+      SyntaxError,
+      'Expected message',
+    );
+    expect(pass).toBe(false);
+    expect(message()).toMatchSnapshot();
+  });
+
+  test('fails when error message does not match expected message regex', () => {
+    const callback = () => {
+      throw SyntaxError('Actual message');
+    };
+    const { pass, message } = toThrowWithMessage.call(
+      { utils: { matcherHint: matcherHint, printExpected: printExpected, printReceived: printReceived } },
+      callback,
+      SyntaxError,
+      /Expected message/,
+    );
+    expect(pass).toBe(false);
+    expect(message()).toMatchSnapshot();
+  });
+
   test('passes when given an Error with a string error message', () => {
     const callback = () => {
       throw TypeError('Expected message');

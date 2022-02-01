@@ -83,6 +83,26 @@ exports[`.toThrowWithMessage fails when callback function is not provided 1`] = 
 Received value must be a function but instead \\"undefined\\" was found"
 `;
 
+exports[`.toThrowWithMessage fails when error message does not match expected message 1`] = `
+"<dim>expect(</><red>function</><dim>).toThrowWithMessage(</><green>type</><dim>, </><green>message</><dim>)</>
+
+Expected to throw:
+  <green>[SyntaxError: Expected message]</>
+Thrown:
+  <red>[SyntaxError: Actual message]</>
+"
+`;
+
+exports[`.toThrowWithMessage fails when error message does not match expected message regex 1`] = `
+"<dim>expect(</><red>function</><dim>).toThrowWithMessage(</><green>type</><dim>, </><green>message</><dim>)</>
+
+Expected to throw:
+  <green>[SyntaxError: /Expected message/]</>
+Thrown:
+  <red>[SyntaxError: Actual message]</>
+"
+`;
+
 exports[`.toThrowWithMessage fails when error message is not provided 1`] = `
 "<dim>expect(</><red>function</><dim>).toThrowWithMessage(</><green>type</><dim>, </><green>message</><dim>)</>
 
