@@ -19,6 +19,20 @@ describe('.toBeEmpty', () => {
     expect({}).toBeEmpty();
   });
 
+  test('When empty Set is passed', () => {
+    expect(new Set()).toBeEmpty();
+  });
+
+  test('When empty Map is passed', () => {
+    expect(new Map([])).toBeEmpty();
+  });
+
+  test('When empty generator is passed', () => {
+    function* yieldsNothing() {}
+
+    expect(yieldsNothing()).toBeEmpty();
+  });
+
   test('fails when given non-empty string', () => {
     expect(() => expect('string').toBeEmpty()).toThrowErrorMatchingSnapshot();
   });
@@ -39,6 +53,22 @@ describe('.not.toBeEmpty', () => {
 
   test('passes when given a non-empty object', () => {
     expect({ foo: 'bar' }).not.toBeEmpty();
+  });
+
+  test('When empty Set is passed', () => {
+    expect(new Set(['value'])).not.toBeEmpty();
+  });
+
+  test('When empty Map is passed', () => {
+    expect(new Map([['k', 'v']])).not.toBeEmpty();
+  });
+
+  test('When empty generator is passed', () => {
+    function* yieldsNothing() {
+      yield 'a thing';
+    }
+
+    expect(yieldsNothing()).not.toBeEmpty();
   });
 
   test('fails when given empty string', () => {
