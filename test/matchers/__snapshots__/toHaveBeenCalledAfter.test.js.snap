@@ -1,14 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`.not.toHaveBeenCalledAfter fails when given a first mock has not been called 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toHaveBeenCalledAfter(</><green>expected</><dim>)</>
-
-Expected first mock to not have been called after, invocationCallOrder:
-  <green>[]</>
-Received second mock with invocationCallOrder:
-  <red>[]</>"
-`;
-
 exports[`.not.toHaveBeenCalledAfter fails when given first mock is called after second mock 1`] = `
 "<dim>expect(</><red>received</><dim>).not.toHaveBeenCalledAfter(</><green>expected</><dim>)</>
 
@@ -25,6 +16,15 @@ Expected first mock to not have been called after, invocationCallOrder:
   <green>[26, 27, 28]</>
 Received second mock with invocationCallOrder:
   <red>[25]</>"
+`;
+
+exports[`.toHaveBeenCalledAfter fails when given first mock has not been called 1`] = `
+"<dim>expect(</><red>received</><dim>).toHaveBeenCalledAfter(</><green>expected</><dim>)</>
+
+Expected first mock to have been called after, invocationCallOrder:
+  <green>[]</>
+Received second mock with invocationCallOrder:
+  <red>[]</>"
 `;
 
 exports[`.toHaveBeenCalledAfter fails when given first mock is called before multiple calls to second mock 1`] = `

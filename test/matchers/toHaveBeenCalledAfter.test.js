@@ -3,10 +3,11 @@ import * as matcher from 'src/matchers/toHaveBeenCalledAfter';
 expect.extend(matcher);
 
 describe('.toHaveBeenCalledAfter', () => {
-  test('passes when given a first mock has not been called', () => {
+  test('fails when given first mock has not been called', () => {
     const mock1 = jest.fn();
     const mock2 = jest.fn();
-    expect(mock1).toHaveBeenCalledAfter(mock2);
+
+    expect(() => expect(mock1).toHaveBeenCalledAfter(mock2)).toThrowErrorMatchingSnapshot();
   });
 
   test('fails when given first mock that has been called and a second mock that has not been called', () => {
@@ -87,12 +88,6 @@ describe('.toHaveBeenCalledAfter', () => {
 });
 
 describe('.not.toHaveBeenCalledAfter', () => {
-  test('fails when given a first mock has not been called', () => {
-    const mock1 = jest.fn();
-    const mock2 = jest.fn();
-    expect(() => expect(mock1).not.toHaveBeenCalledAfter(mock2)).toThrowErrorMatchingSnapshot();
-  });
-
   test('passes when given first mock that has been called and a second mock that has not been called', () => {
     const mock1 = jest.fn();
     const mock2 = jest.fn();
