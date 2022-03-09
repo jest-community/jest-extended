@@ -84,6 +84,28 @@ describe('.toHaveBeenCalledBefore', () => {
     const mock2 = () => {};
     expect(() => expect(mock1).toHaveBeenCalledBefore(mock2)).toThrowErrorMatchingSnapshot();
   });
+
+  describe('failIfNoSecondInvocation is passed as false', () => {
+    test('passes when given first mock that has been called and a second mock that has not been called', () => {
+      const mock1 = jest.fn();
+      const mock2 = jest.fn();
+
+      mock1();
+
+      expect(mock1).toHaveBeenCalledBefore(mock2, false);
+    });
+  });
+
+  describe('failIfNoSecondInvocation is passed as true', () => {
+    test('fails when given first mock that has been called and a second mock that has not been called', () => {
+      const mock1 = jest.fn();
+      const mock2 = jest.fn();
+
+      mock1();
+
+      expect(() => expect(mock1).toHaveBeenCalledBefore(mock2, true)).toThrowErrorMatchingSnapshot();
+    });
+  });
 });
 
 describe('.not.toHaveBeenCalledBefore', () => {
@@ -144,5 +166,27 @@ describe('.not.toHaveBeenCalledBefore', () => {
     mock1();
     mock1();
     expect(mock1).not.toHaveBeenCalledBefore(mock2);
+  });
+
+  describe('failIfNoSecondInvocation is passed as false', () => {
+    test('fails when given first mock that has been called and a second mock that has not been called', () => {
+      const mock1 = jest.fn();
+      const mock2 = jest.fn();
+
+      mock1();
+
+      expect(() => expect(mock1).not.toHaveBeenCalledBefore(mock2, false)).toThrowErrorMatchingSnapshot();
+    });
+  });
+
+  describe('failIfNoSecondInvocation is passed as true', () => {
+    test('passes when given first mock that has been called and a second mock that has not been called', () => {
+      const mock1 = jest.fn();
+      const mock2 = jest.fn();
+
+      mock1();
+
+      expect(mock1).not.toHaveBeenCalledBefore(mock2, true);
+    });
   });
 });

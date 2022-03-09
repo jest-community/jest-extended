@@ -1,6 +1,6 @@
 import { isJestMockOrSpy } from '../utils';
 
-export function toHaveBeenCalledBefore(actual, expected) {
+export function toHaveBeenCalledBefore(actual, expected, failIfNoSecondInvocation = true) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   if (!isJestMockOrSpy(actual)) {
@@ -13,7 +13,7 @@ export function toHaveBeenCalledBefore(actual, expected) {
 
   const firstInvocationCallOrder = actual.mock.invocationCallOrder;
   const secondInvocationCallOrder = expected.mock.invocationCallOrder;
-  const pass = predicate(firstInvocationCallOrder, secondInvocationCallOrder);
+  const pass = predicate(firstInvocationCallOrder, secondInvocationCallOrder, failIfNoSecondInvocation);
 
   const passMessage =
     matcherHint('.not.toHaveBeenCalledBefore') +
@@ -49,9 +49,9 @@ const mockCheckFailMessage = (utils, value, isReceivedValue) => () => {
 
 const smallest = ns => ns.reduce((acc, n) => (acc < n ? acc : n));
 
-const predicate = (firstInvocationCallOrder, secondInvocationCallOrder) => {
+const predicate = (firstInvocationCallOrder, secondInvocationCallOrder, failIfNoSecondInvocation) => {
   if (firstInvocationCallOrder.length === 0) return false;
-  if (secondInvocationCallOrder.length === 0) return false;
+  if (secondInvocationCallOrder.length === 0) return !failIfNoSecondInvocation;
 
   const firstSmallest = smallest(firstInvocationCallOrder);
   const secondSmallest = smallest(secondInvocationCallOrder);

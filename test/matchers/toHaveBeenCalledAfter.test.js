@@ -85,6 +85,24 @@ describe('.toHaveBeenCalledAfter', () => {
     mock2.mock.invocationCallOrder[0] = lessThan;
     expect(mock1).toHaveBeenCalledAfter(mock2);
   });
+
+  describe('failIfNoFirstInvocation is passed as false', () => {
+    test('passes when given first mock has not been called', () => {
+      const mock1 = jest.fn();
+      const mock2 = jest.fn();
+
+      expect(mock1).toHaveBeenCalledAfter(mock2, false);
+    });
+  });
+
+  describe('failIfNoFirstInvocation is passed as true', () => {
+    test('failed when given first mock has not been called', () => {
+      const mock1 = jest.fn();
+      const mock2 = jest.fn();
+
+      expect(() => expect(mock1).toHaveBeenCalledAfter(mock2, true)).toThrowErrorMatchingSnapshot();
+    });
+  });
 });
 
 describe('.not.toHaveBeenCalledAfter', () => {
@@ -145,5 +163,23 @@ describe('.not.toHaveBeenCalledAfter', () => {
     mock1();
     mock1();
     expect(() => expect(mock1).not.toHaveBeenCalledAfter(mock2)).toThrowErrorMatchingSnapshot();
+  });
+
+  describe('failIfNoFirstInvocation is passed as false', () => {
+    test('failed when given first mock has not been called', () => {
+      const mock1 = jest.fn();
+      const mock2 = jest.fn();
+
+      expect(() => expect(mock1).not.toHaveBeenCalledAfter(mock2, false)).toThrowErrorMatchingSnapshot();
+    });
+  });
+
+  describe('failIfNoFirstInvocation is passed as true', () => {
+    test('passes when given first mock has not been called', () => {
+      const mock1 = jest.fn();
+      const mock2 = jest.fn();
+
+      expect(mock1).not.toHaveBeenCalledAfter(mock2, true);
+    });
   });
 });

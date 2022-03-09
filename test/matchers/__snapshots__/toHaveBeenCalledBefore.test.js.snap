@@ -1,5 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`.not.toHaveBeenCalledBefore failIfNoSecondInvocation is passed as false fails when given first mock that has been called and a second mock that has not been called 1`] = `
+"<dim>expect(</><red>received</><dim>).not.toHaveBeenCalledBefore(</><green>expected</><dim>)</>
+
+Expected first mock to not have been called before, invocationCallOrder:
+  <green>[31]</>
+Received second mock with invocationCallOrder:
+  <red>[]</>"
+`;
+
 exports[`.not.toHaveBeenCalledBefore fails when given first mock is called before multiple calls to second mock 1`] = `
 "<dim>expect(</><red>received</><dim>).not.toHaveBeenCalledBefore(</><green>expected</><dim>)</>
 
@@ -16,6 +25,15 @@ Expected first mock to not have been called before, invocationCallOrder:
   <green>[4000]</>
 Received second mock with invocationCallOrder:
   <red>[5000]</>"
+`;
+
+exports[`.toHaveBeenCalledBefore failIfNoSecondInvocation is passed as true fails when given first mock that has been called and a second mock that has not been called 1`] = `
+"<dim>expect(</><red>received</><dim>).toHaveBeenCalledBefore(</><green>expected</><dim>)</>
+
+Expected first mock to have been called before, invocationCallOrder:
+  <green>[16]</>
+Received second mock with invocationCallOrder:
+  <red>[]</>"
 `;
 
 exports[`.toHaveBeenCalledBefore fails when given a first mock has not been called 1`] = `
