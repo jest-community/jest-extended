@@ -69,6 +69,7 @@
     "*.md": "prettier --write"
   },
   "jest": {
+    "preset": "ts-jest",
     "testEnvironment": "node",
     "testPathIgnorePatterns": [
       "examples",
@@ -96,21 +97,6 @@
     "watchPlugins": [
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
-    ]
-  },
-  "babel": {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "targets": {
-            "node": "12"
-          }
-        }
-      ]
-    ],
-    "plugins": [
-      "module:babel-jest-assertions"
     ]
   },
   "prettier": {
