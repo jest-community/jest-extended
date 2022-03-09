@@ -2,7 +2,7 @@
 
 This example demonstrates how to setup `jest-extended` globally with Typescript.
 
-You will need to register `jest-extended/all` with Jest using the `setupFilesAfterEnv` field in your Jest config, see here: [jest.config.js](/jest.config.js)
+You will need to register `jest-extended/all` with Jest using the `setupFilesAfterEnv` field in your Jest config, see here: [jest.config.js](./jest.config.js)
 
 ```sh
 module.exports = {
