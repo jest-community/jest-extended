@@ -9,11 +9,11 @@ describe('.toHaveBeenCalledBefore', () => {
     expect(() => expect(mock1).toHaveBeenCalledBefore(mock2)).toThrowErrorMatchingSnapshot();
   });
 
-  test('passes when given first mock that has been called and a second mock that has not been called', () => {
+  test('fails when given first mock that has been called and a second mock that has not been called', () => {
     const mock1 = jest.fn();
     const mock2 = jest.fn();
     mock1();
-    expect(mock1).toHaveBeenCalledBefore(mock2);
+    expect(() => expect(mock1).toHaveBeenCalledBefore(mock2)).toThrowErrorMatchingSnapshot();
   });
 
   test('passes when given first mock is called before second mock', () => {
@@ -93,12 +93,12 @@ describe('.not.toHaveBeenCalledBefore', () => {
     expect(mock1).not.toHaveBeenCalledBefore(mock2);
   });
 
-  test('fails when given first mock that has been called and a second mock that has not been called', () => {
+  test('passes when given first mock that has been called and a second mock that has not been called', () => {
     const mock1 = jest.fn();
     const mock2 = jest.fn();
     mock1();
     mock1.mock.invocationCallOrder[0] = 4000; // amend the value for the snapshot
-    expect(() => expect(mock1).not.toHaveBeenCalledBefore(mock2)).toThrowErrorMatchingSnapshot();
+    expect(mock1).not.toHaveBeenCalledBefore(mock2);
   });
 
   test('fails when given first mock is called before second mock', () => {
