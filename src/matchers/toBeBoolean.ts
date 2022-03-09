@@ -1,4 +1,18 @@
-export function toBeBoolean(actual) {
+interface CustomMatchers<R = unknown> {
+  toBeBoolean(): R;
+}
+
+declare global {
+  namespace jest {
+    interface Matchers<R> extends CustomMatchers<R> {}
+
+    interface Expect extends CustomMatchers {}
+
+    interface InverseAsymmetricMatchers extends CustomMatchers {}
+  }
+}
+
+export function toBeBoolean(this: jest.MatcherContext, actual: unknown): jest.CustomMatcherResult {
   const { matcherHint, printReceived } = this.utils;
 
   const passMessage =
