@@ -88,6 +88,12 @@ describe('.toHaveBeenCalledAfter', () => {
 });
 
 describe('.not.toHaveBeenCalledAfter', () => {
+  test('passes when given a first mock has not been called', () => {
+    const mock1 = jest.fn();
+    const mock2 = jest.fn();
+    expect(mock1).not.toHaveBeenCalledAfter(mock2);
+  });
+
   test('passes when given first mock that has been called and a second mock that has not been called', () => {
     const mock1 = jest.fn();
     const mock2 = jest.fn();
