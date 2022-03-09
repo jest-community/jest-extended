@@ -1,4 +1,22 @@
-export function toBeAfterOrEqualTo(actual, expected) {
+interface CustomMatchers<R = unknown> {
+  toBeAfterOrEqualTo(date: Date): R;
+}
+
+declare global {
+  namespace jest {
+    interface Matchers<R> extends CustomMatchers<R> {}
+
+    interface Expect extends CustomMatchers {}
+
+    interface InverseAsymmetricMatchers extends CustomMatchers {}
+  }
+}
+
+export function toBeAfterOrEqualTo(
+  this: jest.MatcherContext,
+  actual: unknown,
+  expected: Date,
+): jest.CustomMatcherResult {
   const { printReceived, matcherHint } = this.utils;
 
   const passMessage =
