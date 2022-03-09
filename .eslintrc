@@ -3,6 +3,7 @@
     "ecmaVersion": 2020,
     "sourceType": "module"
   },
+  "parser": "@typescript-eslint/parser",
   "env": {
     "node": true,
     "es6": true,
@@ -14,15 +15,23 @@
     "it": true,
     "expect": true
   },
-  "plugins": ["eslint-plugin-import", "import", "jest"],
+  "plugins": ["eslint-plugin-import", "@typescript-eslint", "import", "jest"],
   "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts"]
+    },
     "import/resolver": {
       "node": {
         "moduleDirectory": ["./", "node_modules"]
       }
     }
   },
-  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
+    "plugin:prettier/recommended"
+  ],
   "rules": {
     "comma-spacing": [1, { "before": false, "after": true }],
     "eol-last": 1,
@@ -43,7 +52,7 @@
   },
   "overrides": [
     {
-      "files": "src/matchers/*/index.js",
+      "files": "src/matchers/*/index.ts",
       "rules": {
         "import/no-default-export": "error"
       }
