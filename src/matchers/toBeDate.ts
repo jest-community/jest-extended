@@ -1,6 +1,20 @@
 import { getType } from 'jest-get-type';
 
-export function toBeDate(actual) {
+interface CustomMatchers<R = unknown> {
+  toBeDate(): R;
+}
+
+declare global {
+  namespace jest {
+    interface Matchers<R> extends CustomMatchers<R> {}
+
+    interface Expect extends CustomMatchers {}
+
+    interface InverseAsymmetricMatchers extends CustomMatchers {}
+  }
+}
+
+export function toBeDate(this: jest.MatcherContext, actual: unknown): jest.CustomMatcherResult {
   const { matcherHint, printReceived } = this.utils;
 
   const passMessage =
@@ -15,7 +29,7 @@ export function toBeDate(actual) {
     'Expected value to be a date received:\n' +
     `  ${printReceived(actual)}`;
 
-  const pass = getType(actual) === 'date' && !isNaN(actual);
+  const pass = getType(actual) === 'date' && !isNaN(actual as number);
 
   return { pass, message: () => (pass ? passMessage : failMessage) };
 }
