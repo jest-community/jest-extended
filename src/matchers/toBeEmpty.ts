@@ -1,4 +1,18 @@
-export function toBeEmpty(actual) {
+interface CustomMatchers<R = unknown> {
+  toBeEmpty(): R;
+}
+
+declare global {
+  namespace jest {
+    interface Matchers<R> extends CustomMatchers<R> {}
+
+    interface Expect extends CustomMatchers {}
+
+    interface InverseAsymmetricMatchers extends CustomMatchers {}
+  }
+}
+
+export function toBeEmpty(this: jest.MatcherContext, actual: unknown): jest.CustomMatcherResult {
   const { printReceived, matcherHint } = this.utils;
 
   const passMessage =
@@ -18,10 +32,10 @@ export function toBeEmpty(actual) {
   return { pass, message: () => (pass ? passMessage : failMessage) };
 }
 
-const isEmptyIterable = value => {
+const isEmptyIterable = (value: unknown): boolean => {
   if (typeof value[Symbol.iterator] !== 'function') {
     return false;
   }
-  const firstIteration = value[Symbol.iterator]().next();
+  const firstIteration = (value as Iterable<unknown>)[Symbol.iterator]().next();
   return firstIteration.done;
 };

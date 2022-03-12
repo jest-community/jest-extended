@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.cjs.json",
+  "compilerOptions": {
+    "module": "es2015",
+    "outDir": "dist/esm",
+    "declaration": false,
+    "declarationDir": null
+  }
+}

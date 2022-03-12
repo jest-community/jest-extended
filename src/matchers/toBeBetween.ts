@@ -1,4 +1,23 @@
-export function toBeBetween(actual, startDate, endDate) {
+interface CustomMatchers<R = unknown> {
+  toBeBetween(startDate: Date, endDate: Date): R;
+}
+
+declare global {
+  namespace jest {
+    interface Matchers<R> extends CustomMatchers<R> {}
+
+    interface Expect extends CustomMatchers {}
+
+    interface InverseAsymmetricMatchers extends CustomMatchers {}
+  }
+}
+
+export function toBeBetween(
+  this: jest.MatcherContext,
+  actual: unknown,
+  startDate: Date,
+  endDate: Date,
+): jest.CustomMatcherResult {
   const { matcherHint, printReceived } = this.utils;
 
   const passMessage =

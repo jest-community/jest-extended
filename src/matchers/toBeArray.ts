@@ -1,4 +1,18 @@
-export function toBeArray(expected) {
+interface CustomMatchers<R = unknown> {
+  toBeArray(): R;
+}
+
+declare global {
+  namespace jest {
+    interface Matchers<R> extends CustomMatchers<R> {}
+
+    interface Expect extends CustomMatchers {}
+
+    interface InverseAsymmetricMatchers extends CustomMatchers {}
+  }
+}
+
+export function toBeArray(this: jest.MatcherContext, expected: unknown): jest.CustomMatcherResult {
   const { matcherHint, printReceived } = this.utils;
 
   const passMessage =

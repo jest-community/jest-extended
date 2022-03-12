@@ -1,6 +1,24 @@
 import { determinePropertyMessage } from '../utils';
 
-export function toBeArrayOfSize(actual, expected) {
+interface CustomMatchers<R = unknown> {
+  toBeArrayOfSize(x: number): R;
+}
+
+declare global {
+  namespace jest {
+    interface Matchers<R> extends CustomMatchers<R> {}
+
+    interface Expect extends CustomMatchers {}
+
+    interface InverseAsymmetricMatchers extends CustomMatchers {}
+  }
+}
+
+export function toBeArrayOfSize(
+  this: jest.MatcherContext,
+  actual: unknown,
+  expected: number,
+): jest.CustomMatcherResult {
   const { printExpected, printReceived, matcherHint } = this.utils;
 
   const passMessage = `${matcherHint('.not.toBeArrayOfSize')}
