@@ -2,20 +2,16 @@
 
 declare namespace jest {
   // noinspection JSUnusedGlobalSymbols
-  interface Matchers<R> {
+  interface Matchers<R, T> {
     /**
      * Note: Currently unimplemented
      * Passing assertion
-     *
-     * @param {String} message
      */
     pass(message: string): R;
 
     /**
      * Note: Currently unimplemented
      * Failing assertion
-     *
-     * @param {String} message
      */
     fail(message: string): never;
 
@@ -26,9 +22,8 @@ declare namespace jest {
 
     /**
      * Use .toBeOneOf when checking if a value is a member of a given Array.
-     * @param {Array.<*>} members
      */
-    toBeOneOf<E = any>(members: E[]): R;
+    toBeOneOf(members: T[]): R;
 
     /**
      * Use `.toBeNil` when checking a value is `null` or `undefined`.
@@ -37,9 +32,8 @@ declare namespace jest {
 
     /**
      * Use `.toSatisfy` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean`.
-     * @param {Function} predicate
      */
-    toSatisfy<E = any>(predicate: (x: E) => boolean): R;
+    toSatisfy(predicate: (x: T) => boolean): R;
 
     /**
      * Use `.toBeArray` when checking if a value is an `Array`.
@@ -48,63 +42,53 @@ declare namespace jest {
 
     /**
      * Use `.toBeArrayOfSize` when checking if a value is an `Array` of size x.
-     * @param {Number} x
      */
     toBeArrayOfSize(x: number): R;
 
     /**
      * Use `.toBeAfter` when checking if a date occurs after `date`.
-     * @param {Date} date
      */
     toBeAfter(date: Date): R;
 
     /**
      * Use `.toBeBefore` when checking if a date occurs before `date`.
-     * @param {Date} date
      */
     toBeBefore(date: Date): R;
 
     /**
      * Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
-     * @param {Array.<*>} members
      */
-    toIncludeAllMembers<E = any>(members: E[]): R;
+    toIncludeAllMembers(members: T): R;
 
     /**
      * Use `.toIncludeAllPartialMembers` when checking if an `Array` contains all of the same partial members of a given set.
-     * @param {Array.<*>} members
      */
-    toIncludeAllPartialMembers<E = any>(members: E[]): R;
+    toIncludeAllPartialMembers(members: T): R;
 
     /**
      * Use `.toIncludeAnyMembers` when checking if an `Array` contains any of the members of a given set.
-     * @param {Array.<*>} members
      */
-    toIncludeAnyMembers<E = any>(members: E[]): R;
+    toIncludeAnyMembers(members: T): R;
 
     /**
      * Use `.toIncludeSameMembers` when checking if two arrays contain equal values, in any order.
-     * @param {Array.<*>} members
      */
-    toIncludeSameMembers<E = any>(members: E[]): R;
+    toIncludeSameMembers(members: T): R;
 
     /**
      * Use `.toPartiallyContain` when checking if any array value matches the partial member.
-     * @param {*} member
      */
-    toPartiallyContain<E = any>(member: E): R;
+    toPartiallyContain(member: Partial<T extends Array<infer U> ? U : T>): R;
 
     /**
      * Use `.toSatisfyAll` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean` for all values in an array.
-     * @param {Function} predicate
      */
-    toSatisfyAll<E = any>(predicate: (x: E) => boolean): R;
+    toSatisfyAll(predicate: (x: T extends Array<infer U> ? U : T) => boolean): R;
 
     /**
      * Use `.toSatisfyAny` when you want to use a custom matcher by supplying a predicate function that returns `true` for any matching value in an array.
-     * @param {Function} predicate
      */
-    toSatisfyAny(predicate: (x: any) => boolean): R;
+    toSatisfyAny(predicate: (x: T extends Array<infer U> ? U : T) => boolean): R;
 
     /**
      * Use `.toBeBoolean` when checking if a value is a `Boolean`.
@@ -150,19 +134,15 @@ declare namespace jest {
      * Use `.toHaveBeenCalledBefore` when checking if a `Mock` was called before another `Mock`.
      *
      * Note: Required Jest version >=23
-     *
-     * @param {Mock} mock
      */
-    toHaveBeenCalledBefore(mock: jest.Mock): R;
+    toHaveBeenCalledBefore(mock: Mock): R;
 
     /**
      * Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another `Mock`.
      *
      * Note: Required Jest version >=23
-     *
-     * @param {Mock} mock
      */
-    toHaveBeenCalledAfter(mock: jest.Mock): R;
+    toHaveBeenCalledAfter(mock: Mock): R;
 
     /**
      * Use `.toHaveBeenCalledOnce` to check if a `Mock` was called exactly one time.
@@ -206,9 +186,6 @@ declare namespace jest {
 
     /**
      * Use `.toBeWithin` when checking if a number is in between the given bounds of: start (inclusive) and end (exclusive).
-     *
-     * @param {Number} start
-     * @param {Number} end
      */
     toBeWithin(start: number, end: number): R;
 
@@ -224,87 +201,63 @@ declare namespace jest {
 
     /**
      * Use `.toContainKey` when checking if an object contains the provided key.
-     *
-     * @param {String} key
      */
-    toContainKey<E = any>(key: keyof E | string): R;
+    toContainKey(key: keyof T): R;
 
     /**
      * Use `.toContainKeys` when checking if an object has all of the provided keys.
-     *
-     * @param {Array.<String>} keys
      */
-    toContainKeys<E = any>(keys: (keyof E | string)[]): R;
+    toContainKeys(keys: Array<keyof T>): R;
 
     /**
      * Use `.toContainAllKeys` when checking if an object only contains all of the provided keys.
-     *
-     * @param {Array.<String>} keys
      */
-    toContainAllKeys<E = any>(keys: (keyof E | string)[]): R;
+    toContainAllKeys(keys: Array<keyof T>): R;
 
     /**
      * Use `.toContainAnyKeys` when checking if an object contains at least one of the provided keys.
-     *
-     * @param {Array.<String>} keys
      */
-    toContainAnyKeys<E = any>(keys: (keyof E | string)[]): R;
+    toContainAnyKeys(keys: Array<keyof T>): R;
 
     /**
      * Use `.toContainValue` when checking if an object contains the provided value.
-     *
-     * @param {*} value
      */
-    toContainValue<E = any>(value: E): R;
+    toContainValue(value: T[keyof T]): R;
 
     /**
      * Use `.toContainValues` when checking if an object contains all of the provided values.
-     *
-     * @param {Array.<*>} values
      */
-    toContainValues<E = any>(values: E[]): R;
+    toContainValues(values: Array<T[keyof T]>): R;
 
     /**
      * Use `.toContainAllValues` when checking if an object only contains all of the provided values.
-     *
-     * @param {Array.<*>} values
      */
-    toContainAllValues<E = any>(values: E[]): R;
+    toContainAllValues(values: Array<T[keyof T]>): R;
 
     /**
      * Use `.toContainAnyValues` when checking if an object contains at least one of the provided values.
-     *
-     * @param {Array.<*>} values
      */
-    toContainAnyValues<E = any>(values: E[]): R;
+    toContainAnyValues(values: Array<T[keyof T]>): R;
 
     /**
      * Use `.toContainEntry` when checking if an object contains the provided entry.
-     *
-     * @param {Array.<String, String>} entry
      */
-    toContainEntry<E = any>(entry: [keyof E, E[keyof E]]): R;
+    toContainEntry(entry: [keyof T, T[keyof T]]): R;
 
     /**
      * Use `.toContainEntries` when checking if an object contains all of the provided entries.
-     *
-     * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainEntries<E = any>(entries: [keyof E, E[keyof E]][]): R;
+    toContainEntries(entries: Array<[keyof T, T[keyof T]]>): R;
 
     /**
      * Use `.toContainAllEntries` when checking if an object only contains all of the provided entries.
-     *
-     * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainAllEntries<E = any>(entries: [keyof E, E[keyof E]][]): R;
+    toContainAllEntries(entries: Array<[keyof T, T[keyof T]]>): R;
 
     /**
      * Use `.toContainAnyEntries` when checking if an object contains at least one of the provided entries.
-     *
-     * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainAnyEntries<E = any>(entries: [keyof E, E[keyof E]][]): R;
+    toContainAnyEntries(entries: Array<[keyof T, T[keyof T]]>): R;
 
     /**
      * Use `.toBeExtensible` when checking if an object is extensible.
@@ -338,54 +291,38 @@ declare namespace jest {
 
     /**
      * Use `.toEqualCaseInsensitive` when checking if a string is equal (===) to another ignoring the casing of both strings.
-     *
-     * @param {String} string
      */
     toEqualCaseInsensitive(string: string): R;
 
     /**
      * Use `.toStartWith` when checking if a `String` starts with a given `String` prefix.
-     *
-     * @param {String} prefix
      */
     toStartWith(prefix: string): R;
 
     /**
      * Use `.toEndWith` when checking if a `String` ends with a given `String` suffix.
-     *
-     * @param {String} suffix
      */
     toEndWith(suffix: string): R;
 
     /**
      * Use `.toInclude` when checking if a `String` includes the given `String` substring.
-     *
-     * @param {String} substring
      */
     toInclude(substring: string): R;
 
     /**
      * Use `.toIncludeRepeated` when checking if a `String` includes the given `String` substring the correct number of times.
-     *
-     * @param {String} substring
-     * @param {Number} times
      */
     toIncludeRepeated(substring: string, times: number): R;
 
     /**
      * Use `.toIncludeMultiple` when checking if a `String` includes all of the given substrings.
-     *
-     * @param {Array.<String>} substring
      */
     toIncludeMultiple(substring: string[]): R;
 
     /**
      * Use `.toThrowWithMessage` when checking if a callback function throws an error of a given type with a given error message.
-     *
-     * @param {Function} type
-     * @param {String | RegExp} message
      */
-    toThrowWithMessage(type: Function, message: string | RegExp): R;
+    toThrowWithMessage(type: () => void, message: string | RegExp): R;
 
     /**
      * Use `.toBeEmptyObject` when checking if a value is an empty `Object`.
@@ -399,27 +336,21 @@ declare namespace jest {
 
     /**
      * Use `.toBeBetween` when checking if a date occurs between `startDate` and `endDate`.
-     * @param {Date} startDate
-     * @param {Date} endDate
      */
     toBeBetween(startDate: Date, endDate: Date): R;
 
     /**
      * Use `.toBeBeforeOrEqualTo` when checking if a date equals to or occurs before `date`.
-     * @param {Date} date
      */
     toBeBeforeOrEqualTo(date: Date): R;
 
     /**
      * Use `.toBeAfterOrEqualTo` when checking if a date equals to or occurs after `date`.
-     * @param {Date} date
      */
     toBeAfterOrEqualTo(date: Date): R;
 
     /**
      * Use `.toEqualIgnoringWhitespace` when checking if a `String` is equal (===) to given `String` ignoring white-space.
-     *
-     * @param {String} string
      */
     toEqualIgnoringWhitespace(string: string): R;
   }
@@ -429,16 +360,12 @@ declare namespace jest {
     /**
      * Note: Currently unimplemented
      * Passing assertion
-     *
-     * @param {String} message
      */
     pass(message: string): any;
 
     /**
      * Note: Currently unimplemented
      * Failing assertion
-     *
-     * @param {String} message
      */
     fail(message: string): any;
 
@@ -449,9 +376,9 @@ declare namespace jest {
 
     /**
      * Use .toBeOneOf when checking if a value is a member of a given Array.
-     * @param {Array.<*>} members
      */
-    toBeOneOf<E = any>(members: E[]): any;
+    // tslint:disable-next-line: no-unnecessary-generics
+    toBeOneOf<E = any[]>(members: E[]): any;
 
     /**
      * Use `.toBeNil` when checking a value is `null` or `undefined`.
@@ -460,8 +387,8 @@ declare namespace jest {
 
     /**
      * Use `.toSatisfy` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean`.
-     * @param {Function} predicate
      */
+    // tslint:disable-next-line: no-unnecessary-generics
     toSatisfy<E = any>(predicate: (x: E) => boolean): any;
 
     /**
@@ -471,55 +398,51 @@ declare namespace jest {
 
     /**
      * Use `.toBeArrayOfSize` when checking if a value is an `Array` of size x.
-     * @param {Number} x
      */
     toBeArrayOfSize(x: number): any;
 
     /**
      * Use `.toBeAfter` when checking if a date occurs after `date`.
-     * @param {Date} date
      */
     toBeAfter(date: Date): any;
 
     /**
      * Use `.toBeBefore` when checking if a date occurs before `date`.
-     * @param {Date} date
      */
     toBeBefore(date: Date): any;
 
     /**
      * Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
-     * @param {Array.<*>} members
      */
+    // tslint:disable-next-line: no-unnecessary-generics
     toIncludeAllMembers<E = any>(members: E[]): any;
 
     /**
      * Use `.toIncludeAnyMembers` when checking if an `Array` contains any of the members of a given set.
-     * @param {Array.<*>} members
      */
+    // tslint:disable-next-line: no-unnecessary-generics
     toIncludeAnyMembers<E = any>(members: E[]): any;
 
     /**
      * Use `.toIncludeSameMembers` when checking if two arrays contain equal values, in any order.
-     * @param {Array.<*>} members
      */
+    // tslint:disable-next-line: no-unnecessary-generics
     toIncludeSameMembers<E = any>(members: E[]): any;
 
     /**
      * Use `.toPartiallyContain` when checking if any array value matches the partial member.
-     * @param {*} member
      */
+    // tslint:disable-next-line: no-unnecessary-generics
     toPartiallyContain<E = any>(member: E): any;
 
     /**
      * Use `.toSatisfyAll` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean` for all values in an array.
-     * @param {Function} predicate
      */
+    // tslint:disable-next-line: no-unnecessary-generics
     toSatisfyAll<E = any>(predicate: (x: E) => boolean): any;
 
     /**
      * Use `.toSatisfyAny` when you want to use a custom matcher by supplying a predicate function that returns `true` for any matching value in an array.
-     * @param {Function} predicate
      */
     toSatisfyAny(predicate: (x: any) => boolean): any;
 
@@ -567,19 +490,15 @@ declare namespace jest {
      * Use `.toHaveBeenCalledBefore` when checking if a `Mock` was called before another `Mock`.
      *
      * Note: Required Jest version >=23
-     *
-     * @param {Mock} mock
      */
-    toHaveBeenCalledBefore(mock: jest.Mock): any;
+    toHaveBeenCalledBefore(mock: Mock): any;
 
     /**
      * Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another `Mock`.
      *
      * Note: Required Jest version >=23
-     *
-     * @param {Mock} mock
      */
-    toHaveBeenCalledAfter(mock: jest.Mock): any;
+    toHaveBeenCalledAfter(mock: Mock): any;
 
     /**
      * Use `.toHaveBeenCalledOnce` to check if a `Mock` was called exactly one time.
@@ -623,9 +542,6 @@ declare namespace jest {
 
     /**
      * Use `.toBeWithin` when checking if a number is in between the given bounds of: start (inclusive) and end (exclusive).
-     *
-     * @param {Number} start
-     * @param {Number} end
      */
     toBeWithin(start: number, end: number): any;
 
@@ -636,87 +552,74 @@ declare namespace jest {
 
     /**
      * Use `.toContainKey` when checking if an object contains the provided key.
-     *
-     * @param {String} key
      */
     toContainKey(key: string): any;
 
     /**
      * Use `.toContainKeys` when checking if an object has all of the provided keys.
-     *
-     * @param {Array.<String>} keys
      */
-    toContainKeys<E = any>(keys: (keyof E | string)[]): any;
+    // tslint:disable-next-line: no-unnecessary-generics
+    toContainKeys<E = any>(keys: Array<keyof E>): any;
 
     /**
      * Use `.toContainAllKeys` when checking if an object only contains all of the provided keys.
-     *
-     * @param {Array.<String>} keys
      */
-    toContainAllKeys<E = any>(keys: (keyof E | string)[]): any;
+    // tslint:disable-next-line: no-unnecessary-generics
+    toContainAllKeys<E = any>(keys: Array<keyof E>): any;
 
     /**
      * Use `.toContainAnyKeys` when checking if an object contains at least one of the provided keys.
-     *
-     * @param {Array.<String>} keys
      */
-    toContainAnyKeys<E = any>(keys: (keyof E | string)[]): any;
+    // tslint:disable-next-line: no-unnecessary-generics
+    toContainAnyKeys<E = any>(keys: Array<keyof E>): any;
 
     /**
      * Use `.toContainValue` when checking if an object contains the provided value.
-     *
-     * @param {*} value
      */
+    // tslint:disable-next-line: no-unnecessary-generics
     toContainValue<E = any>(value: E): any;
 
     /**
      * Use `.toContainValues` when checking if an object contains all of the provided values.
-     *
-     * @param {Array.<*>} values
      */
+    // tslint:disable-next-line: no-unnecessary-generics
     toContainValues<E = any>(values: E[]): any;
 
     /**
      * Use `.toContainAllValues` when checking if an object only contains all of the provided values.
-     *
-     * @param {Array.<*>} values
      */
+    // tslint:disable-next-line: no-unnecessary-generics
     toContainAllValues<E = any>(values: E[]): any;
 
     /**
      * Use `.toContainAnyValues` when checking if an object contains at least one of the provided values.
-     *
-     * @param {Array.<*>} values
      */
+    // tslint:disable-next-line: no-unnecessary-generics
     toContainAnyValues<E = any>(values: E[]): any;
 
     /**
      * Use `.toContainEntry` when checking if an object contains the provided entry.
-     *
-     * @param {Array.<[keyof E, E[keyof E]>} entry
      */
+    // tslint:disable-next-line: no-unnecessary-generics
     toContainEntry<E = any>(entry: [keyof E, E[keyof E]]): any;
 
     /**
      * Use `.toContainEntries` when checking if an object contains all of the provided entries.
-     *
-     * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainEntries<E = any>(entries: [keyof E, E[keyof E]][]): any;
+    // tslint:disable-next-line: no-unnecessary-generics
+    toContainEntries<E = any>(entries: Array<[keyof E, E[keyof E]]>): any;
 
     /**
      * Use `.toContainAllEntries` when checking if an object only contains all of the provided entries.
-     *
-     * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainAllEntries<E = any>(entries: [keyof E, E[keyof E]][]): any;
+    // tslint:disable-next-line: no-unnecessary-generics
+    toContainAllEntries<E = any>(entries: Array<[keyof E, E[keyof E]]>): any;
 
     /**
      * Use `.toContainAnyEntries` when checking if an object contains at least one of the provided entries.
-     *
-     * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainAnyEntries<E = any>(entries: [keyof E, E[keyof E]][]): any;
+    // tslint:disable-next-line: no-unnecessary-generics
+    toContainAnyEntries<E = any>(entries: Array<[keyof E, E[keyof E]]>): any;
 
     /**
      * Use `.toBeExtensible` when checking if an object is extensible.
@@ -750,54 +653,38 @@ declare namespace jest {
 
     /**
      * Use `.toEqualCaseInsensitive` when checking if a string is equal (===) to another ignoring the casing of both strings.
-     *
-     * @param {String} string
      */
     toEqualCaseInsensitive(string: string): any;
 
     /**
      * Use `.toStartWith` when checking if a `String` starts with a given `String` prefix.
-     *
-     * @param {String} prefix
      */
     toStartWith(prefix: string): any;
 
     /**
      * Use `.toEndWith` when checking if a `String` ends with a given `String` suffix.
-     *
-     * @param {String} suffix
      */
     toEndWith(suffix: string): any;
 
     /**
      * Use `.toInclude` when checking if a `String` includes the given `String` substring.
-     *
-     * @param {String} substring
      */
     toInclude(substring: string): any;
 
     /**
      * Use `.toIncludeRepeated` when checking if a `String` includes the given `String` substring the correct number of times.
-     *
-     * @param {String} substring
-     * @param {Number} times
      */
     toIncludeRepeated(substring: string, times: number): any;
 
     /**
      * Use `.toIncludeMultiple` when checking if a `String` includes all of the given substrings.
-     *
-     * @param {Array.<String>} substring
      */
     toIncludeMultiple(substring: string[]): any;
 
     /**
      * Use `.toThrowWithMessage` when checking if a callback function throws an error of a given type with a given error message.
-     *
-     * @param {Function} type
-     * @param {String | RegExp} message
      */
-    toThrowWithMessage(type: Function, message: string | RegExp): any;
+    toThrowWithMessage(type: () => void, message: string | RegExp): any;
 
     /**
      * Use `.toBeEmptyObject` when checking if a value is an empty `Object`.
@@ -811,27 +698,21 @@ declare namespace jest {
 
     /**
      * Use `.toBeBetween` when checking if a date occurs between `startDate` and `endDate`.
-     * @param {Date} startDate
-     * @param {Date} endDate
      */
     toBeBetween(startDate: Date, endDate: Date): any;
 
     /**
      * Use `.toBeBeforeOrEqualTo` when checking if a date equals to or occurs before `date`.
-     * @param {Date} date
      */
     toBeBeforeOrEqualTo(date: Date): any;
 
     /**
      * Use `.toBeAfterOrEqualTo` when checking if a date equals to or occurs after `date`.
-     * @param {Date} date
      */
     toBeAfterOrEqualTo(date: Date): any;
 
     /**
      * Use `.toEqualIgnoringWhitespace` when checking if a `String` is equal (===) to given `String` ignoring white-space.
-     *
-     * @param {String} string
      */
     toEqualIgnoringWhitespace(string: string): any;
   }
