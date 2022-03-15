@@ -1,6 +1,20 @@
 import { getType } from 'jest-get-type';
 
-export function toBeValidDate(actual) {
+interface CustomMatchers<R = unknown> {
+  toBeValidDate(): R;
+}
+
+declare global {
+  namespace jest {
+    interface Matchers<R> extends CustomMatchers<R> {}
+
+    interface Expect extends CustomMatchers {}
+
+    interface InverseAsymmetricMatchers extends CustomMatchers {}
+  }
+}
+
+export function toBeValidDate(this: jest.MatcherContext, actual: unknown): jest.CustomMatcherResult {
   const { printReceived, matcherHint } = this.utils;
 
   const passMessage =
@@ -15,7 +29,7 @@ export function toBeValidDate(actual) {
     'Expected value to be a valid date received:\n' +
     `  ${printReceived(actual)}`;
 
-  const pass = getType(actual) === 'date' && !isNaN(actual) && !isNaN(actual.getTime());
+  const pass = getType(actual) === 'date' && !isNaN(actual as number) && !isNaN((actual as Date).getTime());
 
   return { pass, message: () => (pass ? passMessage : failMessage) };
 }
