@@ -1,4 +1,18 @@
-export function toBeExtensible(actual) {
+interface CustomMatchers<R = unknown> {
+  toBeExtensible(): R;
+}
+
+declare global {
+  namespace jest {
+    interface Matchers<R> extends CustomMatchers<R> {}
+
+    interface Expect extends CustomMatchers {}
+
+    interface InverseAsymmetricMatchers extends CustomMatchers {}
+  }
+}
+
+export function toBeExtensible(this: jest.MatcherContext, actual: unknown): jest.CustomMatcherResult {
   const { matcherHint, printExpected, printReceived } = this.utils;
 
   const passMessage =
