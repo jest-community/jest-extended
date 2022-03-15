@@ -1,6 +1,20 @@
 import { getType } from 'jest-get-type';
 
-export function toBeObject(actual) {
+interface CustomMatchers<R = unknown> {
+  toBeObject(): R;
+}
+
+declare global {
+  namespace jest {
+    interface Matchers<R> extends CustomMatchers<R> {}
+
+    interface Expect extends CustomMatchers {}
+
+    interface InverseAsymmetricMatchers extends CustomMatchers {}
+  }
+}
+
+export function toBeObject(this: jest.MatcherContext, actual: unknown): jest.CustomMatcherResult {
   const { printReceived, matcherHint } = this.utils;
 
   const passMessage =
