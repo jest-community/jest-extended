@@ -1,4 +1,18 @@
-export function toBeTrue(actual) {
+interface CustomMatchers<R = unknown> {
+  toBeTrue(): R;
+}
+
+declare global {
+  namespace jest {
+    interface Matchers<R> extends CustomMatchers<R> {}
+
+    interface Expect extends CustomMatchers {}
+
+    interface InverseAsymmetricMatchers extends CustomMatchers {}
+  }
+}
+
+export function toBeTrue(this: jest.MatcherContext, actual: unknown): jest.CustomMatcherResult {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const passMessage =
