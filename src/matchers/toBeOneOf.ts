@@ -1,6 +1,20 @@
 import { contains } from '../utils';
 
-export function toBeOneOf(actual, expected) {
+interface CustomMatchers<R = unknown, T = Record<string, unknown>> {
+  toBeOneOf(members: T[]): R;
+}
+
+declare global {
+  namespace jest {
+    interface Matchers<R, T> extends CustomMatchers<R, T> {}
+
+    interface Expect extends CustomMatchers {}
+
+    interface InverseAsymmetricMatchers extends CustomMatchers {}
+  }
+}
+
+export function toBeOneOf<T>(this: jest.MatcherContext, actual: T, expected: T[]): jest.CustomMatcherResult {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const passMessage =
