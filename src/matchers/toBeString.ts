@@ -1,4 +1,18 @@
-export function toBeString(expected) {
+interface CustomMatchers<R = unknown> {
+  toBeString(): R;
+}
+
+declare global {
+  namespace jest {
+    interface Matchers<R> extends CustomMatchers<R> {}
+
+    interface Expect extends CustomMatchers {}
+
+    interface InverseAsymmetricMatchers extends CustomMatchers {}
+  }
+}
+
+export function toBeString(this: jest.MatcherContext, expected: unknown): jest.CustomMatcherResult {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const passMessage =
