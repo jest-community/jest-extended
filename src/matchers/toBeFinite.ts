@@ -1,4 +1,18 @@
-export function toBeFinite(actual) {
+interface CustomMatchers<R = unknown> {
+  toBeFinite(): R;
+}
+
+declare global {
+  namespace jest {
+    interface Matchers<R> extends CustomMatchers<R> {}
+
+    interface Expect extends CustomMatchers {}
+
+    interface InverseAsymmetricMatchers extends CustomMatchers {}
+  }
+}
+
+export function toBeFinite(this: jest.MatcherContext, actual: unknown): jest.CustomMatcherResult {
   const { printReceived, matcherHint } = this.utils;
 
   const passMessage =
