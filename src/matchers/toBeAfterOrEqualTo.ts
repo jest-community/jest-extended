@@ -31,7 +31,7 @@ export function toBeAfterOrEqualTo(
     `Expected date to be after or equal to ${printReceived(expected)} but received:\n` +
     `  ${printReceived(actual)}`;
 
-  const pass = actual >= expected;
+  const pass = (actual as Date) >= expected;
 
   return { pass, message: () => (pass ? passMessage : failMessage) };
 }

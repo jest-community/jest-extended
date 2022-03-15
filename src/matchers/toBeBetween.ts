@@ -32,7 +32,7 @@ export function toBeBetween(
     `Expected date to be between ${printReceived(startDate)} and ${printReceived(endDate)} but received:\n` +
     `  ${printReceived(actual)}`;
 
-  const pass = actual >= startDate && actual <= endDate;
+  const pass = (actual as Date) >= startDate && (actual as Date) <= endDate;
 
   return { pass, message: () => (pass ? passMessage : failMessage) };
 }

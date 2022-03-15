@@ -26,7 +26,7 @@ export function toBeBefore(this: jest.MatcherContext, actual: unknown, expected:
     `Expected date to be before ${printReceived(expected)} but received:\n` +
     `  ${printReceived(actual)}`;
 
-  const pass = actual < expected;
+  const pass = (actual as Date) < expected;
 
   return { pass, message: () => (pass ? passMessage : failMessage) };
 }

@@ -29,7 +29,7 @@ export function toBeEmptyObject(this: jest.MatcherContext, actual: unknown): jes
     'Expected value to be an empty object, received:\n' +
     `  ${printReceived(actual)}`;
 
-  const pass = getType(actual) === 'object' && Object.keys(actual).length === 0;
+  const pass = getType(actual) === 'object' && Object.keys(actual as { [key: string]: unknown }).length === 0;
 
   return { pass, message: () => (pass ? passMessage : failMessage) };
 }

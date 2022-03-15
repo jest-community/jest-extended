@@ -27,7 +27,7 @@ export function toBeAfter(this: jest.MatcherContext, date: unknown, after: Date)
     `Expected date to be after ${printReceived(after)} but received:\n` +
     `  ${printReceived(date)}`;
 
-  const pass = date > after;
+  const pass = (date as Date) > after;
 
   return { pass, message: () => (pass ? passMessage : failMessage) };
 }

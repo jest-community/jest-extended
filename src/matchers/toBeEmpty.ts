@@ -33,9 +33,9 @@ export function toBeEmpty(this: jest.MatcherContext, actual: unknown): jest.Cust
 }
 
 const isEmptyIterable = (value: unknown): boolean => {
-  if (typeof value[Symbol.iterator] !== 'function') {
+  if (typeof (value as Iterable<unknown>)[Symbol.iterator] !== 'function') {
     return false;
   }
   const firstIteration = (value as Iterable<unknown>)[Symbol.iterator]().next();
-  return firstIteration.done;
+  return !!firstIteration.done;
 };
