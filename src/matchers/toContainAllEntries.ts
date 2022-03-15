@@ -1,6 +1,24 @@
 import { containsEntry } from '../utils';
 
-export function toContainAllEntries(actual, expected) {
+interface CustomMatchers<R = unknown, T = Record<string, unknown>> {
+  toContainAllEntries(entries: Array<[keyof T, T[keyof T]]>): R;
+}
+
+declare global {
+  namespace jest {
+    interface Matchers<R, T> extends CustomMatchers<R, T> {}
+
+    interface Expect extends CustomMatchers {}
+
+    interface InverseAsymmetricMatchers extends CustomMatchers {}
+  }
+}
+
+export function toContainAllEntries(
+  this: jest.MatcherContext,
+  actual: unknown,
+  expected: unknown[],
+): jest.CustomMatcherResult {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const passMessage =
@@ -20,8 +38,8 @@ export function toContainAllEntries(actual, expected) {
     `  ${printReceived(actual)}`;
 
   const pass =
-    actual.hasOwnProperty &&
-    expected.length == Object.keys(actual).length &&
+    (actual as object).hasOwnProperty &&
+    expected.length == Object.keys(actual as object).length &&
     expected.every(entry => containsEntry(this.equals, actual, entry));
 
   return { pass, message: () => (pass ? passMessage : failMessage) };
