@@ -152,8 +152,9 @@ declare namespace jest {
      * Note: Required Jest version >=23
      *
      * @param {Mock} mock
+     * @param {boolean} [failIfNoSecondInvocation=true]
      */
-    toHaveBeenCalledBefore(mock: jest.Mock): R;
+    toHaveBeenCalledBefore(mock: jest.Mock, failIfNoSecondInvocation: boolean): R;
 
     /**
      * Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another `Mock`.
@@ -161,8 +162,9 @@ declare namespace jest {
      * Note: Required Jest version >=23
      *
      * @param {Mock} mock
+     * @param {boolean} [failIfNoFirstInvocation=true]
      */
-    toHaveBeenCalledAfter(mock: jest.Mock): R;
+    toHaveBeenCalledAfter(mock: jest.Mock, failIfNoFirstInvocation: boolean): R;
 
     /**
      * Use `.toHaveBeenCalledOnce` to check if a `Mock` was called exactly one time.
@@ -569,8 +571,9 @@ declare namespace jest {
      * Note: Required Jest version >=23
      *
      * @param {Mock} mock
+     * @param {boolean} [failIfNoSecondInvocation=true]
      */
-    toHaveBeenCalledBefore(mock: jest.Mock): any;
+    toHaveBeenCalledBefore(mock: jest.Mock, failIfNoSecondInvocation: boolean): any;
 
     /**
      * Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another `Mock`.
@@ -578,8 +581,9 @@ declare namespace jest {
      * Note: Required Jest version >=23
      *
      * @param {Mock} mock
+     * @param {boolean} [failIfNoFirstInvocation=true]
      */
-    toHaveBeenCalledAfter(mock: jest.Mock): any;
+    toHaveBeenCalledAfter(mock: jest.Mock, failIfNoFirstInvocation: boolean): any;
 
     /**
      * Use `.toHaveBeenCalledOnce` to check if a `Mock` was called exactly one time.
