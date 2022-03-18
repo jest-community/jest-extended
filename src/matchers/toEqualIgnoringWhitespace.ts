@@ -1,11 +1,25 @@
 import { diffStringsRaw, DIFF_EQUAL } from 'jest-diff';
 import { printExpected, printReceived } from '../utils/print';
 
-const removeWhitespace = str => str.trim().replace(/\s+/g, '');
+interface CustomMatchers<R = unknown> {
+  toEqualIgnoringWhitespace(string: string): R;
+}
 
-const predicate = (received, expected) => {
+declare global {
+  namespace jest {
+    interface Matchers<R> extends CustomMatchers<R> {}
+
+    interface Expect extends CustomMatchers {}
+
+    interface InverseAsymmetricMatchers extends CustomMatchers {}
+  }
+}
+
+const removeWhitespace = (str: string) => str.trim().replace(/\s+/g, '');
+
+const predicate = (received: string, expected: string) => {
   /* calculate diff of received w.r.t expected string */
-  const diff = diffStringsRaw(expected, received);
+  const diff = diffStringsRaw(expected, received, false);
 
   /* mark every diff result object with value of white-space as DIFF_EQUAL */
   diff.forEach(diffObject => {
@@ -22,7 +36,11 @@ const predicate = (received, expected) => {
   };
 };
 
-export function toEqualIgnoringWhitespace(actual, expected) {
+export function toEqualIgnoringWhitespace(
+  this: jest.MatcherContext,
+  actual: string,
+  expected: string,
+): jest.CustomMatcherResult {
   const { matcherHint, EXPECTED_COLOR } = this.utils;
   const { pass, diff } = predicate(actual, expected);
 
