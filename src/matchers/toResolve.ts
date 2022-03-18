@@ -1,4 +1,21 @@
-export async function toResolve(actual) {
+interface CustomMatchers<R = unknown> {
+  toResolve(): R;
+}
+
+declare global {
+  namespace jest {
+    interface Matchers<R> extends CustomMatchers<R> {}
+
+    interface Expect extends CustomMatchers {}
+
+    interface InverseAsymmetricMatchers extends CustomMatchers {}
+  }
+}
+
+export async function toResolve(
+  this: jest.MatcherContext,
+  actual: Promise<unknown>,
+): Promise<jest.CustomMatcherResult> {
   const { matcherHint } = this.utils;
 
   const passMessage =
