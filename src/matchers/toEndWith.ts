@@ -1,4 +1,18 @@
-export function toEndWith(actual, expected) {
+interface CustomMatchers<R = unknown> {
+  toEndWith(suffix: string): R;
+}
+
+declare global {
+  namespace jest {
+    interface Matchers<R> extends CustomMatchers<R> {}
+
+    interface Expect extends CustomMatchers {}
+
+    interface InverseAsymmetricMatchers extends CustomMatchers {}
+  }
+}
+
+export function toEndWith(this: jest.MatcherContext, actual: string, expected: string): jest.CustomMatcherResult {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const passMessage =
