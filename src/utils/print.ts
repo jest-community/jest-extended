@@ -1,7 +1,12 @@
-import { DIFF_DELETE, DIFF_EQUAL, DIFF_INSERT } from 'jest-diff';
+import { Diff, DIFF_DELETE, DIFF_EQUAL, DIFF_INSERT } from 'jest-diff';
 
-export const tokenize = str => {
-  const isWhitespace = char => /\s/.test(char);
+type Token = {
+  value: string;
+  isWhitespace: boolean;
+};
+
+export const tokenize = (str: string): (Token | undefined)[] => {
+  const isWhitespace = (char: string) => /\s/.test(char);
   const tokens = [];
   let idx = 0;
   let token;
@@ -34,12 +39,14 @@ export const tokenize = str => {
   return tokens;
 };
 
-const colorTokens = (str, color) => {
+const colorTokens = (str: string, color: (s: string) => string) => {
   const tokens = tokenize(str);
-  return tokens.reduce((acc, { value, isWhitespace }) => acc + (isWhitespace ? value : color(value)), '');
+  return tokens
+    .filter((token): token is Token => Boolean(token))
+    .reduce((acc, { isWhitespace, value }) => acc + (isWhitespace ? value : color(value)), '');
 };
 
-export const printExpected = (utils, diff) =>
+export const printExpected = (utils: jest.MatcherContext['utils'], diff: Diff[]) =>
   diff.reduce((acc, diffObject) => {
     const operation = diffObject[0];
     const value = diffObject[1];
@@ -50,7 +57,7 @@ export const printExpected = (utils, diff) =>
     return acc;
   }, '');
 
-export const printReceived = (utils, diff) =>
+export const printReceived = (utils: jest.MatcherContext['utils'], diff: Diff[]) =>
   diff.reduce((acc, diffObject) => {
     const operation = diffObject[0];
     const value = diffObject[1];
