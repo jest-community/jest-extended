@@ -1,4 +1,22 @@
-export function toEqualCaseInsensitive(actual, expected) {
+interface CustomMatchers<R = unknown> {
+  toEqualCaseInsensitive(string: string): R;
+}
+
+declare global {
+  namespace jest {
+    interface Matchers<R> extends CustomMatchers<R> {}
+
+    interface Expect extends CustomMatchers {}
+
+    interface InverseAsymmetricMatchers extends CustomMatchers {}
+  }
+}
+
+export function toEqualCaseInsensitive(
+  this: jest.MatcherContext,
+  actual: unknown,
+  expected: string,
+): jest.CustomMatcherResult {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const passMessage =
