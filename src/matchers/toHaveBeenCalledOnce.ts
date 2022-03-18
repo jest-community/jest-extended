@@ -1,6 +1,23 @@
 import { isJestMockOrSpy } from '../utils';
 
-export function toHaveBeenCalledOnce(received) {
+interface CustomMatchers<R = unknown> {
+  toHaveBeenCalledOnce(): R;
+}
+
+declare global {
+  namespace jest {
+    interface Matchers<R> extends CustomMatchers<R> {}
+
+    interface Expect extends CustomMatchers {}
+
+    interface InverseAsymmetricMatchers extends CustomMatchers {}
+  }
+}
+
+export function toHaveBeenCalledOnce(
+  this: jest.MatcherContext,
+  received: jest.Mock,
+): jest.CustomMatcherResult & { actual?: jest.Mock } {
   const { printReceived, printWithType, matcherHint } = this.utils;
 
   if (!isJestMockOrSpy(received)) {
