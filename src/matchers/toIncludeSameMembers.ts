@@ -1,4 +1,22 @@
-export function toIncludeSameMembers(actual, expected) {
+interface CustomMatchers<R = unknown, T = Record<string, unknown>> {
+  toIncludeSameMembers(members: T[]): R;
+}
+
+declare global {
+  namespace jest {
+    interface Matchers<R> extends CustomMatchers<R> {}
+
+    interface Expect extends CustomMatchers {}
+
+    interface InverseAsymmetricMatchers extends CustomMatchers {}
+  }
+}
+
+export function toIncludeSameMembers<E>(
+  this: jest.MatcherContext,
+  actual: unknown[],
+  expected: E[],
+): jest.CustomMatcherResult {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const passMessage =
@@ -22,7 +40,7 @@ export function toIncludeSameMembers(actual, expected) {
   return { pass, message: () => (pass ? passMessage : failMessage) };
 }
 
-const predicate = (equals, actual, expected) => {
+const predicate = (equals: jest.MatcherContext['equals'], actual: unknown[], expected: unknown[]) => {
   if (!Array.isArray(actual) || !Array.isArray(expected) || actual.length !== expected.length) {
     return false;
   }
@@ -30,7 +48,7 @@ const predicate = (equals, actual, expected) => {
   const remaining = expected.reduce((remaining, secondValue) => {
     if (remaining === null) return remaining;
 
-    const index = remaining.findIndex(firstValue => equals(secondValue, firstValue));
+    const index = remaining.findIndex((firstValue: unknown) => equals(secondValue, firstValue));
 
     if (index === -1) {
       return null;
