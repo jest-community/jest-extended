@@ -1,6 +1,24 @@
 import { contains } from '../utils';
 
-export function toIncludeAllMembers(actual, expected) {
+interface CustomMatchers<R = unknown, T = Record<string, unknown>> {
+  toIncludeAllMembers(members: T[]): R;
+}
+
+declare global {
+  namespace jest {
+    interface Matchers<R> extends CustomMatchers<R> {}
+
+    interface Expect extends CustomMatchers {}
+
+    interface InverseAsymmetricMatchers extends CustomMatchers {}
+  }
+}
+
+export function toIncludeAllMembers<E>(
+  this: jest.MatcherContext,
+  actual: unknown[],
+  expected: E[],
+): jest.CustomMatcherResult {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const passMessage =
