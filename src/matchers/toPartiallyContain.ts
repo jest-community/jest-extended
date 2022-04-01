@@ -1,6 +1,24 @@
 import { containsEntry } from '../utils';
 
-export function toPartiallyContain(actual, expected) {
+interface CustomMatchers<R = unknown> {
+  toPartiallyContain(member: Record<string, unknown>): R;
+}
+
+declare global {
+  namespace jest {
+    interface Matchers<R> extends CustomMatchers<R> {}
+
+    interface Expect extends CustomMatchers {}
+
+    interface InverseAsymmetricMatchers extends CustomMatchers {}
+  }
+}
+
+export function toPartiallyContain(
+  this: jest.MatcherContext,
+  actual: unknown,
+  expected: Record<string, unknown>,
+): jest.CustomMatcherResult {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const passMessage =
