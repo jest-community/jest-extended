@@ -59,6 +59,12 @@
       "rules": {
         "import/no-default-export": "error"
       }
+    },
+    {
+      "files": "test/**/*.ts",
+      "rules": {
+        "@typescript-eslint/no-empty-function": ["off"]
+      }
     }
   ]
 }
