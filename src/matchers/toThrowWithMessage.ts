@@ -1,5 +1,5 @@
 interface CustomMatchers<R = unknown> {
-  toThrowWithMessage(type: new (message?: string | RegExp) => { message: string }, message: string | RegExp): R;
+  toThrowWithMessage(type: new (message?: string) => { message: string }, message: string | RegExp): R;
 }
 
 declare global {
@@ -12,11 +12,7 @@ declare global {
   }
 }
 
-const predicate = <E>(
-  error: E,
-  type: new (message: string | RegExp) => { message: string },
-  message: string | RegExp,
-) => {
+const predicate = <E>(error: E, type: new (message: string) => { message: string }, message: string | RegExp) => {
   if (message instanceof RegExp) {
     return error && error instanceof type && message.test(error.message);
   }
