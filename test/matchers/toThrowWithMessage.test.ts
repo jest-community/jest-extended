@@ -154,6 +154,7 @@ describe('.toThrowWithMessage', () => {
       throw new TypeError('Expected message');
     }).toThrowWithMessage.call(
       { utils: { matcherHint: matcherHint, printExpected: printExpected, printReceived: printReceived } },
+      // @ts-expect-error
       TypeError,
       'Expected message',
     );
@@ -164,8 +165,8 @@ describe('.toThrowWithMessage', () => {
       throw new SyntaxError('Expected message');
     }).toThrowWithMessage.call(
       { utils: { matcherHint: matcherHint, printExpected: printExpected, printReceived: printReceived } },
-      SyntaxError,
       // @ts-expect-error
+      SyntaxError,
       /Expected message/,
     );
   });
@@ -276,14 +277,15 @@ describe('.toThrowWithMessage', () => {
 
     test('passes on rejects with rejected promise when given an Error with a string error message: end to end', async () => {
       await expect(Promise.reject(new SyntaxError('Expected message'))).rejects.toThrowWithMessage(
+        // @ts-expect-error
         SyntaxError,
         'Expected message',
       );
     });
 
     test('passes on rejects with rejected promise when given an Error with a regex error message: end to end', async () => {
-      // @ts-expect-error
       await expect(Promise.reject(new SyntaxError('Expected message'))).rejects.toThrowWithMessage(
+        // @ts-expect-error
         SyntaxError,
         /Expected message/,
       );
@@ -291,13 +293,13 @@ describe('.toThrowWithMessage', () => {
 
     test('fails on rejects with resolved promise: end to end', async () => {
       expect.assertions(1);
-      // @ts-expect-error
       await expect(
-        // @ts-expect-error
         expect(Promise.resolve(new SyntaxError('Expected message'))).rejects.toThrowWithMessage(
+          // @ts-expect-error
           SyntaxError,
           /Expected message/,
         ),
+        // @ts-expect-error
       ).rejects.toThrowWithMessage(Error, /Received promise resolved instead of rejected/);
     });
   });
