@@ -4,18 +4,18 @@ expect.extend(matcher);
 
 describe('.fail', () => {
   test('fails without message', () => {
-    expect(() => expect().fail()).toThrowErrorMatchingSnapshot();
+    expect(() => expect(undefined).fail()).toThrowErrorMatchingSnapshot();
   });
   test('fails with message', () => {
-    expect(() => expect().fail("This shouldn't fail!")).toThrowErrorMatchingSnapshot();
+    expect(() => expect(undefined).fail("This shouldn't fail!")).toThrowErrorMatchingSnapshot();
   });
 });
 
 describe('.not.fail', () => {
   test('does not fail without message', () => {
-    expect().not.fail();
+    expect(undefined).not.fail();
   });
   test('does not fail with message', () => {
-    expect().not.fail('this should fail!');
+    expect(undefined).not.fail('this should fail!');
   });
 });

@@ -47,7 +47,7 @@ describe('asymmetric matchers', () => {
 
 describe('all matchers', () => {
   test('must be exported', () => {
-    const directories = fs.readdirSync(path.join(__dirname, '../../src/matchers')).filter(n => n !== 'index.js');
+    const directories = fs.readdirSync(path.join(__dirname, '../../src/matchers')).filter(n => n !== 'index.ts');
     const namedMatchers = Object.keys(matchers);
 
     try {

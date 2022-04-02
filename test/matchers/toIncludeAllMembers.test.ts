@@ -21,6 +21,8 @@ describe('.toIncludeAllMembers', () => {
   });
 
   test('fails when expected object is not an array', () => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
     expect(() => expect(array1).toIncludeAllMembers(2)).toThrowErrorMatchingSnapshot();
   });
 });

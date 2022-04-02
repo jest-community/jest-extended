@@ -20,7 +20,7 @@ Received:
   length: <red>0</>"
 `;
 
-exports[`.toBeArrayOfSize fails when given type of () => {} which is not an array 1`] = `
+exports[`.toBeArrayOfSize fails when given type of () => { } which is not an array 1`] = `
 "<dim>expect(</><red>received</><dim>).toBeArrayOfSize(</><green>expected</><dim>)</>
 
 Expected value to be an array of size:

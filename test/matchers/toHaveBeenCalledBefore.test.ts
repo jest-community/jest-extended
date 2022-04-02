@@ -82,6 +82,9 @@ describe('.toHaveBeenCalledBefore', () => {
   test('fails when given second value is not a jest spy or mock', () => {
     const mock1 = jest.fn();
     const mock2 = () => {};
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
     expect(() => expect(mock1).toHaveBeenCalledBefore(mock2)).toThrowErrorMatchingSnapshot();
   });
 });

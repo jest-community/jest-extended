@@ -20,7 +20,7 @@ describe('Utils', () => {
     test("returns error message 'Not Accessible' if the value doesn't have a length property", () => {
       const un = undefined;
 
-      expect(determinePropertyMessage(un, 'length')).toBe('Not Accessible');
+      expect(determinePropertyMessage(un as unknown as Record<string, unknown>, 'length')).toBe('Not Accessible');
     });
 
     {
@@ -28,15 +28,15 @@ describe('Utils', () => {
 
       const arr = new Array(length).fill(0);
       test('returns property when it has one', () => {
-        expect(determinePropertyMessage(arr, 'length')).toBe(length);
+        expect(determinePropertyMessage(arr as unknown as Record<string, unknown>, 'length')).toBe(length);
       });
     }
 
     {
-      const arr = new Array();
+      const arr: unknown[] = [];
 
       test('returns property when it has a falsy one', () => {
-        expect(determinePropertyMessage(arr, 'length')).toBe(0);
+        expect(determinePropertyMessage(arr as unknown as Record<string, unknown>, 'length')).toBe(0);
       });
     }
 
@@ -45,7 +45,9 @@ describe('Utils', () => {
       const errorMessage = 'bob';
 
       test('returns custom error message when it is passed one', () => {
-        expect(determinePropertyMessage(date, 'length', errorMessage)).toBe(errorMessage);
+        expect(determinePropertyMessage(date as unknown as Record<string, unknown>, 'length', errorMessage)).toBe(
+          errorMessage,
+        );
       });
     }
   });
@@ -58,7 +60,7 @@ describe('Utils', () => {
 
     test('returns false if value is not a jest mock', () => {
       const fn = () => {};
-      expect(isJestMockOrSpy(fn)).toBe(false);
+      expect(isJestMockOrSpy(fn as unknown as jest.Mock)).toBe(false);
     });
   });
 });

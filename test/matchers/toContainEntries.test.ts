@@ -13,7 +13,12 @@ describe('.toContainEntries', () => {
   });
 
   test('fails when object does not contain all of the given entries', () => {
-    expect(() => expect(data).toContainEntries(['b', 'foo'], ['a', 'foo'])).toThrowErrorMatchingSnapshot();
+    expect(() =>
+      expect(data).toContainEntries([
+        ['b', 'foo'],
+        ['a', 'foo'],
+      ]),
+    ).toThrowErrorMatchingSnapshot();
   });
 });
 

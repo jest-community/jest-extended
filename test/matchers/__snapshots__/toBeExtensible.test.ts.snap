@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`.not.toBeExtensible fails when given an extensible object: () => {} 1`] = `
+exports[`.not.toBeExtensible fails when given an extensible object: () => { } 1`] = `
 "<dim>expect(</><red>received</><dim>).not.toBeExtensible()</>
 
 Expected value to not be extensible received:

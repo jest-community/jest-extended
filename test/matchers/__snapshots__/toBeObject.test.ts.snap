@@ -14,7 +14,7 @@ Expected value to be an object, received:
   <red>\\"\\"</>"
 `;
 
-exports[`.toBeObject fails when not given an object: () => {} 1`] = `
+exports[`.toBeObject fails when not given an object: () => { } 1`] = `
 "<dim>expect(</><red>received</><dim>).toBeObject()</>
 
 Expected value to be an object, received:

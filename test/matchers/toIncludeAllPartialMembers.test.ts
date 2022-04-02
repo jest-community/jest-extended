@@ -19,6 +19,8 @@ describe('.toIncludeAllPartialMembers', () => {
 
   test('fails when expected object is not an array', () => {
     expect(() =>
+      // eslint-disable-next-line
+      // @ts-expect-error
       expect([{ hello: 'world' }, { foo: 'bar', baz: 'qux' }]).toIncludeAllPartialMembers(1),
     ).toThrowErrorMatchingSnapshot();
   });
