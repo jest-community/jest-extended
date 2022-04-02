@@ -4,12 +4,8 @@ export const contains = <A, B>(equals: Equals, list: A[], value: B): boolean => 
   return list.findIndex(item => equals(item, value)) > -1;
 };
 
-export const determinePropertyMessage = <A extends { [key: string]: unknown }>(
-  actual: A,
-  property: keyof A,
-  message = 'Not Accessible',
-) => {
-  return actual && Object.hasOwnProperty.call(actual, property) ? actual[property] : message;
+export const determinePropertyMessage = <A>(actual: A, property: PropertyKey, message = 'Not Accessible') => {
+  return actual && Object.hasOwnProperty.call(actual, property) ? actual[property as keyof typeof actual] : message;
 };
 
 export const isJestMockOrSpy = (value: jest.Mock) => {
