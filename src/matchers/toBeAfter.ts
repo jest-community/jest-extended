@@ -1,5 +1,5 @@
 interface CustomMatchers<R = unknown> {
-  fail(message?: string): R;
+  toBeAfter(date?: Date): R;
 }
 
 declare global {

@@ -14,7 +14,7 @@ declare global {
   }
 }
 
-export function toContainEntry<T = unknown>(
+export function toContainEntry<T extends Record<string, unknown>>(
   this: jest.MatcherContext,
   actual: T,
   expected: [keyof T, T[keyof T]],

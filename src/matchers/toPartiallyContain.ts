@@ -1,7 +1,7 @@
 import { containsEntry } from '../utils';
 
 interface CustomMatchers<R = unknown> {
-  toPartiallyContain(member: Record<string, unknown>): R;
+  toPartiallyContain<E>(member: E): R;
 }
 
 declare global {

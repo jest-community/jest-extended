@@ -1,7 +1,7 @@
 import { contains } from '../utils';
 
-interface CustomMatchers<R = unknown, T = Record<string, unknown>> {
-  toIncludeAllMembers(members: T[]): R;
+interface CustomMatchers<R = unknown> {
+  toIncludeAllMembers<T>(members: T[]): R;
 }
 
 declare global {

@@ -1,5 +1,5 @@
-interface CustomMatchers<R = unknown, T = Record<string, unknown>> {
-  toIncludeSameMembers(members: T[]): R;
+interface CustomMatchers<R = unknown> {
+  toIncludeSameMembers<T>(members: T[]): R;
 }
 
 declare global {

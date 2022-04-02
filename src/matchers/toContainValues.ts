@@ -1,12 +1,12 @@
 import { contains } from '../utils';
 
-interface CustomMatchers<R = unknown, T = Record<string, unknown>> {
-  toContainValues(keys: Array<T[keyof T]>): R;
+interface CustomMatchers<R = unknown> {
+  toContainValues<T>(keys: T[]): R;
 }
 
 declare global {
   namespace jest {
-    interface Matchers<R, T> extends CustomMatchers<R, T> {}
+    interface Matchers<R> extends CustomMatchers<R> {}
 
     interface Expect extends CustomMatchers {}
 
