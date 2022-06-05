@@ -67,6 +67,7 @@
   "jest": {
     "testEnvironment": "node",
     "testPathIgnorePatterns": [
+      ".idea",
       "examples",
       "/node_modules/",
       "/fixtures/",
