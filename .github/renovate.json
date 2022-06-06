@@ -1,5 +1,5 @@
 {
-  "extends": ["config:base"],
+  "extends": ["config:base", ":semanticCommitsDisabled"],
   "lockFileMaintenance": { "enabled": true, "automerge": true },
   "rangeStrategy": "replace",
   "postUpdateOptions": ["yarnDedupeHighest"]
