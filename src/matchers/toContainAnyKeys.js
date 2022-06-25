@@ -10,7 +10,7 @@ export function toContainAnyKeys(actual, expected) {
     `  ${printReceived(actual)}`;
 
   const failMessage =
-    matcherHint('.toContainValue') +
+    matcherHint('.toContainAnyKeys') +
     '\n\n' +
     'Expected object to contain any of the following keys:\n' +
     `  ${printExpected(expected)}\n` +
