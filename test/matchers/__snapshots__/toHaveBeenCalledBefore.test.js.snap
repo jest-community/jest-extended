@@ -73,7 +73,7 @@ Received second mock with invocationCallOrder:
 `;
 
 exports[`.toHaveBeenCalledBefore fails when given first value is not a jest spy or mock 1`] = `
-"<dim>expect(</><red>received</><dim>).toHaveBeenCalledAfter(</><green>expected</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toHaveBeenCalledBefore(</><green>expected</><dim>)</>
 
 Matcher error: <red>\\"received\\"</> must be a mock or spy function
 
@@ -82,7 +82,7 @@ Received has value: <red>[Function mock1]</>"
 `;
 
 exports[`.toHaveBeenCalledBefore fails when given second value is not a jest spy or mock 1`] = `
-"<dim>expect(</><red>received</><dim>).toHaveBeenCalledAfter(</><green>expected</><dim>)</>
+"<dim>expect(</><red>received</><dim>).toHaveBeenCalledBefore(</><green>expected</><dim>)</>
 
 Matcher error: <green>\\"expected\\"</> must be a mock or spy function
 

@@ -7,7 +7,7 @@ export function toHaveBeenCalledOnce(received) {
     return {
       pass: false,
       message: () =>
-        matcherHint('.toHaveBeenCalledAfter') +
+        matcherHint('.toHaveBeenCalledOnce') +
         '\n\n' +
         `Matcher error: ${printReceived('received')} must be a mock or spy function` +
         '\n\n' +

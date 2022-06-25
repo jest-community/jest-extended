@@ -39,7 +39,7 @@ const mockCheckFailMessage = (utils, value, isReceivedValue) => () => {
   const valueKindPrintFunc = isReceivedValue ? utils.printReceived : utils.printExpected;
 
   return (
-    utils.matcherHint('.toHaveBeenCalledAfter') +
+    utils.matcherHint('.toHaveBeenCalledBefore') +
     '\n\n' +
     `Matcher error: ${valueKindPrintFunc(valueKind.toLowerCase())} must be a mock or spy function` +
     '\n\n' +
