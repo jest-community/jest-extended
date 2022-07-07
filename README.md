@@ -57,6 +57,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toPartiallyContain(member)](#topartiallycontainmember)
     - [.toSatisfyAll(predicate)](#tosatisfyallpredicate)
     - [.toSatisfyAny(predicate)](#tosatisfyanypredicate)
+    - [.toBeWithinRange(min, max)](#tobewithinrangemin-max)
   - [Boolean](#boolean)
     - [.toBeBoolean()](#tobeboolean)
     - [.toBeTrue()](#tobetrue)
@@ -387,6 +388,17 @@ test('passes when any value in array pass given predicate', () => {
   const isOdd = el => el % 2 === 1;
   expect([2, 3, 6, 8]).toSatisfyAny(isOdd);
   expect([2, 4, 8, 12]).not.toSatisfyAny(isOdd);
+});
+```
+
+#### .toBeWithinRange(min, max)
+
+Use `.toBeWithinRange` when you want to check if array contains elements within a given range.
+
+```js
+test('passes when array contains elements within a given range', () => {
+  expect([3, 5, 8, 9]).toBeWithinRange(3, 9);
+  expect([3, 5, 8, 9]).not.toBeWithinRange(12, 15);
 });
 ```
 
