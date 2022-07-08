@@ -1,4 +1,4 @@
-import { equals } from 'expect/build/jasmineUtils';
+import { equals } from '@jest/expect-utils';
 import { contains, determinePropertyMessage, isJestMockOrSpy } from 'src/utils';
 
 describe('Utils', () => {
