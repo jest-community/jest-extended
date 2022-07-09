@@ -1,28 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toEndWith fails when string ends with given suffix 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toEndWith(</><green>expected</><dim>)</>
+"<dim>expect(</intensity><red>received</color><dim>).not.toEndWith(</intensity><green>expected</color><dim>)</intensity>
 
 Expected string to not end with:
-  <green>\\"world\\"</>
+  <green>\\"world\\"</color>
 Received:
-  <red>\\"hello world\\"</>"
+  <red>\\"hello world\\"</color>"
 `;
 
 exports[`.toEndWith fails when string does not end with the given suffix 1`] = `
-"<dim>expect(</><red>received</><dim>).toEndWith(</><green>expected</><dim>)</>
+"<dim>expect(</intensity><red>received</color><dim>).toEndWith(</intensity><green>expected</color><dim>)</intensity>
 
 Expected string to end with:
-  <green>\\"hello\\"</>
+  <green>\\"hello\\"</color>
 Received:
-  <red>\\"hello world\\"</>"
+  <red>\\"hello world\\"</color>"
 `;
 
 exports[`.toEndWith fails when the string is shorter than the given suffix 1`] = `
-"<dim>expect(</><red>received</><dim>).toEndWith(</><green>expected</><dim>)</>
+"<dim>expect(</intensity><red>received</color><dim>).toEndWith(</intensity><green>expected</color><dim>)</intensity>
 
 Expected string to end with:
-  <green>\\"hello world\\"</>
+  <green>\\"hello world\\"</color>
 Received:
-  <red>\\"hello\\"</>"
+  <red>\\"hello\\"</color>"
 `;

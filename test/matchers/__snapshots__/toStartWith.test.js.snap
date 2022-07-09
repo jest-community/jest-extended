@@ -1,28 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toStartWith fails when string starts with given prefix 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toStartWith(</><green>expected</><dim>)</>
+"<dim>expect(</intensity><red>received</color><dim>).not.toStartWith(</intensity><green>expected</color><dim>)</intensity>
 
 Expected string to not start with:
-  <green>\\"hello\\"</>
+  <green>\\"hello\\"</color>
 Received:
-  <red>\\"hello world\\"</>"
+  <red>\\"hello world\\"</color>"
 `;
 
 exports[`.toStartWith fails when string does not start with the given prefix 1`] = `
-"<dim>expect(</><red>received</><dim>).toStartWith(</><green>expected</><dim>)</>
+"<dim>expect(</intensity><red>received</color><dim>).toStartWith(</intensity><green>expected</color><dim>)</intensity>
 
 Expected string to start with:
-  <green>\\"world\\"</>
+  <green>\\"world\\"</color>
 Received:
-  <red>\\"hello world\\"</>"
+  <red>\\"hello world\\"</color>"
 `;
 
 exports[`.toStartWith fails when the string is shorter than the given prefix 1`] = `
-"<dim>expect(</><red>received</><dim>).toStartWith(</><green>expected</><dim>)</>
+"<dim>expect(</intensity><red>received</color><dim>).toStartWith(</intensity><green>expected</color><dim>)</intensity>
 
 Expected string to start with:
-  <green>\\"hello world\\"</>
+  <green>\\"hello world\\"</color>
 Received:
-  <red>\\"hello\\"</>"
+  <red>\\"hello\\"</color>"
 `;
