@@ -26,7 +26,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: yarn
       - name: install with jest@${{ matrix.jest-version }}
-        run: yarn add --dev jest@${{ matrix.jest-version }} babel-jest@${{ matrix.jest-version }} pretty-format@${{ matrix.jest-version }} @types/jest@${{ matrix.jest-version }}
+        run: yarn add --dev jest@${{ matrix.jest-version }} babel-jest@${{ matrix.jest-version }} @types/jest@${{ matrix.jest-version }}
       - run: yarn test:coverage
       - uses: codecov/codecov-action@v3
 

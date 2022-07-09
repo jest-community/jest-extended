@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toBeFunction fails when given a function 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBeFunction()</>
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeFunction()</intensity>
 
 Expected value to not be a function, received:
-  <red>[Function anonymous]</>"
+  <red>[Function anonymous]</color>"
 `;
 
 exports[`.toBeFunction fails when not given a function 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeFunction()</>
+"<dim>expect(</intensity><red>received</color><dim>).toBeFunction()</intensity>
 
 Expected to receive a function, received:
-  <red>false</>"
+  <red>false</color>"
 `;
