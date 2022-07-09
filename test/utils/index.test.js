@@ -1,5 +1,18 @@
-import { equals } from '@jest/expect-utils';
 import { contains, determinePropertyMessage, isJestMockOrSpy } from 'src/utils';
+
+let equals;
+
+try {
+  // eslint-disable-next-line import/no-unresolved
+  equals = require('@jest/expect-utils').equals;
+} catch (error) {
+  if (error.code === 'MODULE_NOT_FOUND') {
+    // eslint-disable-next-line import/no-unresolved
+    equals = require('expect/build/jasmineUtils').equals;
+  } else {
+    throw error;
+  }
+}
 
 describe('Utils', () => {
   describe('.contains', () => {
