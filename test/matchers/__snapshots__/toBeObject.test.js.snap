@@ -1,57 +1,57 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toBeObject fails when given an object 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBeObject()</>
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeObject()</intensity>
 
 Expected value to not be an object, received:
-  <red>{}</>"
+  <red>{}</color>"
 `;
 
 exports[`.toBeObject fails when not given an object:  1`] = `
-"<dim>expect(</><red>received</><dim>).toBeObject()</>
+"<dim>expect(</intensity><red>received</color><dim>).toBeObject()</intensity>
 
 Expected value to be an object, received:
-  <red>\\"\\"</>"
+  <red>\\"\\"</color>"
 `;
 
 exports[`.toBeObject fails when not given an object: () => {} 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeObject()</>
+"<dim>expect(</intensity><red>received</color><dim>).toBeObject()</intensity>
 
 Expected value to be an object, received:
-  <red>[Function anonymous]</>"
+  <red>[Function anonymous]</color>"
 `;
 
 exports[`.toBeObject fails when not given an object: [ 1, 2, 3 ] 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeObject()</>
+"<dim>expect(</intensity><red>received</color><dim>).toBeObject()</intensity>
 
 Expected value to be an object, received:
-  <red>[1, 2, 3]</>"
+  <red>[1, 2, 3]</color>"
 `;
 
 exports[`.toBeObject fails when not given an object: 0 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeObject()</>
+"<dim>expect(</intensity><red>received</color><dim>).toBeObject()</intensity>
 
 Expected value to be an object, received:
-  <red>0</>"
+  <red>0</color>"
 `;
 
 exports[`.toBeObject fails when not given an object: NaN 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeObject()</>
+"<dim>expect(</intensity><red>received</color><dim>).toBeObject()</intensity>
 
 Expected value to be an object, received:
-  <red>NaN</>"
+  <red>NaN</color>"
 `;
 
 exports[`.toBeObject fails when not given an object: false 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeObject()</>
+"<dim>expect(</intensity><red>received</color><dim>).toBeObject()</intensity>
 
 Expected value to be an object, received:
-  <red>false</>"
+  <red>false</color>"
 `;
 
 exports[`.toBeObject fails when not given an object: undefined 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeObject()</>
+"<dim>expect(</intensity><red>received</color><dim>).toBeObject()</intensity>
 
 Expected value to be an object, received:
-  <red>undefined</>"
+  <red>undefined</color>"
 `;

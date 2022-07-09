@@ -1,81 +1,81 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toBeExtensible fails when given an extensible object: () => {} 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBeExtensible()</>
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeExtensible()</intensity>
 
 Expected value to not be extensible received:
-  <green>[Function anonymous]</>
+  <green>[Function anonymous]</color>
 "
 `;
 
 exports[`.not.toBeExtensible fails when given an extensible object: [] 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBeExtensible()</>
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeExtensible()</intensity>
 
 Expected value to not be extensible received:
-  <green>[]</>
+  <green>[]</color>
 "
 `;
 
 exports[`.not.toBeExtensible fails when given an extensible object: {} 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBeExtensible()</>
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeExtensible()</intensity>
 
 Expected value to not be extensible received:
-  <green>{}</>
+  <green>{}</color>
 "
 `;
 
 exports[`.toBeExtensible fails when not given an extensible object:  1`] = `
-"<dim>expect(</><red>received</><dim>).toBeExtensible()</>
+"<dim>expect(</intensity><red>received</color><dim>).toBeExtensible()</intensity>
 
 Expected value to be extensible received:
-  <red>\\"\\"</>"
+  <red>\\"\\"</color>"
 `;
 
 exports[`.toBeExtensible fails when not given an extensible object: {} 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeExtensible()</>
+"<dim>expect(</intensity><red>received</color><dim>).toBeExtensible()</intensity>
 
 Expected value to be extensible received:
-  <red>{}</>"
+  <red>{}</color>"
 `;
 
 exports[`.toBeExtensible fails when not given an extensible object: {} 2`] = `
-"<dim>expect(</><red>received</><dim>).toBeExtensible()</>
+"<dim>expect(</intensity><red>received</color><dim>).toBeExtensible()</intensity>
 
 Expected value to be extensible received:
-  <red>{}</>"
+  <red>{}</color>"
 `;
 
 exports[`.toBeExtensible fails when not given an extensible object: 0 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeExtensible()</>
+"<dim>expect(</intensity><red>received</color><dim>).toBeExtensible()</intensity>
 
 Expected value to be extensible received:
-  <red>0</>"
+  <red>0</color>"
 `;
 
 exports[`.toBeExtensible fails when not given an extensible object: NaN 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeExtensible()</>
+"<dim>expect(</intensity><red>received</color><dim>).toBeExtensible()</intensity>
 
 Expected value to be extensible received:
-  <red>NaN</>"
+  <red>NaN</color>"
 `;
 
 exports[`.toBeExtensible fails when not given an extensible object: false 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeExtensible()</>
+"<dim>expect(</intensity><red>received</color><dim>).toBeExtensible()</intensity>
 
 Expected value to be extensible received:
-  <red>false</>"
+  <red>false</color>"
 `;
 
 exports[`.toBeExtensible fails when not given an extensible object: null 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeExtensible()</>
+"<dim>expect(</intensity><red>received</color><dim>).toBeExtensible()</intensity>
 
 Expected value to be extensible received:
-  <red>null</>"
+  <red>null</color>"
 `;
 
 exports[`.toBeExtensible fails when not given an extensible object: undefined 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeExtensible()</>
+"<dim>expect(</intensity><red>received</color><dim>).toBeExtensible()</intensity>
 
 Expected value to be extensible received:
-  <red>undefined</>"
+  <red>undefined</color>"
 `;
