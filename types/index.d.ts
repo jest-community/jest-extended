@@ -28,7 +28,7 @@ declare namespace jest {
      * Use .toBeOneOf when checking if a value is a member of a given Array.
      * @param {Array.<*>} members
      */
-    toBeOneOf<E = any>(members: E[]): R;
+    toBeOneOf<E = any>(members: readonly E[]): R;
 
     /**
      * Use `.toBeNil` when checking a value is `null` or `undefined`.
@@ -68,25 +68,25 @@ declare namespace jest {
      * Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
      * @param {Array.<*>} members
      */
-    toIncludeAllMembers<E = any>(members: E[]): R;
+    toIncludeAllMembers<E = any>(members: readonly E[]): R;
 
     /**
      * Use `.toIncludeAllPartialMembers` when checking if an `Array` contains all of the same partial members of a given set.
      * @param {Array.<*>} members
      */
-    toIncludeAllPartialMembers<E = any>(members: E[]): R;
+    toIncludeAllPartialMembers<E = any>(members: readonly E[]): R;
 
     /**
      * Use `.toIncludeAnyMembers` when checking if an `Array` contains any of the members of a given set.
      * @param {Array.<*>} members
      */
-    toIncludeAnyMembers<E = any>(members: E[]): R;
+    toIncludeAnyMembers<E = any>(members: readonly E[]): R;
 
     /**
      * Use `.toIncludeSameMembers` when checking if two arrays contain equal values, in any order.
      * @param {Array.<*>} members
      */
-    toIncludeSameMembers<E = any>(members: E[]): R;
+    toIncludeSameMembers<E = any>(members: readonly E[]): R;
 
     /**
      * Use `.toPartiallyContain` when checking if any array value matches the partial member.
@@ -236,21 +236,21 @@ declare namespace jest {
      *
      * @param {Array.<String>} keys
      */
-    toContainKeys<E = any>(keys: (keyof E | string)[]): R;
+    toContainKeys<E = any>(keys: ReadonlyArray<keyof E | string>): R;
 
     /**
      * Use `.toContainAllKeys` when checking if an object only contains all of the provided keys.
      *
      * @param {Array.<String>} keys
      */
-    toContainAllKeys<E = any>(keys: (keyof E | string)[]): R;
+    toContainAllKeys<E = any>(keys: ReadonlyArray<keyof E | string>): R;
 
     /**
      * Use `.toContainAnyKeys` when checking if an object contains at least one of the provided keys.
      *
      * @param {Array.<String>} keys
      */
-    toContainAnyKeys<E = any>(keys: (keyof E | string)[]): R;
+    toContainAnyKeys<E = any>(keys: ReadonlyArray<keyof E | string>): R;
 
     /**
      * Use `.toContainValue` when checking if an object contains the provided value.
@@ -264,49 +264,49 @@ declare namespace jest {
      *
      * @param {Array.<*>} values
      */
-    toContainValues<E = any>(values: E[]): R;
+    toContainValues<E = any>(values: readonly E[]): R;
 
     /**
      * Use `.toContainAllValues` when checking if an object only contains all of the provided values.
      *
      * @param {Array.<*>} values
      */
-    toContainAllValues<E = any>(values: E[]): R;
+    toContainAllValues<E = any>(values: readonly E[]): R;
 
     /**
      * Use `.toContainAnyValues` when checking if an object contains at least one of the provided values.
      *
      * @param {Array.<*>} values
      */
-    toContainAnyValues<E = any>(values: E[]): R;
+    toContainAnyValues<E = any>(values: readonly E[]): R;
 
     /**
      * Use `.toContainEntry` when checking if an object contains the provided entry.
      *
      * @param {Array.<String, String>} entry
      */
-    toContainEntry<E = any>(entry: [keyof E, E[keyof E]]): R;
+    toContainEntry<E = any>(entry: readonly [keyof E, E[keyof E]]): R;
 
     /**
      * Use `.toContainEntries` when checking if an object contains all of the provided entries.
      *
      * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainEntries<E = any>(entries: [keyof E, E[keyof E]][]): R;
+    toContainEntries<E = any>(entries: ReadonlyArray<readonly [keyof E, E[keyof E]]>): R;
 
     /**
      * Use `.toContainAllEntries` when checking if an object only contains all of the provided entries.
      *
      * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainAllEntries<E = any>(entries: [keyof E, E[keyof E]][]): R;
+    toContainAllEntries<E = any>(entries: ReadonlyArray<readonly [keyof E, E[keyof E]]>): R;
 
     /**
      * Use `.toContainAnyEntries` when checking if an object contains at least one of the provided entries.
      *
      * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainAnyEntries<E = any>(entries: [keyof E, E[keyof E]][]): R;
+    toContainAnyEntries<E = any>(entries: ReadonlyArray<readonly [keyof E, E[keyof E]]>): R;
 
     /**
      * Use `.toBeExtensible` when checking if an object is extensible.
@@ -379,7 +379,7 @@ declare namespace jest {
      *
      * @param {Array.<String>} substring
      */
-    toIncludeMultiple(substring: string[]): R;
+    toIncludeMultiple(substring: readonly string[]): R;
 
     /**
      * Use `.toThrowWithMessage` when checking if a callback function throws an error of a given type with a given error message.
@@ -453,7 +453,7 @@ declare namespace jest {
      * Use .toBeOneOf when checking if a value is a member of a given Array.
      * @param {Array.<*>} members
      */
-    toBeOneOf<E = any>(members: E[]): any;
+    toBeOneOf<E = any>(members: readonly E[]): any;
 
     /**
      * Use `.toBeNil` when checking a value is `null` or `undefined`.
@@ -493,19 +493,19 @@ declare namespace jest {
      * Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
      * @param {Array.<*>} members
      */
-    toIncludeAllMembers<E = any>(members: E[]): any;
+    toIncludeAllMembers<E = any>(members: readonly E[]): any;
 
     /**
      * Use `.toIncludeAnyMembers` when checking if an `Array` contains any of the members of a given set.
      * @param {Array.<*>} members
      */
-    toIncludeAnyMembers<E = any>(members: E[]): any;
+    toIncludeAnyMembers<E = any>(members: readonly E[]): any;
 
     /**
      * Use `.toIncludeSameMembers` when checking if two arrays contain equal values, in any order.
      * @param {Array.<*>} members
      */
-    toIncludeSameMembers<E = any>(members: E[]): any;
+    toIncludeSameMembers<E = any>(members: readonly E[]): any;
 
     /**
      * Use `.toPartiallyContain` when checking if any array value matches the partial member.
@@ -650,21 +650,21 @@ declare namespace jest {
      *
      * @param {Array.<String>} keys
      */
-    toContainKeys<E = any>(keys: (keyof E | string)[]): any;
+    toContainKeys<E = any>(keys: ReadonlyArray<keyof E | string>): any;
 
     /**
      * Use `.toContainAllKeys` when checking if an object only contains all of the provided keys.
      *
      * @param {Array.<String>} keys
      */
-    toContainAllKeys<E = any>(keys: (keyof E | string)[]): any;
+    toContainAllKeys<E = any>(keys: ReadonlyArray<keyof E | string>): any;
 
     /**
      * Use `.toContainAnyKeys` when checking if an object contains at least one of the provided keys.
      *
      * @param {Array.<String>} keys
      */
-    toContainAnyKeys<E = any>(keys: (keyof E | string)[]): any;
+    toContainAnyKeys<E = any>(keys: ReadonlyArray<keyof E | string>): any;
 
     /**
      * Use `.toContainValue` when checking if an object contains the provided value.
@@ -678,49 +678,49 @@ declare namespace jest {
      *
      * @param {Array.<*>} values
      */
-    toContainValues<E = any>(values: E[]): any;
+    toContainValues<E = any>(values: readonly E[]): any;
 
     /**
      * Use `.toContainAllValues` when checking if an object only contains all of the provided values.
      *
      * @param {Array.<*>} values
      */
-    toContainAllValues<E = any>(values: E[]): any;
+    toContainAllValues<E = any>(values: readonly E[]): any;
 
     /**
      * Use `.toContainAnyValues` when checking if an object contains at least one of the provided values.
      *
      * @param {Array.<*>} values
      */
-    toContainAnyValues<E = any>(values: E[]): any;
+    toContainAnyValues<E = any>(values: readonly E[]): any;
 
     /**
      * Use `.toContainEntry` when checking if an object contains the provided entry.
      *
      * @param {Array.<[keyof E, E[keyof E]>} entry
      */
-    toContainEntry<E = any>(entry: [keyof E, E[keyof E]]): any;
+    toContainEntry<E = any>(entry: readonly [keyof E, E[keyof E]]): any;
 
     /**
      * Use `.toContainEntries` when checking if an object contains all of the provided entries.
      *
      * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainEntries<E = any>(entries: [keyof E, E[keyof E]][]): any;
+    toContainEntries<E = any>(entries: ReadonlyArray<readonly [keyof E, E[keyof E]]>): any;
 
     /**
      * Use `.toContainAllEntries` when checking if an object only contains all of the provided entries.
      *
      * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainAllEntries<E = any>(entries: [keyof E, E[keyof E]][]): any;
+    toContainAllEntries<E = any>(entries: ReadonlyArray<readonly [keyof E, E[keyof E]]>): any;
 
     /**
      * Use `.toContainAnyEntries` when checking if an object contains at least one of the provided entries.
      *
      * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainAnyEntries<E = any>(entries: [keyof E, E[keyof E]][]): any;
+    toContainAnyEntries<E = any>(entries: ReadonlyArray<readonly [keyof E, E[keyof E]]>): any;
 
     /**
      * Use `.toBeExtensible` when checking if an object is extensible.
@@ -793,7 +793,7 @@ declare namespace jest {
      *
      * @param {Array.<String>} substring
      */
-    toIncludeMultiple(substring: string[]): any;
+    toIncludeMultiple(substring: readonly string[]): any;
 
     /**
      * Use `.toThrowWithMessage` when checking if a callback function throws an error of a given type with a given error message.
