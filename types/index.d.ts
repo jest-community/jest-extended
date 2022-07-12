@@ -154,7 +154,7 @@ declare namespace jest {
      * @param {Mock} mock
      * @param {boolean} [failIfNoSecondInvocation=true]
      */
-    toHaveBeenCalledBefore(mock: jest.Mock, failIfNoSecondInvocation: boolean): R;
+    toHaveBeenCalledBefore(mock: jest.Mock, failIfNoSecondInvocation?: boolean): R;
 
     /**
      * Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another `Mock`.
@@ -164,7 +164,7 @@ declare namespace jest {
      * @param {Mock} mock
      * @param {boolean} [failIfNoFirstInvocation=true]
      */
-    toHaveBeenCalledAfter(mock: jest.Mock, failIfNoFirstInvocation: boolean): R;
+    toHaveBeenCalledAfter(mock: jest.Mock, failIfNoFirstInvocation?: boolean): R;
 
     /**
      * Use `.toHaveBeenCalledOnce` to check if a `Mock` was called exactly one time.
