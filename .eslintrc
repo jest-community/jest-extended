@@ -8,18 +8,15 @@
     "es6": true,
     "jest": true
   },
-  "globals": {
-    "Promise": true,
-    "describe": true,
-    "it": true,
-    "expect": true
-  },
   "plugins": ["eslint-plugin-import", "import", "jest"],
   "settings": {
     "import/resolver": {
       "node": {
         "moduleDirectory": ["./", "node_modules"]
       }
+    },
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
     }
   },
   "extends": ["eslint:recommended", "plugin:prettier/recommended"],
@@ -46,6 +43,17 @@
       "files": "src/matchers/*/index.js",
       "rules": {
         "import/no-default-export": "error"
+      }
+    },
+    {
+      "files": "**/*.ts",
+      "parser": "@typescript-eslint/parser",
+      "plugins": ["@typescript-eslint"],
+      "extends": ["plugin:@typescript-eslint/recommended"],
+      "rules": {
+        "@typescript-eslint/array-type": "error",
+        // should probably enable this, but it's a bit too strict for now
+        "@typescript-eslint/no-explicit-any": "off"
       }
     }
   ]

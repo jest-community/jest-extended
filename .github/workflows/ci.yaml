@@ -58,5 +58,6 @@ jobs:
           node-version: lts/*
           cache: yarn
       - run: yarn install
+      - run: yarn build
       - run: yarn lint
       - run: yarn typecheck
