@@ -56,6 +56,26 @@ Thrown:
 "
 `;
 
+exports[`.toThrowWithMessage Async passes with an unconstructable error given a regex message 1`] = `
+"<dim>expect(</intensity><red>function</color><dim>).not.toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
+
+Expected not to throw:
+  <green>[UnconstructableError: /42/]</color>
+Thrown:
+  <red>[UnconstructableError: 42]</color>
+"
+`;
+
+exports[`.toThrowWithMessage Async passes with an unconstructable error given a string message 1`] = `
+"<dim>expect(</intensity><red>function</color><dim>).not.toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
+
+Expected not to throw:
+  <green>[UnconstructableError: 42]</color>
+Thrown:
+  <red>[UnconstructableError: 42]</color>
+"
+`;
+
 exports[`.toThrowWithMessage fails when a callback function is not a function 1`] = `
 "<dim>expect(</intensity><red>function</color><dim>).toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
 
@@ -140,5 +160,25 @@ Expected not to throw:
   <green>[TypeError: Expected message]</color>
 Thrown:
   <red>[TypeError: Expected message]</color>
+"
+`;
+
+exports[`.toThrowWithMessage passes with an unconstructable error given a regex message 1`] = `
+"<dim>expect(</intensity><red>function</color><dim>).not.toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
+
+Expected not to throw:
+  <green>[UnconstructableError: /42/]</color>
+Thrown:
+  <red>[UnconstructableError: 42]</color>
+"
+`;
+
+exports[`.toThrowWithMessage passes with an unconstructable error given a string message 1`] = `
+"<dim>expect(</intensity><red>function</color><dim>).not.toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
+
+Expected not to throw:
+  <green>[UnconstructableError: 42]</color>
+Thrown:
+  <red>[UnconstructableError: 42]</color>
 "
 `;

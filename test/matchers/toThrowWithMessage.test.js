@@ -4,6 +4,16 @@ const { toThrowWithMessage } = matcher;
 
 expect.extend(matcher);
 
+class UnconstructableError extends Error {
+  constructor(message) {
+    if (typeof message !== 'number') {
+      throw new TypeError('Expected number arg');
+    }
+    super(message.toString());
+    this.name = 'UnconstructableError';
+  }
+}
+
 describe('.toThrowWithMessage', () => {
   test('fails when callback function is not provided', () => {
     const { pass, message } = toThrowWithMessage.call({
@@ -137,6 +147,34 @@ describe('.toThrowWithMessage', () => {
     expect(message()).toMatchSnapshot();
   });
 
+  test('passes with an unconstructable error given a string message', () => {
+    const callback = () => {
+      throw new UnconstructableError(42);
+    };
+    const { pass, message } = toThrowWithMessage.call(
+      { utils: { matcherHint: matcherHint, printExpected: printExpected, printReceived: printReceived } },
+      callback,
+      UnconstructableError,
+      '42',
+    );
+    expect(pass).toBe(true);
+    expect(message()).toMatchSnapshot();
+  });
+
+  test('passes with an unconstructable error given a regex message', () => {
+    const callback = () => {
+      throw new UnconstructableError(42);
+    };
+    const { pass, message } = toThrowWithMessage.call(
+      { utils: { matcherHint: matcherHint, printExpected: printExpected, printReceived: printReceived } },
+      callback,
+      UnconstructableError,
+      /42/,
+    );
+    expect(pass).toBe(true);
+    expect(message()).toMatchSnapshot();
+  });
+
   test('passes when given an Error with a string error message: end to end', () => {
     expect(() => {
       throw new TypeError('Expected message');
@@ -249,6 +287,36 @@ describe('.toThrowWithMessage', () => {
         rejectValue,
         TypeError,
         /Expected message/,
+      );
+      expect(pass).toBe(true);
+      expect(message()).toMatchSnapshot();
+    });
+
+    test('passes with an unconstructable error given a string message', () => {
+      const rejectValue = new UnconstructableError(42);
+      const { pass, message } = toThrowWithMessage.call(
+        {
+          utils: { matcherHint: matcherHint, printExpected: printExpected, printReceived: printReceived },
+          promise: 'rejects',
+        },
+        rejectValue,
+        UnconstructableError,
+        '42',
+      );
+      expect(pass).toBe(true);
+      expect(message()).toMatchSnapshot();
+    });
+
+    test('passes with an unconstructable error given a regex message', () => {
+      const rejectValue = new UnconstructableError(42);
+      const { pass, message } = toThrowWithMessage.call(
+        {
+          utils: { matcherHint: matcherHint, printExpected: printExpected, printReceived: printReceived },
+          promise: 'rejects',
+        },
+        rejectValue,
+        UnconstructableError,
+        /42/,
       );
       expect(pass).toBe(true);
       expect(message()).toMatchSnapshot();
