@@ -387,7 +387,7 @@ declare namespace jest {
      * @param {Function} type
      * @param {String | RegExp} message
      */
-    toThrowWithMessage(type: (...args: unknown[]) => unknown, message: string | RegExp): R;
+    toThrowWithMessage(type: new (...args: any[]) => {message: string}, message: string | RegExp): R;
 
     /**
      * Use `.toBeEmptyObject` when checking if a value is an empty `Object`.
