@@ -28,7 +28,7 @@ declare namespace jest {
      * Use .toBeOneOf when checking if a value is a member of a given Array.
      * @param {Array.<*>} members
      */
-    toBeOneOf<E = any>(members: readonly E[]): R;
+    toBeOneOf<E = unknown>(members: readonly E[]): R;
 
     /**
      * Use `.toBeNil` when checking a value is `null` or `undefined`.
@@ -39,7 +39,7 @@ declare namespace jest {
      * Use `.toSatisfy` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean`.
      * @param {Function} predicate
      */
-    toSatisfy<E = any>(predicate: (x: E) => boolean): R;
+    toSatisfy<E = unknown>(predicate: (x: E) => boolean): R;
 
     /**
      * Use `.toBeArray` when checking if a value is an `Array`.
@@ -68,43 +68,43 @@ declare namespace jest {
      * Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
      * @param {Array.<*>} members
      */
-    toIncludeAllMembers<E = any>(members: readonly E[]): R;
+    toIncludeAllMembers<E = unknown>(members: readonly E[]): R;
 
     /**
      * Use `.toIncludeAllPartialMembers` when checking if an `Array` contains all of the same partial members of a given set.
      * @param {Array.<*>} members
      */
-    toIncludeAllPartialMembers<E = any>(members: readonly E[]): R;
+    toIncludeAllPartialMembers<E = unknown>(members: readonly E[]): R;
 
     /**
      * Use `.toIncludeAnyMembers` when checking if an `Array` contains any of the members of a given set.
      * @param {Array.<*>} members
      */
-    toIncludeAnyMembers<E = any>(members: readonly E[]): R;
+    toIncludeAnyMembers<E = unknown>(members: readonly E[]): R;
 
     /**
      * Use `.toIncludeSameMembers` when checking if two arrays contain equal values, in any order.
      * @param {Array.<*>} members
      */
-    toIncludeSameMembers<E = any>(members: readonly E[]): R;
+    toIncludeSameMembers<E = unknown>(members: readonly E[]): R;
 
     /**
      * Use `.toPartiallyContain` when checking if any array value matches the partial member.
      * @param {*} member
      */
-    toPartiallyContain<E = any>(member: E): R;
+    toPartiallyContain<E = unknown>(member: E): R;
 
     /**
      * Use `.toSatisfyAll` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean` for all values in an array.
      * @param {Function} predicate
      */
-    toSatisfyAll<E = any>(predicate: (x: E) => boolean): R;
+    toSatisfyAll<E = unknown>(predicate: (x: E) => boolean): R;
 
     /**
      * Use `.toSatisfyAny` when you want to use a custom matcher by supplying a predicate function that returns `true` for any matching value in an array.
      * @param {Function} predicate
      */
-    toSatisfyAny(predicate: (x: any) => boolean): R;
+    toSatisfyAny(predicate: (x: unknown) => boolean): R;
 
     /**
      * Use `.toBeBoolean` when checking if a value is a `Boolean`.
@@ -229,84 +229,84 @@ declare namespace jest {
      *
      * @param {String} key
      */
-    toContainKey<E = any>(key: keyof E | string): R;
+    toContainKey<E = unknown>(key: keyof E | string): R;
 
     /**
      * Use `.toContainKeys` when checking if an object has all of the provided keys.
      *
      * @param {Array.<String>} keys
      */
-    toContainKeys<E = any>(keys: readonly (keyof E | string)[]): R;
+    toContainKeys<E = unknown>(keys: readonly (keyof E | string)[]): R;
 
     /**
      * Use `.toContainAllKeys` when checking if an object only contains all of the provided keys.
      *
      * @param {Array.<String>} keys
      */
-    toContainAllKeys<E = any>(keys: readonly (keyof E | string)[]): R;
+    toContainAllKeys<E = unknown>(keys: readonly (keyof E | string)[]): R;
 
     /**
      * Use `.toContainAnyKeys` when checking if an object contains at least one of the provided keys.
      *
      * @param {Array.<String>} keys
      */
-    toContainAnyKeys<E = any>(keys: readonly (keyof E | string)[]): R;
+    toContainAnyKeys<E = unknown>(keys: readonly (keyof E | string)[]): R;
 
     /**
      * Use `.toContainValue` when checking if an object contains the provided value.
      *
      * @param {*} value
      */
-    toContainValue<E = any>(value: E): R;
+    toContainValue<E = unknown>(value: E): R;
 
     /**
      * Use `.toContainValues` when checking if an object contains all of the provided values.
      *
      * @param {Array.<*>} values
      */
-    toContainValues<E = any>(values: readonly E[]): R;
+    toContainValues<E = unknown>(values: readonly E[]): R;
 
     /**
      * Use `.toContainAllValues` when checking if an object only contains all of the provided values.
      *
      * @param {Array.<*>} values
      */
-    toContainAllValues<E = any>(values: readonly E[]): R;
+    toContainAllValues<E = unknown>(values: readonly E[]): R;
 
     /**
      * Use `.toContainAnyValues` when checking if an object contains at least one of the provided values.
      *
      * @param {Array.<*>} values
      */
-    toContainAnyValues<E = any>(values: readonly E[]): R;
+    toContainAnyValues<E = unknown>(values: readonly E[]): R;
 
     /**
      * Use `.toContainEntry` when checking if an object contains the provided entry.
      *
      * @param {Array.<String, String>} entry
      */
-    toContainEntry<E = any>(entry: readonly [keyof E, E[keyof E]]): R;
+    toContainEntry<E = unknown>(entry: readonly [keyof E, E[keyof E]]): R;
 
     /**
      * Use `.toContainEntries` when checking if an object contains all of the provided entries.
      *
      * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainEntries<E = any>(entries: readonly (readonly [keyof E, E[keyof E]])[]): R;
+    toContainEntries<E = unknown>(entries: readonly (readonly [keyof E, E[keyof E]])[]): R;
 
     /**
      * Use `.toContainAllEntries` when checking if an object only contains all of the provided entries.
      *
      * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainAllEntries<E = any>(entries: readonly (readonly [keyof E, E[keyof E]])[]): R;
+    toContainAllEntries<E = unknown>(entries: readonly (readonly [keyof E, E[keyof E]])[]): R;
 
     /**
      * Use `.toContainAnyEntries` when checking if an object contains at least one of the provided entries.
      *
      * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainAnyEntries<E = any>(entries: readonly (readonly [keyof E, E[keyof E]])[]): R;
+    toContainAnyEntries<E = unknown>(entries: readonly (readonly [keyof E, E[keyof E]])[]): R;
 
     /**
      * Use `.toBeExtensible` when checking if an object is extensible.
@@ -459,7 +459,7 @@ declare namespace jest {
      * Use .toBeOneOf when checking if a value is a member of a given Array.
      * @param {Array.<*>} members
      */
-    toBeOneOf<E = any>(members: readonly E[]): any;
+    toBeOneOf<E = unknown>(members: readonly E[]): any;
 
     /**
      * Use `.toBeNil` when checking a value is `null` or `undefined`.
@@ -470,7 +470,7 @@ declare namespace jest {
      * Use `.toSatisfy` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean`.
      * @param {Function} predicate
      */
-    toSatisfy<E = any>(predicate: (x: E) => boolean): any;
+    toSatisfy<E = unknown>(predicate: (x: E) => boolean): any;
 
     /**
      * Use `.toBeArray` when checking if a value is an `Array`.
@@ -499,31 +499,31 @@ declare namespace jest {
      * Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
      * @param {Array.<*>} members
      */
-    toIncludeAllMembers<E = any>(members: readonly E[]): any;
+    toIncludeAllMembers<E = unknown>(members: readonly E[]): any;
 
     /**
      * Use `.toIncludeAnyMembers` when checking if an `Array` contains any of the members of a given set.
      * @param {Array.<*>} members
      */
-    toIncludeAnyMembers<E = any>(members: readonly E[]): any;
+    toIncludeAnyMembers<E = unknown>(members: readonly E[]): any;
 
     /**
      * Use `.toIncludeSameMembers` when checking if two arrays contain equal values, in any order.
      * @param {Array.<*>} members
      */
-    toIncludeSameMembers<E = any>(members: readonly E[]): any;
+    toIncludeSameMembers<E = unknown>(members: readonly E[]): any;
 
     /**
      * Use `.toPartiallyContain` when checking if any array value matches the partial member.
      * @param {*} member
      */
-    toPartiallyContain<E = any>(member: E): any;
+    toPartiallyContain<E = unknown>(member: E): any;
 
     /**
      * Use `.toSatisfyAll` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean` for all values in an array.
      * @param {Function} predicate
      */
-    toSatisfyAll<E = any>(predicate: (x: E) => boolean): any;
+    toSatisfyAll<E = unknown>(predicate: (x: E) => boolean): any;
 
     /**
      * Use `.toSatisfyAny` when you want to use a custom matcher by supplying a predicate function that returns `true` for any matching value in an array.
@@ -656,77 +656,77 @@ declare namespace jest {
      *
      * @param {Array.<String>} keys
      */
-    toContainKeys<E = any>(keys: readonly (keyof E | string)[]): any;
+    toContainKeys<E = unknown>(keys: readonly (keyof E | string)[]): any;
 
     /**
      * Use `.toContainAllKeys` when checking if an object only contains all of the provided keys.
      *
      * @param {Array.<String>} keys
      */
-    toContainAllKeys<E = any>(keys: readonly (keyof E | string)[]): any;
+    toContainAllKeys<E = unknown>(keys: readonly (keyof E | string)[]): any;
 
     /**
      * Use `.toContainAnyKeys` when checking if an object contains at least one of the provided keys.
      *
      * @param {Array.<String>} keys
      */
-    toContainAnyKeys<E = any>(keys: readonly (keyof E | string)[]): any;
+    toContainAnyKeys<E = unknown>(keys: readonly (keyof E | string)[]): any;
 
     /**
      * Use `.toContainValue` when checking if an object contains the provided value.
      *
      * @param {*} value
      */
-    toContainValue<E = any>(value: E): any;
+    toContainValue<E = unknown>(value: E): any;
 
     /**
      * Use `.toContainValues` when checking if an object contains all of the provided values.
      *
      * @param {Array.<*>} values
      */
-    toContainValues<E = any>(values: readonly E[]): any;
+    toContainValues<E = unknown>(values: readonly E[]): any;
 
     /**
      * Use `.toContainAllValues` when checking if an object only contains all of the provided values.
      *
      * @param {Array.<*>} values
      */
-    toContainAllValues<E = any>(values: readonly E[]): any;
+    toContainAllValues<E = unknown>(values: readonly E[]): any;
 
     /**
      * Use `.toContainAnyValues` when checking if an object contains at least one of the provided values.
      *
      * @param {Array.<*>} values
      */
-    toContainAnyValues<E = any>(values: readonly E[]): any;
+    toContainAnyValues<E = unknown>(values: readonly E[]): any;
 
     /**
      * Use `.toContainEntry` when checking if an object contains the provided entry.
      *
      * @param {Array.<[keyof E, E[keyof E]>} entry
      */
-    toContainEntry<E = any>(entry: readonly [keyof E, E[keyof E]]): any;
+    toContainEntry<E = unknown>(entry: readonly [keyof E, E[keyof E]]): any;
 
     /**
      * Use `.toContainEntries` when checking if an object contains all of the provided entries.
      *
      * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainEntries<E = any>(entries: readonly (readonly [keyof E, E[keyof E]])[]): any;
+    toContainEntries<E = unknown>(entries: readonly (readonly [keyof E, E[keyof E]])[]): any;
 
     /**
      * Use `.toContainAllEntries` when checking if an object only contains all of the provided entries.
      *
      * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainAllEntries<E = any>(entries: readonly (readonly [keyof E, E[keyof E]])[]): any;
+    toContainAllEntries<E = unknown>(entries: readonly (readonly [keyof E, E[keyof E]])[]): any;
 
     /**
      * Use `.toContainAnyEntries` when checking if an object contains at least one of the provided entries.
      *
      * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainAnyEntries<E = any>(entries: readonly (readonly [keyof E, E[keyof E]])[]): any;
+    toContainAnyEntries<E = unknown>(entries: readonly (readonly [keyof E, E[keyof E]])[]): any;
 
     /**
      * Use `.toBeExtensible` when checking if an object is extensible.
