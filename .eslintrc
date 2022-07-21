@@ -51,9 +51,7 @@
       "plugins": ["@typescript-eslint"],
       "extends": ["plugin:@typescript-eslint/recommended"],
       "rules": {
-        "@typescript-eslint/array-type": "error",
-        // should probably enable this, but it's a bit too strict for now
-        "@typescript-eslint/no-explicit-any": "off"
+        "@typescript-eslint/array-type": "error"
       }
     }
   ]
