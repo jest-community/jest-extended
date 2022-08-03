@@ -634,7 +634,7 @@ declare namespace jest {
     toBeWithin(start: number, end: number): any;
 
     /**
-     * Use `.toBeWithinRange` when checking if an array has elements in range min (inclusive) & max (inclusive).
+     * Use `.toBeWithinRange` when checking if an array has elements in range min (inclusive) and max (inclusive).
      *
      * @param min
      * @param max
