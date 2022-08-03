@@ -393,7 +393,7 @@ test('passes when any value in array pass given predicate', () => {
 
 #### .toBeWithinRange(min, max)
 
-Use `.toBeWithinRange` when you want to check if array contains elements within a given range.
+Use `.toBeWithinRange` when you want to check if array contains elements between min (inclusive) and max (inclusive).
 
 ```js
 test('passes when array contains elements within a given range', () => {
