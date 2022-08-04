@@ -85,9 +85,19 @@ export function toThrowWithMessage(callbackOrPromiseReturn, type, message) {
   }
 
   const pass = predicate(error, type, message);
+  const messageStr = message.toString();
+  let expectedError;
+  try {
+    expectedError = new type(messageStr);
+  } catch (err) {
+    const name = type.name;
+    expectedError = new Error();
+    expectedError.name = name;
+    expectedError.message = messageStr;
+  }
   if (pass) {
-    return { pass: true, message: passMessage(utils, error, new type(message)) };
+    return { pass: true, message: passMessage(utils, error, expectedError) };
   }
 
-  return { pass: false, message: failMessage(utils, error, new type(message)) };
+  return { pass: false, message: failMessage(utils, error, expectedError) };
 }

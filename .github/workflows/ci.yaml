@@ -16,7 +16,7 @@ jobs:
       fail-fast: false
       matrix:
         node-version: [14.x, 16.x, 18.x]
-        jest-version: [27]
+        jest-version: [27, 28]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -26,7 +26,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: yarn
       - name: install with jest@${{ matrix.jest-version }}
-        run: yarn add --dev jest@${{ matrix.jest-version }} babel-jest@${{ matrix.jest-version }} pretty-format@${{ matrix.jest-version }} @types/jest@${{ matrix.jest-version }}
+        run: yarn add --dev jest@${{ matrix.jest-version }} babel-jest@${{ matrix.jest-version }} @types/jest@${{ matrix.jest-version }}
       - run: yarn test:coverage
       - uses: codecov/codecov-action@v3
 
@@ -58,5 +58,6 @@ jobs:
           node-version: lts/*
           cache: yarn
       - run: yarn install
+      - run: yarn build
       - run: yarn lint
       - run: yarn typecheck

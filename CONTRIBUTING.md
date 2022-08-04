@@ -38,5 +38,5 @@ _Note: please use present tense in commit messages i.e. `Add feature X` and not 
 
 ## Help needed
 
-Please checkout the [ROADMAP](docs/ROADMAP.md) and raise an issue to discuss
-any of the items
+Please check out the [issues](https://github.com/jest-community/jest-extended/issues) to discuss any of the potential
+work

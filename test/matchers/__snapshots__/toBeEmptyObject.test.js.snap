@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toBeEmptyObject fails when given an empty object 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBeEmptyObject()</>
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeEmptyObject()</intensity>
 
 Expected value to not be an empty object, received:
-  <red>{}</>"
+  <red>{}</color>"
 `;
 
 exports[`.toBeEmptyObject fails when not given an empty object 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeEmptyObject()</>
+"<dim>expect(</intensity><red>received</color><dim>).toBeEmptyObject()</intensity>
 
 Expected value to be an empty object, received:
-  <red>{\\"property1\\": \\"something\\"}</>"
+  <red>{\\"property1\\": \\"something\\"}</color>"
 `;

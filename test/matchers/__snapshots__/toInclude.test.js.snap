@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.toInclude .not.toInclude fails when a string does have a given substring 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toInclude(</><green>expected</><dim>)</>
+"<dim>expect(</intensity><red>received</color><dim>).not.toInclude(</intensity><green>expected</color><dim>)</intensity>
 
 Expected string to not include:
-  <green>\\"ell\\"</>
+  <green>\\"ell\\"</color>
 Received:
-  <red>\\"hello world\\"</>"
+  <red>\\"hello world\\"</color>"
 `;
 
 exports[`.toInclude fails when a string does not have a given substring 1`] = `
-"<dim>expect(</><red>received</><dim>).toInclude(</><green>expected</><dim>)</>
+"<dim>expect(</intensity><red>received</color><dim>).toInclude(</intensity><green>expected</color><dim>)</intensity>
 
 Expected string to include:
-  <green>\\"bob\\"</>
+  <green>\\"bob\\"</color>
 Received:
-  <red>\\"hello world\\"</>"
+  <red>\\"hello world\\"</color>"
 `;
