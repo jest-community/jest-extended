@@ -650,7 +650,7 @@ declare namespace jest {
      * @param min
      * @param max
      */
-    toBeWithinRange(min: number, max: number): any;
+    toBeWithinRange(min: number, max: number): Result;
 
     /**
      * Use `.toBeObject` when checking if a value is an `Object`.
