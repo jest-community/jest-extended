@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toBeWithinRange fails when given array is within the given range 1`] = `
-"<dim>expect(</><red>received</><dim>).not.toBeWithinRange(</><green>expected</><dim>)</>
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeWithinRange(</intensity><green>expected</color><dim>)</intensity>
 
-Expected Array to not be in range <green>4</>, <green>9</>
+Expected Array to not be in range <green>4</color>, <green>9</color>
 Received:
-  <red>[4, 5, 7, 9]</>"
+  <red>[4, 5, 7, 9]</color>"
 `;
 
 exports[`.toBeWithinRange fails when given array is not within a given range 1`] = `
-"<dim>expect(</><red>received</><dim>).toBeWithinRange(</><green>expected</><dim>)</>
+"<dim>expect(</intensity><red>received</color><dim>).toBeWithinRange(</intensity><green>expected</color><dim>)</intensity>
 
-Expected: Array elements to be in range (<green>4</>, <green>8</>)
-Received: Array element out of range <red>9</>"
+Expected: Array elements to be in range (<green>4</color>, <green>8</color>)
+Received: Array element out of range <red>9</color>"
 `;
