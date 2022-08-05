@@ -67,4 +67,4 @@ export { toStartWith } from './toStartWith';
 export { toThrowWithMessage } from './toThrowWithMessage';
 export { toEqualIgnoringWhitespace } from './toEqualIgnoringWhitespace';
 export { toPartiallyContain } from './toPartiallyContain';
-export { toBeWithinRange } from './toBeWithinRange';
+export { toBeInRange } from './toBeInRange';

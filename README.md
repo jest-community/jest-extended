@@ -56,7 +56,7 @@ If you've come here to help contribute - Thanks! Take a look at the [contributin
     - [.toPartiallyContain(member)](#topartiallycontainmember)
     - [.toSatisfyAll(predicate)](#tosatisfyallpredicate)
     - [.toSatisfyAny(predicate)](#tosatisfyanypredicate)
-    - [.toBeWithinRange(min, max)](#tobewithinrangemin-max)
+    - [.toBeInRange(min, max)](#tobeinrangemin-max)
   - [Boolean](#boolean)
     - [.toBeBoolean()](#tobeboolean)
     - [.toBeTrue()](#tobetrue)
@@ -390,14 +390,14 @@ test('passes when any value in array pass given predicate', () => {
 });
 ```
 
-#### .toBeWithinRange(min, max)
+#### .toBeInRange(min, max)
 
-Use `.toBeWithinRange` when you want to check if array contains elements between min (inclusive) and max (inclusive).
+Use `.toBeInRange` when you want to check if array contains elements between min (inclusive) and max (exclusive).
 
 ```js
-test('passes when array contains elements within a given range', () => {
-  expect([3, 5, 8, 9]).toBeWithinRange(3, 9);
-  expect([3, 5, 8, 9]).not.toBeWithinRange(12, 15);
+test('passes when array contains elements in a given range', () => {
+  expect([3, 5, 8, 9]).toBeInRange(3, 10);
+  expect([3, 5, 8, 9]).not.toBeInRange(12, 15);
 });
 ```
 
