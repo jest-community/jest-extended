@@ -6,7 +6,9 @@ exports[`.not.toSatisfyAll fails when all values satisfy predicate 1`] = `
 Expected array to not satisfy predicate for all values:
   <green>[Function isOdd]</color>
 Received:
-  <red>[1, 3, 5, 7]</color>"
+  <red>[1, 3, 5, 7]</color>
+Failed on:
+  <red>1</color>"
 `;
 
 exports[`.toSatisfyAll fails when any value does not satisfy the predicate 1`] = `
@@ -15,5 +17,7 @@ exports[`.toSatisfyAll fails when any value does not satisfy the predicate 1`] =
 Expected array to satisfy predicate for all values:
   <green>[Function isOdd]</color>
 Received:
-  <red>[1, 3, 4, 5]</color>"
+  <red>[1, 3, 4, 5]</color>
+Failed on:
+  <red>4</color>"
 `;
