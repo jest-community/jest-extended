@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-declare namespace jest {
+export namespace jest {
   // noinspection JSUnusedGlobalSymbols
-  interface Matchers<R> {
+  export interface Matchers<R> {
     /**
      * Note: Currently unimplemented
      * Passing assertion
@@ -438,7 +438,7 @@ declare namespace jest {
   };
 
   // noinspection JSUnusedGlobalSymbols
-  interface Expect {
+  export interface Expect {
     /**
      * Note: Currently unimplemented
      * Passing assertion
