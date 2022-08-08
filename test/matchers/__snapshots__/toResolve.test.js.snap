@@ -3,13 +3,13 @@
 exports[`.not.toResolve fails when passed a promise that resolved 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).</intensity>true<dim>.</intensity>not<dim>.</intensity>toResolve<dim>()</intensity>
 
-Expected promise to reject, however it resolved with: \\"undefined\\".
+Expected promise to reject, however it resolved with: \\"<red>{\\"result\\": 123}</color>\\".
 "
 `;
 
-exports[`.toResolve fails when passed a promise that rejects with a primitive 1`] = `
+exports[`.toResolve fails when passed a promise that rejects 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).</intensity>true<dim>.</intensity>toResolve<dim>()</intensity>
 
-Expected promise to resolve, however it rejected with: \\"something went wrong\\".
+Expected promise to resolve, however it rejected with: \\"<red>[Error: something went wrong]</color>\\".
 "
 `;
