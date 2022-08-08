@@ -8,8 +8,8 @@ describe('.toResolve', () => {
     await expect(promise).toResolve();
   });
 
-  test('fails when passed a promise that rejects', async () => {
-    const promise = Promise.reject();
+  test('fails when passed a promise that rejects with a primitive', async () => {
+    const promise = Promise.reject('something went wrong');
     await expect(expect(promise).toResolve()).rejects.toThrowErrorMatchingSnapshot();
   });
 });
