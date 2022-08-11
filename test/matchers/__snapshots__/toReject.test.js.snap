@@ -3,13 +3,13 @@
 exports[`.not.toReject fails when passed a promise that rejects 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).</intensity>true<dim>.</intensity>not<dim>.</intensity>toReject<dim>()</intensity>
 
-Expected promise to resolve, however it rejected with: \\"<red>undefined</color>\\".
+Expected promise to resolve, however it rejected with: \\"<red>{\\"abc\\": \\"something went wrong\\"}</color>\\".
 "
 `;
 
 exports[`.toReject fails when passed a promise that resolved 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).</intensity>true<dim>.</intensity>toReject<dim>()</intensity>
 
-Expected promise to reject, however it resolved with: \\"<red>undefined</color>\\".
+Expected promise to reject, however it resolved with: \\"<red>123</color>\\".
 "
 `;
