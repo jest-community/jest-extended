@@ -15,7 +15,7 @@ export async function toResolve(actual) {
     printReceived(value) +
     '".\n';
 
-  const matcherResult = await actual.then(
+  return actual.then(
     value => ({
       pass: true,
       message: () =>
@@ -28,6 +28,4 @@ export async function toResolve(actual) {
       message: () => expectedToResolveButGotRejectedMessage(value, { isNot: this.isNot }),
     }),
   );
-
-  return matcherResult;
 }
