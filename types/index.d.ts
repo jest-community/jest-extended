@@ -172,6 +172,11 @@ declare namespace jest {
     toHaveBeenCalledOnce(): R;
 
     /**
+     * Use `.toHaveBeenCalledOnceWith` to check if a `Mock` was called exactly one time with the expected value.
+     */
+    toHaveBeenCalledOnceWith(): R;
+
+    /**
      * Use `.toBeNumber` when checking if a value is a `Number`.
      */
     toBeNumber(): R;
@@ -600,6 +605,11 @@ declare namespace jest {
      * Use `.toHaveBeenCalledOnce` to check if a `Mock` was called exactly one time.
      */
     toHaveBeenCalledOnce(): Result;
+
+    /**
+     * Use `.toHaveBeenCalledOnceWith` to check if a `Mock` was called exactly one time with the expected value.
+     */
+    toHaveBeenCalledOnceWith(): Result;
 
     /**
      * Use `.toBeNumber` when checking if a value is a `Number`.
