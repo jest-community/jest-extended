@@ -137,6 +137,8 @@ With yarn:
 yarn add -D jest-extended
 ```
 
+If you're using ESLint you might also want to checkout [`eslint-plugin-jest-extended`](https://github.com/jest-community/eslint-plugin-jest-extended).
+
 ## Setup
 
 Note that `jest-extended` only supports Jest version `27.2.5` and newer. If you're using an older version of Jest, use `1.2.1`.
