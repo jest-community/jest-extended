@@ -80,6 +80,10 @@
     "coveragePathIgnorePatterns": [
       "/node_modules/"
     ],
+    "snapshotFormat": {
+      "escapeString": true,
+      "printBasicPrototype": true
+    },
     "snapshotSerializers": [
       "jest-serializer-ansi-escapes"
     ],
