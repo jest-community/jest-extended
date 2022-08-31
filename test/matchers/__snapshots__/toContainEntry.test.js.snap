@@ -4,16 +4,16 @@ exports[`.not.toContainEntry fails when object contains given entry 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).not.toContainEntry(</intensity><green>expected</color><dim>)</intensity>
 
 Expected object to not contain entry:
-  <green>[\\"b\\", \\"bar\\"]</color>
+  <green>["b", "bar"]</color>
 Received:
-  <red>{\\"a\\": \\"foo\\", \\"b\\": \\"bar\\", \\"c\\": \\"baz\\"}</color>"
+  <red>{"a": "foo", "b": "bar", "c": "baz"}</color>"
 `;
 
 exports[`.toContainEntry fails when object does not contain given entry 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toContainEntry(</intensity><green>expected</color><dim>)</intensity>
 
 Expected object to contain entry:
-  <green>[\\"b\\", \\"foo\\"]</color>
+  <green>["b", "foo"]</color>
 Received:
-  <red>{\\"a\\": \\"foo\\", \\"b\\": \\"bar\\", \\"c\\": \\"baz\\"}</color>"
+  <red>{"a": "foo", "b": "bar", "c": "baz"}</color>"
 `;

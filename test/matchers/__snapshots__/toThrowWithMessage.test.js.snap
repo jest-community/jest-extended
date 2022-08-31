@@ -20,20 +20,20 @@ exports[`.toThrowWithMessage Async fails on rejects when error message provided 
 "<dim>expect(</intensity><red>function</color><dim>).toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
 
 Unexpected argument for message
-Expected: \\"string\\" or \\"regexp
-Got: \\"2\\""
+Expected: "string" or "regexp
+Got: "2""
 `;
 
 exports[`.toThrowWithMessage Async fails on rejects when error type is not provided 1`] = `
 "<dim>expect(</intensity><red>function</color><dim>).toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
 
-Expected type to be a function but instead \\"undefined\\" was found"
+Expected type to be a function but instead "undefined" was found"
 `;
 
 exports[`.toThrowWithMessage Async fails on rejects when return value is not provided 1`] = `
 "<dim>expect(</intensity><red>function</color><dim>).toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
 
-Expected type to be a function but instead \\"undefined\\" was found"
+Expected type to be a function but instead "undefined" was found"
 `;
 
 exports[`.toThrowWithMessage Async passes on rejects when given an Error with a regex error message 1`] = `
@@ -79,7 +79,7 @@ Thrown:
 exports[`.toThrowWithMessage fails when a callback function is not a function 1`] = `
 "<dim>expect(</intensity><red>function</color><dim>).toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
 
-Received value must be a function but instead \\"2\\" was found"
+Received value must be a function but instead "2" was found"
 `;
 
 exports[`.toThrowWithMessage fails when a callback provided doesnt throw an error 1`] = `
@@ -100,7 +100,7 @@ Thrown:
 exports[`.toThrowWithMessage fails when callback function is not provided 1`] = `
 "<dim>expect(</intensity><red>function</color><dim>).toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
 
-Received value must be a function but instead \\"undefined\\" was found"
+Received value must be a function but instead "undefined" was found"
 `;
 
 exports[`.toThrowWithMessage fails when error message does not match expected message 1`] = `
@@ -133,14 +133,14 @@ exports[`.toThrowWithMessage fails when error message provided is not a string o
 "<dim>expect(</intensity><red>function</color><dim>).toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
 
 Unexpected argument for message
-Expected: \\"string\\" or \\"regexp
-Got: \\"2\\""
+Expected: "string" or "regexp
+Got: "2""
 `;
 
 exports[`.toThrowWithMessage fails when error type is not provided 1`] = `
 "<dim>expect(</intensity><red>function</color><dim>).toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
 
-Expected type to be a function but instead \\"undefined\\" was found"
+Expected type to be a function but instead "undefined" was found"
 `;
 
 exports[`.toThrowWithMessage passes when given an Error with a regex error message 1`] = `

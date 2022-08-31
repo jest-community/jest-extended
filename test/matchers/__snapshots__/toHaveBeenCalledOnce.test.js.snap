@@ -23,7 +23,7 @@ Expected mock function to have been called exactly once, but it was called:
 exports[`.toHaveBeenCalledOnce fails when given value is not a jest spy or mock 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toHaveBeenCalledOnce(</intensity><green>expected</color><dim>)</intensity>
 
-Matcher error: <red>\\"received\\"</color> must be a mock or spy function
+Matcher error: <red>"received"</color> must be a mock or spy function
 
 Received has type:  function
 Received has value: <red>[Function mock1]</color>"

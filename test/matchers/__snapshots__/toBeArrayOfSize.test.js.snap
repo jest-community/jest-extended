@@ -37,7 +37,7 @@ Expected value to be an array of size:
   <green>1</color>
 Received:
   value: <red>{}</color>
-  length: <red>\\"Not Accessible\\"</color>"
+  length: <red>"Not Accessible"</color>"
 `;
 
 exports[`.toBeArrayOfSize fails when given type of 0 which is not an array 1`] = `
@@ -47,7 +47,7 @@ Expected value to be an array of size:
   <green>1</color>
 Received:
   value: <red>0</color>
-  length: <red>\\"Not Accessible\\"</color>"
+  length: <red>"Not Accessible"</color>"
 `;
 
 exports[`.toBeArrayOfSize fails when given type of NaN which is not an array 1`] = `
@@ -57,7 +57,7 @@ Expected value to be an array of size:
   <green>1</color>
 Received:
   value: <red>NaN</color>
-  length: <red>\\"Not Accessible\\"</color>"
+  length: <red>"Not Accessible"</color>"
 `;
 
 exports[`.toBeArrayOfSize fails when given type of false which is not an array 1`] = `
@@ -67,7 +67,7 @@ Expected value to be an array of size:
   <green>1</color>
 Received:
   value: <red>false</color>
-  length: <red>\\"Not Accessible\\"</color>"
+  length: <red>"Not Accessible"</color>"
 `;
 
 exports[`.toBeArrayOfSize fails when given type of null which is not an array 1`] = `
@@ -77,7 +77,7 @@ Expected value to be an array of size:
   <green>1</color>
 Received:
   value: <red>null</color>
-  length: <red>\\"Not Accessible\\"</color>"
+  length: <red>"Not Accessible"</color>"
 `;
 
 exports[`.toBeArrayOfSize fails when given type of true which is not an array 1`] = `
@@ -87,7 +87,7 @@ Expected value to be an array of size:
   <green>1</color>
 Received:
   value: <red>true</color>
-  length: <red>\\"Not Accessible\\"</color>"
+  length: <red>"Not Accessible"</color>"
 `;
 
 exports[`.toBeArrayOfSize fails when given type of undefined which is not an array 1`] = `
@@ -97,7 +97,7 @@ Expected value to be an array of size:
   <green>1</color>
 Received:
   value: <red>undefined</color>
-  length: <red>\\"Not Accessible\\"</color>"
+  length: <red>"Not Accessible"</color>"
 `;
 
 exports[`.toBeArrayOfSize fails when given type which is not an array 1`] = `
@@ -107,7 +107,7 @@ Expected value to be an array of size:
   <green>1</color>
 Received:
   value: <red>false</color>
-  length: <red>\\"Not Accessible\\"</color>"
+  length: <red>"Not Accessible"</color>"
 `;
 
 exports[`.toBeArrayOfSize fails when not given a parameter 1`] = `
@@ -127,5 +127,5 @@ Expected value to be an array of size:
   <green>5</color>
 Received:
   value: <red>undefined</color>
-  length: <red>\\"Not Accessible\\"</color>"
+  length: <red>"Not Accessible"</color>"
 `;

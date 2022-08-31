@@ -28,7 +28,7 @@ exports[`.toBeExtensible fails when not given an extensible object:  1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toBeExtensible()</intensity>
 
 Expected value to be extensible received:
-  <red>\\"\\"</color>"
+  <red>""</color>"
 `;
 
 exports[`.toBeExtensible fails when not given an extensible object: {} 1`] = `

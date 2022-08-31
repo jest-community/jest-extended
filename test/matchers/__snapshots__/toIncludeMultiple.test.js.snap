@@ -4,16 +4,16 @@ exports[`.not.toIncludeMultiple fails when string includes all substrings 1`] = 
 "<dim>expect(</intensity><red>received</color><dim>).not.toIncludeMultiple(</intensity><green>expected</color><dim>)</intensity>
 
 Expected string to not contain all substrings: 
-  <green>[\\"hello\\", \\"world\\"]</color>
+  <green>["hello", "world"]</color>
 Received: 
-  <red>\\"hello world\\"</color>"
+  <red>"hello world"</color>"
 `;
 
 exports[`.toIncludeMultiple fails when string does not include all substrings 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toIncludeMultiple(</intensity><green>expected</color><dim>)</intensity>
 
 Expected string to contain all substrings: 
-  <green>[\\"hello\\", \\"world\\", \\"bob\\"]</color>
+  <green>["hello", "world", "bob"]</color>
 Received:
-  <red>\\"hello world\\"</color>"
+  <red>"hello world"</color>"
 `;

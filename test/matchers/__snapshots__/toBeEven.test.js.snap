@@ -25,7 +25,7 @@ exports[`.toBeEven fails when not given an even number 3`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toBeEven()</intensity>
 
 Expected value to be an even number received:
- <red>\\"\\"</color>"
+ <red>""</color>"
 `;
 
 exports[`.toBeEven fails when not given an even number 4`] = `
