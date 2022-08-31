@@ -81,8 +81,8 @@
       "/node_modules/"
     ],
     "snapshotFormat": {
-      "escapeString": true,
-      "printBasicPrototype": true
+      "escapeString": false,
+      "printBasicPrototype": false
     },
     "snapshotSerializers": [
       "jest-serializer-ansi-escapes"

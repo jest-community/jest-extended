@@ -25,7 +25,7 @@ exports[`.toBeOdd fails when given not given an odd number 3`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toBeOdd()</intensity>
 
 Expected value to be odd received:
-  <red>\\"\\"</color>"
+  <red>""</color>"
 `;
 
 exports[`.toBeOdd fails when given not given an odd number 4`] = `

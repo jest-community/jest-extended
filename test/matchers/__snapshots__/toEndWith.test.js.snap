@@ -4,25 +4,25 @@ exports[`.not.toEndWith fails when string ends with given suffix 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).not.toEndWith(</intensity><green>expected</color><dim>)</intensity>
 
 Expected string to not end with:
-  <green>\\"world\\"</color>
+  <green>"world"</color>
 Received:
-  <red>\\"hello world\\"</color>"
+  <red>"hello world"</color>"
 `;
 
 exports[`.toEndWith fails when string does not end with the given suffix 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toEndWith(</intensity><green>expected</color><dim>)</intensity>
 
 Expected string to end with:
-  <green>\\"hello\\"</color>
+  <green>"hello"</color>
 Received:
-  <red>\\"hello world\\"</color>"
+  <red>"hello world"</color>"
 `;
 
 exports[`.toEndWith fails when the string is shorter than the given suffix 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toEndWith(</intensity><green>expected</color><dim>)</intensity>
 
 Expected string to end with:
-  <green>\\"hello world\\"</color>
+  <green>"hello world"</color>
 Received:
-  <red>\\"hello\\"</color>"
+  <red>"hello"</color>"
 `;
