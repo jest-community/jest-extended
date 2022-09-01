@@ -1,0 +1,144 @@
+import { TestFile } from '../../src/components/CustomSandpack';
+
+# String
+
+### .toBeArray()
+
+Use `.toBeArray` when checking if a value is an `Array`.
+
+<TestFile name="toBeArray">
+  {`test('passes when value is an array', () => {
+  expect([]).toBeArray();
+  expect([1]).toBeArray();
+  expect(true).not.toBeArray();
+});`}
+</TestFile>
+
+### .toBeString()
+
+Use `.toBeString` when checking if a value is a `String`.
+
+<TestFile name="toBeString">
+  {`test('passes when value is a string', () => {
+  expect('').toBeString();
+  expect('hello').toBeString();
+  expect(new String('hello')).toBeString();
+  expect(true).not.toBeString();
+});`}
+</TestFile>
+
+### .toBeHexadecimal(string)
+
+Use `.toBeHexadecimal` when checking if a value is a valid HTML hexadecimal color.
+
+<TestFile name="toBeHexadecimal">
+  {`test('passes when value is a valid hexadecimal', () => {
+  expect('#abc123').toBeHexadecimal();
+  expect('#FFF').toBeHexadecimal();
+  expect('#000000').toBeHexadecimal();
+  expect('#123ffg').not.toBeHexadecimal();
+});`}
+</TestFile>
+
+### .toBeDateString(string)
+
+Use `.toBeDateString` when checking if a value is a valid date string.
+
+<TestFile name="toBeDateString">
+  {`test('passes when value is a valid toBeDateString', () => {
+  expect('2019-11-27T14:05:07.520Z').toBeDateString();
+  expect('11/12/21').toBeDateString();
+  expect('not a date').not.toBeDateString();
+});`}
+</TestFile>
+
+### .toEqualCaseInsensitive(string)
+
+Use `.toEqualCaseInsensitive` when checking if a string is equal (===) to another ignoring the casing of both strings.
+
+<TestFile name="toEqualCaseInsensitive">
+  {`test('passes when strings are equal ignoring case', () => {
+  expect('hello world').toEqualCaseInsensitive('hello world');
+  expect('hello WORLD').toEqualCaseInsensitive('HELLO world');
+  expect('HELLO WORLD').toEqualCaseInsensitive('hello world');
+  expect('hello world').toEqualCaseInsensitive('HELLO WORLD');
+  expect('hello world').not.toEqualCaseInsensitive('hello');
+});`}
+</TestFile>
+
+### .toStartWith(prefix)
+
+Use `.toStartWith` when checking if a `String` starts with a given `String` prefix.
+
+<TestFile name="toStartWith">
+  {`test('passes when value is starts with given string', () => {
+  expect('hello world').toStartWith('hello');
+  expect('hello world').not.toStartWith('world');
+});`}
+</TestFile>
+
+### .toEndWith(suffix)
+
+Use `.toEndWith` when checking if a `String` ends with a given `String` suffix.
+
+<TestFile name="toEndWith">
+  {`test('passes when value is ends with given string', () => {
+  expect('hello world').toEndWith('world');
+  expect('hello world').not.toEndWith('hello');
+});`}
+</TestFile>
+
+### .toInclude(substring)
+
+Use `.toInclude` when checking if a `String` includes the given `String` substring.
+
+<TestFile name="toInclude">
+  {`test('passes when value includes substring', () => {
+  expect('hello world').toInclude('ell');
+  expect('hello world').not.toInclude('bob');
+});`}
+</TestFile>
+
+### .toIncludeRepeated(substring, times)
+
+Use `.toIncludeRepeated` when checking if a `String` includes the given `String` substring the correct number of times.
+
+<TestFile name="toIncludeRepeated">
+  {`test('passes when value includes substring n times', () => {
+  expect('hello hello world').toIncludeRepeated('hello', 2);
+  expect('hello hello world').not.toIncludeRepeated('hello', 1);
+});`}
+</TestFile>
+
+### .toIncludeMultiple([substring])
+
+Use `.toIncludeMultiple` when checking if a `String` includes all of the given substrings.
+
+<TestFile name="toIncludeMultiple">
+  {`test('passes when value includes all substrings', () => {
+  expect('hello world').toIncludeMultiple(['world', 'hello']);
+  expect('hello world').not.toIncludeMultiple(['world', 'hello', 'bob']);
+});`}
+</TestFile>
+
+### .toEqualIgnoringWhitespace(string)
+
+Use `.toEqualIgnoringWhitespace` when checking if a `String` is equal to another `String` ignoring white-space.
+
+<TestFile name="toEqualIgnoringWhitespace">
+  {`test('passes if strings are equal ignoring white-space', () => {
+  expect('hello world').toEqualIgnoringWhitespace(\`
+      hello
+      world
+  \`);
+  expect('SELECT * FROM TABLE WHERE CONDITION').toEqualIgnoringWhitespace(\`
+      SELECT * FROM TABLE
+      WHERE CONDITION
+  \`);
+  expect('.class { cssRule: value }').not.toEqualIgnoringWhitespace(\`
+      #id {
+          cssRule: value
+      }
+    \`);
+});`}
+</TestFile>

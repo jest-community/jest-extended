@@ -1,0 +1,41 @@
+import { TestFile } from '../../src/components/CustomSandpack';
+
+# Boolean
+
+### .toBeBoolean()
+
+Use `.toBeBoolean` when checking if a value is a `Boolean`.
+
+<TestFile name="toBeBoolean">
+  {`test('passes when value is a boolean', () => {
+  expect(false).toBeBoolean();
+  expect(true).toBeBoolean();
+  expect(1 === 1).toBeBoolean();
+  expect(1).not.toBeBoolean();
+});`}
+</TestFile>
+
+### .toBeTrue()
+
+Use `.toBeTrue` when checking a value is equal (`===`) to `true`.
+
+<TestFile name="toBeTrue">
+  {`const isJestCool = () => true;\n
+test('is jest cool', () => {
+  expect(isJestCool()).toBeTrue();
+  expect(false).not.toBeTrue();
+});`}
+
+</TestFile>
+
+### .toBeFalse()
+
+Use `.toBeFalse` when checking a value is equal (`===`) to `false`.
+
+<TestFile name="toBeFalse">
+  {`const areWeThereYet = () => false;\n
+test('returns false', () => {
+  expect(areWeThereYet()).toBeFalse();
+  expect(true).not.toBeFalse();
+});`}
+</TestFile>
