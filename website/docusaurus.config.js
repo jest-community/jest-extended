@@ -82,6 +82,10 @@ const config = {
                 label: 'Getting started',
                 to: '/docs/getting-started/install',
               },
+              {
+                label: 'Matchers',
+                to: '/docs/matchers',
+              },
             ],
           },
           {
@@ -96,7 +100,7 @@ const config = {
                 href: 'https://twitter.com/mattphillipsio',
               },
               {
-                label: 'Jest-community',
+                label: 'Jest-community Github Org',
                 href: 'https://github.com/jest-community',
               },
             ],
@@ -119,7 +123,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} jest-community. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} jest-extended. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
