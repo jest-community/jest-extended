@@ -1,0 +1,23 @@
+import { TestFile } from '../../src/components/CustomSandpack';
+
+# Promise
+
+### .toResolve()
+
+Use `.toResolve` when checking if a promise is resolved.
+
+<TestFile name="toResolve">
+  {`test('passes when a promise resolves', async () => {
+  await expect(Promise.resolve()).toResolve();
+});`}
+</TestFile>
+
+### .toReject()
+
+Use `.toReject` when checking if a promise is rejected.
+
+<TestFile name="toResolve">
+  {`test('passes when a promise rejects', async () => {
+  await expect(Promise.reject()).toReject();
+});`}
+</TestFile>
