@@ -14,8 +14,8 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        <code>jest-extended</code> is an assertion library that extends Jest's expect, giving developers more options
+        when writing tests.
       </>
     ),
   },
@@ -24,24 +24,27 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        <code>jest-extended</code> provides matchers for all data types so that you can quickly find the best matcher
+        for your test.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Powered by open source',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        All of the matchers are defined by the community and new matchers can be simply added by raising an issue or
+        pull request{' '}
+        <a target="_blank" href="https://github.com/jest-community/jest-extended">
+          here
+        </a>
       </>
     ),
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({ title, Svg, description }: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
