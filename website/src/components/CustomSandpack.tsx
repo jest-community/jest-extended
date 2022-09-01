@@ -7,6 +7,8 @@ import {
   SandpackTests,
 } from '@codesandbox/sandpack-react';
 import React from 'react';
+import { useColorMode } from '@docusaurus/theme-common';
+import { githubLight, dracula } from '@codesandbox/sandpack-themes';
 
 const setup = `import * as matchers from 'jest-extended';
 
@@ -37,9 +39,10 @@ export const Sandpack: React.FC<{ files: any }> = props => {
 };
 
 export const TestFile: React.FC<{ name: string; children: string }> = props => {
+  const { isDarkTheme } = useColorMode();
   return (
     <SandpackProvider
-      theme="dark"
+      theme={isDarkTheme ? dracula : githubLight}
       customSetup={{ entry: 'entry.js', dependencies: { 'jest-extended': '^3.0.2' } }}
       files={{
         '/entry.js': {
