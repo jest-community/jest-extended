@@ -4,7 +4,11 @@ sidebar_position: 2
 
 # Setup
 
-Note that `jest-extended` only supports Jest version `27.2.5` and newer. If you're using an older version of Jest, use `1.2.1`.
+:::caution
+`jest-extended` only supports Jest version `27.2.5` and newer. If you're using an older version of Jest, use `1.2.1`.
+:::
+
+Create a setup script with the following:
 
 ```javascript
 // ./testSetup.js

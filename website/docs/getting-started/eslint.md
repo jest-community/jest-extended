@@ -41,4 +41,6 @@ Then configure the rules you want to use under the rules section.
 }
 ```
 
+:::info
 Full docs can be found: [`eslint-plugin-jest-extended`](https://github.com/jest-community/eslint-plugin-jest-extended).
+:::

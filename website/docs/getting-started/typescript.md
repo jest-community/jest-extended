@@ -10,7 +10,9 @@ If your editor does not recognise the custom `jest-extended` matchers, add a `gl
 import 'jest-extended';
 ```
 
-_Note: When using `ts-jest >= 25.5.0`_
+:::caution
+When using `ts-jest >= 25.5.0`
+:::
 
 Since the breaking changes in `25.5.0` you may also need to update your `tsconfig.json` to include the new `global.d.ts` file in the `files` property like so:
 
@@ -32,4 +34,6 @@ If the above import syntax does not work, replace it with the following:
 /// <reference types="jest-extended" />
 ```
 
+:::info
 An example of project with Typescript globally setup can be found [here](https://github.com/jest-community/jest-extended/tree/main/examples/typescript/all).
+:::
