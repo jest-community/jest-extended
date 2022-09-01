@@ -19,7 +19,8 @@
     "test": "jest --color=true",
     "test:coverage": "yarn test --coverage",
     "test:watch": "yarn test --watch",
-    "typecheck": "tsc --noEmit types/index.d.ts"
+    "typecheck": "tsc --noEmit types/index.d.ts",
+    "dev:docs": "cd website && yarn start"
   },
   "keywords": [
     "jest",
