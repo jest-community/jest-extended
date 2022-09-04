@@ -14,10 +14,17 @@
   .heroBanner {
     padding: 2rem;
   }
+  .playground {
+    padding: 2rem;
+  }
 }
 
 .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.playground {
+  padding: 4rem 2rem;
 }
