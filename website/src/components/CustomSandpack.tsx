@@ -39,10 +39,10 @@ export const Sandpack: React.FC<{ files: any }> = props => {
 };
 
 export const TestFile: React.FC<{ name: string; children: string }> = props => {
-  const { isDarkTheme } = useColorMode();
+  const { colorMode } = useColorMode();
   return (
     <SandpackProvider
-      theme={isDarkTheme ? dracula : githubLight}
+      theme={colorMode === 'dark' ? dracula : githubLight}
       customSetup={{ entry: 'entry.js', dependencies: { 'jest-extended': '^3.0.2' } }}
       files={{
         '/entry.js': {
