@@ -58,7 +58,7 @@ export const TestFile: React.FC<{ name: string; children: string }> = props => {
     >
       <SandpackLayout>
         <SandpackCodeEditor showTabs />
-        <SandpackTests />
+        <SandpackTests style={{ minHeight: 150 }} />
       </SandpackLayout>
     </SandpackProvider>
   );
