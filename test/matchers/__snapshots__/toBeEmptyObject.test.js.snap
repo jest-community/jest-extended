@@ -11,5 +11,5 @@ exports[`.toBeEmptyObject fails when not given an empty object 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toBeEmptyObject()</intensity>
 
 Expected value to be an empty object, received:
-  <red>{\\"property1\\": \\"something\\"}</color>"
+  <red>{"property1": "something"}</color>"
 `;

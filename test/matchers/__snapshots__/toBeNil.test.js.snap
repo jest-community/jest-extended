@@ -11,5 +11,5 @@ exports[`.toBeNil fails when the value is not null or undefined 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toBeNil()</intensity>
 
 Expected value to be null or undefined, received:
-  <red>\\"value\\"</color>"
+  <red>"value"</color>"
 `;

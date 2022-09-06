@@ -51,6 +51,7 @@ export { toEqualCaseInsensitive } from './toEqualCaseInsensitive';
 export { toHaveBeenCalledAfter } from './toHaveBeenCalledAfter';
 export { toHaveBeenCalledBefore } from './toHaveBeenCalledBefore';
 export { toHaveBeenCalledOnce } from './toHaveBeenCalledOnce';
+export { toHaveBeenCalledOnceWith } from './toHaveBeenCalledOnceWith';
 export { toInclude } from './toInclude';
 export { toIncludeAllMembers } from './toIncludeAllMembers';
 export { toIncludeAllPartialMembers } from './toIncludeAllPartialMembers';

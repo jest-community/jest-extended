@@ -4,18 +4,18 @@ exports[`.not.toIncludeAnyMembers fails when given array contains array value 1`
 "<dim>expect(</intensity><red>received</color><dim>).not.toIncludeAnyMembers(</intensity><green>expected</color><dim>)</intensity>
 
 Expected list to not include any of the following members:
-  <green>[[{\\"hello\\": \\"world\\"}], 7]</color>
+  <green>[[{"hello": "world"}], 7]</color>
 Received:
-  <red>[[{\\"hello\\": \\"world\\"}]]</color>"
+  <red>[[{"hello": "world"}]]</color>"
 `;
 
 exports[`.not.toIncludeAnyMembers fails when given array contains object value 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).not.toIncludeAnyMembers(</intensity><green>expected</color><dim>)</intensity>
 
 Expected list to not include any of the following members:
-  <green>[{\\"foo\\": \\"bar\\"}]</color>
+  <green>[{"foo": "bar"}]</color>
 Received:
-  <red>[{\\"foo\\": \\"bar\\"}]</color>"
+  <red>[{"foo": "bar"}]</color>"
 `;
 
 exports[`.not.toIncludeAnyMembers fails when given object contains primitive value 1`] = `
@@ -31,7 +31,7 @@ exports[`.toIncludeAnyMembers fails when expected object does not contain array 
 "<dim>expect(</intensity><red>received</color><dim>).toIncludeAnyMembers(</intensity><green>expected</color><dim>)</intensity>
 
 Expected list to include any of the following members:
-  <green>\\"world\\"</color>
+  <green>"world"</color>
 Received:
   <red>[1, 2, 3]</color>"
 `;
