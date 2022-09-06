@@ -36,6 +36,8 @@ See the [Installation Guide](https://jest-extended.jestcommunity.dev/docs/gettin
 
 ## Setup
 
+See the [Setup instructions](https://jest-extended.jestcommunity.dev/docs/getting-started/setup) on Jest Extended documentation site.
+
 ## Matchers
 
 See all available [matchers and interactive repl](https://jest-extended.jestcommunity.dev/docs/matchers) on Jest Extended documentation site.
