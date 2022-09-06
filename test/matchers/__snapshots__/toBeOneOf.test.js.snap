@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toBeOneOf fails when value is in given array 1`] = `
-"<dim>expect(</intensity><red>item</color><dim>).not.toBeOneOf(</intensity><green>list</color><dim>)</intensity>
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeOneOf(</intensity><green>expected</color><dim>)</intensity>
 
 Expected value to not be in list:
   <green>[1, 2, 3]</color>
@@ -10,7 +10,7 @@ Received:
 `;
 
 exports[`.toBeOneOf fails when value is not in given array 1`] = `
-"<dim>expect(</intensity><red>item</color><dim>).toBeOneOf(</intensity><green>list</color><dim>)</intensity>
+"<dim>expect(</intensity><red>received</color><dim>).toBeOneOf(</intensity><green>expected</color><dim>)</intensity>
 
 Expected value to be in list:
   <green>[1, 2, 3]</color>
