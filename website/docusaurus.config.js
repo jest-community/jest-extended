@@ -49,14 +49,13 @@ const config = {
         },
         items: [
           {
-            type: 'doc',
-            docId: 'index',
+            to: '/docs',
             position: 'left',
             label: 'Docs',
+            activeBaseRegex: '/docs(/+)$',
           },
           {
-            type: 'doc',
-            docId: 'matchers/index',
+            to: '/docs/matchers',
             position: 'left',
             label: 'API',
           },
