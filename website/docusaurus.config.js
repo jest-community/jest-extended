@@ -41,6 +41,13 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      image: 'img/logo.png',
+      metadata: [
+        {
+          name: 'twitter:card',
+          content: 'summary',
+        },
+      ],
       navbar: {
         title: 'Jest Extended',
         logo: {
