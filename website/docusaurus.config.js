@@ -135,6 +135,12 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      algolia: {
+        appId: '6QMK05JVSZ',
+        apiKey: 'c62a0c0e9e4d67e3f7bfd69210b06dd5',
+        indexName: 'jest-extended',
+        contextualSearch: true,
+      },
     }),
 };
 
