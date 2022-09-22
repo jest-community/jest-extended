@@ -71,7 +71,7 @@ declare namespace jest {
     toIncludeAllMembers<E = unknown>(members: readonly E[]): R;
 
     /**
-     * Use `.toIncludeAllMembersInOrder` when checking if an `Array` contains all of the same members of a given ordered set in the same order.
+     * Use `.toIncludeAllMembersInOrder` when checking if an `Array` contains all of the same members of a given array in the same order.
      * @param {Array.<*>} members
      */
     toIncludeAllMembersInOrder<E = unknown>(members: readonly E[]): R;
@@ -160,7 +160,10 @@ declare namespace jest {
      * @param {Mock} mock
      * @param {boolean} [failIfNoSecondInvocation=true]
      */
-    toHaveBeenCalledBefore(mock: jest.MockInstance<unknown, unknown[]>, failIfNoSecondInvocation?: boolean): R;
+    toHaveBeenCalledBefore(
+      mock: jest.MockInstance<unknown, unknown[]>,
+      failIfNoSecondInvocation?: boolean,
+    ): R;
 
     /**
      * Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another `Mock`.
@@ -170,7 +173,10 @@ declare namespace jest {
      * @param {Mock} mock
      * @param {boolean} [failIfNoFirstInvocation=true]
      */
-    toHaveBeenCalledAfter(mock: jest.MockInstance<unknown, unknown[]>, failIfNoFirstInvocation?: boolean): R;
+    toHaveBeenCalledAfter(
+      mock: jest.MockInstance<unknown, unknown[]>,
+      failIfNoFirstInvocation?: boolean,
+    ): R;
 
     /**
      * Use `.toHaveBeenCalledOnce` to check if a `Mock` was called exactly one time.
@@ -303,21 +309,27 @@ declare namespace jest {
      *
      * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainEntries<E = unknown>(entries: readonly (readonly [keyof E, E[keyof E]])[]): R;
+    toContainEntries<E = unknown>(
+      entries: readonly (readonly [keyof E, E[keyof E]])[],
+    ): R;
 
     /**
      * Use `.toContainAllEntries` when checking if an object only contains all of the provided entries.
      *
      * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainAllEntries<E = unknown>(entries: readonly (readonly [keyof E, E[keyof E]])[]): R;
+    toContainAllEntries<E = unknown>(
+      entries: readonly (readonly [keyof E, E[keyof E]])[],
+    ): R;
 
     /**
      * Use `.toContainAnyEntries` when checking if an object contains at least one of the provided entries.
      *
      * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainAnyEntries<E = unknown>(entries: readonly (readonly [keyof E, E[keyof E]])[]): R;
+    toContainAnyEntries<E = unknown>(
+      entries: readonly (readonly [keyof E, E[keyof E]])[],
+    ): R;
 
     /**
      * Use `.toBeExtensible` when checking if an object is extensible.
@@ -590,7 +602,10 @@ declare namespace jest {
      * @param {Mock} mock
      * @param {boolean} [failIfNoSecondInvocation=true]
      */
-    toHaveBeenCalledBefore(mock: jest.MockInstance<unknown, unknown[]>, failIfNoSecondInvocation: boolean): any;
+    toHaveBeenCalledBefore(
+      mock: jest.MockInstance<unknown, unknown[]>,
+      failIfNoSecondInvocation: boolean,
+    ): any;
 
     /**
      * Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another `Mock`.
@@ -600,7 +615,10 @@ declare namespace jest {
      * @param {Mock} mock
      * @param {boolean} [failIfNoFirstInvocation=true]
      */
-    toHaveBeenCalledAfter(mock: jest.MockInstance<unknown, unknown[]>, failIfNoFirstInvocation: boolean): any;
+    toHaveBeenCalledAfter(
+      mock: jest.MockInstance<unknown, unknown[]>,
+      failIfNoFirstInvocation: boolean,
+    ): any;
 
     /**
      * Use `.toHaveBeenCalledOnce` to check if a `Mock` was called exactly one time.
@@ -728,21 +746,27 @@ declare namespace jest {
      *
      * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainEntries<E = unknown>(entries: readonly (readonly [keyof E, E[keyof E]])[]): any;
+    toContainEntries<E = unknown>(
+      entries: readonly (readonly [keyof E, E[keyof E]])[],
+    ): any;
 
     /**
      * Use `.toContainAllEntries` when checking if an object only contains all of the provided entries.
      *
      * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainAllEntries<E = unknown>(entries: readonly (readonly [keyof E, E[keyof E]])[]): any;
+    toContainAllEntries<E = unknown>(
+      entries: readonly (readonly [keyof E, E[keyof E]])[],
+    ): any;
 
     /**
      * Use `.toContainAnyEntries` when checking if an object contains at least one of the provided entries.
      *
      * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainAnyEntries<E = unknown>(entries: readonly (readonly [keyof E, E[keyof E]])[]): any;
+    toContainAnyEntries<E = unknown>(
+      entries: readonly (readonly [keyof E, E[keyof E]])[],
+    ): any;
 
     /**
      * Use `.toBeExtensible` when checking if an object is extensible.
@@ -823,7 +847,10 @@ declare namespace jest {
      * @param {Function} type
      * @param {String | RegExp} message
      */
-    toThrowWithMessage(type: (...args: any[]) => any, message: string | RegExp): any;
+    toThrowWithMessage(
+      type: (...args: any[]) => any,
+      message: string | RegExp,
+    ): any;
 
     /**
      * Use `.toBeEmptyObject` when checking if a value is an empty `Object`.

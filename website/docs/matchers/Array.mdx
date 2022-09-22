@@ -39,10 +39,10 @@ Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same 
 
 ### .toIncludeAllMembersInOrder([members])
 
-Use `.toIncludeAllMembersInOrder` when checking if an `Array` contains all of the same members of a given ordered set in the same order.
+Use `.toIncludeAllMembersInOrder` when checking if an `Array` contains all of the same members of a given array in the same order.
 
 <TestFile name="toIncludeAllMembersInOrder">
-  {`test('passes when given array values match the members and order of the ordered set', () => {
+  {`test('passes when given array values match the members and order of array', () => {
   expect([1, 2, 3]).toIncludeAllMembersInOrder([1, 2, 3]);
   expect([{ foo: 'bar', }, { baz: 'qux' }]).toIncludeAllMembersInOrder([{ foo: 'bar' }, { baz: 'qux' }]);
 });`}
