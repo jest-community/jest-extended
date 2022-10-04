@@ -45,7 +45,6 @@ To automatically extend `expect` with all matchers, you can use
 ```javascript
 import {expect} from "vitest";
 import * as matchers from "jest-extended";
-
 expect.extend(matchers);
 ```
 
