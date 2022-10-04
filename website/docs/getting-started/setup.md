@@ -37,3 +37,24 @@ To automatically extend `expect` with all matchers, you can use
   "setupFilesAfterEnv": ["jest-extended/all"]
 }
 ```
+
+## Use with `vitest`
+
+`jest-extended` works with `vitest` because their `expect.extend` API is compatible. In your setup script:
+
+```javascript
+import {expect} from "vitest";
+import * as matchers from "jest-extended";
+
+expect.extend(matchers);
+```
+
+Add this setup script to your `vitest.config.js`:
+
+```javascript
+export default defineConfig({
+  test: {
+    setupFiles: ["./testSetup.js"],
+  },
+});
+```
