@@ -220,6 +220,14 @@ declare namespace jest {
     toBeWithin(start: number, end: number): R;
 
     /**
+     * Use `.toBeInRange` when checking if an array has elements in range min (inclusive) and max (inclusive).
+     *
+     * @param min
+     * @param max
+     */
+    toBeInRange(min: number, max: number): R;
+
+    /**
      * Use `.toBeInteger` when checking if a value is an integer.
      */
     toBeInteger(): R;
@@ -655,7 +663,7 @@ declare namespace jest {
      * @param min
      * @param max
      */
-    toBeInRange(min: number, max: number): Result;
+    toBeInRange(min: number, max: number): any;
 
     /**
      * Use `.toBeObject` when checking if a value is an `Object`.
