@@ -44,10 +44,7 @@ export default function Home(): JSX.Element {
           <h2>Playground</h2>
           <p>
             All <code>jest-extended</code> matchers are available in this playground. See{' '}
-            <Link className="" to="/docs/">
-              API
-            </Link>{' '}
-            for all available matchers.
+            <Link to="/docs/matchers">API</Link> for all available matchers.
           </p>
           <TestFile name="playground.test.js">{code}</TestFile>
         </div>
