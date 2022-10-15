@@ -4,7 +4,7 @@ export function toBeOneOf(actual, expected) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const passMessage =
-    matcherHint('.not.toBeOneOf', 'item', 'list') +
+    matcherHint('.not.toBeOneOf') +
     '\n\n' +
     'Expected value to not be in list:\n' +
     `  ${printExpected(expected)}\n` +
@@ -12,7 +12,7 @@ export function toBeOneOf(actual, expected) {
     `  ${printReceived(actual)}`;
 
   const failMessage =
-    matcherHint('.toBeOneOf', 'item', 'list') +
+    matcherHint('.toBeOneOf') +
     '\n\n' +
     'Expected value to be in list:\n' +
     `  ${printExpected(expected)}\n` +

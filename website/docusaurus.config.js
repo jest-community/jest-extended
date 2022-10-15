@@ -41,6 +41,13 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      image: 'img/logo.png',
+      metadata: [
+        {
+          name: 'twitter:card',
+          content: 'summary',
+        },
+      ],
       navbar: {
         title: 'Jest Extended',
         logo: {
@@ -49,14 +56,13 @@ const config = {
         },
         items: [
           {
-            type: 'doc',
-            docId: 'index',
+            to: '/docs',
             position: 'left',
             label: 'Docs',
+            activeBaseRegex: '/docs(/+)$',
           },
           {
-            type: 'doc',
-            docId: 'matchers/index',
+            to: '/docs/matchers',
             position: 'left',
             label: 'API',
           },
@@ -128,6 +134,12 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+      },
+      algolia: {
+        appId: '6QMK05JVSZ',
+        apiKey: 'c62a0c0e9e4d67e3f7bfd69210b06dd5',
+        indexName: 'jest-extended',
+        contextualSearch: true,
       },
     }),
 };
