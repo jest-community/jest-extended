@@ -127,5 +127,10 @@
   },
   "peerDependencies": {
     "jest": ">=27.2.5"
+  },
+  "peerDependenciesMeta": {
+    "jest": {
+      "optional": true
+    }
   }
 }
