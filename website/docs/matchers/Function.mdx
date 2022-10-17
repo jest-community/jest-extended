@@ -15,6 +15,45 @@ Use `.toBeFunction` when checking if a value is a `Function`.
 });`}
 </TestFile>
 
+### .toChange(checker)
+
+Use `.toChange` when checking if the callback function mutates a piece of state that is queried by the checker function.
+
+<TestFile name="toChange">
+  {`
+test('passes when given a value that the mutator increments', () => {
+  let value = 0;
+  expect(() => value++).toChange(() => value);
+});
+  `.trim()}
+</TestFile>
+
+### .toChangeBy(checker, by)
+
+Use `.toChangeBy` when checking if the callback function mutates a piece of state by a specific amount.
+
+<TestFile name="toChangeBy">
+  {`
+test('passes when given a value that the mutator decrements', () => {
+  let value = 1;
+  expect(() => value--).toChangeBy(() => value, -1);
+});
+  `.trim()}
+</TestFile>
+
+### .toChangeTo(checker, to)
+
+Use `.toChangeTo` when checking if the callback function mutates a piece of state to a target value.
+
+<TestFile name="toChangeTo">
+  {`
+test('passes when ', () => {
+  let value = 1;
+  expect(() => value = 10).toChangeTo(() => value, 10);
+});
+  `.trim()}
+</TestFile>
+
 ### .toThrowWithMessage(type, message)
 
 Use `.toThrowWithMessage` when checking if a callback function throws an error with a given error type and given error message. Message can either be a `String` or a `RegExp`.
