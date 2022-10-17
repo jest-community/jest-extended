@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toChange fails when a value expected not to change defies all expectations and changes 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toChange()</intensity>
+
+Expected value to not change, received:
+  <red>1</color>"
+`;
+
+exports[`.not.toChange fails when mutating a counter 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toChange()</intensity>
+
+Expected value to not change, received:
+  <red>1</color>"
+`;
+
+exports[`.toChange fails when a given value does not increment 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toChange()</intensity>
+
+Expected value to change, received:
+  <red>0</color>"
+`;
+
+exports[`.toChange fails when not mutating a counter 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toChange()</intensity>
+
+Expected value to change, received:
+  <red>0</color>"
+`;
