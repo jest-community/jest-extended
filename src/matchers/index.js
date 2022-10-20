@@ -68,3 +68,4 @@ export { toStartWith } from './toStartWith';
 export { toThrowWithMessage } from './toThrowWithMessage';
 export { toEqualIgnoringWhitespace } from './toEqualIgnoringWhitespace';
 export { toPartiallyContain } from './toPartiallyContain';
+export { toBeInRange } from './toBeInRange';
