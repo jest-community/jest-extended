@@ -174,7 +174,7 @@ declare namespace jest {
     /**
      * Use `.toHaveBeenCalledOnceWith` to check if a `Mock` was called exactly one time with the expected value.
      */
-    toHaveBeenCalledOnceWith(...args: unknown[]): R;
+    toHaveBeenCalledOnceWith(arg: unknown): R;
 
     /**
      * Use `.toBeNumber` when checking if a value is a `Number`.
