@@ -47,7 +47,7 @@ Use `.toChangeTo` when checking if the callback function mutates a piece of stat
 
 <TestFile name="toChangeTo">
   {`
-test('passes when ', () => {
+test('passes when the value being checked becomes the provided value', () => {
   let value = 1;
   expect(() => value = 10).toChangeTo(() => value, 10);
 });
