@@ -44,6 +44,13 @@ describe('.toChangeTo', () => {
       }).toChangeTo(() => counter.count(), 0),
     ).toThrowErrorMatchingSnapshot();
   });
+
+  test('passes when given a non-numeric value', () => {
+    let special = 'spicy chicken sandwich';
+    expect(() => {
+      special = 'meatloaf';
+    }).toChangeTo(() => special, 'meatloaf');
+  });
 });
 
 describe('.not.toChange', () => {
