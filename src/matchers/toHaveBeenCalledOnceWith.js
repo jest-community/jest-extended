@@ -1,6 +1,6 @@
 import { isJestMockOrSpy } from '../utils';
 
-export function toHaveBeenCalledOnceWith(received, expected) {
+export function toHaveBeenCalledOnceWith(received, ...expected) {
   const { printReceived, printExpected, printWithType, matcherHint } = this.utils;
 
   if (!isJestMockOrSpy(received)) {
@@ -16,7 +16,7 @@ export function toHaveBeenCalledOnceWith(received, expected) {
   }
 
   const passOnce = received.mock.calls.length === 1;
-  const pass = passOnce && this.equals(expected, received.mock.calls[0][0]);
+  const pass = passOnce && this.equals(expected, received.mock.calls[0]);
 
   return {
     pass,
@@ -26,7 +26,7 @@ export function toHaveBeenCalledOnceWith(received, expected) {
           matcherHint('.not.toHaveBeenCalledOnceWith') +
           '\n\n' +
           `Expected mock function to have been called any amount of times but one with ${printExpected(
-            expected,
+            received.mock.calls[0],
           )}, but it was called exactly once with ${printExpected(expected)}.`
         );
       }

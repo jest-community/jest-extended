@@ -3,7 +3,7 @@
 exports[`.not.toHaveBeenCalledOnceWith fails if mock was invoked exactly once with the expected value 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).not.toHaveBeenCalledOnceWith(</intensity><green>expected</color><dim>)</intensity>
 
-Expected mock function to have been called any amount of times but one with <green>"hello"</color>, but it was called exactly once with <green>"hello"</color>."
+Expected mock function to have been called any amount of times but one with <green>["hello"]</color>, but it was called exactly once with <green>["hello"]</color>."
 `;
 
 exports[`.toHaveBeenCalledOnceWith fails if mock was invoked more than once, indicating how many times it was invoked 1`] = `
@@ -32,6 +32,6 @@ Received has value: <red>[Function mock1]</color>"
 exports[`.toHaveBeenCalledOnceWith fails when given value is not the expected one 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toHaveBeenCalledOnceWith(</intensity><green>expected</color><dim>)</intensity>
 
-Expected mock function to have been called exactly once with <red>"hello"</color>, but it was called with:
+Expected mock function to have been called exactly once with <red>["hello"]</color>, but it was called with:
   <red>"not hello"</color>"
 `;
