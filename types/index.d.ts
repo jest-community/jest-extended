@@ -453,7 +453,7 @@ declare namespace jest {
      *
      * @param {String} message
      */
-    pass(message: string): any;
+    pass(message: string): void;
 
     /**
      * Note: Currently unimplemented
@@ -461,128 +461,128 @@ declare namespace jest {
      *
      * @param {String} message
      */
-    fail(message: string): any;
+    fail(message: string): void;
 
     /**
      * Use .toBeEmpty when checking if a String '', Array [] or Object {} is empty.
      */
-    toBeEmpty(): any;
+    toBeEmpty(): void;
 
     /**
      * Use .toBeOneOf when checking if a value is a member of a given Array.
      * @param {Array.<*>} members
      */
-    toBeOneOf<E = unknown>(members: readonly E[]): any;
+    toBeOneOf<E = unknown>(members: readonly E[]): void;
 
     /**
      * Use `.toBeNil` when checking a value is `null` or `undefined`.
      */
-    toBeNil(): any;
+    toBeNil(): void;
 
     /**
      * Use `.toSatisfy` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean`.
      * @param {Function} predicate
      */
-    toSatisfy<E = any>(predicate: (x: E) => boolean): any;
+    toSatisfy<E = any>(predicate: (x: E) => boolean): void;
 
     /**
      * Use `.toBeArray` when checking if a value is an `Array`.
      */
-    toBeArray(): any;
+    toBeArray(): void;
 
     /**
      * Use `.toBeArrayOfSize` when checking if a value is an `Array` of size x.
      * @param {Number} x
      */
-    toBeArrayOfSize(x: number): any;
+    toBeArrayOfSize(x: number): void;
 
     /**
      * Use `.toBeAfter` when checking if a date occurs after `date`.
      * @param {Date} date
      */
-    toBeAfter(date: Date): any;
+    toBeAfter(date: Date): void;
 
     /**
      * Use `.toBeBefore` when checking if a date occurs before `date`.
      * @param {Date} date
      */
-    toBeBefore(date: Date): any;
+    toBeBefore(date: Date): void;
 
     /**
      * Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
      * @param {Array.<*>} members
      */
-    toIncludeAllMembers<E = unknown>(members: readonly E[]): any;
+    toIncludeAllMembers<E = unknown>(members: readonly E[]): void;
 
     /**
      * Use `.toIncludeAnyMembers` when checking if an `Array` contains any of the members of a given set.
      * @param {Array.<*>} members
      */
-    toIncludeAnyMembers<E = unknown>(members: readonly E[]): any;
+    toIncludeAnyMembers<E = unknown>(members: readonly E[]): void;
 
     /**
      * Use `.toIncludeSameMembers` when checking if two arrays contain equal values, in any order.
      * @param {Array.<*>} members
      */
-    toIncludeSameMembers<E = unknown>(members: readonly E[]): any;
+    toIncludeSameMembers<E = unknown>(members: readonly E[]): void;
 
     /**
      * Use `.toPartiallyContain` when checking if any array value matches the partial member.
      * @param {*} member
      */
-    toPartiallyContain<E = unknown>(member: E): any;
+    toPartiallyContain<E = unknown>(member: E): void;
 
     /**
      * Use `.toSatisfyAll` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean` for all values in an array.
      * @param {Function} predicate
      */
-    toSatisfyAll<E = any>(predicate: (x: E) => boolean): any;
+    toSatisfyAll<E = any>(predicate: (x: E) => boolean): void;
 
     /**
      * Use `.toSatisfyAny` when you want to use a custom matcher by supplying a predicate function that returns `true` for any matching value in an array.
      * @param {Function} predicate
      */
-    toSatisfyAny(predicate: (x: any) => boolean): any;
+    toSatisfyAny(predicate: (x: any) => boolean): void;
 
     /**
      * Use `.toBeBoolean` when checking if a value is a `Boolean`.
      */
-    toBeBoolean(): any;
+    toBeBoolean(): void;
 
     /**
      * Use `.toBeTrue` when checking a value is equal (===) to `true`.
      */
-    toBeTrue(): any;
+    toBeTrue(): void;
 
     /**
      * Use `.toBeFalse` when checking a value is equal (===) to `false`.
      */
-    toBeFalse(): any;
+    toBeFalse(): void;
 
     /**
      * Use `.toBeDate` when checking if a value is a `Date`.
      */
-    toBeDate(): any;
+    toBeDate(): void;
 
     /**
      * Use `.toBeValidDate` when checking if a value is a `valid Date`.
      */
-    toBeValidDate(): any;
+    toBeValidDate(): void;
 
     /**
      * Use `.toBeFunction` when checking if a value is a `Function`.
      */
-    toBeFunction(): any;
+    toBeFunction(): void;
 
     /**
      * Use `.toBeDateString` when checking if a value is a valid date string.
      */
-    toBeDateString(): any;
+    toBeDateString(): void;
 
     /**
      * Use `.toBeHexadecimal` when checking if a value is a valid HTML hex color.
      */
-    toBeHexadecimal(): any;
+    toBeHexadecimal(): void;
 
     /**
      * Use `.toHaveBeenCalledBefore` when checking if a `Mock` was called before another `Mock`.
@@ -592,7 +592,7 @@ declare namespace jest {
      * @param {Mock} mock
      * @param {boolean} [failIfNoSecondInvocation=true]
      */
-    toHaveBeenCalledBefore(mock: jest.MockInstance<unknown, unknown[]>, failIfNoSecondInvocation: boolean): any;
+    toHaveBeenCalledBefore(mock: jest.MockInstance<unknown, unknown[]>, failIfNoSecondInvocation: boolean): void;
 
     /**
      * Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another `Mock`.
@@ -602,52 +602,52 @@ declare namespace jest {
      * @param {Mock} mock
      * @param {boolean} [failIfNoFirstInvocation=true]
      */
-    toHaveBeenCalledAfter(mock: jest.MockInstance<unknown, unknown[]>, failIfNoFirstInvocation: boolean): any;
+    toHaveBeenCalledAfter(mock: jest.MockInstance<unknown, unknown[]>, failIfNoFirstInvocation: boolean): void;
 
     /**
      * Use `.toHaveBeenCalledOnce` to check if a `Mock` was called exactly one time.
      */
-    toHaveBeenCalledOnce(): any;
+    toHaveBeenCalledOnce(): void;
 
     /**
      * Use `.toHaveBeenCalledOnceWith` to check if a `Mock` was called exactly one time with the expected value.
      */
-    toHaveBeenCalledOnceWith(): any;
+    toHaveBeenCalledOnceWith(): void;
 
     /**
      * Use `.toBeNumber` when checking if a value is a `Number`.
      */
-    toBeNumber(): any;
+    toBeNumber(): void;
 
     /**
      * Use `.toBeNaN` when checking a value is `NaN`.
      */
-    toBeNaN(): any;
+    toBeNaN(): void;
 
     /**
      * Use `.toBeFinite` when checking if a value is a `Number`, not `NaN` or `Infinity`.
      */
-    toBeFinite(): any;
+    toBeFinite(): void;
 
     /**
      * Use `.toBePositive` when checking if a value is a positive `Number`.
      */
-    toBePositive(): any;
+    toBePositive(): void;
 
     /**
      * Use `.toBeNegative` when checking if a value is a negative `Number`.
      */
-    toBeNegative(): any;
+    toBeNegative(): void;
 
     /**
      * Use `.toBeEven` when checking if a value is an even `Number`.
      */
-    toBeEven(): any;
+    toBeEven(): void;
 
     /**
      * Use `.toBeOdd` when checking if a value is an odd `Number`.
      */
-    toBeOdd(): any;
+    toBeOdd(): void;
 
     /**
      * Use `.toBeWithin` when checking if a number is in between the given bounds of: start (inclusive) and end (exclusive).
@@ -655,7 +655,7 @@ declare namespace jest {
      * @param {Number} start
      * @param {Number} end
      */
-    toBeWithin(start: number, end: number): any;
+    toBeWithin(start: number, end: number): void;
 
     /**
      * Use `.toBeInRange` when checking if an array has elements in range min (inclusive) and max (inclusive).
@@ -663,154 +663,154 @@ declare namespace jest {
      * @param min
      * @param max
      */
-    toBeInRange(min: number, max: number): any;
+    toBeInRange(min: number, max: number): void;
 
     /**
      * Use `.toBeObject` when checking if a value is an `Object`.
      */
-    toBeObject(): any;
+    toBeObject(): void;
 
     /**
      * Use `.toContainKey` when checking if an object contains the provided key.
      *
      * @param {String} key
      */
-    toContainKey(key: string): any;
+    toContainKey(key: string): void;
 
     /**
      * Use `.toContainKeys` when checking if an object has all of the provided keys.
      *
      * @param {Array.<String>} keys
      */
-    toContainKeys<E = unknown>(keys: readonly (keyof E | string)[]): any;
+    toContainKeys<E = unknown>(keys: readonly (keyof E | string)[]): void;
 
     /**
      * Use `.toContainAllKeys` when checking if an object only contains all of the provided keys.
      *
      * @param {Array.<String>} keys
      */
-    toContainAllKeys<E = unknown>(keys: readonly (keyof E | string)[]): any;
+    toContainAllKeys<E = unknown>(keys: readonly (keyof E | string)[]): void;
 
     /**
      * Use `.toContainAnyKeys` when checking if an object contains at least one of the provided keys.
      *
      * @param {Array.<String>} keys
      */
-    toContainAnyKeys<E = unknown>(keys: readonly (keyof E | string)[]): any;
+    toContainAnyKeys<E = unknown>(keys: readonly (keyof E | string)[]): void;
 
     /**
      * Use `.toContainValue` when checking if an object contains the provided value.
      *
      * @param {*} value
      */
-    toContainValue<E = unknown>(value: E): any;
+    toContainValue<E = unknown>(value: E): void;
 
     /**
      * Use `.toContainValues` when checking if an object contains all of the provided values.
      *
      * @param {Array.<*>} values
      */
-    toContainValues<E = unknown>(values: readonly E[]): any;
+    toContainValues<E = unknown>(values: readonly E[]): void;
 
     /**
      * Use `.toContainAllValues` when checking if an object only contains all of the provided values.
      *
      * @param {Array.<*>} values
      */
-    toContainAllValues<E = unknown>(values: readonly E[]): any;
+    toContainAllValues<E = unknown>(values: readonly E[]): void;
 
     /**
      * Use `.toContainAnyValues` when checking if an object contains at least one of the provided values.
      *
      * @param {Array.<*>} values
      */
-    toContainAnyValues<E = unknown>(values: readonly E[]): any;
+    toContainAnyValues<E = unknown>(values: readonly E[]): void;
 
     /**
      * Use `.toContainEntry` when checking if an object contains the provided entry.
      *
      * @param {Array.<[keyof E, E[keyof E]>} entry
      */
-    toContainEntry<E = unknown>(entry: readonly [keyof E, E[keyof E]]): any;
+    toContainEntry<E = unknown>(entry: readonly [keyof E, E[keyof E]]): void;
 
     /**
      * Use `.toContainEntries` when checking if an object contains all of the provided entries.
      *
      * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainEntries<E = unknown>(entries: readonly (readonly [keyof E, E[keyof E]])[]): any;
+    toContainEntries<E = unknown>(entries: readonly (readonly [keyof E, E[keyof E]])[]): void;
 
     /**
      * Use `.toContainAllEntries` when checking if an object only contains all of the provided entries.
      *
      * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainAllEntries<E = unknown>(entries: readonly (readonly [keyof E, E[keyof E]])[]): any;
+    toContainAllEntries<E = unknown>(entries: readonly (readonly [keyof E, E[keyof E]])[]): void;
 
     /**
      * Use `.toContainAnyEntries` when checking if an object contains at least one of the provided entries.
      *
      * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
-    toContainAnyEntries<E = unknown>(entries: readonly (readonly [keyof E, E[keyof E]])[]): any;
+    toContainAnyEntries<E = unknown>(entries: readonly (readonly [keyof E, E[keyof E]])[]): void;
 
     /**
      * Use `.toBeExtensible` when checking if an object is extensible.
      */
-    toBeExtensible(): any;
+    toBeExtensible(): void;
 
     /**
      * Use `.toBeFrozen` when checking if an object is frozen.
      */
-    toBeFrozen(): any;
+    toBeFrozen(): void;
 
     /**
      * Use `.toBeSealed` when checking if an object is sealed.
      */
-    toBeSealed(): any;
+    toBeSealed(): void;
 
     /**
      * Use `.toResolve` when checking if a promise resolves.
      */
-    toResolve(): any;
+    toResolve(): void;
 
     /**
      * Use `.toReject` when checking if a promise rejects.
      */
-    toReject(): any;
+    toReject(): void;
 
     /**
      * Use `.toBeString` when checking if a value is a `String`.
      */
-    toBeString(): any;
+    toBeString(): void;
 
     /**
      * Use `.toEqualCaseInsensitive` when checking if a string is equal (===) to another ignoring the casing of both strings.
      *
      * @param {String} string
      */
-    toEqualCaseInsensitive(string: string): any;
+    toEqualCaseInsensitive(string: string): void;
 
     /**
      * Use `.toStartWith` when checking if a `String` starts with a given `String` prefix.
      *
      * @param {String} prefix
      */
-    toStartWith(prefix: string): any;
+    toStartWith(prefix: string): void;
 
     /**
      * Use `.toEndWith` when checking if a `String` ends with a given `String` suffix.
      *
      * @param {String} suffix
      */
-    toEndWith(suffix: string): any;
+    toEndWith(suffix: string): void;
 
     /**
      * Use `.toInclude` when checking if a `String` includes the given `String` substring.
      *
      * @param {String} substring
      */
-    toInclude(substring: string): any;
+    toInclude(substring: string): void;
 
     /**
      * Use `.toIncludeRepeated` when checking if a `String` includes the given `String` substring the correct number of times.
@@ -818,14 +818,14 @@ declare namespace jest {
      * @param {String} substring
      * @param {Number} times
      */
-    toIncludeRepeated(substring: string, times: number): any;
+    toIncludeRepeated(substring: string, times: number): void;
 
     /**
      * Use `.toIncludeMultiple` when checking if a `String` includes all of the given substrings.
      *
      * @param {Array.<String>} substring
      */
-    toIncludeMultiple(substring: readonly string[]): any;
+    toIncludeMultiple(substring: readonly string[]): void;
 
     /**
      * Use `.toThrowWithMessage` when checking if a callback function throws an error of a given type with a given error message.
@@ -833,43 +833,43 @@ declare namespace jest {
      * @param {Function} type
      * @param {String | RegExp} message
      */
-    toThrowWithMessage(type: (...args: any[]) => any, message: string | RegExp): any;
+    toThrowWithMessage(type: (...args: any[]) => any, message: string | RegExp): void;
 
     /**
      * Use `.toBeEmptyObject` when checking if a value is an empty `Object`.
      */
-    toBeEmptyObject(): any;
+    toBeEmptyObject(): void;
 
     /**
      * Use `.toBeSymbol` when checking if a value is a `Symbol`.
      */
-    toBeSymbol(): any;
+    toBeSymbol(): void;
 
     /**
      * Use `.toBeBetween` when checking if a date occurs between `startDate` and `endDate`.
      * @param {Date} startDate
      * @param {Date} endDate
      */
-    toBeBetween(startDate: Date, endDate: Date): any;
+    toBeBetween(startDate: Date, endDate: Date): void;
 
     /**
      * Use `.toBeBeforeOrEqualTo` when checking if a date equals to or occurs before `date`.
      * @param {Date} date
      */
-    toBeBeforeOrEqualTo(date: Date): any;
+    toBeBeforeOrEqualTo(date: Date): void;
 
     /**
      * Use `.toBeAfterOrEqualTo` when checking if a date equals to or occurs after `date`.
      * @param {Date} date
      */
-    toBeAfterOrEqualTo(date: Date): any;
+    toBeAfterOrEqualTo(date: Date): void;
 
     /**
      * Use `.toEqualIgnoringWhitespace` when checking if a `String` is equal (===) to given `String` ignoring white-space.
      *
      * @param {String} string
      */
-    toEqualIgnoringWhitespace(string: string): any;
+    toEqualIgnoringWhitespace(string: string): void;
   }
 
   // noinspection JSUnusedGlobalSymbols
