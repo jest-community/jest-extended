@@ -1,0 +1,25 @@
+import { TestFile } from '../../src/components/CustomSandpack';
+
+# Geographic
+
+### .toBeGeoLatitude()
+
+Use `.toBeGeoLatitude` when checking if a value is a `latitude`.
+
+<TestFile name="toBeGeoLatitude">
+  {`test('passes when value is a latitude', () => {
+  const ROME = { latitude: 41.902783, longitude: 12.496366 };
+  expect(ROME.latitude).toBeGeoLatitude();
+});`}
+</TestFile>
+
+### .toBeGeoLongitude()
+
+Use `.toBeGeoLongitude` when checking if a value is a `longitude`.
+
+<TestFile name="toBeGeoLongitude">
+  {`test('passes when value is a longitude', () => {
+  const ROME = { latitude: 41.902783, longitude: 12.496366 };
+  expect(ROME.longitude).toBeGeoLongitude();
+});`}
+</TestFile>

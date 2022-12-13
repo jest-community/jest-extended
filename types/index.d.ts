@@ -575,6 +575,16 @@ declare namespace jest {
     toBeFunction(): any;
 
     /**
+     * Use `.toBeGeoLatitude` when checking if a value is a `latitude`.
+     */
+    toBeGeoLatitude(): any;
+
+    /**
+     * Use `.toBeGeoLongitude` when checking if a value is a `longitude`.
+     */
+    toBeGeoLongitude(): any;
+
+    /**
      * Use `.toBeDateString` when checking if a value is a valid date string.
      */
     toBeDateString(): any;

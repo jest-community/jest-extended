@@ -18,6 +18,8 @@ export { toBeFalse } from './toBeFalse';
 export { toBeFinite } from './toBeFinite';
 export { toBeFrozen } from './toBeFrozen';
 export { toBeFunction } from './toBeFunction';
+export { toBeGeoLatitude } from './toBeGeoLatitude';
+export { toBeGeoLongitude } from './toBeGeoLongitude';
 export { toBeHexadecimal } from './toBeHexadecimal';
 export { toBeInteger } from './toBeInteger';
 export { toBeNaN } from './toBeNaN';

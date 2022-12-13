@@ -1840,6 +1840,11 @@ char-regex@^2.0.0:
   resolved "https://registry.yarnpkg.com/char-regex/-/char-regex-2.0.1.tgz#6dafdb25f9d3349914079f010ba8d0e6ff9cd01e"
   integrity sha512-oSvEeo6ZUD7NepqAat3RqoucZ5SeqLJgOvVIwkafu6IP3V0pO38s/ypdVUmDDK6qIIHNlYHJAKX9E7R7HoKElw==
 
+check-geographic-coordinates@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/check-geographic-coordinates/-/check-geographic-coordinates-0.0.10.tgz#10240bfead3e81ea054ad526d973ceccf46657eb"
+  integrity sha512-wgMiNEVXsvdh5TaEkwvPXgfpRyVcz8nimfiw8x/7c9sNsG/mPjB2iyKftdYv72e1KY/kHp/Vh9OZc2MHur/evw==
+
 chokidar@^3.4.0:
   version "3.5.3"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.5.3.tgz#1cf37c8707b932bd1af1ae22c0432e2acd1903bd"

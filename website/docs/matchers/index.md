@@ -105,3 +105,8 @@ sidebar_position: 1
 ## [Symbol](/docs/matchers/symbol)
 
 - [.toBeSymbol()](/docs/matchers/symbol/#tobesymbol)
+
+## [Geographic](/docs/matchers/geographic)
+
+- [.toBeGeoLatitude()](/docs/matchers/geographic/#tobegeolatitude)
+- [.toBeGeoLongitude()](/docs/matchers/geographic/#tobegeolongitude)
