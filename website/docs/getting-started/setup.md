@@ -31,7 +31,7 @@ Add your setup script to your Jest `setupFilesAfterEnv` configuration. [See for 
 
 To automatically extend `expect` with all matchers, you can use
 
-```json
+```json title="package.json"
 "jest": {
   "setupFilesAfterEnv": ["jest-extended/all"]
 }
