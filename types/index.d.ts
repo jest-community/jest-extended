@@ -882,7 +882,5 @@ declare namespace jest {
 
 declare namespace Vi {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface AsymmetricMatchersContaining extends CustomMatchers {
-    hello(): string;
-  }
+  interface AsymmetricMatchersContaining extends CustomMatchers {}
 }
