@@ -880,7 +880,6 @@ declare namespace jest {
   interface InverseAsymmetricMatchers extends Expect {}
 }
 
-// declare global {
 declare namespace Vi {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface AsymmetricMatchersContaining extends CustomMatchers {
