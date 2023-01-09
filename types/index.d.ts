@@ -873,7 +873,7 @@ declare namespace jest {
 
   // noinspection JSUnusedGlobalSymbols
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface Expect extends CustomMatchers<AsymmetricMatcher> {}
+  interface Expect extends CustomMatchers<any> {}
 
   // noinspection JSUnusedGlobalSymbols
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
