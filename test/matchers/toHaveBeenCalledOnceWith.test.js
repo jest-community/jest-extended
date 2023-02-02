@@ -13,6 +13,16 @@ describe('.toHaveBeenCalledOnceWith', () => {
     expect(mock).toHaveBeenCalledOnceWith('hello');
   });
 
+  test('passes if mock was invoked exactly once with the expected values in an array', () => {
+    mock(['hello', 'there']);
+    expect(mock).toHaveBeenCalledOnceWith(['hello', 'there']);
+  });
+
+  test('passes if mock was invoked exactly once with the expected values', () => {
+    mock('hello', 'there');
+    expect(mock).toHaveBeenCalledOnceWith('hello', 'there');
+  });
+
   test('fails if mock was never invoked indicating that it was invoked 0 times', () => {
     expect(() => expect(mock).toHaveBeenCalledOnceWith('hello')).toThrowErrorMatchingSnapshot();
   });
@@ -58,5 +68,15 @@ describe('.not.toHaveBeenCalledOnceWith', () => {
   test('passes if mock was invoked exactly once without the expected value', () => {
     mock('not hello');
     expect(mock).not.toHaveBeenCalledOnceWith('hello');
+  });
+
+  test('passes if mock was invoked exactly once without both expected values in an array', () => {
+    mock(['hello', 'there']);
+    expect(mock).not.toHaveBeenCalledOnceWith(['hello', 'not there']);
+  });
+
+  test('passes if mock was invoked exactly once without both expected values', () => {
+    mock('hello', 'there');
+    expect(mock).not.toHaveBeenCalledOnceWith('hello', 'not there');
   });
 });
