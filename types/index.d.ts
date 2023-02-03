@@ -884,3 +884,8 @@ declare namespace Vi {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface AsymmetricMatchersContaining extends CustomMatchers<any> {}
 }
+
+declare module 'jest-extended' {
+  const matchers: CustomMatchers<any>;
+  export = matchers;
+}
