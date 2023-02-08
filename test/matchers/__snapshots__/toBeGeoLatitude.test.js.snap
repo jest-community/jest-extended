@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toBeGeoLatitude fails when given a latitude number 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeGeoLatitude()</intensity>
+
+Expected value to not be of type latitude, received:
+  <red>41.902783</color>"
+`;
+
+exports[`.not.toBeGeoLatitude fails when given a latitude string 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeGeoLatitude()</intensity>
+
+Expected value to not be of type latitude, received:
+  <red>"41.902783"</color>"
+`;
+
+exports[`.toBeGeoLatitude fails when not given a latitude negative number 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeGeoLatitude()</intensity>
+
+Expected value to be of type latitude, received:
+  <red>-90.1</color>"
+`;
+
+exports[`.toBeGeoLatitude fails when not given a latitude positive number 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeGeoLatitude()</intensity>
+
+Expected value to be of type latitude, received:
+  <red>90.1</color>"
+`;
+
+exports[`.toBeGeoLatitude fails when not given a latitude string 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeGeoLatitude()</intensity>
+
+Expected value to be of type latitude, received:
+  <red>"any_not_valid_latitude"</color>"
+`;

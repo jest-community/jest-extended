@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toBeGeoLongitude fails when given a longitude number 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeGeoLongitude()</intensity>
+
+Expected value to not be of type longitude, received:
+  <red>12.496366</color>"
+`;
+
+exports[`.not.toBeGeoLongitude fails when given a longitude string 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeGeoLongitude()</intensity>
+
+Expected value to not be of type longitude, received:
+  <red>"12.496366"</color>"
+`;
+
+exports[`.toBeGeoLongitude fails when not given a longitude negative number 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeGeoLongitude()</intensity>
+
+Expected value to be of type longitude, received:
+  <red>-180.1</color>"
+`;
+
+exports[`.toBeGeoLongitude fails when not given a longitude positive number 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeGeoLongitude()</intensity>
+
+Expected value to be of type longitude, received:
+  <red>180.1</color>"
+`;
+
+exports[`.toBeGeoLongitude fails when not given a longitude string 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeGeoLongitude()</intensity>
+
+Expected value to be of type longitude, received:
+  <red>"any_not_valid_longitude"</color>"
+`;
