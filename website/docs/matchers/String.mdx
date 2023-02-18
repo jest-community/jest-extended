@@ -52,6 +52,28 @@ Use `.toBeDateString` when checking if a value is a valid date string.
 });`}
 </TestFile>
 
+### .toBeJsonMatching(expectation)
+
+Use `.toBeJsonMatching` to check that a string is the JSON representation of an object that matches the expectation object.
+
+<TestFile name="toBeJsonMatching">
+  {`test('passes when given JSON string matches object', () => {
+  const string = JSON.stringify({ a: 42, b: 'foo', c: { d: 'hello', e: 'world' }, f: [7, { g: 'bar', h: 'baz' }] });
+
+  expect(string).toBeJsonMatching({});
+  expect(string).toBeJsonMatching({ a: 42 });
+  expect(string).toBeJsonMatching({ a: 42, b: 'foo' });
+  expect(string).toBeJsonMatching({ a: 42, b: 'foo', c: {} });
+  expect(string).toBeJsonMatching({ a: 42, b: 'foo', c: { d: 'hello' } });
+  expect(string).toBeJsonMatching({ a: 42, b: 'foo', c: { d: 'hello', e: 'world' } });
+  expect(string).toBeJsonMatching({ a: 42, b: 'foo', c: { d: 'hello', e: 'world' }, f: [] });
+  expect(string).toBeJsonMatching({ a: 42, b: 'foo', c: { d: 'hello', e: 'world' }, f: [7] });
+  expect(string).toBeJsonMatching({ a: 42, b: 'foo', c: { d: 'hello', e: 'world' }, f: [7, {}] });
+  expect(string).toBeJsonMatching({ a: 42, b: 'foo', c: { d: 'hello', e: 'world' }, f: [7, { g: 'bar' }] });
+  expect(string).toBeJsonMatching({ a: 42, b: 'foo', c: { d: 'hello', e: 'world' }, f: [7, { g: 'bar', h: 'baz' }] });
+});`}
+</TestFile>
+
 ### .toEqualCaseInsensitive(string)
 
 Use `.toEqualCaseInsensitive` when checking if a string is equal (===) to another ignoring the casing of both strings.

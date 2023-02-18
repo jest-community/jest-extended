@@ -1,0 +1,307 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toBeJsonMatching fails when given JSON string matches expectation 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to not be a JSON string containing:
+  <green>{}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.not.toBeJsonMatching fails when given JSON string matches expectation 2`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to not be a JSON string containing:
+  <green>{"a": 42}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.not.toBeJsonMatching fails when given JSON string matches expectation 3`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to not be a JSON string containing:
+  <green>{"a": 42, "b": "foo"}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.not.toBeJsonMatching fails when given JSON string matches expectation 4`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to not be a JSON string containing:
+  <green>{"a": 42, "b": "foo", "c": {}}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.not.toBeJsonMatching fails when given JSON string matches expectation 5`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to not be a JSON string containing:
+  <green>{"a": 42, "b": "foo", "c": {"d": "hello"}}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.not.toBeJsonMatching fails when given JSON string matches expectation 6`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to not be a JSON string containing:
+  <green>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.not.toBeJsonMatching fails when given JSON string matches expectation 7`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to not be a JSON string containing:
+  <green>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": []}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.not.toBeJsonMatching fails when given JSON string matches expectation 8`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to not be a JSON string containing:
+  <green>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7]}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.not.toBeJsonMatching fails when given JSON string matches expectation 9`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to not be a JSON string containing:
+  <green>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {}]}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.not.toBeJsonMatching fails when given JSON string matches expectation 10`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to not be a JSON string containing:
+  <green>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar"}]}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.not.toBeJsonMatching fails when given JSON string matches expectation 11`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to not be a JSON string containing:
+  <green>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.toBeJsonMatching fails when given JSON string does not match expectation 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to be a JSON string containing:
+  <green>null</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.toBeJsonMatching fails when given JSON string does not match expectation 2`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to be a JSON string containing:
+  <green>[]</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.toBeJsonMatching fails when given JSON string does not match expectation 3`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to be a JSON string containing:
+  <green>{"a": "42"}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.toBeJsonMatching fails when given JSON string does not match expectation 4`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to be a JSON string containing:
+  <green>{"a": 41}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.toBeJsonMatching fails when given JSON string does not match expectation 5`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to be a JSON string containing:
+  <green>{"a": []}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.toBeJsonMatching fails when given JSON string does not match expectation 6`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to be a JSON string containing:
+  <green>{"a": {}}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.toBeJsonMatching fails when given JSON string does not match expectation 7`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to be a JSON string containing:
+  <green>{"a": null}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.toBeJsonMatching fails when given JSON string does not match expectation 8`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to be a JSON string containing:
+  <green>{"a": 42, "b": "bar"}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.toBeJsonMatching fails when given JSON string does not match expectation 9`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to be a JSON string containing:
+  <green>{"a": 42, "b": "foo", "c": 7}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.toBeJsonMatching fails when given JSON string does not match expectation 10`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to be a JSON string containing:
+  <green>{"a": 42, "b": "foo", "c": []}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.toBeJsonMatching fails when given JSON string does not match expectation 11`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to be a JSON string containing:
+  <green>{"a": 42, "b": "foo", "c": {"d": "bonjour"}}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.toBeJsonMatching fails when given JSON string does not match expectation 12`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to be a JSON string containing:
+  <green>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "dolly"}}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.toBeJsonMatching fails when given JSON string does not match expectation 13`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to be a JSON string containing:
+  <green>{"a": 42, "b": "foo", "c": {"d": "hello", "e": 7}}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.toBeJsonMatching fails when given JSON string does not match expectation 14`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to be a JSON string containing:
+  <green>{"a": 42, "b": "foo", "c": {"d": "hello", "e": []}}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.toBeJsonMatching fails when given JSON string does not match expectation 15`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to be a JSON string containing:
+  <green>{"a": 42, "b": "foo", "c": {"d": "hello", "e": {}}}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.toBeJsonMatching fails when given JSON string does not match expectation 16`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to be a JSON string containing:
+  <green>{"a": 42, "b": "foo", "c": {"d": "hello", "e": null}}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.toBeJsonMatching fails when given JSON string does not match expectation 17`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to be a JSON string containing:
+  <green>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": 7}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.toBeJsonMatching fails when given JSON string does not match expectation 18`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to be a JSON string containing:
+  <green>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": {}}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.toBeJsonMatching fails when given JSON string does not match expectation 19`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to be a JSON string containing:
+  <green>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [8]}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.toBeJsonMatching fails when given JSON string does not match expectation 20`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to be a JSON string containing:
+  <green>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, []]}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.toBeJsonMatching fails when given JSON string does not match expectation 21`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to be a JSON string containing:
+  <green>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "baz"}]}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.toBeJsonMatching fails when given JSON string does not match expectation 22`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to be a JSON string containing:
+  <green>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz", "i": "buzz"}]}</color>
+Received:
+  <red>{"a": 42, "b": "foo", "c": {"d": "hello", "e": "world"}, "f": [7, {"g": "bar", "h": "baz"}]}</color>"
+`;
+
+exports[`.toBeJsonMatching fails when the given string is not valid JSON 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeJsonMatching(</intensity><green>expected</color><dim>)</intensity>
+
+Expected input to be a JSON string containing:
+  <green>"This is not a valid JSON string"</color>
+Received invalid JSON:
+  <red>"This is not a valid JSON string"</color>"
+`;

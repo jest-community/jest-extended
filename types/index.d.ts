@@ -382,6 +382,13 @@ interface CustomMatchers<R> extends Record<string, any> {
   toIncludeMultiple(substring: readonly string[]): R;
 
   /**
+   * Use `.toBeJsonMatching` to check that a string is the JSON representation of a JavaScript object that matches a subset of the properties of the expectation.
+   *
+   * @param {*} expectation
+   */
+  toBeJsonMatching<E = unknown>(expectation: E): R;
+
+  /**
    * Use `.toThrowWithMessage` when checking if a callback function throws an error of a given type with a given error message.
    *
    * @param {Function} type
@@ -819,6 +826,13 @@ declare namespace jest {
      * @param {Array.<String>} substring
      */
     toIncludeMultiple(substring: readonly string[]): R;
+
+    /**
+     * Use `.toBeJsonMatching` to check that a string is the JSON representation of a JavaScript object that matches a subset of the properties of the expectation.
+     *
+     * @param {*} expectation
+     */
+    toBeJsonMatching<E = unknown>(expectation: E): R;
 
     /**
      * Use `.toThrowWithMessage` when checking if a callback function throws an error of a given type with a given error message.

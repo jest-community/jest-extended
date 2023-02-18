@@ -94,6 +94,7 @@ sidebar_position: 1
 - [.toBeString()](/docs/matchers/string/#tobestring)
 - [.toBeHexadecimal(string)](/docs/matchers/string/#tobehexadecimal)
 - [.toBeDateString(string)](/docs/matchers/string/#tobedatestringstring)
+- [.toBeJsonMatching(expectation)](/docs/matchers/string/#tobejsonmatchingexpectation)
 - [.toEqualCaseInsensitive(string)](/docs/matchers/string/#toequalcaseinsensitivestring)
 - [.toStartWith(prefix)](/docs/matchers/string/#tostartwithprefix)
 - [.toEndWith(suffix)](/docs/matchers/string/#toendwithsuffix)
