@@ -1,14 +1,9 @@
-import { containsEntry } from '../utils';
+import { partiallyContains } from '../utils';
 
 export function toPartiallyContain(actual, expected) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  const pass =
-    Array.isArray(actual) &&
-    Array.isArray([expected]) &&
-    [expected].every(partial =>
-      actual.some(value => Object.entries(partial).every(entry => containsEntry(this.equals, value, entry))),
-    );
+  const pass = partiallyContains(this.equals, actual, [expected]);
 
   return {
     pass,
