@@ -9,7 +9,7 @@ Additional Jest matchers
 
 <hr />
 
-[![Build Status](https://img.shields.io/github/workflow/status/jest-community/jest-extended/GitHub%20CI/main?style=flat-square)](https://github.com/jest-community/jest-extended/actions/workflows/ci.yaml)
+[![Build Status](https://github.com/jest-community/jest-extended/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/jest-community/jest-extended/actions/workflows/ci.yaml)
 [![Code Coverage](https://img.shields.io/codecov/c/github/jest-community/jest-extended.svg?style=flat-square)](https://codecov.io/github/jest-community/jest-extended)
 [![version](https://img.shields.io/npm/v/jest-extended.svg?style=flat-square)](https://www.npmjs.com/package/jest-extended)
 [![downloads](https://img.shields.io/npm/dm/jest-extended.svg?style=flat-square)](http://npm-stat.com/charts.html?package=jest-extended&from=2017-09-14)
