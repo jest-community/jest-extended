@@ -1315,10 +1315,10 @@
     react-devtools-inline "4.4.0"
     react-is "^17.0.2"
 
-"@codesandbox/sandpack-themes@^1.6.0":
-  version "1.19.0"
-  resolved "https://registry.yarnpkg.com/@codesandbox/sandpack-themes/-/sandpack-themes-1.19.0.tgz#d3af0c93c7e34210c1993640018a402c3e0ec55b"
-  integrity sha512-IbFnx3CmldOpwh+lJoRps4vRA41mSn4ZqU4sNxoIt6HrAVuOZodTBe52hDn58N/l0RRaEh/hMw0UFB4Bmp7wqw==
+"@codesandbox/sandpack-themes@^2.0.0":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@codesandbox/sandpack-themes/-/sandpack-themes-2.0.1.tgz#4533cf04d0e7da49b055573f93263aa13eef84b8"
+  integrity sha512-Tpo2ycdfGfAYt9TtMuMZSq+su6VbwouHoLTaeT+ZAVp+gXuHXCAx6QkMVb+Iu/ux7TWXUgXO5lCpqpLNfDNTLA==
 
 "@colors/colors@1.5.0":
   version "1.5.0"
