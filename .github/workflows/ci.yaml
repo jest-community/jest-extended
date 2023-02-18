@@ -29,6 +29,7 @@ jobs:
         run: yarn add --dev jest@${{ matrix.jest-version }} babel-jest@${{ matrix.jest-version }} @types/jest@${{ matrix.jest-version }}
       - run: yarn test:coverage
       - uses: codecov/codecov-action@v3
+        if: ${{ always() }}
 
   test-os:
     name: Test on ${{ matrix.os }} using Node.js LTS
@@ -47,6 +48,7 @@ jobs:
       - run: yarn install
       - run: yarn test:coverage
       - uses: codecov/codecov-action@v3
+        if: ${{ always() }}
 
   lint:
     name: Run ESLint & TypeScript compiler
