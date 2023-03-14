@@ -10,9 +10,7 @@ sidebar_position: 2
 
 Create a setup script with the following:
 
-```javascript
-// ./testSetup.js
-
+```javascript title="testSetup.js"
 // add all jest-extended matchers
 import * as matchers from 'jest-extended';
 expect.extend(matchers);
@@ -24,7 +22,7 @@ expect.extend({ toBeArray, toBeSealed });
 
 Add your setup script to your Jest `setupFilesAfterEnv` configuration. [See for help](https://jestjs.io/docs/en/configuration.html#setupfilesafterenv-array)
 
-```json
+```json title="package.json"
 "jest": {
   "setupFilesAfterEnv": ["./testSetup.js"]
 }
@@ -32,8 +30,28 @@ Add your setup script to your Jest `setupFilesAfterEnv` configuration. [See for 
 
 To automatically extend `expect` with all matchers, you can use
 
-```json
+```json title="package.json"
 "jest": {
   "setupFilesAfterEnv": ["jest-extended/all"]
 }
+```
+
+## Use with `vitest`
+
+`jest-extended` works with `vitest` because their `expect.extend` API is compatible. In your setup script:
+
+```javascript title="testSetup.js"
+import { expect } from 'vitest';
+import * as matchers from 'jest-extended';
+expect.extend(matchers);
+```
+
+Add this setup script to your `vitest.config.js`:
+
+```javascript title="vitest.config.js"
+export default defineConfig({
+  test: {
+    setupFiles: ['./testSetup.js'],
+  },
+});
 ```

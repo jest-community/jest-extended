@@ -23,6 +23,7 @@ sidebar_position: 1
 - [.toPartiallyContain(member)](/docs/matchers/array/#topartiallycontainmember)
 - [.toSatisfyAll(predicate)](/docs/matchers/array/#tosatisfyallpredicate)
 - [.toSatisfyAny(predicate)](/docs/matchers/array/#tosatisfyanypredicate)
+- [.toBeInRange(min, max)](/docs/matchers/array/#tobeinrangemin-max)
 
 ## [Boolean](/docs/matchers/boolean)
 

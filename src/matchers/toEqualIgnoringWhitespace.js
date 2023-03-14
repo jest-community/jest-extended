@@ -3,7 +3,7 @@ import { printExpected, printReceived } from '../utils/print';
 
 const removeWhitespace = str => str.trim().replace(/\s+/g, '');
 
-const predicate = (received, expected) => {
+const getDiff = (received, expected) => {
   /* calculate diff of received w.r.t expected string */
   const diff = diffStringsRaw(expected, received);
 
@@ -13,31 +13,34 @@ const predicate = (received, expected) => {
     diffObject[0] = DIFF_EQUAL;
   });
 
-  /* determine whether strings are equal after removing white-space */
-  const pass = removeWhitespace(received) === removeWhitespace(expected);
-
-  return {
-    diff,
-    pass,
-  };
+  return diff;
 };
 
 export function toEqualIgnoringWhitespace(actual, expected) {
   const { matcherHint, EXPECTED_COLOR } = this.utils;
-  const { pass, diff } = predicate(actual, expected);
 
-  const passMessage =
-    matcherHint('.not.toEqualIgnoringWhitespace') +
-    '\n\n' +
-    'Expected values to not be equal while ignoring white-space (using ===):\n' +
-    `Expected: not  ${EXPECTED_COLOR(expected)}\n\n`;
+  /* determine whether strings are equal after removing white-space */
+  const pass = removeWhitespace(actual) === removeWhitespace(expected);
 
-  const failMessage =
-    matcherHint('.toEqualIgnoringWhitespace') +
-    '\n\n' +
-    'Expected values to be equal while ignoring white-space (using ===):\n' +
-    `Expected:\n  ${printExpected(this.utils, diff)}\n\n` +
-    `Received:\n  ${printReceived(this.utils, diff)}`;
-
-  return { pass, message: () => (pass ? passMessage : failMessage) };
+  /* eslint-disable indent */ // prettier conflicts with indent rule
+  return {
+    pass,
+    message: pass
+      ? () =>
+          matcherHint('.not.toEqualIgnoringWhitespace') +
+          '\n\n' +
+          'Expected values to not be equal while ignoring white-space (using ===):\n' +
+          `Expected: not  ${EXPECTED_COLOR(expected)}\n\n`
+      : () => {
+          const diff = getDiff(actual, expected);
+          return (
+            matcherHint('.toEqualIgnoringWhitespace') +
+            '\n\n' +
+            'Expected values to be equal while ignoring white-space (using ===):\n' +
+            `Expected:\n  ${printExpected(this.utils, diff)}\n\n` +
+            `Received:\n  ${printReceived(this.utils, diff)}`
+          );
+        },
+  };
+  /* eslint-enable indent */
 }

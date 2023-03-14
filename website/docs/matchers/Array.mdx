@@ -116,3 +116,14 @@ Use `.toSatisfyAny` when you want to use a custom matcher by supplying a predica
   expect([2, 4, 8, 12]).not.toSatisfyAny(isOdd);
 });`}
 </TestFile>
+
+### .toBeInRange(min, max)
+
+Use `.toBeInRange` when checking if an array has elements in range min (inclusive) and max (inclusive).
+
+<TestFile name="toBeInRange">
+  {`test('passes when given array is in range', () => {
+  expect([4, 5, 7, 9]).toBeInRange(4, 10);
+  expect([12, 13, 15, 17]).not.toBeInRange(4, 9);
+});`}
+</TestFile>

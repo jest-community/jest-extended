@@ -2,5 +2,11 @@
   "extends": ["config:base", ":semanticCommitsDisabled"],
   "lockFileMaintenance": { "enabled": true, "automerge": true },
   "rangeStrategy": "replace",
-  "postUpdateOptions": ["yarnDedupeHighest"]
+  "postUpdateOptions": ["yarnDedupeHighest"],
+  "packageRules": [
+    {
+      "matchPackageNames": ["@codesandbox/sandpack-react", "@codesandbox/sandpack-themes"],
+      "groupName": "sandpack"
+    }
+  ]
 }

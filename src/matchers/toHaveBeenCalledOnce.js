@@ -15,18 +15,19 @@ export function toHaveBeenCalledOnce(received) {
     };
   }
 
-  const passMessage =
-    matcherHint('.not.toHaveBeenCalledOnce') +
-    '\n\n' +
-    'Expected mock function to have been called any amount of times but one, but it was called exactly once.';
-
-  const failMessage =
-    matcherHint('.toHaveBeenCalledOnce') +
-    '\n\n' +
-    'Expected mock function to have been called exactly once, but it was called:\n' +
-    `  ${printReceived(received.mock.calls.length)} times`;
-
   const pass = received.mock.calls.length === 1;
 
-  return { pass, message: () => (pass ? passMessage : failMessage), actual: received };
+  return {
+    pass,
+    message: () =>
+      pass
+        ? matcherHint('.not.toHaveBeenCalledOnce') +
+          '\n\n' +
+          'Expected mock function to have been called any amount of times but one, but it was called exactly once.'
+        : matcherHint('.toHaveBeenCalledOnce') +
+          '\n\n' +
+          'Expected mock function to have been called exactly once, but it was called:\n' +
+          `  ${printReceived(received.mock.calls.length)} times`,
+    actual: received,
+  };
 }

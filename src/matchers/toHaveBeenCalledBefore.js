@@ -15,23 +15,23 @@ export function toHaveBeenCalledBefore(actual, expected, failIfNoSecondInvocatio
   const secondInvocationCallOrder = expected.mock.invocationCallOrder;
   const pass = predicate(firstInvocationCallOrder, secondInvocationCallOrder, failIfNoSecondInvocation);
 
-  const passMessage =
-    matcherHint('.not.toHaveBeenCalledBefore') +
-    '\n\n' +
-    'Expected first mock to not have been called before, invocationCallOrder:\n' +
-    `  ${printExpected(firstInvocationCallOrder)}\n` +
-    'Received second mock with invocationCallOrder:\n' +
-    `  ${printReceived(secondInvocationCallOrder)}`;
-
-  const failMessage =
-    matcherHint('.toHaveBeenCalledBefore') +
-    '\n\n' +
-    'Expected first mock to have been called before, invocationCallOrder:\n' +
-    `  ${printExpected(firstInvocationCallOrder)}\n` +
-    'Received second mock with invocationCallOrder:\n' +
-    `  ${printReceived(secondInvocationCallOrder)}`;
-
-  return { pass, message: () => (pass ? passMessage : failMessage) };
+  return {
+    pass,
+    message: () =>
+      pass
+        ? matcherHint('.not.toHaveBeenCalledBefore') +
+          '\n\n' +
+          'Expected first mock to not have been called before, invocationCallOrder:\n' +
+          `  ${printExpected(firstInvocationCallOrder)}\n` +
+          'Received second mock with invocationCallOrder:\n' +
+          `  ${printReceived(secondInvocationCallOrder)}`
+        : matcherHint('.toHaveBeenCalledBefore') +
+          '\n\n' +
+          'Expected first mock to have been called before, invocationCallOrder:\n' +
+          `  ${printExpected(firstInvocationCallOrder)}\n` +
+          'Received second mock with invocationCallOrder:\n' +
+          `  ${printReceived(secondInvocationCallOrder)}`,
+  };
 }
 
 const mockCheckFailMessage = (utils, value, isReceivedValue) => () => {

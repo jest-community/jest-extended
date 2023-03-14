@@ -1,6 +1,6 @@
 {
   "name": "jest-extended",
-  "version": "3.1.0",
+  "version": "3.2.4",
   "description": "Additional Jest matchers",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
@@ -38,6 +38,7 @@
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.14.7",
+    "@changesets/cli": "^2.26.0",
     "@jest/expect-utils": "^29.0.0",
     "@types/jest": "^29.0.0",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
@@ -127,5 +128,10 @@
   },
   "peerDependencies": {
     "jest": ">=27.2.5"
+  },
+  "peerDependenciesMeta": {
+    "jest": {
+      "optional": true
+    }
   }
 }

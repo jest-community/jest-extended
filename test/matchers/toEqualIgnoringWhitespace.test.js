@@ -70,4 +70,13 @@ describe('.toEqualIgnoringWhitespace', () => {
         `),
     ).toThrowErrorMatchingSnapshot();
   });
+
+  it('should fail if strings are not equal, ignoring white-space', () => {
+    expect(() =>
+      expect('SELECT * from TABLE WHERE CONDITION = "5"').toEqualIgnoringWhitespace(`
+        WHERE CONDITION = "5" 
+        SELECT * from TABLE
+      `),
+    ).toThrowErrorMatchingSnapshot();
+  });
 });
