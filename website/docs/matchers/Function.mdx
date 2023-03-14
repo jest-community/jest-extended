@@ -1,0 +1,45 @@
+import { TestFile } from '../../src/components/CustomSandpack';
+
+# Function
+
+### .toBeFunction()
+
+Use `.toBeFunction` when checking if a value is a `Function`.
+
+<TestFile name="toBeFunction">
+  {`test('passes when value is a function', () => {
+  function noop() {}
+  expect(() => {}).toBeFunction();
+  expect(noop).toBeFunction();
+  expect(true).not.toBeFunction();
+});`}
+</TestFile>
+
+### .toThrowWithMessage(type, message)
+
+Use `.toThrowWithMessage` when checking if a callback function throws an error with a given error type and given error message. Message can either be a `String` or a `RegExp`.
+
+<TestFile name="toThrowWithMessage">
+  {`test('throws an error of type TypeError with message "hello world"', () => {
+  expect(() => {
+    throw TypeError('hello world');
+  }).toThrowWithMessage(TypeError, 'hello world');\n
+  expect(() => {
+    throw TypeError('hello world');
+  }).toThrowWithMessage(TypeError, /hello world/);\n
+  expect(() => {
+    throw TypeError('hello world 2');
+  }).not.toThrowWithMessage(TypeError, 'hello world');\n
+  expect(() => {
+    throw TypeError('hello world 2');
+  }).not.toThrowWithMessage(TypeError, /^hello world$/);\n
+});`}
+</TestFile>
+
+This works for promise rejections too.
+
+<TestFile name="toThrowWithMessage">
+  {`test('throws an error of type TypeError with message "hello world"', async () => {
+  await expect(Promise.reject(new TypeError('hello world async'))).rejects.toThrowWithMessage(TypeError, /hello world/);
+});`}
+</TestFile>

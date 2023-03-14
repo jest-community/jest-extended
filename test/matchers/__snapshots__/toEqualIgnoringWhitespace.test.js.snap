@@ -1,5 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`.toEqualIgnoringWhitespace should fail if strings are not equal, ignoring white-space 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toEqualIgnoringWhitespace(</intensity><green>expected</color><dim>)</intensity>
+
+Expected values to be equal while ignoring white-space (using ===):
+Expected:
+  
+        <green>WHERE</color> <green>CONDITION</color> <green>=</color> <green>"5"</color> 
+        <inverse><green>SELECT</color></inverse> <inverse><green>*</color></inverse> <inverse><green>from</color></inverse> <inverse><green>TABLE</color></inverse>
+      
+
+Received:
+  
+    <inverse><red>SELECT</color></inverse> <inverse><red>*</color></inverse> <inverse><red>from</color></inverse> <inverse><red>TABLE</color></inverse> <red>WHERE</color> <red>CONDITION</color> <red>=</color> <red>"5"</color>"
+`;
+
 exports[`.toEqualIgnoringWhitespace should not pass if strings are not equal, ignoring white-space 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).not.toEqualIgnoringWhitespace(</intensity><green>expected</color><dim>)</intensity>
 

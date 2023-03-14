@@ -15,8 +15,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [14.x, 16.x, 18.x]
-        jest-version: [27, 28]
+        node-version: [14.x, 16.x, 18.x, 19.x]
+        jest-version: [27, 28, 29]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -29,6 +29,7 @@ jobs:
         run: yarn add --dev jest@${{ matrix.jest-version }} babel-jest@${{ matrix.jest-version }} @types/jest@${{ matrix.jest-version }}
       - run: yarn test:coverage
       - uses: codecov/codecov-action@v3
+        if: ${{ always() }}
 
   test-os:
     name: Test on ${{ matrix.os }} using Node.js LTS
@@ -47,6 +48,7 @@ jobs:
       - run: yarn install
       - run: yarn test:coverage
       - uses: codecov/codecov-action@v3
+        if: ${{ always() }}
 
   lint:
     name: Run ESLint & TypeScript compiler
@@ -61,3 +63,29 @@ jobs:
       - run: yarn build
       - run: yarn lint
       - run: yarn typecheck
+  release:
+    name: Run publish action
+    if: ${{ github.event_name == 'push' && (github.event.ref == 'refs/heads/main' || github.event.ref == 'refs/heads/next') }}
+    needs: [lint, test-node, test-os]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+          cache: yarn
+
+      - name: Install Dependencies
+        run: yarn
+
+      - name: Create Release Pull Request or Publish to npm
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          publish: yarn changeset publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -1,25 +1,25 @@
 export function toIncludeSameMembers(actual, expected) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  const passMessage =
-    matcherHint('.not.toIncludeSameMembers') +
-    '\n\n' +
-    'Expected list to not exactly match the members of:\n' +
-    `  ${printExpected(expected)}\n` +
-    'Received:\n' +
-    `  ${printReceived(actual)}`;
-
-  const failMessage =
-    matcherHint('.toIncludeSameMembers') +
-    '\n\n' +
-    'Expected list to have the following members and no more:\n' +
-    `  ${printExpected(expected)}\n` +
-    'Received:\n' +
-    `  ${printReceived(actual)}`;
-
   const pass = predicate(this.equals, actual, expected);
 
-  return { pass, message: () => (pass ? passMessage : failMessage) };
+  return {
+    pass,
+    message: () =>
+      pass
+        ? matcherHint('.not.toIncludeSameMembers') +
+          '\n\n' +
+          'Expected list to not exactly match the members of:\n' +
+          `  ${printExpected(expected)}\n` +
+          'Received:\n' +
+          `  ${printReceived(actual)}`
+        : matcherHint('.toIncludeSameMembers') +
+          '\n\n' +
+          'Expected list to have the following members and no more:\n' +
+          `  ${printExpected(expected)}\n` +
+          'Received:\n' +
+          `  ${printReceived(actual)}`,
+  };
 }
 
 const predicate = (equals, actual, expected) => {

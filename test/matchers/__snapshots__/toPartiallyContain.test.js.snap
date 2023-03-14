@@ -4,16 +4,16 @@ exports[`.toPartiallyContain .not.toPartiallyContain fails when a string does ha
 "<dim>expect(</intensity><red>received</color><dim>).not.toPartiallyContain(</intensity><green>expected</color><dim>)</intensity>
 
 Expected array not to partially contain:
-  <green>{\\"baz\\": \\"qux\\", \\"foo\\": \\"bar\\"}</color>
+  <green>{"baz": "qux", "foo": "bar"}</color>
 Received:
-  <red>[{\\"bax\\": \\"zax\\", \\"baz\\": \\"qux\\", \\"foo\\": \\"bar\\"}]</color>"
+  <red>[{"bax": "zax", "baz": "qux", "foo": "bar"}]</color>"
 `;
 
 exports[`.toPartiallyContain fails when a string does not have a given substring 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toPartiallyContain(</intensity><green>expected</color><dim>)</intensity>
 
 Expected array to partially contain:
-  <green>{\\"baz\\": \\"qux\\", \\"foo\\": \\"bar\\"}</color>
+  <green>{"baz": "qux", "foo": "bar"}</color>
 Received:
-  <red>[{\\"a\\": 1, \\"b\\": 2}]</color>"
+  <red>[{"a": 1, "b": 2}]</color>"
 `;

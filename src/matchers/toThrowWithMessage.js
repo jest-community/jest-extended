@@ -11,7 +11,7 @@ const positiveHint = utils =>
 const negativeHint = utils =>
   utils.matcherHint('.not.toThrowWithMessage', 'function', 'type', { secondArgument: 'message' });
 
-const passMessage = (utils, received, expected) => () =>
+const passMessage = (utils, received, expected) =>
   negativeHint(utils) +
   '\n\n' +
   'Expected not to throw:\n' +
@@ -19,13 +19,27 @@ const passMessage = (utils, received, expected) => () =>
   'Thrown:\n' +
   `  ${utils.printReceived(received)}\n`;
 
-const failMessage = (utils, received, expected) => () =>
+const failMessage = (utils, received, expected) =>
   positiveHint(utils) +
   '\n\n' +
   'Expected to throw:\n' +
   `  ${utils.printExpected(expected)}\n` +
   'Thrown:\n' +
   `  ${utils.printReceived(received)}\n`;
+
+const getExpectedError = (type, message) => {
+  const messageStr = message.toString();
+  let expectedError;
+  try {
+    expectedError = new type(messageStr);
+  } catch (err) {
+    const name = type.name;
+    expectedError = new Error();
+    expectedError.name = name;
+    expectedError.message = messageStr;
+  }
+  return expectedError;
+};
 
 export function toThrowWithMessage(callbackOrPromiseReturn, type, message) {
   const utils = this.utils;
@@ -85,19 +99,9 @@ export function toThrowWithMessage(callbackOrPromiseReturn, type, message) {
   }
 
   const pass = predicate(error, type, message);
-  const messageStr = message.toString();
-  let expectedError;
-  try {
-    expectedError = new type(messageStr);
-  } catch (err) {
-    const name = type.name;
-    expectedError = new Error();
-    expectedError.name = name;
-    expectedError.message = messageStr;
-  }
   if (pass) {
-    return { pass: true, message: passMessage(utils, error, expectedError) };
+    return { pass: true, message: () => passMessage(utils, error, getExpectedError(type, message)) };
   }
 
-  return { pass: false, message: failMessage(utils, error, expectedError) };
+  return { pass: false, message: () => failMessage(utils, error, getExpectedError(type, message)) };
 }

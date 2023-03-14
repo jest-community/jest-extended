@@ -1,0 +1,241 @@
+import { TestFile } from '../../src/components/CustomSandpack';
+
+# Object
+
+### .toBeEmptyObject()
+
+Use `.toBeEmptyObject` when checking if a value is an empty `Object`.
+
+<TestFile name="toBeEmptyObject">
+  {`test('passes when value is an empty object', () => {
+  expect({}).toBeEmptyObject();
+  expect({ a: 'hello' }).not.toBeEmptyObject();
+});`}
+</TestFile>
+
+### .toBeObject()
+
+Use `.toBeObject` when checking if a value is an `Object`.
+
+<TestFile name="toBeObject">
+  {`test('passes when value is an object', () => {
+  expect({}).toBeObject();
+  expect({ a: 'hello' }).toBeObject();
+  expect(true).not.toBeObject();
+});`}
+</TestFile>
+
+### .toContainKey(key)
+
+Use `.toContainKey` when checking if an object contains the provided key.
+
+<TestFile name="toContainKey">
+  {`test('passes when object contains the given key', () => {
+  const o = { a: 'foo', b: 'bar', c: 'baz' };
+  expect(o).toContainKey('a');
+  expect(o).toContainKey('b');
+  expect(o).toContainKey('c');
+  expect(o).not.toContainKey('d');
+});`}
+</TestFile>
+
+### .toContainKeys([keys])
+
+Use `.toContainKeys` when checking if an object has all of the provided keys.
+
+<TestFile name="toContainKeys">
+  {`test('passes when object contains all keys', () => {
+  const o = { a: 'foo', b: 'bar', c: 'baz' };
+  expect(o).toContainKeys(['a', 'b']);
+  expect(o).toContainKeys(['b', 'c']);
+  expect(o).not.toContainKeys(['d']);
+});`}
+</TestFile>
+
+### .toContainAllKeys([keys])
+
+Use `.toContainAllKeys` when checking if an object only contains all of the provided keys.
+
+<TestFile name="toContainAllKeys">
+  {`test('passes when object only contains all keys', () => {
+  const o = { a: 'hello', b: 'world' };
+  expect(o).toContainAllKeys(['a', 'b']);
+  expect(o).toContainAllKeys(['b', 'a']);
+  expect(o).not.toContainAllKeys(['b']);
+});`}
+</TestFile>
+
+### .toContainAnyKeys([keys])
+
+Use `.toContainAnyKeys` when checking if an object contains at least one of the provided keys.
+
+<TestFile name="toContainAnyKeys">
+  {`test('passes when object contains at least one matching key', () => {
+  const o = { a: 'hello', b: 'world' };
+  expect(o).toContainAnyKeys(['a']);
+  expect(o).toContainAnyKeys(['b']);
+  expect(o).toContainAnyKeys(['b', 'c']);
+  expect(o).not.toContainAnyKeys(['c']);
+});`}
+</TestFile>
+
+### .toContainValue(value)
+
+Use `.toContainValue` when checking if an object contains the provided value.
+
+<TestFile name="toContainValue">
+  {`test('passes when object contains given value', () => {
+  const o = { a: 'foo', b: 'bar', c: 'baz' };
+  expect(o).toContainValue('foo');
+  expect(o).toContainValue('bar');
+  expect(o).not.toContainValue('qux');
+});`}
+</TestFile>
+
+### .toContainValues([values])
+
+Use `.toContainValues` when checking if an object contains all of the provided values.
+
+<TestFile name="toContainValues">
+  {`test('passes when object contains all of the given values', () => {
+  const o = { a: 'foo', b: 'bar', c: 'baz' };
+  expect(o).toContainValues(['foo']);
+  expect(o).toContainValues(['baz', 'bar']);
+  expect(o).not.toContainValues(['qux', 'foo']);
+});`}
+</TestFile>
+
+### .toContainAllValues([values])
+
+Use `.toContainAllValues` when checking if an object only contains all of the provided values.
+
+<TestFile name="toContainAllValues">
+  {`test('passes when object only contains all of the given values', () => {
+  const o = { a: 'foo', b: 'bar', c: 'baz' };
+  expect(o).toContainAllValues(['foo', 'bar', 'baz']);
+  expect(o).toContainAllValues(['baz', 'bar', 'foo']);
+  expect(o).not.toContainAllValues(['bar', 'foo']);
+});`}
+</TestFile>
+
+### .toContainAnyValues([values])
+
+Use `.toContainAnyValues` when checking if an object contains at least one of the provided values.
+
+<TestFile name="toContainAnyValues">
+  {`test('passes when object contains at least one of the given values', () => {
+  const o = { a: 'foo', b: 'bar', c: 'baz' };
+  expect(o).toContainAnyValues(['qux', 'foo']);
+  expect(o).toContainAnyValues(['qux', 'bar']);
+  expect(o).toContainAnyValues(['qux', 'baz']);
+  expect(o).not.toContainAnyValues(['qux']);
+});`}
+</TestFile>
+
+### .toContainEntry([key, value])
+
+Use `.toContainEntry` when checking if an object contains the provided entry.
+
+<TestFile name="toContainEntry">
+  {`test('passes when object contains given entry', () => {
+  const o = { a: 'foo', b: 'bar', c: 'baz' };
+  expect(o).toContainEntry(['a', 'foo']);
+  expect(o).toContainEntry(['b', 'bar']);
+  expect(o).toContainEntry(['c', 'baz']);
+  expect(o).not.toContainEntry(['a', 'qux']);
+});`}
+</TestFile>
+
+### .toContainEntries([[key, value]])
+
+Use `.toContainEntries` when checking if an object contains all of the provided entries.
+
+<TestFile name="toContainEntries">
+  {`test('passes when object contains all of the given entries', () => {
+  const o = { a: 'foo', b: 'bar', c: 'baz' };
+  expect(o).toContainEntries([['a', 'foo']]);
+  expect(o).toContainEntries([
+    ['c', 'baz'],
+    ['a', 'foo'],
+  ]);
+  expect(o).not.toContainEntries([
+    ['b', 'qux'],
+    ['a', 'foo'],
+  ]);
+});`}
+</TestFile>
+
+### .toContainAllEntries([[key, value]])
+
+Use `.toContainAllEntries` when checking if an object only contains all of the provided entries.
+
+<TestFile name="toContainAllEntries">
+  {`test('passes when object only contains all of the given entries', () => {
+  const o = { a: 'foo', b: 'bar', c: 'baz' };
+  expect(o).toContainAllEntries([
+    ['a', 'foo'],
+    ['b', 'bar'],
+    ['c', 'baz'],
+  ]);
+  expect(o).not.toContainAllEntries([
+    ['a', 'foo'],
+    ['b', 'bar'],
+  ]);
+});`}
+</TestFile>
+
+### .toContainAnyEntries([[key, value]])
+
+Use `.toContainAnyEntries` when checking if an object contains at least one of the provided entries.
+
+<TestFile name="toContainAnyEntries">
+  {`test('passes when object contains at least one of the given entries', () => {
+  const o = { a: 'foo', b: 'bar', c: 'baz' };
+  expect(o).toContainAnyEntries([
+    ['a', 'qux'],
+    ['a', 'foo'],
+  ]);
+  expect(o).toContainAnyEntries([
+    ['a', 'qux'],
+    ['b', 'bar'],
+  ]);
+  expect(o).toContainAnyEntries([
+    ['a', 'qux'],
+    ['c', 'baz'],
+  ]);
+  expect(o).not.toContainAnyEntries([['d', 'qux']]);
+});`}
+</TestFile>
+
+### .toBeExtensible()
+
+Use `.toBeExtensible` when checking if an object is extensible.
+
+<TestFile name="toBeExtensible">
+  {`test('passes when value is extensible', () => {
+  expect({ a: 1 }).toBeExtensible();
+  expect(1).not.toBeExtensible();
+});`}
+</TestFile>
+
+### .toBeFrozen()
+
+Use `.toBeFrozen` when checking if an object is frozen.
+
+<TestFile name="toBeFrozen">
+  {`test('passes when value is frozen', () => {
+  expect(Object.freeze({})).toBeFrozen();
+  expect({}).not.toBeFrozen();
+});`}
+</TestFile>
+
+### .toBeSealed()
+
+Use `.toBeSealed` when checking if an object is sealed.
+
+<TestFile name="toBeSealed">
+  {`test('passes when value is sealed', () => {
+  expect(Object.seal({})).toBeSealed();
+  expect({}).not.toBeSealed();
+});`}
+</TestFile>

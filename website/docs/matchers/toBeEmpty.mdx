@@ -1,0 +1,24 @@
+---
+sidebar_position: 3
+---
+
+import { TestFile } from '../../src/components/CustomSandpack';
+
+# .toBeEmpty()
+
+Use `.toBeEmpty` when checking if a `String` `''`, `Array` `[]`, `Object` `{}`, or [`Iterable`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#Built-in_iterables) is empty. Because `toBeEmpty` supports checking for emptiness of Iterables, you can use it to check whether a `Map`, or `Set` is empty, as well as checking that a generator yields no values.
+
+<TestFile name="toBeEmpty">
+  {`test('passes when given an empty string', () => {
+  expect('').toBeEmpty();
+  expect('hello').not.toBeEmpty();
+});\n
+test('passes when given an empty array', () => {
+  expect([]).toBeEmpty();
+  expect(['hello']).not.toBeEmpty();
+});\n
+test('passes when given an empty object', () => {
+  expect({}).toBeEmpty();
+  expect({ hello: 'world' }).not.toBeEmpty();
+});`}
+</TestFile>

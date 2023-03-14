@@ -1,0 +1,118 @@
+import { TestFile } from '../../src/components/CustomSandpack';
+
+# Array
+
+### .toBeArray()
+
+Use `.toBeArray` when checking if a value is an `Array`.
+
+<TestFile name="toBeArray">
+  {`test('passes when value is an array', () => {
+  expect([]).toBeArray();
+  expect([1]).toBeArray();
+  expect(true).not.toBeArray();
+});`}
+</TestFile>
+
+### .toBeArrayOfSize()
+
+Use `.toBeArrayOfSize` when checking if a value is an `Array` of size x.
+
+<TestFile name="toBeArrayOfSize">
+  {`test('passes when value is an array', () => {
+  expect([]).toBeArrayOfSize(0);
+  expect([1]).toBeArrayOfSize(1);
+  expect(true).not.toBeArrayOfSize(1);
+});`}
+</TestFile>
+
+### .toIncludeAllMembers([members])
+
+Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
+
+<TestFile name="toIncludeAllMembers">
+  {`test('passes when given array values match the members of the set', () => {
+  expect([1, 2, 3]).toIncludeAllMembers([2, 1, 3]);
+  expect([1, 2, 2]).toIncludeAllMembers([2, 1]);
+});`}
+</TestFile>
+
+### .toIncludeAllPartialMembers([members])
+
+Use `.toIncludeAllPartialMembers` when checking if an `Array` contains all of the same partial members of a given set.
+
+<TestFile name="toIncludeAllPartialMembers">
+  {`test('passes when given array values match the partial members of the set', () => {
+  expect([{ foo: 'bar', baz: 'qux' }]).toIncludeAllPartialMembers([{ foo: 'bar' }]);
+});`}
+</TestFile>
+
+### .toIncludeAnyMembers([members])
+
+Use `.toIncludeAnyMembers` when checking if an `Array` contains any of the members of a given set.
+
+<TestFile name="toIncludeAnyMembers">
+  {`test('passes when given array values match any of the members in the set', () => {
+  expect([1, 2, 3]).toIncludeAnyMembers([2, 1, 3]);
+  expect([1, 2, 2]).toIncludeAnyMembers([2]);
+  expect([1, 2, 2]).not.toIncludeAnyMembers([3]);
+});`}
+</TestFile>
+
+### .toIncludeSameMembers([members])
+
+Use `.toIncludeSameMembers` when checking if two arrays contain equal values, in any order.
+
+<TestFile name="toIncludeSameMembers">
+  {`test('passes when arrays match in a different order', () => {
+  expect([1, 2, 3]).toIncludeSameMembers([3, 1, 2]);
+  expect([{ foo: 'bar' }, { baz: 'qux' }]).toIncludeSameMembers([{ baz: 'qux' }, { foo: 'bar' }]);
+});`}
+</TestFile>
+
+### .toPartiallyContain(member)
+
+Use `.toPartiallyContain` when checking if any array value matches the partial member.
+
+<TestFile name="toPartiallyContain">
+  {`test('passes when a string has a given substring', () => {
+  expect([{ foo: 'bar', baz: 'qux', bax: 'zax' }]).toPartiallyContain({ foo: 'bar' });
+  expect([{ foo: 'bar', baz: 'qux', bax: 'zax' }]).toPartiallyContain({ baz: 'qux' });
+  expect([{ foo: 'bar', baz: 'qux', bax: 'zax' }]).not.toPartiallyContain({ foo: 'qux' });
+});`}
+</TestFile>
+
+### .toSatisfyAll(predicate)
+
+Use `.toSatisfyAll` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean` for all values in an array.
+
+<TestFile name="toSatisfyAll">
+  {`test('passes when all values in array pass given predicate', () => {
+  const isOdd = el => el % 2 === 1;
+  expect([1, 3, 5, 7]).toSatisfyAll(isOdd);
+  expect([1, 3, 4, 5, 7]).not.toSatisfyAll(isOdd);
+});`}
+</TestFile>
+
+### .toSatisfyAny(predicate)
+
+Use `.toSatisfyAny` when you want to use a custom matcher by supplying a predicate function that returns `true` for any matching value in an array.
+
+<TestFile name="toSatisfyAny">
+  {`test('passes when any value in array pass given predicate', () => {
+  const isOdd = el => el % 2 === 1;
+  expect([2, 3, 6, 8]).toSatisfyAny(isOdd);
+  expect([2, 4, 8, 12]).not.toSatisfyAny(isOdd);
+});`}
+</TestFile>
+
+### .toBeInRange(min, max)
+
+Use `.toBeInRange` when checking if an array has elements in range min (inclusive) and max (inclusive).
+
+<TestFile name="toBeInRange">
+  {`test('passes when given array is in range', () => {
+  expect([4, 5, 7, 9]).toBeInRange(4, 10);
+  expect([12, 13, 15, 17]).not.toBeInRange(4, 9);
+});`}
+</TestFile>

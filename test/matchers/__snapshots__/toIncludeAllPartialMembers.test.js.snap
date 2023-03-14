@@ -4,18 +4,18 @@ exports[`.not.toIncludeAllPartialMembers fails when array values matches the mem
 "<dim>expect(</intensity><red>received</color><dim>).not.toIncludeAllPartialMembers(</intensity><green>expected</color><dim>)</intensity>
 
 Expected list to not have all of the following partial members:
-  <green>[{\\"foo\\": \\"bar\\"}]</color>
+  <green>[{"foo": "bar"}]</color>
 Received:
-  <red>[{\\"hello\\": \\"world\\"}, {\\"baz\\": \\"qux\\", \\"foo\\": \\"bar\\"}]</color>"
+  <red>[{"hello": "world"}, {"baz": "qux", "foo": "bar"}]</color>"
 `;
 
 exports[`.toIncludeAllPartialMembers fails when array values do not contain any of the members of the set 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toIncludeAllPartialMembers(</intensity><green>expected</color><dim>)</intensity>
 
 Expected list to have all of the following partial members:
-  <green>[{\\"foo\\": \\"qux\\"}]</color>
+  <green>[{"foo": "qux"}]</color>
 Received:
-  <red>[{\\"hello\\": \\"world\\"}, {\\"baz\\": \\"qux\\", \\"foo\\": \\"bar\\"}]</color>"
+  <red>[{"hello": "world"}, {"baz": "qux", "foo": "bar"}]</color>"
 `;
 
 exports[`.toIncludeAllPartialMembers fails when expected object is not an array 1`] = `
@@ -24,14 +24,14 @@ exports[`.toIncludeAllPartialMembers fails when expected object is not an array 
 Expected list to have all of the following partial members:
   <green>1</color>
 Received:
-  <red>[{\\"hello\\": \\"world\\"}, {\\"baz\\": \\"qux\\", \\"foo\\": \\"bar\\"}]</color>"
+  <red>[{"hello": "world"}, {"baz": "qux", "foo": "bar"}]</color>"
 `;
 
 exports[`.toIncludeAllPartialMembers fails when given object is not an array 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toIncludeAllPartialMembers(</intensity><green>expected</color><dim>)</intensity>
 
 Expected list to have all of the following partial members:
-  <green>[{\\"foo\\": \\"bar\\"}]</color>
+  <green>[{"foo": "bar"}]</color>
 Received:
   <red>1</color>"
 `;

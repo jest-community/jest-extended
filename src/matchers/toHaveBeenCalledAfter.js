@@ -15,23 +15,23 @@ export function toHaveBeenCalledAfter(actual, expected, failIfNoFirstInvocation 
   const secondInvocationCallOrder = expected.mock.invocationCallOrder;
   const pass = predicate(firstInvocationCallOrder, secondInvocationCallOrder, failIfNoFirstInvocation);
 
-  const passMessage =
-    matcherHint('.not.toHaveBeenCalledAfter') +
-    '\n\n' +
-    'Expected first mock to not have been called after, invocationCallOrder:\n' +
-    `  ${printExpected(firstInvocationCallOrder)}\n` +
-    'Received second mock with invocationCallOrder:\n' +
-    `  ${printReceived(secondInvocationCallOrder)}`;
-
-  const failMessage =
-    matcherHint('.toHaveBeenCalledAfter') +
-    '\n\n' +
-    'Expected first mock to have been called after, invocationCallOrder:\n' +
-    `  ${printExpected(firstInvocationCallOrder)}\n` +
-    'Received second mock with invocationCallOrder:\n' +
-    `  ${printReceived(secondInvocationCallOrder)}`;
-
-  return { pass, message: () => (pass ? passMessage : failMessage) };
+  return {
+    pass,
+    message: () =>
+      pass
+        ? matcherHint('.not.toHaveBeenCalledAfter') +
+          '\n\n' +
+          'Expected first mock to not have been called after, invocationCallOrder:\n' +
+          `  ${printExpected(firstInvocationCallOrder)}\n` +
+          'Received second mock with invocationCallOrder:\n' +
+          `  ${printReceived(secondInvocationCallOrder)}`
+        : matcherHint('.toHaveBeenCalledAfter') +
+          '\n\n' +
+          'Expected first mock to have been called after, invocationCallOrder:\n' +
+          `  ${printExpected(firstInvocationCallOrder)}\n` +
+          'Received second mock with invocationCallOrder:\n' +
+          `  ${printReceived(secondInvocationCallOrder)}`,
+  };
 }
 
 const smallest = ns => ns.reduce((acc, n) => (acc < n ? acc : n));
