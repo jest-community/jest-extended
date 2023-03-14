@@ -48,7 +48,7 @@ export function toIncludeAllMembersInOrder(actual, expected) {
   pass = differingElementIdxs.length === 0;
 
   const message = () => {
-    pass
+    return pass
       ? this.utils.matcherHint('toIncludeAllMembersInOrder', undefined, undefined, options) +
         '\n\n' +
         `Expected: not ${this.utils.printExpected(expected)}\n` +
