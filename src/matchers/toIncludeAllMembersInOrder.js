@@ -47,27 +47,18 @@ export function toIncludeAllMembersInOrder(actual, expected) {
 
   pass = differingElementIdxs.length === 0;
 
-  const message = pass
-    ? () =>
-        // eslint-disable-next-line prefer-template
-        this.utils.matcherHint('toIncludeAllMembersInOrder', undefined, undefined, options) +
+  const message = () => {
+    pass
+      ? this.utils.matcherHint('toIncludeAllMembersInOrder', undefined, undefined, options) +
         '\n\n' +
         `Expected: not ${this.utils.printExpected(expected)}\n` +
         `Received: ${this.utils.printReceived(actual)}`
-    : () => {
-        const firstDifferingElementIdx = differingElementIdxs[0];
-        const firstDifferingElementInActual = actual[firstDifferingElementIdx];
-        const firstDifferingElementInExpected = expected[firstDifferingElementIdx];
-
-        return (
-          // eslint-disable-next-line prefer-template
-          this.utils.matcherHint('toIncludeAllMembersInOrder', undefined, undefined, options) +
-          '\n\n' +
-          `First differing element (index ${firstDifferingElementIdx}):\n\n` +
-          `Expected: ${this.utils.printExpected(firstDifferingElementInExpected)}\n` +
-          `Received: ${this.utils.printReceived(firstDifferingElementInActual)}`
-        );
-      };
+      : this.utils.matcherHint('toIncludeAllMembersInOrder', undefined, undefined, options) +
+        '\n\n' +
+        `First differing element (index ${differingElementIdxs[0]}):\n\n` +
+        `Expected: ${this.utils.printExpected(expected[differingElementIdxs[0]])}\n` +
+        `Received: ${this.utils.printReceived(actual[differingElementIdxs[0]])}`;
+  };
 
   return { actual, message, pass };
 }
