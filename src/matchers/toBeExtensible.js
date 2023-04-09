@@ -10,7 +10,7 @@ export function toBeExtensible(actual) {
         ? matcherHint('.not.toBeExtensible', 'received', '') +
           '\n\n' +
           'Expected value to not be extensible received:\n' +
-          `  ${printExpected(actual)}\n`
+          `  ${printReceived(actual)}\n`
         : matcherHint('.toBeExtensible', 'received', '') +
           '\n\n' +
           'Expected value to be extensible received:\n' +
