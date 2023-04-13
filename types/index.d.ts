@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-interface CustomMatchers<R> {
+interface CustomMatchers<R> extends Record<string, any> {
   /**
    * Note: Currently unimplemented
    * Passing assertion
@@ -883,4 +883,9 @@ declare namespace jest {
 declare namespace Vi {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface AsymmetricMatchersContaining extends CustomMatchers<any> {}
+}
+
+declare module 'jest-extended' {
+  const matchers: CustomMatchers<any>;
+  export = matchers;
 }
