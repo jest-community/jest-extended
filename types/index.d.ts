@@ -164,9 +164,9 @@ interface CustomMatchers<R> extends Record<string, any> {
   toHaveBeenCalledOnce(): R;
 
   /**
-   * Use `.toHaveBeenCalledOnceWith` to check if a `Mock` was called exactly one time with the expected value.
+   * Use `.toHaveBeenCalledExactlyOnceWith` to check if a `Mock` was called exactly one time with the expected value.
    */
-  toHaveBeenCalledOnceWith(): R;
+  toHaveBeenCalledExactlyOnceWith(): R;
 
   /**
    * Use `.toBeNumber` when checking if a value is a `Number`.
@@ -598,9 +598,9 @@ declare namespace jest {
     toHaveBeenCalledOnce(): R;
 
     /**
-     * Use `.toHaveBeenCalledOnceWith` to check if a `Mock` was called exactly one time with the expected value.
+     * Use `.toHaveBeenCalledExactlyOnceWith` to check if a `Mock` was called exactly one time with the expected value.
      */
-    toHaveBeenCalledOnceWith(...args: unknown[]): R;
+    toHaveBeenCalledExactlyOnceWith(...args: unknown[]): R;
 
     /**
      * Use `.toBeNumber` when checking if a value is a `Number`.
