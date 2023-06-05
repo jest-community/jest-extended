@@ -1,5 +1,21 @@
 # jest-extended
 
+## 4.0.0
+
+### Major Changes
+
+- ab20845: Rename toHaveBeenCalledOnceWith to toHaveBeenCalledExactlyOnceWith
+
+### Minor Changes
+
+- 5b80ca8: support vitest 0.31.0
+
+### Patch Changes
+
+- ab20845: Make CustomMatchers extend Record to fix a TypeScript error
+- ab20845: Fix toHaveBeenCalledOnceWith messages
+- ab20845: Change unknown to any in toHaveBeenCalledBefore and toHaveBeenCalledAfter
+
 ## 3.2.4
 
 ### Patch Changes
