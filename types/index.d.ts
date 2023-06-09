@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-interface CustomMatchers<R> extends Record<string, any> {
+export interface CustomMatchers<R> extends Record<string, any> {
   /**
    * Note: Currently unimplemented
    * Passing assertion
@@ -882,12 +882,6 @@ declare namespace jest {
 
 // removed since vitest 0.31.0. Usefull for every vitest version before 0.31.0
 declare namespace Vi {
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface AsymmetricMatchersContaining extends CustomMatchers<any> {}
-}
-
-// Changed since vitest 0.31.0. Usefull for every vitest version after 0.31.0
-declare module 'vitest' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface AsymmetricMatchersContaining extends CustomMatchers<any> {}
 }

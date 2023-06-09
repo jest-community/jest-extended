@@ -37,3 +37,16 @@ If the above import syntax does not work, replace it with the following:
 :::info
 An example of project with Typescript globally setup can be found [here](https://github.com/jest-community/jest-extended/tree/main/examples/typescript/all).
 :::
+
+## Use with `vitest`
+
+If your editor does not recognise the custom `jest-extended` matchers, add a `global.d.ts` file to your project with:
+
+```ts
+import type { CustomMatchers } from 'jest-extended';
+
+declare module 'vitest' {
+  interface Assertion<T = unknown> extends CustomMatchers<T> {}
+  interface AsymmetricMatchersContaining extends CustomMatchers<unknown> {}
+}
+```
