@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toHaveBeenCalledExactlyOnceWith fails if mock was invoked exactly once with the expected value 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toHaveBeenCalledExactlyOnceWith()</intensity>
+
+Expected mock to be invoked some number of times other than once or once with arguments other than <green>["hello"]</color>, but was invoked <red>1</color> times with <red>"hello"</color>"
+`;
+
+exports[`.toHaveBeenCalledExactlyOnceWith fails if mock was invoked more than once, indicating how many times it was invoked 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toHaveBeenCalledExactlyOnceWith(</intensity><green>expected</color><dim>)</intensity>
+
+Expected mock function to have been called exactly once, but it was called <red>17</color> times"
+`;
+
+exports[`.toHaveBeenCalledExactlyOnceWith fails if mock was never invoked indicating that it was invoked 0 times 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toHaveBeenCalledExactlyOnceWith(</intensity><green>expected</color><dim>)</intensity>
+
+Expected mock function to have been called exactly once, but it was called <red>0</color> times"
+`;
+
+exports[`.toHaveBeenCalledExactlyOnceWith fails when given value is not a jest spy or mock 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toHaveBeenCalledExactlyOnceWith()</intensity>
+
+Matcher error: <red>"received"</color> must be a mock or spy function
+
+Received has type:  function
+Received has value: <red>[Function mock1]</color>"
+`;
+
+exports[`.toHaveBeenCalledExactlyOnceWith fails when given value is not the expected one 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toHaveBeenCalledExactlyOnceWith(</intensity><green>expected</color><dim>)</intensity>
+
+Expected mock function to have been called exactly once with <green>["hello"]</color>, but it was called with <red>"not hello"</color>"
+`;

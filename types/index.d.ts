@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-interface CustomMatchers<R> {
+interface CustomMatchers<R> extends Record<string, any> {
   /**
    * Note: Currently unimplemented
    * Passing assertion
@@ -146,7 +146,7 @@ interface CustomMatchers<R> {
    * @param {Mock} mock
    * @param {boolean} [failIfNoSecondInvocation=true]
    */
-  toHaveBeenCalledBefore(mock: jest.MockInstance<unknown, unknown[]>, failIfNoSecondInvocation: boolean): R;
+  toHaveBeenCalledBefore(mock: jest.MockInstance<any, any[]>, failIfNoSecondInvocation: boolean): R;
 
   /**
    * Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another `Mock`.
@@ -156,7 +156,7 @@ interface CustomMatchers<R> {
    * @param {Mock} mock
    * @param {boolean} [failIfNoFirstInvocation=true]
    */
-  toHaveBeenCalledAfter(mock: jest.MockInstance<unknown, unknown[]>, failIfNoFirstInvocation: boolean): R;
+  toHaveBeenCalledAfter(mock: jest.MockInstance<any, any[]>, failIfNoFirstInvocation: boolean): R;
 
   /**
    * Use `.toHaveBeenCalledOnce` to check if a `Mock` was called exactly one time.
@@ -164,9 +164,9 @@ interface CustomMatchers<R> {
   toHaveBeenCalledOnce(): R;
 
   /**
-   * Use `.toHaveBeenCalledOnceWith` to check if a `Mock` was called exactly one time with the expected value.
+   * Use `.toHaveBeenCalledExactlyOnceWith` to check if a `Mock` was called exactly one time with the expected value.
    */
-  toHaveBeenCalledOnceWith(): R;
+  toHaveBeenCalledExactlyOnceWith(): R;
 
   /**
    * Use `.toBeNumber` when checking if a value is a `Number`.
@@ -580,7 +580,7 @@ declare namespace jest {
      * @param {Mock} mock
      * @param {boolean} [failIfNoSecondInvocation=true]
      */
-    toHaveBeenCalledBefore(mock: jest.MockInstance<unknown, unknown[]>, failIfNoSecondInvocation?: boolean): R;
+    toHaveBeenCalledBefore(mock: jest.MockInstance<any, any[]>, failIfNoSecondInvocation?: boolean): R;
 
     /**
      * Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another `Mock`.
@@ -590,7 +590,7 @@ declare namespace jest {
      * @param {Mock} mock
      * @param {boolean} [failIfNoFirstInvocation=true]
      */
-    toHaveBeenCalledAfter(mock: jest.MockInstance<unknown, unknown[]>, failIfNoFirstInvocation?: boolean): R;
+    toHaveBeenCalledAfter(mock: jest.MockInstance<any, any[]>, failIfNoFirstInvocation?: boolean): R;
 
     /**
      * Use `.toHaveBeenCalledOnce` to check if a `Mock` was called exactly one time.
@@ -598,9 +598,9 @@ declare namespace jest {
     toHaveBeenCalledOnce(): R;
 
     /**
-     * Use `.toHaveBeenCalledOnceWith` to check if a `Mock` was called exactly one time with the expected value.
+     * Use `.toHaveBeenCalledExactlyOnceWith` to check if a `Mock` was called exactly one time with the expected value.
      */
-    toHaveBeenCalledOnceWith(...args: unknown[]): R;
+    toHaveBeenCalledExactlyOnceWith(...args: unknown[]): R;
 
     /**
      * Use `.toBeNumber` when checking if a value is a `Number`.
@@ -880,7 +880,19 @@ declare namespace jest {
   interface InverseAsymmetricMatchers extends Expect {}
 }
 
+// removed since vitest 0.31.0. Usefull for every vitest version before 0.31.0
 declare namespace Vi {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface AsymmetricMatchersContaining extends CustomMatchers<any> {}
+}
+
+// Changed since vitest 0.31.0. Usefull for every vitest version after 0.31.0
+declare module 'vitest' {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  interface AsymmetricMatchersContaining extends CustomMatchers<any> {}
+}
+
+declare module 'jest-extended' {
+  const matchers: CustomMatchers<any>;
+  export = matchers;
 }

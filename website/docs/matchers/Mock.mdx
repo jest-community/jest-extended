@@ -48,16 +48,16 @@ Use `.toHaveBeenCalledOnce` to check if a `Mock` was called exactly one time.
 
 </TestFile>
 
-### .toHaveBeenCalledOnceWith()
+### .toHaveBeenCalledExactlyOnceWith()
 
-Use `.toHaveBeenCalledOnceWith` to check if a `Mock` was called exactly one time and with the expected values.
+Use `.toHaveBeenCalledExactlyOnceWith` to check if a `Mock` was called exactly one time and with the expected values.
 
-<TestFile name="toHaveBeenCalledOnceWith">
+<TestFile name="toHaveBeenCalledExactlyOnceWith">
   {`test('passes only if mock was called exactly once with the expected value', () => {
   const mock = jest.fn();\n
   expect(mock).not.toHaveBeenCalled();
   mock('hello');
-  expect(mock).toHaveBeenCalledOnceWith('hello');
+  expect(mock).toHaveBeenCalledExactlyOnceWith('hello');
 });`}
 
 </TestFile>

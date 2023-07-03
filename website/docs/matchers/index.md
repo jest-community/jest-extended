@@ -50,7 +50,7 @@ sidebar_position: 1
 - [.toHaveBeenCalledBefore()](/docs/matchers/mock/#tohavebeencalledbefore)
 - [.toHaveBeenCalledAfter()](/docs/matchers/mock/#tohavebeencalledafter)
 - [.toHaveBeenCalledOnce()](/docs/matchers/mock/#tohavebeencalledonce)
-- [.toHaveBeenCalledOnceWith()](/docs/matchers/mock/#tohavebeencalledoncewith)
+- [.toHaveBeenCalledExactlyOnceWith()](/docs/matchers/mock/#tohavebeencalledexactlyoncewith)
 
 ## [Number](/docs/matchers/number)
 
