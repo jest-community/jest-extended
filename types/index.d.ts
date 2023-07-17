@@ -166,7 +166,7 @@ interface CustomMatchers<R> extends Record<string, any> {
   /**
    * Use `.toHaveBeenCalledExactlyOnceWith` to check if a `Mock` was called exactly one time with the expected value.
    */
-  toHaveBeenCalledExactlyOnceWith(): R;
+  toHaveBeenCalledExactlyOnceWith(...args: unknown[]): R;
 
   /**
    * Use `.toBeNumber` when checking if a value is a `Number`.
