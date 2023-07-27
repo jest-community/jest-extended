@@ -58,7 +58,7 @@ export default defineConfig({
 
 ### Vitest TypeScript types setup
 
-To use Vitest with TypeScript, create a file named _jest-extended.d.ts_ with the content below in addition to the setup above.
+To use Vitest with TypeScript, create a file named `jest-extended.d.ts` with the content below in addition to the setup above.
 
 ```typescript
 /// <reference types="vitest" />
