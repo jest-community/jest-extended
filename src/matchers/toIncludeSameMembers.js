@@ -41,7 +41,7 @@ export function toIncludeSameMembers(actual, expected) {
 }
 
 const predicate = (equals, actual, expected) => {
-  if (!Array.isArray(actual) || !Array.isArray(expected) || actual.length !== expected.length) {
+  if (!Array.isArray(actual) || !Array.isArray(expected)) {
     return {
       pass: false,
       newActual: actual,
@@ -49,7 +49,7 @@ const predicate = (equals, actual, expected) => {
     };
   }
 
-  let pass = true;
+  let pass = actual.length === expected.length;
 
   let newActual = Array(expected.length).fill(kEmpty);
 
@@ -108,6 +108,10 @@ function doesArrayHaveGaps(array) {
 
   if (lastEmptyIndex === -1) {
     return false;
+  }
+
+  if (lastEmptyIndex !== array.length - 1) {
+    return true;
   }
 
   const firstEmptyIndex = array.indexOf(kEmpty);
