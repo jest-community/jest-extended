@@ -76,9 +76,11 @@ interface CustomMatchers<R> extends Record<string, any> {
 
   /**
    * Use `.toIncludeSameMembers` when checking if two arrays contain equal values, in any order.
+   * for better error message use the optional `fnOrKey` argument to specify how to determine two items similarity (e.g. the id property)
    * @param {Array.<*>} members
+   * @param fnOrKey
    */
-  toIncludeSameMembers<E = unknown>(members: readonly E[]): R;
+  toIncludeSameMembers<E = unknown>(members: readonly E[], fnOrKey?: string | ((itemA: E, itemB: E) => boolean)): R;
 
   /**
    * Use `.toPartiallyContain` when checking if any array value matches the partial member.
@@ -510,9 +512,11 @@ declare namespace jest {
 
     /**
      * Use `.toIncludeSameMembers` when checking if two arrays contain equal values, in any order.
+     * for better error message use the optional `fnOrKey` argument to specify how to determine two items similarity (e.g. the id property)
      * @param {Array.<*>} members
+     * @param fnOrKey
      */
-    toIncludeSameMembers<E = unknown>(members: readonly E[]): R;
+    toIncludeSameMembers<E = unknown>(members: readonly E[], fnOrKey?: string | ((itemA: E, itemB: E) => boolean)): R;
 
     /**
      * Use `.toPartiallyContain` when checking if any array value matches the partial member.
