@@ -1,5 +1,12 @@
 # jest-extended
 
+## 4.0.1
+
+### Patch Changes
+
+- bad7056: Fix `toHaveBeenCalledExactlyOnceWith` typings
+- 1609897: Remove problematic Vitest types
+
 ## 4.0.0
 
 ### Major Changes
