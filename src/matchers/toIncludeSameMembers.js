@@ -75,7 +75,8 @@ function getBetterDiff(equals, actual, expected, fnOrKey) {
 
   const pass = !invalid && added.length === 0 && missing.length === 0;
 
-  const containComplexDiffData = actual.concat(expected).some(item => typeof item === 'object' && item !== null);
+  const containComplexDiffData =
+    !invalid && actual.concat(expected).some(item => typeof item === 'object' && item !== null);
 
   // If we have gaps the output would be confusing and element will be displayed as removed and added for the wrong place when having partial match
   if (invalid || (containComplexDiffData && !canFillTheGapsIfHave(newActual, added))) {
