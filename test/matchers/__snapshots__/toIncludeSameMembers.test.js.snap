@@ -139,10 +139,17 @@ Received:
 exports[`.toIncludeSameMembers have gaps simple items 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toIncludeSameMembers(</intensity><green>expected</color><dim>)</intensity>
 
-Expected list to have the following members and no more:
-  <green>[1, 2, 3, 4, 5]</color>
-Received:
-  <red>[5, 6, 1]</color>"
+<green>- Expected  - 3</color>
+<red>+ Received  + 1</color>
+
+<dim>  Array [</intensity>
+<dim>    1,</intensity>
+<green>-   2,</color>
+<green>-   3,</color>
+<green>-   4,</color>
+<red>+   6,</color>
+<dim>    5,</intensity>
+<dim>  ]</intensity>"
 `;
 
 exports[`.toIncludeSameMembers keyOrFn passed function 1`] = `
