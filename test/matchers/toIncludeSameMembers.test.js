@@ -17,8 +17,29 @@ describe('.toIncludeSameMembers', () => {
     expect([{ foo: 'bar' }, { baz: 'qux' }]).toIncludeSameMembers([{ baz: 'qux' }, { foo: 'bar' }]);
   });
 
+  test('fail with fallback output when result of the matcher changed', () => {
+    expect(() =>
+      expect([
+        {
+          get id() {
+            const stack = new Error().stack;
+            if (!stack.includes('getBetterDiff')) {
+              // Fail
+              return 5;
+            }
+            return 1;
+          },
+        },
+      ]).toIncludeSameMembers([{ id: 1 }]),
+    ).toThrowErrorMatchingSnapshot();
+  });
+
   test('fails when the arrays are not equal in length', () => {
     expect(() => expect([1, 2]).toIncludeSameMembers([1])).toThrowErrorMatchingSnapshot();
+  });
+
+  test('fails when not passed array', () => {
+    expect(() => expect(2).toIncludeSameMembers([1])).toThrowErrorMatchingSnapshot();
   });
 
   describe('fails when actual has more items than expected (when the ones exists match)', () => {

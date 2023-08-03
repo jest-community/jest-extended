@@ -70,7 +70,7 @@ const predicate = (equals, actual, expected) => {
   return !!remaining && remaining.length === 0;
 };
 
-const getBetterDiff = (equals, actual, expected, fnOrKey) => {
+function getBetterDiff(equals, actual, expected, fnOrKey) {
   let { invalid, added, missing, partialNewActual: newActual } = getChanged(equals, actual, expected);
 
   const pass = !invalid && added.length === 0 && missing.length === 0;
@@ -129,7 +129,7 @@ const getBetterDiff = (equals, actual, expected, fnOrKey) => {
     newActual,
     useDiffOutput,
   };
-};
+}
 
 function getChanged(equals, actual, expected) {
   if (!Array.isArray(actual) || !Array.isArray(expected)) {
