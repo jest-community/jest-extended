@@ -8,8 +8,8 @@ Use `.toHaveBeenCalledBefore` when checking if a `Mock` was called before anothe
 
 <TestFile name="toHaveBeenCalledBefore">
   {`test('calls mock1 before mock2', () => {
-  const mock1 = jest.fn();
-  const mock2 = jest.fn();\n
+  const mock1 = vi.fn();
+  const mock2 = vi.fn();\n
   mock1();
   mock2();
   mock1();\n
@@ -24,8 +24,8 @@ Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another 
 
 <TestFile name="toHaveBeenCalledAfter">
   {`test('calls mock1 after mock2', () => {
-  const mock1 = jest.fn();
-  const mock2 = jest.fn();\n
+  const mock1 = vi.fn();
+  const mock2 = vi.fn();\n
   mock2();
   mock1();
   mock2();\n
@@ -40,7 +40,7 @@ Use `.toHaveBeenCalledOnce` to check if a `Mock` was called exactly one time.
 
 <TestFile name="toHaveBeenCalledOnce">
   {`test('passes only if mock was called exactly once', () => {
-  const mock = jest.fn();\n
+  const mock = vi.fn();\n
   expect(mock).not.toHaveBeenCalled();
   mock();
   expect(mock).toHaveBeenCalledOnce();
@@ -54,7 +54,7 @@ Use `.toHaveBeenCalledExactlyOnceWith` to check if a `Mock` was called exactly o
 
 <TestFile name="toHaveBeenCalledExactlyOnceWith">
   {`test('passes only if mock was called exactly once with the expected value', () => {
-  const mock = jest.fn();\n
+  const mock = vi.fn();\n
   expect(mock).not.toHaveBeenCalled();
   mock('hello');
   expect(mock).toHaveBeenCalledExactlyOnceWith('hello');

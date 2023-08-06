@@ -1,0 +1,104 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`.not.toHaveBeenCalledBefore > failIfNoSecondInvocation is passed as false > fails when given first mock that has been called and a second mock that has not been called 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toHaveBeenCalledBefore([22m[32mexpected[39m[2m)[22m
+
+Expected first mock to not have been called before, invocationCallOrder:
+  [32mArray [
+  31,
+][39m
+Received second mock with invocationCallOrder:
+  [31mArray [][39m"
+`;
+
+exports[`.not.toHaveBeenCalledBefore > fails when given first mock is called before multiple calls to second mock 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toHaveBeenCalledBefore([22m[32mexpected[39m[2m)[22m
+
+Expected first mock to not have been called before, invocationCallOrder:
+  [32mArray [
+  4000,
+  6000,
+][39m
+Received second mock with invocationCallOrder:
+  [31mArray [
+  5000,
+  7000,
+  8000,
+][39m"
+`;
+
+exports[`.not.toHaveBeenCalledBefore > fails when given first mock is called before second mock 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toHaveBeenCalledBefore([22m[32mexpected[39m[2m)[22m
+
+Expected first mock to not have been called before, invocationCallOrder:
+  [32mArray [
+  4000,
+][39m
+Received second mock with invocationCallOrder:
+  [31mArray [
+  5000,
+][39m"
+`;
+
+exports[`.toHaveBeenCalledBefore > failIfNoSecondInvocation is passed as true > fails when given first mock that has been called and a second mock that has not been called 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toHaveBeenCalledBefore([22m[32mexpected[39m[2m)[22m
+
+Expected first mock to have been called before, invocationCallOrder:
+  [32mArray [
+  16,
+][39m
+Received second mock with invocationCallOrder:
+  [31mArray [][39m"
+`;
+
+exports[`.toHaveBeenCalledBefore > fails when given a first mock has not been called 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toHaveBeenCalledBefore([22m[32mexpected[39m[2m)[22m
+
+Expected first mock to have been called before, invocationCallOrder:
+  [32mArray [][39m
+Received second mock with invocationCallOrder:
+  [31mArray [][39m"
+`;
+
+exports[`.toHaveBeenCalledBefore > fails when given first mock is called after second mock 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toHaveBeenCalledBefore([22m[32mexpected[39m[2m)[22m
+
+Expected first mock to have been called before, invocationCallOrder:
+  [32mArray [
+  5000,
+][39m
+Received second mock with invocationCallOrder:
+  [31mArray [
+  4000,
+][39m"
+`;
+
+exports[`.toHaveBeenCalledBefore > fails when given first mock is called after several calls to second mock 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toHaveBeenCalledBefore([22m[32mexpected[39m[2m)[22m
+
+Expected first mock to have been called before, invocationCallOrder:
+  [32mArray [
+  5000,
+  6000,
+  7000,
+][39m
+Received second mock with invocationCallOrder:
+  [31mArray [
+  4000,
+][39m"
+`;
+
+exports[`.toHaveBeenCalledBefore > fails when given first mock that has been called and a second mock that has not been called 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toHaveBeenCalledBefore([22m[32mexpected[39m[2m)[22m
+
+Expected first mock to have been called before, invocationCallOrder:
+  [32mArray [
+  1,
+][39m
+Received second mock with invocationCallOrder:
+  [31mArray [][39m"
+`;
+
+exports[`.toHaveBeenCalledBefore > fails when given first value is not a jest spy or mock 1`] = `"utils.printWithType is not a function"`;
+
+exports[`.toHaveBeenCalledBefore > fails when given second value is not a jest spy or mock 1`] = `"utils.printWithType is not a function"`;

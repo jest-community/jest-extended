@@ -1,4 +1,5 @@
-import { contains, determinePropertyMessage, isJestMockOrSpy } from "src/utils";
+import { vi } from "vitest";
+import { contains, determinePropertyMessage, isVitestMockOrSpy } from "src/utils";
 
 let equals;
 
@@ -63,15 +64,15 @@ describe("Utils", () => {
     }
   });
 
-  describe(".isJestMockOrSpy", () => {
+  describe(".isVitestMockOrSpy", () => {
     test("returns true if value is a jest mock", () => {
-      const spy = jest.fn();
-      expect(isJestMockOrSpy(spy)).toBe(true);
+      const spy = vi.fn();
+      expect(isVitestMockOrSpy(spy)).toBe(true);
     });
 
     test("returns false if value is not a jest mock", () => {
       const fn = () => {};
-      expect(isJestMockOrSpy(fn)).toBe(false);
+      expect(isVitestMockOrSpy(fn)).toBe(false);
     });
   });
 });

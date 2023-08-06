@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`.not.toHaveBeenCalledOnce > fails if mock was invoked exactly once 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toHaveBeenCalledOnce([22m[32mexpected[39m[2m)[22m
+
+Expected mock function to have been called any amount of times but one, but it was called exactly once."
+`;
+
+exports[`.toHaveBeenCalledOnce > fails if mock was invoked more than once, indicating how many times it was invoked 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toHaveBeenCalledOnce([22m[32mexpected[39m[2m)[22m
+
+Expected mock function to have been called exactly once, but it was called:
+  [31m17[39m times"
+`;
+
+exports[`.toHaveBeenCalledOnce > fails if mock was never invoked indicating that it was invoked 0 times 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toHaveBeenCalledOnce([22m[32mexpected[39m[2m)[22m
+
+Expected mock function to have been called exactly once, but it was called:
+  [31m0[39m times"
+`;
+
+exports[`.toHaveBeenCalledOnce > fails when given value is not a vi spy or mock 1`] = `"printWithType is not a function"`;

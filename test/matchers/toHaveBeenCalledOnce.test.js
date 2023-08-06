@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import * as matcher from "src/matchers/toHaveBeenCalledOnce";
 
 expect.extend(matcher);
@@ -5,7 +6,7 @@ expect.extend(matcher);
 describe(".toHaveBeenCalledOnce", () => {
   let mock;
   beforeEach(() => {
-    mock = jest.fn();
+    mock = vi.fn();
   });
 
   test("passes if mock was invoked exactly once", () => {
@@ -23,7 +24,7 @@ describe(".toHaveBeenCalledOnce", () => {
     expect(() => expect(mock).toHaveBeenCalledOnce()).toThrowErrorMatchingSnapshot();
   });
 
-  test("fails when given value is not a jest spy or mock", () => {
+  test("fails when given value is not a vi spy or mock", () => {
     const mock1 = () => {};
     expect(() => expect(mock1).toHaveBeenCalledOnce()).toThrowErrorMatchingSnapshot();
   });
@@ -32,7 +33,7 @@ describe(".toHaveBeenCalledOnce", () => {
 describe(".not.toHaveBeenCalledOnce", () => {
   let mock;
   beforeEach(() => {
-    mock = jest.fn();
+    mock = vi.fn();
   });
 
   test("passes if mock was never invoked", () => {

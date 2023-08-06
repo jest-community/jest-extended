@@ -1,9 +1,9 @@
-import { isJestMockOrSpy } from "../utils";
+import { isVitestMockOrSpy } from "../utils";
 
 export function toHaveBeenCalledOnce(received) {
   const { printReceived, printWithType, matcherHint } = this.utils;
 
-  if (!isJestMockOrSpy(received)) {
+  if (!isVitestMockOrSpy(received)) {
     return {
       pass: false,
       message: () =>

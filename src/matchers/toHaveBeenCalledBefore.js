@@ -1,13 +1,13 @@
-import { isJestMockOrSpy } from "../utils";
+import { isVitestMockOrSpy } from "../utils";
 
 export function toHaveBeenCalledBefore(actual, expected, failIfNoSecondInvocation = true) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  if (!isJestMockOrSpy(actual)) {
+  if (!isVitestMockOrSpy(actual)) {
     return { pass: false, message: mockCheckFailMessage(this.utils, actual, true) };
   }
 
-  if (!isJestMockOrSpy(expected)) {
+  if (!isVitestMockOrSpy(expected)) {
     return { pass: false, message: mockCheckFailMessage(this.utils, expected, false) };
   }
 

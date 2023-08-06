@@ -6,7 +6,7 @@ export const determinePropertyMessage = (actual, property, message = "Not Access
   return actual && Object.hasOwnProperty.call(actual, property) ? actual[property] : message;
 };
 
-export const isJestMockOrSpy = value => {
+export const isVitestMockOrSpy = value => {
   return !!(value && value._isMockFunction === true && typeof value.mock === "object");
 };
 

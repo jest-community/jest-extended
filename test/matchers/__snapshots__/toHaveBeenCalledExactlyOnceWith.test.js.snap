@@ -1,0 +1,31 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`.not.toHaveBeenCalledExactlyOnceWith > fails if mock was invoked exactly once with the expected value 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toHaveBeenCalledExactlyOnceWith()[22m
+
+Expected mock to be invoked some number of times other than once or once with arguments other than [32mArray [
+  \\"hello\\",
+][39m, but was invoked [31m1[39m times with [31m\\"hello\\"[39m"
+`;
+
+exports[`.toHaveBeenCalledExactlyOnceWith > fails if mock was invoked more than once, indicating how many times it was invoked 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toHaveBeenCalledExactlyOnceWith([22m[32mexpected[39m[2m)[22m
+
+Expected mock function to have been called exactly once, but it was called [31m17[39m times"
+`;
+
+exports[`.toHaveBeenCalledExactlyOnceWith > fails if mock was never invoked indicating that it was invoked 0 times 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toHaveBeenCalledExactlyOnceWith([22m[32mexpected[39m[2m)[22m
+
+Expected mock function to have been called exactly once, but it was called [31m0[39m times"
+`;
+
+exports[`.toHaveBeenCalledExactlyOnceWith > fails when given value is not a jest spy or mock 1`] = `"printWithType is not a function"`;
+
+exports[`.toHaveBeenCalledExactlyOnceWith > fails when given value is not the expected one 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toHaveBeenCalledExactlyOnceWith([22m[32mexpected[39m[2m)[22m
+
+Expected mock function to have been called exactly once with [32mArray [
+  \\"hello\\",
+][39m, but it was called with [31m\\"not hello\\"[39m"
+`;

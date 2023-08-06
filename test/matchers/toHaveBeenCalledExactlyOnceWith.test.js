@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import * as matcher from "src/matchers/toHaveBeenCalledExactlyOnceWith";
 
 expect.extend(matcher);
@@ -5,7 +6,7 @@ expect.extend(matcher);
 describe(".toHaveBeenCalledExactlyOnceWith", () => {
   let mock;
   beforeEach(() => {
-    mock = jest.fn();
+    mock = vi.fn();
   });
 
   test("passes if mock was invoked exactly once with the expected value", () => {
@@ -47,7 +48,7 @@ describe(".toHaveBeenCalledExactlyOnceWith", () => {
 describe(".not.toHaveBeenCalledExactlyOnceWith", () => {
   let mock;
   beforeEach(() => {
-    mock = jest.fn();
+    mock = vi.fn();
   });
 
   test("passes if mock was never invoked", () => {
