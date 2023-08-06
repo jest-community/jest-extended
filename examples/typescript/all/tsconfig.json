@@ -9,9 +9,9 @@
     "strictFunctionTypes": true,
     "strictBindCallApply": true,
     "strictPropertyInitialization": true,
-    "noEmit": true
+    "noEmit": true,
+    "types": ["vitest/globals", "vitest-extended"]
   },
-  "files": ["node_modules/vitest-extended/types/index.d.ts"],
   "include": ["src/**/*", "test/**/*"],
   "exclude": ["node_modules"]
 }

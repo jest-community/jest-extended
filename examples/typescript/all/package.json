@@ -1,13 +1,12 @@
 {
-  "name": "jest-extended-typescript-setup-all",
+  "name": "vitest-extended-typescript-setup-all",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
-    "vitest": "^27.4.7",
-    "vitest-extended": "^1.2.0",
-    "ts-jest": "^27.1.3",
-    "typescript": "^4.5.5"
+    "typescript": "^4.5.5",
+    "vitest": "^0.34.1",
+    "vitest-extended": "^0.0.1"
   },
   "scripts": {
     "test": "vitest"

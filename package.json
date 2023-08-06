@@ -7,8 +7,17 @@
   "files": [
     "dist",
     "types/index.d.ts",
-    "all.js"
+    "all.cjs",
+    "all.mjs"
   ],
+  "exports": {
+    "./all": {
+      "default": "./all.mjs",
+      "node": "./all.cjs",
+      "types": "./types/index.d.ts"
+    },
+    ".": "./dist/index.js"
+  },
   "scripts": {
     "build": "babel src -d dist --ignore \"**/*.test.js\"",
     "lint": "eslint .",
