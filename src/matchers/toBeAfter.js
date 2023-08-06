@@ -7,12 +7,12 @@ export function toBeAfter(date, after) {
     pass,
     message: () =>
       pass
-        ? matcherHint('.not.toBeAfter', 'received', '') +
-          '\n\n' +
+        ? matcherHint(".not.toBeAfter", "received", "") +
+          "\n\n" +
           `Expected date to be after ${printReceived(after)} but received:\n` +
           `  ${printReceived(date)}`
-        : matcherHint('.toBeAfter', 'received', '') +
-          '\n\n' +
+        : matcherHint(".toBeAfter", "received", "") +
+          "\n\n" +
           `Expected date to be after ${printReceived(after)} but received:\n` +
           `  ${printReceived(date)}`,
   };

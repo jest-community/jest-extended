@@ -7,13 +7,13 @@ export function toBeNaN(actual) {
     pass,
     message: () =>
       pass
-        ? matcherHint('.not.toBeNaN', 'received', '') +
-          '\n\n' +
-          'Expected value to be a number received:\n' +
+        ? matcherHint(".not.toBeNaN", "received", "") +
+          "\n\n" +
+          "Expected value to be a number received:\n" +
           `  ${printReceived(actual)}`
-        : matcherHint('.toBeNaN', 'received', '') +
-          '\n\n' +
-          'Expected value to not be a number received:\n' +
+        : matcherHint(".toBeNaN", "received", "") +
+          "\n\n" +
+          "Expected value to not be a number received:\n" +
           `  ${printReceived(actual)}`,
   };
 }

@@ -1,22 +1,22 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toBeValidDate fails when given a valid date value 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toBeValidDate()</intensity>
+exports[`.not.toBeValidDate > fails when given a valid date value 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toBeValidDate()[22m
 
 Expected value to not be a valid date received:
-  <red>2018-01-01T13:00:00.000Z</color>"
+  [31m2018-01-01T13:00:00.000Z[39m"
 `;
 
-exports[`.toBeValidDate fails when given an invalid date 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeValidDate()</intensity>
+exports[`.toBeValidDate > fails when given an invalid date 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeValidDate()[22m
 
 Expected value to be a valid date received:
-  <red>Date { NaN }</color>"
+  [31mDate { NaN }[39m"
 `;
 
-exports[`.toBeValidDate fails when not given non-date values 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeValidDate()</intensity>
+exports[`.toBeValidDate > fails when not given non-date values 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeValidDate()[22m
 
 Expected value to be a valid date received:
-  <red>1</color>"
+  [31m1[39m"
 `;

@@ -7,17 +7,17 @@ export function toContainAnyKeys(actual, expected) {
     pass,
     message: () =>
       pass
-        ? matcherHint('.not.toContainAnyKeys') +
-          '\n\n' +
-          'Expected object not to contain any of the following keys:\n' +
+        ? matcherHint(".not.toContainAnyKeys") +
+          "\n\n" +
+          "Expected object not to contain any of the following keys:\n" +
           `  ${printExpected(expected)}\n` +
-          'Received:\n' +
+          "Received:\n" +
           `  ${printReceived(actual)}`
-        : matcherHint('.toContainAnyKeys') +
-          '\n\n' +
-          'Expected object to contain any of the following keys:\n' +
+        : matcherHint(".toContainAnyKeys") +
+          "\n\n" +
+          "Expected object to contain any of the following keys:\n" +
           `  ${printExpected(expected)}\n` +
-          'Received:\n' +
+          "Received:\n" +
           `  ${printReceived(actual)}`,
   };
 }

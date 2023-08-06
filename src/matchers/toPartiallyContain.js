@@ -1,4 +1,4 @@
-import { containsEntry } from '../utils';
+import { containsEntry } from "../utils";
 
 export function toPartiallyContain(actual, expected) {
   const { printReceived, printExpected, matcherHint } = this.utils;
@@ -14,17 +14,17 @@ export function toPartiallyContain(actual, expected) {
     pass,
     message: () =>
       pass
-        ? matcherHint('.not.toPartiallyContain') +
-          '\n\n' +
-          'Expected array not to partially contain:\n' +
+        ? matcherHint(".not.toPartiallyContain") +
+          "\n\n" +
+          "Expected array not to partially contain:\n" +
           `  ${printExpected(expected)}\n` +
-          'Received:\n' +
+          "Received:\n" +
           `  ${printReceived(actual)}`
-        : matcherHint('.toPartiallyContain') +
-          '\n\n' +
-          'Expected array to partially contain:\n' +
+        : matcherHint(".toPartiallyContain") +
+          "\n\n" +
+          "Expected array to partially contain:\n" +
           `  ${printExpected(expected)}\n` +
-          'Received:\n' +
+          "Received:\n" +
           `  ${printReceived(actual)}`,
   };
 }

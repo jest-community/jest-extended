@@ -1,15 +1,15 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toBeHexadecimal fails when given valid hexadecimal 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toBeHexadecimal()</intensity>
+exports[`.not.toBeHexadecimal > fails when given valid hexadecimal 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toBeHexadecimal()[22m
 
 Expected value to not be a hexadecimal, received:
-  <red>"#eeffee"</color>"
+  [31m\\"#eeffee\\"[39m"
 `;
 
-exports[`.toBeHexadecimal fails when given non-string 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeHexadecimal()</intensity>
+exports[`.toBeHexadecimal > fails when given non-string 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeHexadecimal()[22m
 
 Expected value to be a hexadecimal, received:
-  <red>true</color>"
+  [31mtrue[39m"
 `;

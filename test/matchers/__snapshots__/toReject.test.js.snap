@@ -1,14 +1,14 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toReject fails when passed a promise that rejects 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toReject()</intensity>
+exports[`.not.toReject > fails when passed a promise that rejects 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toReject()[22m
 
 Expected promise to resolve, however it rejected.
 "
 `;
 
-exports[`.toReject fails when passed a promise that resolved 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toReject()</intensity>
+exports[`.toReject > fails when passed a promise that resolved 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toReject()[22m
 
 Expected promise to reject, however it resolved.
 "

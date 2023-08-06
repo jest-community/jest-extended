@@ -1,15 +1,15 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toBeNaN fails when given a non-number 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toBeNaN()</intensity>
+exports[`.not.toBeNaN > fails when given a non-number 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toBeNaN()[22m
 
 Expected value to be a number received:
-  <red>undefined</color>"
+  [31mundefined[39m"
 `;
 
-exports[`.toBeNaN fails when given a number 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeNaN()</intensity>
+exports[`.toBeNaN > fails when given a number 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeNaN()[22m
 
 Expected value to not be a number received:
-  <red>3</color>"
+  [31m3[39m"
 `;

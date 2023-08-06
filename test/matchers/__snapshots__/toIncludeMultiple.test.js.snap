@@ -1,19 +1,26 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toIncludeMultiple fails when string includes all substrings 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toIncludeMultiple(</intensity><green>expected</color><dim>)</intensity>
+exports[`.not.toIncludeMultiple > fails when string includes all substrings 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toIncludeMultiple([22m[32mexpected[39m[2m)[22m
 
 Expected string to not contain all substrings: 
-  <green>["hello", "world"]</color>
+  [32mArray [
+  \\"hello\\",
+  \\"world\\",
+][39m
 Received: 
-  <red>"hello world"</color>"
+  [31m\\"hello world\\"[39m"
 `;
 
-exports[`.toIncludeMultiple fails when string does not include all substrings 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toIncludeMultiple(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toIncludeMultiple > fails when string does not include all substrings 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toIncludeMultiple([22m[32mexpected[39m[2m)[22m
 
 Expected string to contain all substrings: 
-  <green>["hello", "world", "bob"]</color>
+  [32mArray [
+  \\"hello\\",
+  \\"world\\",
+  \\"bob\\",
+][39m
 Received:
-  <red>"hello world"</color>"
+  [31m\\"hello world\\"[39m"
 `;

@@ -11,12 +11,12 @@ on:
 
 jobs:
   test-node:
-    name: Test on Node.js v${{ matrix.node-version }} and jest v${{ matrix.jest-version }}
+    name: Test on Node.js v${{ matrix.node-version }} and vitest v${{ matrix.vitest-version }}
     strategy:
       fail-fast: false
       matrix:
         node-version: [14.x, 16.x, 18.x, 19.x, 20.x]
-        jest-version: [27, 28, 29]
+        vitest-version: [0.32, 0.33, 0.34]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -25,8 +25,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: yarn
-      - name: install with jest@${{ matrix.jest-version }}
-        run: yarn add --dev jest@${{ matrix.jest-version }} babel-jest@${{ matrix.jest-version }} @types/jest@${{ matrix.jest-version }}
+      - name: install with vitest@${{ matrix.vitest-version }}
+        run: yarn add --dev vitest@${{ matrix.vitest-version }}
       - run: yarn test:coverage
       - uses: codecov/codecov-action@v3
         if: ${{ always() }}

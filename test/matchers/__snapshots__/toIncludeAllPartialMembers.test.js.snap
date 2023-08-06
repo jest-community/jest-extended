@@ -1,37 +1,73 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toIncludeAllPartialMembers fails when array values matches the members of the set 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toIncludeAllPartialMembers(</intensity><green>expected</color><dim>)</intensity>
+exports[`.not.toIncludeAllPartialMembers > fails when array values matches the members of the set 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toIncludeAllPartialMembers([22m[32mexpected[39m[2m)[22m
 
 Expected list to not have all of the following partial members:
-  <green>[{"foo": "bar"}]</color>
+  [32mArray [
+  Object {
+    \\"foo\\": \\"bar\\",
+  },
+][39m
 Received:
-  <red>[{"hello": "world"}, {"baz": "qux", "foo": "bar"}]</color>"
+  [31mArray [
+  Object {
+    \\"hello\\": \\"world\\",
+  },
+  Object {
+    \\"baz\\": \\"qux\\",
+    \\"foo\\": \\"bar\\",
+  },
+][39m"
 `;
 
-exports[`.toIncludeAllPartialMembers fails when array values do not contain any of the members of the set 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toIncludeAllPartialMembers(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toIncludeAllPartialMembers > fails when array values do not contain any of the members of the set 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toIncludeAllPartialMembers([22m[32mexpected[39m[2m)[22m
 
 Expected list to have all of the following partial members:
-  <green>[{"foo": "qux"}]</color>
+  [32mArray [
+  Object {
+    \\"foo\\": \\"qux\\",
+  },
+][39m
 Received:
-  <red>[{"hello": "world"}, {"baz": "qux", "foo": "bar"}]</color>"
+  [31mArray [
+  Object {
+    \\"hello\\": \\"world\\",
+  },
+  Object {
+    \\"baz\\": \\"qux\\",
+    \\"foo\\": \\"bar\\",
+  },
+][39m"
 `;
 
-exports[`.toIncludeAllPartialMembers fails when expected object is not an array 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toIncludeAllPartialMembers(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toIncludeAllPartialMembers > fails when expected object is not an array 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toIncludeAllPartialMembers([22m[32mexpected[39m[2m)[22m
 
 Expected list to have all of the following partial members:
-  <green>1</color>
+  [32m1[39m
 Received:
-  <red>[{"hello": "world"}, {"baz": "qux", "foo": "bar"}]</color>"
+  [31mArray [
+  Object {
+    \\"hello\\": \\"world\\",
+  },
+  Object {
+    \\"baz\\": \\"qux\\",
+    \\"foo\\": \\"bar\\",
+  },
+][39m"
 `;
 
-exports[`.toIncludeAllPartialMembers fails when given object is not an array 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toIncludeAllPartialMembers(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toIncludeAllPartialMembers > fails when given object is not an array 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toIncludeAllPartialMembers([22m[32mexpected[39m[2m)[22m
 
 Expected list to have all of the following partial members:
-  <green>[{"foo": "bar"}]</color>
+  [32mArray [
+  Object {
+    \\"foo\\": \\"bar\\",
+  },
+][39m
 Received:
-  <red>1</color>"
+  [31m1[39m"
 `;

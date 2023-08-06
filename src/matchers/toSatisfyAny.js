@@ -7,17 +7,17 @@ export function toSatisfyAny(actual, expected) {
     pass,
     message: () =>
       pass
-        ? matcherHint('.not.toSatisfyAny') +
-          '\n\n' +
-          'Expected array to not satisfy predicate for any value:\n' +
+        ? matcherHint(".not.toSatisfyAny") +
+          "\n\n" +
+          "Expected array to not satisfy predicate for any value:\n" +
           `  ${printExpected(expected)}\n` +
-          'Received:\n' +
+          "Received:\n" +
           `  ${printReceived(actual)}`
-        : matcherHint('.toSatisfyAny') +
-          '\n\n' +
-          'Expected array to satisfy predicate for any values:\n' +
+        : matcherHint(".toSatisfyAny") +
+          "\n\n" +
+          "Expected array to satisfy predicate for any values:\n" +
           `  ${printExpected(expected)}\n` +
-          'Received:\n' +
+          "Received:\n" +
           `  ${printReceived(actual)}`,
   };
 }

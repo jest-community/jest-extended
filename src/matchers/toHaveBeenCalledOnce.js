@@ -1,4 +1,4 @@
-import { isJestMockOrSpy } from '../utils';
+import { isJestMockOrSpy } from "../utils";
 
 export function toHaveBeenCalledOnce(received) {
   const { printReceived, printWithType, matcherHint } = this.utils;
@@ -7,11 +7,11 @@ export function toHaveBeenCalledOnce(received) {
     return {
       pass: false,
       message: () =>
-        matcherHint('.toHaveBeenCalledOnce') +
-        '\n\n' +
-        `Matcher error: ${printReceived('received')} must be a mock or spy function` +
-        '\n\n' +
-        printWithType('Received', received, printReceived),
+        matcherHint(".toHaveBeenCalledOnce") +
+        "\n\n" +
+        `Matcher error: ${printReceived("received")} must be a mock or spy function` +
+        "\n\n" +
+        printWithType("Received", received, printReceived),
     };
   }
 
@@ -21,12 +21,12 @@ export function toHaveBeenCalledOnce(received) {
     pass,
     message: () =>
       pass
-        ? matcherHint('.not.toHaveBeenCalledOnce') +
-          '\n\n' +
-          'Expected mock function to have been called any amount of times but one, but it was called exactly once.'
-        : matcherHint('.toHaveBeenCalledOnce') +
-          '\n\n' +
-          'Expected mock function to have been called exactly once, but it was called:\n' +
+        ? matcherHint(".not.toHaveBeenCalledOnce") +
+          "\n\n" +
+          "Expected mock function to have been called any amount of times but one, but it was called exactly once."
+        : matcherHint(".toHaveBeenCalledOnce") +
+          "\n\n" +
+          "Expected mock function to have been called exactly once, but it was called:\n" +
           `  ${printReceived(received.mock.calls.length)} times`,
     actual: received,
   };

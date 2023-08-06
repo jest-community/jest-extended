@@ -1,71 +1,71 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toBeOdd fails when given an odd number 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toBeOdd()</intensity>
+exports[`.not.toBeOdd > fails when given an odd number 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toBeOdd()[22m
 
 Expected value to not be odd received:
-  <red>1</color>"
+  [31m1[39m"
 `;
 
-exports[`.toBeOdd fails when given not given an odd number 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeOdd()</intensity>
+exports[`.toBeOdd > fails when given not given an odd number 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeOdd()[22m
 
 Expected value to be odd received:
-  <red>false</color>"
+  [31mfalse[39m"
 `;
 
-exports[`.toBeOdd fails when given not given an odd number 2`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeOdd()</intensity>
+exports[`.toBeOdd > fails when given not given an odd number 2`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeOdd()[22m
 
 Expected value to be odd received:
-  <red>true</color>"
+  [31mtrue[39m"
 `;
 
-exports[`.toBeOdd fails when given not given an odd number 3`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeOdd()</intensity>
+exports[`.toBeOdd > fails when given not given an odd number 3`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeOdd()[22m
 
 Expected value to be odd received:
-  <red>""</color>"
+  [31m\\"\\"[39m"
 `;
 
-exports[`.toBeOdd fails when given not given an odd number 4`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeOdd()</intensity>
+exports[`.toBeOdd > fails when given not given an odd number 4`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeOdd()[22m
 
 Expected value to be odd received:
-  <red>2</color>"
+  [31m2[39m"
 `;
 
-exports[`.toBeOdd fails when given not given an odd number 5`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeOdd()</intensity>
+exports[`.toBeOdd > fails when given not given an odd number 5`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeOdd()[22m
 
 Expected value to be odd received:
-  <red>{}</color>"
+  [31mObject {}[39m"
 `;
 
-exports[`.toBeOdd fails when given not given an odd number 6`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeOdd()</intensity>
+exports[`.toBeOdd > fails when given not given an odd number 6`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeOdd()[22m
 
 Expected value to be odd received:
-  <red>[Function anonymous]</color>"
+  [31m[Function anonymous][39m"
 `;
 
-exports[`.toBeOdd fails when given not given an odd number 7`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeOdd()</intensity>
+exports[`.toBeOdd > fails when given not given an odd number 7`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeOdd()[22m
 
 Expected value to be odd received:
-  <red>undefined</color>"
+  [31mundefined[39m"
 `;
 
-exports[`.toBeOdd fails when given not given an odd number 8`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeOdd()</intensity>
+exports[`.toBeOdd > fails when given not given an odd number 8`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeOdd()[22m
 
 Expected value to be odd received:
-  <red>null</color>"
+  [31mnull[39m"
 `;
 
-exports[`.toBeOdd fails when given not given an odd number 9`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeOdd()</intensity>
+exports[`.toBeOdd > fails when given not given an odd number 9`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeOdd()[22m
 
 Expected value to be odd received:
-  <red>NaN</color>"
+  [31mNaN[39m"
 `;

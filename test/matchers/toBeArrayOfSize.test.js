@@ -1,8 +1,8 @@
-import * as matcher from 'src/matchers/toBeArrayOfSize';
+import * as matcher from "src/matchers/toBeArrayOfSize";
 
 expect.extend(matcher);
 
-describe('.toBeArrayOfSize', () => {
+describe(".toBeArrayOfSize", () => {
   {
     const size = 1;
     test(`passes when given an array of size 1, where size === ${size}`, () => {
@@ -16,32 +16,32 @@ describe('.toBeArrayOfSize', () => {
     });
   }
 
-  test('fails when given type which is not an array', () => {
+  test("fails when given type which is not an array", () => {
     expect(() => expect(false).toBeArrayOfSize(1)).toThrowErrorMatchingSnapshot();
   });
 
   test.each([[false], [true], [0], [{}], [() => {}], [undefined], [null], [NaN]])(
-    'fails when given type of %s which is not an array',
+    "fails when given type of %s which is not an array",
     given => {
       expect(() => expect(given).toBeArrayOfSize(1)).toThrowErrorMatchingSnapshot();
     },
   );
 
-  test('fails when not given an array', () => {
+  test("fails when not given an array", () => {
     expect(() => expect().toBeArrayOfSize(5)).toThrowErrorMatchingSnapshot();
   });
 
-  test('fails when not given a parameter', () => {
+  test("fails when not given a parameter", () => {
     expect(() => expect([1]).toBeArrayOfSize()).toThrowErrorMatchingSnapshot();
   });
 
-  test('fails when given neither a parameter nor an array', () => {
+  test("fails when given neither a parameter nor an array", () => {
     expect(() => expect([]).toBeArrayOfSize()).toThrowErrorMatchingSnapshot();
   });
 });
 
-describe('.not.toBeArrayOfSize', () => {
-  test.each([false, true, 0, {}, () => {}, undefined, null, NaN])('passes when not given an array: %s', given => {
+describe(".not.toBeArrayOfSize", () => {
+  test.each([false, true, 0, {}, () => {}, undefined, null, NaN])("passes when not given an array: %s", given => {
     expect(given).not.toBeArrayOfSize(2);
   });
   {

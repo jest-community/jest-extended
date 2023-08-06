@@ -1,15 +1,15 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toBeDateString fails when given a date string 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toBeDateString()</intensity>
+exports[`.not.toBeDateString > fails when given a date string 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toBeDateString()[22m
 
 Expected value to not be a date string received:
-  <red>"2018-01-01T13:00:00.000Z"</color>"
+  [31m\\"2018-01-01T13:00:00.000Z\\"[39m"
 `;
 
-exports[`.toBeDateString fails when not given a date string 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeDateString()</intensity>
+exports[`.toBeDateString > fails when not given a date string 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeDateString()[22m
 
 Expected value to be a date string received:
-  <red>"not a date"</color>"
+  [31m\\"not a date\\"[39m"
 `;

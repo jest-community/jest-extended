@@ -7,12 +7,12 @@ export function toBeBefore(actual, expected) {
     pass,
     message: () =>
       pass
-        ? matcherHint('.not.toBeBefore', 'received', '') +
-          '\n\n' +
+        ? matcherHint(".not.toBeBefore", "received", "") +
+          "\n\n" +
           `Expected date to be before ${printReceived(expected)} but received:\n` +
           `  ${printReceived(actual)}`
-        : matcherHint('.toBeBefore', 'received', '') +
-          '\n\n' +
+        : matcherHint(".toBeBefore", "received", "") +
+          "\n\n" +
           `Expected date to be before ${printReceived(expected)} but received:\n` +
           `  ${printReceived(actual)}`,
   };

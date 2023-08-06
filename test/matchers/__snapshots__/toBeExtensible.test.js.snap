@@ -1,81 +1,81 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toBeExtensible fails when given an extensible object: () => {} 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toBeExtensible()</intensity>
+exports[`.not.toBeExtensible > fails when given an extensible object: () => {} 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toBeExtensible()[22m
 
 Expected value to not be extensible received:
-  <green>[Function anonymous]</color>
+  [32m[Function anonymous][39m
 "
 `;
 
-exports[`.not.toBeExtensible fails when given an extensible object: [] 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toBeExtensible()</intensity>
+exports[`.not.toBeExtensible > fails when given an extensible object: [] 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toBeExtensible()[22m
 
 Expected value to not be extensible received:
-  <green>[]</color>
+  [32mArray [][39m
 "
 `;
 
-exports[`.not.toBeExtensible fails when given an extensible object: {} 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toBeExtensible()</intensity>
+exports[`.not.toBeExtensible > fails when given an extensible object: {} 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toBeExtensible()[22m
 
 Expected value to not be extensible received:
-  <green>{}</color>
+  [32mObject {}[39m
 "
 `;
 
-exports[`.toBeExtensible fails when not given an extensible object:  1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeExtensible()</intensity>
+exports[`.toBeExtensible > fails when not given an extensible object:  1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeExtensible()[22m
 
 Expected value to be extensible received:
-  <red>""</color>"
+  [31m\\"\\"[39m"
 `;
 
-exports[`.toBeExtensible fails when not given an extensible object: {} 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeExtensible()</intensity>
+exports[`.toBeExtensible > fails when not given an extensible object: {} 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeExtensible()[22m
 
 Expected value to be extensible received:
-  <red>{}</color>"
+  [31mObject {}[39m"
 `;
 
-exports[`.toBeExtensible fails when not given an extensible object: {} 2`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeExtensible()</intensity>
+exports[`.toBeExtensible > fails when not given an extensible object: {} 2`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeExtensible()[22m
 
 Expected value to be extensible received:
-  <red>{}</color>"
+  [31mObject {}[39m"
 `;
 
-exports[`.toBeExtensible fails when not given an extensible object: 0 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeExtensible()</intensity>
+exports[`.toBeExtensible > fails when not given an extensible object: 0 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeExtensible()[22m
 
 Expected value to be extensible received:
-  <red>0</color>"
+  [31m0[39m"
 `;
 
-exports[`.toBeExtensible fails when not given an extensible object: NaN 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeExtensible()</intensity>
+exports[`.toBeExtensible > fails when not given an extensible object: NaN 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeExtensible()[22m
 
 Expected value to be extensible received:
-  <red>NaN</color>"
+  [31mNaN[39m"
 `;
 
-exports[`.toBeExtensible fails when not given an extensible object: false 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeExtensible()</intensity>
+exports[`.toBeExtensible > fails when not given an extensible object: false 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeExtensible()[22m
 
 Expected value to be extensible received:
-  <red>false</color>"
+  [31mfalse[39m"
 `;
 
-exports[`.toBeExtensible fails when not given an extensible object: null 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeExtensible()</intensity>
+exports[`.toBeExtensible > fails when not given an extensible object: null 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeExtensible()[22m
 
 Expected value to be extensible received:
-  <red>null</color>"
+  [31mnull[39m"
 `;
 
-exports[`.toBeExtensible fails when not given an extensible object: undefined 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeExtensible()</intensity>
+exports[`.toBeExtensible > fails when not given an extensible object: undefined 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeExtensible()[22m
 
 Expected value to be extensible received:
-  <red>undefined</color>"
+  [31mundefined[39m"
 `;

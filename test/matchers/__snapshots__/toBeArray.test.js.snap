@@ -1,15 +1,15 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toBeArray fails when given an array 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toBeArray()</intensity>
+exports[`.not.toBeArray > fails when given an array 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toBeArray()[22m
 
 Expected value to not be an array received:
-  <red>[]</color>"
+  [31mArray [][39m"
 `;
 
-exports[`.toBeArray fails when not given an array 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeArray()</intensity>
+exports[`.toBeArray > fails when not given an array 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeArray()[22m
 
 Expected value to be an array received:
-  <red>false</color>"
+  [31mfalse[39m"
 `;

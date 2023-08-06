@@ -1,55 +1,91 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toContainValue fails when given object contains array value 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toContainValue(</intensity><green>expected</color><dim>)</intensity>
-
-Expected object to not contain value:
-  <green>[{"hello": "world"}]</color>
-Received:
-  <red>{"message": [{"hello": "world"}]}</color>"
-`;
-
-exports[`.not.toContainValue fails when given object contains object value 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toContainValue(</intensity><green>expected</color><dim>)</intensity>
+exports[`.not.toContainValue > fails when given object contains array value 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toContainValue([22m[32mexpected[39m[2m)[22m
 
 Expected object to not contain value:
-  <green>{"hello": "world"}</color>
+  [32mArray [
+  Object {
+    \\"hello\\": \\"world\\",
+  },
+][39m
 Received:
-  <red>{"message": {"hello": "world"}}</color>"
+  [31mObject {
+  \\"message\\": Array [
+    Object {
+      \\"hello\\": \\"world\\",
+    },
+  ],
+}[39m"
 `;
 
-exports[`.not.toContainValue fails when given object contains primitive value 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toContainValue(</intensity><green>expected</color><dim>)</intensity>
+exports[`.not.toContainValue > fails when given object contains object value 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toContainValue([22m[32mexpected[39m[2m)[22m
 
 Expected object to not contain value:
-  <green>"world"</color>
+  [32mObject {
+  \\"hello\\": \\"world\\",
+}[39m
 Received:
-  <red>{"hello": "world"}</color>"
+  [31mObject {
+  \\"message\\": Object {
+    \\"hello\\": \\"world\\",
+  },
+}[39m"
 `;
 
-exports[`.toContainValue fails when given object does not contain array value 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toContainValue(</intensity><green>expected</color><dim>)</intensity>
+exports[`.not.toContainValue > fails when given object contains primitive value 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toContainValue([22m[32mexpected[39m[2m)[22m
 
-Expected object to contain value:
-  <green>[{"world": "hello"}]</color>
+Expected object to not contain value:
+  [32m\\"world\\"[39m
 Received:
-  <red>{"message": [{"hello": "world"}]}</color>"
+  [31mObject {
+  \\"hello\\": \\"world\\",
+}[39m"
 `;
 
-exports[`.toContainValue fails when given object does not contain object value 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toContainValue(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toContainValue > fails when given object does not contain array value 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toContainValue([22m[32mexpected[39m[2m)[22m
 
 Expected object to contain value:
-  <green>{"world": "hello"}</color>
+  [32mArray [
+  Object {
+    \\"world\\": \\"hello\\",
+  },
+][39m
 Received:
-  <red>{"message": {"hello": "world"}}</color>"
+  [31mObject {
+  \\"message\\": Array [
+    Object {
+      \\"hello\\": \\"world\\",
+    },
+  ],
+}[39m"
 `;
 
-exports[`.toContainValue fails when given object does not contain primitive value 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toContainValue(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toContainValue > fails when given object does not contain object value 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toContainValue([22m[32mexpected[39m[2m)[22m
 
 Expected object to contain value:
-  <green>"hello"</color>
+  [32mObject {
+  \\"world\\": \\"hello\\",
+}[39m
 Received:
-  <red>{"hello": "world"}</color>"
+  [31mObject {
+  \\"message\\": Object {
+    \\"hello\\": \\"world\\",
+  },
+}[39m"
+`;
+
+exports[`.toContainValue > fails when given object does not contain primitive value 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toContainValue([22m[32mexpected[39m[2m)[22m
+
+Expected object to contain value:
+  [32m\\"hello\\"[39m
+Received:
+  [31mObject {
+  \\"hello\\": \\"world\\",
+}[39m"
 `;

@@ -7,19 +7,19 @@ export function toBeEmpty(actual) {
     pass,
     message: () =>
       pass
-        ? matcherHint('.not.toBeEmpty', 'received', '') +
-          '\n\n' +
-          'Expected value to not be empty received:\n' +
+        ? matcherHint(".not.toBeEmpty", "received", "") +
+          "\n\n" +
+          "Expected value to not be empty received:\n" +
           `  ${printReceived(actual)}`
-        : matcherHint('.toBeEmpty', 'received', '') +
-          '\n\n' +
-          'Expected value to be empty received:\n' +
+        : matcherHint(".toBeEmpty", "received", "") +
+          "\n\n" +
+          "Expected value to be empty received:\n" +
           `  ${printReceived(actual)}`,
   };
 }
 
 const isEmptyIterable = value => {
-  if (typeof value[Symbol.iterator] !== 'function') {
+  if (typeof value[Symbol.iterator] !== "function") {
     return false;
   }
   const firstIteration = value[Symbol.iterator]().next();

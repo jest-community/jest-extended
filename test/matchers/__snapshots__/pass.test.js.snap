@@ -1,5 +1,5 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.pass does not pass, has no message 1`] = `"passes by .pass() assertion"`;
+exports[`.not.pass > does not pass, has no message 1`] = `"passes by .pass() assertion"`;
 
-exports[`.not.pass does not.pass, has no message 1`] = `"This should not pass!"`;
+exports[`.not.pass > does not.pass, has no message 1`] = `"This should not pass!"`;

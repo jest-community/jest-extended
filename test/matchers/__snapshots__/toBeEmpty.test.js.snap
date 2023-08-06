@@ -1,15 +1,15 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toBeEmpty fails when given empty string 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toBeEmpty()</intensity>
+exports[`.not.toBeEmpty > fails when given empty string 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toBeEmpty()[22m
 
 Expected value to not be empty received:
-  <red>""</color>"
+  [31m\\"\\"[39m"
 `;
 
-exports[`.toBeEmpty fails when given non-empty string 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeEmpty()</intensity>
+exports[`.toBeEmpty > fails when given non-empty string 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeEmpty()[22m
 
 Expected value to be empty received:
-  <red>"string"</color>"
+  [31m\\"string\\"[39m"
 `;

@@ -1,4 +1,4 @@
-import { contains } from '../utils';
+import { contains } from "../utils";
 
 export function toContainValues(actual, expected) {
   const { printReceived, printExpected, matcherHint } = this.utils;
@@ -10,17 +10,17 @@ export function toContainValues(actual, expected) {
     pass,
     message: () =>
       pass
-        ? matcherHint('.not.toContainValues') +
-          '\n\n' +
-          'Expected object to not contain all values:\n' +
+        ? matcherHint(".not.toContainValues") +
+          "\n\n" +
+          "Expected object to not contain all values:\n" +
           `  ${printExpected(expected)}\n` +
-          'Received:\n' +
+          "Received:\n" +
           `  ${printReceived(actual)}`
-        : matcherHint('.toContainValues') +
-          '\n\n' +
-          'Expected object to contain all values:\n' +
+        : matcherHint(".toContainValues") +
+          "\n\n" +
+          "Expected object to contain all values:\n" +
           `  ${printExpected(expected)}\n` +
-          'Received:\n' +
+          "Received:\n" +
           `  ${printReceived(actual)}`,
   };
 }

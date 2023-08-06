@@ -7,17 +7,17 @@ export function toSatisfy(actual, expected) {
     pass,
     message: () =>
       pass
-        ? matcherHint('.not.toSatisfy', 'received', '') +
-          '\n\n' +
-          'Expected value to not satisfy:\n' +
+        ? matcherHint(".not.toSatisfy", "received", "") +
+          "\n\n" +
+          "Expected value to not satisfy:\n" +
           `  ${printExpected(expected)}\n` +
-          'Received:\n' +
+          "Received:\n" +
           `  ${printReceived(actual)}`
-        : matcherHint('.toSatisfy', 'received', '') +
-          '\n\n' +
-          'Expected value to satisfy:\n' +
+        : matcherHint(".toSatisfy", "received", "") +
+          "\n\n" +
+          "Expected value to satisfy:\n" +
           `  ${printExpected(expected)}\n` +
-          'Received:\n' +
+          "Received:\n" +
           `  ${printReceived(actual)}`,
   };
 }

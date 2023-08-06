@@ -1,28 +1,28 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toEndWith fails when string ends with given suffix 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toEndWith(</intensity><green>expected</color><dim>)</intensity>
+exports[`.not.toEndWith > fails when string ends with given suffix 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toEndWith([22m[32mexpected[39m[2m)[22m
 
 Expected string to not end with:
-  <green>"world"</color>
+  [32m\\"world\\"[39m
 Received:
-  <red>"hello world"</color>"
+  [31m\\"hello world\\"[39m"
 `;
 
-exports[`.toEndWith fails when string does not end with the given suffix 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toEndWith(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toEndWith > fails when string does not end with the given suffix 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toEndWith([22m[32mexpected[39m[2m)[22m
 
 Expected string to end with:
-  <green>"hello"</color>
+  [32m\\"hello\\"[39m
 Received:
-  <red>"hello world"</color>"
+  [31m\\"hello world\\"[39m"
 `;
 
-exports[`.toEndWith fails when the string is shorter than the given suffix 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toEndWith(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toEndWith > fails when the string is shorter than the given suffix 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toEndWith([22m[32mexpected[39m[2m)[22m
 
 Expected string to end with:
-  <green>"hello world"</color>
+  [32m\\"hello world\\"[39m
 Received:
-  <red>"hello"</color>"
+  [31m\\"hello\\"[39m"
 `;

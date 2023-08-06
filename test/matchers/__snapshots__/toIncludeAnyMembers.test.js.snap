@@ -1,55 +1,97 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toIncludeAnyMembers fails when given array contains array value 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toIncludeAnyMembers(</intensity><green>expected</color><dim>)</intensity>
-
-Expected list to not include any of the following members:
-  <green>[[{"hello": "world"}], 7]</color>
-Received:
-  <red>[[{"hello": "world"}]]</color>"
-`;
-
-exports[`.not.toIncludeAnyMembers fails when given array contains object value 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toIncludeAnyMembers(</intensity><green>expected</color><dim>)</intensity>
+exports[`.not.toIncludeAnyMembers > fails when given array contains array value 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toIncludeAnyMembers([22m[32mexpected[39m[2m)[22m
 
 Expected list to not include any of the following members:
-  <green>[{"foo": "bar"}]</color>
+  [32mArray [
+  Array [
+    Object {
+      \\"hello\\": \\"world\\",
+    },
+  ],
+  7,
+][39m
 Received:
-  <red>[{"foo": "bar"}]</color>"
+  [31mArray [
+  Array [
+    Object {
+      \\"hello\\": \\"world\\",
+    },
+  ],
+][39m"
 `;
 
-exports[`.not.toIncludeAnyMembers fails when given object contains primitive value 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toIncludeAnyMembers(</intensity><green>expected</color><dim>)</intensity>
+exports[`.not.toIncludeAnyMembers > fails when given array contains object value 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toIncludeAnyMembers([22m[32mexpected[39m[2m)[22m
 
 Expected list to not include any of the following members:
-  <green>[7, 8]</color>
+  [32mArray [
+  Object {
+    \\"foo\\": \\"bar\\",
+  },
+][39m
 Received:
-  <red>[7]</color>"
+  [31mArray [
+  Object {
+    \\"foo\\": \\"bar\\",
+  },
+][39m"
 `;
 
-exports[`.toIncludeAnyMembers fails when expected object does not contain array value 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toIncludeAnyMembers(</intensity><green>expected</color><dim>)</intensity>
+exports[`.not.toIncludeAnyMembers > fails when given object contains primitive value 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toIncludeAnyMembers([22m[32mexpected[39m[2m)[22m
 
-Expected list to include any of the following members:
-  <green>"world"</color>
+Expected list to not include any of the following members:
+  [32mArray [
+  7,
+  8,
+][39m
 Received:
-  <red>[1, 2, 3]</color>"
+  [31mArray [
+  7,
+][39m"
 `;
 
-exports[`.toIncludeAnyMembers fails when given array does not contain any members  1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toIncludeAnyMembers(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toIncludeAnyMembers > fails when expected object does not contain array value 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toIncludeAnyMembers([22m[32mexpected[39m[2m)[22m
 
 Expected list to include any of the following members:
-  <green>[1, 2, 3]</color>
+  [32m\\"world\\"[39m
 Received:
-  <red>[4, 5, 6]</color>"
+  [31mArray [
+  1,
+  2,
+  3,
+][39m"
 `;
 
-exports[`.toIncludeAnyMembers fails when given object is not an array 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toIncludeAnyMembers(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toIncludeAnyMembers > fails when given array does not contain any members  1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toIncludeAnyMembers([22m[32mexpected[39m[2m)[22m
 
 Expected list to include any of the following members:
-  <green>[1, 2, 3]</color>
+  [32mArray [
+  1,
+  2,
+  3,
+][39m
 Received:
-  <red>7</color>"
+  [31mArray [
+  4,
+  5,
+  6,
+][39m"
+`;
+
+exports[`.toIncludeAnyMembers > fails when given object is not an array 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toIncludeAnyMembers([22m[32mexpected[39m[2m)[22m
+
+Expected list to include any of the following members:
+  [32mArray [
+  1,
+  2,
+  3,
+][39m
+Received:
+  [31m7[39m"
 `;

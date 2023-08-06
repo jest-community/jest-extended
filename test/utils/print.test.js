@@ -1,61 +1,61 @@
-import { tokenize } from 'src/utils/print';
+import { tokenize } from "src/utils/print";
 
-describe('print-util module', () => {
-  it('should tokenize given string', () => {
-    const tokens = tokenize('This function \n creates tokens \t keeping white-space intact.');
+describe("print-util module", () => {
+  it("should tokenize given string", () => {
+    const tokens = tokenize("This function \n creates tokens \t keeping white-space intact.");
 
     expect(tokens).toEqual([
       {
         isWhitespace: false,
-        value: 'This',
+        value: "This",
       },
       {
         isWhitespace: true,
-        value: ' ',
+        value: " ",
       },
       {
         isWhitespace: false,
-        value: 'function',
+        value: "function",
       },
       {
         isWhitespace: true,
-        value: ' \n ',
+        value: " \n ",
       },
       {
         isWhitespace: false,
-        value: 'creates',
+        value: "creates",
       },
       {
         isWhitespace: true,
-        value: ' ',
+        value: " ",
       },
       {
         isWhitespace: false,
-        value: 'tokens',
+        value: "tokens",
       },
       {
         isWhitespace: true,
-        value: ' \t ',
+        value: " \t ",
       },
       {
         isWhitespace: false,
-        value: 'keeping',
+        value: "keeping",
       },
       {
         isWhitespace: true,
-        value: ' ',
+        value: " ",
       },
       {
         isWhitespace: false,
-        value: 'white-space',
+        value: "white-space",
       },
       {
         isWhitespace: true,
-        value: ' ',
+        value: " ",
       },
       {
         isWhitespace: false,
-        value: 'intact.',
+        value: "intact.",
       },
     ]);
   });

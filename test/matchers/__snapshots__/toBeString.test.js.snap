@@ -1,24 +1,36 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toBeString fails when given a string literal 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toBeString()</intensity>
-
-Expected value to not be of type string received:
-  <red>""</color>"
-`;
-
-exports[`.not.toBeString fails when given an object of type string 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toBeString()</intensity>
+exports[`.not.toBeString > fails when given a string literal 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toBeString()[22m
 
 Expected value to not be of type string received:
-  <red>{"0": "s", "1": "t", "10": "e", "2": "r", "3": "i", "4": "n", "5": "g", "6": " ", "7": "t", "8": "y", "9": "p"}</color>"
+  [31m\\"\\"[39m"
 `;
 
-exports[`.toBeString fails when not given a string 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeString()</intensity>
+exports[`.not.toBeString > fails when given an object of type string 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toBeString()[22m
+
+Expected value to not be of type string received:
+  [31mString {
+  \\"0\\": \\"s\\",
+  \\"1\\": \\"t\\",
+  \\"10\\": \\"e\\",
+  \\"2\\": \\"r\\",
+  \\"3\\": \\"i\\",
+  \\"4\\": \\"n\\",
+  \\"5\\": \\"g\\",
+  \\"6\\": \\" \\",
+  \\"7\\": \\"t\\",
+  \\"8\\": \\"y\\",
+  \\"9\\": \\"p\\",
+}[39m"
+`;
+
+exports[`.toBeString > fails when not given a string 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeString()[22m
 
 Expected value to be of type string:
-  <green>"type of string"</color>
+  [32m\\"type of string\\"[39m
 Received:
-  <red>"number"</color>"
+  [31m\\"number\\"[39m"
 `;

@@ -6,25 +6,25 @@ const predicate = (error, type, message) => {
 };
 
 const positiveHint = utils =>
-  utils.matcherHint('.toThrowWithMessage', 'function', 'type', { secondArgument: 'message' });
+  utils.matcherHint(".toThrowWithMessage", "function", "type", { secondArgument: "message" });
 
 const negativeHint = utils =>
-  utils.matcherHint('.not.toThrowWithMessage', 'function', 'type', { secondArgument: 'message' });
+  utils.matcherHint(".not.toThrowWithMessage", "function", "type", { secondArgument: "message" });
 
 const passMessage = (utils, received, expected) =>
   negativeHint(utils) +
-  '\n\n' +
-  'Expected not to throw:\n' +
+  "\n\n" +
+  "Expected not to throw:\n" +
   `  ${utils.printExpected(expected)}\n` +
-  'Thrown:\n' +
+  "Thrown:\n" +
   `  ${utils.printReceived(received)}\n`;
 
 const failMessage = (utils, received, expected) =>
   positiveHint(utils) +
-  '\n\n' +
-  'Expected to throw:\n' +
+  "\n\n" +
+  "Expected to throw:\n" +
   `  ${utils.printExpected(expected)}\n` +
-  'Thrown:\n' +
+  "Thrown:\n" +
   `  ${utils.printReceived(received)}\n`;
 
 const getExpectedError = (type, message) => {
@@ -43,38 +43,38 @@ const getExpectedError = (type, message) => {
 
 export function toThrowWithMessage(callbackOrPromiseReturn, type, message) {
   const utils = this.utils;
-  const isFromReject = this && this.promise === 'rejects'; // See https://github.com/facebook/jest/pull/7621#issue-244312550
-  if ((!callbackOrPromiseReturn || typeof callbackOrPromiseReturn !== 'function') && !isFromReject) {
+  const isFromReject = this && this.promise === "rejects"; // See https://github.com/facebook/jest/pull/7621#issue-244312550
+  if ((!callbackOrPromiseReturn || typeof callbackOrPromiseReturn !== "function") && !isFromReject) {
     return {
       pass: false,
       message: () =>
         positiveHint(utils) +
-        '\n\n' +
+        "\n\n" +
         `Received value must be a function but instead "${callbackOrPromiseReturn}" was found`,
     };
   }
 
-  if (!type || typeof type !== 'function') {
+  if (!type || typeof type !== "function") {
     return {
       pass: false,
-      message: () => positiveHint(utils) + '\n\n' + `Expected type to be a function but instead "${type}" was found`,
+      message: () => positiveHint(utils) + "\n\n" + `Expected type to be a function but instead "${type}" was found`,
     };
   }
 
   if (!message) {
     return {
       pass: false,
-      message: () => positiveHint(utils) + '\n\n' + ' Message argument is required. ',
+      message: () => positiveHint(utils) + "\n\n" + " Message argument is required. ",
     };
   }
 
-  if (typeof message !== 'string' && !(message instanceof RegExp)) {
+  if (typeof message !== "string" && !(message instanceof RegExp)) {
     return {
       pass: false,
       message: () =>
         positiveHint(utils) +
-        '\n\n' +
-        'Unexpected argument for message\n' +
+        "\n\n" +
+        "Unexpected argument for message\n" +
         'Expected: "string" or "regexp\n' +
         `Got: "${message}"`,
     };
@@ -94,7 +94,7 @@ export function toThrowWithMessage(callbackOrPromiseReturn, type, message) {
   if (!error) {
     return {
       pass: false,
-      message: () => 'Expected the function to throw an error.\n' + "But it didn't throw anything.",
+      message: () => "Expected the function to throw an error.\n" + "But it didn't throw anything.",
     };
   }
 

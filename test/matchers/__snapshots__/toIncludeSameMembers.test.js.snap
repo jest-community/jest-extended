@@ -1,19 +1,28 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toIncludeSameMembers fails when array contents match 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toIncludeSameMembers(</intensity><green>expected</color><dim>)</intensity>
+exports[`.not.toIncludeSameMembers > fails when array contents match 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toIncludeSameMembers([22m[32mexpected[39m[2m)[22m
 
 Expected list to not exactly match the members of:
-  <green>[1]</color>
+  [32mArray [
+  1,
+][39m
 Received:
-  <red>[1]</color>"
+  [31mArray [
+  1,
+][39m"
 `;
 
-exports[`.toIncludeSameMembers fails when the arrays are not equal in length 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toIncludeSameMembers(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toIncludeSameMembers > fails when the arrays are not equal in length 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toIncludeSameMembers([22m[32mexpected[39m[2m)[22m
 
 Expected list to have the following members and no more:
-  <green>[1]</color>
+  [32mArray [
+  1,
+][39m
 Received:
-  <red>[1, 2]</color>"
+  [31mArray [
+  1,
+  2,
+][39m"
 `;

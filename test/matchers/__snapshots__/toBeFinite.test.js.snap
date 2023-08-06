@@ -1,22 +1,22 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toBeFinite fails when given a finite number 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toBeFinite()</intensity>
+exports[`.not.toBeFinite > fails when given a finite number 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toBeFinite()[22m
 
 Expected value to not be finite received:
-  <red>1</color>"
+  [31m1[39m"
 `;
 
-exports[`.toBeFinite fails when not given Infinity 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeFinite()</intensity>
+exports[`.toBeFinite > fails when not given Infinity 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeFinite()[22m
 
 Expected value to be finite received:
-  <red>Infinity</color>"
+  [31mInfinity[39m"
 `;
 
-exports[`.toBeFinite fails when not given NaN 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeFinite()</intensity>
+exports[`.toBeFinite > fails when not given NaN 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeFinite()[22m
 
 Expected value to be finite received:
-  <red>NaN</color>"
+  [31mNaN[39m"
 `;

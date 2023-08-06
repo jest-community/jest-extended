@@ -7,17 +7,17 @@ export function toInclude(actual, expected) {
     pass,
     message: () =>
       pass
-        ? matcherHint('.not.toInclude') +
-          '\n\n' +
-          'Expected string to not include:\n' +
+        ? matcherHint(".not.toInclude") +
+          "\n\n" +
+          "Expected string to not include:\n" +
           `  ${printExpected(expected)}\n` +
-          'Received:\n' +
+          "Received:\n" +
           `  ${printReceived(actual)}`
-        : matcherHint('.toInclude') +
-          '\n\n' +
-          'Expected string to include:\n' +
+        : matcherHint(".toInclude") +
+          "\n\n" +
+          "Expected string to include:\n" +
           `  ${printExpected(expected)}\n` +
-          'Received:\n' +
+          "Received:\n" +
           `  ${printReceived(actual)}`,
   };
 }

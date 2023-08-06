@@ -1,19 +1,19 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toBeWithin fails when given number is within the given bounds of start (inclusive) and end (exclusive) 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toBeWithin(</intensity><green>expected</color><dim>)</intensity>
+exports[`.not.toBeWithin > fails when given number is within the given bounds of start (inclusive) and end (exclusive) 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toBeWithin([22m[32mexpected[39m[2m)[22m
 
 Expected number to not be within start (inclusive) and end (exclusive):
-  start: <green>1</color>  end: <green>3</color>
+  start: [32m1[39m  end: [32m3[39m
 Received:
-  <red>1</color>"
+  [31m1[39m"
 `;
 
-exports[`.toBeWithin fails when given number is not within the given bounds of start (inclusive) and end (exclusive) 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeWithin(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toBeWithin > fails when given number is not within the given bounds of start (inclusive) and end (exclusive) 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeWithin([22m[32mexpected[39m[2m)[22m
 
 Expected number to be within start (inclusive) and end (exclusive):
-  start: <green>1</color>  end: <green>3</color>
+  start: [32m1[39m  end: [32m3[39m
 Received:
-  <red>3</color>"
+  [31m3[39m"
 `;

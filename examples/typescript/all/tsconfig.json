@@ -11,7 +11,7 @@
     "strictPropertyInitialization": true,
     "noEmit": true
   },
-  "files": ["node_modules/jest-extended/types/index.d.ts"],
-  "include": [ "src/**/*", "test/**/*"],
+  "files": ["node_modules/vitest-extended/types/index.d.ts"],
+  "include": ["src/**/*", "test/**/*"],
   "exclude": ["node_modules"]
 }

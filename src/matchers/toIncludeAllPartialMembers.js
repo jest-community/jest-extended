@@ -1,4 +1,4 @@
-import { containsEntry } from '../utils';
+import { containsEntry } from "../utils";
 
 export function toIncludeAllPartialMembers(actual, expected) {
   const { printReceived, printExpected, matcherHint } = this.utils;
@@ -14,17 +14,17 @@ export function toIncludeAllPartialMembers(actual, expected) {
     pass,
     message: () =>
       pass
-        ? matcherHint('.not.toIncludeAllPartialMembers') +
-          '\n\n' +
-          'Expected list to not have all of the following partial members:\n' +
+        ? matcherHint(".not.toIncludeAllPartialMembers") +
+          "\n\n" +
+          "Expected list to not have all of the following partial members:\n" +
           `  ${printExpected(expected)}\n` +
-          'Received:\n' +
+          "Received:\n" +
           `  ${printReceived(actual)}`
-        : matcherHint('.toIncludeAllPartialMembers') +
-          '\n\n' +
-          'Expected list to have all of the following partial members:\n' +
+        : matcherHint(".toIncludeAllPartialMembers") +
+          "\n\n" +
+          "Expected list to have all of the following partial members:\n" +
           `  ${printExpected(expected)}\n` +
-          'Received:\n' +
+          "Received:\n" +
           `  ${printReceived(actual)}`,
   };
 }

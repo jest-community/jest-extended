@@ -1,4 +1,4 @@
-import { contains } from '../utils';
+import { contains } from "../utils";
 
 export function toContainAllKeys(actual, expected) {
   const { printExpected, printReceived, matcherHint } = this.utils;
@@ -10,17 +10,17 @@ export function toContainAllKeys(actual, expected) {
     pass,
     message: () =>
       pass
-        ? matcherHint('.not.toContainAllKeys') +
-          '\n\n' +
-          'Expected object to not contain all keys:\n' +
+        ? matcherHint(".not.toContainAllKeys") +
+          "\n\n" +
+          "Expected object to not contain all keys:\n" +
           `  ${printExpected(expected)}\n` +
-          'Received:\n' +
+          "Received:\n" +
           `  ${printReceived(Object.keys(actual))}`
-        : matcherHint('.toContainAllKeys') +
-          '\n\n' +
-          'Expected object to contain all keys:\n' +
+        : matcherHint(".toContainAllKeys") +
+          "\n\n" +
+          "Expected object to contain all keys:\n" +
           `  ${printExpected(expected)}\n` +
-          'Received:\n' +
+          "Received:\n" +
           `  ${printReceived(Object.keys(actual))}`,
   };
 }

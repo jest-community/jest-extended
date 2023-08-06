@@ -1,22 +1,22 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toBeNegative fails when given negative number 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toBeNegative()</intensity>
+exports[`.not.toBeNegative > fails when given negative number 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toBeNegative()[22m
 
 Expected value to not be a negative number received:
-  <red>-1</color>"
+  [31m-1[39m"
 `;
 
-exports[`.toBeNegative fails when given Infinity 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeNegative()</intensity>
+exports[`.toBeNegative > fails when given Infinity 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeNegative()[22m
 
 Expected value to be a negative number received:
-  <red>Infinity</color>"
+  [31mInfinity[39m"
 `;
 
-exports[`.toBeNegative fails when given positive number 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeNegative()</intensity>
+exports[`.toBeNegative > fails when given positive number 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeNegative()[22m
 
 Expected value to be a negative number received:
-  <red>1</color>"
+  [31m1[39m"
 `;

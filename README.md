@@ -1,9 +1,9 @@
 <div align="center">
-  <h1>jest-extended</h1>
+  <h1>vitest-extended</h1>
 
 🃏💪
 
-Additional Jest matchers
+Additional Vitest matchers
 
 </div>
 

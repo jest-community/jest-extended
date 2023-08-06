@@ -7,13 +7,13 @@ export function toBeEven(actual) {
     pass,
     message: () =>
       pass
-        ? matcherHint('.not.toBeEven', 'received', '') +
-          '\n\n' +
-          'Expected value to not be an even number received:\n' +
+        ? matcherHint(".not.toBeEven", "received", "") +
+          "\n\n" +
+          "Expected value to not be an even number received:\n" +
           ` ${printReceived(actual)}`
-        : matcherHint('.toBeEven', 'received', '') +
-          '\n\n' +
-          'Expected value to be an even number received:\n' +
+        : matcherHint(".toBeEven", "received", "") +
+          "\n\n" +
+          "Expected value to be an even number received:\n" +
           ` ${printReceived(actual)}`,
   };
 }

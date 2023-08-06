@@ -1,131 +1,133 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toBeArrayOfSize fails when given an array of size 0 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toBeArrayOfSize(</intensity><green>expected</color><dim>)</intensity>
+exports[`.not.toBeArrayOfSize > fails when given an array of size 0 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toBeArrayOfSize([22m[32mexpected[39m[2m)[22m
 
 Expected value to not be an array of size:
-  <green>0</color>
+  [32m0[39m
 Received:
-  value: <red>[]</color>
-  length: <red>0</color>"
+  value: [31mArray [][39m
+  length: [31m0[39m"
 `;
 
-exports[`.toBeArrayOfSize fails when given neither a parameter nor an array 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeArrayOfSize(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toBeArrayOfSize > fails when given neither a parameter nor an array 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeArrayOfSize([22m[32mexpected[39m[2m)[22m
 
 Expected value to be an array of size:
-  <green>undefined</color>
+  [32mundefined[39m
 Received:
-  value: <red>[]</color>
-  length: <red>0</color>"
+  value: [31mArray [][39m
+  length: [31m0[39m"
 `;
 
-exports[`.toBeArrayOfSize fails when given type of () => {} which is not an array 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeArrayOfSize(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toBeArrayOfSize > fails when given type of () => {} which is not an array 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeArrayOfSize([22m[32mexpected[39m[2m)[22m
 
 Expected value to be an array of size:
-  <green>1</color>
+  [32m1[39m
 Received:
-  value: <red>[Function anonymous]</color>
-  length: <red>0</color>"
+  value: [31m[Function anonymous][39m
+  length: [31m0[39m"
 `;
 
-exports[`.toBeArrayOfSize fails when given type of {} which is not an array 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeArrayOfSize(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toBeArrayOfSize > fails when given type of {} which is not an array 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeArrayOfSize([22m[32mexpected[39m[2m)[22m
 
 Expected value to be an array of size:
-  <green>1</color>
+  [32m1[39m
 Received:
-  value: <red>{}</color>
-  length: <red>"Not Accessible"</color>"
+  value: [31mObject {}[39m
+  length: [31m\\"Not Accessible\\"[39m"
 `;
 
-exports[`.toBeArrayOfSize fails when given type of 0 which is not an array 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeArrayOfSize(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toBeArrayOfSize > fails when given type of 0 which is not an array 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeArrayOfSize([22m[32mexpected[39m[2m)[22m
 
 Expected value to be an array of size:
-  <green>1</color>
+  [32m1[39m
 Received:
-  value: <red>0</color>
-  length: <red>"Not Accessible"</color>"
+  value: [31m0[39m
+  length: [31m\\"Not Accessible\\"[39m"
 `;
 
-exports[`.toBeArrayOfSize fails when given type of NaN which is not an array 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeArrayOfSize(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toBeArrayOfSize > fails when given type of NaN which is not an array 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeArrayOfSize([22m[32mexpected[39m[2m)[22m
 
 Expected value to be an array of size:
-  <green>1</color>
+  [32m1[39m
 Received:
-  value: <red>NaN</color>
-  length: <red>"Not Accessible"</color>"
+  value: [31mNaN[39m
+  length: [31m\\"Not Accessible\\"[39m"
 `;
 
-exports[`.toBeArrayOfSize fails when given type of false which is not an array 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeArrayOfSize(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toBeArrayOfSize > fails when given type of false which is not an array 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeArrayOfSize([22m[32mexpected[39m[2m)[22m
 
 Expected value to be an array of size:
-  <green>1</color>
+  [32m1[39m
 Received:
-  value: <red>false</color>
-  length: <red>"Not Accessible"</color>"
+  value: [31mfalse[39m
+  length: [31m\\"Not Accessible\\"[39m"
 `;
 
-exports[`.toBeArrayOfSize fails when given type of null which is not an array 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeArrayOfSize(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toBeArrayOfSize > fails when given type of null which is not an array 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeArrayOfSize([22m[32mexpected[39m[2m)[22m
 
 Expected value to be an array of size:
-  <green>1</color>
+  [32m1[39m
 Received:
-  value: <red>null</color>
-  length: <red>"Not Accessible"</color>"
+  value: [31mnull[39m
+  length: [31m\\"Not Accessible\\"[39m"
 `;
 
-exports[`.toBeArrayOfSize fails when given type of true which is not an array 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeArrayOfSize(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toBeArrayOfSize > fails when given type of true which is not an array 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeArrayOfSize([22m[32mexpected[39m[2m)[22m
 
 Expected value to be an array of size:
-  <green>1</color>
+  [32m1[39m
 Received:
-  value: <red>true</color>
-  length: <red>"Not Accessible"</color>"
+  value: [31mtrue[39m
+  length: [31m\\"Not Accessible\\"[39m"
 `;
 
-exports[`.toBeArrayOfSize fails when given type of undefined which is not an array 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeArrayOfSize(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toBeArrayOfSize > fails when given type of undefined which is not an array 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeArrayOfSize([22m[32mexpected[39m[2m)[22m
 
 Expected value to be an array of size:
-  <green>1</color>
+  [32m1[39m
 Received:
-  value: <red>undefined</color>
-  length: <red>"Not Accessible"</color>"
+  value: [31mundefined[39m
+  length: [31m\\"Not Accessible\\"[39m"
 `;
 
-exports[`.toBeArrayOfSize fails when given type which is not an array 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeArrayOfSize(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toBeArrayOfSize > fails when given type which is not an array 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeArrayOfSize([22m[32mexpected[39m[2m)[22m
 
 Expected value to be an array of size:
-  <green>1</color>
+  [32m1[39m
 Received:
-  value: <red>false</color>
-  length: <red>"Not Accessible"</color>"
+  value: [31mfalse[39m
+  length: [31m\\"Not Accessible\\"[39m"
 `;
 
-exports[`.toBeArrayOfSize fails when not given a parameter 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeArrayOfSize(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toBeArrayOfSize > fails when not given a parameter 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeArrayOfSize([22m[32mexpected[39m[2m)[22m
 
 Expected value to be an array of size:
-  <green>undefined</color>
+  [32mundefined[39m
 Received:
-  value: <red>[1]</color>
-  length: <red>1</color>"
+  value: [31mArray [
+  1,
+][39m
+  length: [31m1[39m"
 `;
 
-exports[`.toBeArrayOfSize fails when not given an array 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeArrayOfSize(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toBeArrayOfSize > fails when not given an array 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeArrayOfSize([22m[32mexpected[39m[2m)[22m
 
 Expected value to be an array of size:
-  <green>5</color>
+  [32m5[39m
 Received:
-  value: <red>undefined</color>
-  length: <red>"Not Accessible"</color>"
+  value: [31mundefined[39m
+  length: [31m\\"Not Accessible\\"[39m"
 `;

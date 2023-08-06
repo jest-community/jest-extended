@@ -7,17 +7,17 @@ export function toIncludeMultiple(actual, expected) {
     pass,
     message: () =>
       pass
-        ? matcherHint('.not.toIncludeMultiple') +
-          '\n\n' +
-          'Expected string to not contain all substrings: \n' +
+        ? matcherHint(".not.toIncludeMultiple") +
+          "\n\n" +
+          "Expected string to not contain all substrings: \n" +
           `  ${printExpected(expected)}\n` +
-          'Received: \n' +
+          "Received: \n" +
           `  ${printReceived(actual)}`
-        : matcherHint('.toIncludeMultiple') +
-          '\n\n' +
-          'Expected string to contain all substrings: \n' +
+        : matcherHint(".toIncludeMultiple") +
+          "\n\n" +
+          "Expected string to contain all substrings: \n" +
           `  ${printExpected(expected)}\n` +
-          'Received:\n' +
+          "Received:\n" +
           `  ${printReceived(actual)}`,
   };
 }

@@ -7,15 +7,15 @@ export function toBeFalse(actual) {
     pass,
     message: () =>
       pass
-        ? matcherHint('.not.toBeFalse', 'received', '') +
-          '\n\n' +
-          'Expected value to not be false received:\n' +
+        ? matcherHint(".not.toBeFalse", "received", "") +
+          "\n\n" +
+          "Expected value to not be false received:\n" +
           `  ${printReceived(actual)}`
-        : matcherHint('.toBeFalse', 'received', '') +
-          '\n\n' +
-          'Expected value to be false:\n' +
+        : matcherHint(".toBeFalse", "received", "") +
+          "\n\n" +
+          "Expected value to be false:\n" +
           `  ${printExpected(false)}\n` +
-          'Received:\n' +
+          "Received:\n" +
           `  ${printReceived(actual)}`,
   };
 }

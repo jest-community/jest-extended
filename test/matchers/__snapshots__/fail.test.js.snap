@@ -1,5 +1,5 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.fail fails with message 1`] = `"This shouldn't fail!"`;
+exports[`.fail > fails with message 1`] = `"This shouldn't fail!"`;
 
-exports[`.fail fails without message 1`] = `"fails by .fail() assertion"`;
+exports[`.fail > fails without message 1`] = `"fails by .fail() assertion"`;

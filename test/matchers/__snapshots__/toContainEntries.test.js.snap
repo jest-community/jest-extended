@@ -1,19 +1,39 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toContainEntries fails when object contains all of the given entries 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toContainEntries(</intensity><green>expected</color><dim>)</intensity>
+exports[`.not.toContainEntries > fails when object contains all of the given entries 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toContainEntries([22m[32mexpected[39m[2m)[22m
 
 Expected object to not contain all of the given entries:
-  <green>[["b", "bar"], ["c", "baz"]]</color>
+  [32mArray [
+  Array [
+    \\"b\\",
+    \\"bar\\",
+  ],
+  Array [
+    \\"c\\",
+    \\"baz\\",
+  ],
+][39m
 Received:
-  <red>{"a": "foo", "b": "bar", "c": "baz"}</color>"
+  [31mObject {
+  \\"a\\": \\"foo\\",
+  \\"b\\": \\"bar\\",
+  \\"c\\": \\"baz\\",
+}[39m"
 `;
 
-exports[`.toContainEntries fails when object does not contain all of the given entries 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toContainEntries(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toContainEntries > fails when object does not contain all of the given entries 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toContainEntries([22m[32mexpected[39m[2m)[22m
 
 Expected object to contain all of the given entries:
-  <green>["b", "foo"]</color>
+  [32mArray [
+  \\"b\\",
+  \\"foo\\",
+][39m
 Received:
-  <red>{"a": "foo", "b": "bar", "c": "baz"}</color>"
+  [31mObject {
+  \\"a\\": \\"foo\\",
+  \\"b\\": \\"bar\\",
+  \\"c\\": \\"baz\\",
+}[39m"
 `;

@@ -1,15 +1,15 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toBePositive fails when given a positive number 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toBePositive()</intensity>
+exports[`.not.toBePositive > fails when given a positive number 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toBePositive()[22m
 
 Expected value to not be positive received:
-  <red>5</color>"
+  [31m5[39m"
 `;
 
-exports[`.toBePositive fails when not given a positive number 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBePositive()</intensity>
+exports[`.toBePositive > fails when not given a positive number 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBePositive()[22m
 
 Expected value to be positive received:
-  <red>-1</color>"
+  [31m-1[39m"
 `;

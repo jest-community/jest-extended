@@ -1,19 +1,19 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.toInclude .not.toInclude fails when a string does have a given substring 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toInclude(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toInclude > .not.toInclude > fails when a string does have a given substring 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toInclude([22m[32mexpected[39m[2m)[22m
 
 Expected string to not include:
-  <green>"ell"</color>
+  [32m\\"ell\\"[39m
 Received:
-  <red>"hello world"</color>"
+  [31m\\"hello world\\"[39m"
 `;
 
-exports[`.toInclude fails when a string does not have a given substring 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toInclude(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toInclude > fails when a string does not have a given substring 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toInclude([22m[32mexpected[39m[2m)[22m
 
 Expected string to include:
-  <green>"bob"</color>
+  [32m\\"bob\\"[39m
 Received:
-  <red>"hello world"</color>"
+  [31m\\"hello world\\"[39m"
 `;

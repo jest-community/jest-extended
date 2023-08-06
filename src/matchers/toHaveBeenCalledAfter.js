@@ -1,4 +1,4 @@
-import { isJestMockOrSpy } from '../utils';
+import { isJestMockOrSpy } from "../utils";
 
 export function toHaveBeenCalledAfter(actual, expected, failIfNoFirstInvocation = true) {
   const { printReceived, printExpected, matcherHint } = this.utils;
@@ -19,17 +19,17 @@ export function toHaveBeenCalledAfter(actual, expected, failIfNoFirstInvocation 
     pass,
     message: () =>
       pass
-        ? matcherHint('.not.toHaveBeenCalledAfter') +
-          '\n\n' +
-          'Expected first mock to not have been called after, invocationCallOrder:\n' +
+        ? matcherHint(".not.toHaveBeenCalledAfter") +
+          "\n\n" +
+          "Expected first mock to not have been called after, invocationCallOrder:\n" +
           `  ${printExpected(firstInvocationCallOrder)}\n` +
-          'Received second mock with invocationCallOrder:\n' +
+          "Received second mock with invocationCallOrder:\n" +
           `  ${printReceived(secondInvocationCallOrder)}`
-        : matcherHint('.toHaveBeenCalledAfter') +
-          '\n\n' +
-          'Expected first mock to have been called after, invocationCallOrder:\n' +
+        : matcherHint(".toHaveBeenCalledAfter") +
+          "\n\n" +
+          "Expected first mock to have been called after, invocationCallOrder:\n" +
           `  ${printExpected(firstInvocationCallOrder)}\n` +
-          'Received second mock with invocationCallOrder:\n' +
+          "Received second mock with invocationCallOrder:\n" +
           `  ${printReceived(secondInvocationCallOrder)}`,
   };
 }
@@ -47,14 +47,14 @@ const predicate = (firstInvocationCallOrder, secondInvocationCallOrder, failIfNo
 };
 
 const mockCheckFailMessage = (utils, value, isReceivedValue) => () => {
-  const valueKind = isReceivedValue ? 'Received' : 'Expected';
+  const valueKind = isReceivedValue ? "Received" : "Expected";
   const valueKindPrintFunc = isReceivedValue ? utils.printReceived : utils.printExpected;
 
   return (
-    utils.matcherHint('.toHaveBeenCalledAfter') +
-    '\n\n' +
+    utils.matcherHint(".toHaveBeenCalledAfter") +
+    "\n\n" +
     `Matcher error: ${valueKindPrintFunc(valueKind.toLowerCase())} must be a mock or spy function` +
-    '\n\n' +
+    "\n\n" +
     utils.printWithType(valueKind, value, valueKindPrintFunc)
   );
 };

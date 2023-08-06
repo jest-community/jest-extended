@@ -7,13 +7,13 @@ export function toBeInteger(actual) {
     pass,
     message: () =>
       pass
-        ? matcherHint('.not.toBeInteger', 'received', '') +
-          '\n\n' +
-          'Expected value to not be an integer received:\n' +
+        ? matcherHint(".not.toBeInteger", "received", "") +
+          "\n\n" +
+          "Expected value to not be an integer received:\n" +
           `  ${printReceived(actual)}`
-        : matcherHint('.toBeInteger', 'received', '') +
-          '\n\n' +
-          'Expected value to be an integer received:\n' +
+        : matcherHint(".toBeInteger", "received", "") +
+          "\n\n" +
+          "Expected value to be an integer received:\n" +
           `  ${printReceived(actual)}`,
   };
 }

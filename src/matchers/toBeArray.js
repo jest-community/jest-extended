@@ -7,13 +7,13 @@ export function toBeArray(expected) {
     pass,
     message: () =>
       pass
-        ? matcherHint('.not.toBeArray', 'received', '') +
-          '\n\n' +
-          'Expected value to not be an array received:\n' +
+        ? matcherHint(".not.toBeArray", "received", "") +
+          "\n\n" +
+          "Expected value to not be an array received:\n" +
           `  ${printReceived(expected)}`
-        : matcherHint('.toBeArray', 'received', '') +
-          '\n\n' +
-          'Expected value to be an array received:\n' +
+        : matcherHint(".toBeArray", "received", "") +
+          "\n\n" +
+          "Expected value to be an array received:\n" +
           `  ${printReceived(expected)}`,
   };
 }

@@ -1,55 +1,129 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toContainValues fails when given object contains all values including arrays 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toContainValues(</intensity><green>expected</color><dim>)</intensity>
-
-Expected object to not contain all values:
-  <green>["duck", [{"bar": false, "foo": 0, "hello": "world"}]]</color>
-Received:
-  <red>{"donald": "duck", "message": [{"bar": false, "foo": 0, "hello": "world"}]}</color>"
-`;
-
-exports[`.not.toContainValues fails when given object contains all values including objects 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toContainValues(</intensity><green>expected</color><dim>)</intensity>
+exports[`.not.toContainValues > fails when given object contains all values including arrays 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toContainValues([22m[32mexpected[39m[2m)[22m
 
 Expected object to not contain all values:
-  <green>[{"bar": false, "foo": 0, "hello": "world"}, "duck"]</color>
+  [32mArray [
+  \\"duck\\",
+  Array [
+    Object {
+      \\"bar\\": false,
+      \\"foo\\": 0,
+      \\"hello\\": \\"world\\",
+    },
+  ],
+][39m
 Received:
-  <red>{"donald": "duck", "message": {"bar": false, "foo": 0, "hello": "world"}}</color>"
+  [31mObject {
+  \\"donald\\": \\"duck\\",
+  \\"message\\": Array [
+    Object {
+      \\"bar\\": false,
+      \\"foo\\": 0,
+      \\"hello\\": \\"world\\",
+    },
+  ],
+}[39m"
 `;
 
-exports[`.not.toContainValues fails when given object contains primitive values 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toContainValues(</intensity><green>expected</color><dim>)</intensity>
+exports[`.not.toContainValues > fails when given object contains all values including objects 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toContainValues([22m[32mexpected[39m[2m)[22m
 
 Expected object to not contain all values:
-  <green>["world", false]</color>
+  [32mArray [
+  Object {
+    \\"bar\\": false,
+    \\"foo\\": 0,
+    \\"hello\\": \\"world\\",
+  },
+  \\"duck\\",
+][39m
 Received:
-  <red>{"bar": false, "foo": 0, "hello": "world"}</color>"
+  [31mObject {
+  \\"donald\\": \\"duck\\",
+  \\"message\\": Object {
+    \\"bar\\": false,
+    \\"foo\\": 0,
+    \\"hello\\": \\"world\\",
+  },
+}[39m"
 `;
 
-exports[`.toContainValues fails when given object does not contain all primitive values 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toContainValues(</intensity><green>expected</color><dim>)</intensity>
+exports[`.not.toContainValues > fails when given object contains primitive values 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toContainValues([22m[32mexpected[39m[2m)[22m
 
-Expected object to contain all values:
-  <green>["hello", 0, false]</color>
+Expected object to not contain all values:
+  [32mArray [
+  \\"world\\",
+  false,
+][39m
 Received:
-  <red>{"bar": false, "foo": 0, "hello": "world"}</color>"
+  [31mObject {
+  \\"bar\\": false,
+  \\"foo\\": 0,
+  \\"hello\\": \\"world\\",
+}[39m"
 `;
 
-exports[`.toContainValues fails when given object does not contain all values including arrays 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toContainValues(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toContainValues > fails when given object does not contain all primitive values 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toContainValues([22m[32mexpected[39m[2m)[22m
 
 Expected object to contain all values:
-  <green>["duck", [{"hello": "world"}]]</color>
+  [32mArray [
+  \\"hello\\",
+  0,
+  false,
+][39m
 Received:
-  <red>{"donald": "duck", "message": [{"bar": false, "foo": 0, "hello": "world"}]}</color>"
+  [31mObject {
+  \\"bar\\": false,
+  \\"foo\\": 0,
+  \\"hello\\": \\"world\\",
+}[39m"
 `;
 
-exports[`.toContainValues fails when given object does not contain all values including objects 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toContainValues(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toContainValues > fails when given object does not contain all values including arrays 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toContainValues([22m[32mexpected[39m[2m)[22m
 
 Expected object to contain all values:
-  <green>[{"hello": "world"}]</color>
+  [32mArray [
+  \\"duck\\",
+  Array [
+    Object {
+      \\"hello\\": \\"world\\",
+    },
+  ],
+][39m
 Received:
-  <red>{"donald": "duck", "message": {"bar": false, "foo": 0, "hello": "world"}}</color>"
+  [31mObject {
+  \\"donald\\": \\"duck\\",
+  \\"message\\": Array [
+    Object {
+      \\"bar\\": false,
+      \\"foo\\": 0,
+      \\"hello\\": \\"world\\",
+    },
+  ],
+}[39m"
+`;
+
+exports[`.toContainValues > fails when given object does not contain all values including objects 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toContainValues([22m[32mexpected[39m[2m)[22m
+
+Expected object to contain all values:
+  [32mArray [
+  Object {
+    \\"hello\\": \\"world\\",
+  },
+][39m
+Received:
+  [31mObject {
+  \\"donald\\": \\"duck\\",
+  \\"message\\": Object {
+    \\"bar\\": false,
+    \\"foo\\": 0,
+    \\"hello\\": \\"world\\",
+  },
+}[39m"
 `;

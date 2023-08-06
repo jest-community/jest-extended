@@ -1,19 +1,27 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toBeOneOf fails when value is in given array 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toBeOneOf(</intensity><green>expected</color><dim>)</intensity>
+exports[`.not.toBeOneOf > fails when value is in given array 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toBeOneOf([22m[32mexpected[39m[2m)[22m
 
 Expected value to not be in list:
-  <green>[1, 2, 3]</color>
+  [32mArray [
+  1,
+  2,
+  3,
+][39m
 Received:
-  <red>1</color>"
+  [31m1[39m"
 `;
 
-exports[`.toBeOneOf fails when value is not in given array 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeOneOf(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toBeOneOf > fails when value is not in given array 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeOneOf([22m[32mexpected[39m[2m)[22m
 
 Expected value to be in list:
-  <green>[1, 2, 3]</color>
+  [32mArray [
+  1,
+  2,
+  3,
+][39m
 Received:
-  <red>4</color>"
+  [31m4[39m"
 `;

@@ -1,57 +1,61 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toBeObject fails when given an object 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toBeObject()</intensity>
+exports[`.not.toBeObject > fails when given an object 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toBeObject()[22m
 
 Expected value to not be an object, received:
-  <red>{}</color>"
+  [31mObject {}[39m"
 `;
 
-exports[`.toBeObject fails when not given an object:  1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeObject()</intensity>
+exports[`.toBeObject > fails when not given an object:  1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeObject()[22m
 
 Expected value to be an object, received:
-  <red>""</color>"
+  [31m\\"\\"[39m"
 `;
 
-exports[`.toBeObject fails when not given an object: () => {} 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeObject()</intensity>
+exports[`.toBeObject > fails when not given an object: () => {} 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeObject()[22m
 
 Expected value to be an object, received:
-  <red>[Function anonymous]</color>"
+  [31m[Function anonymous][39m"
 `;
 
-exports[`.toBeObject fails when not given an object: [ 1, 2, 3 ] 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeObject()</intensity>
+exports[`.toBeObject > fails when not given an object: [ 1, 2, 3 ] 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeObject()[22m
 
 Expected value to be an object, received:
-  <red>[1, 2, 3]</color>"
+  [31mArray [
+  1,
+  2,
+  3,
+][39m"
 `;
 
-exports[`.toBeObject fails when not given an object: 0 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeObject()</intensity>
+exports[`.toBeObject > fails when not given an object: 0 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeObject()[22m
 
 Expected value to be an object, received:
-  <red>0</color>"
+  [31m0[39m"
 `;
 
-exports[`.toBeObject fails when not given an object: NaN 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeObject()</intensity>
+exports[`.toBeObject > fails when not given an object: NaN 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeObject()[22m
 
 Expected value to be an object, received:
-  <red>NaN</color>"
+  [31mNaN[39m"
 `;
 
-exports[`.toBeObject fails when not given an object: false 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeObject()</intensity>
+exports[`.toBeObject > fails when not given an object: false 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeObject()[22m
 
 Expected value to be an object, received:
-  <red>false</color>"
+  [31mfalse[39m"
 `;
 
-exports[`.toBeObject fails when not given an object: undefined 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeObject()</intensity>
+exports[`.toBeObject > fails when not given an object: undefined 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeObject()[22m
 
 Expected value to be an object, received:
-  <red>undefined</color>"
+  [31mundefined[39m"
 `;

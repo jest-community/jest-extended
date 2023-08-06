@@ -1,9 +1,9 @@
-import * as matcher from 'src/matchers/toEqualIgnoringWhitespace';
+import * as matcher from "src/matchers/toEqualIgnoringWhitespace";
 
 expect.extend(matcher);
 
-describe('.toEqualIgnoringWhitespace', () => {
-  it('should pass if strings are equal ignoring white-space', () => {
+describe(".toEqualIgnoringWhitespace", () => {
+  it("should pass if strings are equal ignoring white-space", () => {
     expect('SELECT * from TABLE WHERE CONDITION = "5"').toEqualIgnoringWhitespace(`
             SELECT * from TABLE
             WHERE CONDITION = "5"
@@ -32,11 +32,11 @@ describe('.toEqualIgnoringWhitespace', () => {
         `);
 
     expect(() =>
-      expect('.class { cssRule: value; }').toEqualIgnoringWhitespace('#id { cssRule: value; }'),
+      expect(".class { cssRule: value; }").toEqualIgnoringWhitespace("#id { cssRule: value; }"),
     ).toThrowErrorMatchingSnapshot();
   });
 
-  it('should not pass if strings are not equal, ignoring white-space', () => {
+  it("should not pass if strings are not equal, ignoring white-space", () => {
     expect('SELECT * from TABLE WHERE CONDITION = "5"').not.toEqualIgnoringWhitespace(`
             WHERE CONDITION = "5" 
             SELECT * from TABLE
@@ -63,7 +63,7 @@ describe('.toEqualIgnoringWhitespace', () => {
         `);
 
     expect(() =>
-      expect('.class { cssRule: value; }').not.toEqualIgnoringWhitespace(`
+      expect(".class { cssRule: value; }").not.toEqualIgnoringWhitespace(`
             .class { 
                 cssRule: value; 
             }
@@ -71,7 +71,7 @@ describe('.toEqualIgnoringWhitespace', () => {
     ).toThrowErrorMatchingSnapshot();
   });
 
-  it('should fail if strings are not equal, ignoring white-space', () => {
+  it("should fail if strings are not equal, ignoring white-space", () => {
     expect(() =>
       expect('SELECT * from TABLE WHERE CONDITION = "5"').toEqualIgnoringWhitespace(`
         WHERE CONDITION = "5" 

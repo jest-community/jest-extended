@@ -1,23 +1,23 @@
-import * as matcher from 'src/matchers/toBeInteger';
+import * as matcher from "src/matchers/toBeInteger";
 
 expect.extend(matcher);
 
-describe('.toBeInteger', () => {
-  test('passes when given integer', () => {
+describe(".toBeInteger", () => {
+  test("passes when given integer", () => {
     expect(1).toBeInteger();
   });
 
-  test('fails when given fraction', () => {
+  test("fails when given fraction", () => {
     expect(() => expect(1.5).toBeInteger()).toThrowErrorMatchingSnapshot();
   });
 });
 
-describe('.not.toBeInteger', () => {
-  test('passes when given fraction', () => {
+describe(".not.toBeInteger", () => {
+  test("passes when given fraction", () => {
     expect(1.5).not.toBeInteger();
   });
 
-  test('fails when given integer', () => {
+  test("fails when given integer", () => {
     expect(() => expect(1).not.toBeInteger()).toThrowErrorMatchingSnapshot();
   });
 });

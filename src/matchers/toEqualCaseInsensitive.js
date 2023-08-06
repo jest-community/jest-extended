@@ -7,17 +7,17 @@ export function toEqualCaseInsensitive(actual, expected) {
     pass,
     message: () =>
       pass
-        ? matcherHint('.not.toEqualCaseInsensitive') +
-          '\n\n' +
-          'Expected values to not be equal while ignoring case (using ===):\n' +
+        ? matcherHint(".not.toEqualCaseInsensitive") +
+          "\n\n" +
+          "Expected values to not be equal while ignoring case (using ===):\n" +
           `  ${printExpected(expected)}\n` +
-          'Received:\n' +
+          "Received:\n" +
           `  ${printReceived(actual)}`
-        : matcherHint('.toEqualCaseInsensitive') +
-          '\n\n' +
-          'Expected values to be equal while ignoring case (using ===):\n' +
+        : matcherHint(".toEqualCaseInsensitive") +
+          "\n\n" +
+          "Expected values to be equal while ignoring case (using ===):\n" +
           `  ${printExpected(expected)}\n` +
-          'Received:\n' +
+          "Received:\n" +
           `  ${printReceived(actual)}`,
   };
 }

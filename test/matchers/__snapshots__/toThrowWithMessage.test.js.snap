@@ -1,184 +1,184 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.toThrowWithMessage Async fails on rejects when a wrong type of error is thrown 1`] = `
-"<dim>expect(</intensity><red>function</color><dim>).toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
+exports[`.toThrowWithMessage > Async > fails on rejects when a wrong type of error is thrown 1`] = `
+"[2mexpect([22m[31mfunction[39m[2m).toThrowWithMessage([22m[32mtype[39m[2m, [22m[32mmessage[39m[2m)[22m
 
 Expected to throw:
-  <green>[TypeError: Expected message]</color>
+  [32m[TypeError: Expected message][39m
 Thrown:
-  <red>[SyntaxError: Expected message]</color>
+  [31m[SyntaxError: Expected message][39m
 "
 `;
 
-exports[`.toThrowWithMessage Async fails on rejects when error message is not provided 1`] = `
-"<dim>expect(</intensity><red>function</color><dim>).toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
+exports[`.toThrowWithMessage > Async > fails on rejects when error message is not provided 1`] = `
+"[2mexpect([22m[31mfunction[39m[2m).toThrowWithMessage([22m[32mtype[39m[2m, [22m[32mmessage[39m[2m)[22m
 
  Message argument is required. "
 `;
 
-exports[`.toThrowWithMessage Async fails on rejects when error message provided is not a string or regex 1`] = `
-"<dim>expect(</intensity><red>function</color><dim>).toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
+exports[`.toThrowWithMessage > Async > fails on rejects when error message provided is not a string or regex 1`] = `
+"[2mexpect([22m[31mfunction[39m[2m).toThrowWithMessage([22m[32mtype[39m[2m, [22m[32mmessage[39m[2m)[22m
 
 Unexpected argument for message
-Expected: "string" or "regexp
-Got: "2""
+Expected: \\"string\\" or \\"regexp
+Got: \\"2\\""
 `;
 
-exports[`.toThrowWithMessage Async fails on rejects when error type is not provided 1`] = `
-"<dim>expect(</intensity><red>function</color><dim>).toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
+exports[`.toThrowWithMessage > Async > fails on rejects when error type is not provided 1`] = `
+"[2mexpect([22m[31mfunction[39m[2m).toThrowWithMessage([22m[32mtype[39m[2m, [22m[32mmessage[39m[2m)[22m
 
-Expected type to be a function but instead "undefined" was found"
+Expected type to be a function but instead \\"undefined\\" was found"
 `;
 
-exports[`.toThrowWithMessage Async fails on rejects when return value is not provided 1`] = `
-"<dim>expect(</intensity><red>function</color><dim>).toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
+exports[`.toThrowWithMessage > Async > fails on rejects when return value is not provided 1`] = `
+"[2mexpect([22m[31mfunction[39m[2m).toThrowWithMessage([22m[32mtype[39m[2m, [22m[32mmessage[39m[2m)[22m
 
-Expected type to be a function but instead "undefined" was found"
+Expected type to be a function but instead \\"undefined\\" was found"
 `;
 
-exports[`.toThrowWithMessage Async passes on rejects when given an Error with a regex error message 1`] = `
-"<dim>expect(</intensity><red>function</color><dim>).not.toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
+exports[`.toThrowWithMessage > Async > passes on rejects when given an Error with a regex error message 1`] = `
+"[2mexpect([22m[31mfunction[39m[2m).not.toThrowWithMessage([22m[32mtype[39m[2m, [22m[32mmessage[39m[2m)[22m
 
 Expected not to throw:
-  <green>[TypeError: /Expected message/]</color>
+  [32m[TypeError: /Expected message/][39m
 Thrown:
-  <red>[TypeError: Expected message]</color>
+  [31m[TypeError: Expected message][39m
 "
 `;
 
-exports[`.toThrowWithMessage Async passes on rejects when given an Error with a string error message 1`] = `
-"<dim>expect(</intensity><red>function</color><dim>).not.toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
+exports[`.toThrowWithMessage > Async > passes on rejects when given an Error with a string error message 1`] = `
+"[2mexpect([22m[31mfunction[39m[2m).not.toThrowWithMessage([22m[32mtype[39m[2m, [22m[32mmessage[39m[2m)[22m
 
 Expected not to throw:
-  <green>[TypeError: Expected message]</color>
+  [32m[TypeError: Expected message][39m
 Thrown:
-  <red>[TypeError: Expected message]</color>
+  [31m[TypeError: Expected message][39m
 "
 `;
 
-exports[`.toThrowWithMessage Async passes with an unconstructable error given a regex message 1`] = `
-"<dim>expect(</intensity><red>function</color><dim>).not.toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
+exports[`.toThrowWithMessage > Async > passes with an unconstructable error given a regex message 1`] = `
+"[2mexpect([22m[31mfunction[39m[2m).not.toThrowWithMessage([22m[32mtype[39m[2m, [22m[32mmessage[39m[2m)[22m
 
 Expected not to throw:
-  <green>[UnconstructableError: /42/]</color>
+  [32m[UnconstructableError: /42/][39m
 Thrown:
-  <red>[UnconstructableError: 42]</color>
+  [31m[UnconstructableError: 42][39m
 "
 `;
 
-exports[`.toThrowWithMessage Async passes with an unconstructable error given a string message 1`] = `
-"<dim>expect(</intensity><red>function</color><dim>).not.toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
+exports[`.toThrowWithMessage > Async > passes with an unconstructable error given a string message 1`] = `
+"[2mexpect([22m[31mfunction[39m[2m).not.toThrowWithMessage([22m[32mtype[39m[2m, [22m[32mmessage[39m[2m)[22m
 
 Expected not to throw:
-  <green>[UnconstructableError: 42]</color>
+  [32m[UnconstructableError: 42][39m
 Thrown:
-  <red>[UnconstructableError: 42]</color>
+  [31m[UnconstructableError: 42][39m
 "
 `;
 
-exports[`.toThrowWithMessage fails when a callback function is not a function 1`] = `
-"<dim>expect(</intensity><red>function</color><dim>).toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
+exports[`.toThrowWithMessage > fails when a callback function is not a function 1`] = `
+"[2mexpect([22m[31mfunction[39m[2m).toThrowWithMessage([22m[32mtype[39m[2m, [22m[32mmessage[39m[2m)[22m
 
-Received value must be a function but instead "2" was found"
+Received value must be a function but instead \\"2\\" was found"
 `;
 
-exports[`.toThrowWithMessage fails when a callback provided doesnt throw an error 1`] = `
+exports[`.toThrowWithMessage > fails when a callback provided doesnt throw an error 1`] = `
 "Expected the function to throw an error.
 But it didn't throw anything."
 `;
 
-exports[`.toThrowWithMessage fails when a wrong type of error is thrown 1`] = `
-"<dim>expect(</intensity><red>function</color><dim>).toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
+exports[`.toThrowWithMessage > fails when a wrong type of error is thrown 1`] = `
+"[2mexpect([22m[31mfunction[39m[2m).toThrowWithMessage([22m[32mtype[39m[2m, [22m[32mmessage[39m[2m)[22m
 
 Expected to throw:
-  <green>[TypeError: Expected message]</color>
+  [32m[TypeError: Expected message][39m
 Thrown:
-  <red>[SyntaxError: Expected message]</color>
+  [31m[SyntaxError: Expected message][39m
 "
 `;
 
-exports[`.toThrowWithMessage fails when callback function is not provided 1`] = `
-"<dim>expect(</intensity><red>function</color><dim>).toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
+exports[`.toThrowWithMessage > fails when callback function is not provided 1`] = `
+"[2mexpect([22m[31mfunction[39m[2m).toThrowWithMessage([22m[32mtype[39m[2m, [22m[32mmessage[39m[2m)[22m
 
-Received value must be a function but instead "undefined" was found"
+Received value must be a function but instead \\"undefined\\" was found"
 `;
 
-exports[`.toThrowWithMessage fails when error message does not match expected message 1`] = `
-"<dim>expect(</intensity><red>function</color><dim>).toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
+exports[`.toThrowWithMessage > fails when error message does not match expected message 1`] = `
+"[2mexpect([22m[31mfunction[39m[2m).toThrowWithMessage([22m[32mtype[39m[2m, [22m[32mmessage[39m[2m)[22m
 
 Expected to throw:
-  <green>[SyntaxError: Expected message]</color>
+  [32m[SyntaxError: Expected message][39m
 Thrown:
-  <red>[SyntaxError: Actual message]</color>
+  [31m[SyntaxError: Actual message][39m
 "
 `;
 
-exports[`.toThrowWithMessage fails when error message does not match expected message regex 1`] = `
-"<dim>expect(</intensity><red>function</color><dim>).toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
+exports[`.toThrowWithMessage > fails when error message does not match expected message regex 1`] = `
+"[2mexpect([22m[31mfunction[39m[2m).toThrowWithMessage([22m[32mtype[39m[2m, [22m[32mmessage[39m[2m)[22m
 
 Expected to throw:
-  <green>[SyntaxError: /Expected message/]</color>
+  [32m[SyntaxError: /Expected message/][39m
 Thrown:
-  <red>[SyntaxError: Actual message]</color>
+  [31m[SyntaxError: Actual message][39m
 "
 `;
 
-exports[`.toThrowWithMessage fails when error message is not provided 1`] = `
-"<dim>expect(</intensity><red>function</color><dim>).toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
+exports[`.toThrowWithMessage > fails when error message is not provided 1`] = `
+"[2mexpect([22m[31mfunction[39m[2m).toThrowWithMessage([22m[32mtype[39m[2m, [22m[32mmessage[39m[2m)[22m
 
  Message argument is required. "
 `;
 
-exports[`.toThrowWithMessage fails when error message provided is not a string or regex 1`] = `
-"<dim>expect(</intensity><red>function</color><dim>).toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
+exports[`.toThrowWithMessage > fails when error message provided is not a string or regex 1`] = `
+"[2mexpect([22m[31mfunction[39m[2m).toThrowWithMessage([22m[32mtype[39m[2m, [22m[32mmessage[39m[2m)[22m
 
 Unexpected argument for message
-Expected: "string" or "regexp
-Got: "2""
+Expected: \\"string\\" or \\"regexp
+Got: \\"2\\""
 `;
 
-exports[`.toThrowWithMessage fails when error type is not provided 1`] = `
-"<dim>expect(</intensity><red>function</color><dim>).toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
+exports[`.toThrowWithMessage > fails when error type is not provided 1`] = `
+"[2mexpect([22m[31mfunction[39m[2m).toThrowWithMessage([22m[32mtype[39m[2m, [22m[32mmessage[39m[2m)[22m
 
-Expected type to be a function but instead "undefined" was found"
+Expected type to be a function but instead \\"undefined\\" was found"
 `;
 
-exports[`.toThrowWithMessage passes when given an Error with a regex error message 1`] = `
-"<dim>expect(</intensity><red>function</color><dim>).not.toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
+exports[`.toThrowWithMessage > passes when given an Error with a regex error message 1`] = `
+"[2mexpect([22m[31mfunction[39m[2m).not.toThrowWithMessage([22m[32mtype[39m[2m, [22m[32mmessage[39m[2m)[22m
 
 Expected not to throw:
-  <green>[TypeError: /Expected message/]</color>
+  [32m[TypeError: /Expected message/][39m
 Thrown:
-  <red>[TypeError: Expected message]</color>
+  [31m[TypeError: Expected message][39m
 "
 `;
 
-exports[`.toThrowWithMessage passes when given an Error with a string error message 1`] = `
-"<dim>expect(</intensity><red>function</color><dim>).not.toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
+exports[`.toThrowWithMessage > passes when given an Error with a string error message 1`] = `
+"[2mexpect([22m[31mfunction[39m[2m).not.toThrowWithMessage([22m[32mtype[39m[2m, [22m[32mmessage[39m[2m)[22m
 
 Expected not to throw:
-  <green>[TypeError: Expected message]</color>
+  [32m[TypeError: Expected message][39m
 Thrown:
-  <red>[TypeError: Expected message]</color>
+  [31m[TypeError: Expected message][39m
 "
 `;
 
-exports[`.toThrowWithMessage passes with an unconstructable error given a regex message 1`] = `
-"<dim>expect(</intensity><red>function</color><dim>).not.toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
+exports[`.toThrowWithMessage > passes with an unconstructable error given a regex message 1`] = `
+"[2mexpect([22m[31mfunction[39m[2m).not.toThrowWithMessage([22m[32mtype[39m[2m, [22m[32mmessage[39m[2m)[22m
 
 Expected not to throw:
-  <green>[UnconstructableError: /42/]</color>
+  [32m[UnconstructableError: /42/][39m
 Thrown:
-  <red>[UnconstructableError: 42]</color>
+  [31m[UnconstructableError: 42][39m
 "
 `;
 
-exports[`.toThrowWithMessage passes with an unconstructable error given a string message 1`] = `
-"<dim>expect(</intensity><red>function</color><dim>).not.toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
+exports[`.toThrowWithMessage > passes with an unconstructable error given a string message 1`] = `
+"[2mexpect([22m[31mfunction[39m[2m).not.toThrowWithMessage([22m[32mtype[39m[2m, [22m[32mmessage[39m[2m)[22m
 
 Expected not to throw:
-  <green>[UnconstructableError: 42]</color>
+  [32m[UnconstructableError: 42][39m
 Thrown:
-  <red>[UnconstructableError: 42]</color>
+  [31m[UnconstructableError: 42][39m
 "
 `;

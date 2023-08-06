@@ -1,19 +1,49 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toContainAllEntries fails when object only contains all of the given entries 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toContainAllEntries(</intensity><green>expected</color><dim>)</intensity>
+exports[`.not.toContainAllEntries > fails when object only contains all of the given entries 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toContainAllEntries([22m[32mexpected[39m[2m)[22m
 
 Expected object to not only contain all of the given entries:
-  <green>[["b", "bar"], ["a", "foo"], ["c", "baz"]]</color>
+  [32mArray [
+  Array [
+    \\"b\\",
+    \\"bar\\",
+  ],
+  Array [
+    \\"a\\",
+    \\"foo\\",
+  ],
+  Array [
+    \\"c\\",
+    \\"baz\\",
+  ],
+][39m
 Received:
-  <red>{"a": "foo", "b": "bar", "c": "baz"}</color>"
+  [31mObject {
+  \\"a\\": \\"foo\\",
+  \\"b\\": \\"bar\\",
+  \\"c\\": \\"baz\\",
+}[39m"
 `;
 
-exports[`.toContainAllEntries fails when object does not only contain all of the given entries 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toContainAllEntries(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toContainAllEntries > fails when object does not only contain all of the given entries 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toContainAllEntries([22m[32mexpected[39m[2m)[22m
 
 Expected object to only contain all of the given entries:
-  <green>[["a", "foo"], ["b", "bar"]]</color>
+  [32mArray [
+  Array [
+    \\"a\\",
+    \\"foo\\",
+  ],
+  Array [
+    \\"b\\",
+    \\"bar\\",
+  ],
+][39m
 Received:
-  <red>{"a": "foo", "b": "bar", "c": "baz"}</color>"
+  [31mObject {
+  \\"a\\": \\"foo\\",
+  \\"b\\": \\"bar\\",
+  \\"c\\": \\"baz\\",
+}[39m"
 `;

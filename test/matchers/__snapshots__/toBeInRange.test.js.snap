@@ -1,16 +1,21 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toBeInRange fails when given array is in the given range 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toBeInRange(</intensity><green>expected</color><dim>)</intensity>
+exports[`.not.toBeInRange > fails when given array is in the given range 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toBeInRange([22m[32mexpected[39m[2m)[22m
 
-Expected Array to not be in range <green>4</color>, <green>10</color>
+Expected Array to not be in range [32m4[39m, [32m10[39m
 Received:
-  <red>[4, 5, 7, 9]</color>"
+  [31mArray [
+  4,
+  5,
+  7,
+  9,
+][39m"
 `;
 
-exports[`.toBeInRange fails when given array is not in a given range 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeInRange(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toBeInRange > fails when given array is not in a given range 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeInRange([22m[32mexpected[39m[2m)[22m
 
-Expected: Array elements to be in range (<green>4</color>, <green>8</color>)
-Received: Array element out of range <red>9</color>"
+Expected: Array elements to be in range ([32m4[39m, [32m8[39m)
+Received: Array element out of range [31m9[39m"
 `;

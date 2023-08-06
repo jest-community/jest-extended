@@ -426,7 +426,7 @@ interface CustomMatchers<R> extends Record<string, any> {
   toEqualIgnoringWhitespace(string: string): R;
 }
 
-declare namespace jest {
+declare module "vitest" {
   // noinspection JSUnusedGlobalSymbols
   interface Matchers<R> {
     /**
@@ -873,14 +873,14 @@ declare namespace jest {
 
   // noinspection JSUnusedGlobalSymbols
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface Expect extends CustomMatchers<any> {}
+  interface Assertion<T = any> extends CustomMatchers<T> {}
 
   // noinspection JSUnusedGlobalSymbols
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface InverseAsymmetricMatchers extends Expect {}
+  interface AsymmetricMatchersContaining extends CustomMatchers<any> {}
 }
 
-declare module 'jest-extended' {
+declare module "vitest-extended" {
   const matchers: CustomMatchers<any>;
   export = matchers;
 }

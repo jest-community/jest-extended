@@ -10,7 +10,7 @@ export async function toReject(actual) {
     pass,
     message: () =>
       pass
-        ? matcherHint('.not.toReject', 'received', '') + '\n\nExpected promise to resolve, however it rejected.\n'
-        : matcherHint('.toReject', 'received', '') + '\n\nExpected promise to reject, however it resolved.\n',
+        ? matcherHint(".not.toReject", "received", "") + "\n\nExpected promise to resolve, however it rejected.\n"
+        : matcherHint(".toReject", "received", "") + "\n\nExpected promise to reject, however it resolved.\n",
   };
 }

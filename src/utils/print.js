@@ -1,4 +1,4 @@
-import { DIFF_DELETE, DIFF_EQUAL, DIFF_INSERT } from 'jest-diff';
+import { DIFF_DELETE, DIFF_EQUAL, DIFF_INSERT } from "jest-diff";
 
 export const tokenize = str => {
   const isWhitespace = char => /\s/.test(char);
@@ -36,7 +36,7 @@ export const tokenize = str => {
 
 const colorTokens = (str, color) => {
   const tokens = tokenize(str);
-  return tokens.reduce((acc, { value, isWhitespace }) => acc + (isWhitespace ? value : color(value)), '');
+  return tokens.reduce((acc, { value, isWhitespace }) => acc + (isWhitespace ? value : color(value)), "");
 };
 
 export const printExpected = (utils, diff) =>
@@ -48,7 +48,7 @@ export const printExpected = (utils, diff) =>
     if (operation === DIFF_DELETE)
       return acc + colorTokens(value, str => utils.INVERTED_COLOR(utils.EXPECTED_COLOR(str)));
     return acc;
-  }, '');
+  }, "");
 
 export const printReceived = (utils, diff) =>
   diff.reduce((acc, diffObject) => {
@@ -59,4 +59,4 @@ export const printReceived = (utils, diff) =>
     if (operation === DIFF_INSERT)
       return acc + colorTokens(value, str => utils.INVERTED_COLOR(utils.RECEIVED_COLOR(str)));
     return acc;
-  }, '');
+  }, "");

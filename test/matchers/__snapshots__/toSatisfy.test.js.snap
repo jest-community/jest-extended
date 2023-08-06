@@ -1,19 +1,19 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toSatisfy fails when given a function that returns true 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toSatisfy()</intensity>
+exports[`.not.toSatisfy > fails when given a function that returns true 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toSatisfy()[22m
 
 Expected value to not satisfy:
-  <green>[Function isTrue]</color>
+  [32m[Function isTrue][39m
 Received:
-  <red>true</color>"
+  [31mtrue[39m"
 `;
 
-exports[`.toSatisfy fails when given function that returns false 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toSatisfy()</intensity>
+exports[`.toSatisfy > fails when given function that returns false 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toSatisfy()[22m
 
 Expected value to satisfy:
-  <green>[Function is2]</color>
+  [32m[Function is2][39m
 Received:
-  <red>3</color>"
+  [31m3[39m"
 `;

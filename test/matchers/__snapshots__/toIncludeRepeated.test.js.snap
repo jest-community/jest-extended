@@ -1,37 +1,37 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toIncludeRepeated fails when given string includes given substring 1 time 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toIncludeRepeated(</intensity><green>expected</color><dim>)</intensity>
+exports[`.not.toIncludeRepeated > fails when given string includes given substring 1 time 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toIncludeRepeated([22m[32mexpected[39m[2m)[22m
 
 Expected string to not include repeated 1 times:
-  <green>"ell"</color>
+  [32m\\"ell\\"[39m
 Received:
-  <red>"hello world"</color>"
+  [31m\\"hello world\\"[39m"
 `;
 
-exports[`.not.toIncludeRepeated fails when given string includes given substring to the given occurrences 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toIncludeRepeated(</intensity><green>expected</color><dim>)</intensity>
+exports[`.not.toIncludeRepeated > fails when given string includes given substring to the given occurrences 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toIncludeRepeated([22m[32mexpected[39m[2m)[22m
 
 Expected string to not include repeated 3 times:
-  <green>"l"</color>
+  [32m\\"l\\"[39m
 Received:
-  <red>"hello world"</color>"
+  [31m\\"hello world\\"[39m"
 `;
 
-exports[`.toIncludeRepeated fails when given string does not have a given substring the correct number of times 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toIncludeRepeated(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toIncludeRepeated > fails when given string does not have a given substring the correct number of times 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toIncludeRepeated([22m[32mexpected[39m[2m)[22m
 
 Expected string to include repeated 2 times:
-  <green>"world"</color>
+  [32m\\"world\\"[39m
 Received:
-  <red>"hello world"</color>"
+  [31m\\"hello world\\"[39m"
 `;
 
-exports[`.toIncludeRepeated fails when given string does not include given substring 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toIncludeRepeated(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toIncludeRepeated > fails when given string does not include given substring 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toIncludeRepeated([22m[32mexpected[39m[2m)[22m
 
 Expected string to include repeated 1 times:
-  <green>"bob"</color>
+  [32m\\"bob\\"[39m
 Received:
-  <red>"hello world"</color>"
+  [31m\\"hello world\\"[39m"
 `;

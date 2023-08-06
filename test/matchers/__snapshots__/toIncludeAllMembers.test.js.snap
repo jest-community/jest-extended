@@ -1,37 +1,61 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toIncludeAllMembers fails when array values matches the members of the set 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toIncludeAllMembers(</intensity><green>expected</color><dim>)</intensity>
+exports[`.not.toIncludeAllMembers > fails when array values matches the members of the set 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toIncludeAllMembers([22m[32mexpected[39m[2m)[22m
 
 Expected list to not have all of the following members:
-  <green>[2, 1, 3]</color>
+  [32mArray [
+  2,
+  1,
+  3,
+][39m
 Received:
-  <red>[1, 2, 3]</color>"
+  [31mArray [
+  1,
+  2,
+  3,
+][39m"
 `;
 
-exports[`.toIncludeAllMembers fails when array values do not contain any of the members of the set 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toIncludeAllMembers(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toIncludeAllMembers > fails when array values do not contain any of the members of the set 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toIncludeAllMembers([22m[32mexpected[39m[2m)[22m
 
 Expected list to have all of the following members:
-  <green>[1, 2, 3]</color>
+  [32mArray [
+  1,
+  2,
+  3,
+][39m
 Received:
-  <red>[4, 5, 6]</color>"
+  [31mArray [
+  4,
+  5,
+  6,
+][39m"
 `;
 
-exports[`.toIncludeAllMembers fails when expected object is not an array 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toIncludeAllMembers(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toIncludeAllMembers > fails when expected object is not an array 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toIncludeAllMembers([22m[32mexpected[39m[2m)[22m
 
 Expected list to have all of the following members:
-  <green>2</color>
+  [32m2[39m
 Received:
-  <red>[1, 2, 3]</color>"
+  [31mArray [
+  1,
+  2,
+  3,
+][39m"
 `;
 
-exports[`.toIncludeAllMembers fails when given object is not an array 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toIncludeAllMembers(</intensity><green>expected</color><dim>)</intensity>
+exports[`.toIncludeAllMembers > fails when given object is not an array 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toIncludeAllMembers([22m[32mexpected[39m[2m)[22m
 
 Expected list to have all of the following members:
-  <green>[1, 2, 3]</color>
+  [32mArray [
+  1,
+  2,
+  3,
+][39m
 Received:
-  <red>2</color>"
+  [31m2[39m"
 `;

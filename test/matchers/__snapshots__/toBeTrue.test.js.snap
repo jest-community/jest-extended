@@ -1,17 +1,17 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toBeTrue fails when given true 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toBeTrue()</intensity>
+exports[`.not.toBeTrue > fails when given true 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toBeTrue()[22m
 
 Expected value to not be true received:
-  <red>true</color>"
+  [31mtrue[39m"
 `;
 
-exports[`.toBeTrue fails when not given true 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeTrue()</intensity>
+exports[`.toBeTrue > fails when not given true 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeTrue()[22m
 
 Expected value to be true:
-  <green>true</color>
+  [32mtrue[39m
 Received:
-  <red>false</color>"
+  [31mfalse[39m"
 `;

@@ -1,15 +1,15 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toBeAfter fails when given a later date 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toBeAfter()</intensity>
+exports[`.not.toBeAfter > fails when given a later date 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toBeAfter()[22m
 
-Expected date to be after <red>2018-06-01T22:00:00.000Z</color> but received:
-  <red>2018-06-02T22:00:00.000Z</color>"
+Expected date to be after [31m2018-06-01T22:00:00.000Z[39m but received:
+  [31m2018-06-02T22:00:00.000Z[39m"
 `;
 
-exports[`.toBeAfter fails when given an earlier date 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeAfter()</intensity>
+exports[`.toBeAfter > fails when given an earlier date 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeAfter()[22m
 
-Expected date to be after <red>2018-06-02T22:00:00.000Z</color> but received:
-  <red>2018-06-01T22:00:00.000Z</color>"
+Expected date to be after [31m2018-06-02T22:00:00.000Z[39m but received:
+  [31m2018-06-01T22:00:00.000Z[39m"
 `;

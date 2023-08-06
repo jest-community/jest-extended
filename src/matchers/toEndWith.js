@@ -7,17 +7,17 @@ export function toEndWith(actual, expected) {
     pass,
     message: () =>
       pass
-        ? matcherHint('.not.toEndWith') +
-          '\n\n' +
-          'Expected string to not end with:\n' +
+        ? matcherHint(".not.toEndWith") +
+          "\n\n" +
+          "Expected string to not end with:\n" +
           `  ${printExpected(expected)}\n` +
-          'Received:\n' +
+          "Received:\n" +
           `  ${printReceived(actual)}`
-        : matcherHint('.toEndWith') +
-          '\n\n' +
-          'Expected string to end with:\n' +
+        : matcherHint(".toEndWith") +
+          "\n\n" +
+          "Expected string to end with:\n" +
           `  ${printExpected(expected)}\n` +
-          'Received:\n' +
+          "Received:\n" +
           `  ${printReceived(actual)}`,
   };
 }

@@ -1,4 +1,4 @@
-import { contains } from '../utils';
+import { contains } from "../utils";
 
 export function toIncludeAllMembers(actual, expected) {
   const { printReceived, printExpected, matcherHint } = this.utils;
@@ -10,17 +10,17 @@ export function toIncludeAllMembers(actual, expected) {
     pass,
     message: () =>
       pass
-        ? matcherHint('.not.toIncludeAllMembers') +
-          '\n\n' +
-          'Expected list to not have all of the following members:\n' +
+        ? matcherHint(".not.toIncludeAllMembers") +
+          "\n\n" +
+          "Expected list to not have all of the following members:\n" +
           `  ${printExpected(expected)}\n` +
-          'Received:\n' +
+          "Received:\n" +
           `  ${printReceived(actual)}`
-        : matcherHint('.toIncludeAllMembers') +
-          '\n\n' +
-          'Expected list to have all of the following members:\n' +
+        : matcherHint(".toIncludeAllMembers") +
+          "\n\n" +
+          "Expected list to have all of the following members:\n" +
           `  ${printExpected(expected)}\n` +
-          'Received:\n' +
+          "Received:\n" +
           `  ${printReceived(actual)}`,
   };
 }

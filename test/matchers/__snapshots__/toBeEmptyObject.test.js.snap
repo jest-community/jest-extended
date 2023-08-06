@@ -1,15 +1,17 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toBeEmptyObject fails when given an empty object 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toBeEmptyObject()</intensity>
+exports[`.not.toBeEmptyObject > fails when given an empty object 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toBeEmptyObject()[22m
 
 Expected value to not be an empty object, received:
-  <red>{}</color>"
+  [31mObject {}[39m"
 `;
 
-exports[`.toBeEmptyObject fails when not given an empty object 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeEmptyObject()</intensity>
+exports[`.toBeEmptyObject > fails when not given an empty object 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeEmptyObject()[22m
 
 Expected value to be an empty object, received:
-  <red>{"property1": "something"}</color>"
+  [31mObject {
+  \\"property1\\": \\"something\\",
+}[39m"
 `;

@@ -7,13 +7,13 @@ export function toBeFinite(actual) {
     pass,
     message: () =>
       pass
-        ? matcherHint('.not.toBeFinite', 'received', '') +
-          '\n\n' +
-          'Expected value to not be finite received:\n' +
+        ? matcherHint(".not.toBeFinite", "received", "") +
+          "\n\n" +
+          "Expected value to not be finite received:\n" +
           `  ${printReceived(actual)}`
-        : matcherHint('.toBeFinite', 'received', '') +
-          '\n\n' +
-          'Expected value to be finite received:\n' +
+        : matcherHint(".toBeFinite", "received", "") +
+          "\n\n" +
+          "Expected value to be finite received:\n" +
           `  ${printReceived(actual)}`,
   };
 }

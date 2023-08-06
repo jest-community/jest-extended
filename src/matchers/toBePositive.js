@@ -7,13 +7,13 @@ export function toBePositive(actual) {
     pass,
     message: () =>
       pass
-        ? matcherHint('.not.toBePositive', 'received', '') +
-          '\n\n' +
-          'Expected value to not be positive received:\n' +
+        ? matcherHint(".not.toBePositive", "received", "") +
+          "\n\n" +
+          "Expected value to not be positive received:\n" +
           `  ${printReceived(actual)}`
-        : matcherHint('.toBePositive', 'received', '') +
-          '\n\n' +
-          'Expected value to be positive received:\n' +
+        : matcherHint(".toBePositive", "received", "") +
+          "\n\n" +
+          "Expected value to be positive received:\n" +
           `  ${printReceived(actual)}`,
   };
 }

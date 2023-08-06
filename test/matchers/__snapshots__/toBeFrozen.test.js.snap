@@ -1,13 +1,13 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`.not.toBeFrozen fails when given frozen object 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toBeFrozen()</intensity>
+exports[`.not.toBeFrozen > fails when given frozen object 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).not.toBeFrozen()[22m
 
 Expected object to not be frozen"
 `;
 
-exports[`.toBeFrozen fails when given a non-frozen object 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeFrozen()</intensity>
+exports[`.toBeFrozen > fails when given a non-frozen object 1`] = `
+"[2mexpect([22m[31mreceived[39m[2m).toBeFrozen()[22m
 
 Expected object to be frozen"
 `;
