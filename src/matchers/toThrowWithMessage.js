@@ -42,6 +42,7 @@ const getExpectedError = (type, message) => {
 };
 
 export function toThrowWithMessage(callbackOrPromiseReturn, type, message) {
+  console.log({ callbackOrPromiseReturn, message, type });
   const utils = this.utils;
   const isFromReject = this && this.promise === "rejects"; // See https://github.com/facebook/jest/pull/7621#issue-244312550
   if ((!callbackOrPromiseReturn || typeof callbackOrPromiseReturn !== "function") && !isFromReject) {
