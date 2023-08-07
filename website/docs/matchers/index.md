@@ -10,7 +10,7 @@ sidebar_position: 1
 - [.toBeOneOf([members])](/docs/matchers/tobeoneof)
 - [.toBeNil()](/docs/matchers/tobenil)
 - [.toSatisfy(predicate)](/docs/matchers/tosatisfy)
-- [.toHaveSameJsonAs(expected)](/docs/matchers/tohavesamejsonas)
+- [.toHaveSameJson(expected)](/docs/matchers/tohavesamejson)
 
 ## [Array](/docs/matchers/array)
 

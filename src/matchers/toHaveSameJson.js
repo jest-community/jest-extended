@@ -1,4 +1,4 @@
-export function toHaveSameJsonAs(actual, expected) {
+export function toHaveSameJson(actual, expected) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const actualJson = JSON.stringify(actual);
@@ -10,11 +10,11 @@ export function toHaveSameJsonAs(actual, expected) {
     pass,
     message: () =>
       pass
-        ? matcherHint('.not.toHaveSameJsonAs') +
+        ? matcherHint('.not.toHaveSameJson') +
           '\n\n' +
           'Expected not to have JSON serialization:\n' +
           `  ${printExpected(expectedJson)}\n`
-        : matcherHint('.toHaveSameJsonAs') +
+        : matcherHint('.toHaveSameJson') +
           '\n\n' +
           'Expected object to have JSON serialization:\n' +
           `  ${printExpected(expectedJson)}\n` +

@@ -1,0 +1,17 @@
+---
+sidebar_position: 7
+---
+
+import { TestFile } from '../../src/components/CustomSandpack';
+
+# .toHaveSameJson(expected)
+
+Use `.toHaveSameJson` when checking if two values have the same JSON serialization.
+
+<TestFile name="toHaveSameJson">
+  {`test('passes when values have the same JSON serialization', () => {
+  expect(90).toHaveSameJson(90);
+  expect("Dodo").toHaveSameJson("Dodo);
+  expect({alpha: {beta: 90}}).toHaveSameJson({alpha: {beta: 90}});
+});`}
+</TestFile>

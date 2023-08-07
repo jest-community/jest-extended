@@ -40,11 +40,11 @@ interface CustomMatchers<R> extends Record<string, any> {
   toSatisfy<E = any>(predicate: (x: E) => boolean): R;
 
   /**
-   * Use `.toHaveSameJsonAs` when checking if two values have the same JSON serialization.
+   * Use `.toHaveSameJson` when checking if two values have the same JSON serialization.
    *
    * @param {*} expected
    */
-  toHaveSameJsonAs(expected: unknown): R;
+  toHaveSameJson(expected: unknown): R;
 
   /**
    * Use `.toBeArray` when checking if a value is an `Array`.

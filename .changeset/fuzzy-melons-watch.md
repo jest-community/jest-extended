@@ -2,4 +2,4 @@
 'jest-extended': minor
 ---
 
-Add matcher .toHaveSameJsonAs
+Add matcher .toHaveSameJson

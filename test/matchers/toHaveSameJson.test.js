@@ -1,4 +1,4 @@
-import * as matcher from 'src/matchers/toHaveSameJsonAs';
+import * as matcher from 'src/matchers/toHaveSameJson';
 
 expect.extend(matcher);
 
@@ -61,22 +61,22 @@ const inequalityScenarios = [
   },
 ];
 
-describe('.toHaveSameJsonAs', () => {
+describe('.toHaveSameJson', () => {
   test.each(equalityScenarios)('passes when given equal $description', ({ value }) => {
-    expect(value).toHaveSameJsonAs(value);
+    expect(value).toHaveSameJson(value);
   });
 
   test.each(inequalityScenarios)('fails when given different $description', ({ actual, expected }) => {
-    expect(() => expect(actual).toHaveSameJsonAs(expected)).toThrowErrorMatchingSnapshot();
+    expect(() => expect(actual).toHaveSameJson(expected)).toThrowErrorMatchingSnapshot();
   });
 });
 
-describe('.not.toHaveSameJsonAs', () => {
+describe('.not.toHaveSameJson', () => {
   test.each(equalityScenarios)('fails when given equal $description', ({ value }) => {
-    expect(() => expect(value).not.toHaveSameJsonAs(value)).toThrowErrorMatchingSnapshot();
+    expect(() => expect(value).not.toHaveSameJson(value)).toThrowErrorMatchingSnapshot();
   });
 
   test.each(inequalityScenarios)('passes when given different $description', ({ actual, expected }) => {
-    expect(actual).not.toHaveSameJsonAs(expected);
+    expect(actual).not.toHaveSameJson(expected);
   });
 });
