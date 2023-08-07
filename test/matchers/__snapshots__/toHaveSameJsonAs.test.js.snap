@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toHaveSameJsonAs fails when given equal floating-point numbers 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toHaveSameJsonAs(</intensity><green>expected</color><dim>)</intensity>
+
+Expected not to have JSON serialization:
+  <green>"98.5"</color>
+"
+`;
+
+exports[`.not.toHaveSameJsonAs fails when given equal integer numbers 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toHaveSameJsonAs(</intensity><green>expected</color><dim>)</intensity>
+
+Expected not to have JSON serialization:
+  <green>"90"</color>
+"
+`;
+
+exports[`.not.toHaveSameJsonAs fails when given equal nested objects 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toHaveSameJsonAs(</intensity><green>expected</color><dim>)</intensity>
+
+Expected not to have JSON serialization:
+  <green>"{\\"alpha\\":90,\\"beta\\":{\\"gamma\\":\\"Y\\",\\"delta\\":4}}"</color>
+"
+`;
+
+exports[`.not.toHaveSameJsonAs fails when given equal shallow objects 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toHaveSameJsonAs(</intensity><green>expected</color><dim>)</intensity>
+
+Expected not to have JSON serialization:
+  <green>"{\\"alpha\\":90,\\"beta\\":\\"X\\"}"</color>
+"
+`;
+
+exports[`.not.toHaveSameJsonAs fails when given equal strings 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toHaveSameJsonAs(</intensity><green>expected</color><dim>)</intensity>
+
+Expected not to have JSON serialization:
+  <green>"\\"book\\""</color>
+"
+`;
+
+exports[`.toHaveSameJsonAs fails when given different floating-point numbers 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toHaveSameJsonAs(</intensity><green>expected</color><dim>)</intensity>
+
+Expected object to have JSON serialization:
+  <green>"29.4"</color>
+Received JSON serialization:
+  <red>"98.5"</color>"
+`;
+
+exports[`.toHaveSameJsonAs fails when given different integer numbers 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toHaveSameJsonAs(</intensity><green>expected</color><dim>)</intensity>
+
+Expected object to have JSON serialization:
+  <green>"21"</color>
+Received JSON serialization:
+  <red>"90"</color>"
+`;
+
+exports[`.toHaveSameJsonAs fails when given different nested objects 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toHaveSameJsonAs(</intensity><green>expected</color><dim>)</intensity>
+
+Expected object to have JSON serialization:
+  <green>"{\\"alpha\\":90,\\"beta\\":{\\"g\\":\\"Y\\",\\"d\\":4}}"</color>
+Received JSON serialization:
+  <red>"{\\"alpha\\":90,\\"beta\\":{\\"gamma\\":\\"Y\\",\\"delta\\":4}}"</color>"
+`;
+
+exports[`.toHaveSameJsonAs fails when given different shallow objects 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toHaveSameJsonAs(</intensity><green>expected</color><dim>)</intensity>
+
+Expected object to have JSON serialization:
+  <green>"{\\"a\\":90,\\"b\\":\\"X\\"}"</color>
+Received JSON serialization:
+  <red>"{\\"alpha\\":90,\\"beta\\":\\"X\\"}"</color>"
+`;
+
+exports[`.toHaveSameJsonAs fails when given different strings 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toHaveSameJsonAs(</intensity><green>expected</color><dim>)</intensity>
+
+Expected object to have JSON serialization:
+  <green>"\\"film\\""</color>
+Received JSON serialization:
+  <red>"\\"book\\""</color>"
+`;

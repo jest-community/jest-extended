@@ -29,6 +29,7 @@ export { toBeOdd } from './toBeOdd';
 export { toBeOneOf } from './toBeOneOf';
 export { toBePositive } from './toBePositive';
 export { toBeSealed } from './toBeSealed';
+export { toHaveSameJsonAs } from './toHaveSameJsonAs';
 export { toBeString } from './toBeString';
 export { toBeSymbol } from './toBeSymbol';
 export { toBeTrue } from './toBeTrue';
