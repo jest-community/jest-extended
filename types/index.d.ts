@@ -40,6 +40,12 @@ interface CustomMatchers<R> extends Record<string, any> {
   toSatisfy<E = any>(predicate: (x: E) => boolean): R;
 
   /**
+   * Use `.toHaveEqualItems` when checking if two `Iterable` resolve to the same sequence of equal items, in the same order; equality supports Jest's `expect.addEqualityTesters()`.
+   * @param {Iterable.<*>} expected
+   */
+  toHaveEqualItems<E = unknown>(expected: Iterable<E>): R;
+
+  /**
    * Use `.toBeArray` when checking if a value is an `Array`.
    */
   toBeArray(): R;

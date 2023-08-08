@@ -1,0 +1,17 @@
+---
+sidebar_position: 8
+---
+
+import { TestFile } from '../../src/components/CustomSandpack';
+
+# .toHaveEqualItems()
+
+Use `.toHaveEqualItems` when checking if two `Iterable` resolve to the same sequence of equal items, in the same order; equality supports Jest's `expect.addEqualityTesters()`.
+
+<TestFile name="toHaveEqualItems">
+  {`test('passes when the two Iterable resolve to the same sequence of equal items', () => {
+  expect([90, 200, 7]).toHaveEqualItems([90, 200, 7]);
+  expect([90, 200, 7]).not.toHaveEqualItems([7, 90, 200]);
+});`}
+
+</TestFile>

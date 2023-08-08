@@ -1,0 +1,244 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toHaveEqualItems fails when given actual generator and expected array having equal items 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toHaveEqualItems(</intensity><green>expected</color><dim>)</intensity>
+
+Expected iterable to not exactly match the items of:
+  <green>[1, 2, 3, 4]</color>
+Received:
+  <red>[]</color>"
+`;
+
+exports[`.not.toHaveEqualItems fails when given arrays having equal items 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toHaveEqualItems(</intensity><green>expected</color><dim>)</intensity>
+
+Expected iterable to not exactly match the items of:
+  <green>[7, 90, 92]</color>
+Received:
+  <red>[7, 90, 92]</color>"
+`;
+
+exports[`.not.toHaveEqualItems fails when given arrays having the same one item 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toHaveEqualItems(</intensity><green>expected</color><dim>)</intensity>
+
+Expected iterable to not exactly match the items of:
+  <green>[1]</color>
+Received:
+  <red>[1]</color>"
+`;
+
+exports[`.not.toHaveEqualItems fails when given arrays of class having custom equality 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toHaveEqualItems(</intensity><green>expected</color><dim>)</intensity>
+
+Expected iterable to not exactly match the items of:
+  <green>[{"name": "Alpha", "serialNumber": 12}, {"name": "Beta", "serialNumber": 13}]</color>
+Received:
+  <red>[{"name": "Alpha", "serialNumber": 10}, {"name": "Beta", "serialNumber": 11}]</color>"
+`;
+
+exports[`.not.toHaveEqualItems fails when given empty actual array and empty expected generator 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toHaveEqualItems(</intensity><green>expected</color><dim>)</intensity>
+
+Expected iterable to not exactly match the items of:
+  <green>[]</color>
+Received:
+  <red>[]</color>"
+`;
+
+exports[`.not.toHaveEqualItems fails when given empty actual generator and empty expected array 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toHaveEqualItems(</intensity><green>expected</color><dim>)</intensity>
+
+Expected iterable to not exactly match the items of:
+  <green>[]</color>
+Received:
+  <red>[]</color>"
+`;
+
+exports[`.not.toHaveEqualItems fails when given empty arrays 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toHaveEqualItems(</intensity><green>expected</color><dim>)</intensity>
+
+Expected iterable to not exactly match the items of:
+  <green>[]</color>
+Received:
+  <red>[]</color>"
+`;
+
+exports[`.not.toHaveEqualItems fails when given empty generators 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toHaveEqualItems(</intensity><green>expected</color><dim>)</intensity>
+
+Expected iterable to not exactly match the items of:
+  <green>[]</color>
+Received:
+  <red>[]</color>"
+`;
+
+exports[`.not.toHaveEqualItems fails when given equal actual array and expected generator 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toHaveEqualItems(</intensity><green>expected</color><dim>)</intensity>
+
+Expected iterable to not exactly match the items of:
+  <green>[]</color>
+Received:
+  <red>[1, 2, 3, 4]</color>"
+`;
+
+exports[`.not.toHaveEqualItems fails when given equal generators of class having custom equality 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toHaveEqualItems(</intensity><green>expected</color><dim>)</intensity>
+
+Expected iterable to not exactly match the items of:
+  <green>[]</color>
+Received:
+  <red>[]</color>"
+`;
+
+exports[`.not.toHaveEqualItems fails when given generators having equal items 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toHaveEqualItems(</intensity><green>expected</color><dim>)</intensity>
+
+Expected iterable to not exactly match the items of:
+  <green>[]</color>
+Received:
+  <red>[]</color>"
+`;
+
+exports[`.not.toHaveEqualItems fails when given object arrays having equal items 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toHaveEqualItems(</intensity><green>expected</color><dim>)</intensity>
+
+Expected iterable to not exactly match the items of:
+  <green>[{"alpha": 90, "beta": {"gamma": 92}}, {"ro": 3, "sigma": 50}]</color>
+Received:
+  <red>[{"alpha": 90, "beta": {"gamma": 92}}, {"ro": 3, "sigma": 50}]</color>"
+`;
+
+exports[`.not.toHaveEqualItems fails when given string arrays having equal items 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toHaveEqualItems(</intensity><green>expected</color><dim>)</intensity>
+
+Expected iterable to not exactly match the items of:
+  <green>["alpha", "beta", "gamma"]</color>
+Received:
+  <red>["alpha", "beta", "gamma"]</color>"
+`;
+
+exports[`.toHaveEqualItems fails when given actual array having less items 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toHaveEqualItems(</intensity><green>expected</color><dim>)</intensity>
+
+Expected iterable to exactly match the items of:
+  <green>[3, 4]</color>
+Received:
+  <red>[3]</color>"
+`;
+
+exports[`.toHaveEqualItems fails when given actual array having more items 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toHaveEqualItems(</intensity><green>expected</color><dim>)</intensity>
+
+Expected iterable to exactly match the items of:
+  <green>[3]</color>
+Received:
+  <red>[3, 4]</color>"
+`;
+
+exports[`.toHaveEqualItems fails when given actual generator having less items than expected generator 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toHaveEqualItems(</intensity><green>expected</color><dim>)</intensity>
+
+Expected iterable to exactly match the items of:
+  <green>[5]</color>
+Received:
+  <red>[]</color>"
+`;
+
+exports[`.toHaveEqualItems fails when given actual generator having more items than expected generator 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toHaveEqualItems(</intensity><green>expected</color><dim>)</intensity>
+
+Expected iterable to exactly match the items of:
+  <green>[]</color>
+Received:
+  <red>[]</color>"
+`;
+
+exports[`.toHaveEqualItems fails when given arrays having equal items in different order 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toHaveEqualItems(</intensity><green>expected</color><dim>)</intensity>
+
+Expected iterable to exactly match the items of:
+  <green>[4, 3, 5]</color>
+Received:
+  <red>[3, 4, 5]</color>"
+`;
+
+exports[`.toHaveEqualItems fails when given arrays having the same length but different items 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toHaveEqualItems(</intensity><green>expected</color><dim>)</intensity>
+
+Expected iterable to exactly match the items of:
+  <green>[90, 92, 98]</color>
+Received:
+  <red>[3, 4, 5]</color>"
+`;
+
+exports[`.toHaveEqualItems fails when given different arrays of class having custom equality 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toHaveEqualItems(</intensity><green>expected</color><dim>)</intensity>
+
+Expected iterable to exactly match the items of:
+  <green>[{"name": "Beta", "serialNumber": 5}]</color>
+Received:
+  <red>[{"name": "Alpha", "serialNumber": 4}]</color>"
+`;
+
+exports[`.toHaveEqualItems fails when given different generators of class having custom equality 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toHaveEqualItems(</intensity><green>expected</color><dim>)</intensity>
+
+Expected iterable to exactly match the items of:
+  <green>[]</color>
+Received:
+  <red>[]</color>"
+`;
+
+exports[`.toHaveEqualItems fails when given empty actual array and non-empty expected array 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toHaveEqualItems(</intensity><green>expected</color><dim>)</intensity>
+
+Expected iterable to exactly match the items of:
+  <green>[2]</color>
+Received:
+  <red>[]</color>"
+`;
+
+exports[`.toHaveEqualItems fails when given empty actual generator and non-empty expected generator 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toHaveEqualItems(</intensity><green>expected</color><dim>)</intensity>
+
+Expected iterable to exactly match the items of:
+  <green>[2, 3]</color>
+Received:
+  <red>[]</color>"
+`;
+
+exports[`.toHaveEqualItems fails when given generator and array having different items 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toHaveEqualItems(</intensity><green>expected</color><dim>)</intensity>
+
+Expected iterable to exactly match the items of:
+  <green>[90, 92, 98]</color>
+Received:
+  <red>[]</color>"
+`;
+
+exports[`.toHaveEqualItems fails when given generator and array having items in different order 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toHaveEqualItems(</intensity><green>expected</color><dim>)</intensity>
+
+Expected iterable to exactly match the items of:
+  <green>[3, 1, 2]</color>
+Received:
+  <red>[]</color>"
+`;
+
+exports[`.toHaveEqualItems fails when given non-empty actual array and empty expected array 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toHaveEqualItems(</intensity><green>expected</color><dim>)</intensity>
+
+Expected iterable to exactly match the items of:
+  <green>[]</color>
+Received:
+  <red>[3]</color>"
+`;
+
+exports[`.toHaveEqualItems fails when given non-empty actual generator and empty expected generator 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toHaveEqualItems(</intensity><green>expected</color><dim>)</intensity>
+
+Expected iterable to exactly match the items of:
+  <green>[]</color>
+Received:
+  <red>[]</color>"
+`;
