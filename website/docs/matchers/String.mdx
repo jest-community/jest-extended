@@ -52,6 +52,21 @@ Use `.toBeDateString` when checking if a value is a valid date string.
 });`}
 </TestFile>
 
+### .toBeTrimmed()
+
+Use `.toBeTrimmed` when checking if a string has neither leading nor trailing whitespace.
+
+<TestFile name="toBeTrimmed">
+  {`test('passes when the string has neither leading nor trailing whitespace', () => {
+  expect('').toBeTrimmed();
+  expect('hello').toTrimmed();
+  expect('    hello').not.toTrimmed();
+  expect('hello    ').not.toTrimmed();
+  expect('    hello   ').not.toTrimmed();
+  expect('\thello').not.toTrimmed();
+});`}
+</TestFile>
+
 ### .toEqualCaseInsensitive(string)
 
 Use `.toEqualCaseInsensitive` when checking if a string is equal (===) to another ignoring the casing of both strings.

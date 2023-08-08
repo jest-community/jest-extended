@@ -10,6 +10,7 @@ export { toBeBetween } from './toBeBetween';
 export { toBeBoolean } from './toBeBoolean';
 export { toBeDate } from './toBeDate';
 export { toBeDateString } from './toBeDateString';
+export { toBeTrimmed } from './toBeTrimmed';
 export { toBeEmpty } from './toBeEmpty';
 export { toBeEmptyObject } from './toBeEmptyObject';
 export { toBeEven } from './toBeEven';

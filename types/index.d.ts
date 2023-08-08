@@ -134,6 +134,11 @@ interface CustomMatchers<R> extends Record<string, any> {
   toBeDateString(): R;
 
   /**
+   * Use `.toBeTrimmed` when checking if a string has neither leading nor trailing whitespace.
+   */
+  toBeTrimmed(): R;
+
+  /**
    * Use `.toBeHexadecimal` when checking if a value is a valid HTML hex color.
    */
   toBeHexadecimal(): R;

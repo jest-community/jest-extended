@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toBeTrimmed fails when given empty string 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeTrimmed()</intensity>
+
+Expected non-trimmed value, received:
+  <red>""</color>"
+`;
+
+exports[`.not.toBeTrimmed fails when given string having no whitespace 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeTrimmed()</intensity>
+
+Expected non-trimmed value, received:
+  <red>"Test"</color>"
+`;
+
+exports[`.not.toBeTrimmed fails when given string having only internal whitespace 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeTrimmed()</intensity>
+
+Expected non-trimmed value, received:
+  <red>"This is	a test"</color>"
+`;
+
+exports[`.toBeTrimmed fails when given line ending with carriage return and line feed 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeTrimmed()</intensity>
+
+Expected value to be trimmed, received:
+  <red>"Line·</color>
+<red>"</color>"
+`;
+
+exports[`.toBeTrimmed fails when given line ending with line feed 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeTrimmed()</intensity>
+
+Expected value to be trimmed, received:
+  <red>"Line</color>
+<red>"</color>"
+`;
+
+exports[`.toBeTrimmed fails when given string having leading space 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeTrimmed()</intensity>
+
+Expected value to be trimmed, received:
+  <red>"      Test"</color>"
+`;
+
+exports[`.toBeTrimmed fails when given string having space on both sides 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeTrimmed()</intensity>
+
+Expected value to be trimmed, received:
+  <red>"    Test     "</color>"
+`;
+
+exports[`.toBeTrimmed fails when given string having tabs on both sides 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeTrimmed()</intensity>
+
+Expected value to be trimmed, received:
+  <red>"	Test	"</color>"
+`;
+
+exports[`.toBeTrimmed fails when given string having trailing space 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeTrimmed()</intensity>
+
+Expected value to be trimmed, received:
+  <red>"Test        "</color>"
+`;
