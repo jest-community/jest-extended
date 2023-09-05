@@ -28,18 +28,19 @@ Use `.toBeArrayOfSize` when checking if a value is an `Array` of size x.
 
 ### .toIncludeAllMembers([members])
 
-Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
+Use `.toIncludeAllMembers` when checking if an `Array` contains all of the members of a given set.
 
 <TestFile name="toIncludeAllMembers">
   {`test('passes when given array values match the members of the set', () => {
   expect([1, 2, 3]).toIncludeAllMembers([2, 1, 3]);
   expect([1, 2, 2]).toIncludeAllMembers([2, 1]);
+  expect([1, 2, 2]).not.toIncludeAllMembers([3, 1]);
 });`}
 </TestFile>
 
 ### .toIncludeAllPartialMembers([members])
 
-Use `.toIncludeAllPartialMembers` when checking if an `Array` contains all of the same partial members of a given set.
+Use `.toIncludeAllPartialMembers` when checking if an `Array` contains all of the partial members of a given set.
 
 <TestFile name="toIncludeAllPartialMembers">
   {`test('passes when given array values match the partial members of the set', () => {
@@ -67,6 +68,7 @@ Use `.toIncludeSameMembers` when checking if two arrays contain equal values, in
   {`test('passes when arrays match in a different order', () => {
   expect([1, 2, 3]).toIncludeSameMembers([3, 1, 2]);
   expect([{ foo: 'bar' }, { baz: 'qux' }]).toIncludeSameMembers([{ baz: 'qux' }, { foo: 'bar' }]);
+  expect([{ foo: 'bar' }, { baz: 'qux' }, { fred: 'thud' }]).not.toIncludeSameMembers([{ baz: 'qux' }, { foo: 'bar' }]);
 });`}
 </TestFile>
 
