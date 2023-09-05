@@ -63,7 +63,7 @@ interface CustomMatchers<R> extends Record<string, any> {
   toBeBefore(date: Date): R;
 
   /**
-   * Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
+   * Use `.toIncludeAllMembers` when checking if an `Array` contains all of the members of a given set.
    * @param {Array.<*>} members
    */
   toIncludeAllMembers<E = unknown>(members: readonly E[]): R;
@@ -491,13 +491,13 @@ declare namespace jest {
     toBeBefore(date: Date): R;
 
     /**
-     * Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
+     * Use `.toIncludeAllMembers` when checking if an `Array` contains all of the members of a given set.
      * @param {Array.<*>} members
      */
     toIncludeAllMembers<E = unknown>(members: readonly E[]): R;
 
     /**
-     * Use `.toIncludeAllPartialMembers` when checking if an `Array` contains all of the same partial members of a given set.
+     * Use `.toIncludeAllPartialMembers` when checking if an `Array` contains all of the partial members of a given set.
      * @param {Array.<*>} members
      */
     toIncludeAllPartialMembers<E = unknown>(members: readonly E[]): R;
