@@ -46,7 +46,7 @@
     "babel-jest": "^29.0.0",
     "babel-jest-assertions": "^0.1.0",
     "eslint": "^8.0.0",
-    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-prettier": "^9.0.0",
     "eslint-import-resolver-typescript": "^3.2.5",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jest": "^27.0.0",
