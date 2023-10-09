@@ -1,5 +1,11 @@
 # jest-extended
 
+## 4.0.2
+
+### Patch Changes
+
+- 1f88101: Mark 2nd param of toHaveBeenCalledBefore and toHaveBeenCalledAfter optional
+
 ## 4.0.1
 
 ### Patch Changes
