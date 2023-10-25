@@ -60,38 +60,62 @@ export default defineConfig({
 
 To use Vitest with TypeScript, create a file named `jest-extended.d.ts` with the content below in addition to the setup above.
 
-```typescript
-/// <reference types="vitest" />
-
-export interface CustomMatchers<R> extends Record<string, any> {
-  toHaveBeenCalledAfter(
-    mock: jest.MockInstance<any, any[]> | import('vitest').MockInstance<any, any[]>,
-    failIfNoFirstInvocation?: boolean,
-  ): R;
-
-  toHaveBeenCalledBefore(
-    mock: jest.MockInstance<any, any[]> | import('vitest').MockInstance<any, any[]>,
-    failIfNoSecondInvocation?: boolean,
-  ): R;
-
-  toHaveBeenCalledExactlyOnceWith(...args: unknown[]): R;
-}
-```
-
-For Vitest >= 0.31.0, append the content below to the new file.
+#### Vitest >= 0.31.0
 
 ```typescript
+import type CustomMatchers from 'jest-extended';
+import 'vitest';
+
 declare module 'vitest' {
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface Assertion<T = any> extends CustomMatchers<T> {}
+  interface AsymmetricMatchersContaining<T = any> extends CustomMatchers<T> {}
+  interface ExpectStatic extends CustomMatchers<T> {}
 }
 ```
 
-For Vitest < 0.31.0, append the content below to the new file.
+This can be combined with matchers from other dependencies or your own custom matchers. Here's an example of a custom matcher.
 
 ```typescript
-declare namespace Vi {
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface AsymmetricMatchersContaining extends CustomMatchers<any> {}
+import type CustomMatchers from 'jest-extended';
+import 'vitest';
+
+interface MyCustomMatchers {
+  toBeFoo(): any;
+}
+
+declare module 'vitest' {
+  interface Assertion<T = any> extends CustomMatchers<T>, MyCustomMatchers {}
+  interface AsymmetricMatchersContaining<T = any> extends CustomMatchers<T>, MyCustomMatchers {}
+  interface ExpectStatic extends CustomMatchers, MyCustomMatchers {}
+}
+```
+
+#### Vitest < 0.31.0
+
+```typescript
+import type CustomMatchers from 'jest-extended';
+import 'vi';
+
+declare module 'vi' {
+  interface Assertion<T = any> extends CustomMatchers<T> {}
+  interface AsymmetricMatchersContaining<T = any> extends CustomMatchers<T> {}
+  interface ExpectStatic extends CustomMatchers<T> {}
+}
+```
+
+This can be combined with matchers from other dependencies or your own custom matchers. Here's an example of a custom matcher.
+
+```typescript
+import type CustomMatchers from 'jest-extended';
+import 'vi';
+
+interface MyCustomMatchers {
+  toBeFoo(): any;
+}
+
+declare module 'vi' {
+  interface Assertion<T = any> extends CustomMatchers<T>, MyCustomMatchers {}
+  interface AsymmetricMatchersContaining<T = any> extends CustomMatchers<T>, MyCustomMatchers {}
+  interface ExpectStatic extends CustomMatchers, MyCustomMatchers {}
 }
 ```

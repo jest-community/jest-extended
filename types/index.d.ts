@@ -148,7 +148,7 @@ interface CustomMatchers<R> extends Record<string, any> {
    * @param {Mock} mock
    * @param {boolean} [failIfNoSecondInvocation=true]
    */
-  toHaveBeenCalledBefore(mock: jest.MockInstance<any, any[]>, failIfNoSecondInvocation: boolean): R;
+  toHaveBeenCalledBefore(mock: jest.MockInstance<any, any[]>, failIfNoSecondInvocation?: boolean): R;
 
   /**
    * Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another `Mock`.
@@ -158,7 +158,7 @@ interface CustomMatchers<R> extends Record<string, any> {
    * @param {Mock} mock
    * @param {boolean} [failIfNoFirstInvocation=true]
    */
-  toHaveBeenCalledAfter(mock: jest.MockInstance<any, any[]>, failIfNoFirstInvocation: boolean): R;
+  toHaveBeenCalledAfter(mock: jest.MockInstance<any, any[]>, failIfNoFirstInvocation?: boolean): R;
 
   /**
    * Use `.toHaveBeenCalledOnce` to check if a `Mock` was called exactly one time.
