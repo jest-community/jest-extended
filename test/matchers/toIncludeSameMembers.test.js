@@ -15,6 +15,10 @@ describe('.toIncludeSameMembers', () => {
   test('passes when arrays match in a different order', () => {
     expect([1, 2, 3]).toIncludeSameMembers([3, 1, 2]);
     expect([{ foo: 'bar' }, { baz: 'qux' }]).toIncludeSameMembers([{ baz: 'qux' }, { foo: 'bar' }]);
+    expect([{ foo: 'bar' }, { baz: 'qux' }, { fred: 'thud' }]).not.toIncludeSameMembers([
+      { baz: 'qux' },
+      { foo: 'bar' },
+    ]);
   });
 
   test('fails when the arrays are not equal in length', () => {
