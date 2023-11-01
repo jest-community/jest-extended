@@ -1,5 +1,5 @@
 export function toBeAfterOrEqualTo(actual, expected) {
-  const { printReceived, matcherHint } = this.utils;
+  const { printExpected, printReceived, matcherHint } = this.utils;
 
   const pass = actual >= expected;
 
@@ -9,11 +9,11 @@ export function toBeAfterOrEqualTo(actual, expected) {
       pass
         ? matcherHint('.not.toBeAfterOrEqualTo', 'received', '') +
           '\n\n' +
-          `Expected date to be after or equal to ${printReceived(expected)} but received:\n` +
+          `Expected date to be after or equal to ${printExpected(expected)} but received:\n` +
           `  ${printReceived(actual)}`
         : matcherHint('.toBeAfterOrEqualTo', 'received', '') +
           '\n\n' +
-          `Expected date to be after or equal to ${printReceived(expected)} but received:\n` +
+          `Expected date to be after or equal to ${printExpected(expected)} but received:\n` +
           `  ${printReceived(actual)}`,
   };
 }
