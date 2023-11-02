@@ -1,4 +1,4 @@
-import { contains, determinePropertyMessage, isJestMockOrSpy } from 'src/utils';
+import { contains, determinePropertyMessage, isJestMockOrSpy, tryParseJSON } from 'src/utils';
 
 let equals;
 
@@ -72,6 +72,35 @@ describe('Utils', () => {
     test('returns false if value is not a jest mock', () => {
       const fn = () => {};
       expect(isJestMockOrSpy(fn)).toBe(false);
+    });
+  });
+
+  describe('.tryParseJSON', () => {
+    test('returns undefined when the input is not valid JSON', () => {
+      const invalidJson = '<h1>This is not a valid JSON string</h1>';
+
+      expect(tryParseJSON(invalidJson)).toBeUndefined();
+    });
+
+    test('returns the expected string when the input is a valid JSON string', () => {
+      const message = 'Hello World!';
+      const validJsonString = JSON.stringify(message);
+
+      expect(tryParseJSON(validJsonString)).toBe(message);
+    });
+
+    test('returns the expected number when the input is a valid JSON number', () => {
+      const number = 42;
+      const validJsonNumber = JSON.stringify(number);
+
+      expect(tryParseJSON(validJsonNumber)).toBe(number);
+    });
+
+    test('returns the expected object when the input is a valid JSON object', () => {
+      const object = { a: 42, b: 'Hello World!' };
+      const validJsonObjet = JSON.stringify(object);
+
+      expect(tryParseJSON(validJsonObjet)).toEqual(object);
     });
   });
 });

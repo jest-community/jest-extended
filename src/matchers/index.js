@@ -20,6 +20,7 @@ export { toBeFrozen } from './toBeFrozen';
 export { toBeFunction } from './toBeFunction';
 export { toBeHexadecimal } from './toBeHexadecimal';
 export { toBeInteger } from './toBeInteger';
+export { toBeJsonMatching } from './toBeJsonMatching';
 export { toBeNaN } from './toBeNaN';
 export { toBeNegative } from './toBeNegative';
 export { toBeNil } from './toBeNil';
