@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`.not.toResolve fails when passed a promise that resolved 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).not.toResolve()</intensity>
+"<dim>expect(</intensity><red>received</color><dim>).</intensity>true<dim>.</intensity>not<dim>.</intensity>toResolve<dim>()</intensity>
 
-Expected promise to reject, however it resolved.
+Expected promise to reject, however it resolved with: "<red>{"result": 123}</color>".
 "
 `;
 
 exports[`.toResolve fails when passed a promise that rejects 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toResolve()</intensity>
+"<dim>expect(</intensity><red>received</color><dim>).</intensity>true<dim>.</intensity>toResolve<dim>()</intensity>
 
-Expected promise to resolve, however it rejected.
+Expected promise to resolve, however it rejected with: "<red>[Error: something went wrong]</color>".
 "
 `;
