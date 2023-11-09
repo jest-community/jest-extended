@@ -4,7 +4,7 @@ expect.extend(matcher);
 
 describe('.toBeInRange', () => {
   test('passes when given array is in range', () => {
-    expect([4, 5, 7, 9]).toBeInRange(4, 10);
+    expect([4, 5, 7, 9]).toBeInRange(4, 9);
   });
 
   test('fails when given array is not in a given range', () => {
