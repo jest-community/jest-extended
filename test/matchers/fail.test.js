@@ -1,15 +1,14 @@
 import * as matcher from 'src/matchers/fail';
 
 expect.extend(matcher);
-
 describe('.fail', () => {
-  xtest('fails without message', () => {
+  test('fails without message', () => {
     expect().fail(); // This should fail!
   });
-  xtest('fails with message', () => {
+  test('fails with message', () => {
     expect().fail('This should fail!');
   });
-  xtest('fails when invoked in a try/catch', () => {
+  test('fails when invoked in a try/catch', () => {
     try {
       expect().fail();
     } catch (error) {
