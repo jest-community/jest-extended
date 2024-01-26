@@ -32,3 +32,9 @@ exports[`.toHaveBeenCalledExactlyOnceWith fails when given value is not the expe
 
 Expected mock function to have been called exactly once with <green>["hello"]</color>, but it was called with <red>"not hello"</color>"
 `;
+
+exports[`.toHaveBeenCalledExactlyOnceWith fails when one given value is not the expected one 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toHaveBeenCalledExactlyOnceWith(</intensity><green>expected</color><dim>)</intensity>
+
+Expected mock function to have been called exactly once with <green>["hello", "where"]</color>, but it was called with <red>"hello"</color>"
+`;
