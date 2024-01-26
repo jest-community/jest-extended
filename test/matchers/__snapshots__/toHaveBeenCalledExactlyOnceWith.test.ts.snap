@@ -38,3 +38,9 @@ exports[`toHaveBeenCalledExactlyOnceWith with custom equality tester fails when 
 
 Expected mock function to have been called exactly once with <green>["a"]</color>, but it was called with <red>"a"</color>"
 `;
+
+exports[`.toHaveBeenCalledExactlyOnceWith fails when one given value is not the expected one 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toHaveBeenCalledExactlyOnceWith(</intensity><green>expected</color><dim>)</intensity>
+
+Expected mock function to have been called exactly once with <green>["hello", "where"]</color>, but it was called with <red>"hello"</color>"
+`;
