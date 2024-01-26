@@ -1,7 +1,7 @@
 import { isJestMockOrSpy } from '../utils';
 
 export function toHaveBeenCalledExactlyOnceWith(received, ...expected) {
-  const { printReceived, printExpected, printWithType, matcherHint } = this.utils;
+  const { printReceived, printExpected, printDiffOrStringify, printWithType, matcherHint } = this.utils;
 
   if (!isJestMockOrSpy(received)) {
     return {
@@ -17,6 +17,7 @@ export function toHaveBeenCalledExactlyOnceWith(received, ...expected) {
 
   const actual = received.mock.calls[0];
   const invokedOnce = received.mock.calls.length === 1;
+  const oneArgument = actual?.length === 1 && expected.length === 1;
   const pass = invokedOnce && this.equals(expected, actual);
 
   return {
@@ -27,12 +28,13 @@ export function toHaveBeenCalledExactlyOnceWith(received, ...expected) {
             '\n\n' +
             'Expected mock to be invoked some number of times other than once or once with ' +
             `arguments other than ${printExpected(expected)}, but was invoked ` +
-            `${printReceived(received.mock.calls.length)} times with ${printReceived(...actual)}`
+            `${printReceived(received.mock.calls.length)} times with ${printReceived(actual)}`
         : matcherHint('.toHaveBeenCalledExactlyOnceWith') +
             '\n\n' +
             (invokedOnce
-              ? 'Expected mock function to have been called exactly once with ' +
-                `${printExpected(expected)}, but it was called with ${printReceived(...actual)}`
+              ? oneArgument
+                ? printDiffOrStringify(expected[0], actual[0], 'Expected', 'Received', this.expand)
+                : printDiffOrStringify(expected, actual, 'Expected arguments', 'Received arguments', this.expand)
               : 'Expected mock function to have been called exactly once, but it was called ' +
                 `${printReceived(received.mock.calls.length)} times`);
     },
