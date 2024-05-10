@@ -1,7 +1,7 @@
 export function toBeInRange(actual, min, max) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  const element = actual.find(option => option < min || option >= max);
+  const element = actual.find(option => option < min || option > max);
 
   const pass = element === undefined;
 
