@@ -59,9 +59,10 @@ Use `.toIncludeAnyMembers` when checking if an `Array` contains any of the membe
 });`}
 </TestFile>
 
-### .toIncludeSameMembers([members])
+### .toIncludeSameMembers([members], fnOrKey)
 
 Use `.toIncludeSameMembers` when checking if two arrays contain equal values, in any order.
+for better error message use the optional `fnOrKey` argument to specify how to determine two items similarity (e.g. the id property)
 
 <TestFile name="toIncludeSameMembers">
   {`test('passes when arrays match in a different order', () => {
