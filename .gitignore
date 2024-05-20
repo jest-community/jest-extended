@@ -8,3 +8,5 @@ coverage
 .vs
 .vscode
 package-lock.json
+/.yarn/install-state.gz
+**/.pnp.*
