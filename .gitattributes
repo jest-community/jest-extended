@@ -1,3 +1,5 @@
 *.js    text eol=lf
 *.ts    text eol=lf
 *.json  text eol=lf
+/.yarn/releases/** binary
+/.yarn/plugins/** binary
