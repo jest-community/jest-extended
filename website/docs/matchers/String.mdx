@@ -87,6 +87,20 @@ Use `.toInclude` when checking if a `String` includes the given `String` substri
 });`}
 </TestFile>
 
+### .toIncludeCaseInsensitive(substring)
+
+Use `.toIncludeCaseInsensitive` when checking if a `String` includes the given `String` substring, despite case.
+
+<TestFile name="toIncludeCaseInsensitive">
+  {`test('passes if string is included despite case', () => {
+  expect('hello world').toIncludeCaseInsensitive('ell');
+  expect('HELLO world').toIncludeCaseInsensitive('ell');
+  expect('hello WORLD').toIncludeCaseInsensitive('ELL');
+  expect('HELLO WORLD').toIncludeCaseInsensitive('ELL');
+  expect('hello world').not.toIncludeCaseInsensitive('bob');
+});`}
+</TestFile>
+
 ### .toIncludeRepeated(substring, times)
 
 Use `.toIncludeRepeated` when checking if a `String` includes the given `String` substring the correct number of times.

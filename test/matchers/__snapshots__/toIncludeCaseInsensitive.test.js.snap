@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toIncludeCaseInsensitive fails when a string does have a given substring 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toIncludeCaseInsensitive(</intensity><green>expected</color><dim>)</intensity>
+
+Expected string to not include while ignoring case:
+  <green>"ell"</color>
+Received:
+  <red>"hello world"</color>"
+`;
+
+exports[`.toIncludeCaseInsensitive fails if string is not included despite case 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeCaseInsensitive(</intensity><green>expected</color><dim>)</intensity>
+
+Expected string to include while ignoring case:
+  <green>"bbbb"</color>
+Received:
+  <red>"aaaa"</color>"
+`;
+
+exports[`.toIncludeCaseInsensitive passes if string is included despite case 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeCaseInsensitive(</intensity><green>expected</color><dim>)</intensity>
+
+Expected string to include while ignoring case:
+  <green>"bbbb"</color>
+Received:
+  <red>"aaaa"</color>"
+`;

@@ -53,6 +53,7 @@ export { toHaveBeenCalledBefore } from './toHaveBeenCalledBefore';
 export { toHaveBeenCalledOnce } from './toHaveBeenCalledOnce';
 export { toHaveBeenCalledExactlyOnceWith } from './toHaveBeenCalledExactlyOnceWith';
 export { toInclude } from './toInclude';
+export { toIncludeCaseInsensitive } from './toIncludeCaseInsensitive';
 export { toIncludeAllMembers } from './toIncludeAllMembers';
 export { toIncludeAllPartialMembers } from './toIncludeAllPartialMembers';
 export { toIncludeAnyMembers } from './toIncludeAnyMembers';
