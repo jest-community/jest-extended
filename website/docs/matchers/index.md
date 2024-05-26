@@ -98,6 +98,7 @@ sidebar_position: 1
 - [.toStartWith(prefix)](/docs/matchers/string/#tostartwithprefix)
 - [.toEndWith(suffix)](/docs/matchers/string/#toendwithsuffix)
 - [.toInclude(substring)](/docs/matchers/string/#toincludesubstring)
+- [.toIncludeCaseInsensitive(substring)](/docs/matchers/string/#toIncludeCaseInsensitivesubstring)
 - [.toIncludeRepeated(substring, times)](/docs/matchers/string/#toincluderepeatedsubstring-times)
 - [.toIncludeMultiple([substring])](/docs/matchers/string/#toincludemultiplesubstring)
 - [.toEqualIgnoringWhitespace(string)](/docs/matchers/string/#toequalignoringwhitespacestring)

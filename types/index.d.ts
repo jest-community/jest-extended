@@ -367,6 +367,13 @@ interface CustomMatchers<R> extends Record<string, any> {
   toInclude(substring: string): R;
 
   /**
+   * Use `.toIncludeCaseInsensitive` when checking if a `String` includes the given `String` substring, despite case.
+   *
+   * @param {String} substring
+   */
+  toIncludeCaseInsensitive(substring: string): R;
+
+  /**
    * Use `.toIncludeRepeated` when checking if a `String` includes the given `String` substring the correct number of times.
    *
    * @param {String} substring
