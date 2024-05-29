@@ -1,5 +1,5 @@
 export function toBeAfter(date, after) {
-  const { printReceived, matcherHint } = this.utils;
+  const { printExpected, printReceived, matcherHint } = this.utils;
 
   const pass = date > after;
 
@@ -9,11 +9,11 @@ export function toBeAfter(date, after) {
       pass
         ? matcherHint('.not.toBeAfter', 'received', '') +
           '\n\n' +
-          `Expected date to be after ${printReceived(after)} but received:\n` +
+          `Expected date to be after ${printExpected(after)} but received:\n` +
           `  ${printReceived(date)}`
         : matcherHint('.toBeAfter', 'received', '') +
           '\n\n' +
-          `Expected date to be after ${printReceived(after)} but received:\n` +
+          `Expected date to be after ${printExpected(after)} but received:\n` +
           `  ${printReceived(date)}`,
   };
 }
