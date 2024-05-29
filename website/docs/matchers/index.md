@@ -16,6 +16,7 @@ sidebar_position: 1
 - [.toBeArray()](/docs/matchers/array/#tobearray)
 - [.toBeArrayOfSize()](/docs/matchers/array/#tobearrayofsize)
 - [.toIncludeAllMembers([members])](/docs/matchers/array/#toincludeallmembersmembers)
+- [.toIncludeAllMembersInOrder([members])](/docs/matchers/array/#toincludeallmembersmembersinorder)
 - [.toIncludeAllPartialMembers([members])](/docs/matchers/array/#toincludeallpartialmembersmembers)
 - [.toIncludeAnyMembers([members])](/docs/matchers/array/#toincludeanymembersmembers)
 - [.toIncludeSameMembers([members])](/docs/matchers/array/#toincludesamemembersmembers)

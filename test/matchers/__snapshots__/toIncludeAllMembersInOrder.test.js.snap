@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.toIncludeAllMembersInOrder fails when array values do not contain all the members of the set 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).</intensity>toIncludeAllMembersInOrder<dim>(</intensity><green>expected</color><dim>)</intensity>
+
+First differing element (index 2):
+
+Expected: <green>undefined</color>
+Received: <red>3</color>"
+`;
+
+exports[`.toIncludeAllMembersInOrder fails when array values do not have the same order as the expected array 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).</intensity>toIncludeAllMembersInOrder<dim>(</intensity><green>expected</color><dim>)</intensity>
+
+First differing element (index 0):
+
+Expected: <green>2</color>
+Received: <red>1</color>"
+`;
+
+exports[`.toIncludeAllMembersInOrder fails when array values do not have the same order as the expected array 2`] = `
+"<dim>expect(</intensity><red>received</color><dim>).</intensity>toIncludeAllMembersInOrder<dim>(</intensity><green>expected</color><dim>)</intensity>
+
+First differing element (index 2):
+
+Expected: <green>undefined</color>
+Received: <red>2</color>"
+`;
+
+exports[`.toIncludeAllMembersInOrder fails when array values do not have the same order as the expected array 3`] = `
+"<dim>expect(</intensity><red>received</color><dim>).</intensity>toIncludeAllMembersInOrder<dim>(</intensity><green>expected</color><dim>)</intensity>
+
+First differing element (index 0):
+
+Expected: <green>{"baz": "qux"}</color>
+Received: <red>{"foo": "bar"}</color>"
+`;
+
+exports[`.toIncludeAllMembersInOrder fails when expected object is not an array 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeAllMembers(</intensity><green>expected</color><dim>)</intensity>
+
+Expected list to have all of the following members:
+  <green>2</color>
+Received:
+  <red>[1, 2, 3]</color>"
+`;
+
+exports[`.toIncludeAllMembersInOrder fails when given object is not an array 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeAllMembers(</intensity><green>expected</color><dim>)</intensity>
+
+Expected list to have all of the following members:
+  <green>[1, 2, 3]</color>
+Received:
+  <red>2</color>"
+`;

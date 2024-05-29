@@ -69,6 +69,18 @@ interface CustomMatchers<R> extends Record<string, any> {
   toIncludeAllMembers<E = unknown>(members: readonly E[]): R;
 
   /**
+   * Use `.toIncludeAllMembersInOrder` when checking if an `Array` contains all of the same members of a given array in the same order.
+   * @param {Array.<*>} members
+   */
+  toIncludeAllMembersInOrder<E = unknown>(members: readonly E[]): R;
+
+  /**
+   * Use `.toIncludeAllPartialMembers` when checking if an `Array` contains all of the same partial members of a given set.
+   * @param {Array.<*>} members
+   */
+  toIncludeAllPartialMembers<E = unknown>(members: readonly E[]): R;
+
+  /**
    * Use `.toIncludeAnyMembers` when checking if an `Array` contains any of the members of a given set.
    * @param {Array.<*>} members
    */
@@ -495,6 +507,12 @@ declare namespace jest {
      * @param {Array.<*>} members
      */
     toIncludeAllMembers<E = unknown>(members: readonly E[]): R;
+
+    /**
+     * Use `.toIncludeAllMembersInOrder` when checking if an `Array` contains all of the same members of a given array in the same order.
+     * @param {Array.<*>} members
+     */
+    toIncludeAllMembersInOrder<E = unknown>(members: readonly E[]): R;
 
     /**
      * Use `.toIncludeAllPartialMembers` when checking if an `Array` contains all of the same partial members of a given set.
