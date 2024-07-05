@@ -21,5 +21,7 @@ export function toBeOneOf(actual, expected) {
           `  ${printExpected(expected)}\n` +
           'Received:\n' +
           `  ${printReceived(actual)}`,
+    actual,
+    expected,
   };
 }
