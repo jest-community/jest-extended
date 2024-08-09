@@ -503,6 +503,12 @@ declare namespace jest {
     toIncludeAllPartialMembers<E = unknown>(members: readonly E[]): R;
 
     /**
+     * Use `.toIncludeSamePartialMembers` when checking if an `Array` contains exactly the same partial members as a given set, in any order
+     * @param {Array.<*>} members
+     */
+    toIncludeSamePartialMembers<E = unknown>(members: readonly E[]): R;
+
+    /**
      * Use `.toIncludeAnyMembers` when checking if an `Array` contains any of the members of a given set.
      * @param {Array.<*>} members
      */
