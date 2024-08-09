@@ -47,6 +47,16 @@ Use `.toIncludeAllPartialMembers` when checking if an `Array` contains all of th
 });`}
 </TestFile>
 
+### .toIncludeSamePartialMembers([members])
+
+Use `.toIncludeSamePartialMembers` when checking if an `Array` contains exactly the same partial members as a given set, in any order
+
+<TestFile name="toIncludeSamePartialMembers">
+  {`test('passes when given array values match the partial members of the set', () => {
+  expect([{ foo: 'bar', baz: 'qux' }, { property: 'hello', another: 'world' }]).toIncludeSamePartialMembers([{ foo: 'bar' },  { property: 'hello' }]);
+});`}
+</TestFile>
+
 ### .toIncludeAnyMembers([members])
 
 Use `.toIncludeAnyMembers` when checking if an `Array` contains any of the members of a given set.

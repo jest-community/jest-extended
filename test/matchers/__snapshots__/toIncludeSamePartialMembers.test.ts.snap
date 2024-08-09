@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toIncludeSamePartialMembers fails when array values matches the members of the set 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toIncludeSamePartialMembers(</intensity><green>expected</color><dim>)</intensity>
+
+Expected list to not exactly match the partial members of:
+  <green>[{"hello": "world"}, {"foo": "bar"}]</color>
+Received:
+  <red>[{"hello": "world"}, {"baz": "qux", "foo": "bar"}]</color>"
+`;
+
+exports[`.toIncludeSamePartialMembers fails when array values contain only some members of the set 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeSamePartialMembers(</intensity><green>expected</color><dim>)</intensity>
+
+Expected list to have the following partial members and no more:
+  <green>[{"hello": "world"}]</color>
+Received:
+  <red>[{"hello": "world"}, {"baz": "qux", "foo": "bar"}]</color>"
+`;
+
+exports[`.toIncludeSamePartialMembers fails when array values do not contain any of the members of the set 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeSamePartialMembers(</intensity><green>expected</color><dim>)</intensity>
+
+Expected list to have the following partial members and no more:
+  <green>[{"foo": "qux"}]</color>
+Received:
+  <red>[{"hello": "world"}, {"baz": "qux", "foo": "bar"}]</color>"
+`;
+
+exports[`.toIncludeSamePartialMembers fails when expected object is not an array 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeSamePartialMembers(</intensity><green>expected</color><dim>)</intensity>
+
+Expected list to have the following partial members and no more:
+  <green>1</color>
+Received:
+  <red>[{"hello": "world"}, {"baz": "qux", "foo": "bar"}]</color>"
+`;
+
+exports[`.toIncludeSamePartialMembers fails when given object is not an array 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeSamePartialMembers(</intensity><green>expected</color><dim>)</intensity>
+
+Expected list to have the following partial members and no more:
+  <green>[{"foo": "bar"}]</color>
+Received:
+  <red>1</color>"
+`;
