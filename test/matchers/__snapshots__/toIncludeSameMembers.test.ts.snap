@@ -17,3 +17,12 @@ Expected list to have the following members and no more:
 Received:
   <red>[1, 2]</color>"
 `;
+
+exports[`toIncludeSameMembers with custom equality tester fails when custom equality does not match any of the values 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeSameMembers(</intensity><green>expected</color><dim>)</intensity>
+
+Expected list to have the following members and no more:
+  <green>[1]</color>
+Received:
+  <red>[1]</color>"
+`;

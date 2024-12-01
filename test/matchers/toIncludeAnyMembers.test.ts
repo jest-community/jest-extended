@@ -58,3 +58,23 @@ describe('.not.toIncludeAnyMembers', () => {
     expect(() => expect([[shallow]]).not.toIncludeAnyMembers([[shallow], 7])).toThrowErrorMatchingSnapshot();
   });
 });
+
+// Note - custom equality tester must be at the end of the file because once we add it, it cannot be removed
+describe('toIncludeAnyMembers with custom equality tester', () => {
+  let mockEqualityTester;
+  beforeAll(() => {
+    mockEqualityTester = jest.fn();
+    expect.addEqualityTesters([mockEqualityTester]);
+  });
+  afterEach(() => {
+    mockEqualityTester.mockReset();
+  });
+  test('passes when custom equality matches one of the values', () => {
+    mockEqualityTester.mockImplementation((a, b) => (a === 1 && b === 4 ? true : undefined));
+    expect([1]).toIncludeAnyMembers([4]);
+  });
+  test('fails when custom equality does not match any of the values', () => {
+    mockEqualityTester.mockReturnValue(false);
+    expect(() => expect([1]).toIncludeAnyMembers([1])).toThrowErrorMatchingSnapshot();
+  });
+});

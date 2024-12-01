@@ -51,3 +51,23 @@ describe('.not.toIncludeSameMembers', () => {
     expect([1, 2, 3]).not.toIncludeSameMembers([3, 4, 5]);
   });
 });
+
+// Note - custom equality tester must be at the end of the file because once we add it, it cannot be removed
+describe('toIncludeSameMembers with custom equality tester', () => {
+  let mockEqualityTester;
+  beforeAll(() => {
+    mockEqualityTester = jest.fn();
+    expect.addEqualityTesters([mockEqualityTester]);
+  });
+  afterEach(() => {
+    mockEqualityTester.mockReset();
+  });
+  test('passes when custom equality matches one of the values', () => {
+    mockEqualityTester.mockImplementation((a, b) => (a === 4 && b === 1 ? true : undefined));
+    expect([1]).toIncludeSameMembers([4]);
+  });
+  test('fails when custom equality does not match any of the values', () => {
+    mockEqualityTester.mockReturnValue(false);
+    expect(() => expect([1]).toIncludeSameMembers([1])).toThrowErrorMatchingSnapshot();
+  });
+});

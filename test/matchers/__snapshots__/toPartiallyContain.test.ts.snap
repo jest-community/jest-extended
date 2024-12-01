@@ -17,3 +17,12 @@ Expected array to partially contain:
 Received:
   <red>[{"a": 1, "b": 2}]</color>"
 `;
+
+exports[`.toPartiallyContain with custom equality tester fails when custom equality does not match any of the values 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toPartiallyContain(</intensity><green>expected</color><dim>)</intensity>
+
+Expected array to partially contain:
+  <green>{"baz": "qux", "foo": "bar"}</color>
+Received:
+  <red>[{"baz": "qux", "foo": "bar"}]</color>"
+`;

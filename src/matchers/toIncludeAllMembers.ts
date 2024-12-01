@@ -5,8 +5,10 @@ export function toIncludeAllMembers<E = unknown>(actual: unknown[], expected: re
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const pass =
+    Array.isArray(actual) &&
+    Array.isArray(expected) &&
     // @ts-expect-error OK to have implicit any for this.equals
-    Array.isArray(actual) && Array.isArray(expected) && expected.every(val => contains(this.equals, actual, val));
+    expected.every(val => contains((a: unknown, b: unknown) => this.equals(a, b, this.customTesters), actual, val));
 
   return {
     pass,

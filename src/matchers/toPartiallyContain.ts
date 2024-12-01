@@ -8,8 +8,15 @@ export function toPartiallyContain<E = unknown>(actual: unknown, expected: E) {
     Array.isArray(actual) &&
     Array.isArray([expected]) &&
     [expected].every(partial =>
-      // @ts-expect-error OK to have implicit any for this.equals
-      actual.some(value => Object.entries(partial).every(entry => containsEntry(this.equals, value, entry))),
+      actual.some(
+        value =>
+          typeof partial === 'object' &&
+          partial != null &&
+          Object.entries(partial).every(entry =>
+            // @ts-expect-error OK to have implicit any for this.equals
+            containsEntry((a, b) => this.equals(a, b, this.customTesters), value, entry),
+          ),
+      ),
     );
 
   return {
