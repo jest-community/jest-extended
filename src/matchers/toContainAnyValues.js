@@ -4,7 +4,7 @@ export function toContainAnyValues(actual, expected) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const objectValues = Object.keys(actual).map(k => actual[k]);
-  const pass = expected.some(value => contains(this.equals, objectValues, value));
+  const pass = expected.some(value => contains((a, b) => this.equals(a, b, this.customTesters), objectValues, value));
 
   return {
     pass,

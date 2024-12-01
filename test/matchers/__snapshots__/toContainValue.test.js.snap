@@ -53,3 +53,12 @@ Expected object to contain value:
 Received:
   <red>{"hello": "world"}</color>"
 `;
+
+exports[`toContainValue with custom equality tester fails when custom equality does not match any of the values 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toContainValue(</intensity><green>expected</color><dim>)</intensity>
+
+Expected object to contain value:
+  <green>"world"</color>
+Received:
+  <red>{"hello": "world"}</color>"
+`;

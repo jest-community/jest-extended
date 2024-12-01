@@ -17,3 +17,12 @@ Expected object to only contain all of the given entries:
 Received:
   <red>{"a": "foo", "b": "bar", "c": "baz"}</color>"
 `;
+
+exports[`toContainAllEntries with custom equality tester fails when custom equality returns false on one of the values 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toContainAllEntries(</intensity><green>expected</color><dim>)</intensity>
+
+Expected object to only contain all of the given entries:
+  <green>[["a", "foo"], ["b", "bar"], ["c", "baz"]]</color>
+Received:
+  <red>{"a": "foo", "b": "bar", "c": "baz"}</color>"
+`;

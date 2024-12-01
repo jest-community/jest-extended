@@ -7,7 +7,11 @@ export function toPartiallyContain(actual, expected) {
     Array.isArray(actual) &&
     Array.isArray([expected]) &&
     [expected].every(partial =>
-      actual.some(value => Object.entries(partial).every(entry => containsEntry(this.equals, value, entry))),
+      actual.some(value =>
+        Object.entries(partial).every(entry =>
+          containsEntry((a, b) => this.equals(a, b, this.customTesters), value, entry),
+        ),
+      ),
     );
 
   return {

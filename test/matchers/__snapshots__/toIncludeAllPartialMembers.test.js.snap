@@ -35,3 +35,12 @@ Expected list to have all of the following partial members:
 Received:
   <red>1</color>"
 `;
+
+exports[`toIncludeAllPartialMembers with custom equality tester fails when custom equality does not match any of the values 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeAllPartialMembers(</intensity><green>expected</color><dim>)</intensity>
+
+Expected list to have all of the following partial members:
+  <green>[{"foo": "bar"}]</color>
+Received:
+  <red>[{"foo": "bar"}]</color>"
+`;

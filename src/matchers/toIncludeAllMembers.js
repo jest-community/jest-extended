@@ -4,7 +4,9 @@ export function toIncludeAllMembers(actual, expected) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const pass =
-    Array.isArray(actual) && Array.isArray(expected) && expected.every(val => contains(this.equals, actual, val));
+    Array.isArray(actual) &&
+    Array.isArray(expected) &&
+    expected.every(val => contains((a, b) => this.equals(a, b, this.customTesters), actual, val));
 
   return {
     pass,

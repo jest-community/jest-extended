@@ -35,3 +35,12 @@ Expected object to contain all keys:
 Received:
   <red>["a", "b"]</color>"
 `;
+
+exports[`toContainAllKeys with custom equality tester fails when custom equality does not match one of the keys 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toContainAllKeys(</intensity><green>expected</color><dim>)</intensity>
+
+Expected object to contain all keys:
+  <green>["a", "b"]</color>
+Received:
+  <red>["a", "b"]</color>"
+`;

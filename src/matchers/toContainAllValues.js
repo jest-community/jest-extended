@@ -5,7 +5,8 @@ export function toContainAllValues(actual, expected) {
 
   const values = Object.keys(actual).map(k => actual[k]);
   const pass =
-    values.length === expected.length && values.every(objectValue => contains(this.equals, expected, objectValue));
+    values.length === expected.length &&
+    values.every(objectValue => contains((a, b) => this.equals(a, b, this.customTesters), expected, objectValue));
 
   return {
     pass,

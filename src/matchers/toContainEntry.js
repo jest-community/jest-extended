@@ -3,7 +3,7 @@ import { containsEntry } from '../utils';
 export function toContainEntry(actual, expected) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  const pass = containsEntry(this.equals, actual, expected);
+  const pass = containsEntry((a, b) => this.equals(a, b, this.customTesters), actual, expected);
 
   return {
     pass,

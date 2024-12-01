@@ -44,3 +44,12 @@ Expected object to contain any of the following values:
 Received:
   <red>{"a": "foo", "b": "bar", "c": "baz"}</color>"
 `;
+
+exports[`toContainAnyValues with custom equality tester fails when custom equality does not match any of the values 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toContainAnyValues(</intensity><green>expected</color><dim>)</intensity>
+
+Expected object to contain any of the following values:
+  <green>["bar"]</color>
+Received:
+  <red>{"a": "foo", "b": "bar", "c": "baz"}</color>"
+`;

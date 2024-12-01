@@ -6,7 +6,7 @@ export function toContainAllEntries(actual, expected) {
   const pass =
     actual.hasOwnProperty &&
     expected.length == Object.keys(actual).length &&
-    expected.every(entry => containsEntry(this.equals, actual, entry));
+    expected.every(entry => containsEntry((a, b) => this.equals(a, b, this.customTesters), actual, entry));
 
   return {
     pass,

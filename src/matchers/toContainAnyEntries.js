@@ -4,7 +4,7 @@ export function toContainAnyEntries(actual, expected) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const entries = Object.keys(actual).map(k => [k, actual[k]]);
-  const pass = expected.some(entry => contains(this.equals, entries, entry));
+  const pass = expected.some(entry => contains((a, b) => this.equals(a, b, this.customTesters), entries, entry));
 
   return {
     pass,

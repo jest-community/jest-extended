@@ -1,7 +1,7 @@
 export function toIncludeSameMembers(actual, expected) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  const pass = predicate(this.equals, actual, expected);
+  const pass = predicate((a, b) => this.equals(a, b, this.customTesters), actual, expected);
 
   return {
     pass,

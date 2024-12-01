@@ -53,3 +53,12 @@ Expected object to contain all values:
 Received:
   <red>{"donald": "duck", "message": {"bar": false, "foo": 0, "hello": "world"}}</color>"
 `;
+
+exports[`toContainValues with custom equality tester fails when custom equality does not match any of the values 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toContainValues(</intensity><green>expected</color><dim>)</intensity>
+
+Expected object to contain all values:
+  <green>["world"]</color>
+Received:
+  <red>{"bar": false, "foo": 0, "hello": "world"}</color>"
+`;

@@ -75,3 +75,23 @@ describe('.not.toBeEmpty', () => {
     expect(() => expect('').not.toBeEmpty()).toThrowErrorMatchingSnapshot();
   });
 });
+
+// Note - custom equality tester must be at the end of the file because once we add it, it cannot be removed
+describe('toBeEmpty with custom equality tester', () => {
+  let mockEqualityTester;
+  beforeAll(() => {
+    mockEqualityTester = jest.fn();
+    expect.addEqualityTesters([mockEqualityTester]);
+  });
+  afterEach(() => {
+    mockEqualityTester.mockReset();
+  });
+  test('passes when custom equality matches empty object', () => {
+    mockEqualityTester.mockReturnValueOnce(true);
+    expect('a').toBeEmpty();
+  });
+  test('fails when custom equality does not match empty object', () => {
+    mockEqualityTester.mockReturnValueOnce(false);
+    expect(() => expect({}).toBeEmpty()).toThrowErrorMatchingSnapshot();
+  });
+});

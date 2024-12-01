@@ -3,7 +3,7 @@ import { contains } from '../utils';
 export function toBeOneOf(actual, expected) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  const pass = contains(this.equals, expected, actual);
+  const pass = contains((a, b) => this.equals(a, b, this.customTesters), expected, actual);
 
   return {
     pass,

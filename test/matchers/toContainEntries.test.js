@@ -31,3 +31,23 @@ describe('.not.toContainEntries', () => {
     ).toThrowErrorMatchingSnapshot();
   });
 });
+
+// Note - custom equality tester must be at the end of the file because once we add it, it cannot be removed
+describe('toContainEntries with custom equality tester', () => {
+  let mockEqualityTester;
+  beforeAll(() => {
+    mockEqualityTester = jest.fn();
+    expect.addEqualityTesters([mockEqualityTester]);
+  });
+  afterEach(() => {
+    mockEqualityTester.mockReset();
+  });
+  test('passes when custom equality matches one of the values', () => {
+    mockEqualityTester.mockImplementation((a, b) => (a === 'bar' && b === 'bla' ? true : undefined));
+    expect(data).toContainEntries([['b', 'bla']]);
+  });
+  test('fails when custom equality does not match any of the values', () => {
+    mockEqualityTester.mockReturnValue(false);
+    expect(() => expect(data).toContainEntries([['a', 'foo']])).toThrowErrorMatchingSnapshot();
+  });
+});

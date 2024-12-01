@@ -31,3 +31,24 @@ describe('.not.toContainAllKeys', () => {
     expect(() => expect(data).not.toContainAllKeys(['b', 'a'])).toThrowErrorMatchingSnapshot();
   });
 });
+
+// Note - custom equality tester must be at the end of the file because once we add it, it cannot be removed
+describe('toContainAllKeys with custom equality tester', () => {
+  let mockEqualityTester;
+  beforeAll(() => {
+    mockEqualityTester = jest.fn();
+    expect.addEqualityTesters([mockEqualityTester]);
+  });
+  afterEach(() => {
+    mockEqualityTester.mockReset();
+  });
+  test('passes when custom equality matches one of the keys', () => {
+    mockEqualityTester.mockImplementation((a, b) => (a === 'a' && b === 'x' ? true : undefined));
+    expect(data).toContainAllKeys(['x', 'b']);
+  });
+  test('fails when custom equality does not match one of the keys', () => {
+    mockEqualityTester.mockImplementation((a, b) => (a === 'a' && b === 'a' ? false : undefined));
+    const keys = Object.keys(data);
+    expect(() => expect(data).toContainAllKeys(keys)).toThrowErrorMatchingSnapshot();
+  });
+});
