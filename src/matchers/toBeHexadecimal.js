@@ -23,6 +23,6 @@ export function toBeHexadecimal(actual) {
 }
 
 const longRegex = RegExp(/^#\b[a-f0-9]{6}\b/gi);
-const longRegexWithAlpha = RegExp(/^#\b[a-f0-9]{6}\b/gi);
+const longRegexWithAlpha = RegExp(/^#\b[a-f0-9]{8}\b/gi);
 const shortRegex = RegExp(/^#\b[a-f0-9]{3}\b/gi);
-const shortRegexWithAlpha = RegExp(/^#\b[a-f0-9]{6}\b/gi);
+const shortRegexWithAlpha = RegExp(/^#\b[a-f0-9]{4}\b/gi);

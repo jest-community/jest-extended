@@ -7,8 +7,16 @@ describe('.toBeHexadecimal', () => {
     expect('#ECECEC').toBeHexadecimal();
   });
 
+  test('passes when given valid 8 digit hexadecimal', () => {
+    expect('#ECECECEC').toBeHexadecimal();
+  });
+
   test('passes when given valid 3 digit hexadecimal', () => {
     expect('#000').toBeHexadecimal();
+  });
+
+  test('passes when given valid 4 digit hexadecimal', () => {
+    expect('#0000').toBeHexadecimal();
   });
 
   test('fails when given non-string', () => {
