@@ -5,7 +5,7 @@ expect.extend(matcher);
 describe('.toPartiallyContain', () => {
   const item = { foo: 'bar', baz: 'qux' };
 
-  test('passes when a string has a given substring', () => {
+  test('passes when an object in an array partially matches the given member', () => {
     expect([{ foo: 'bar', baz: 'qux', bax: 'zax' }]).toPartiallyContain(item);
   });
 
