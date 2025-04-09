@@ -212,7 +212,7 @@ interface CustomMatchers<R> extends Record<string, any> {
   toBeWithin(start: number, end: number): R;
 
   /**
-   * Use `.toBeInRange` when checking if an array has elements in range min (inclusive) and max (inclusive).
+   * Use `.toBeInRange` when checking if an array has elements in range min (inclusive) and max (exclusive).
    *
    * @param min
    * @param max
@@ -646,7 +646,7 @@ declare namespace jest {
     toBeWithin(start: number, end: number): R;
 
     /**
-     * Use `.toBeInRange` when checking if an array has elements in range min (inclusive) and max (inclusive).
+     * Use `.toBeInRange` when checking if an array has elements in range min (inclusive) and max (exclusive).
      *
      * @param min
      * @param max
