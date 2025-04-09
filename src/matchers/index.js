@@ -54,6 +54,7 @@ export { toHaveBeenCalledOnce } from './toHaveBeenCalledOnce';
 export { toHaveBeenCalledExactlyOnceWith } from './toHaveBeenCalledExactlyOnceWith';
 export { toInclude } from './toInclude';
 export { toIncludeAllMembers } from './toIncludeAllMembers';
+export { toIncludeAllMembersInOrder } from './toIncludeAllMembersInOrder';
 export { toIncludeAllPartialMembers } from './toIncludeAllPartialMembers';
 export { toIncludeAnyMembers } from './toIncludeAnyMembers';
 export { toIncludeMultiple } from './toIncludeMultiple';
