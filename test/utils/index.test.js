@@ -3,7 +3,6 @@ import { contains, determinePropertyMessage, isJestMockOrSpy } from 'src/utils';
 let equals;
 
 try {
-  // eslint-disable-next-line import/no-unresolved
   equals = require('@jest/expect-utils').equals;
 } catch (error) {
   if (error.code === 'MODULE_NOT_FOUND') {

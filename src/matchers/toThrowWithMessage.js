@@ -32,6 +32,7 @@ const getExpectedError = (type, message) => {
   let expectedError;
   try {
     expectedError = new type(messageStr);
+    // eslint-disable-next-line no-unused-vars
   } catch (err) {
     const name = type.name;
     expectedError = new Error();
