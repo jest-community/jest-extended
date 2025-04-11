@@ -9,11 +9,221 @@ Received:
   <red>[1]</color>"
 `;
 
-exports[`.toIncludeSameMembers fails when the arrays are not equal in length 1`] = `
+exports[`.toIncludeSameMembers fail with fallback output when result of the matcher changed 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeSameMembers(</intensity><green>expected</color><dim>)</intensity>
+
+Expected list to have the following members and no more:
+  <green>[{"id": 1}]</color>
+Received:
+  <red>[{"id": 5}]</color>"
+`;
+
+exports[`.toIncludeSameMembers fails when actual has less items than expected (when the ones exists match) objects 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeSameMembers(</intensity><green>expected</color><dim>)</intensity>
+
+<green>- Expected  - 3</color>
+<red>+ Received  + 0</color>
+
+<yellow>@@ -6,9 +6,6 @@</color>
+<dim>      "id": 2,</intensity>
+<dim>    },</intensity>
+<dim>    Object {</intensity>
+<dim>      "id": 3,</intensity>
+<dim>    },</intensity>
+<green>-   Object {</color>
+<green>-     "id": 4,</color>
+<green>-   },</color>
+<dim>  ]</intensity>"
+`;
+
+exports[`.toIncludeSameMembers fails when actual has less items than expected (when the ones exists match) simple items 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeSameMembers(</intensity><green>expected</color><dim>)</intensity>
+
+<green>- Expected  - 1</color>
+<red>+ Received  + 0</color>
+
+<dim>  Array [</intensity>
+<dim>    1,</intensity>
+<dim>    2,</intensity>
+<dim>    3,</intensity>
+<green>-   4,</color>
+<dim>  ]</intensity>"
+`;
+
+exports[`.toIncludeSameMembers fails when actual has more items than expected (when the ones exists match) objects 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeSameMembers(</intensity><green>expected</color><dim>)</intensity>
+
+<green>- Expected  - 0</color>
+<red>+ Received  + 3</color>
+
+<yellow>@@ -6,6 +6,9 @@</color>
+<dim>      "id": 2,</intensity>
+<dim>    },</intensity>
+<dim>    Object {</intensity>
+<dim>      "id": 3,</intensity>
+<dim>    },</intensity>
+<red>+   Object {</color>
+<red>+     "id": 4,</color>
+<red>+   },</color>
+<dim>  ]</intensity>"
+`;
+
+exports[`.toIncludeSameMembers fails when actual has more items than expected (when the ones exists match) simple items 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeSameMembers(</intensity><green>expected</color><dim>)</intensity>
+
+<green>- Expected  - 0</color>
+<red>+ Received  + 1</color>
+
+<dim>  Array [</intensity>
+<dim>    1,</intensity>
+<dim>    2,</intensity>
+<dim>    3,</intensity>
+<red>+   4,</color>
+<dim>  ]</intensity>"
+`;
+
+exports[`.toIncludeSameMembers fails when actual has more items than expected (when the ones exists not all match) objects 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeSameMembers(</intensity><green>expected</color><dim>)</intensity>
+
+<green>- Expected  - 1</color>
+<red>+ Received  + 7</color>
+
+<dim>  Array [</intensity>
+<dim>    Object {</intensity>
+<dim>      "id": 1,</intensity>
+<dim>    },</intensity>
+<dim>    Object {</intensity>
+<green>-     "id": 2,</color>
+<red>+     "id": 8,</color>
+<dim>    },</intensity>
+<dim>    Object {</intensity>
+<dim>      "id": 3,</intensity>
+<red>+   },</color>
+<red>+   Object {</color>
+<red>+     "id": 5,</color>
+<red>+   },</color>
+<red>+   Object {</color>
+<red>+     "id": 6,</color>
+<dim>    },</intensity>
+<dim>  ]</intensity>"
+`;
+
+exports[`.toIncludeSameMembers fails when actual has more items than expected (when the ones exists not all match) simple items 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeSameMembers(</intensity><green>expected</color><dim>)</intensity>
+
+<green>- Expected  - 1</color>
+<red>+ Received  + 3</color>
+
+<dim>  Array [</intensity>
+<dim>    1,</intensity>
+<green>-   2,</color>
+<red>+   8,</color>
+<dim>    3,</intensity>
+<red>+   5,</color>
+<red>+   6,</color>
+<dim>  ]</intensity>"
+`;
+
+exports[`.toIncludeSameMembers fails when not passed array 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toIncludeSameMembers(</intensity><green>expected</color><dim>)</intensity>
 
 Expected list to have the following members and no more:
   <green>[1]</color>
 Received:
-  <red>[1, 2]</color>"
+  <red>2</color>"
+`;
+
+exports[`.toIncludeSameMembers fails when the arrays are not equal in length 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeSameMembers(</intensity><green>expected</color><dim>)</intensity>
+
+<green>- Expected  - 0</color>
+<red>+ Received  + 1</color>
+
+<dim>  Array [</intensity>
+<dim>    1,</intensity>
+<red>+   2,</color>
+<dim>  ]</intensity>"
+`;
+
+exports[`.toIncludeSameMembers have gaps objects 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeSameMembers(</intensity><green>expected</color><dim>)</intensity>
+
+Expected list to have the following members and no more:
+  <green>[{"a": 1, "value": "hello"}, {"b": 2, "value": "world"}, {"c": 3, "value": "how are you"}, {"d": 4, "value": "im good"}, {"e": 5, "value": "thanks, you"}]</color>
+Received:
+  <red>[{"e": 5, "value": "thanks, you"}, {"f": 6, "value": "?"}, {"a": 1, "value": "no"}]</color>"
+`;
+
+exports[`.toIncludeSameMembers have gaps simple items 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeSameMembers(</intensity><green>expected</color><dim>)</intensity>
+
+<green>- Expected  - 3</color>
+<red>+ Received  + 1</color>
+
+<dim>  Array [</intensity>
+<dim>    1,</intensity>
+<green>-   2,</color>
+<green>-   3,</color>
+<green>-   4,</color>
+<red>+   6,</color>
+<dim>    5,</intensity>
+<dim>  ]</intensity>"
+`;
+
+exports[`.toIncludeSameMembers keyOrFn passed function 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeSameMembers(</intensity><green>expected</color><dim>)</intensity>
+
+<green>- Expected  - 3</color>
+<red>+ Received  + 7</color>
+
+<dim>  Array [</intensity>
+<dim>    Object {</intensity>
+<dim>      "id": 1,</intensity>
+<green>-     "name": "Tony",</color>
+<red>+     "name": "Bruce",</color>
+<dim>    },</intensity>
+<dim>    Object {</intensity>
+<dim>      "id": 2,</intensity>
+<green>-     "name": "Bruce",</color>
+<red>+     "name": "Steve",</color>
+<dim>    },</intensity>
+<dim>    Object {</intensity>
+<dim>      "id": 3,</intensity>
+<green>-     "name": "Steve",</color>
+<red>+     "name": "Tony",</color>
+<red>+   },</color>
+<red>+   Object {</color>
+<red>+     "id": 4,</color>
+<red>+     "name": "Bucky",</color>
+<dim>    },</intensity>
+<dim>  ]</intensity>"
+`;
+
+exports[`.toIncludeSameMembers keyOrFn passed property of the items as key 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeSameMembers(</intensity><green>expected</color><dim>)</intensity>
+
+<green>- Expected  - 3</color>
+<red>+ Received  + 7</color>
+
+<dim>  Array [</intensity>
+<dim>    Object {</intensity>
+<dim>      "id": 1,</intensity>
+<green>-     "name": "Tony",</color>
+<red>+     "name": "Bruce",</color>
+<dim>    },</intensity>
+<dim>    Object {</intensity>
+<dim>      "id": 2,</intensity>
+<green>-     "name": "Bruce",</color>
+<red>+     "name": "Steve",</color>
+<dim>    },</intensity>
+<dim>    Object {</intensity>
+<dim>      "id": 3,</intensity>
+<green>-     "name": "Steve",</color>
+<red>+     "name": "Tony",</color>
+<red>+   },</color>
+<red>+   Object {</color>
+<red>+     "id": 4,</color>
+<red>+     "name": "Bucky",</color>
+<dim>    },</intensity>
+<dim>  ]</intensity>"
 `;

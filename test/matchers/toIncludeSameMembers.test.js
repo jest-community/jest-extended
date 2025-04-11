@@ -17,8 +17,129 @@ describe('.toIncludeSameMembers', () => {
     expect([{ foo: 'bar' }, { baz: 'qux' }]).toIncludeSameMembers([{ baz: 'qux' }, { foo: 'bar' }]);
   });
 
+  test('fail with fallback output when result of the matcher changed', () => {
+    expect(() =>
+      expect([
+        {
+          get id() {
+            const stack = new Error().stack;
+            if (!stack.includes('getBetterDiff')) {
+              // Fail
+              return 5;
+            }
+            return 1;
+          },
+        },
+      ]).toIncludeSameMembers([{ id: 1 }]),
+    ).toThrowErrorMatchingSnapshot();
+  });
+
   test('fails when the arrays are not equal in length', () => {
     expect(() => expect([1, 2]).toIncludeSameMembers([1])).toThrowErrorMatchingSnapshot();
+  });
+
+  test('fails when not passed array', () => {
+    expect(() => expect(2).toIncludeSameMembers([1])).toThrowErrorMatchingSnapshot();
+  });
+
+  describe('fails when actual has more items than expected (when the ones exists match)', () => {
+    test('simple items', () => {
+      expect(() => expect([2, 4, 3, 1]).toIncludeSameMembers([1, 2, 3])).toThrowErrorMatchingSnapshot();
+    });
+
+    test('objects', () => {
+      expect(() =>
+        expect([{ id: 2 }, { id: 4 }, { id: 3 }, { id: 1 }]).toIncludeSameMembers([{ id: 1 }, { id: 2 }, { id: 3 }]),
+      ).toThrowErrorMatchingSnapshot();
+    });
+  });
+
+  describe('fails when actual has less items than expected (when the ones exists match)', () => {
+    test('simple items', () => {
+      expect(() => expect([2, 3, 1]).toIncludeSameMembers([1, 2, 3, 4])).toThrowErrorMatchingSnapshot();
+    });
+
+    test('objects', () => {
+      expect(() =>
+        expect([{ id: 2 }, { id: 3 }, { id: 1 }]).toIncludeSameMembers([{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }]),
+      ).toThrowErrorMatchingSnapshot();
+    });
+  });
+
+  describe('fails when actual has more items than expected (when the ones exists not all match)', () => {
+    test('simple items', () => {
+      expect(() => expect([3, 1, 8, 5, 6]).toIncludeSameMembers([1, 2, 3])).toThrowErrorMatchingSnapshot();
+    });
+
+    test('objects', () => {
+      expect(() =>
+        expect([{ id: 3 }, { id: 1 }, { id: 8 }, { id: 5 }, { id: 6 }]).toIncludeSameMembers([
+          { id: 1 },
+          { id: 2 },
+          { id: 3 },
+        ]),
+      ).toThrowErrorMatchingSnapshot();
+    });
+  });
+
+  describe('have gaps', () => {
+    test('simple items', () => {
+      expect(() => expect([5, 6, 1]).toIncludeSameMembers([1, 2, 3, 4, 5])).toThrowErrorMatchingSnapshot();
+    });
+
+    test('objects', () => {
+      expect(() =>
+        expect([
+          { e: 5, value: 'thanks, you' },
+          { f: 6, value: '?' },
+          { a: 1, value: 'no' },
+        ]).toIncludeSameMembers([
+          { a: 1, value: 'hello' },
+          { b: 2, value: 'world' },
+          { c: 3, value: 'how are you' },
+          { d: 4, value: 'im good' },
+          { e: 5, value: 'thanks, you' },
+        ]),
+      ).toThrowErrorMatchingSnapshot();
+    });
+  });
+
+  describe('keyOrFn', () => {
+    test('passed property of the items as key', () => {
+      expect(() =>
+        expect([
+          { id: 2, name: 'Steve' },
+          { id: 4, name: 'Bucky' },
+          { id: 3, name: 'Tony' },
+          { id: 1, name: 'Bruce' },
+        ]).toIncludeSameMembers(
+          [
+            { id: 1, name: 'Tony' },
+            { id: 2, name: 'Bruce' },
+            { id: 3, name: 'Steve' },
+          ],
+          'id',
+        ),
+      ).toThrowErrorMatchingSnapshot();
+    });
+
+    test('passed function', () => {
+      expect(() =>
+        expect([
+          { id: 2, name: 'Steve' },
+          { id: 4, name: 'Bucky' },
+          { id: 3, name: 'Tony' },
+          { id: 1, name: 'Bruce' },
+        ]).toIncludeSameMembers(
+          [
+            { id: 1, name: 'Tony' },
+            { id: 2, name: 'Bruce' },
+            { id: 3, name: 'Steve' },
+          ],
+          (itemA, itemB) => itemA.id === itemB.id,
+        ),
+      ).toThrowErrorMatchingSnapshot();
+    });
   });
 });
 
