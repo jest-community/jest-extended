@@ -6,10 +6,10 @@ sidebar_position: 1
 
 - [.pass(message)](/docs/matchers/pass)
 - [.fail(message)](/docs/matchers/fail)
-- [.toBeEmpty()](/docs/matchers/tobeempty)
-- [.toBeOneOf([members])](/docs/matchers/tobeoneof)
-- [.toBeNil()](/docs/matchers/tobenil)
-- [.toSatisfy(predicate)](/docs/matchers/tosatisfy)
+- [.toBeEmpty()](/docs/matchers/toBeEmpty)
+- [.toBeOneOf([members])](/docs/matchers/toBeOneOf)
+- [.toBeNil()](/docs/matchers/toBeNil)
+- [.toSatisfy(predicate)](/docs/matchers/toSatisfy)
 
 ## [Array](/docs/matchers/array)
 
@@ -92,7 +92,7 @@ sidebar_position: 1
 ## [String](/docs/matchers/string)
 
 - [.toBeString()](/docs/matchers/string/#tobestring)
-- [.toBeHexadecimal(string)](/docs/matchers/string/#tobehexadecimal)
+- [.toBeHexadecimal(string)](/docs/matchers/string/#tobehexadecimalstring)
 - [.toBeDateString(string)](/docs/matchers/string/#tobedatestringstring)
 - [.toEqualCaseInsensitive(string)](/docs/matchers/string/#toequalcaseinsensitivestring)
 - [.toStartWith(prefix)](/docs/matchers/string/#tostartwithprefix)
