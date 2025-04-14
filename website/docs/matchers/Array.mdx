@@ -75,7 +75,7 @@ Use `.toIncludeSameMembers` when checking if two arrays contain equal values, in
 Use `.toPartiallyContain` when checking if any array value matches the partial member.
 
 <TestFile name="toPartiallyContain">
-  {`test('passes when an object in an array partially matches the given member', () => {
+  {`test('passes when an array contains all of the elements in a given array.', () => {
   expect([{ foo: 'bar', baz: 'qux', bax: 'zax' }]).toPartiallyContain({ foo: 'bar' });
   expect([{ foo: 'bar', baz: 'qux', bax: 'zax' }]).toPartiallyContain({ baz: 'qux' });
   expect([{ foo: 'bar', baz: 'qux', bax: 'zax' }]).not.toPartiallyContain({ foo: 'qux' });
