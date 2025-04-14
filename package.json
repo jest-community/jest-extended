@@ -13,7 +13,7 @@
     "build": "babel src -d dist --ignore \"**/*.test.js\"",
     "lint": "eslint .",
     "lint:fix": "yarn lint --fix",
-    "prepare": "husky install",
+    "prepare": "husky",
     "prepublishOnly": "yarn build",
     "precommit": "lint-staged",
     "test": "jest --color=true",
@@ -39,24 +39,28 @@
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.14.7",
     "@changesets/cli": "^2.26.0",
+    "@eslint/compat": "^1.2.8",
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.24.0",
     "@jest/expect-utils": "^29.0.0",
     "@types/jest": "^29.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.30.6",
-    "@typescript-eslint/parser": "^5.30.6",
+    "@typescript-eslint/eslint-plugin": "^8.29.1",
+    "@typescript-eslint/parser": "^8.0.0",
     "babel-jest": "^29.0.0",
     "babel-jest-assertions": "^0.1.0",
-    "eslint": "^8.0.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-import-resolver-typescript": "^3.2.5",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^10.0.0",
+    "eslint-import-resolver-typescript": "^4.0.0",
     "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jest": "^27.0.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "husky": "^8.0.0",
+    "eslint-plugin-jest": "^28.0.0",
+    "eslint-plugin-prettier": "5.2.6",
+    "globals": "^16.0.0",
+    "husky": "^9.0.0",
     "jest": "^29.0.0",
-    "jest-serializer-ansi-escapes": "^2.0.1",
+    "jest-serializer-ansi-escapes": "^4.0.0",
     "jest-watch-typeahead": "^2.0.0",
-    "lint-staged": "~13.2.0",
-    "prettier": "^2.3.2",
+    "lint-staged": "~15.5.0",
+    "prettier": "^3.0.0",
     "typescript": "^5.0.0"
   },
   "dependencies": {
@@ -64,7 +68,7 @@
     "jest-get-type": "^29.0.0"
   },
   "engines": {
-    "node": "^14.15.0 || ^16.10.0 || >=18.0.0"
+    "node": "^18.12.0 || ^20.9.0 || ^22.11.0 || >=23.0.0"
   },
   "lint-staged": {
     "*.js": "eslint --fix",
@@ -111,7 +115,7 @@
         "@babel/preset-env",
         {
           "targets": {
-            "node": "14"
+            "node": "18"
           }
         }
       ]
