@@ -30,7 +30,6 @@ module.exports = defineConfig([globalIgnores(["**/dist/", "**/website", "eslint.
 
     plugins: {
         import: fixupPluginRules(_import),
-        import: fixupPluginRules(_import),
         jest,
     },
 
