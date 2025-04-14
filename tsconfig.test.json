@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "incremental": true,
+    "tsBuildInfoFile": "./.tsbuildinfo",
+    "target": "es2022",
+    "module": "CommonJS",
+    "rootDirs": ["src", "test"],
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "src/*": [
+        "src/*"
+      ],
+      "test/*": [
+        "test/*"
+      ]
+    },
+  },
+  "include": [
+    "src/**/*",
+    "test/**/*",
+    "types/*",
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "examples",
+    "website"
+  ]
+}

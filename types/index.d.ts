@@ -491,22 +491,22 @@ declare namespace jest {
     toBeBefore(date: Date): R;
 
     /**
-     * Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
+     * Use `.toIncludeAllMembers` when checking if an `Array` contains all the same members of a given set.
      * @param {Array.<*>} members
      */
-    toIncludeAllMembers<E = unknown>(members: readonly E[]): R;
+    toIncludeAllMembers<E = unknown>(members: readonly E[] | E): R;
 
     /**
-     * Use `.toIncludeAllPartialMembers` when checking if an `Array` contains all of the same partial members of a given set.
+     * Use `.toIncludeAllPartialMembers` when checking if an `Array` contains all the same partial members of a given set.
      * @param {Array.<*>} members
      */
-    toIncludeAllPartialMembers<E = unknown>(members: readonly E[]): R;
+    toIncludeAllPartialMembers<E = unknown>(members: readonly E[] | E): R;
 
     /**
      * Use `.toIncludeAnyMembers` when checking if an `Array` contains any of the members of a given set.
      * @param {Array.<*>} members
      */
-    toIncludeAnyMembers<E = unknown>(members: readonly E[]): R;
+    toIncludeAnyMembers<E = unknown>(members: readonly E[] | E): R;
 
     /**
      * Use `.toIncludeSameMembers` when checking if two arrays contain equal values, in any order.
@@ -727,14 +727,14 @@ declare namespace jest {
     toContainEntry<E = unknown>(entry: readonly [keyof E, E[keyof E]]): R;
 
     /**
-     * Use `.toContainEntries` when checking if an object contains all of the provided entries.
+     * Use `.toContainEntries` when checking if an object contains all the provided entries.
      *
      * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
     toContainEntries<E = unknown>(entries: readonly (readonly [keyof E, E[keyof E]])[]): R;
 
     /**
-     * Use `.toContainAllEntries` when checking if an object only contains all of the provided entries.
+     * Use `.toContainAllEntries` when checking if an object only contains all the provided entries.
      *
      * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
