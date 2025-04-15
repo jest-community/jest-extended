@@ -107,6 +107,10 @@
     "watchPlugins": [
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
+    ],
+    "reporters": [
+      "<rootDir>/test/reporters/ExceptionlessExpectedFailureReporter.js",
+      "default"
     ]
   },
   "babel": {
