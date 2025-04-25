@@ -1,4 +1,5 @@
-export function toBeString(expected) {
+export function toBeString(expected: unknown) {
+  // @ts-expect-error OK to have implicit any for this
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const pass = typeof expected === 'string' || expected instanceof String;

@@ -1,7 +1,11 @@
-export function toInclude(actual, expected) {
+import { getType } from 'jest-get-type';
+
+export function toInclude(actual: unknown, expected: string) {
+  // @ts-expect-error OK to have implicit any for this
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  const pass = actual.includes(expected);
+  // @ts-expect-error getType provides the type check
+  const pass = getType(actual) === 'string' && actual.includes(expected);
 
   return {
     pass,

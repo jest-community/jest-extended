@@ -1,4 +1,5 @@
-export function toBeTrue(actual) {
+export function toBeTrue(actual: unknown) {
+  // @ts-expect-error OK to have implicit any for this
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const pass = actual === true;

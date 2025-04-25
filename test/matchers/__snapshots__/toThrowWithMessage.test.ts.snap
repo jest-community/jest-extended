@@ -143,6 +143,16 @@ exports[`.toThrowWithMessage fails when error type is not provided 1`] = `
 Expected type to be a function but instead "undefined" was found"
 `;
 
+exports[`.toThrowWithMessage fails when unable to create an error 1`] = `
+"<dim>expect(</intensity><red>function</color><dim>).toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
+
+Expected to throw:
+  <green>[ExplodingError: Expected message]</color>
+Thrown:
+  <red>[Error: Cannot instantiate]</color>
+"
+`;
+
 exports[`.toThrowWithMessage passes when given an Error with a regex error message 1`] = `
 "<dim>expect(</intensity><red>function</color><dim>).not.toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
 

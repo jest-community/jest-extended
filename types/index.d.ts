@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 interface CustomMatchers<R> extends Record<string, any> {
   /**
    * Note: Currently unimplemented

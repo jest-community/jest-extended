@@ -1,4 +1,5 @@
-export function toSatisfyAll(actual, expected) {
+export function toSatisfyAll<E = unknown>(actual: E[], expected: (x: E) => boolean) {
+  // @ts-expect-error OK to have implicit any for this
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const pass = actual.every(expected);

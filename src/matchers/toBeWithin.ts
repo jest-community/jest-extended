@@ -1,7 +1,11 @@
-export function toBeWithin(actual, start, end) {
+import { getType } from 'jest-get-type';
+
+export function toBeWithin(actual: unknown, start: number, end: number) {
+  // @ts-expect-error OK to have implicit any for this
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  const pass = actual >= start && actual < end;
+  // @ts-expect-error getType provides the type check
+  const pass = getType(actual) === 'number' && actual >= start && actual < end;
 
   return {
     pass,

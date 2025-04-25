@@ -3,7 +3,7 @@ import * as matcher from 'src/matchers/toHaveBeenCalledOnce';
 expect.extend(matcher);
 
 describe('.toHaveBeenCalledOnce', () => {
-  let mock;
+  let mock: jest.Mock | (() => void);
   beforeEach(() => {
     mock = jest.fn();
   });
@@ -30,7 +30,7 @@ describe('.toHaveBeenCalledOnce', () => {
 });
 
 describe('.not.toHaveBeenCalledOnce', () => {
-  let mock;
+  let mock: jest.Mock | (() => void);
   beforeEach(() => {
     mock = jest.fn();
   });

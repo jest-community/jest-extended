@@ -1,7 +1,11 @@
-export function toIncludeMultiple(actual, expected) {
+import { getType } from 'jest-get-type';
+
+export function toIncludeMultiple(actual: unknown, expected: readonly string[]) {
+  // @ts-expect-error OK to have implicit any for this
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  const pass = expected.every(value => actual.includes(value));
+  // @ts-expect-error getType provides the type check
+  const pass = getType(actual) === 'string' && expected.every(value => actual.includes(value));
 
   return {
     pass,

@@ -5,10 +5,7 @@ const { toThrowWithMessage } = matcher;
 expect.extend(matcher);
 
 class UnconstructableError extends Error {
-  constructor(message) {
-    if (typeof message !== 'number') {
-      throw new TypeError('Expected number arg');
-    }
+  constructor(message: number) {
     super(message.toString());
     this.name = 'UnconstructableError';
   }
@@ -16,6 +13,7 @@ class UnconstructableError extends Error {
 
 describe('.toThrowWithMessage', () => {
   test('fails when callback function is not provided', () => {
+    // @ts-expect-error this is intentional for the test
     const { pass, message } = toThrowWithMessage.call({
       utils: { matcherHint: matcherHint, printExpected: printExpected, printReceived: printReceived },
     });
@@ -24,6 +22,7 @@ describe('.toThrowWithMessage', () => {
   });
 
   test('fails when a callback function is not a function', () => {
+    // @ts-expect-error this is intentional for the test
     const { pass, message } = toThrowWithMessage.call(
       { utils: { matcherHint: matcherHint, printExpected: printExpected, printReceived: printReceived } },
       2,
@@ -34,6 +33,7 @@ describe('.toThrowWithMessage', () => {
 
   test('fails when error message is not provided', () => {
     const callback = () => {};
+    // @ts-expect-error this is intentional for the test
     const { pass, message } = toThrowWithMessage.call(
       { utils: { matcherHint: matcherHint, printExpected: printExpected, printReceived: printReceived } },
       callback,
@@ -45,6 +45,7 @@ describe('.toThrowWithMessage', () => {
 
   test('fails when error type is not provided', () => {
     const callback = () => {};
+    // @ts-expect-error this is intentional for the test
     const { pass, message } = toThrowWithMessage.call(
       { utils: { matcherHint: matcherHint, printExpected: printExpected, printReceived: printReceived } },
       callback,
@@ -59,6 +60,7 @@ describe('.toThrowWithMessage', () => {
       { utils: { matcherHint: matcherHint, printExpected: printExpected, printReceived: printReceived } },
       callback,
       Error,
+      // @ts-expect-error this is intentional for the test
       2,
     );
     expect(pass).toBe(false);
@@ -195,8 +197,32 @@ describe('.toThrowWithMessage', () => {
     );
   });
 
+  test('fails when unable to create an error', () => {
+    class ExplodingError extends Error {
+      constructor() {
+        super();
+        throw new Error('Cannot instantiate');
+      }
+    }
+
+    const callback = () => {
+      throw new ExplodingError();
+    };
+
+    const { pass, message } = toThrowWithMessage.call(
+      { utils: { matcherHint, printExpected, printReceived } },
+      callback,
+      ExplodingError,
+      'Expected message',
+    );
+
+    expect(pass).toBe(false);
+    expect(message()).toMatchSnapshot();
+  });
+
   describe('Async', () => {
     test('fails on rejects when return value is not provided', () => {
+      // @ts-expect-error this is intentional for the test
       const { pass, message } = toThrowWithMessage.call({
         utils: { matcherHint: matcherHint, printExpected: printExpected, printReceived: printReceived },
         promise: 'rejects',
@@ -207,6 +233,7 @@ describe('.toThrowWithMessage', () => {
 
     test('fails on rejects when error message is not provided', () => {
       const rejectValue = true;
+      // @ts-expect-error this is intentional for the test
       const { pass, message } = toThrowWithMessage.call(
         {
           utils: { matcherHint: matcherHint, printExpected: printExpected, printReceived: printReceived },
@@ -221,6 +248,7 @@ describe('.toThrowWithMessage', () => {
 
     test('fails on rejects when error type is not provided', () => {
       const rejectValue = true;
+      // @ts-expect-error this is intentional for the test
       const { pass, message } = toThrowWithMessage.call(
         {
           utils: { matcherHint: matcherHint, printExpected: printExpected, printReceived: printReceived },
@@ -239,6 +267,7 @@ describe('.toThrowWithMessage', () => {
           utils: { matcherHint: matcherHint, printExpected: printExpected, printReceived: printReceived },
           promise: 'rejects',
         },
+        // @ts-expect-error this is intentional for the test
         rejectValue,
         Error,
         2,
@@ -254,6 +283,7 @@ describe('.toThrowWithMessage', () => {
           utils: { matcherHint: matcherHint, printExpected: printExpected, printReceived: printReceived },
           promise: 'rejects',
         },
+        // @ts-expect-error this is intentional for the test
         rejectValue,
         TypeError,
         'Expected message',
@@ -269,6 +299,7 @@ describe('.toThrowWithMessage', () => {
           utils: { matcherHint: matcherHint, printExpected: printExpected, printReceived: printReceived },
           promise: 'rejects',
         },
+        // @ts-expect-error this is intentional for the test
         rejectValue,
         TypeError,
         'Expected message',
@@ -284,6 +315,7 @@ describe('.toThrowWithMessage', () => {
           utils: { matcherHint: matcherHint, printExpected: printExpected, printReceived: printReceived },
           promise: 'rejects',
         },
+        // @ts-expect-error this is intentional for the test
         rejectValue,
         TypeError,
         /Expected message/,
@@ -299,6 +331,7 @@ describe('.toThrowWithMessage', () => {
           utils: { matcherHint: matcherHint, printExpected: printExpected, printReceived: printReceived },
           promise: 'rejects',
         },
+        // @ts-expect-error this is intentional for the test
         rejectValue,
         UnconstructableError,
         '42',
@@ -314,6 +347,7 @@ describe('.toThrowWithMessage', () => {
           utils: { matcherHint: matcherHint, printExpected: printExpected, printReceived: printReceived },
           promise: 'rejects',
         },
+        // @ts-expect-error this is intentional for the test
         rejectValue,
         UnconstructableError,
         /42/,

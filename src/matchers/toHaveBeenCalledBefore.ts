@@ -1,19 +1,32 @@
 import { isJestMockOrSpy } from 'src/utils';
 
-export function toHaveBeenCalledBefore(actual, expected, failIfNoSecondInvocation = true) {
+export function toHaveBeenCalledBefore(
+  actual: unknown,
+  expected: jest.MockInstance<any, any[]>,
+  failIfNoSecondInvocation: boolean = true,
+) {
+  // @ts-expect-error OK to have implicit any for this
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   if (!isJestMockOrSpy(actual)) {
+    // @ts-expect-error OK to have implicit any for this
     return { pass: false, message: mockCheckFailMessage(this.utils, actual, true) };
   }
 
   if (!isJestMockOrSpy(expected)) {
+    // @ts-expect-error OK to have implicit any for this
     return { pass: false, message: mockCheckFailMessage(this.utils, expected, false) };
   }
 
-  const firstInvocationCallOrder = actual.mock.invocationCallOrder;
-  const secondInvocationCallOrder = expected.mock.invocationCallOrder;
-  const pass = predicate(firstInvocationCallOrder, secondInvocationCallOrder, failIfNoSecondInvocation);
+  let pass = false;
+  let firstInvocationCallOrder = null;
+  let secondInvocationCallOrder = null;
+  if (isJestMockOrSpy(actual)) {
+    // @ts-expect-error isJestMockOrSpy provides the type check
+    firstInvocationCallOrder = actual.mock.invocationCallOrder;
+    secondInvocationCallOrder = expected.mock.invocationCallOrder;
+    pass = predicate(firstInvocationCallOrder, secondInvocationCallOrder, failIfNoSecondInvocation);
+  }
 
   return {
     pass,
@@ -34,7 +47,7 @@ export function toHaveBeenCalledBefore(actual, expected, failIfNoSecondInvocatio
   };
 }
 
-const mockCheckFailMessage = (utils, value, isReceivedValue) => () => {
+const mockCheckFailMessage = (utils: any, value: any, isReceivedValue: any) => () => {
   const valueKind = isReceivedValue ? 'Received' : 'Expected';
   const valueKindPrintFunc = isReceivedValue ? utils.printReceived : utils.printExpected;
 
@@ -47,9 +60,9 @@ const mockCheckFailMessage = (utils, value, isReceivedValue) => () => {
   );
 };
 
-const smallest = ns => ns.reduce((acc, n) => (acc < n ? acc : n));
+const smallest = (ns: any) => ns.reduce((acc: any, n: any) => (acc < n ? acc : n));
 
-const predicate = (firstInvocationCallOrder, secondInvocationCallOrder, failIfNoSecondInvocation) => {
+const predicate = (firstInvocationCallOrder: any, secondInvocationCallOrder: any, failIfNoSecondInvocation: any) => {
   if (firstInvocationCallOrder.length === 0) return false;
   if (secondInvocationCallOrder.length === 0) return !failIfNoSecondInvocation;
 

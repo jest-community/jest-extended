@@ -1,12 +1,14 @@
 import { containsEntry } from 'src/utils';
 
-export function toIncludeAllPartialMembers(actual, expected) {
+export function toIncludeAllPartialMembers<E = unknown>(actual: unknown, expected: readonly E[] | E) {
+  // @ts-expect-error OK to have implicit any for this
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const pass =
     Array.isArray(actual) &&
     Array.isArray(expected) &&
     expected.every(partial =>
+      // @ts-expect-error OK to have implicit any for this
       actual.some(value => Object.entries(partial).every(entry => containsEntry(this.equals, value, entry))),
     );
 

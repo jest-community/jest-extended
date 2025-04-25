@@ -1,4 +1,5 @@
-export function toBeFrozen(actual) {
+export function toBeFrozen(actual: unknown) {
+  // @ts-expect-error OK to have implicit any for this
   const { matcherHint } = this.utils;
 
   const pass = Object.isFrozen(actual);

@@ -1,11 +1,23 @@
+import { getType } from 'jest-get-type';
 import { containsEntry } from 'src/utils';
 
-export function toContainAllEntries(actual, expected) {
+export function toContainAllEntries<E = unknown>(
+  actual: unknown,
+  expected: readonly (readonly [keyof E, E[keyof E]])[],
+): {
+  pass: boolean;
+  message: () => string;
+} {
+  // @ts-expect-error OK to have implicit any for this
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const pass =
+    getType(actual) === 'object' &&
+    // @ts-expect-error getType provides the type check
     actual.hasOwnProperty &&
+    // @ts-expect-error getType provides the type check
     expected.length == Object.keys(actual).length &&
+    // @ts-expect-error containsEntry takes an any type
     expected.every(entry => containsEntry(this.equals, actual, entry));
 
   return {

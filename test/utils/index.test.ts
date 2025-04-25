@@ -5,7 +5,7 @@ let equals;
 try {
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   equals = require('@jest/expect-utils').equals;
-} catch (error) {
+} catch (error: any) {
   if (error.code === 'MODULE_NOT_FOUND') {
     // eslint-disable-next-line import/no-unresolved, @typescript-eslint/no-require-imports
     equals = require('expect/build/jasmineUtils').equals;
@@ -46,7 +46,7 @@ describe('Utils', () => {
     }
 
     {
-      const arr = [];
+      const arr: any[] = [];
 
       test('returns property when it has a falsy one', () => {
         expect(determinePropertyMessage(arr, 'length')).toBe(0);

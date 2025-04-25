@@ -16,6 +16,12 @@ describe('.toBeBetween', () => {
       expect(TESTDATE1).toBeBetween(TESTDATE3, TESTDATE2);
     }).toThrowErrorMatchingSnapshot();
   });
+
+  test('fails when actual is not a Date', () => {
+    expect(() => {
+      expect('not-a-date').toBeBetween(TESTDATE1, TESTDATE2);
+    }).toThrowErrorMatchingSnapshot();
+  });
 });
 
 describe('.not.toBeBefore', () => {
@@ -26,6 +32,12 @@ describe('.not.toBeBefore', () => {
   test('fails when date is in given range', () => {
     expect(() => {
       expect(TESTDATE3).not.toBeBetween(TESTDATE1, TESTDATE2);
+    }).toThrowErrorMatchingSnapshot();
+  });
+
+  test('fails when actual is not a Date', () => {
+    expect(() => {
+      expect('not-a-date').not.toBeBetween(TESTDATE3, TESTDATE2);
     }).toThrowErrorMatchingSnapshot();
   });
 });

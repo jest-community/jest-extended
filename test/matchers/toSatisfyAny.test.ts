@@ -2,8 +2,8 @@ import * as matcher from 'src/matchers/toSatisfyAny';
 
 expect.extend(matcher);
 
-const isEven = el => el % 2 === 0;
-const isOdd = el => el % 2 === 1;
+const isEven = (el: number) => el % 2 === 0;
+const isOdd = (el: number) => el % 2 === 1;
 
 describe('.toSatisfyAny', () => {
   test('passes when any values satisfy predicate', () => {

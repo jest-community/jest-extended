@@ -1,4 +1,5 @@
-export function toBeFunction(actual) {
+export function toBeFunction(actual: unknown) {
+  // @ts-expect-error OK to have implicit any for this
   const { printReceived, matcherHint } = this.utils;
 
   const pass = typeof actual === 'function';
