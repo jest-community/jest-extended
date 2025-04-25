@@ -25,7 +25,7 @@ const compat = new FlatCompat({
     allConfig: js.configs.all
 });
 
-module.exports = defineConfig([globalIgnores(["**/dist/", "**/website", "eslint.config.cjs"]), {
+module.exports = defineConfig([globalIgnores(["**/dist", "**/examples", "**/website", "eslint.config.cjs"]), {
     extends: compat.extends("eslint:recommended", "plugin:prettier/recommended"),
 
     plugins: {
@@ -48,8 +48,10 @@ module.exports = defineConfig([globalIgnores(["**/dist/", "**/website", "eslint.
             node: {
                 moduleDirectory: ["./", "node_modules"],
             },
+            typescript: {
+                project: "./tsconfig.test.json"
+            }
         },
-
         "import/parsers": {
             "@typescript-eslint/parser": [".ts", ".tsx"],
         },

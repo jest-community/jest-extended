@@ -10,7 +10,9 @@
     "all.js"
   ],
   "scripts": {
-    "build": "babel src -d dist --ignore \"**/*.test.js\"",
+    "clean": "node clean.js",
+    "prebuild": "yarn clean",
+    "build": "tsc",
     "lint": "eslint .",
     "lint:fix": "yarn lint --fix",
     "prepare": "husky",
@@ -19,7 +21,7 @@
     "test": "jest --color=true",
     "test:coverage": "yarn test --coverage",
     "test:watch": "yarn test --watch",
-    "typecheck": "tsc --noEmit types/index.d.ts",
+    "typecheck": "tsc --noEmit",
     "dev:docs": "cd website && yarn start"
   },
   "keywords": [
@@ -35,9 +37,6 @@
   "license": "MIT",
   "repository": "jest-community/jest-extended",
   "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0",
-    "@babel/preset-env": "^7.14.0",
     "@changesets/cli": "^2.26.0",
     "@eslint/compat": "^1.2.0",
     "@eslint/eslintrc": "^3.3.0",
@@ -46,8 +45,6 @@
     "@types/jest": "^29.0.0",
     "@typescript-eslint/eslint-plugin": "^8.29.0",
     "@typescript-eslint/parser": "^8.0.0",
-    "babel-jest": "^29.0.0",
-    "babel-jest-assertions": "^0.1.0",
     "eslint": "^9.0.0",
     "eslint-config-prettier": "^10.0.0",
     "eslint-import-resolver-typescript": "^4.0.0",
@@ -61,6 +58,7 @@
     "jest-watch-typeahead": "^2.0.0",
     "lint-staged": "~15.5.0",
     "prettier": "^3.0.0",
+    "ts-jest": "^29.0.0",
     "typescript": "^5.0.0"
   },
   "dependencies": {
@@ -75,6 +73,19 @@
     "*.md": "prettier --write"
   },
   "jest": {
+    "preset": "ts-jest",
+    "transform": {
+      "^.+\\.(ts|tsx)$": [
+        "ts-jest",
+        {
+          "tsconfig": "tsconfig.test.json",
+          "isolatedModules": true
+        }
+      ]
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/"
+    ],
     "testEnvironment": "node",
     "testPathIgnorePatterns": [
       ".idea",
@@ -107,21 +118,6 @@
     "watchPlugins": [
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
-    ]
-  },
-  "babel": {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "targets": {
-            "node": "18"
-          }
-        }
-      ]
-    ],
-    "plugins": [
-      "module:babel-jest-assertions"
     ]
   },
   "prettier": {

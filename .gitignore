@@ -8,3 +8,4 @@ coverage
 .vs
 .vscode
 package-lock.json
+*tsbuildinfo
