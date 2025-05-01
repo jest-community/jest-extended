@@ -1,4 +1,5 @@
-export async function toResolve(actual) {
+export async function toResolve(actual: Promise<unknown>) {
+  // @ts-expect-error OK to have implicit any for this
   const { matcherHint } = this.utils;
 
   const pass = await actual.then(

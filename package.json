@@ -19,6 +19,8 @@
     "prepublishOnly": "yarn build",
     "precommit": "lint-staged",
     "test": "jest --color=true",
+    "test:clearCache": "yarn test --clearCache",
+    "test:updateSnapshot": "yarn test --updateSnapshot",
     "test:coverage": "yarn test --coverage",
     "test:watch": "yarn test --watch",
     "typecheck": "tsc --noEmit",

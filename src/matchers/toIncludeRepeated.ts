@@ -1,7 +1,11 @@
-export function toIncludeRepeated(actual, expected, occurrences) {
+import { getType } from 'jest-get-type';
+
+export function toIncludeRepeated(actual: unknown, expected: string, occurrences: number) {
+  // @ts-expect-error OK to have implicit any for this
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  const pass = (actual.match(new RegExp(expected, 'g')) || []).length === occurrences;
+  // @ts-expect-error getType provides the type check
+  const pass = getType(actual) === 'string' && (actual.match(new RegExp(expected, 'g')) || []).length === occurrences;
 
   return {
     pass,

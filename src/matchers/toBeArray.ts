@@ -1,4 +1,5 @@
-export function toBeArray(expected) {
+export function toBeArray(expected: unknown) {
+  // @ts-expect-error OK to have implicit any for this
   const { matcherHint, printReceived } = this.utils;
 
   const pass = Array.isArray(expected);

@@ -3,7 +3,7 @@ import * as matcher from 'src/matchers/toHaveBeenCalledExactlyOnceWith';
 expect.extend(matcher);
 
 describe('.toHaveBeenCalledExactlyOnceWith', () => {
-  let mock;
+  let mock: jest.Mock | ((arg0: string | string[], arg1?: string | undefined) => void);
   beforeEach(() => {
     mock = jest.fn();
   });
@@ -45,7 +45,7 @@ describe('.toHaveBeenCalledExactlyOnceWith', () => {
 });
 
 describe('.not.toHaveBeenCalledExactlyOnceWith', () => {
-  let mock;
+  let mock: jest.Mock | ((arg0: string | string[], arg1?: string | undefined) => void);
   beforeEach(() => {
     mock = jest.fn();
   });

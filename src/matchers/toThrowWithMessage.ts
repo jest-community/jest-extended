@@ -1,17 +1,17 @@
-const predicate = (error, type, message) => {
+const predicate = (error: any, type: any, message: any) => {
   if (message instanceof RegExp) {
     return error && error instanceof type && message.test(error.message);
   }
   return error && error instanceof type && error.message === message;
 };
 
-const positiveHint = utils =>
+const positiveHint = (utils: any) =>
   utils.matcherHint('.toThrowWithMessage', 'function', 'type', { secondArgument: 'message' });
 
-const negativeHint = utils =>
+const negativeHint = (utils: any) =>
   utils.matcherHint('.not.toThrowWithMessage', 'function', 'type', { secondArgument: 'message' });
 
-const passMessage = (utils, received, expected) =>
+const passMessage = (utils: any, received: any, expected: any) =>
   negativeHint(utils) +
   '\n\n' +
   'Expected not to throw:\n' +
@@ -19,7 +19,7 @@ const passMessage = (utils, received, expected) =>
   'Thrown:\n' +
   `  ${utils.printReceived(received)}\n`;
 
-const failMessage = (utils, received, expected) =>
+const failMessage = (utils: any, received: any, expected: any) =>
   positiveHint(utils) +
   '\n\n' +
   'Expected to throw:\n' +
@@ -27,7 +27,7 @@ const failMessage = (utils, received, expected) =>
   'Thrown:\n' +
   `  ${utils.printReceived(received)}\n`;
 
-const getExpectedError = (type, message) => {
+const getExpectedError = (type: any, message: any) => {
   const messageStr = message.toString();
   let expectedError;
   try {
@@ -41,8 +41,17 @@ const getExpectedError = (type, message) => {
   return expectedError;
 };
 
-export function toThrowWithMessage(callbackOrPromiseReturn, type, message) {
+export function toThrowWithMessage(
+  callbackOrPromiseReturn: () => void,
+  type:
+    | (new (...args: any[]) => { message: string })
+    | (abstract new (...args: any[]) => { message: string })
+    | ((...args: any[]) => { message: string }),
+  message: string | RegExp,
+) {
+  // @ts-expect-error OK to have implicit any for this
   const utils = this.utils;
+  // @ts-expect-error OK to have implicit any for this
   const isFromReject = this && this.promise === 'rejects'; // See https://github.com/facebook/jest/pull/7621#issue-244312550
   if ((!callbackOrPromiseReturn || typeof callbackOrPromiseReturn !== 'function') && !isFromReject) {
     return {

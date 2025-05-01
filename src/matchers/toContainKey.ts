@@ -1,7 +1,12 @@
-export function toContainKey(actual, expected) {
+import { getType } from 'jest-get-type';
+
+export function toContainKey<E = unknown>(actual: unknown, expected: keyof E | string) {
+  // @ts-expect-error OK to have implicit any for this
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  const pass = actual.hasOwnProperty && Object.prototype.hasOwnProperty.call(actual, expected);
+  const pass =
+    // @ts-expect-error getType provides the type check
+    getType(actual) === 'object' && actual.hasOwnProperty && Object.prototype.hasOwnProperty.call(actual, expected);
 
   return {
     pass,

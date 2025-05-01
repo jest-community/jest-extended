@@ -3,7 +3,7 @@ import * as matcher from 'src/matchers/toSatisfy';
 expect.extend(matcher);
 
 describe('.toSatisfy', () => {
-  const is2 = n => n === 2;
+  const is2 = (n: number) => n === 2;
 
   test('passes when given a function that returns true', () => {
     expect(2).toSatisfy(is2);
@@ -15,7 +15,7 @@ describe('.toSatisfy', () => {
 });
 
 describe('.not.toSatisfy', () => {
-  const isTrue = a => a === true;
+  const isTrue = (a: boolean) => a;
 
   test('passes when given a function that returns false', () => {
     expect(false).not.toSatisfy(isTrue);

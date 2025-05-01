@@ -1,6 +1,8 @@
-export function toBeEmpty(actual) {
+export function toBeEmpty(actual: unknown) {
+  // @ts-expect-error OK to have implicit any for this
   const { printReceived, matcherHint } = this.utils;
 
+  // @ts-expect-error OK to have implicit any for this
   const pass = this.equals({}, actual) || isEmptyIterable(actual);
 
   return {
@@ -18,7 +20,7 @@ export function toBeEmpty(actual) {
   };
 }
 
-const isEmptyIterable = value => {
+const isEmptyIterable = (value: any) => {
   if (typeof value[Symbol.iterator] !== 'function') {
     return false;
   }

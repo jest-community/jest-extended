@@ -1,7 +1,7 @@
 import { DIFF_DELETE, DIFF_EQUAL, DIFF_INSERT } from 'jest-diff';
 
-export const tokenize = str => {
-  const isWhitespace = char => /\s/.test(char);
+export const tokenize = (str: any) => {
+  const isWhitespace = (char: any) => /\s/.test(char);
   const tokens = [];
   let idx = 0;
   let token;
@@ -34,29 +34,30 @@ export const tokenize = str => {
   return tokens;
 };
 
-const colorTokens = (str, color) => {
+const colorTokens = (str: any, color: any) => {
   const tokens = tokenize(str);
+  // @ts-expect-error TODO: fix
   return tokens.reduce((acc, { value, isWhitespace }) => acc + (isWhitespace ? value : color(value)), '');
 };
 
-export const printExpected = (utils, diff) =>
-  diff.reduce((acc, diffObject) => {
+export const printExpected = (utils: any, diff: any) =>
+  diff.reduce((acc: any, diffObject: any) => {
     const operation = diffObject[0];
     const value = diffObject[1];
 
     if (operation === DIFF_EQUAL) return acc + colorTokens(value, utils.EXPECTED_COLOR);
     if (operation === DIFF_DELETE)
-      return acc + colorTokens(value, str => utils.INVERTED_COLOR(utils.EXPECTED_COLOR(str)));
+      return acc + colorTokens(value, (str: any) => utils.INVERTED_COLOR(utils.EXPECTED_COLOR(str)));
     return acc;
   }, '');
 
-export const printReceived = (utils, diff) =>
-  diff.reduce((acc, diffObject) => {
+export const printReceived = (utils: any, diff: any) =>
+  diff.reduce((acc: any, diffObject: any) => {
     const operation = diffObject[0];
     const value = diffObject[1];
 
     if (operation === DIFF_EQUAL) return acc + colorTokens(value, utils.RECEIVED_COLOR);
     if (operation === DIFF_INSERT)
-      return acc + colorTokens(value, str => utils.INVERTED_COLOR(utils.RECEIVED_COLOR(str)));
+      return acc + colorTokens(value, (str: any) => utils.INVERTED_COLOR(utils.RECEIVED_COLOR(str)));
     return acc;
   }, '');

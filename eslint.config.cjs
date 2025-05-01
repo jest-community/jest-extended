@@ -22,7 +22,7 @@ const {
 const compat = new FlatCompat({
     baseDirectory: __dirname,
     recommendedConfig: js.configs.recommended,
-    allConfig: js.configs.all
+    allConfig: js.configs.all,
 });
 
 module.exports = defineConfig([globalIgnores(["**/dist", "**/examples", "**/website", "eslint.config.cjs"]), {
@@ -49,7 +49,7 @@ module.exports = defineConfig([globalIgnores(["**/dist", "**/examples", "**/webs
                 moduleDirectory: ["./", "node_modules"],
             },
             typescript: {
-                project: "./tsconfig.test.json"
+                project: "./tsconfig.test.json",
             }
         },
         "import/parsers": {
@@ -110,5 +110,6 @@ module.exports = defineConfig([globalIgnores(["**/dist", "**/examples", "**/webs
 
     rules: {
         "@typescript-eslint/array-type": "error",
+        "@typescript-eslint/no-explicit-any": "off",
     },
 }]);

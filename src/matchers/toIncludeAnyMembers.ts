@@ -1,9 +1,11 @@
 import { contains } from 'src/utils';
 
-export function toIncludeAnyMembers(actual, expected) {
+export function toIncludeAnyMembers<E = unknown>(actual: unknown, expected: readonly E[] | E) {
+  // @ts-expect-error OK to have implicit any for this
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const pass =
+    // @ts-expect-error OK to have implicit any for this
     Array.isArray(actual) && Array.isArray(expected) && expected.some(member => contains(this.equals, actual, member));
 
   return {

@@ -1,7 +1,11 @@
-export function toSatisfyAny(actual, expected) {
+export function toSatisfyAny(actual: unknown, expected: (x: unknown) => boolean) {
+  // @ts-expect-error OK to have implicit any for this
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  const pass = actual.some(expected);
+  let pass = false;
+  if (Array.isArray(actual)) {
+    pass = actual.some(expected);
+  }
 
   return {
     pass,

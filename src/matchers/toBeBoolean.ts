@@ -1,4 +1,5 @@
-export function toBeBoolean(actual) {
+export function toBeBoolean(actual: unknown) {
+  // @ts-expect-error OK to have implicit any for this
   const { matcherHint, printReceived } = this.utils;
 
   const pass = typeof actual === 'boolean' || actual instanceof Boolean;

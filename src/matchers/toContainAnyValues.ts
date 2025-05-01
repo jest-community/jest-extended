@@ -1,10 +1,17 @@
+import { getType } from 'jest-get-type';
 import { contains } from 'src/utils';
 
-export function toContainAnyValues(actual, expected) {
+export function toContainAnyValues<E = unknown>(actual: unknown, expected: readonly E[]) {
+  // @ts-expect-error OK to have implicit any for this
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  const objectValues = Object.keys(actual).map(k => actual[k]);
-  const pass = expected.some(value => contains(this.equals, objectValues, value));
+  let pass = false;
+  if (getType(actual) === 'object') {
+    // @ts-expect-error getType provides the type check
+    const objectValues = Object.keys(actual).map(k => actual[k]);
+    // @ts-expect-error OK to have implicit any for this
+    pass = expected.some(value => contains(this.equals, objectValues, value));
+  }
 
   return {
     pass,

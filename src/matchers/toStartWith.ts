@@ -1,7 +1,11 @@
-export function toStartWith(actual, expected) {
+import { getType } from 'jest-get-type';
+
+export function toStartWith(actual: unknown, expected: string) {
+  // @ts-expect-error OK to have implicit any for this
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  const pass = actual.startsWith(expected);
+  // @ts-expect-error getType provides the type check
+  const pass = getType(actual) === 'string' && actual.startsWith(expected);
 
   return {
     pass,

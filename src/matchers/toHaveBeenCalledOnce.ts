@@ -1,9 +1,10 @@
 import { isJestMockOrSpy } from 'src/utils';
 
-export function toHaveBeenCalledOnce(received) {
+export function toHaveBeenCalledOnce(actual: unknown) {
+  // @ts-expect-error OK to have implicit any for this
   const { printReceived, printWithType, matcherHint } = this.utils;
 
-  if (!isJestMockOrSpy(received)) {
+  if (!isJestMockOrSpy(actual)) {
     return {
       pass: false,
       message: () =>
@@ -11,11 +12,12 @@ export function toHaveBeenCalledOnce(received) {
         '\n\n' +
         `Matcher error: ${printReceived('received')} must be a mock or spy function` +
         '\n\n' +
-        printWithType('Received', received, printReceived),
+        printWithType('Received', actual, printReceived),
     };
   }
 
-  const pass = received.mock.calls.length === 1;
+  // @ts-expect-error isJestMockOrSpy provides the type check
+  const pass = actual.mock.calls.length === 1;
 
   return {
     pass,
@@ -27,7 +29,8 @@ export function toHaveBeenCalledOnce(received) {
         : matcherHint('.toHaveBeenCalledOnce') +
           '\n\n' +
           'Expected mock function to have been called exactly once, but it was called:\n' +
-          `  ${printReceived(received.mock.calls.length)} times`,
-    actual: received,
+          // @ts-expect-error isJestMockOrSpy provides the type check
+          `  ${printReceived(actual.mock.calls.length)} times`,
+    actual: actual,
   };
 }

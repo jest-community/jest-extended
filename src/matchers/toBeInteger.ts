@@ -1,4 +1,5 @@
-export function toBeInteger(actual) {
+export function toBeInteger(actual: unknown) {
+  // @ts-expect-error OK to have implicit any for this
   const { printReceived, matcherHint } = this.utils;
 
   const pass = isNumber(actual) && isInteger(actual);
@@ -18,5 +19,5 @@ export function toBeInteger(actual) {
   };
 }
 
-const isNumber = value => !isNaN(parseInt(value));
-const isInteger = value => Number.isInteger(+value);
+const isNumber = (value: any) => !isNaN(parseInt(value));
+const isInteger = (value: any) => Number.isInteger(+value);

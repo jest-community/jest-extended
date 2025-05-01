@@ -1,6 +1,8 @@
-export function toIncludeSameMembers(actual, expected) {
+export function toIncludeSameMembers<E = unknown>(actual: unknown, expected: readonly E[]) {
+  // @ts-expect-error OK to have implicit any for this
   const { printReceived, printExpected, matcherHint } = this.utils;
 
+  // @ts-expect-error OK to have implicit any for this
   const pass = predicate(this.equals, actual, expected);
 
   return {
@@ -22,7 +24,7 @@ export function toIncludeSameMembers(actual, expected) {
   };
 }
 
-const predicate = (equals, actual, expected) => {
+const predicate = (equals: any, actual: any, expected: any) => {
   if (!Array.isArray(actual) || !Array.isArray(expected) || actual.length !== expected.length) {
     return false;
   }
@@ -30,7 +32,7 @@ const predicate = (equals, actual, expected) => {
   const remaining = expected.reduce((remaining, secondValue) => {
     if (remaining === null) return remaining;
 
-    const index = remaining.findIndex(firstValue => equals(secondValue, firstValue));
+    const index = remaining.findIndex((firstValue: any) => equals(secondValue, firstValue));
 
     if (index === -1) {
       return null;

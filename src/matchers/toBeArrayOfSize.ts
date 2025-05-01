@@ -1,6 +1,7 @@
 import { determinePropertyMessage } from 'src/utils';
 
-export function toBeArrayOfSize(actual, expected) {
+export function toBeArrayOfSize(actual: unknown, expected: number) {
+  // @ts-expect-error OK to have implicit any for this
   const { printExpected, printReceived, matcherHint } = this.utils;
 
   const pass = Array.isArray(actual) && actual.length === expected;

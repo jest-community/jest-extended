@@ -1,7 +1,8 @@
-export function toBePositive(actual) {
+export function toBePositive(actual: unknown) {
+  // @ts-expect-error OK to have implicit any for this
   const { printReceived, matcherHint } = this.utils;
 
-  const pass = actual !== true && !isNaN(actual) && actual !== Infinity && actual > 0;
+  const pass = isNumber(actual) && isPositive(actual);
 
   return {
     pass,
@@ -17,3 +18,6 @@ export function toBePositive(actual) {
           `  ${printReceived(actual)}`,
   };
 }
+
+const isNumber = (value: any) => !isNaN(parseInt(value));
+const isPositive = (value: any) => value > 0;

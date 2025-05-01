@@ -1,4 +1,5 @@
-export function toContainKeys(actual, expected) {
+export function toContainKeys<E = unknown>(actual: unknown, expected: readonly (keyof E | string)[]) {
+  // @ts-expect-error OK to have implicit any for this
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const pass = expected.every(

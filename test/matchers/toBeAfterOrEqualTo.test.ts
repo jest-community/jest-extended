@@ -19,6 +19,12 @@ describe('.toBeAfterOrEqualTo', () => {
       expect(EARLIER).toBeAfterOrEqualTo(LATER);
     }).toThrowErrorMatchingSnapshot();
   });
+
+  test('fails when actual is not a Date', () => {
+    expect(() => {
+      expect('not-a-date').toBeAfterOrEqualTo(EARLIER);
+    }).toThrowErrorMatchingSnapshot();
+  });
 });
 
 describe('.not.toBeAfterOrEqualTo', () => {
@@ -35,6 +41,12 @@ describe('.not.toBeAfterOrEqualTo', () => {
   test('fails when given an equal date', () => {
     expect(() => {
       expect(EARLIER).not.toBeAfterOrEqualTo(EARLIER);
+    }).toThrowErrorMatchingSnapshot();
+  });
+
+  test('fails when actual is not a Date', () => {
+    expect(() => {
+      expect('not-a-date').not.toBeAfterOrEqualTo(LATER);
     }).toThrowErrorMatchingSnapshot();
   });
 });

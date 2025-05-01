@@ -15,6 +15,12 @@ describe('.toBeBefore', () => {
       expect(LATER).toBeBefore(EARLIER);
     }).toThrowErrorMatchingSnapshot();
   });
+
+  test('fails when actual is not a Date', () => {
+    expect(() => {
+      expect('not-a-date').toBeBefore(LATER);
+    }).toThrowErrorMatchingSnapshot();
+  });
 });
 
 describe('.not.toBeBefore', () => {
@@ -25,6 +31,12 @@ describe('.not.toBeBefore', () => {
   test('fails when given an earlier date', () => {
     expect(() => {
       expect(EARLIER).not.toBeBefore(LATER);
+    }).toThrowErrorMatchingSnapshot();
+  });
+
+  test('fails when actual is not a Date', () => {
+    expect(() => {
+      expect('not-a-date').not.toBeBefore(EARLIER);
     }).toThrowErrorMatchingSnapshot();
   });
 });

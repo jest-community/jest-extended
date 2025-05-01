@@ -1,7 +1,11 @@
-export function toBeHexadecimal(actual) {
+import { getType } from 'jest-get-type';
+
+export function toBeHexadecimal(actual: unknown) {
+  // @ts-expect-error OK to have implicit any for this
   const { printReceived, matcherHint } = this.utils;
 
-  const pass = longRegex.test(actual) || shortRegex.test(actual);
+  // @ts-expect-error getType provides the type check
+  const pass = (getType(actual) === 'string' && longRegex.test(actual)) || shortRegex.test(actual);
 
   return {
     pass,

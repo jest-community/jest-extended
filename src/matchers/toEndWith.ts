@@ -1,7 +1,11 @@
-export function toEndWith(actual, expected) {
+import { getType } from 'jest-get-type';
+
+export function toEndWith(actual: unknown, expected: string) {
+  // @ts-expect-error OK to have implicit any for this
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  const pass = actual.endsWith(expected);
+  // @ts-expect-error getType provides the type check
+  const pass = getType(actual) === 'string' && actual.endsWith(expected);
 
   return {
     pass,
