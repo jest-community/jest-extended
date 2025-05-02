@@ -1,5 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`.not.toContainAnyValues fails when actual is not an object 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toContainAnyValues()</intensity>
+
+Expected value to be of type object but received:
+  <red>null</color>"
+`;
+
+exports[`.not.toContainAnyValues fails when actual is not an object 2`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toContainAnyValues()</intensity>
+
+Expected value to be of type object but received:
+  <red>42</color>"
+`;
+
 exports[`.not.toContainAnyValues fails when given object contains value 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).not.toContainAnyValues(</intensity><green>expected</color><dim>)</intensity>
 
@@ -16,6 +30,20 @@ Expected object to not contain any of the following values:
   <green>["foo", "bar"]</color>
 Received:
   <red>{"a": "foo", "b": "bar", "c": "baz"}</color>"
+`;
+
+exports[`.toContainAnyValues fails when actual is not an object 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toContainAnyValues()</intensity>
+
+Expected value to be of type object but received:
+  <red>null</color>"
+`;
+
+exports[`.toContainAnyValues fails when actual is not an object 2`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toContainAnyValues()</intensity>
+
+Expected value to be of type object but received:
+  <red>42</color>"
 `;
 
 exports[`.toContainAnyValues fails when given object does not contain value 1`] = `

@@ -1,10 +1,8 @@
-import { getType } from 'jest-get-type';
-
 export function toBeAfterOrEqualTo(actual: unknown, expected: Date) {
   // @ts-expect-error OK to have implicit any for this
   const { printReceived, matcherHint } = this.utils;
 
-  if (getType(actual) !== 'date') {
+  if (!(actual instanceof Date)) {
     throw new Error(
       matcherHint('.toBeAfterOrEqualTo', 'received', '') +
         '\n\n' +
@@ -13,7 +11,6 @@ export function toBeAfterOrEqualTo(actual: unknown, expected: Date) {
     );
   }
 
-  // @ts-expect-error getType provides the type check
   const pass = actual >= expected;
 
   return {

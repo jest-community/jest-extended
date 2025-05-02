@@ -1,10 +1,8 @@
-import { getType } from 'jest-get-type';
-
 export function toBeAfter(actual: unknown, after: Date) {
   // @ts-expect-error OK to have implicit any for this
   const { printReceived, matcherHint } = this.utils;
 
-  if (getType(actual) !== 'date') {
+  if (!(actual instanceof Date)) {
     throw new Error(
       matcherHint('.toBeAfter', 'received', '') +
         '\n\n' +
@@ -13,7 +11,6 @@ export function toBeAfter(actual: unknown, after: Date) {
     );
   }
 
-  // @ts-expect-error getType provides the type check
   const pass = actual > after;
 
   return {

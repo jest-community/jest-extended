@@ -1,17 +1,21 @@
-import { getType } from 'jest-get-type';
 import { contains } from 'src/utils';
 
 export function toContainAnyValues<E = unknown>(actual: unknown, expected: readonly E[]) {
   // @ts-expect-error OK to have implicit any for this
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  let pass = false;
-  if (getType(actual) === 'object') {
-    // @ts-expect-error getType provides the type check
-    const objectValues = Object.keys(actual).map(k => actual[k]);
-    // @ts-expect-error OK to have implicit any for this
-    pass = expected.some(value => contains(this.equals, objectValues, value));
+  if (typeof actual !== 'object' || actual === null) {
+    throw new Error(
+        matcherHint('.toContainAnyValues', 'received', '') +
+        '\n\n' +
+        'Expected value to be of type object but received:\n' +
+        `  ${printReceived(actual)}`,
+    );
   }
+
+  const objectValues = Object.keys(actual).map(k => (actual as Record<string, unknown>)[k]);
+  // @ts-expect-error OK to have implicit any for this
+  const pass = expected.some(value => contains(this.equals, objectValues, value));
 
   return {
     pass,

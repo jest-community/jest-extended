@@ -1,11 +1,8 @@
-import { getType } from 'jest-get-type';
-
 export function toBeDateString(actual: unknown) {
   // @ts-expect-error OK to have implicit any for this
   const { matcherHint, printReceived } = this.utils;
 
-  // @ts-expect-error getType provides the type check
-  const pass = getType(actual) === 'string' && !isNaN(Date.parse(actual));
+  const pass = typeof actual === 'string' && !isNaN(Date.parse(actual));
 
   return {
     pass,

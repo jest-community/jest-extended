@@ -1,11 +1,8 @@
-import { getType } from 'jest-get-type';
-
 export function toBeEmptyObject(actual: unknown) {
   // @ts-expect-error OK to have implicit any for this
   const { printReceived, matcherHint } = this.utils;
 
-  // @ts-expect-error getType provides the type check
-  const pass = getType(actual) === 'object' && Object.keys(actual).length === 0;
+  const pass = actual !== null && typeof actual === 'object' && Object.keys(actual).length === 0;
 
   return {
     pass,

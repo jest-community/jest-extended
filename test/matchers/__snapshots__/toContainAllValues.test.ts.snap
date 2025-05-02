@@ -1,5 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`.not.toContainAllValues fails when actual is not an object 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toContainAllValues()</intensity>
+
+Expected value to be of type object but received:
+  <red>null</color>"
+`;
+
+exports[`.not.toContainAllValues fails when actual is not an object 2`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toContainAllValues()</intensity>
+
+Expected value to be of type object but received:
+  <red>42</color>"
+`;
+
 exports[`.not.toContainAllValues fails when given object contains all values including arrays 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).not.toContainAllValues(</intensity><green>expected</color><dim>)</intensity>
 
@@ -25,6 +39,20 @@ Expected object to not contain all values:
   <green>["world", 0, false]</color>
 Received:
   <red>{"bar": false, "foo": 0, "hello": "world"}</color>"
+`;
+
+exports[`.toContainAllValues fails when actual is not an object 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toContainAllValues()</intensity>
+
+Expected value to be of type object but received:
+  <red>null</color>"
+`;
+
+exports[`.toContainAllValues fails when actual is not an object 2`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toContainAllValues()</intensity>
+
+Expected value to be of type object but received:
+  <red>42</color>"
 `;
 
 exports[`.toContainAllValues fails when given object does not contain all primitive values 1`] = `
