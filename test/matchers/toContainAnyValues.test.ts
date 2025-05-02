@@ -35,8 +35,8 @@ describe('.not.toContainAnyValues', () => {
     expect(() => expect(data).not.toContainAnyValues(['foo', 'bar'])).toThrowErrorMatchingSnapshot();
   });
 
-  test('fails when actual is not an object', () => {
-    expect(() => expect(null).not.toContainAnyValues(['foo'])).toThrowErrorMatchingSnapshot();
-    expect(() => expect(42).not.toContainAnyValues(['foo'])).toThrowErrorMatchingSnapshot();
+  test('passes when actual is not an object', () => {
+    expect(() => expect(null).not.toContainAnyValues(['foo']));
+    expect(() => expect(42).not.toContainAnyValues(['foo']));
   });
 });

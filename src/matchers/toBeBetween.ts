@@ -2,16 +2,7 @@ export function toBeBetween(actual: unknown, startDate: Date, endDate: Date) {
   // @ts-expect-error OK to have implicit any for this
   const { matcherHint, printReceived } = this.utils;
 
-  if (!(actual instanceof Date)) {
-    throw new Error(
-      matcherHint('.toBeBetween', 'received', '') +
-        '\n\n' +
-        'Expected value to be of type Date but received:\n' +
-        `  ${printReceived(actual)}`,
-    );
-  }
-
-  const pass = actual >= startDate && actual <= endDate;
+  const pass = actual instanceof Date && actual >= startDate && actual <= endDate;
 
   return {
     pass,

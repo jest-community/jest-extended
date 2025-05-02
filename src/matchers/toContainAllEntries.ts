@@ -10,17 +10,11 @@ export function toContainAllEntries<E = unknown>(
   // @ts-expect-error OK to have implicit any for this
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  if (typeof actual !== 'object' || actual === null) {
-    throw new Error(
-        matcherHint('.toContainAllEntries', 'received', '') +
-        '\n\n' +
-        'Expected value to be of type object but received:\n' +
-        `  ${printReceived(actual)}`,
-    );
-  }
-
   const pass =
-    expected.length == Object.keys(actual).length &&
+    typeof actual === 'object' &&
+    actual !== null &&
+    !Array.isArray(actual) &&
+    expected.length == Object.keys(actual as Record<string, unknown>).length &&
     // @ts-expect-error containsEntry takes an any type
     expected.every(entry => containsEntry(this.equals, actual, entry as [any, any]));
 

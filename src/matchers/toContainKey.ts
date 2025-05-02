@@ -2,16 +2,12 @@ export function toContainKey<E = unknown>(actual: unknown, expected: keyof E | s
   // @ts-expect-error OK to have implicit any for this
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  if (typeof actual !== 'object' || actual === null) {
-    throw new Error(
-        matcherHint('.toContainKey', 'received', '') +
-        '\n\n' +
-        'Expected value to be of type object but received:\n' +
-        `  ${printReceived(actual)}`,
-    );
-  }
-
-  const pass = actual.hasOwnProperty && Object.prototype.hasOwnProperty.call(actual, expected);
+  const pass =
+    typeof actual === 'object' &&
+    actual !== null &&
+    !Array.isArray(actual) &&
+    actual.hasOwnProperty &&
+    Object.prototype.hasOwnProperty.call(actual, expected);
 
   return {
     pass,

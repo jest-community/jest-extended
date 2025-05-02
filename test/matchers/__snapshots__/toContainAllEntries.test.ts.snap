@@ -1,19 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`.not.toContainAllEntries fails when actual is not an object 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toContainAllEntries()</intensity>
-
-Expected value to be of type object but received:
-  <red>null</color>"
-`;
-
-exports[`.not.toContainAllEntries fails when actual is not an object 2`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toContainAllEntries()</intensity>
-
-Expected value to be of type object but received:
-  <red>42</color>"
-`;
-
 exports[`.not.toContainAllEntries fails when object only contains all of the given entries 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).not.toContainAllEntries(</intensity><green>expected</color><dim>)</intensity>
 
@@ -24,16 +10,20 @@ Received:
 `;
 
 exports[`.toContainAllEntries fails when actual is not an object 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toContainAllEntries()</intensity>
+"<dim>expect(</intensity><red>received</color><dim>).toContainAllEntries(</intensity><green>expected</color><dim>)</intensity>
 
-Expected value to be of type object but received:
+Expected object to only contain all of the given entries:
+  <green>[["a", "foo"], ["b", "bar"]]</color>
+Received:
   <red>null</color>"
 `;
 
 exports[`.toContainAllEntries fails when actual is not an object 2`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toContainAllEntries()</intensity>
+"<dim>expect(</intensity><red>received</color><dim>).toContainAllEntries(</intensity><green>expected</color><dim>)</intensity>
 
-Expected value to be of type object but received:
+Expected object to only contain all of the given entries:
+  <green>[["a", "foo"], ["b", "bar"]]</color>
+Received:
   <red>42</color>"
 `;
 

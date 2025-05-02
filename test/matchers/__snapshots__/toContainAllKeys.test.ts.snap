@@ -1,19 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`.not.toContainAllKeys fails when actual is not an object 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeAfterOrEqualTo()</intensity>
-
-Expected value to be of type object but received:
-  <red>null</color>"
-`;
-
-exports[`.not.toContainAllKeys fails when actual is not an object 2`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeAfterOrEqualTo()</intensity>
-
-Expected value to be of type object but received:
-  <red>42</color>"
-`;
-
 exports[`.not.toContainAllKeys fails when given object contains all keys 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).not.toContainAllKeys(</intensity><green>expected</color><dim>)</intensity>
 
@@ -23,18 +9,15 @@ Received:
   <red>["a", "b"]</color>"
 `;
 
-exports[`.toContainAllKeys fails when actual is not an object 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeAfterOrEqualTo()</intensity>
-
-Expected value to be of type object but received:
-  <red>null</color>"
-`;
+exports[`.toContainAllKeys fails when actual is not an object 1`] = `"Cannot convert undefined or null to object"`;
 
 exports[`.toContainAllKeys fails when actual is not an object 2`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeAfterOrEqualTo()</intensity>
+"<dim>expect(</intensity><red>received</color><dim>).toContainAllKeys(</intensity><green>expected</color><dim>)</intensity>
 
-Expected value to be of type object but received:
-  <red>42</color>"
+Expected object to contain all keys:
+  <green>["a", "b"]</color>
+Received:
+  <red>[]</color>"
 `;
 
 exports[`.toContainAllKeys fails when all of the object keys are matched, but there are additional keys  1`] = `

@@ -1,12 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`.not.toBeBeforeOrEqualTo fails when actual is not a Date 1`] = `
-"<dim>expect(</intensity><red>received</color><dim>).toBeBeforeOrEqualTo()</intensity>
-
-Expected value to be of type Date but received:
-  <red>"not-a-date"</color>"
-`;
-
 exports[`.not.toBeBeforeOrEqualTo fails when given an earlier date 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).not.toBeBeforeOrEqualTo()</intensity>
 
@@ -24,7 +17,7 @@ Expected date to be before or equal to <red>2019-09-01T22:00:00.000Z</color> but
 exports[`.toBeBeforeOrEqualTo fails when actual is not a Date 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toBeBeforeOrEqualTo()</intensity>
 
-Expected value to be of type Date but received:
+Expected date to be before or equal to <red>2019-09-10T22:00:00.000Z</color> but received:
   <red>"not-a-date"</color>"
 `;
 

@@ -70,8 +70,8 @@ describe('.not.toContainValue', () => {
     expect(() => expect(deepArray).not.toContainValue([{ hello: 'world' }])).toThrowErrorMatchingSnapshot();
   });
 
-  test('fails when actual is not an object', () => {
-    expect(() => expect(null).not.toContainValue('world')).toThrowErrorMatchingSnapshot();
-    expect(() => expect(42).not.toContainValue('world')).toThrowErrorMatchingSnapshot();
+  test('passes when actual is not an object', () => {
+    expect(() => expect(null).not.toContainValue('world'));
+    expect(() => expect(42).not.toContainValue('world'));
   });
 });

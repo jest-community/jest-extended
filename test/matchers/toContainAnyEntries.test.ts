@@ -23,17 +23,17 @@ describe('.toContainAnyEntries', () => {
 
   test('fails when actual is not an object', () => {
     expect(() =>
-        expect(null).toContainAnyEntries([
-          ['a', 'qux'],
-          ['a', 'foo'],
-        ]),
+      expect(null).toContainAnyEntries([
+        ['a', 'qux'],
+        ['a', 'foo'],
+      ]),
     ).toThrowErrorMatchingSnapshot();
 
     expect(() =>
-        expect(42).toContainAnyEntries([
-          ['a', 'qux'],
-          ['a', 'foo'],
-        ]),
+      expect(42).toContainAnyEntries([
+        ['a', 'qux'],
+        ['a', 'foo'],
+      ]),
     ).toThrowErrorMatchingSnapshot();
   });
 });
@@ -55,19 +55,19 @@ describe('.not.toContainAnyEntries', () => {
     ).toThrowErrorMatchingSnapshot();
   });
 
-  test('fails when actual is not an object', () => {
+  test('passes when actual is not an object', () => {
     expect(() =>
-        expect(null).not.toContainAllEntries([
-          ['a', 'qux'],
-          ['a', 'foo'],
-        ]),
-    ).toThrowErrorMatchingSnapshot();
+      expect(null).not.toContainAllEntries([
+        ['a', 'qux'],
+        ['a', 'foo'],
+      ]),
+    );
 
     expect(() =>
-        expect(42).not.toContainAllEntries([
-          ['a', 'qux'],
-          ['a', 'foo'],
-        ]),
-    ).toThrowErrorMatchingSnapshot();
+      expect(42).not.toContainAllEntries([
+        ['a', 'qux'],
+        ['a', 'foo'],
+      ]),
+    );
   });
 });

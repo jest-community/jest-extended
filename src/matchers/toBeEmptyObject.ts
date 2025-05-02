@@ -2,7 +2,8 @@ export function toBeEmptyObject(actual: unknown) {
   // @ts-expect-error OK to have implicit any for this
   const { printReceived, matcherHint } = this.utils;
 
-  const pass = actual !== null && typeof actual === 'object' && Object.keys(actual).length === 0;
+  const pass =
+    typeof actual === 'object' && actual !== null && !Array.isArray(actual) && Object.keys(actual).length === 0;
 
   return {
     pass,

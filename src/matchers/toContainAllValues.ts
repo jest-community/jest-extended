@@ -4,19 +4,13 @@ export function toContainAllValues<E = unknown>(actual: unknown, expected: reado
   // @ts-expect-error OK to have implicit any for this
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  if (typeof actual !== 'object' || actual === null) {
-    throw new Error(
-        matcherHint('.toContainAllValues', 'received', '') +
-        '\n\n' +
-        'Expected value to be of type object but received:\n' +
-        `  ${printReceived(actual)}`,
-    );
+  let pass = false;
+  if (typeof actual === 'object' && actual !== null && !Array.isArray(actual)) {
+    const values = Object.keys(actual as Record<string, unknown>).map(k => (actual as Record<string, unknown>)[k]);
+    pass =
+      // @ts-expect-error OK to have implicit any for this
+      values.length === expected.length && values.every(objectValue => contains(this.equals, expected, objectValue));
   }
-
-  const values = Object.keys(actual).map(k => (actual as Record<string, unknown>)[k]);
-  const pass =
-    // @ts-expect-error OK to have implicit any for this
-    values.length === expected.length && values.every(objectValue => contains(this.equals, expected, objectValue));
 
   return {
     pass,

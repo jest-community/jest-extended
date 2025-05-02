@@ -2,16 +2,7 @@ export function toBeAfterOrEqualTo(actual: unknown, expected: Date) {
   // @ts-expect-error OK to have implicit any for this
   const { printReceived, matcherHint } = this.utils;
 
-  if (!(actual instanceof Date)) {
-    throw new Error(
-      matcherHint('.toBeAfterOrEqualTo', 'received', '') +
-        '\n\n' +
-        'Expected value to be of type Date but received:\n' +
-        `  ${printReceived(actual)}`,
-    );
-  }
-
-  const pass = actual >= expected;
+  const pass = actual instanceof Date && actual >= expected;
 
   return {
     pass,
