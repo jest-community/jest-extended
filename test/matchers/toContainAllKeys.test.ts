@@ -20,6 +20,11 @@ describe('.toContainAllKeys', () => {
   test('fails when all of the object keys are matched, but there are additional keys ', () => {
     expect(() => expect(data).toContainAllKeys(['a', 'c'])).toThrowErrorMatchingSnapshot();
   });
+
+  test('fails when actual is not an object', () => {
+    expect(() => expect(null).toContainAllKeys(['a', 'b'])).toThrowErrorMatchingSnapshot();
+    expect(() => expect(42).toContainAllKeys(['a', 'b'])).toThrowErrorMatchingSnapshot();
+  });
 });
 
 describe('.not.toContainAllKeys', () => {
@@ -29,5 +34,10 @@ describe('.not.toContainAllKeys', () => {
 
   test('fails when given object contains all keys', () => {
     expect(() => expect(data).not.toContainAllKeys(['b', 'a'])).toThrowErrorMatchingSnapshot();
+  });
+
+  test('passes when actual is not an object', () => {
+    expect(() => expect(null).not.toContainAllKeys(['a', 'b']));
+    expect(() => expect(42).not.toContainAllKeys(['a', 'b']));
   });
 });

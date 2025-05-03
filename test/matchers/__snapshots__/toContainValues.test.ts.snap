@@ -27,6 +27,24 @@ Received:
   <red>{"bar": false, "foo": 0, "hello": "world"}</color>"
 `;
 
+exports[`.toContainValues fails when actual is not an object 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toContainValues(</intensity><green>expected</color><dim>)</intensity>
+
+Expected object to contain all values:
+  <green>["world", false]</color>
+Received:
+  <red>null</color>"
+`;
+
+exports[`.toContainValues fails when actual is not an object 2`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toContainValues(</intensity><green>expected</color><dim>)</intensity>
+
+Expected object to contain all values:
+  <green>["world", false]</color>
+Received:
+  <red>42</color>"
+`;
+
 exports[`.toContainValues fails when given object does not contain all primitive values 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toContainValues(</intensity><green>expected</color><dim>)</intensity>
 

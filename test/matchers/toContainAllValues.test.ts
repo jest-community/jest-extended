@@ -41,6 +41,11 @@ describe('.toContainAllValues', () => {
   test('fails when given object does not contain all values including arrays', () => {
     expect(() => expect(deepArray).toContainAllValues(['duck', [{ hello: 'world' }]])).toThrowErrorMatchingSnapshot();
   });
+
+  test('fails when actual is not an object', () => {
+    expect(() => expect(null).toContainAllValues(['world', 0, false])).toThrowErrorMatchingSnapshot();
+    expect(() => expect(42).toContainAllValues(['world', 0, false])).toThrowErrorMatchingSnapshot();
+  });
 });
 
 describe('.not.toContainAllValues', () => {
@@ -70,5 +75,10 @@ describe('.not.toContainAllValues', () => {
     expect(() =>
       expect(deepArray).not.toContainAllValues(['duck', [{ hello: 'world', foo: 0, bar: false }]]),
     ).toThrowErrorMatchingSnapshot();
+  });
+
+  test('passes when actual is not an object', () => {
+    expect(() => expect(null).not.toContainAllValues(['world', 0, false]));
+    expect(() => expect(42).not.toContainAllValues(['world', 0, false]));
   });
 });

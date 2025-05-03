@@ -1,4 +1,3 @@
-import { getType } from 'jest-get-type';
 import { containsEntry } from 'src/utils';
 
 export function toContainAllEntries<E = unknown>(
@@ -12,13 +11,12 @@ export function toContainAllEntries<E = unknown>(
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const pass =
-    getType(actual) === 'object' &&
-    // @ts-expect-error getType provides the type check
-    actual.hasOwnProperty &&
-    // @ts-expect-error getType provides the type check
-    expected.length == Object.keys(actual).length &&
+    typeof actual === 'object' &&
+    actual !== null &&
+    !Array.isArray(actual) &&
+    expected.length == Object.keys(actual as Record<string, unknown>).length &&
     // @ts-expect-error containsEntry takes an any type
-    expected.every(entry => containsEntry(this.equals, actual, entry));
+    expected.every(entry => containsEntry(this.equals, actual, entry as [any, any]));
 
   return {
     pass,

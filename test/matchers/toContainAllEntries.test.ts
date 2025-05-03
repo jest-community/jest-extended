@@ -21,6 +21,22 @@ describe('.toContainAllEntries', () => {
       ]),
     ).toThrowErrorMatchingSnapshot();
   });
+
+  test('fails when actual is not an object', () => {
+    expect(() =>
+      expect(null).toContainAllEntries([
+        ['a', 'foo'],
+        ['b', 'bar'],
+      ]),
+    ).toThrowErrorMatchingSnapshot();
+
+    expect(() =>
+      expect(42).toContainAllEntries([
+        ['a', 'foo'],
+        ['b', 'bar'],
+      ]),
+    ).toThrowErrorMatchingSnapshot();
+  });
 });
 
 describe('.not.toContainAllEntries', () => {
@@ -40,5 +56,21 @@ describe('.not.toContainAllEntries', () => {
         ['c', 'baz'],
       ]),
     ).toThrowErrorMatchingSnapshot();
+  });
+
+  test('passes when actual is not an object', () => {
+    expect(() =>
+      expect(null).not.toContainAllEntries([
+        ['a', 'foo'],
+        ['b', 'bar'],
+      ]),
+    );
+
+    expect(() =>
+      expect(42).not.toContainAllEntries([
+        ['a', 'foo'],
+        ['b', 'bar'],
+      ]),
+    );
   });
 });

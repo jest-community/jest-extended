@@ -27,6 +27,24 @@ Received:
   <red>{"hello": "world"}</color>"
 `;
 
+exports[`.toContainValue fails when actual is not an object 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toContainValue(</intensity><green>expected</color><dim>)</intensity>
+
+Expected object to contain value:
+  <green>"world"</color>
+Received:
+  <red>null</color>"
+`;
+
+exports[`.toContainValue fails when actual is not an object 2`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toContainValue(</intensity><green>expected</color><dim>)</intensity>
+
+Expected object to contain value:
+  <green>"world"</color>
+Received:
+  <red>42</color>"
+`;
+
 exports[`.toContainValue fails when given object does not contain array value 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toContainValue(</intensity><green>expected</color><dim>)</intensity>
 

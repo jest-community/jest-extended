@@ -9,6 +9,17 @@ Received:
   <red>["a", "b"]</color>"
 `;
 
+exports[`.toContainAllKeys fails when actual is not an object 1`] = `"Cannot convert undefined or null to object"`;
+
+exports[`.toContainAllKeys fails when actual is not an object 2`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toContainAllKeys(</intensity><green>expected</color><dim>)</intensity>
+
+Expected object to contain all keys:
+  <green>["a", "b"]</color>
+Received:
+  <red>[]</color>"
+`;
+
 exports[`.toContainAllKeys fails when all of the object keys are matched, but there are additional keys  1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toContainAllKeys(</intensity><green>expected</color><dim>)</intensity>
 

@@ -34,6 +34,11 @@ describe('.toContainValue', () => {
   test('fails when given object does not contain array value', () => {
     expect(() => expect(deepArray).toContainValue([{ world: 'hello' }])).toThrowErrorMatchingSnapshot();
   });
+
+  test('fails when actual is not an object', () => {
+    expect(() => expect(null).toContainValue('world')).toThrowErrorMatchingSnapshot();
+    expect(() => expect(42).toContainValue('world')).toThrowErrorMatchingSnapshot();
+  });
 });
 
 describe('.not.toContainValue', () => {
@@ -63,5 +68,10 @@ describe('.not.toContainValue', () => {
 
   test('fails when given object contains array value', () => {
     expect(() => expect(deepArray).not.toContainValue([{ hello: 'world' }])).toThrowErrorMatchingSnapshot();
+  });
+
+  test('passes when actual is not an object', () => {
+    expect(() => expect(null).not.toContainValue('world'));
+    expect(() => expect(42).not.toContainValue('world'));
   });
 });

@@ -1,5 +1,4 @@
 import { diffStringsRaw, DIFF_EQUAL } from 'jest-diff';
-import { getType } from 'jest-get-type';
 import { printExpected, printReceived } from '../utils/print';
 
 const removeWhitespace = (str: any) => str.trim().replace(/\s+/g, '');
@@ -22,7 +21,7 @@ export function toEqualIgnoringWhitespace(actual: unknown, expected: string) {
   const { matcherHint, EXPECTED_COLOR } = this.utils;
 
   /* determine whether strings are equal after removing white-space */
-  const pass = getType(actual) === 'string' && removeWhitespace(actual) === removeWhitespace(expected);
+  const pass = typeof actual === 'string' && removeWhitespace(actual) === removeWhitespace(expected);
 
   /* eslint-disable indent */ // prettier conflicts with indent rule
   return {

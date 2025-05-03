@@ -18,6 +18,24 @@ Received:
   <red>{"a": "foo", "b": "bar", "c": "baz"}</color>"
 `;
 
+exports[`.toContainAnyValues fails when actual is not an object 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toContainAnyValues(</intensity><green>expected</color><dim>)</intensity>
+
+Expected object to contain any of the following values:
+  <green>["foo"]</color>
+Received:
+  <red>null</color>"
+`;
+
+exports[`.toContainAnyValues fails when actual is not an object 2`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toContainAnyValues(</intensity><green>expected</color><dim>)</intensity>
+
+Expected object to contain any of the following values:
+  <green>["foo"]</color>
+Received:
+  <red>42</color>"
+`;
+
 exports[`.toContainAnyValues fails when given object does not contain value 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toContainAnyValues(</intensity><green>expected</color><dim>)</intensity>
 

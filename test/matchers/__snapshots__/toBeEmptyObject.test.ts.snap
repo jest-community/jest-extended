@@ -13,3 +13,24 @@ exports[`.toBeEmptyObject fails when not given an empty object 1`] = `
 Expected value to be an empty object, received:
   <red>{"property1": "something"}</color>"
 `;
+
+exports[`.toBeEmptyObject fails when not given an object 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeEmptyObject()</intensity>
+
+Expected value to be an empty object, received:
+  <red>null</color>"
+`;
+
+exports[`.toBeEmptyObject fails when not given an object 2`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeEmptyObject()</intensity>
+
+Expected value to be an empty object, received:
+  <red>[42]</color>"
+`;
+
+exports[`.toBeEmptyObject fails when not given an object 3`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeEmptyObject()</intensity>
+
+Expected value to be an empty object, received:
+  <red>42</color>"
+`;

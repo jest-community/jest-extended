@@ -1,11 +1,8 @@
-import { getType } from 'jest-get-type';
-
 export function toBeValidDate(actual: unknown) {
   // @ts-expect-error OK to have implicit any for this
   const { printReceived, matcherHint } = this.utils;
 
-  // @ts-expect-error getType provides the type check
-  const pass = getType(actual) === 'date' && !isNaN(actual) && !isNaN(actual.getTime());
+  const pass = actual instanceof Date && !isNaN(actual.getTime());
 
   return {
     pass,

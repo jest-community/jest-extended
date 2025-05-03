@@ -17,6 +17,11 @@ describe('.toContainAnyValues', () => {
     expect(() => expect(data).toContainAnyValues(['fax', 'rom'])).toThrowErrorMatchingSnapshot();
     expect(() => expect(data).toContainAnyValues(['dae', 'mur', 'zoe'])).toThrowErrorMatchingSnapshot();
   });
+
+  test('fails when actual is not an object', () => {
+    expect(() => expect(null).toContainAnyValues(['foo'])).toThrowErrorMatchingSnapshot();
+    expect(() => expect(42).toContainAnyValues(['foo'])).toThrowErrorMatchingSnapshot();
+  });
 });
 
 describe('.not.toContainAnyValues', () => {
@@ -28,5 +33,10 @@ describe('.not.toContainAnyValues', () => {
   test('fails when given object contains value', () => {
     expect(() => expect(data).not.toContainAnyValues(['baz'])).toThrowErrorMatchingSnapshot();
     expect(() => expect(data).not.toContainAnyValues(['foo', 'bar'])).toThrowErrorMatchingSnapshot();
+  });
+
+  test('passes when actual is not an object', () => {
+    expect(() => expect(null).not.toContainAnyValues(['foo']));
+    expect(() => expect(42).not.toContainAnyValues(['foo']));
   });
 });
