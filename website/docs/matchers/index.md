@@ -44,6 +44,9 @@ sidebar_position: 1
 ## [Function](/docs/matchers/function)
 
 - [.toBeFunction()](/docs/matchers/function/#tobefunction)
+- [.toChange()](/docs/matchers/function/#tochange)
+- [.toChangeBy()](/docs/matchers/function/#tochangeby)
+- [.toChangeTo()](/docs/matchers/function/#tochangeto)
 - [.toThrowWithMessage()](/docs/matchers/function/#tothrowwithmessagetype-message)
 
 ## [Mock](/docs/matchers/mock)

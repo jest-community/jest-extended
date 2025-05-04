@@ -668,6 +668,27 @@ declare namespace jest {
     toBeObject(): R;
 
     /**
+     * Use `.toChange` when checking if a value has changed.
+     * @example
+     * expect(() => value--).toChange(() => value);
+     */
+    toChange<E = unknown>(checker: () => E): R;
+
+    /**
+     * Use `.toChangeTo` when checking if a value changed to a specific value.
+     * @example
+     * expect(() => Model.deleteAll()).toChangeTo(() => Model.count(), 0);
+     */
+    toChangeTo<E = unknown>(checker: () => E, to: E): R;
+
+    /**
+     * Use `.toChangeBy` when checking if a value changed by an amount.
+     * @example
+     * expect(() => value--).toChangeBy(() => value, -1);
+     */
+    toChangeBy(checker: () => number, by?: number): R;
+
+    /**
      * Use `.toContainKey` when checking if an object contains the provided key.
      *
      * @param {String} key
