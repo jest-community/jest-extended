@@ -1,7 +1,7 @@
 import { contains } from 'src/utils';
 
 export function toContainAnyValues<E = unknown>(actual: unknown, expected: readonly E[]) {
-  // @ts-expect-error OK to have implicit any for this
+  // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   let pass = false;
@@ -9,7 +9,7 @@ export function toContainAnyValues<E = unknown>(actual: unknown, expected: reado
     const objectValues = Object.keys(actual as Record<string, unknown>).map(
       k => (actual as Record<string, unknown>)[k],
     );
-    // @ts-expect-error OK to have implicit any for this
+    // @ts-expect-error OK to have implicit any for this.equals
     pass = expected.some(value => contains(this.equals, objectValues, value));
   }
 

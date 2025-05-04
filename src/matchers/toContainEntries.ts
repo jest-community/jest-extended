@@ -1,7 +1,7 @@
 import { containsEntry } from 'src/utils';
 
 export function toContainEntries<E = unknown>(actual: unknown, expected: readonly (readonly [keyof E, E[keyof E]])[]) {
-  // @ts-expect-error OK to have implicit any for this
+  // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   // @ts-expect-error containsEntry takes an any type

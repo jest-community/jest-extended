@@ -17,7 +17,7 @@ const getDiff = (received: string, expected: string) => {
 };
 
 export function toEqualIgnoringWhitespace(actual: unknown, expected: string) {
-  // @ts-expect-error OK to have implicit any for this
+  // @ts-expect-error OK to have implicit any for this.utils
   const { matcherHint, EXPECTED_COLOR } = this.utils;
 
   /* determine whether strings are equal after removing white-space */
@@ -38,9 +38,9 @@ export function toEqualIgnoringWhitespace(actual: unknown, expected: string) {
             matcherHint('.toEqualIgnoringWhitespace') +
             '\n\n' +
             'Expected values to be equal while ignoring white-space (using ===):\n' +
-            // @ts-expect-error OK to have implicit any for this
+            // @ts-expect-error OK to have implicit any for this.utils
             `Expected:\n  ${printExpected(this.utils, diff)}\n\n` +
-            // @ts-expect-error OK to have implicit any for this
+            // @ts-expect-error OK to have implicit any for this.utils
             `Received:\n  ${printReceived(this.utils, diff)}`
           );
         },

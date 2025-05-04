@@ -1,10 +1,10 @@
 import { contains } from 'src/utils';
 
 export function toBeOneOf<E = unknown>(actual: unknown, expected: readonly E[]) {
-  // @ts-expect-error OK to have implicit any for this
+  // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  // @ts-expect-error OK to have implicit any for this
+  // @ts-expect-error OK to have implicit any for this.equals
   const pass = contains(this.equals, expected, actual);
 
   return {

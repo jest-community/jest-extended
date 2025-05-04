@@ -1,5 +1,5 @@
 export function toBeInRange(actual: unknown[], min: number, max: number) {
-  // @ts-expect-error OK to have implicit any for this
+  // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const element = actual.find((option: any) => option < min || option >= max);

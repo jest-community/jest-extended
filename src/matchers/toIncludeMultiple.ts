@@ -1,5 +1,5 @@
 export function toIncludeMultiple(actual: unknown, expected: readonly string[]) {
-  // @ts-expect-error OK to have implicit any for this
+  // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const pass = typeof actual === 'string' && expected.every(value => actual.includes(value));

@@ -5,16 +5,16 @@ export function toHaveBeenCalledBefore(
   expected: jest.MockInstance<any, any[]>,
   failIfNoSecondInvocation: boolean = true,
 ) {
-  // @ts-expect-error OK to have implicit any for this
+  // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   if (!isJestMockOrSpy(actual)) {
-    // @ts-expect-error OK to have implicit any for this
+    // @ts-expect-error OK to have implicit any for this.utils
     return { pass: false, message: mockCheckFailMessage(this.utils, actual, true) };
   }
 
   if (!isJestMockOrSpy(expected)) {
-    // @ts-expect-error OK to have implicit any for this
+    // @ts-expect-error OK to have implicit any for this.utils
     return { pass: false, message: mockCheckFailMessage(this.utils, expected, false) };
   }
 
