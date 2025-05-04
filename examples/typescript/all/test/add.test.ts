@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-unresolved
 import { add } from '../src/add';
 
 describe('add', () => {
@@ -24,5 +23,15 @@ describe('add', () => {
 
   test('adding two odd numbers gives an even number', () => {
     expect(add(1, 3)).toBeEven();
+  });
+
+  test('array equal another array regardless of the order', () => {
+    expect([1, 3]).toIncludeSameMembers([3, 1]);
+  });
+
+  test('array property equal another array regardless of the order', () => {
+    expect({ array: [1, 3] }).toEqual({
+      array: expect.toIncludeSameMembers([3, 1]),
+    });
   });
 });

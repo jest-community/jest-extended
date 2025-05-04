@@ -1,0 +1,63 @@
+import { TestFile } from '../../src/components/CustomSandpack';
+
+# Mock
+
+### .toHaveBeenCalledBefore()
+
+Use `.toHaveBeenCalledBefore` when checking if a `Mock` was called before another `Mock`.
+
+<TestFile name="toHaveBeenCalledBefore">
+  {`test('calls mock1 before mock2', () => {
+  const mock1 = jest.fn();
+  const mock2 = jest.fn();\n
+  mock1();
+  mock2();
+  mock1();\n
+  expect(mock1).toHaveBeenCalledBefore(mock2);
+});`}
+
+</TestFile>
+
+### .toHaveBeenCalledAfter()
+
+Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another `Mock`.
+
+<TestFile name="toHaveBeenCalledAfter">
+  {`test('calls mock1 after mock2', () => {
+  const mock1 = jest.fn();
+  const mock2 = jest.fn();\n
+  mock2();
+  mock1();
+  mock2();\n
+  expect(mock1).toHaveBeenCalledAfter(mock2);
+});`}
+
+</TestFile>
+
+### .toHaveBeenCalledOnce()
+
+Use `.toHaveBeenCalledOnce` to check if a `Mock` was called exactly one time.
+
+<TestFile name="toHaveBeenCalledOnce">
+  {`test('passes only if mock was called exactly once', () => {
+  const mock = jest.fn();\n
+  expect(mock).not.toHaveBeenCalled();
+  mock();
+  expect(mock).toHaveBeenCalledOnce();
+});`}
+
+</TestFile>
+
+### .toHaveBeenCalledExactlyOnceWith()
+
+Use `.toHaveBeenCalledExactlyOnceWith` to check if a `Mock` was called exactly one time and with the expected values.
+
+<TestFile name="toHaveBeenCalledExactlyOnceWith">
+  {`test('passes only if mock was called exactly once with the expected value', () => {
+  const mock = jest.fn();\n
+  expect(mock).not.toHaveBeenCalled();
+  mock('hello');
+  expect(mock).toHaveBeenCalledExactlyOnceWith('hello');
+});`}
+
+</TestFile>

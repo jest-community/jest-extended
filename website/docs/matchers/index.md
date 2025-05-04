@@ -6,10 +6,10 @@ sidebar_position: 1
 
 - [.pass(message)](/docs/matchers/pass)
 - [.fail(message)](/docs/matchers/fail)
-- [.toBeEmpty()](/docs/matchers/tobeempty)
-- [.toBeOneOf([members])](/docs/matchers/tobeoneof)
-- [.toBeNil()](/docs/matchers/tobenil)
-- [.toSatisfy(predicate)](/docs/matchers/tosatisfy)
+- [.toBeEmpty()](/docs/matchers/toBeEmpty)
+- [.toBeOneOf([members])](/docs/matchers/toBeOneOf)
+- [.toBeNil()](/docs/matchers/toBeNil)
+- [.toSatisfy(predicate)](/docs/matchers/toSatisfy)
 
 ## [Array](/docs/matchers/array)
 
@@ -17,11 +17,13 @@ sidebar_position: 1
 - [.toBeArrayOfSize()](/docs/matchers/array/#tobearrayofsize)
 - [.toIncludeAllMembers([members])](/docs/matchers/array/#toincludeallmembersmembers)
 - [.toIncludeAllPartialMembers([members])](/docs/matchers/array/#toincludeallpartialmembersmembers)
+- [.toIncludeSamePartialMembers([members])](/docs/matchers/array/#toincludesamepartialmembers)
 - [.toIncludeAnyMembers([members])](/docs/matchers/array/#toincludeanymembersmembers)
 - [.toIncludeSameMembers([members])](/docs/matchers/array/#toincludesamemembersmembers)
 - [.toPartiallyContain(member)](/docs/matchers/array/#topartiallycontainmember)
 - [.toSatisfyAll(predicate)](/docs/matchers/array/#tosatisfyallpredicate)
 - [.toSatisfyAny(predicate)](/docs/matchers/array/#tosatisfyanypredicate)
+- [.toBeInRange(min, max)](/docs/matchers/array/#tobeinrangemin-max)
 
 ## [Boolean](/docs/matchers/boolean)
 
@@ -52,7 +54,7 @@ sidebar_position: 1
 - [.toHaveBeenCalledBefore()](/docs/matchers/mock/#tohavebeencalledbefore)
 - [.toHaveBeenCalledAfter()](/docs/matchers/mock/#tohavebeencalledafter)
 - [.toHaveBeenCalledOnce()](/docs/matchers/mock/#tohavebeencalledonce)
-- [.toHaveBeenCalledOnceWith()](/docs/matchers/mock/#tohavebeencalledoncewith)
+- [.toHaveBeenCalledExactlyOnceWith()](/docs/matchers/mock/#tohavebeencalledexactlyoncewith)
 
 ## [Number](/docs/matchers/number)
 
@@ -94,7 +96,7 @@ sidebar_position: 1
 ## [String](/docs/matchers/string)
 
 - [.toBeString()](/docs/matchers/string/#tobestring)
-- [.toBeHexadecimal(string)](/docs/matchers/string/#tobehexadecimal)
+- [.toBeHexadecimal(string)](/docs/matchers/string/#tobehexadecimalstring)
 - [.toBeDateString(string)](/docs/matchers/string/#tobedatestringstring)
 - [.toEqualCaseInsensitive(string)](/docs/matchers/string/#toequalcaseinsensitivestring)
 - [.toStartWith(prefix)](/docs/matchers/string/#tostartwithprefix)

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.toPartiallyContain .not.toPartiallyContain fails when an array contains all of the properties of a given object 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toPartiallyContain(</intensity><green>expected</color><dim>)</intensity>
+
+Expected array not to partially contain:
+  <green>{"baz": "qux", "foo": "bar"}</color>
+Received:
+  <red>[{"bax": "zax", "baz": "qux", "foo": "bar"}]</color>"
+`;
+
+exports[`.toPartiallyContain fails when an array does not contain any of the properties of a given object 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toPartiallyContain(</intensity><green>expected</color><dim>)</intensity>
+
+Expected array to partially contain:
+  <green>{"baz": "qux", "foo": "bar"}</color>
+Received:
+  <red>[{"a": 1, "b": 2}]</color>"
+`;

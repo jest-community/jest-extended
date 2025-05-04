@@ -1,0 +1,27 @@
+import { containsEntry } from 'src/utils';
+
+export function toContainEntries<E = unknown>(actual: unknown, expected: readonly (readonly [keyof E, E[keyof E]])[]) {
+  // @ts-expect-error OK to have implicit any for this
+  const { printReceived, printExpected, matcherHint } = this.utils;
+
+  // @ts-expect-error containsEntry takes an any type
+  const pass = expected.every(entry => containsEntry(this.equals, actual, entry));
+
+  return {
+    pass,
+    message: () =>
+      pass
+        ? matcherHint('.not.toContainEntries') +
+          '\n\n' +
+          'Expected object to not contain all of the given entries:\n' +
+          `  ${printExpected(expected)}\n` +
+          'Received:\n' +
+          `  ${printReceived(actual)}`
+        : matcherHint('.toContainEntries') +
+          '\n\n' +
+          'Expected object to contain all of the given entries:\n' +
+          `  ${printExpected(expected)}\n` +
+          'Received:\n' +
+          `  ${printReceived(actual)}`,
+  };
+}

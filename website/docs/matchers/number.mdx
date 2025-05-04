@@ -1,0 +1,111 @@
+import { TestFile } from '../../src/components/CustomSandpack';
+
+### toBeNumber
+
+Use `.toBeNumber` when checking if a value is a `Number`.
+
+<TestFile name="toBeNumber">
+  {`test('passes when value is a number', () => {
+  expect(1).toBeNumber();
+  expect(NaN).toBeNumber();
+  expect(Infinity).toBeNumber();
+  expect(true).not.toBeNumber();
+});`}
+</TestFile>
+
+### .toBeNaN()
+
+Use `.toBeNaN` when checking a value is `NaN`.
+
+<TestFile name="toBeNaN">
+  {`test('passes when value is NaN', () => {
+  expect(NaN).toBeNaN();
+  expect(1).not.toBeNaN();
+});`}
+</TestFile>
+
+### .toBeFinite()
+
+Use `.toBeFinite` when checking if a value is a `Number`, not `NaN` or `Infinity`.
+
+<TestFile name="toBeFinite">
+  {`test('passes when value is a finite number', () => {
+  expect(1).toBeFinite();
+  expect(Infinity).not.toBeFinite();
+  expect(NaN).not.toBeFinite();
+});`}
+</TestFile>
+
+### .toBePositive()
+
+Use `.toBePositive` when checking if a value is a positive `Number`.
+
+<TestFile name="toBePositive">
+  {`test('passes when value is a positive number', () => {
+  expect(1).toBePositive();
+  expect(Infinity).not.toBePositive();
+  expect(-1).not.toBePositive();
+  expect(NaN).not.toBePositive();
+});`}
+</TestFile>
+
+### .toBeNegative()
+
+Use `.toBeNegative` when checking if a value is a negative `Number`.
+
+<TestFile name="toBeNegative">
+  {`test('passes when value is a negative number', () => {
+  expect(-1).toBeNegative();
+  expect(-Infinity).not.toBeNegative();
+  expect(1).not.toBeNegative();
+  expect(NaN).not.toBeNegative();
+});`}
+</TestFile>
+
+### .toBeEven()
+
+Use `.toBeEven` when checking if a value is an even `Number`.
+
+<TestFile name="toBeEven">
+  {`test('passes when value is an even number', () => {
+  expect(2).toBeEven();
+  expect(1).not.toBeEven();
+  expect(NaN).not.toBeEven();
+});`}
+</TestFile>
+
+### .toBeOdd()
+
+Use `.toBeOdd` when checking if a value is an odd `Number`.
+
+<TestFile name="toBeOdd">
+  {`test('passes when value is an odd number', () => {
+  expect(1).toBeOdd();
+  expect(2).not.toBeOdd();
+  expect(NaN).not.toBeOdd();
+});`}
+</TestFile>
+
+### .toBeWithin(start, end)
+
+Use `.toBeWithin` when checking if a number is in between the given bounds of: start (inclusive) and end (exclusive).
+
+<TestFile name="toBeWithin">
+  {`test('passes when number is within given bounds', () => {
+  expect(1).toBeWithin(1, 3);
+  expect(2).toBeWithin(1, 3);
+  expect(3).not.toBeWithin(1, 3);
+});`}
+</TestFile>
+
+### .toBeInteger()
+
+Use `.toBeInteger` when checking if a number is an integer.
+
+<TestFile name="toBeInteger">
+  {`test('passes when value is an integer', () => {
+  expect(1).toBeInteger();
+  expect(1.0).toBeInteger();
+  expect(1.1).not.toBeInteger();
+});`}
+</TestFile>
