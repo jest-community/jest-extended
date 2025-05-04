@@ -1,20 +1,22 @@
 export class Counter {
+  private value: number;
+
   constructor() {
     this.increment = this.increment.bind(this);
     this.count = this.count.bind(this);
     this.reset = this.reset.bind(this);
+    this.value = 0;
   }
 
   increment() {
-    this._val = this._val || 0;
-    this._val++;
+    this.value++;
   }
 
   count() {
-    return this._val || 0;
+    return this.value;
   }
 
   reset() {
-    this._val = 0;
+    this.value = 0;
   }
 }

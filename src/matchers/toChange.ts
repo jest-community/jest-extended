@@ -3,7 +3,8 @@
  * @example
  * expect(() => value--).toChange(() => value);
  */
-export function toChange(mutator, checker) {
+export function toChange(mutator: () => any | void, checker: () => number) {
+  // @ts-expect-error OK to have implicit any for this
   const { printReceived: print, matcherHint: hint } = this.utils;
 
   const before = checker();
