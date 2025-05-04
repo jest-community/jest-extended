@@ -1,10 +1,10 @@
 import { containsEntry } from '../utils';
 
 export function toIncludeSamePartialMembers<E = unknown>(actual: unknown, expected: E) {
-  // @ts-expect-error OK to have implicit any for this
+  // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  // @ts-expect-error OK to have implicit any for this
+  // @ts-expect-error OK to have implicit any for this.equals
   const pass = predicate(this.equals, actual, expected);
 
   return {

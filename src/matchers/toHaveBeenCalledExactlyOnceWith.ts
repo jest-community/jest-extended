@@ -1,7 +1,7 @@
 import { isJestMockOrSpy } from 'src/utils';
 
 export function toHaveBeenCalledExactlyOnceWith(received: unknown, ...expected: unknown[]) {
-  // @ts-expect-error OK to have implicit any for this
+  // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, printWithType, matcherHint } = this.utils;
 
   if (!isJestMockOrSpy(received)) {
@@ -20,7 +20,7 @@ export function toHaveBeenCalledExactlyOnceWith(received: unknown, ...expected: 
   const actual = received.mock.calls[0];
   // @ts-expect-error isJestMockOrSpy provides the type check
   const invokedOnce = received.mock.calls.length === 1;
-  // @ts-expect-error OK to have implicit any for this
+  // @ts-expect-error OK to have implicit any for this.equals
   const pass = invokedOnce && this.equals(expected, actual);
 
   return {

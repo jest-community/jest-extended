@@ -1,13 +1,13 @@
 import { contains } from 'src/utils';
 
 export function toContainAllKeys<E = unknown>(actual: unknown, expected: readonly (keyof E | string)[]) {
-  // @ts-expect-error OK to have implicit any for this
+  // @ts-expect-error OK to have implicit any for this.utils
   const { printExpected, printReceived, matcherHint } = this.utils;
 
   let pass = false;
   if (typeof actual === 'object' && actual !== null && !Array.isArray(actual)) {
     const objectKeys = Object.keys(actual as Record<string, unknown>);
-    // @ts-expect-error OK to have implicit any for this
+    // @ts-expect-error OK to have implicit any for this.equals
     pass = objectKeys.length === expected.length && expected.every(key => contains(this.equals, objectKeys, key));
   }
 

@@ -1,5 +1,5 @@
 export function toBeExtensible(actual: unknown) {
-  // @ts-expect-error OK to have implicit any for this
+  // @ts-expect-error OK to have implicit any for this.utils
   const { matcherHint, printExpected, printReceived } = this.utils;
 
   const pass = Object.isExtensible(actual);

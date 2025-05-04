@@ -4,7 +4,7 @@ export function toContainAnyEntries<E = unknown>(
   actual: unknown,
   expected: readonly (readonly [keyof E, E[keyof E]])[],
 ) {
-  // @ts-expect-error OK to have implicit any for this
+  // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   let pass = false;
@@ -13,7 +13,7 @@ export function toContainAnyEntries<E = unknown>(
       k,
       (actual as Record<string, unknown>)[k],
     ]);
-    // @ts-expect-error OK to have implicit any for this
+    // @ts-expect-error OK to have implicit any for this.equals
     pass = expected.some(entry => contains(this.equals, entries, entry));
   }
 

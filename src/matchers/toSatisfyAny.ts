@@ -1,5 +1,5 @@
 export function toSatisfyAny(actual: unknown, expected: (x: unknown) => boolean) {
-  // @ts-expect-error OK to have implicit any for this
+  // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   let pass = false;
