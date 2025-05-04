@@ -3,8 +3,8 @@
  * @example
  * expect(() => Model.deleteAll()).toChangeTo(() => Model.count(), 0);
  */
-export function toChangeTo(mutator: () => any | void, checker: () => number, to: number) {
-  // @ts-expect-error OK to have implicit any for this
+export function toChangeTo(mutator: () => unknown | void, checker: () => number, to: number) {
+  // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived: print, matcherHint: hint } = this.utils;
 
   const before = checker();
