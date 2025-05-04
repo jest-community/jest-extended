@@ -27,6 +27,9 @@ describe('.toIncludeSamePartialMembers', () => {
     expect(() =>
       expect([{ hello: 'world' }, { foo: 'bar', baz: 'qux' }]).toIncludeSamePartialMembers([{ hello: 'world' }]),
     ).toThrowErrorMatchingSnapshot();
+    expect(() =>
+      expect([{ a: 1 }, { b: 2 }, { c: 3 }]).toIncludeSamePartialMembers([{ a: 1 }, { d: 4 }, { b: 2 }]),
+    ).toThrowErrorMatchingSnapshot();
   });
 
   test('fails when given object is not an array', () => {
@@ -48,6 +51,7 @@ describe('.not.toIncludeSamePartialMembers', () => {
 
   test('passes when array values contain only some of members of the set', () => {
     expect([{ hello: 'world' }, { foo: 'bar', baz: 'qux' }]).not.toIncludeSamePartialMembers([{ hello: 'world' }]);
+    expect([{ a: 1 }, { b: 2 }, { c: 3 }]).not.toIncludeSamePartialMembers([{ a: 1 }, { d: 4 }, { b: 2 }]);
   });
 
   test('passes when given object is not an array', () => {

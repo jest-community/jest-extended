@@ -18,6 +18,15 @@ Received:
   <red>[{"hello": "world"}, {"baz": "qux", "foo": "bar"}]</color>"
 `;
 
+exports[`.toIncludeSamePartialMembers fails when array values contain only some members of the set 2`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeSamePartialMembers(</intensity><green>expected</color><dim>)</intensity>
+
+Expected list to have the following partial members and no more:
+  <green>[{"a": 1}, {"d": 4}, {"b": 2}]</color>
+Received:
+  <red>[{"a": 1}, {"b": 2}, {"c": 3}]</color>"
+`;
+
 exports[`.toIncludeSamePartialMembers fails when array values do not contain any of the members of the set 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toIncludeSamePartialMembers(</intensity><green>expected</color><dim>)</intensity>
 
