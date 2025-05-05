@@ -53,3 +53,12 @@ Expected list to have the following partial members and no more:
 Received:
   <red>1</color>"
 `;
+
+exports[`toIncludeSamePartialMembers with custom equality tester fails when custom equality does not match one of the values 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeSamePartialMembers(</intensity><green>expected</color><dim>)</intensity>
+
+Expected list to have the following partial members and no more:
+  <green>[{"hello": "world"}, {"foo": "bar"}]</color>
+Received:
+  <red>[{"hello": "world"}, {"baz": "qux", "foo": "bar"}]</color>"
+`;

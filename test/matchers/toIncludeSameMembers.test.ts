@@ -54,7 +54,7 @@ describe('.not.toIncludeSameMembers', () => {
 
 // Note - custom equality tester must be at the end of the file because once we add it, it cannot be removed
 describe('toIncludeSameMembers with custom equality tester', () => {
-  let mockEqualityTester;
+  let mockEqualityTester: jest.Mock;
   beforeAll(() => {
     mockEqualityTester = jest.fn();
     expect.addEqualityTesters([mockEqualityTester]);
