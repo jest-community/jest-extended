@@ -84,7 +84,7 @@ describe('.not.toContainAllValues', () => {
 });
 
 // Note - custom equality tester must be at the end of the file because once we add it, it cannot be removed
-describe('toContainAllValues with custom equality tester', () => {
+(expect.addEqualityTesters ? describe : describe.skip)('toContainAllValues with custom equality tester', () => {
   let mockEqualityTester: jest.Mock;
   beforeAll(() => {
     mockEqualityTester = jest.fn();

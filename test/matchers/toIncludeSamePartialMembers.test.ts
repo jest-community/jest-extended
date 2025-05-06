@@ -69,29 +69,32 @@ describe('.not.toIncludeSamePartialMembers', () => {
 });
 
 // Note - custom equality tester must be at the end of the file because once we add it, it cannot be removed
-describe('toIncludeSamePartialMembers with custom equality tester', () => {
-  let mockEqualityTester: jest.Mock;
-  beforeAll(() => {
-    mockEqualityTester = jest.fn();
-    expect.addEqualityTesters([mockEqualityTester]);
-  });
-  afterEach(() => {
-    mockEqualityTester.mockReset();
-  });
-  test('passes when custom equality matches the value', () => {
-    mockEqualityTester.mockImplementation((a, b) => (a === 'world' && b === 'duck' ? true : undefined));
-    expect([{ hello: 'world' }, { foo: 'bar', baz: 'qux' }]).toIncludeSamePartialMembers([
-      { hello: 'duck' },
-      { foo: 'bar' },
-    ]);
-  });
-  test('fails when custom equality does not match one of the values', () => {
-    mockEqualityTester.mockImplementation((a, b) => (a === 'world' && b === 'world' ? false : undefined));
-    expect(() =>
+(expect.addEqualityTesters ? describe : describe.skip)(
+  'toIncludeSamePartialMembers with custom equality tester',
+  () => {
+    let mockEqualityTester: jest.Mock;
+    beforeAll(() => {
+      mockEqualityTester = jest.fn();
+      expect.addEqualityTesters([mockEqualityTester]);
+    });
+    afterEach(() => {
+      mockEqualityTester.mockReset();
+    });
+    test('passes when custom equality matches the value', () => {
+      mockEqualityTester.mockImplementation((a, b) => (a === 'world' && b === 'duck' ? true : undefined));
       expect([{ hello: 'world' }, { foo: 'bar', baz: 'qux' }]).toIncludeSamePartialMembers([
-        { hello: 'world' },
+        { hello: 'duck' },
         { foo: 'bar' },
-      ]),
-    ).toThrowErrorMatchingSnapshot();
-  });
-});
+      ]);
+    });
+    test('fails when custom equality does not match one of the values', () => {
+      mockEqualityTester.mockImplementation((a, b) => (a === 'world' && b === 'world' ? false : undefined));
+      expect(() =>
+        expect([{ hello: 'world' }, { foo: 'bar', baz: 'qux' }]).toIncludeSamePartialMembers([
+          { hello: 'world' },
+          { foo: 'bar' },
+        ]),
+      ).toThrowErrorMatchingSnapshot();
+    });
+  },
+);

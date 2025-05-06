@@ -82,31 +82,34 @@ describe('.not.toHaveBeenCalledExactlyOnceWith', () => {
 });
 
 // Note - custom equality tester must be at the end of the file because once we add it, it cannot be removed
-describe('toHaveBeenCalledExactlyOnceWith with custom equality tester', () => {
-  let mockEqualityTester: jest.Mock;
-  let mock: jest.Mock | ((arg0: string | string[], arg1?: string | undefined) => void);
+(expect.addEqualityTesters ? describe : describe.skip)(
+  'toHaveBeenCalledExactlyOnceWith with custom equality tester',
+  () => {
+    let mockEqualityTester: jest.Mock;
+    let mock: jest.Mock | ((arg0: string | string[], arg1?: string | undefined) => void);
 
-  beforeAll(() => {
-    mockEqualityTester = jest.fn();
-    expect.addEqualityTesters([mockEqualityTester]);
-  });
+    beforeAll(() => {
+      mockEqualityTester = jest.fn();
+      expect.addEqualityTesters([mockEqualityTester]);
+    });
 
-  beforeEach(() => {
-    mock = jest.fn();
-  });
+    beforeEach(() => {
+      mock = jest.fn();
+    });
 
-  afterEach(() => {
-    mockEqualityTester.mockReset();
-  });
+    afterEach(() => {
+      mockEqualityTester.mockReset();
+    });
 
-  test('passes when custom equality matches the argument', () => {
-    mockEqualityTester.mockImplementation((a, b) => (a === 'x' && b === 'a' ? true : undefined));
-    mock('a');
-    expect(mock).toHaveBeenCalledExactlyOnceWith('x');
-  });
-  test('fails when custom equality does not match the argument', () => {
-    mockEqualityTester.mockImplementation((a, b) => (a === 'a' && b === 'a' ? false : undefined));
-    mock('a');
-    expect(() => expect(mock).toHaveBeenCalledExactlyOnceWith('a')).toThrowErrorMatchingSnapshot();
-  });
-});
+    test('passes when custom equality matches the argument', () => {
+      mockEqualityTester.mockImplementation((a, b) => (a === 'x' && b === 'a' ? true : undefined));
+      mock('a');
+      expect(mock).toHaveBeenCalledExactlyOnceWith('x');
+    });
+    test('fails when custom equality does not match the argument', () => {
+      mockEqualityTester.mockImplementation((a, b) => (a === 'a' && b === 'a' ? false : undefined));
+      mock('a');
+      expect(() => expect(mock).toHaveBeenCalledExactlyOnceWith('a')).toThrowErrorMatchingSnapshot();
+    });
+  },
+);
