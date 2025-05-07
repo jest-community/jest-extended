@@ -8,7 +8,7 @@ export function toContainValue<E = unknown>(actual: unknown, expected: E) {
   if (typeof actual === 'object' && actual !== null && !Array.isArray(actual)) {
     const values = Object.keys(actual as Record<string, unknown>).map(k => (actual as Record<string, unknown>)[k]);
     // @ts-expect-error OK to have implicit any for this.equals
-    pass = contains(this.equals, values, expected);
+    pass = contains((a, b) => this.equals(a, b, this.customTesters), values, expected);
   }
 
   return {

@@ -17,3 +17,12 @@ Expected value to be in list:
 Received:
   <red>4</color>"
 `;
+
+exports[`toBeOneOf with custom equality tester fails when custom equality does not match any array element 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeOneOf(</intensity><green>expected</color><dim>)</intensity>
+
+Expected value to be in list:
+  <green>[1, 2, 3]</color>
+Received:
+  <red>1</color>"
+`;

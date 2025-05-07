@@ -7,8 +7,10 @@ export function toContainAllKeys<E = unknown>(actual: unknown, expected: readonl
   let pass = false;
   if (typeof actual === 'object' && actual !== null && !Array.isArray(actual)) {
     const objectKeys = Object.keys(actual as Record<string, unknown>);
-    // @ts-expect-error OK to have implicit any for this.equals
-    pass = objectKeys.length === expected.length && expected.every(key => contains(this.equals, objectKeys, key));
+    pass =
+      objectKeys.length === expected.length &&
+      // @ts-expect-error OK to have implicit any for this.equals
+      expected.every(key => contains((a, b) => this.equals(a, b, this.customTesters), objectKeys, key));
   }
 
   return {

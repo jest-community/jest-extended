@@ -40,3 +40,23 @@ describe('.not.toContainAnyValues', () => {
     expect(() => expect(42).not.toContainAnyValues(['foo']));
   });
 });
+
+// Note - custom equality tester must be at the end of the file because once we add it, it cannot be removed
+(expect.addEqualityTesters ? describe : describe.skip)('toContainAnyValues with custom equality tester', () => {
+  let mockEqualityTester: jest.Mock;
+  beforeAll(() => {
+    mockEqualityTester = jest.fn();
+    expect.addEqualityTesters([mockEqualityTester]);
+  });
+  afterEach(() => {
+    mockEqualityTester.mockReset();
+  });
+  test('passes when custom equality matches one of the values', () => {
+    mockEqualityTester.mockImplementation((a, b) => (a === 'bar' && b === 'bla' ? true : undefined));
+    expect(data).toContainAnyValues(['bla']);
+  });
+  test('fails when custom equality does not match any of the values', () => {
+    mockEqualityTester.mockReturnValue(false);
+    expect(() => expect(data).toContainAnyValues(['bar'])).toThrowErrorMatchingSnapshot();
+  });
+});

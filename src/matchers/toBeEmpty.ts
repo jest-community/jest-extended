@@ -3,7 +3,7 @@ export function toBeEmpty(actual: unknown) {
   const { printReceived, matcherHint } = this.utils;
 
   // @ts-expect-error OK to have implicit any for this.equals
-  const pass = this.equals({}, actual) || isEmptyIterable(actual);
+  const pass = this.equals({}, actual, this.customTesters) || isEmptyIterable(actual);
 
   return {
     pass,

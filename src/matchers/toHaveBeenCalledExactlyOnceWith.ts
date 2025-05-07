@@ -21,7 +21,7 @@ export function toHaveBeenCalledExactlyOnceWith(received: unknown, ...expected: 
   // @ts-expect-error isJestMockOrSpy provides the type check
   const invokedOnce = received.mock.calls.length === 1;
   // @ts-expect-error OK to have implicit any for this.equals
-  const pass = invokedOnce && this.equals(expected, actual);
+  const pass = invokedOnce && this.equals(expected, actual, this.customTesters);
 
   return {
     pass,

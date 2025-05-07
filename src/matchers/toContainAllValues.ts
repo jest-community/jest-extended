@@ -8,8 +8,9 @@ export function toContainAllValues<E = unknown>(actual: unknown, expected: reado
   if (typeof actual === 'object' && actual !== null && !Array.isArray(actual)) {
     const values = Object.keys(actual as Record<string, unknown>).map(k => (actual as Record<string, unknown>)[k]);
     pass =
+      values.length === expected.length &&
       // @ts-expect-error OK to have implicit any for this.equals
-      values.length === expected.length && values.every(objectValue => contains(this.equals, expected, objectValue));
+      values.every(objectValue => contains((a, b) => this.equals(a, b, this.customTesters), expected, objectValue));
   }
 
   return {

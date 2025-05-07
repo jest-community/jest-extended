@@ -14,7 +14,7 @@ export function toContainAnyEntries<E = unknown>(
       (actual as Record<string, unknown>)[k],
     ]);
     // @ts-expect-error OK to have implicit any for this.equals
-    pass = expected.some(entry => contains(this.equals, entries, entry));
+    pass = expected.some(entry => contains((a, b) => this.equals(a, b, this.customTesters), entries, entry));
   }
 
   return {

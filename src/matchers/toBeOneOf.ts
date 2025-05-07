@@ -5,7 +5,7 @@ export function toBeOneOf<E = unknown>(actual: unknown, expected: readonly E[]) 
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   // @ts-expect-error OK to have implicit any for this.equals
-  const pass = contains(this.equals, expected, actual);
+  const pass = contains((a, b) => this.equals(a, b, this.customTesters), expected, actual);
 
   return {
     pass,
