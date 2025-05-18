@@ -79,8 +79,7 @@
       "^.+\\.(ts|tsx)$": [
         "ts-jest",
         {
-          "tsconfig": "tsconfig.test.json",
-          "isolatedModules": true
+          "tsconfig": "tsconfig.test.json"
         }
       ]
     },
@@ -134,5 +133,6 @@
     "jest": {
       "optional": true
     }
-  }
+  },
+  "packageManager": "yarn@1.22.22"
 }
