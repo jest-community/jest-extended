@@ -1,5 +1,24 @@
 # jest-extended
 
+## 5.0.0
+
+### Major Changes
+
+- b86423c: Drop support for Node 16 and 18
+
+### Minor Changes
+
+- b86423c: Replace jest-get-type with native type checking
+- b86423c: Add Minor: Add toIncludeSamePartialMembers
+- b86423c: Add toChange, toChangeBy, and toChangeTo matchers
+- b86423c: Switch to TypeScript
+- b86423c: Support custom equality testers
+
+### Patch Changes
+
+- b86423c: Fix toBeInRange wording
+- b86423c: Dependency Updates
+
 ## 4.0.2
 
 ### Patch Changes
