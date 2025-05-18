@@ -381,3 +381,90 @@ describe('.toThrowWithMessage', () => {
     });
   });
 });
+
+describe('.not.toThrowWithMessage', () => {
+  test('passes when callback function is not provided', () => {
+    // @ts-expect-error this is intentional for the test
+    const { pass, message } = toThrowWithMessage.call({
+      utils: { matcherHint, printExpected, printReceived },
+      isNot: true,
+    });
+    expect(pass).toBe(false);
+    expect(message()).toMatchSnapshot();
+  });
+
+  test('passes when a different type of error is thrown', () => {
+    const callback = () => {
+      throw TypeError('Expected message');
+    };
+    expect(callback).not.toThrowWithMessage(SyntaxError, 'Expected message');
+  });
+
+  test('passes when error message does not match', () => {
+    const callback = () => {
+      throw TypeError('Different message');
+    };
+    expect(callback).not.toThrowWithMessage(TypeError, 'Expected message');
+  });
+
+  test('passes when error message does not match regex', () => {
+    const callback = () => {
+      throw TypeError('Different message');
+    };
+    expect(callback).not.toThrowWithMessage(TypeError, /Expected message/);
+  });
+
+  test('fails when error type and message both match', () => {
+    const callback = () => {
+      throw TypeError('Expected message');
+    };
+    expect(() => {
+      expect(callback).not.toThrowWithMessage(TypeError, 'Expected message');
+    }).toThrowErrorMatchingSnapshot();
+  });
+
+  test('fails when error type and regex message both match', () => {
+    const callback = () => {
+      throw TypeError('Expected message');
+    };
+    expect(() => {
+      expect(callback).not.toThrowWithMessage(TypeError, /Expected message/);
+    }).toThrowErrorMatchingSnapshot();
+  });
+
+  test('passes with unconstructable error when message does not match', () => {
+    const callback = () => {
+      throw new UnconstructableError(42);
+    };
+    expect(callback).not.toThrowWithMessage(UnconstructableError, '43');
+  });
+
+  describe('Async', () => {
+    test('passes on rejects when different error type is thrown', async () => {
+      await expect(Promise.reject(new TypeError('Expected message'))).rejects.not.toThrowWithMessage(
+        SyntaxError,
+        'Expected message',
+      );
+    });
+
+    test('passes on rejects when error message does not match', async () => {
+      await expect(Promise.reject(new TypeError('Different message'))).rejects.not.toThrowWithMessage(
+        TypeError,
+        'Expected message',
+      );
+    });
+
+    test('fails on rejects when error type and message both match', async () => {
+      await expect(
+        expect(Promise.reject(new TypeError('Expected message'))).rejects.not.toThrowWithMessage(
+          TypeError,
+          'Expected message',
+        ),
+      ).rejects.toThrowErrorMatchingSnapshot();
+    });
+
+    test('passes on resolved promise', async () => {
+      await expect(Promise.resolve()).resolves.not.toThrowWithMessage(TypeError, 'Expected message');
+    });
+  });
+});

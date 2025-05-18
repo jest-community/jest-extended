@@ -1,5 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`.not.toThrowWithMessage Async fails on rejects when error type and message both match 1`] = `
+"<dim>expect(</intensity><red>function</color><dim>).not.toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
+
+Expected not to throw:
+  <green>[TypeError: Expected message]</color>
+Thrown:
+  <red>[TypeError: Expected message]</color>
+"
+`;
+
+exports[`.not.toThrowWithMessage fails when error type and message both match 1`] = `
+"<dim>expect(</intensity><red>function</color><dim>).not.toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
+
+Expected not to throw:
+  <green>[TypeError: Expected message]</color>
+Thrown:
+  <red>[TypeError: Expected message]</color>
+"
+`;
+
+exports[`.not.toThrowWithMessage fails when error type and regex message both match 1`] = `
+"<dim>expect(</intensity><red>function</color><dim>).not.toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
+
+Expected not to throw:
+  <green>[TypeError: /Expected message/]</color>
+Thrown:
+  <red>[TypeError: Expected message]</color>
+"
+`;
+
+exports[`.not.toThrowWithMessage passes when callback function is not provided 1`] = `
+"<dim>expect(</intensity><red>function</color><dim>).toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
+
+Received value must be a function but instead "undefined" was found"
+`;
+
 exports[`.toThrowWithMessage Async fails on rejects when a wrong type of error is thrown 1`] = `
 "<dim>expect(</intensity><red>function</color><dim>).toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>
 
