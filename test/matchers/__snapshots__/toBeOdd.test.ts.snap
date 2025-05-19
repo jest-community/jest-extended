@@ -39,33 +39,47 @@ exports[`.toBeOdd fails when given not given an odd number 5`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toBeOdd()</intensity>
 
 Expected value to be odd received:
-  <red>{}</color>"
+  <red>2n</color>"
 `;
 
 exports[`.toBeOdd fails when given not given an odd number 6`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toBeOdd()</intensity>
 
 Expected value to be odd received:
-  <red>[Function anonymous]</color>"
+  <red>{}</color>"
 `;
 
 exports[`.toBeOdd fails when given not given an odd number 7`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toBeOdd()</intensity>
 
 Expected value to be odd received:
-  <red>undefined</color>"
+  <red>[Function anonymous]</color>"
 `;
 
 exports[`.toBeOdd fails when given not given an odd number 8`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toBeOdd()</intensity>
 
 Expected value to be odd received:
-  <red>null</color>"
+  <red>undefined</color>"
 `;
 
 exports[`.toBeOdd fails when given not given an odd number 9`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toBeOdd()</intensity>
 
 Expected value to be odd received:
+  <red>null</color>"
+`;
+
+exports[`.toBeOdd fails when given not given an odd number 10`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeOdd()</intensity>
+
+Expected value to be odd received:
   <red>NaN</color>"
+`;
+
+exports[`.toBeOdd fails when given not given an odd number 11`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeOdd()</intensity>
+
+Expected value to be odd received:
+  <red>Symbol(foo)</color>"
 `;

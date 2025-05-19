@@ -51,9 +51,29 @@ describe('.toChangeTo', () => {
       special = 'meatloaf';
     }).toChangeTo(() => special, 'meatloaf');
   });
+
+  test('passes when using BigInt values', () => {
+    let value = 0n;
+    expect(() => {
+      value = 42n;
+    }).toChangeTo(() => value, 42n);
+  });
+
+  test('fails when a BigInt value does not change to expected value', () => {
+    let value = 0n;
+    expect(() => {
+      value = 10n;
+      expect(() => value).toChangeTo(() => value, 42n);
+    }).toThrowErrorMatchingSnapshot();
+  });
+
+  test('fails when expecting a BigInt to change to its original value', () => {
+    const value = 42n;
+    expect(() => expect(() => {}).toChangeTo(() => value, 42n)).toThrowErrorMatchingSnapshot();
+  });
 });
 
-describe('.not.toChange', () => {
+describe('.not.toChangeTo', () => {
   test('passes when given a mutator that does not increment the value', () => {
     const value = 0;
     expect(() => value).not.toChangeTo(() => value, 1);
@@ -81,5 +101,21 @@ describe('.not.toChange', () => {
   test('fails when a value expected not to change defies all expectations and changes', () => {
     let value = 0;
     expect(() => expect(() => value++).not.toChangeTo(() => value, 1)).toThrowErrorMatchingSnapshot();
+  });
+
+  test('passes when a BigInt value changes to something other than the expected value', () => {
+    let value = 0n;
+    expect(() => {
+      value = 10n;
+    }).not.toChangeTo(() => value, 42n);
+  });
+
+  test('fails when a BigInt value changes to the expected value', () => {
+    let value = 0n;
+    expect(() =>
+      expect(() => {
+        value = 42n;
+      }).not.toChangeTo(() => value, 42n),
+    ).toThrowErrorMatchingSnapshot();
   });
 });
