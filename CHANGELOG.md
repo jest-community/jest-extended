@@ -1,5 +1,12 @@
 # jest-extended
 
+## 5.0.2
+
+### Patch Changes
+
+- 846fac2: toIncludeSameMembers should fail when passed non-arrays
+- 89c99c4: toBeWithin fails with bigints
+
 ## 5.0.1
 
 ### Patch Changes
