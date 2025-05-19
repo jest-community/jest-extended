@@ -2,8 +2,11 @@ export function toIncludeSameMembers<E = unknown>(actual: unknown, expected: rea
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  // @ts-expect-error OK to have implicit any for this.equals
-  const pass = predicate((a, b) => this.equals(a, b, this.customTesters), actual, expected);
+  const pass =
+    Array.isArray(actual) &&
+    Array.isArray(expected) &&
+    // @ts-expect-error OK to have implicit any for this.equals
+    predicate((a, b) => this.equals(a, b, this.customTesters), actual, expected);
 
   return {
     pass,
