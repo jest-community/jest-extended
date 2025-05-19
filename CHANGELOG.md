@@ -14,16 +14,16 @@
 
 ### Minor Changes
 
-- b86423c: Replace jest-get-type with native type checking
-- b86423c: Add Minor: Add toIncludeSamePartialMembers
-- b86423c: Add toChange, toChangeBy, and toChangeTo matchers
-- b86423c: Switch to TypeScript
-- b86423c: Support custom equality testers
+- 94935ea: Replace jest-get-type with native type checking
+- 2483bcc: Add Minor: Add toIncludeSamePartialMembers
+- deb17c6: Add toChange, toChangeBy, and toChangeTo matchers
+- b2c1bd4: Switch to TypeScript
+- 50e6a8a: Support custom equality testers
 
 ### Patch Changes
 
-- b86423c: Fix toBeInRange wording
-- b86423c: Dependency Updates
+- 3f47e14: Fix toBeInRange wording
+- Dependency Updates
 
 ## 4.0.2
 
