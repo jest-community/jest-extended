@@ -20,6 +20,15 @@ describe('.toIncludeSameMembers', () => {
   test('fails when the arrays are not equal in length', () => {
     expect(() => expect([1, 2]).toIncludeSameMembers([1])).toThrowErrorMatchingSnapshot();
   });
+
+  test('fails when expected is not an array', () => {
+    expect(() => expect(new Set([1, 2])).toIncludeSameMembers([1])).toThrowErrorMatchingSnapshot();
+  });
+
+  test('fails when actual is not an array', () => {
+    // @ts-expect-error this is intentional for the test
+    expect(() => expect([1, 2]).toIncludeSameMembers(new Set([1]))).toThrowErrorMatchingSnapshot();
+  });
 });
 
 describe('.not.toIncludeSameMembers', () => {
