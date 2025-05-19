@@ -23,6 +23,13 @@ describe('.toBeFinite', () => {
     expect(0).toBeFinite();
   });
 
+  test('passes when given a BigInt value', () => {
+    expect(1n).toBeFinite();
+    expect(-1n).toBeFinite();
+    expect(0n).toBeFinite();
+    expect(9007199254740991n).toBeFinite(); // BigInt equivalent of MAX_SAFE_INTEGER
+  });
+
   test('fails when not given NaN', () => {
     expect(() => expect(NaN).toBeFinite()).toThrowErrorMatchingSnapshot();
   });
@@ -35,6 +42,10 @@ describe('.toBeFinite', () => {
 describe('.not.toBeFinite', () => {
   test('fails when given a finite number', () => {
     expect(() => expect(1).not.toBeFinite()).toThrowErrorMatchingSnapshot();
+  });
+
+  test('fails when given a BigInt value', () => {
+    expect(() => expect(1n).not.toBeFinite()).toThrowErrorMatchingSnapshot();
   });
 
   test('passes when given NaN', () => {

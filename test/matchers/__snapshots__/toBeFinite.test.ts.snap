@@ -1,5 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`.not.toBeFinite fails when given a BigInt value 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeFinite()</intensity>
+
+Expected value to not be finite received:
+  <red>1n</color>"
+`;
+
 exports[`.not.toBeFinite fails when given a finite number 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).not.toBeFinite()</intensity>
 

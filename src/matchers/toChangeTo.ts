@@ -1,7 +1,7 @@
 /**
  * Use `.toChangeTo` when checking if a value changed to a specific value.
  */
-export function toChangeTo(mutator: () => unknown | void, checker: () => number, to: number) {
+export function toChangeTo<E = unknown>(mutator: () => unknown | void, checker: () => E, to: E) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived: print, matcherHint: hint } = this.utils;
 

@@ -7,11 +7,25 @@ Expected value to not change by 1, received:
   <red>1</color>"
 `;
 
+exports[`.not.toChangeBy fails when given a BigInt mutator that does change the value 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toChangeBy()</intensity>
+
+Expected value to not change by 1, received:
+  <red>1n</color>"
+`;
+
 exports[`.not.toChangeBy fails when mutating a counter 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).not.toChangeBy()</intensity>
 
 Expected value to not change by 1, received:
   <red>1</color>"
+`;
+
+exports[`.toChangeBy fails when a given BigInt value does not change 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toChangeBy()</intensity>
+
+Expected value to change by 1, received:
+  <red>0n</color>"
 `;
 
 exports[`.toChangeBy fails when a given value does not increment 1`] = `

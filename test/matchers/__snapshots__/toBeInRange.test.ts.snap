@@ -1,11 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`.not.toBeInRange fails when given BigInt array is in the given range 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeInRange(</intensity><green>expected</color><dim>)</intensity>
+
+Expected Array to not be in range <green>4n</color>, <green>10n</color>
+Received:
+  <red>[4n, 5n, 7n, 9n]</color>"
+`;
+
 exports[`.not.toBeInRange fails when given array is in the given range 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).not.toBeInRange(</intensity><green>expected</color><dim>)</intensity>
 
 Expected Array to not be in range <green>4</color>, <green>10</color>
 Received:
   <red>[4, 5, 7, 9]</color>"
+`;
+
+exports[`.toBeInRange fails when given BigInt array is not in a given range 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeInRange(</intensity><green>expected</color><dim>)</intensity>
+
+Expected: Array elements to be in range (<green>4n</color>, <green>8n</color>)
+Received: Array element out of range <red>9n</color>"
 `;
 
 exports[`.toBeInRange fails when given array is not in a given range 1`] = `

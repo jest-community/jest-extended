@@ -1,8 +1,15 @@
-export function toBeInRange(actual: unknown[], min: number, max: number) {
+export function toBeInRange(actual: unknown[], min: number | bigint, max: number | bigint) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  const element = actual.find((option: any) => option < min || option >= max);
+  const element = actual.find((option: any) => {
+    // Handle BigInt comparisons
+    if (typeof option === 'bigint' && typeof min === 'bigint' && typeof max === 'bigint') {
+      return option < min || option >= max;
+    }
+    // Handle regular number comparisons
+    return option < min || option >= max;
+  });
 
   const pass = element === undefined;
 
