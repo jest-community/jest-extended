@@ -1,5 +1,11 @@
 # jest-extended
 
+## 5.0.1
+
+### Patch Changes
+
+- 0886e55: Fix import paths
+
 ## 5.0.0
 
 ### Major Changes
