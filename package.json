@@ -12,7 +12,7 @@
   "scripts": {
     "clean": "node clean.js",
     "prebuild": "yarn clean",
-    "build": "tsc",
+    "build": "tsc && tsc-alias",
     "lint": "eslint .",
     "lint:fix": "yarn lint --fix",
     "prepare": "husky",
@@ -61,6 +61,7 @@
     "lint-staged": "~15.5.0",
     "prettier": "^3.0.0",
     "ts-jest": "^29.0.0",
+    "tsc-alias": "^1.8.0",
     "typescript": "^5.0.0"
   },
   "dependencies": {
