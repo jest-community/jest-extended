@@ -2,7 +2,7 @@ export function toBeWithin(actual: unknown, start: number, end: number) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  const pass = typeof actual === 'number' && actual >= start && actual < end;
+  const pass = (typeof actual === 'number' || typeof actual === 'bigint') && actual >= start && actual < end;
 
   return {
     pass,

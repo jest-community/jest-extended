@@ -7,6 +7,10 @@ describe('.toBeWithin', () => {
     expect(1).toBeWithin(1, 3);
   });
 
+  test('passes when given bigint number is within the given bounds of start (inclusive) and end (exclusive)', () => {
+    expect(BigInt(1)).toBeWithin(1, 3);
+  });
+
   test('fails when given number is not within the given bounds of start (inclusive) and end (exclusive)', () => {
     expect(() => expect(3).toBeWithin(1, 3)).toThrowErrorMatchingSnapshot();
   });
