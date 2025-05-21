@@ -64,13 +64,25 @@ interface CustomMatchers<R> extends Record<string, any> {
    * Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
    * @param {Array.<*>} members
    */
-  toIncludeAllMembers<E = unknown>(members: readonly E[]): R;
+  toIncludeAllMembers<E = unknown>(members: readonly E[] | E): R;
+
+  /**
+   * Use `.toIncludeAllPartialMembers` when checking if an `Array` contains all the same partial members of a given set.
+   * @param {Array.<*>} members
+   */
+  toIncludeAllPartialMembers<E = unknown>(members: readonly E[] | E): R;
+
+  /**
+   * Use `.toIncludeSamePartialMembers` when checking if an `Array` contains exactly the same partial members as a given set, in any order
+   * @param {Array.<*>} members
+   */
+  toIncludeSamePartialMembers<E = unknown>(members: readonly E[]): R;
 
   /**
    * Use `.toIncludeAnyMembers` when checking if an `Array` contains any of the members of a given set.
    * @param {Array.<*>} members
    */
-  toIncludeAnyMembers<E = unknown>(members: readonly E[]): R;
+  toIncludeAnyMembers<E = unknown>(members: readonly E[] | E): R;
 
   /**
    * Use `.toIncludeSameMembers` when checking if two arrays contain equal values, in any order.
@@ -221,6 +233,26 @@ interface CustomMatchers<R> extends Record<string, any> {
    * Use `.toBeObject` when checking if a value is an `Object`.
    */
   toBeObject(): R;
+
+  /**
+   * Use `.toChange` when checking if a value has changed.
+   * @param {Function} checker
+   */
+  toChange<E = unknown>(checker: () => E): R;
+
+  /**
+   * Use `.toChangeBy` when checking if a value changed by an amount.
+   * @param {Function} checker
+   * @param {Number} by
+   */
+  toChangeBy(checker: () => number, by?: number): R;
+
+  /**
+   * Use `.toChangeTo` when checking if a value changed to a specific value.
+   * @param {Function} checker
+   * @param {*} to
+   */
+  toChangeTo<E = unknown>(checker: () => E, to: E): R;
 
   /**
    * Use `.toContainKey` when checking if an object contains the provided key.
@@ -385,7 +417,10 @@ interface CustomMatchers<R> extends Record<string, any> {
    * @param {Function} type
    * @param {String | RegExp} message
    */
-  toThrowWithMessage(type: (...args: any[]) => any, message: string | RegExp): R;
+  toThrowWithMessage(
+    type: (new (...args: any[]) => { message: string }) | ((...args: any[]) => { message: string }),
+    message: string | RegExp,
+  ): R;
 
   /**
    * Use `.toBeEmptyObject` when checking if a value is an empty `Object`.
@@ -669,24 +704,23 @@ declare namespace jest {
 
     /**
      * Use `.toChange` when checking if a value has changed.
-     * @example
-     * expect(() => value--).toChange(() => value);
+     * @param {Function} checker
      */
     toChange<E = unknown>(checker: () => E): R;
 
     /**
-     * Use `.toChangeTo` when checking if a value changed to a specific value.
-     * @example
-     * expect(() => Model.deleteAll()).toChangeTo(() => Model.count(), 0);
-     */
-    toChangeTo<E = unknown>(checker: () => E, to: E): R;
-
-    /**
      * Use `.toChangeBy` when checking if a value changed by an amount.
-     * @example
-     * expect(() => value--).toChangeBy(() => value, -1);
+     * @param {Function} checker
+     * @param {Number} by
      */
     toChangeBy(checker: () => number, by?: number): R;
+
+    /**
+     * Use `.toChangeTo` when checking if a value changed to a specific value.
+     * @param {Function} checker
+     * @param {*} to
+     */
+    toChangeTo<E = unknown>(checker: () => E, to: E): R;
 
     /**
      * Use `.toContainKey` when checking if an object contains the provided key.
@@ -852,10 +886,7 @@ declare namespace jest {
      * @param {String | RegExp} message
      */
     toThrowWithMessage(
-      type:
-        | (new (...args: any[]) => { message: string })
-        | (abstract new (...args: any[]) => { message: string })
-        | ((...args: any[]) => { message: string }),
+      type: (new (...args: any[]) => { message: string }) | ((...args: any[]) => { message: string }),
       message: string | RegExp,
     ): R;
 
