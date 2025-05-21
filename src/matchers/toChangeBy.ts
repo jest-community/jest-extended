@@ -1,7 +1,5 @@
 /**
  * Use `.toChangeBy` when checking if a value changed by an amount.
- * @example
- * expect(() => value--).toChangeBy(() => value, -1);
  */
 export function toChangeBy(mutator: () => unknown | void, checker: () => number, by: number = 1) {
   // @ts-expect-error OK to have implicit any for this.utils

@@ -1,7 +1,5 @@
 /**
  * Use `.toChangeTo` when checking if a value changed to a specific value.
- * @example
- * expect(() => Model.deleteAll()).toChangeTo(() => Model.count(), 0);
  */
 export function toChangeTo(mutator: () => unknown | void, checker: () => number, to: number) {
   // @ts-expect-error OK to have implicit any for this.utils
