@@ -1,5 +1,11 @@
 # jest-extended
 
+## 5.0.3
+
+### Patch Changes
+
+- 3a031b6: Fix some types bugs
+
 ## 5.0.2
 
 ### Patch Changes
