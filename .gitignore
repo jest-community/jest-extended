@@ -10,3 +10,4 @@ coverage
 package-lock.json
 *tsbuildinfo
 install-state.gz
+/types/index.d.ts

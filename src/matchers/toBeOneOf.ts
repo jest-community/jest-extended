@@ -1,5 +1,9 @@
 import { contains } from 'src/utils';
 
+/**
+ * Use .toBeOneOf when checking if a value is a member of a given Array.
+ * @param {Array.<*>} expected
+ */
 export function toBeOneOf<E = unknown>(actual: unknown, expected: readonly E[]) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;

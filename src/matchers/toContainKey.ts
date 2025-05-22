@@ -1,3 +1,8 @@
+/**
+ * Use `.toContainKey` when checking if an object contains the provided key.
+ *
+ * @param {String} key
+ */
 export function toContainKey<E = unknown>(actual: unknown, expected: keyof E | string) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;

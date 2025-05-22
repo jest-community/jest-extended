@@ -1,3 +1,8 @@
+/**
+ * Use `.toContainAnyKeys` when checking if an object contains at least one of the provided keys.
+ *
+ * @param {Array.<String>} keys
+ */
 export function toContainAnyKeys<E = unknown>(actual: unknown, expected: readonly (keyof E | string)[]) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;

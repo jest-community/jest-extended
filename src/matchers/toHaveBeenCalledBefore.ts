@@ -1,5 +1,13 @@
 import { isJestMockOrSpy } from 'src/utils';
 
+/**
+ * Use `.toHaveBeenCalledBefore` when checking if a `Mock` was called before another `Mock`.
+ *
+ * Note: Required Jest version >=23
+ *
+ * @param {Mock} mock
+ * @param {boolean} [failIfNoSecondInvocation=true]
+ */
 export function toHaveBeenCalledBefore(
   actual: unknown,
   expected: jest.MockInstance<any, any[]>,

@@ -1,3 +1,6 @@
+/**
+ * Use `.toBeObject` when checking if a value is an `Object`.
+ */
 export function toBeObject(actual: unknown) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, matcherHint } = this.utils;

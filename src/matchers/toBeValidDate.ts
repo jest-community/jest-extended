@@ -1,3 +1,6 @@
+/**
+ * Use `.toBeValidDate` when checking if a value is a `valid Date`.
+ */
 export function toBeValidDate(actual: unknown) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, matcherHint } = this.utils;

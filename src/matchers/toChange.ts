@@ -1,5 +1,6 @@
 /**
  * Use `.toChange` when checking if a value has changed.
+ * @param {Function} checker
  */
 export function toChange(mutator: () => unknown | void, checker: () => number) {
   // @ts-expect-error OK to have implicit any for this.utils

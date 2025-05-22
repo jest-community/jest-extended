@@ -38,7 +38,6 @@ describe('.toIncludeSamePartialMembers', () => {
 
   test('fails when expected object is not an array', () => {
     expect(() =>
-      // @ts-expect-error this is intentional for the test
       expect([{ hello: 'world' }, { foo: 'bar', baz: 'qux' }]).toIncludeSamePartialMembers(1),
     ).toThrowErrorMatchingSnapshot();
   });

@@ -1,5 +1,7 @@
 /**
  * Use `.toChangeBy` when checking if a value changed by an amount.
+ * @param {Function} checker
+ * @param {Number} by
  */
 export function toChangeBy(mutator: () => unknown | void, checker: () => number | bigint, by: number | bigint = 1) {
   // @ts-expect-error OK to have implicit any for this.utils

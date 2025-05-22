@@ -1,3 +1,6 @@
+/**
+ * Use `.toBeBoolean` when checking if a value is a `Boolean`.
+ */
 export function toBeBoolean(actual: unknown) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { matcherHint, printReceived } = this.utils;

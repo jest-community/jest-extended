@@ -1,3 +1,6 @@
+/**
+ * Use `.toBeOdd` when checking if a value is an odd `Number`.
+ */
 export function toBeOdd(actual: unknown) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, matcherHint } = this.utils;
