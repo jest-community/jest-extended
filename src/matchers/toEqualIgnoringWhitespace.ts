@@ -16,6 +16,11 @@ const getDiff = (received: string, expected: string) => {
   return diff;
 };
 
+/**
+ * Use `.toEqualIgnoringWhitespace` when checking if a `String` is equal (===) to given `String` ignoring white-space.
+ *
+ * @param {String} string
+ */
 export function toEqualIgnoringWhitespace(actual: unknown, expected: string) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { matcherHint, EXPECTED_COLOR } = this.utils;

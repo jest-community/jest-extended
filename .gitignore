@@ -9,3 +9,4 @@ coverage
 .vscode
 package-lock.json
 *tsbuildinfo
+/types/index.d.ts

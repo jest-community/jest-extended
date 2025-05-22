@@ -1,5 +1,10 @@
 import { contains } from 'src/utils';
 
+/**
+ * Use `.toContainAnyEntries` when checking if an object contains at least one of the provided entries.
+ *
+ * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
+ */
 export function toContainAnyEntries<E = unknown>(
   actual: unknown,
   expected: readonly (readonly [keyof E, E[keyof E]])[],

@@ -1,3 +1,9 @@
+/**
+ * Use `.toBeWithin` when checking if a number is in between the given bounds of: start (inclusive) and end (exclusive).
+ *
+ * @param {Number} start
+ * @param {Number} end
+ */
 export function toBeWithin(actual: unknown, start: number, end: number) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;

@@ -1,4 +1,8 @@
-export function toSatisfyAny(actual: unknown, expected: (x: unknown) => boolean) {
+/**
+ * Use `.toSatisfyAny` when you want to use a custom matcher by supplying a predicate function that returns `true` for any matching value in an array.
+ * @param {Function} predicate
+ */
+export function toSatisfyAny(actual: unknown, expected: (x: any) => boolean) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;
 

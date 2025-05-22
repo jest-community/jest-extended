@@ -1,3 +1,6 @@
+/**
+ * Use `.toBeFrozen` when checking if an object is frozen.
+ */
 export function toBeFrozen(actual: unknown) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { matcherHint } = this.utils;

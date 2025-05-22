@@ -1,5 +1,10 @@
 import { contains } from 'src/utils';
 
+/**
+ * Use `.toContainValue` when checking if an object contains the provided value.
+ *
+ * @param {*} value
+ */
 export function toContainValue<E = unknown>(actual: unknown, expected: E) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;

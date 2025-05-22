@@ -1,3 +1,6 @@
+/**
+ * Use `.toBeDateString` when checking if a value is a valid date string.
+ */
 export function toBeDateString(actual: unknown) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { matcherHint, printReceived } = this.utils;
