@@ -61,6 +61,11 @@ interface CustomMatchers<R> extends Record<string, any> {
   toBeBefore(date: Date): R;
 
   /**
+   * Use `.toBeBigInt` when checking if a value is a `BigInt`.
+   */
+  toBeBigInt(): R;
+
+  /**
    * Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
    * @param {Array.<*>} members
    */
@@ -179,7 +184,7 @@ interface CustomMatchers<R> extends Record<string, any> {
   toHaveBeenCalledExactlyOnceWith(...args: unknown[]): R;
 
   /**
-   * Use `.toBeNumber` when checking if a value is a `Number`.
+   * Use `.toBeNumber` when checking if a value is a `Number` or `BigInt`.
    */
   toBeNumber(): R;
 
@@ -189,27 +194,27 @@ interface CustomMatchers<R> extends Record<string, any> {
   toBeNaN(): R;
 
   /**
-   * Use `.toBeFinite` when checking if a value is a `Number`, not `NaN` or `Infinity`.
+   * Use `.toBeFinite` when checking if a value is a `Number`, not `NaN` or `Infinity`, or a `BigInt`.
    */
   toBeFinite(): R;
 
   /**
-   * Use `.toBePositive` when checking if a value is a positive `Number`.
+   * Use `.toBePositive` when checking if a value is a positive `Number` or `BigInt`.
    */
   toBePositive(): R;
 
   /**
-   * Use `.toBeNegative` when checking if a value is a negative `Number`.
+   * Use `.toBeNegative` when checking if a value is a negative `Number` or `BigInt`.
    */
   toBeNegative(): R;
 
   /**
-   * Use `.toBeEven` when checking if a value is an even `Number`.
+   * Use `.toBeEven` when checking if a value is an even `Number` or `BigInt`.
    */
   toBeEven(): R;
 
   /**
-   * Use `.toBeOdd` when checking if a value is an odd `Number`.
+   * Use `.toBeOdd` when checking if a value is an odd `Number` or `BigInt`.
    */
   toBeOdd(): R;
 
@@ -223,11 +228,12 @@ interface CustomMatchers<R> extends Record<string, any> {
 
   /**
    * Use `.toBeInRange` when checking if an array has elements in range min (inclusive) and max (exclusive).
+   * Supports both number and BigInt values.
    *
    * @param min
    * @param max
    */
-  toBeInRange(min: number, max: number): R;
+  toBeInRange(min: number | bigint, max: number | bigint): R;
 
   /**
    * Use `.toBeObject` when checking if a value is an `Object`.
@@ -243,9 +249,9 @@ interface CustomMatchers<R> extends Record<string, any> {
   /**
    * Use `.toChangeBy` when checking if a value changed by an amount.
    * @param {Function} checker
-   * @param {Number} by
+   * @param {Number|BigInt} by
    */
-  toChangeBy(checker: () => number, by?: number): R;
+  toChangeBy(checker: () => number | bigint, by?: number | bigint): R;
 
   /**
    * Use `.toChangeTo` when checking if a value changed to a specific value.
@@ -524,6 +530,11 @@ declare namespace jest {
     toBeBefore(date: Date): R;
 
     /**
+     * Use `.toBeBigInt` when checking if a value is a `BigInt`.
+     */
+    toBeBigInt(): R;
+
+    /**
      * Use `.toIncludeAllMembers` when checking if an `Array` contains all the same members of a given set.
      * @param {Array.<*>} members
      */
@@ -642,7 +653,7 @@ declare namespace jest {
     toHaveBeenCalledExactlyOnceWith(...args: unknown[]): R;
 
     /**
-     * Use `.toBeNumber` when checking if a value is a `Number`.
+     * Use `.toBeNumber` when checking if a value is a `Number` or `BigInt`.
      */
     toBeNumber(): R;
 
@@ -652,27 +663,27 @@ declare namespace jest {
     toBeNaN(): R;
 
     /**
-     * Use `.toBeFinite` when checking if a value is a `Number`, not `NaN` or `Infinity`.
+     * Use `.toBeFinite` when checking if a value is a `Number`, not `NaN` or `Infinity`, or a `BigInt`.
      */
     toBeFinite(): R;
 
     /**
-     * Use `.toBePositive` when checking if a value is a positive `Number`.
+     * Use `.toBePositive` when checking if a value is a positive `Number` or `BigInt`.
      */
     toBePositive(): R;
 
     /**
-     * Use `.toBeNegative` when checking if a value is a negative `Number`.
+     * Use `.toBeNegative` when checking if a value is a negative `Number` or `BigInt`.
      */
     toBeNegative(): R;
 
     /**
-     * Use `.toBeEven` when checking if a value is an even `Number`.
+     * Use `.toBeEven` when checking if a value is an even `Number` or `BigInt`.
      */
     toBeEven(): R;
 
     /**
-     * Use `.toBeOdd` when checking if a value is an odd `Number`.
+     * Use `.toBeOdd` when checking if a value is an odd `Number` or `BigInt`.
      */
     toBeOdd(): R;
 
@@ -686,11 +697,12 @@ declare namespace jest {
 
     /**
      * Use `.toBeInRange` when checking if an array has elements in range min (inclusive) and max (exclusive).
+     * Supports both number and BigInt values.
      *
      * @param min
      * @param max
      */
-    toBeInRange(min: number, max: number): R;
+    toBeInRange(min: number | bigint, max: number | bigint): R;
 
     /**
      * Use `.toBeInteger` when checking if a value is an integer.
@@ -711,9 +723,9 @@ declare namespace jest {
     /**
      * Use `.toChangeBy` when checking if a value changed by an amount.
      * @param {Function} checker
-     * @param {Number} by
+     * @param {Number|BigInt} by
      */
-    toChangeBy(checker: () => number, by?: number): R;
+    toChangeBy(checker: () => number | bigint, by?: number | bigint): R;
 
     /**
      * Use `.toChangeTo` when checking if a value changed to a specific value.

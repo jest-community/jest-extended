@@ -7,7 +7,7 @@ describe('.toBeOdd', () => {
     expect(1).toBeOdd();
   });
 
-  test.each([[false], [true], [''], [2], [{}], [() => {}], [undefined], [null], [NaN]])(
+  test.each([[false], [true], [''], [2], [2n], [{}], [() => {}], [undefined], [null], [NaN], [Symbol('foo')]])(
     'fails when given not given an odd number',
     given => {
       expect(() => expect(given).toBeOdd()).toThrowErrorMatchingSnapshot();
@@ -16,7 +16,7 @@ describe('.toBeOdd', () => {
 });
 
 describe('.not.toBeOdd', () => {
-  test.each([[false], [true], [''], [2], [[]], [{}], [() => {}], [undefined], [null], [NaN]])(
+  test.each([[false], [true], [''], [2], [2n], [[]], [{}], [() => {}], [undefined], [null], [NaN], [Symbol('foo')]])(
     'passes when not given an odd number: %s',
     given => {
       expect(given).not.toBeOdd();

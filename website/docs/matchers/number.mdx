@@ -26,11 +26,12 @@ Use `.toBeNaN` when checking a value is `NaN`.
 
 ### .toBeFinite()
 
-Use `.toBeFinite` when checking if a value is a `Number`, not `NaN` or `Infinity`.
+Use `.toBeFinite` when checking if a value is a `Number`, not `NaN` or `Infinity`, or a `BigInt`.
 
 <TestFile name="toBeFinite">
-  {`test('passes when value is a finite number', () => {
+  {`test('passes when value is a finite number or bigint', () => {
   expect(1).toBeFinite();
+  expect(BigInt(123456789)).toBeFinite();
   expect(Infinity).not.toBeFinite();
   expect(NaN).not.toBeFinite();
 });`}
@@ -38,50 +39,60 @@ Use `.toBeFinite` when checking if a value is a `Number`, not `NaN` or `Infinity
 
 ### .toBePositive()
 
-Use `.toBePositive` when checking if a value is a positive `Number`.
+Use `.toBePositive` when checking if a value is a positive `Number` or `BigInt`.
 
 <TestFile name="toBePositive">
-  {`test('passes when value is a positive number', () => {
+  {`test('passes when value is a positive number or bigint', () => {
   expect(1).toBePositive();
+  expect(BigInt(42)).toBePositive();
   expect(Infinity).not.toBePositive();
   expect(-1).not.toBePositive();
+  expect(-BigInt(42)).not.toBePositive();
   expect(NaN).not.toBePositive();
 });`}
 </TestFile>
 
 ### .toBeNegative()
 
-Use `.toBeNegative` when checking if a value is a negative `Number`.
+Use `.toBeNegative` when checking if a value is a negative `Number` or `BigInt`.
 
 <TestFile name="toBeNegative">
-  {`test('passes when value is a negative number', () => {
+  {`test('passes when value is a negative number or bigint', () => {
   expect(-1).toBeNegative();
+  expect(BigInt(-123)).toBeNegative();
   expect(-Infinity).not.toBeNegative();
   expect(1).not.toBeNegative();
+  expect(BigInt(123)).not.toBeNegative();
   expect(NaN).not.toBeNegative();
 });`}
 </TestFile>
 
 ### .toBeEven()
 
-Use `.toBeEven` when checking if a value is an even `Number`.
+Use `.toBeEven` when checking if a value is an even `Number` or `BigInt`.
 
 <TestFile name="toBeEven">
-  {`test('passes when value is an even number', () => {
+  {`test('passes when value is an even number or bigint', () => {
   expect(2).toBeEven();
+  expect(BigInt(2)).toBeEven();
+  expect(BigInt(-4)).toBeEven();
   expect(1).not.toBeEven();
+  expect(BigInt(1)).not.toBeEven();
   expect(NaN).not.toBeEven();
 });`}
 </TestFile>
 
 ### .toBeOdd()
 
-Use `.toBeOdd` when checking if a value is an odd `Number`.
+Use `.toBeOdd` when checking if a value is an odd `Number` or `BigInt`.
 
 <TestFile name="toBeOdd">
-  {`test('passes when value is an odd number', () => {
+  {`test('passes when value is an odd number or bigint', () => {
   expect(1).toBeOdd();
+  expect(BigInt(1)).toBeOdd();
+  expect(BigInt(-3)).toBeOdd();
   expect(2).not.toBeOdd();
+  expect(BigInt(2)).not.toBeOdd();
   expect(NaN).not.toBeOdd();
 });`}
 </TestFile>
@@ -100,12 +111,54 @@ Use `.toBeWithin` when checking if a number is in between the given bounds of: s
 
 ### .toBeInteger()
 
-Use `.toBeInteger` when checking if a number is an integer.
+Use `.toBeInteger` when checking if a value is an integer `Number` or any `BigInt`.
 
 <TestFile name="toBeInteger">
-  {`test('passes when value is an integer', () => {
+  {`test('passes when value is an integer or bigint', () => {
   expect(1).toBeInteger();
   expect(1.0).toBeInteger();
+  expect(BigInt(42)).toBeInteger();
   expect(1.1).not.toBeInteger();
 });`}
 </TestFile>
+
+### .toBeInRange()
+
+Use `.toBeInRange` when checking if an array's elements all fall within a range (min inclusive, max exclusive). Now supports `BigInt` values.
+
+<TestFile name="toBeInRange">
+  {`test('passes when all array elements are in range', () => {
+  expect([4, 5, 7, 9]).toBeInRange(4, 10);
+  expect([4n, 5n, 7n, 9n]).toBeInRange(4n, 10n);
+  expect([4, 5, 10]).not.toBeInRange(4, 10);
+});`}
+</TestFile>
+
+### .toChangeBy()
+
+Use `.toChangeBy` when checking if a function call changes a value by a specified amount. Now supports `BigInt` values.
+
+<TestFile name="toChangeBy">
+  {`test('passes when value changes by the specified amount', () => {
+  let value = 0;
+  let bigValue = BigInt(0);
+  expect(() => { value += 2 }).toChangeBy(() => value, 2);
+  expect(() => { bigValue += 2n }).toChangeBy(() => bigValue, 2n);
+  expect(() => { value += 1 }).not.toChangeBy(() => value, 2);
+});`}
+</TestFile>
+
+### .toChangeTo()
+
+Use `.toChangeTo` when checking if a function call changes a value to a specified value.
+
+<TestFile name="toChangeTo">
+  {`test('passes when value changes to the specified value', () => {
+  let value = 0;
+  let bigValue = BigInt(0);
+  expect(() => { value = 2 }).toChangeTo(() => value, 2);
+  expect(() => { bigValue = 42n }).toChangeTo(() => bigValue, 42n);
+  expect(() => { value = 3 }).not.toChangeTo(() => value, 2);
+});`}
+</TestFile>
+
