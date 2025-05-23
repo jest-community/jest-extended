@@ -1,3 +1,6 @@
+/**
+ * Use `.toResolve` when checking if a promise resolves.
+ */
 export async function toResolve(actual: Promise<unknown>) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { matcherHint } = this.utils;

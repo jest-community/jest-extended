@@ -1,5 +1,9 @@
 import { determinePropertyMessage } from 'src/utils';
 
+/**
+ * Use `.toBeArrayOfSize` when checking if a value is an `Array` of size x.
+ * @param {Number} expected
+ */
 export function toBeArrayOfSize(actual: unknown, expected: number) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printExpected, printReceived, matcherHint } = this.utils;

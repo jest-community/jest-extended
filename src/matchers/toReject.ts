@@ -1,3 +1,6 @@
+/**
+ * Use `.toReject` when checking if a promise rejects.
+ */
 export async function toReject(actual: Promise<unknown>) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { matcherHint } = this.utils;

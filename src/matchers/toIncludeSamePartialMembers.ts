@@ -1,5 +1,9 @@
 import { containsEntry } from '../utils';
 
+/**
+ * Use `.toIncludeSamePartialMembers` when checking if an `Array` contains exactly the same partial members as a given set, in any order
+ * @param {Array.<*>} members
+ */
 export function toIncludeSamePartialMembers<E = unknown>(actual: unknown, expected: E) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;

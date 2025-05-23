@@ -41,6 +41,12 @@ const getExpectedError = (type: any, message: any) => {
   return expectedError;
 };
 
+/**
+ * Use `.toThrowWithMessage` when checking if a callback function throws an error of a given type with a given error message.
+ *
+ * @param {Function} type
+ * @param {String | RegExp} message
+ */
 export function toThrowWithMessage(
   callbackOrPromiseReturn: () => void,
   type:
