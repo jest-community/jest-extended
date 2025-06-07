@@ -1,5 +1,9 @@
 import { contains } from 'src/utils';
 
+/**
+ * Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
+ * @param {Array.<*>} members
+ */
 export function toIncludeAllMembers<E = unknown>(actual: unknown[], expected: readonly E[] | E) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;

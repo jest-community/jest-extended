@@ -1,3 +1,6 @@
+/**
+ * Use `.toBeBefore` when checking if a date occurs before `date`* @param {Date} expected
+ */
 export function toBeBefore(actual: unknown, expected: Date) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { matcherHint, printReceived } = this.utils;

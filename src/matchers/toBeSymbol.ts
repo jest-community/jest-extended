@@ -1,3 +1,6 @@
+/**
+ * Use `.toBeSymbol` when checking if a value is a `Symbol`.
+ */
 export function toBeSymbol(actual: unknown) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, matcherHint } = this.utils;

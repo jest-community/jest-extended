@@ -1,3 +1,8 @@
+/**
+ * Use `.toIncludeMultiple` when checking if a `String` includes all of the given substrings.
+ *
+ * @param {Array.<String>} substring
+ */
 export function toIncludeMultiple(actual: unknown, expected: readonly string[]) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;
