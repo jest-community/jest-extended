@@ -2,7 +2,9 @@ export function toBeEven(actual: unknown) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, matcherHint } = this.utils;
 
-  const pass = isNumber(actual) && isEven(actual);
+  const pass =
+    (typeof actual === 'number' && !isNaN(actual) && actual % 2 === 0) ||
+    (typeof actual === 'bigint' && actual % BigInt(2) === BigInt(0));
 
   return {
     pass,
@@ -18,6 +20,3 @@ export function toBeEven(actual: unknown) {
           ` ${printReceived(actual)}`,
   };
 }
-
-const isNumber = (expected: any) => !isNaN(parseInt(expected));
-const isEven = (expected: any) => expected % 2 === 0;

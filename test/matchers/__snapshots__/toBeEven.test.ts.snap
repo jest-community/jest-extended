@@ -1,10 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`.not.toBeEven fails when given an even BigInt 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeEven()</intensity>
+
+Expected value to not be an even number received:
+ <red>2n</color>"
+`;
+
 exports[`.not.toBeEven fails when given an even number 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).not.toBeEven()</intensity>
 
 Expected value to not be an even number received:
  <red>2</color>"
+`;
+
+exports[`.toBeEven fails when given odd BigInt 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeEven()</intensity>
+
+Expected value to be an even number received:
+ <red>1n</color>"
+`;
+
+exports[`.toBeEven fails when given odd BigInt 2`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeEven()</intensity>
+
+Expected value to be an even number received:
+ <red>-3n</color>"
 `;
 
 exports[`.toBeEven fails when not given an even number 1`] = `

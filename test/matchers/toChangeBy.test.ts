@@ -40,6 +40,18 @@ describe('.toChangeBy', () => {
     counter.increment();
     expect(() => counter.reset()).toChangeBy(() => counter.count(), -3);
   });
+
+  test('passes when given a BigInt value that the mutator decrements', () => {
+    let value = 10n;
+    expect(() => {
+      value = value - 1n;
+    }).toChangeBy(() => value, -1n);
+  });
+
+  test('fails when a given BigInt value does not change', () => {
+    const value = 5n;
+    expect(() => expect(() => value).toChangeBy(() => value, 1n)).toThrowErrorMatchingSnapshot();
+  });
 });
 
 describe('.not.toChangeBy', () => {
@@ -71,5 +83,19 @@ describe('.not.toChangeBy', () => {
   test('fails when a value expected not to change defies all expectations and changes', () => {
     let value = 0;
     expect(() => expect(() => value++).not.toChangeBy(() => value, 1)).toThrowErrorMatchingSnapshot();
+  });
+
+  test('passes when given a BigInt mutator that does not change the value', () => {
+    const value = 10n;
+    expect(() => value).not.toChangeBy(() => value, 1n);
+  });
+
+  test('fails when given a BigInt mutator that does change the value', () => {
+    let value = 10n;
+    expect(() =>
+      expect(() => {
+        value = value + 1n;
+      }).not.toChangeBy(() => value, 1n),
+    ).toThrowErrorMatchingSnapshot();
   });
 });

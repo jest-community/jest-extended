@@ -2,7 +2,7 @@ export function toBeFinite(actual: unknown) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, matcherHint } = this.utils;
 
-  const pass = Number.isFinite(actual);
+  const pass = Number.isFinite(actual) || typeof actual === 'bigint';
 
   return {
     pass,

@@ -7,6 +7,7 @@ export { toBeArrayOfSize } from './toBeArrayOfSize';
 export { toBeBefore } from './toBeBefore';
 export { toBeBeforeOrEqualTo } from './toBeBeforeOrEqualTo';
 export { toBeBetween } from './toBeBetween';
+export { toBeBigInt } from './toBeBigInt';
 export { toBeBoolean } from './toBeBoolean';
 export { toBeDate } from './toBeDate';
 export { toBeDateString } from './toBeDateString';
