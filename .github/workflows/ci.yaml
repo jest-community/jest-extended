@@ -24,7 +24,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: yarn
+      - uses: threeal/setup-yarn-action@v2.0.0
+        with:
+          version: berry
+          cache: true
+      - name: install
+        run: yarn install --immutable
       - name: install with jest@${{ matrix.jest-version }}
         run: yarn add --dev jest@${{ matrix.jest-version }} ts-jest@${{ matrix.jest-version }} @types/jest@${{ matrix.jest-version }}
       - run: yarn test:coverage
@@ -38,14 +43,16 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest, macOS-latest]
     runs-on: ${{ matrix.os }}
-
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
-          cache: yarn
-      - run: yarn install
+      - uses: threeal/setup-yarn-action@v2.0.0
+        with:
+          version: berry
+          cache: true
+      - run: yarn install --immutable
       - run: yarn test:coverage
       - uses: codecov/codecov-action@v5
         if: ${{ always() }}
@@ -58,8 +65,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
-          cache: yarn
-      - run: yarn install
+      - uses: threeal/setup-yarn-action@v2.0.0
+        with:
+          version: berry
+          cache: true
+      - run: yarn install --immutable
       - run: yarn build
       - run: yarn lint
       - run: yarn typecheck
@@ -85,10 +95,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
-          cache: yarn
 
-      - name: Install Dependencies
-        run: yarn
+      - uses: threeal/setup-yarn-action@v2.0.0
+        with:
+          version: berry
+          cache: true
+
+      - name: install
+        run: yarn install --immutable
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets

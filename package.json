@@ -11,8 +11,7 @@
   ],
   "scripts": {
     "clean": "node clean.js",
-    "prebuild": "yarn clean",
-    "build": "tsc && tsc-alias",
+    "build": "yarn clean && tsc && tsc-alias",
     "lint": "eslint .",
     "lint:fix": "yarn lint --fix",
     "prepare": "husky",
@@ -128,12 +127,16 @@
     "trailingComma": "all"
   },
   "peerDependencies": {
-    "jest": ">=27.2.5"
+    "jest": ">=27.2.5",
+    "typescript": ">=5.0.0"
   },
   "peerDependenciesMeta": {
     "jest": {
       "optional": true
+    },
+    "typescript": {
+      "optional": false
     }
   },
-  "packageManager": "yarn@1.22.22"
+  "packageManager": "yarn@4.9.2"
 }
