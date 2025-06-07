@@ -1,5 +1,12 @@
 # jest-extended
 
+## 6.0.0
+
+### Major Changes
+
+- 46ed810: Add BigInt support to number matchers
+  and add new toBeBigInt matchers
+
 ## 5.0.3
 
 ### Patch Changes
