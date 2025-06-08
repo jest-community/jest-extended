@@ -1,6 +1,6 @@
 {
   "name": "jest-extended",
-  "version": "5.0.3",
+  "version": "6.0.0",
   "description": "Additional Jest matchers",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
