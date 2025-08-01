@@ -8,7 +8,18 @@ sidebar_position: 2
 `jest-extended` only supports Jest version `27.2.5` and newer. If you're using an older version of Jest, use `1.2.1`.
 :::
 
-Create a setup script with the following:
+Add this line to `jest.config.mjs`
+
+```javascript title="test.config.mjs"
+/** @type {import('jest').Config} */
+const config = {
+  ///...
+  setupFilesAfterEnv: ['jest-extended/all'],
+  ///...
+}
+```
+
+Or create a setup script with the following:
 
 ```javascript title="testSetup.js"
 // add all jest-extended matchers
