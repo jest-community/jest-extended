@@ -43,6 +43,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v5
+      - if: runner.os == 'Windows'
+        run: npm install --global --force corepack@latest
       - run: corepack enable
       - uses: actions/setup-node@v6
         with:
