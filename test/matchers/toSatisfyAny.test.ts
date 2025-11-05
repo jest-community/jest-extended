@@ -16,6 +16,12 @@ describe('.toSatisfyAny', () => {
   test('fails when no value satisfies the predicate', () => {
     expect(() => expect([2, 4, 6, 8]).toSatisfyAny(isOdd)).toThrowErrorMatchingSnapshot();
   });
+
+  test('fails when given a non-array', () => {
+    expect(123).not.toSatisfyAny(isEven);
+    expect('string').not.toSatisfyAny(isOdd);
+    expect(null).not.toSatisfyAny(isEven);
+  });
 });
 
 describe('.not.toSatisfyAll', () => {
