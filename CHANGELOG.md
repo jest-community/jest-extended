@@ -1,5 +1,11 @@
 # jest-extended
 
+## 7.0.0
+
+### Major Changes
+
+- 50a96f9: Drop support for Node 18 and 23 and add support for Node 24 and 25
+
 ## 6.0.0
 
 ### Major Changes
