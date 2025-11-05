@@ -21,12 +21,10 @@ export function toHaveBeenCalledAfter(
   let pass = false;
   let firstInvocationCallOrder = null;
   let secondInvocationCallOrder = null;
-  if (isJestMockOrSpy(actual)) {
-    // @ts-expect-error isJestMockOrSpy provides the type check
-    firstInvocationCallOrder = actual.mock.invocationCallOrder;
-    secondInvocationCallOrder = expected.mock.invocationCallOrder;
-    pass = predicate(firstInvocationCallOrder, secondInvocationCallOrder, failIfNoFirstInvocation);
-  }
+  // @ts-expect-error isJestMockOrSpy provides the type check
+  firstInvocationCallOrder = actual.mock.invocationCallOrder;
+  secondInvocationCallOrder = expected.mock.invocationCallOrder;
+  pass = predicate(firstInvocationCallOrder, secondInvocationCallOrder, failIfNoFirstInvocation);
 
   return {
     pass,

@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`.not.toThrowWithMessage Async fails on rejects when error type and message both match 1`] = `
 "<dim>expect(</intensity><red>function</color><dim>).not.toThrowWithMessage(</intensity><green>type</color><dim>, </intensity><green>message</color><dim>)</intensity>

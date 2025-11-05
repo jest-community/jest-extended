@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`.not.toIncludeAllPartialMembers fails when array values matches the members of the set 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).not.toIncludeAllPartialMembers(</intensity><green>expected</color><dim>)</intensity>

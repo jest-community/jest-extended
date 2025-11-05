@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`.not.toBeArrayOfSize fails when given an array of size 0 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).not.toBeArrayOfSize(</intensity><green>expected</color><dim>)</intensity>

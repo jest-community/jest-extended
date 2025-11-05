@@ -15,8 +15,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [18.x, 20.x, 22.x, 23.x]
-        jest-version: [27, 28, 29]
+        node-version: [18.x, 20.x, 22.x, 24.x]
+        jest-version: [27, 28, 29, 30]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -29,6 +29,10 @@ jobs:
       - name: install
         run: yarn install --immutable
       - name: install with jest@${{ matrix.jest-version }}
+        if: ${{ matrix.jest-version == 30 }}
+        run: yarn add --dev jest@${{ matrix.jest-version }} ts-jest@29 @types/jest@${{ matrix.jest-version }}
+      - name: install with jest@${{ matrix.jest-version }}
+        if: ${{ matrix.jest-version != 30 }}
         run: yarn add --dev jest@${{ matrix.jest-version }} ts-jest@${{ matrix.jest-version }} @types/jest@${{ matrix.jest-version }}
       - run: yarn test:coverage
       - uses: codecov/codecov-action@v5

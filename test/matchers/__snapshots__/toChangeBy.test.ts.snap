@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`.not.toChangeBy fails when a value expected not to change defies all expectations and changes 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).not.toChangeBy()</intensity>
