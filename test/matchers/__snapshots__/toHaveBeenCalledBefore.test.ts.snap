@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`.not.toHaveBeenCalledBefore failIfNoSecondInvocation is passed as false fails when given first mock that has been called and a second mock that has not been called 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).not.toHaveBeenCalledBefore(</intensity><green>expected</color><dim>)</intensity>

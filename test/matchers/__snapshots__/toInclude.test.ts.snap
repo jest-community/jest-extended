@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`.toInclude .not.toInclude fails when a string does have a given substring 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).not.toInclude(</intensity><green>expected</color><dim>)</intensity>

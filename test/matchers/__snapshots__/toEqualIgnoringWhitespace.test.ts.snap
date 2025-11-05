@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`.toEqualIgnoringWhitespace should fail if strings are not equal, ignoring white-space 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toEqualIgnoringWhitespace(</intensity><green>expected</color><dim>)</intensity>

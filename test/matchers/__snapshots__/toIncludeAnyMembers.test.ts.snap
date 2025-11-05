@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`.not.toIncludeAnyMembers fails when given array contains array value 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).not.toIncludeAnyMembers(</intensity><green>expected</color><dim>)</intensity>
