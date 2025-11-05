@@ -29,6 +29,10 @@ jobs:
       - name: install
         run: yarn install --immutable
       - name: install with jest@${{ matrix.jest-version }}
+        if: ${{ matrix.jest-version == 30 }}
+        run: yarn add --dev jest@${{ matrix.jest-version }} ts-jest@29 @types/jest@${{ matrix.jest-version }}
+      - name: install with jest@${{ matrix.jest-version }}
+        if: ${{ matrix.jest-version != 30 }}
         run: yarn add --dev jest@${{ matrix.jest-version }} ts-jest@${{ matrix.jest-version }} @types/jest@${{ matrix.jest-version }}
       - run: yarn test:coverage
       - uses: codecov/codecov-action@v5
