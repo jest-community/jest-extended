@@ -834,6 +834,13 @@ declare namespace jest {
     toBeSealed(): R;
 
     /**
+     * Use `.toBeSimilarDate` when checking if a date occurs within the precision ms from `date`.
+     * @param {Date} date
+     * @param {number} precision
+     */
+    toBeSimilarDate(date: Date, precision?: number): R;
+
+    /**
      * Use `.toResolve` when checking if a promise resolves.
      */
     toResolve(): Promise<R>;

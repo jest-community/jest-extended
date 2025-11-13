@@ -86,3 +86,27 @@ Use `.toBeBetween` when checking if a date equals or occurs after `startDate` an
  expect(new Date('01/01/2019')).not.toBeBetween(new Date('05/01/2019'), new Date('10/01/2019'));
 });`}
 </TestFile>
+
+### .toBeSimilarDate(expected, precision?)
+
+Use `.toBeSimilarDate` when checking if a date is approximately equal to another date within a given precision (default 50ms). Useful for testing timestamps with minor differences.
+
+<TestFile name="toBeSimilarDate">
+  {`test('passes when dates are within default precision', () => {
+  const date = new Date();
+  const closeDate = new Date(date.getTime() + 30);
+  expect(date).toBeSimilarDate(closeDate); // passes
+});
+
+test('fails when dates are outside precision', () => {
+  const date = new Date();
+  const farDate = new Date(date.getTime() + 100);
+  expect(() => expect(date).toBeSimilarDate(farDate)).toThrowError();
+});
+
+test('handles invalid inputs gracefully', () => {
+  const validDate = new Date();
+  expect(() => expect('not-a-date').toBeSimilarDate(validDate)).toThrowError();
+  expect(() => expect(validDate).toBeSimilarDate('not-a-date')).toThrowError();
+});`}
+</TestFile>
