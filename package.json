@@ -39,7 +39,7 @@
   "repository": "jest-community/jest-extended",
   "devDependencies": {
     "@changesets/cli": "^2.26.0",
-    "@eslint/compat": "^1.2.0",
+    "@eslint/compat": "^2.0.0",
     "@eslint/eslintrc": "^3.3.0",
     "@eslint/js": "^9.24.0",
     "@jest/expect-utils": "^30.0.0",
