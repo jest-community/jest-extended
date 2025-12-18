@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`.toBeSimilarDate fails when actual is not a date 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeSimilarDate()</intensity>
+
+Expected date to be within 50ms of:
+  <green>Date { NaN }</color>
+Received:
+  <red>2018-06-01T22:00:00.000Z</color>
+Difference: NaNms"
+`;
+
+exports[`.toBeSimilarDate fails when expected is not a date 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeSimilarDate()</intensity>
+
+Expected both values to be valid Date instances.
+Received: <red>"not-a-date"</color>
+Expected: <green>2018-06-01T22:00:00.000Z</color>"
+`;
+
+exports[`.toBeSimilarDate fails when given time out of range after 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeSimilarDate()</intensity>
+
+Expected date to be within 50ms of:
+  <green>2018-06-01T22:00:00.000Z</color>
+Received:
+  <red>2018-06-01T22:00:00.051Z</color>
+Difference: 51ms"
+`;
+
+exports[`.toBeSimilarDate fails when given time out of range before 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeSimilarDate()</intensity>
+
+Expected date to be within 50ms of:
+  <green>2018-06-01T22:00:00.000Z</color>
+Received:
+  <red>2018-06-01T21:59:59.949Z</color>
+Difference: 51ms"
+`;
