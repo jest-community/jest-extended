@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`.not.toBeArrayOfUniqueItems fails when given an array with unique items 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeArrayOfUniqueItems()</intensity>
+
+Expected value to not be an array of unique items received:
+  <red>[1, 2, 3]</color>"
+`;
+
+exports[`.toBeArrayOfUniqueItems fails when given an array with duplicate items 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeArrayOfUniqueItems()</intensity>
+
+Expected value to be an array of unique items received:
+  <red>[1, 1, 2]</color>"
+`;
+
+exports[`.toBeArrayOfUniqueItems fails when not given an array 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeArrayOfUniqueItems()</intensity>
+
+Expected value to be an array of unique items received:
+  <red>"not an array"</color>"
+`;
