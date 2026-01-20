@@ -4,6 +4,7 @@ export { toBeAfter } from './toBeAfter';
 export { toBeAfterOrEqualTo } from './toBeAfterOrEqualTo';
 export { toBeArray } from './toBeArray';
 export { toBeArrayOfSize } from './toBeArrayOfSize';
+export { toBeArrayOfUniqueItems } from './toBeArrayOfUniqueItems';
 export { toBeBefore } from './toBeBefore';
 export { toBeBeforeOrEqualTo } from './toBeBeforeOrEqualTo';
 export { toBeBetween } from './toBeBetween';
