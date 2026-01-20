@@ -49,6 +49,11 @@ interface CustomMatchers<R> extends Record<string, any> {
   toBeArrayOfSize(x: number): R;
 
   /**
+   * Use `.toBeArrayOfUniqueItems` when checking if a value is an `Array` with unique items.
+   */
+  toBeArrayOfUniqueItems(): R;
+
+  /**
    * Use `.toBeAfter` when checking if a date occurs after `date`.
    * @param {Date} date
    */
@@ -516,6 +521,11 @@ declare namespace jest {
      * @param {Number} x
      */
     toBeArrayOfSize(x: number): R;
+
+    /**
+     * Use `.toBeArrayOfUniqueItems` when checking if a value is an `Array` with unique items.
+     */
+    toBeArrayOfUniqueItems(): R;
 
     /**
      * Use `.toBeAfter` when checking if a date occurs after `date`.
