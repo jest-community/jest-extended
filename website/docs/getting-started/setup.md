@@ -10,7 +10,7 @@ sidebar_position: 2
 
 Add this line to `jest.config.mjs`
 
-```javascript title="test.config.mjs"
+```javascript title="jest.config.mjs"
 /** @type {import('jest').Config} */
 const config = {
   ///...
