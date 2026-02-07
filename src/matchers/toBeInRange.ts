@@ -1,3 +1,9 @@
+/**
+ * Use `.toBeInRange` when checking if an array has elements in range min (inclusive) and max (exclusive).
+ *
+ * @param min
+ * @param max
+ */
 export function toBeInRange(actual: unknown[], min: number | bigint, max: number | bigint) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;

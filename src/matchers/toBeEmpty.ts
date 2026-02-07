@@ -1,3 +1,6 @@
+/**
+ * Use .toBeEmpty when checking if a String '', Array [], Object {} is empty.
+ */
 export function toBeEmpty(actual: unknown) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, matcherHint } = this.utils;

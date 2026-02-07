@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "incremental": true,
     "tsBuildInfoFile": "./.tsbuildinfo",
     "target": "es2022",
     "module": "CommonJS",
@@ -28,7 +27,7 @@
   "include": [
     "src/**/*",
     "test/**/*",
-    "types/*",
+    "types/*"
   ],
   "exclude": [
     "node_modules",

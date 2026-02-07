@@ -1,3 +1,8 @@
+/**
+ * Use `.toEndWith` when checking if a `String` ends with a given `String` suffix.
+ *
+ * @param {String} suffix
+ */
 export function toEndWith(actual: unknown, expected: string) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;

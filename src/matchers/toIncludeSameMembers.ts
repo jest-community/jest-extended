@@ -1,3 +1,7 @@
+/**
+ * Use `.toIncludeSameMembers` when checking if two arrays contain equal values, in any order.
+ * @param {Array.<*>} members
+ */
 export function toIncludeSameMembers<E = unknown>(actual: unknown, expected: readonly E[]) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;

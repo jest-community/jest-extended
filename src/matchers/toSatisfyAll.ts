@@ -1,3 +1,7 @@
+/**
+ * Use `.toSatisfyAll` when you want to use a custom matcher by supplying a predicate function that returns a `Boolean` for all values in an array.
+ * @param {Function} predicate
+ */
 export function toSatisfyAll<E = unknown>(actual: E[], expected: (x: E) => boolean) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;

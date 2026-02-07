@@ -1,3 +1,6 @@
+/**
+ * Use `.toBeNaN` when checking a value is `NaN`.
+ */
 export function toBeNaN(actual: any) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, matcherHint } = this.utils;
