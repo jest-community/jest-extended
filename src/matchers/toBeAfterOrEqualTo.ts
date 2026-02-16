@@ -1,3 +1,7 @@
+/**
+ * Use `.toBeAfterOrEqualTo` when checking if a date equals to or occurs after `date`.
+ * @param {Date} date
+ */
 export function toBeAfterOrEqualTo(actual: unknown, expected: Date) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, matcherHint } = this.utils;

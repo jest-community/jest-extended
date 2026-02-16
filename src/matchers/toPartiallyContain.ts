@@ -1,5 +1,9 @@
 import { containsEntry } from 'src/utils';
 
+/**
+ * Use `.toPartiallyContain` when checking if any array value matches the partial member.
+ * @param {*} member
+ */
 export function toPartiallyContain<E = unknown>(actual: unknown, expected: E) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;

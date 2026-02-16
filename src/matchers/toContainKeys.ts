@@ -1,3 +1,8 @@
+/**
+ * Use `.toContainKeys` when checking if an object has all of the provided keys.
+ *
+ * @param {Array.<String>} keys
+ */
 export function toContainKeys<E = unknown>(actual: unknown, expected: readonly (keyof E | string)[]) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;

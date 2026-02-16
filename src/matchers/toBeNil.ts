@@ -1,3 +1,6 @@
+/**
+ * Use `.toBeNil` when checking a value is `null` or `undefined`.
+ */
 export function toBeNil(actual: unknown) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, matcherHint } = this.utils;

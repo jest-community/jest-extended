@@ -1,5 +1,8 @@
 import { isJestMockOrSpy } from 'src/utils';
 
+/**
+ * Use `.toHaveBeenCalledExactlyOnceWith` to check if a `Mock` was called exactly one time with the expected value.
+ */
 export function toHaveBeenCalledExactlyOnceWith(received: unknown, ...expected: unknown[]) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, printWithType, matcherHint } = this.utils;

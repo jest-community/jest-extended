@@ -1,5 +1,9 @@
 import { contains } from 'src/utils';
 
+/**
+ * Use `.toContainAllKeys` when checking if an object only contains all of the provided keys.
+ * @param {Array.<String|*>} keys
+ */
 export function toContainAllKeys<E = unknown>(actual: unknown, expected: readonly (keyof E | string)[]) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printExpected, printReceived, matcherHint } = this.utils;
