@@ -1,5 +1,10 @@
 import { contains } from 'src/utils';
 
+/**
+ * Use `.toContainValues` when checking if an object contains all of the provided values.
+ *
+ * @param {Array.<*>} values
+ */
 export function toContainValues<E = unknown>(actual: unknown, expected: readonly E[]) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;

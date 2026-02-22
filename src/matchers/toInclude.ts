@@ -1,3 +1,8 @@
+/**
+ * Use `.toInclude` when checking if a `String` includes the given `String` substring.
+ *
+ * @param {String} substring
+ */
 export function toInclude(actual: unknown, expected: string) {
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;
