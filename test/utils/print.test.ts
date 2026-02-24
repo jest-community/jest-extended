@@ -59,4 +59,9 @@ describe('print-util module', () => {
       },
     ]);
   });
+  it('should return empty array given empty string', () => {
+    const tokens = tokenize('');
+
+    expect(tokens).toEqual([]);
+  });
 });
