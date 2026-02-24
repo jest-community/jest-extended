@@ -11,6 +11,12 @@ describe('.toBeHexadecimal', () => {
     expect('#000').toBeHexadecimal();
   });
 
+  test('passes when called multiple times with the same value', () => {
+    expect('#ECECEC').toBeHexadecimal();
+    expect('#ECECEC').toBeHexadecimal();
+    expect('#ECECEC').toBeHexadecimal();
+  });
+
   test('fails when given non-string', () => {
     expect(() => expect(true).toBeHexadecimal()).toThrowErrorMatchingSnapshot();
   });
