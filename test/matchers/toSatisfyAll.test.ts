@@ -16,6 +16,13 @@ describe('.toSatisfyAll', () => {
   test('fails when any value does not satisfy the predicate', () => {
     expect(() => expect([1, 3, 4, 5]).toSatisfyAll(isOdd)).toThrowErrorMatchingSnapshot();
   });
+
+  test('fails when expected is not a function', () => {
+    // @ts-expect-error testing invalid input
+    expect(() => expect([1]).toSatisfyAll('not a function')).toThrow(
+      'Expected predicate to be a function but instead "not a function" was found',
+    );
+  });
 });
 
 describe('.not.toSatisfyAll', () => {

@@ -22,6 +22,13 @@ describe('.toSatisfyAny', () => {
     expect('string').not.toSatisfyAny(isOdd);
     expect(null).not.toSatisfyAny(isEven);
   });
+
+  test('fails when expected is not a function', () => {
+    // @ts-expect-error testing invalid input
+    expect(() => expect([1]).toSatisfyAny('not a function')).toThrow(
+      'Expected predicate to be a function but instead "not a function" was found',
+    );
+  });
 });
 
 describe('.not.toSatisfyAll', () => {
