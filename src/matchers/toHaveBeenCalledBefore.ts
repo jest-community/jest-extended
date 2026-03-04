@@ -45,7 +45,7 @@ export function toHaveBeenCalledBefore(
   };
 }
 
-const mockCheckFailMessage = (utils: any, value: any, isReceivedValue: any) => () => {
+const mockCheckFailMessage = (utils: any, value: unknown, isReceivedValue: boolean) => () => {
   const valueKind = isReceivedValue ? 'Received' : 'Expected';
   const valueKindPrintFunc = isReceivedValue ? utils.printReceived : utils.printExpected;
 
@@ -58,9 +58,13 @@ const mockCheckFailMessage = (utils: any, value: any, isReceivedValue: any) => (
   );
 };
 
-const smallest = (ns: any) => ns.reduce((acc: any, n: any) => (acc < n ? acc : n));
+const smallest = (ns: number[]) => ns.reduce((acc: number, n: number) => (acc < n ? acc : n));
 
-const predicate = (firstInvocationCallOrder: any, secondInvocationCallOrder: any, failIfNoSecondInvocation: any) => {
+const predicate = (
+  firstInvocationCallOrder: number[],
+  secondInvocationCallOrder: number[],
+  failIfNoSecondInvocation: boolean,
+) => {
   if (firstInvocationCallOrder.length === 0) return false;
   if (secondInvocationCallOrder.length === 0) return !failIfNoSecondInvocation;
 
