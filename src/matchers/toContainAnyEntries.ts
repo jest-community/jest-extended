@@ -1,4 +1,4 @@
-import { contains } from 'src/utils';
+import { containsEntry } from 'src/utils';
 
 export function toContainAnyEntries<E = unknown>(
   actual: unknown,
@@ -9,12 +9,10 @@ export function toContainAnyEntries<E = unknown>(
 
   let pass = false;
   if (typeof actual === 'object' && actual !== null && !Array.isArray(actual)) {
-    const entries = Object.keys(actual as Record<string, unknown>).map(k => [
-      k,
-      (actual as Record<string, unknown>)[k],
-    ]);
-    // @ts-expect-error OK to have implicit any for this.equals
-    pass = expected.some(entry => contains((a, b) => this.equals(a, b, this.customTesters), entries, entry));
+    pass = expected.some(entry =>
+      // @ts-expect-error containsEntry takes an any type
+      containsEntry((a, b) => this.equals(a, b, this.customTesters), actual, entry),
+    );
   }
 
   return {
