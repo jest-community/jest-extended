@@ -12,6 +12,13 @@ describe('.toSatisfy', () => {
   test('fails when given function that returns false', () => {
     expect(() => expect(3).toSatisfy(is2)).toThrowErrorMatchingSnapshot();
   });
+
+  test('fails when expected is not a function', () => {
+    // @ts-expect-error testing invalid input
+    expect(() => expect(1).toSatisfy('not a function')).toThrow(
+      'Expected predicate to be a function but instead "not a function" was found',
+    );
+  });
 });
 
 describe('.not.toSatisfy', () => {
