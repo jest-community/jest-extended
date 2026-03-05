@@ -15,6 +15,11 @@ describe('.toContainAnyKeys', () => {
   test('fails when object does not contain any keys', () => {
     expect(() => expect(testObject).toContainAnyKeys(['occupation'])).toThrowErrorMatchingSnapshot();
   });
+
+  test('fails when actual is not an object', () => {
+    expect(() => expect(null).toContainAnyKeys(['name'])).toThrowErrorMatchingSnapshot();
+    expect(() => expect(undefined).toContainAnyKeys(['name'])).toThrowErrorMatchingSnapshot();
+  });
 });
 
 describe('.not.toContainAnyKeys', () => {
