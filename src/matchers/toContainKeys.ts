@@ -2,9 +2,7 @@ export function toContainKeys<E = unknown>(actual: unknown, expected: readonly (
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  const pass = expected.every(
-    key => actual && actual.hasOwnProperty && Object.prototype.hasOwnProperty.call(actual, key),
-  );
+  const pass = expected.every(key => actual != null && Object.hasOwn(actual as object, key));
 
   return {
     pass,

@@ -1,4 +1,4 @@
-import { contains, determinePropertyMessage, isJestMockOrSpy } from 'src/utils';
+import { contains, containsEntry, determinePropertyMessage, isJestMockOrSpy } from 'src/utils';
 
 let equals;
 
@@ -72,6 +72,34 @@ describe('Utils', () => {
     test('returns false if value is not a jest mock', () => {
       const fn = () => {};
       expect(isJestMockOrSpy(fn)).toBe(false);
+    });
+  });
+
+  describe('.containsEntry', () => {
+    test('returns true when object contains given entry', () => {
+      expect(containsEntry(equals, { foo: 'bar' }, ['foo', 'bar'])).toBe(true);
+    });
+
+    test('returns false when object does not contain given entry', () => {
+      expect(containsEntry(equals, { foo: 'bar' }, ['foo', 'baz'])).toBe(false);
+    });
+
+    test('returns false when object does not have given key', () => {
+      expect(containsEntry(equals, { foo: 'bar' }, ['bar', 'bar'])).toBe(false);
+    });
+
+    test('returns false if obj is null', () => {
+      expect(containsEntry(equals, null, ['foo', 'bar'])).toBe(false);
+    });
+
+    test('returns false if obj is undefined', () => {
+      expect(containsEntry(equals, undefined, ['foo', 'bar'])).toBe(false);
+    });
+
+    test('returns true for objects without hasOwnProperty', () => {
+      const obj = Object.create(null);
+      obj.foo = 'bar';
+      expect(containsEntry(equals, obj, ['foo', 'bar'])).toBe(true);
     });
   });
 });
