@@ -20,5 +20,5 @@ export function toBeHexadecimal(actual: unknown) {
   };
 }
 
-const longRegex = RegExp(/^#\b[a-f0-9]{6}\b/gi);
-const shortRegex = RegExp(/^#\b[a-f0-9]{3}\b/gi);
+const longRegex = /^#\b[a-f0-9]{6}\b/i;
+const shortRegex = /^#\b[a-f0-9]{3}\b/i;
