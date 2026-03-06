@@ -3,11 +3,7 @@ export function toContainKey<E = unknown>(actual: unknown, expected: keyof E | s
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const pass =
-    typeof actual === 'object' &&
-    actual !== null &&
-    !Array.isArray(actual) &&
-    actual.hasOwnProperty &&
-    Object.prototype.hasOwnProperty.call(actual, expected);
+    typeof actual === 'object' && actual !== null && !Array.isArray(actual) && Object.hasOwn(actual, expected);
 
   return {
     pass,

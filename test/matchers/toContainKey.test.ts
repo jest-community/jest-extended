@@ -15,6 +15,7 @@ describe('.toContainKey', () => {
 
   test('fails when actual is not an object', () => {
     expect(() => expect(null).toContainKey('hello')).toThrowErrorMatchingSnapshot();
+    expect(() => expect(undefined).toContainKey('hello')).toThrowErrorMatchingSnapshot();
     expect(() => expect(42).toContainKey('hello')).toThrowErrorMatchingSnapshot();
   });
 });
@@ -30,6 +31,7 @@ describe('.not.toContainKey', () => {
 
   test('passes when actual is not an object', () => {
     expect(() => expect(null).not.toContainKey('hello'));
+    expect(() => expect(undefined).not.toContainKey('hello'));
     expect(() => expect(42).not.toContainKey('hello'));
   });
 });

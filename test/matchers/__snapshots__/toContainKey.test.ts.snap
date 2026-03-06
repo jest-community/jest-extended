@@ -24,6 +24,15 @@ exports[`.toContainKey fails when actual is not an object 2`] = `
 Expected object to contain key:
   <green>"hello"</color>
 Received:
+  <red>undefined</color>"
+`;
+
+exports[`.toContainKey fails when actual is not an object 3`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toContainKey(</intensity><green>expected</color><dim>)</intensity>
+
+Expected object to contain key:
+  <green>"hello"</color>
+Received:
   <red>42</color>"
 `;
 

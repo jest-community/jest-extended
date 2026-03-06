@@ -10,8 +10,8 @@ export function toContainAnyEntries<E = unknown>(
   let pass = false;
   if (typeof actual === 'object' && actual !== null && !Array.isArray(actual)) {
     pass = expected.some(entry =>
-      // @ts-expect-error containsEntry takes an any type
-      containsEntry((a, b) => this.equals(a, b, this.customTesters), actual, entry),
+      // @ts-expect-error OK to have implicit any for this.equals
+      containsEntry((a: unknown, b: unknown) => this.equals(a, b, this.customTesters), actual, entry as [any, any]),
     );
   }
 

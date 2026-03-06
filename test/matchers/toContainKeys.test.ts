@@ -12,6 +12,11 @@ describe('.toContainKeys', () => {
   test('fails when object does not contain all keys', () => {
     expect(() => expect(data).toContainKeys(['a', 'd'])).toThrowErrorMatchingSnapshot();
   });
+
+  test('fails when actual is not an object', () => {
+    expect(() => expect(null).toContainKeys(['a'])).toThrowErrorMatchingSnapshot();
+    expect(() => expect(undefined).toContainKeys(['a'])).toThrowErrorMatchingSnapshot();
+  });
 });
 
 describe('.not.toContainKeys', () => {
