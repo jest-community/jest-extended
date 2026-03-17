@@ -1,5 +1,5 @@
-export function toIncludeSameMembers<E = unknown>(actual: unknown, expected: readonly E[]) {
-  // @ts-expect-error OK to have implicit any for this.utils
+import type { MatcherContext } from 'expect';
+export function toIncludeSameMembers<E = unknown>(this: MatcherContext, actual: unknown, expected: readonly E[]) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const pass =

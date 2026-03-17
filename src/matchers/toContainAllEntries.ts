@@ -1,13 +1,14 @@
+import type { MatcherContext } from 'expect';
 import { containsEntry } from 'src/utils';
 
 export function toContainAllEntries<E = unknown>(
+  this: MatcherContext,
   actual: unknown,
   expected: readonly (readonly [keyof E, E[keyof E]])[],
 ): {
   pass: boolean;
   message: () => string;
 } {
-  // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const pass =
