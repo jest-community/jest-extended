@@ -4333,6 +4333,7 @@ __metadata:
     eslint-plugin-import: "npm:^2.8.0"
     eslint-plugin-jest: "npm:^29.0.0"
     eslint-plugin-prettier: "npm:^5.2.0"
+    expect: "npm:^30.0.0"
     globals: "npm:^17.0.0"
     husky: "npm:^9.0.0"
     jest: "npm:^30.0.0"
