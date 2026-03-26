@@ -35,7 +35,7 @@ jobs:
         if: ${{ matrix.jest-version != 30 }}
         run: yarn add --dev jest@${{ matrix.jest-version }} ts-jest@${{ matrix.jest-version }} @types/jest@${{ matrix.jest-version }}
       - run: yarn test:coverage
-      - uses: codecov/codecov-action@v5
+      - uses: codecov/codecov-action@v6
         if: ${{ always() }}
 
   test-os:
@@ -56,7 +56,7 @@ jobs:
           cache: 'yarn'
       - run: yarn install --immutable
       - run: yarn test:coverage
-      - uses: codecov/codecov-action@v5
+      - uses: codecov/codecov-action@v6
         if: ${{ always() }}
 
   lint:
