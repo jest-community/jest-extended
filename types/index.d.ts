@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
-interface CustomMatchers<R> {
+interface CustomMatchers<R> extends Record<string, any> {
   /**
    * Note: Currently unimplemented
    * Passing assertion
@@ -63,16 +61,33 @@ interface CustomMatchers<R> {
   toBeBefore(date: Date): R;
 
   /**
+   * Use `.toBeBigInt` when checking if a value is a `BigInt`.
+   */
+  toBeBigInt(): R;
+
+  /**
    * Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
    * @param {Array.<*>} members
    */
-  toIncludeAllMembers<E = unknown>(members: readonly E[]): R;
+  toIncludeAllMembers<E = unknown>(members: readonly E[] | E): R;
+
+  /**
+   * Use `.toIncludeAllPartialMembers` when checking if an `Array` contains all the same partial members of a given set.
+   * @param {Array.<*>} members
+   */
+  toIncludeAllPartialMembers<E = unknown>(members: readonly E[] | E): R;
+
+  /**
+   * Use `.toIncludeSamePartialMembers` when checking if an `Array` contains exactly the same partial members as a given set, in any order
+   * @param {Array.<*>} members
+   */
+  toIncludeSamePartialMembers<E = unknown>(members: readonly E[]): R;
 
   /**
    * Use `.toIncludeAnyMembers` when checking if an `Array` contains any of the members of a given set.
    * @param {Array.<*>} members
    */
-  toIncludeAnyMembers<E = unknown>(members: readonly E[]): R;
+  toIncludeAnyMembers<E = unknown>(members: readonly E[] | E): R;
 
   /**
    * Use `.toIncludeSameMembers` when checking if two arrays contain equal values, in any order.
@@ -146,7 +161,7 @@ interface CustomMatchers<R> {
    * @param {Mock} mock
    * @param {boolean} [failIfNoSecondInvocation=true]
    */
-  toHaveBeenCalledBefore(mock: jest.MockInstance<unknown, unknown[]>, failIfNoSecondInvocation: boolean): R;
+  toHaveBeenCalledBefore(mock: jest.MockInstance<any, any[]>, failIfNoSecondInvocation?: boolean): R;
 
   /**
    * Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another `Mock`.
@@ -156,7 +171,7 @@ interface CustomMatchers<R> {
    * @param {Mock} mock
    * @param {boolean} [failIfNoFirstInvocation=true]
    */
-  toHaveBeenCalledAfter(mock: jest.MockInstance<unknown, unknown[]>, failIfNoFirstInvocation: boolean): R;
+  toHaveBeenCalledAfter(mock: jest.MockInstance<any, any[]>, failIfNoFirstInvocation?: boolean): R;
 
   /**
    * Use `.toHaveBeenCalledOnce` to check if a `Mock` was called exactly one time.
@@ -164,12 +179,12 @@ interface CustomMatchers<R> {
   toHaveBeenCalledOnce(): R;
 
   /**
-   * Use `.toHaveBeenCalledOnceWith` to check if a `Mock` was called exactly one time with the expected value.
+   * Use `.toHaveBeenCalledExactlyOnceWith` to check if a `Mock` was called exactly one time with the expected value.
    */
-  toHaveBeenCalledOnceWith(): R;
+  toHaveBeenCalledExactlyOnceWith(...args: unknown[]): R;
 
   /**
-   * Use `.toBeNumber` when checking if a value is a `Number`.
+   * Use `.toBeNumber` when checking if a value is a `Number` or `BigInt`.
    */
   toBeNumber(): R;
 
@@ -179,27 +194,27 @@ interface CustomMatchers<R> {
   toBeNaN(): R;
 
   /**
-   * Use `.toBeFinite` when checking if a value is a `Number`, not `NaN` or `Infinity`.
+   * Use `.toBeFinite` when checking if a value is a `Number`, not `NaN` or `Infinity`, or a `BigInt`.
    */
   toBeFinite(): R;
 
   /**
-   * Use `.toBePositive` when checking if a value is a positive `Number`.
+   * Use `.toBePositive` when checking if a value is a positive `Number` or `BigInt`.
    */
   toBePositive(): R;
 
   /**
-   * Use `.toBeNegative` when checking if a value is a negative `Number`.
+   * Use `.toBeNegative` when checking if a value is a negative `Number` or `BigInt`.
    */
   toBeNegative(): R;
 
   /**
-   * Use `.toBeEven` when checking if a value is an even `Number`.
+   * Use `.toBeEven` when checking if a value is an even `Number` or `BigInt`.
    */
   toBeEven(): R;
 
   /**
-   * Use `.toBeOdd` when checking if a value is an odd `Number`.
+   * Use `.toBeOdd` when checking if a value is an odd `Number` or `BigInt`.
    */
   toBeOdd(): R;
 
@@ -212,17 +227,38 @@ interface CustomMatchers<R> {
   toBeWithin(start: number, end: number): R;
 
   /**
-   * Use `.toBeInRange` when checking if an array has elements in range min (inclusive) and max (inclusive).
+   * Use `.toBeInRange` when checking if an array has elements in range min (inclusive) and max (exclusive).
+   * Supports both number and BigInt values.
    *
    * @param min
    * @param max
    */
-  toBeInRange(min: number, max: number): R;
+  toBeInRange(min: number | bigint, max: number | bigint): R;
 
   /**
    * Use `.toBeObject` when checking if a value is an `Object`.
    */
   toBeObject(): R;
+
+  /**
+   * Use `.toChange` when checking if a value has changed.
+   * @param {Function} checker
+   */
+  toChange<E = unknown>(checker: () => E): R;
+
+  /**
+   * Use `.toChangeBy` when checking if a value changed by an amount.
+   * @param {Function} checker
+   * @param {Number|BigInt} by
+   */
+  toChangeBy(checker: () => number | bigint, by?: number | bigint): R;
+
+  /**
+   * Use `.toChangeTo` when checking if a value changed to a specific value.
+   * @param {Function} checker
+   * @param {*} to
+   */
+  toChangeTo<E = unknown>(checker: () => E, to: E): R;
 
   /**
    * Use `.toContainKey` when checking if an object contains the provided key.
@@ -387,7 +423,10 @@ interface CustomMatchers<R> {
    * @param {Function} type
    * @param {String | RegExp} message
    */
-  toThrowWithMessage(type: (...args: any[]) => any, message: string | RegExp): R;
+  toThrowWithMessage(
+    type: (new (...args: any[]) => { message: string }) | ((...args: any[]) => { message: string }),
+    message: string | RegExp,
+  ): R;
 
   /**
    * Use `.toBeEmptyObject` when checking if a value is an empty `Object`.
@@ -491,22 +530,33 @@ declare namespace jest {
     toBeBefore(date: Date): R;
 
     /**
-     * Use `.toIncludeAllMembers` when checking if an `Array` contains all of the same members of a given set.
-     * @param {Array.<*>} members
+     * Use `.toBeBigInt` when checking if a value is a `BigInt`.
      */
-    toIncludeAllMembers<E = unknown>(members: readonly E[]): R;
+    toBeBigInt(): R;
 
     /**
-     * Use `.toIncludeAllPartialMembers` when checking if an `Array` contains all of the same partial members of a given set.
+     * Use `.toIncludeAllMembers` when checking if an `Array` contains all the same members of a given set.
      * @param {Array.<*>} members
      */
-    toIncludeAllPartialMembers<E = unknown>(members: readonly E[]): R;
+    toIncludeAllMembers<E = unknown>(members: readonly E[] | E): R;
+
+    /**
+     * Use `.toIncludeAllPartialMembers` when checking if an `Array` contains all the same partial members of a given set.
+     * @param {Array.<*>} members
+     */
+    toIncludeAllPartialMembers<E = unknown>(members: readonly E[] | E): R;
+
+    /**
+     * Use `.toIncludeSamePartialMembers` when checking if an `Array` contains exactly the same partial members as a given set, in any order
+     * @param {Array.<*>} members
+     */
+    toIncludeSamePartialMembers<E = unknown>(members: readonly E[]): R;
 
     /**
      * Use `.toIncludeAnyMembers` when checking if an `Array` contains any of the members of a given set.
      * @param {Array.<*>} members
      */
-    toIncludeAnyMembers<E = unknown>(members: readonly E[]): R;
+    toIncludeAnyMembers<E = unknown>(members: readonly E[] | E): R;
 
     /**
      * Use `.toIncludeSameMembers` when checking if two arrays contain equal values, in any order.
@@ -580,7 +630,7 @@ declare namespace jest {
      * @param {Mock} mock
      * @param {boolean} [failIfNoSecondInvocation=true]
      */
-    toHaveBeenCalledBefore(mock: jest.MockInstance<unknown, unknown[]>, failIfNoSecondInvocation?: boolean): R;
+    toHaveBeenCalledBefore(mock: jest.MockInstance<any, any[]>, failIfNoSecondInvocation?: boolean): R;
 
     /**
      * Use `.toHaveBeenCalledAfter` when checking if a `Mock` was called after another `Mock`.
@@ -590,7 +640,7 @@ declare namespace jest {
      * @param {Mock} mock
      * @param {boolean} [failIfNoFirstInvocation=true]
      */
-    toHaveBeenCalledAfter(mock: jest.MockInstance<unknown, unknown[]>, failIfNoFirstInvocation?: boolean): R;
+    toHaveBeenCalledAfter(mock: jest.MockInstance<any, any[]>, failIfNoFirstInvocation?: boolean): R;
 
     /**
      * Use `.toHaveBeenCalledOnce` to check if a `Mock` was called exactly one time.
@@ -598,12 +648,12 @@ declare namespace jest {
     toHaveBeenCalledOnce(): R;
 
     /**
-     * Use `.toHaveBeenCalledOnceWith` to check if a `Mock` was called exactly one time with the expected value.
+     * Use `.toHaveBeenCalledExactlyOnceWith` to check if a `Mock` was called exactly one time with the expected value.
      */
-    toHaveBeenCalledOnceWith(...args: unknown[]): R;
+    toHaveBeenCalledExactlyOnceWith(...args: unknown[]): R;
 
     /**
-     * Use `.toBeNumber` when checking if a value is a `Number`.
+     * Use `.toBeNumber` when checking if a value is a `Number` or `BigInt`.
      */
     toBeNumber(): R;
 
@@ -613,27 +663,27 @@ declare namespace jest {
     toBeNaN(): R;
 
     /**
-     * Use `.toBeFinite` when checking if a value is a `Number`, not `NaN` or `Infinity`.
+     * Use `.toBeFinite` when checking if a value is a `Number`, not `NaN` or `Infinity`, or a `BigInt`.
      */
     toBeFinite(): R;
 
     /**
-     * Use `.toBePositive` when checking if a value is a positive `Number`.
+     * Use `.toBePositive` when checking if a value is a positive `Number` or `BigInt`.
      */
     toBePositive(): R;
 
     /**
-     * Use `.toBeNegative` when checking if a value is a negative `Number`.
+     * Use `.toBeNegative` when checking if a value is a negative `Number` or `BigInt`.
      */
     toBeNegative(): R;
 
     /**
-     * Use `.toBeEven` when checking if a value is an even `Number`.
+     * Use `.toBeEven` when checking if a value is an even `Number` or `BigInt`.
      */
     toBeEven(): R;
 
     /**
-     * Use `.toBeOdd` when checking if a value is an odd `Number`.
+     * Use `.toBeOdd` when checking if a value is an odd `Number` or `BigInt`.
      */
     toBeOdd(): R;
 
@@ -646,12 +696,13 @@ declare namespace jest {
     toBeWithin(start: number, end: number): R;
 
     /**
-     * Use `.toBeInRange` when checking if an array has elements in range min (inclusive) and max (inclusive).
+     * Use `.toBeInRange` when checking if an array has elements in range min (inclusive) and max (exclusive).
+     * Supports both number and BigInt values.
      *
      * @param min
      * @param max
      */
-    toBeInRange(min: number, max: number): R;
+    toBeInRange(min: number | bigint, max: number | bigint): R;
 
     /**
      * Use `.toBeInteger` when checking if a value is an integer.
@@ -662,6 +713,26 @@ declare namespace jest {
      * Use `.toBeObject` when checking if a value is an `Object`.
      */
     toBeObject(): R;
+
+    /**
+     * Use `.toChange` when checking if a value has changed.
+     * @param {Function} checker
+     */
+    toChange<E = unknown>(checker: () => E): R;
+
+    /**
+     * Use `.toChangeBy` when checking if a value changed by an amount.
+     * @param {Function} checker
+     * @param {Number|BigInt} by
+     */
+    toChangeBy(checker: () => number | bigint, by?: number | bigint): R;
+
+    /**
+     * Use `.toChangeTo` when checking if a value changed to a specific value.
+     * @param {Function} checker
+     * @param {*} to
+     */
+    toChangeTo<E = unknown>(checker: () => E, to: E): R;
 
     /**
      * Use `.toContainKey` when checking if an object contains the provided key.
@@ -727,14 +798,14 @@ declare namespace jest {
     toContainEntry<E = unknown>(entry: readonly [keyof E, E[keyof E]]): R;
 
     /**
-     * Use `.toContainEntries` when checking if an object contains all of the provided entries.
+     * Use `.toContainEntries` when checking if an object contains all the provided entries.
      *
      * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
     toContainEntries<E = unknown>(entries: readonly (readonly [keyof E, E[keyof E]])[]): R;
 
     /**
-     * Use `.toContainAllEntries` when checking if an object only contains all of the provided entries.
+     * Use `.toContainAllEntries` when checking if an object only contains all the provided entries.
      *
      * @param {Array.<Array.<keyof E, E[keyof E]>>} entries
      */
@@ -827,10 +898,7 @@ declare namespace jest {
      * @param {String | RegExp} message
      */
     toThrowWithMessage(
-      type:
-        | (new (...args: any[]) => { message: string })
-        | (abstract new (...args: any[]) => { message: string })
-        | ((...args: any[]) => { message: string }),
+      type: (new (...args: any[]) => { message: string }) | ((...args: any[]) => { message: string }),
       message: string | RegExp,
     ): R;
 
@@ -872,15 +940,15 @@ declare namespace jest {
   }
 
   // noinspection JSUnusedGlobalSymbols
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
   interface Expect extends CustomMatchers<any> {}
 
   // noinspection JSUnusedGlobalSymbols
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
   interface InverseAsymmetricMatchers extends Expect {}
 }
 
-declare namespace Vi {
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface AsymmetricMatchersContaining extends CustomMatchers<any> {}
+declare module 'jest-extended' {
+  const matchers: CustomMatchers<any>;
+  export = matchers;
 }

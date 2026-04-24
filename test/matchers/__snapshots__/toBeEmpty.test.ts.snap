@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`.not.toBeEmpty fails when given empty string 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeEmpty()</intensity>
+
+Expected value to not be empty received:
+  <red>""</color>"
+`;
+
+exports[`.toBeEmpty fails when given non-empty string 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeEmpty()</intensity>
+
+Expected value to be empty received:
+  <red>"string"</color>"
+`;
+
+exports[`toBeEmpty with custom equality tester fails when custom equality does not match empty object 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeEmpty()</intensity>
+
+Expected value to be empty received:
+  <red>{}</color>"
+`;

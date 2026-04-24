@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`.not.toIncludeAllPartialMembers fails when array values matches the members of the set 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toIncludeAllPartialMembers(</intensity><green>expected</color><dim>)</intensity>
+
+Expected list to not have all of the following partial members:
+  <green>[{"foo": "bar"}]</color>
+Received:
+  <red>[{"hello": "world"}, {"baz": "qux", "foo": "bar"}]</color>"
+`;
+
+exports[`.toIncludeAllPartialMembers fails when array values do not contain any of the members of the set 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeAllPartialMembers(</intensity><green>expected</color><dim>)</intensity>
+
+Expected list to have all of the following partial members:
+  <green>[{"foo": "qux"}]</color>
+Received:
+  <red>[{"hello": "world"}, {"baz": "qux", "foo": "bar"}]</color>"
+`;
+
+exports[`.toIncludeAllPartialMembers fails when expected object is not an array 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeAllPartialMembers(</intensity><green>expected</color><dim>)</intensity>
+
+Expected list to have all of the following partial members:
+  <green>1</color>
+Received:
+  <red>[{"hello": "world"}, {"baz": "qux", "foo": "bar"}]</color>"
+`;
+
+exports[`.toIncludeAllPartialMembers fails when given object is not an array 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeAllPartialMembers(</intensity><green>expected</color><dim>)</intensity>
+
+Expected list to have all of the following partial members:
+  <green>[{"foo": "bar"}]</color>
+Received:
+  <red>1</color>"
+`;
+
+exports[`toIncludeAllPartialMembers with custom equality tester fails when custom equality does not match any of the values 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeAllPartialMembers(</intensity><green>expected</color><dim>)</intensity>
+
+Expected list to have all of the following partial members:
+  <green>[{"foo": "bar"}]</color>
+Received:
+  <red>[{"foo": "bar"}]</color>"
+`;

@@ -15,20 +15,27 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [14.x, 16.x, 18.x, 19.x]
-        jest-version: [27, 28, 29]
+        node-version: [20.x, 22.x, 24.x, 25.x]
+        jest-version: [27, 28, 29, 30]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
+      - run: corepack enable
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
-          cache: yarn
+          cache: 'yarn'
+      - name: install
+        run: yarn install --immutable
       - name: install with jest@${{ matrix.jest-version }}
-        run: yarn add --dev jest@${{ matrix.jest-version }} babel-jest@${{ matrix.jest-version }} @types/jest@${{ matrix.jest-version }}
+        if: ${{ matrix.jest-version == 30 }}
+        run: yarn add --dev jest@${{ matrix.jest-version }} ts-jest@29 @types/jest@${{ matrix.jest-version }}
+      - name: install with jest@${{ matrix.jest-version }}
+        if: ${{ matrix.jest-version != 30 }}
+        run: yarn add --dev jest@${{ matrix.jest-version }} ts-jest@${{ matrix.jest-version }} @types/jest@${{ matrix.jest-version }}
       - run: yarn test:coverage
-      - uses: codecov/codecov-action@v3
+      - uses: codecov/codecov-action@v6
         if: ${{ always() }}
 
   test-os:
@@ -38,31 +45,43 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest, macOS-latest]
     runs-on: ${{ matrix.os }}
-
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v6
+      - if: runner.os == 'Windows'
+        run: npm install --global --force corepack@latest
+      - run: corepack enable
+      - uses: actions/setup-node@v6
         with:
           node-version: lts/*
-          cache: yarn
-      - run: yarn install
+          cache: 'yarn'
+      - run: yarn install --immutable
       - run: yarn test:coverage
-      - uses: codecov/codecov-action@v3
+      - uses: codecov/codecov-action@v6
         if: ${{ always() }}
 
   lint:
     name: Run ESLint & TypeScript compiler
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v6
+      - run: corepack enable
+      - uses: actions/setup-node@v6
         with:
           node-version: lts/*
-          cache: yarn
-      - run: yarn install
+          cache: 'yarn'
+      - run: yarn install --immutable
       - run: yarn build
       - run: yarn lint
       - run: yarn typecheck
+      - run: |
+          js_files=$(find src test -type f -name '*.js')
+          if [ -n "$js_files" ]; then
+            echo "::error::Found disallowed .js files. Please convert them to .ts:"
+            echo "$js_files"
+            exit 1
+          else
+            echo "No disallowed .js files found in src/ or test/. Check passed."
+          fi
   release:
     name: Run publish action
     if: ${{ github.event_name == 'push' && (github.event.ref == 'refs/heads/main' || github.event.ref == 'refs/heads/next') }}
@@ -70,16 +89,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
+
+      - name: Enable Corepack
+        run: corepack enable
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v6
         with:
           node-version: lts/*
-          cache: yarn
+          cache: 'yarn'
 
-      - name: Install Dependencies
-        run: yarn
+      - name: install
+        run: yarn install --immutable
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets

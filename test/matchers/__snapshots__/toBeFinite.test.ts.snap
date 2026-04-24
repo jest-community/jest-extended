@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`.not.toBeFinite fails when given a BigInt value 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeFinite()</intensity>
+
+Expected value to not be finite received:
+  <red>1n</color>"
+`;
+
+exports[`.not.toBeFinite fails when given a finite number 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeFinite()</intensity>
+
+Expected value to not be finite received:
+  <red>1</color>"
+`;
+
+exports[`.toBeFinite fails when not given Infinity 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeFinite()</intensity>
+
+Expected value to be finite received:
+  <red>Infinity</color>"
+`;
+
+exports[`.toBeFinite fails when not given NaN 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeFinite()</intensity>
+
+Expected value to be finite received:
+  <red>NaN</color>"
+`;

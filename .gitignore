@@ -8,3 +8,5 @@ coverage
 .vs
 .vscode
 package-lock.json
+*tsbuildinfo
+install-state.gz

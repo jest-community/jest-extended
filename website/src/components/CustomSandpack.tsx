@@ -17,7 +17,7 @@ expect.extend(matchers);`;
 export const Sandpack: React.FC<{ files: any }> = props => {
   return (
     <SandpackProvider
-      customSetup={{ entry: 'entry.ts', dependencies: { 'jest-extended': '^3.0.2' } }}
+      customSetup={{ entry: 'entry.ts', dependencies: { 'jest-extended': '^6.0.0' } }}
       files={{
         '/entry.ts': {
           code: '',
@@ -43,7 +43,7 @@ export const TestFile: React.FC<{ name: string; children: string }> = props => {
   return (
     <SandpackProvider
       theme={colorMode === 'dark' ? dracula : githubLight}
-      customSetup={{ entry: 'entry.js', dependencies: { 'jest-extended': '^3.0.2' } }}
+      customSetup={{ entry: 'entry.js', dependencies: { 'jest-extended': '^6.0.0' } }}
       files={{
         '/entry.js': {
           code: '',

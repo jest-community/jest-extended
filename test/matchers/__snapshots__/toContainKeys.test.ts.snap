@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`.not.toContainKeys fails when object contains all keys 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toContainKeys(</intensity><green>expected</color><dim>)</intensity>
+
+Expected object to not contain all keys:
+  <green>["a", "b", "c"]</color>
+Received:
+  <red>{"a": "foo", "b": "bar", "c": "baz"}</color>"
+`;
+
+exports[`.toContainKeys fails when actual is not an object 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toContainKeys(</intensity><green>expected</color><dim>)</intensity>
+
+Expected object to contain all keys:
+  <green>["a"]</color>
+Received:
+  <red>null</color>"
+`;
+
+exports[`.toContainKeys fails when actual is not an object 2`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toContainKeys(</intensity><green>expected</color><dim>)</intensity>
+
+Expected object to contain all keys:
+  <green>["a"]</color>
+Received:
+  <red>undefined</color>"
+`;
+
+exports[`.toContainKeys fails when object does not contain all keys 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toContainKeys(</intensity><green>expected</color><dim>)</intensity>
+
+Expected object to contain all keys:
+  <green>["a", "d"]</color>
+Received:
+  <red>{"a": "foo", "b": "bar", "c": "baz"}</color>"
+`;

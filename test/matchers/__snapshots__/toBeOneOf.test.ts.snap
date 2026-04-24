@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`.not.toBeOneOf fails when value is in given array 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeOneOf(</intensity><green>expected</color><dim>)</intensity>
+
+Expected value to not be in list:
+  <green>[1, 2, 3]</color>
+Received:
+  <red>1</color>"
+`;
+
+exports[`.toBeOneOf fails when value is not in given array 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeOneOf(</intensity><green>expected</color><dim>)</intensity>
+
+Expected value to be in list:
+  <green>[1, 2, 3]</color>
+Received:
+  <red>4</color>"
+`;
+
+exports[`toBeOneOf with custom equality tester fails when custom equality does not match any array element 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeOneOf(</intensity><green>expected</color><dim>)</intensity>
+
+Expected value to be in list:
+  <green>[1, 2, 3]</color>
+Received:
+  <red>1</color>"
+`;

@@ -1,11 +1,17 @@
 {
-  "extends": ["config:base", ":semanticCommitsDisabled"],
-  "lockFileMaintenance": { "enabled": true, "automerge": true },
+  "extends": ["config:recommended", ":semanticCommitsDisabled"],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true
+  },
   "rangeStrategy": "replace",
   "postUpdateOptions": ["yarnDedupeHighest"],
   "packageRules": [
     {
-      "matchPackageNames": ["@codesandbox/sandpack-react", "@codesandbox/sandpack-themes"],
+      "matchPackageNames": [
+        "@codesandbox/sandpack-react",
+        "@codesandbox/sandpack-themes"
+      ],
       "groupName": "sandpack"
     }
   ]

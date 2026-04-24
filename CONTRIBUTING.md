@@ -20,10 +20,10 @@ Thanks for being willing to contribute!
 
 ### New Matchers
 
-- Each matcher should be placed in it's own file inside of the `src/matchers/[matcher].js`.
+- Each matcher should be placed in it's own file inside of the `src/matchers/[matcher].ts`.
 - A matcher should:
   - Export the matcher in the format expected by Jest. See the docs for an [example](http://facebook.github.io/jest/docs/en/expect.html#expectextendmatchers). Note: the test outcome messages must be a function that returns a string (this caught me out 😉).
-- Tests for the matcher should go in `test/matchers/[matcher].test.js` - Test suite that uses the new matcher and make sure it passes.
+- Tests for the matcher should go in `test/matchers/[matcher].test.ts` - Test suite that uses the new matcher and make sure it passes.
 - Docs for the new matcher should be updated in the API section of the `README.md` to no longer say `Unimplemented`.
 - Type definitions for the new matchers should be added to `types/index.d.ts`.
 

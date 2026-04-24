@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`.not.toIncludeSameMembers fails when array contents match 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toIncludeSameMembers(</intensity><green>expected</color><dim>)</intensity>
+
+Expected list to not exactly match the members of:
+  <green>[1]</color>
+Received:
+  <red>[1]</color>"
+`;
+
+exports[`.toIncludeSameMembers fails when actual is not an array 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeSameMembers(</intensity><green>expected</color><dim>)</intensity>
+
+Expected list to have the following members and no more:
+  <green>Set {1}</color>
+Received:
+  <red>[1, 2]</color>"
+`;
+
+exports[`.toIncludeSameMembers fails when expected is not an array 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeSameMembers(</intensity><green>expected</color><dim>)</intensity>
+
+Expected list to have the following members and no more:
+  <green>[1]</color>
+Received:
+  <red>Set {1, 2}</color>"
+`;
+
+exports[`.toIncludeSameMembers fails when the arrays are not equal in length 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeSameMembers(</intensity><green>expected</color><dim>)</intensity>
+
+Expected list to have the following members and no more:
+  <green>[1]</color>
+Received:
+  <red>[1, 2]</color>"
+`;
+
+exports[`toIncludeSameMembers with custom equality tester fails when custom equality does not match any of the values 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toIncludeSameMembers(</intensity><green>expected</color><dim>)</intensity>
+
+Expected list to have the following members and no more:
+  <green>[1]</color>
+Received:
+  <red>[1]</color>"
+`;

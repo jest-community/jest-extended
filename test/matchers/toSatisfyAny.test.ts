@@ -1,0 +1,43 @@
+import * as matcher from 'src/matchers/toSatisfyAny';
+
+expect.extend(matcher);
+
+const isEven = (el: number) => el % 2 === 0;
+const isOdd = (el: number) => el % 2 === 1;
+
+describe('.toSatisfyAny', () => {
+  test('passes when any values satisfy predicate', () => {
+    expect([2, 3, 6, 8]).toSatisfyAny(isOdd);
+    expect([1, 4, 7, 9]).toSatisfyAny(isEven);
+    expect([11]).toSatisfyAny(isOdd);
+    expect([10]).toSatisfyAny(isEven);
+  });
+
+  test('fails when no value satisfies the predicate', () => {
+    expect(() => expect([2, 4, 6, 8]).toSatisfyAny(isOdd)).toThrowErrorMatchingSnapshot();
+  });
+
+  test('fails when given a non-array', () => {
+    expect(123).not.toSatisfyAny(isEven);
+    expect('string').not.toSatisfyAny(isOdd);
+    expect(null).not.toSatisfyAny(isEven);
+  });
+
+  test('fails when expected is not a function', () => {
+    // @ts-expect-error testing invalid input
+    expect(() => expect([1]).toSatisfyAny('not a function')).toThrow(
+      'Expected predicate to be a function but instead "not a function" was found',
+    );
+  });
+});
+
+describe('.not.toSatisfyAll', () => {
+  test('passes when all values does not satisfy the predicate', () => {
+    expect([2, 4, 6, 8]).not.toSatisfyAny(isOdd);
+    expect([1, 3, 5, 7]).not.toSatisfyAny(isEven);
+  });
+
+  test('fails when any value satisfies predicate', () => {
+    expect(() => expect([2, 3, 6, 8]).not.toSatisfyAny(isOdd)).toThrowErrorMatchingSnapshot();
+  });
+});
