@@ -1,7 +1,7 @@
+import type { MatcherContext } from 'expect';
 import { containsEntry } from 'src/utils';
 
-export function toPartiallyContain<E = unknown>(actual: unknown, expected: E) {
-  // @ts-expect-error OK to have implicit any for this.utils
+export function toPartiallyContain<E = unknown>(this: MatcherContext, actual: unknown, expected: E) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const pass =

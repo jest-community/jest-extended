@@ -1,7 +1,7 @@
+import type { MatcherContext } from 'expect';
 import { determinePropertyMessage } from 'src/utils';
 
-export function toBeArrayOfSize(actual: unknown, expected: number) {
-  // @ts-expect-error OK to have implicit any for this.utils
+export function toBeArrayOfSize(this: MatcherContext, actual: unknown, expected: number) {
   const { printExpected, printReceived, matcherHint } = this.utils;
 
   const pass = Array.isArray(actual) && actual.length === expected;

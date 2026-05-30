@@ -1,5 +1,5 @@
-export function toBeInRange(actual: unknown[], min: number | bigint, max: number | bigint) {
-  // @ts-expect-error OK to have implicit any for this.utils
+import type { MatcherContext } from 'expect';
+export function toBeInRange(this: MatcherContext, actual: unknown[], min: number | bigint, max: number | bigint) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const element = actual.find((option: any) => {
