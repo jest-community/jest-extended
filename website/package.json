@@ -45,5 +45,5 @@
   "engines": {
     "node": ">=16.14"
   },
-  "packageManager": "yarn@4.15.0"
+  "packageManager": "yarn@4.16.0"
 }
