@@ -43,27 +43,48 @@ export const tokenize = (str: string): Token[] => {
 
 const colorTokens = (str: string, color: (value: string) => string): string => {
   const tokens = tokenize(str);
-  return tokens.reduce((acc, { value, isWhitespace }) => acc + (isWhitespace ? value : color(value)), '');
+  const result: string[] = [];
+
+  for (let i = 0; i < tokens.length; i++) {
+    const { value, isWhitespace } = tokens[i];
+    result.push(isWhitespace ? value : color(value));
+  }
+
+  return result.join('');
 };
 
-export const printExpected = (utils: any, diff: [number, string][]): string =>
-  diff.reduce((acc: string, diffObject: [number, string]) => {
+export const printExpected = (utils: any, diff: [number, string][]): string => {
+  const result: string[] = [];
+
+  for (let i = 0; i < diff.length; i++) {
+    const diffObject = diff[i];
     const operation = diffObject[0];
     const value = diffObject[1];
 
-    if (operation === DIFF_EQUAL) return acc + colorTokens(value, utils.EXPECTED_COLOR);
-    if (operation === DIFF_DELETE)
-      return acc + colorTokens(value, (str: string) => utils.INVERTED_COLOR(utils.EXPECTED_COLOR(str)));
-    return acc;
-  }, '');
+    if (operation === DIFF_EQUAL) {
+      result.push(colorTokens(value, utils.EXPECTED_COLOR));
+    } else if (operation === DIFF_DELETE) {
+      result.push(colorTokens(value, (str: string) => utils.INVERTED_COLOR(utils.EXPECTED_COLOR(str))));
+    }
+  }
 
-export const printReceived = (utils: any, diff: [number, string][]): string =>
-  diff.reduce((acc: string, diffObject: [number, string]) => {
+  return result.join('');
+};
+
+export const printReceived = (utils: any, diff: [number, string][]): string => {
+  const result: string[] = [];
+
+  for (let i = 0; i < diff.length; i++) {
+    const diffObject = diff[i];
     const operation = diffObject[0];
     const value = diffObject[1];
 
-    if (operation === DIFF_EQUAL) return acc + colorTokens(value, utils.RECEIVED_COLOR);
-    if (operation === DIFF_INSERT)
-      return acc + colorTokens(value, (str: string) => utils.INVERTED_COLOR(utils.RECEIVED_COLOR(str)));
-    return acc;
-  }, '');
+    if (operation === DIFF_EQUAL) {
+      result.push(colorTokens(value, utils.RECEIVED_COLOR));
+    } else if (operation === DIFF_INSERT) {
+      result.push(colorTokens(value, (str: string) => utils.INVERTED_COLOR(utils.RECEIVED_COLOR(str))));
+    }
+  }
+
+  return result.join('');
+};
