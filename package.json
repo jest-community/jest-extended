@@ -37,6 +37,10 @@
   "author": "Matt Phillips <matt@mattphillips.io> (mattphillips.io)",
   "license": "MIT",
   "repository": "jest-community/jest-extended",
+  "homepage": "https://jest-extended.jestcommunity.dev/",
+  "bugs": {
+    "url": "https://github.com/jest-community/jest-extended/issues"
+  },
   "devDependencies": {
     "@changesets/cli": "^2.26.0",
     "@eslint/compat": "^2.0.0",
