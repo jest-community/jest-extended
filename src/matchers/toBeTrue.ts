@@ -1,5 +1,5 @@
-export function toBeTrue(actual: unknown) {
-  // @ts-expect-error OK to have implicit any for this.utils
+import type { MatcherContext } from 'expect';
+export function toBeTrue(this: MatcherContext, actual: unknown) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const pass = actual === true;

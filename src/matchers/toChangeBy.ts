@@ -1,8 +1,13 @@
+import type { MatcherContext } from 'expect';
 /**
  * Use `.toChangeBy` when checking if a value changed by an amount.
  */
-export function toChangeBy(mutator: () => unknown | void, checker: () => number | bigint, by: number | bigint = 1) {
-  // @ts-expect-error OK to have implicit any for this.utils
+export function toChangeBy(
+  this: MatcherContext,
+  mutator: () => unknown | void,
+  checker: () => number | bigint,
+  by: number | bigint = 1,
+) {
   const { printReceived: print, matcherHint: hint } = this.utils;
 
   const before = checker();
