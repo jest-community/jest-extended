@@ -76,6 +76,28 @@ describe('.not.toContainValue', () => {
   });
 });
 
+
+describe('.toContainValue with arrays', () => {
+  test('passes when given array contains value', () => {
+    expect(['world', 'foo']).toContainValue('world');
+    expect([{ hello: 'world' }, 'foo']).toContainValue({ hello: 'world' });
+  });
+
+  test('fails when given array does not contain value', () => {
+    expect(() => expect(['world', 'foo']).toContainValue('hello')).toThrowErrorMatchingSnapshot();
+  });
+});
+
+describe('.not.toContainValue with arrays', () => {
+  test('passes when given array does not contain value', () => {
+    expect(['world', 'foo']).not.toContainValue('hello');
+  });
+
+  test('fails when given array contains value', () => {
+    expect(() => expect(['world', 'foo']).not.toContainValue('world')).toThrowErrorMatchingSnapshot();
+  });
+});
+
 // Note - custom equality tester must be at the end of the file because once we add it, it cannot be removed
 (expect.addEqualityTesters ? describe : describe.skip)('toContainValue with custom equality tester', () => {
   let mockEqualityTester: jest.Mock;
