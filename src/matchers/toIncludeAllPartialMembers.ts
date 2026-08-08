@@ -1,7 +1,11 @@
+import type { MatcherContext } from 'expect';
 import { containsEntry } from 'src/utils';
 
-export function toIncludeAllPartialMembers<E = unknown>(actual: unknown, expected: readonly E[] | E) {
-  // @ts-expect-error OK to have implicit any for this.utils
+export function toIncludeAllPartialMembers<E = unknown>(
+  this: MatcherContext,
+  actual: unknown,
+  expected: readonly E[] | E,
+) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const pass =
