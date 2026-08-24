@@ -2193,11 +2193,11 @@ __metadata:
   linkType: hard
 
 "baseline-browser-mapping@npm:^2.11.12":
-  version: 2.11.14
-  resolution: "baseline-browser-mapping@npm:2.11.14"
+  version: 2.11.18
+  resolution: "baseline-browser-mapping@npm:2.11.18"
   bin:
     baseline-browser-mapping: dist/cli.cjs
-  checksum: 10c0/b0d248660ed8a09b0738fb9ca383668e8e445ad23b3efa8a5c41ee91fdf09399766513f97e5effd77e2e5027c1eec225f84bbfdf01586871e5ba2bb4cce8ea83
+  checksum: 10c0/f7a3860b5e3cb1cf650275a7202e753cb0db68e5cccb2b9395f5a37667fb1dd43eb22b7bd3ecd6f9f78c6ff73ae5481245ecddb55844c466ec46cddfe1ac0d1a
   languageName: node
   linkType: hard
 
@@ -2651,9 +2651,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.5.402":
-  version: 1.5.407
-  resolution: "electron-to-chromium@npm:1.5.407"
-  checksum: 10c0/b542d12ef5c0f461300a820b3006b889f14e221f7af3f0353036b259b6d7de824ff365cb5da867309511462378c3576a522b57c3cf42f6185d35387fea3dfb23
+  version: 1.5.412
+  resolution: "electron-to-chromium@npm:1.5.412"
+  checksum: 10c0/09834068e660fe6d888863e0a7f1ae4f2f42d9c77822d7a864eb79dc1643fb48c0b806cb17b162ed1f8794533d9299d5abdb14c3a10939c9276674f0ff9a8f9a
   languageName: node
   linkType: hard
 
@@ -3041,8 +3041,8 @@ __metadata:
   linkType: hard
 
 "eslint@npm:^10.0.0":
-  version: 10.8.1
-  resolution: "eslint@npm:10.8.1"
+  version: 10.9.0
+  resolution: "eslint@npm:10.9.0"
   dependencies:
     "@eslint-community/eslint-utils": "npm:^4.8.0"
     "@eslint-community/regexpp": "npm:^4.12.2"
@@ -3081,7 +3081,7 @@ __metadata:
       optional: true
   bin:
     eslint: bin/eslint.js
-  checksum: 10c0/0c4720a43ef2052829db18e37aa79adb5f0a62137bdf4a4f8e9507bbbbf888ba0669fc03e4b7139d8f27b59b051bbbcd0a3988b068c30fa934a766d60a81f599
+  checksum: 10c0/bc6c9f4a5c0b97e37ab1aa1753ae30ad5b0cf43a25ca3dcfff937f2b47243654c3ca34e37f71006474a3c1b95d6d4e046149facc6d66af4af6e993a619c23509
   languageName: node
   linkType: hard
 
@@ -3503,11 +3503,11 @@ __metadata:
   linkType: hard
 
 "get-tsconfig@npm:^4.10.0, get-tsconfig@npm:^4.10.1":
-  version: 4.14.2
-  resolution: "get-tsconfig@npm:4.14.2"
+  version: 4.14.3
+  resolution: "get-tsconfig@npm:4.14.3"
   dependencies:
     resolve-pkg-maps: "npm:^1.0.0"
-  checksum: 10c0/0b6e4fafd34adcc992258f9874a366222fac76b165a4b9c102fe25056a3f9c4dae1e365c213c040e56b0bd45fd5671343f9410d153af1aab0bbf699a54d59c1b
+  checksum: 10c0/22119bb5b7e37b922a973bfb50deac89ca845cef50a24cd27b6c628f314e91a2bccceb186e0b5183e231ad6480d7173738912975332caf60678af39b7236eeac
   languageName: node
   linkType: hard
 
@@ -3694,11 +3694,11 @@ __metadata:
   linkType: hard
 
 "human-id@npm:^4.1.1":
-  version: 4.2.0
-  resolution: "human-id@npm:4.2.0"
+  version: 4.2.1
+  resolution: "human-id@npm:4.2.1"
   bin:
     human-id: dist/cli.js
-  checksum: 10c0/80071f3b785b2e91080b5f9aa2d079c2e9a464e009ea12c035255b61d1b70beefe7eda42209dff9c1bb9a9fa58e50ada38c1b314ba3a23266a72cd5e9a453e1f
+  checksum: 10c0/e7a6f89843fc10c3827d856f862b6b65678de22d97336524ff61ad0ff9414e9c6c8414bbcf7ccb329bdb7651db65666fa84aeac4b48aa3891f3ed8f0178a70c6
   languageName: node
   linkType: hard
 
@@ -6220,8 +6220,8 @@ __metadata:
   linkType: hard
 
 "tsc-alias@npm:^1.8.0":
-  version: 1.9.1
-  resolution: "tsc-alias@npm:1.9.1"
+  version: 1.9.2
+  resolution: "tsc-alias@npm:1.9.2"
   dependencies:
     chokidar: "npm:^3.5.3"
     commander: "npm:^9.0.0"
@@ -6232,7 +6232,7 @@ __metadata:
     plimit-lit: "npm:^1.2.6"
   bin:
     tsc-alias: dist/bin/index.js
-  checksum: 10c0/b696508a671fdcd3e10fe6d88a64da77397811dbb7fd701623b8def2ae41f0cb7b39607de403873f072088dea8c6c10fc88ea3e65b6bb8a69635c9d61a935f77
+  checksum: 10c0/928acca5ae3a14ff6b54914985df5d4e6c240a771bbd3d68840a3b4c373bbf5dc8c6abd1d5b64f50c51518c4e59cf8dc98f5c3f5ddb3adc0e4b798d4942102f1
   languageName: node
   linkType: hard
 
