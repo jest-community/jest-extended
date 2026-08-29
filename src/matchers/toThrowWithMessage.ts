@@ -1,3 +1,4 @@
+import type { MatcherContext } from 'expect';
 const predicate = (error: any, type: any, message: any) => {
   if (message instanceof RegExp) {
     return error && error instanceof type && message.test(error.message);
@@ -42,6 +43,7 @@ const getExpectedError = (type: any, message: any) => {
 };
 
 export function toThrowWithMessage(
+  this: MatcherContext,
   callbackOrPromiseReturn: () => void,
   type:
     | (new (...args: any[]) => { message: string })
@@ -49,9 +51,7 @@ export function toThrowWithMessage(
     | ((...args: any[]) => { message: string }),
   message: string | RegExp,
 ) {
-  // @ts-expect-error OK to have implicit any for this.utils
   const utils = this.utils;
-  // @ts-expect-error OK to have implicit any for this.promise
   const isFromReject = this && this.promise === 'rejects'; // See https://github.com/facebook/jest/pull/7621#issue-244312550
   if ((!callbackOrPromiseReturn || typeof callbackOrPromiseReturn !== 'function') && !isFromReject) {
     return {

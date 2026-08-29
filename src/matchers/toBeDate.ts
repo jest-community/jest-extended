@@ -1,5 +1,5 @@
-export function toBeDate(actual: unknown) {
-  // @ts-expect-error OK to have implicit any for this.utils
+import type { MatcherContext } from 'expect';
+export function toBeDate(this: MatcherContext, actual: unknown) {
   const { matcherHint, printReceived } = this.utils;
 
   const pass = actual instanceof Date && !isNaN(actual.getTime());

@@ -1,8 +1,8 @@
+import type { MatcherContext } from 'expect';
 /**
  * Use `.toChangeTo` when checking if a value changed to a specific value.
  */
-export function toChangeTo<E = unknown>(mutator: () => unknown | void, checker: () => E, to: E) {
-  // @ts-expect-error OK to have implicit any for this.utils
+export function toChangeTo<E = unknown>(this: MatcherContext, mutator: () => unknown | void, checker: () => E, to: E) {
   const { printReceived: print, matcherHint: hint } = this.utils;
 
   const before = checker();
