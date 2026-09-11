@@ -9,14 +9,14 @@ describe('.toResolve', () => {
   });
 
   test('fails when passed a promise that rejects', async () => {
-    const promise = Promise.reject();
+    const promise = Promise.reject(new Error('something went wrong'));
     await expect(expect(promise).toResolve()).rejects.toThrowErrorMatchingSnapshot();
   });
 });
 
 describe('.not.toResolve', () => {
   test('fails when passed a promise that resolved', async () => {
-    const promise = Promise.resolve();
+    const promise = Promise.resolve({ result: 123 });
     await expect(expect(promise).not.toResolve()).rejects.toThrowErrorMatchingSnapshot();
   });
 
