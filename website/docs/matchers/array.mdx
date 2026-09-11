@@ -14,6 +14,17 @@ Use `.toBeArray` when checking if a value is an `Array`.
 });`}
 </TestFile>
 
+### .toBeEmptyArray()
+
+Use `.toBeEmptyArray` when checking if a value is an empty `Array`.
+
+<TestFile name="toBeEmptyArray">
+  {`test('passes when value is an empty array', () => {
+  expect([]).toBeEmptyArray();
+  expect(['hello']).not.toBeEmptyArray();
+});`}
+</TestFile>
+
 ### .toBeArrayOfSize()
 
 Use `.toBeArrayOfSize` when checking if a value is an `Array` of size x.

@@ -14,6 +14,7 @@ sidebar_position: 1
 ## [Array](/docs/matchers/array)
 
 - [.toBeArray()](/docs/matchers/array/#tobearray)
+- [.toBeEmptyArray()](/docs/matchers/array/#tobeemptyarray)
 - [.toBeArrayOfSize()](/docs/matchers/array/#tobearrayofsize)
 - [.toIncludeAllMembers([members])](/docs/matchers/array/#toincludeallmembersmembers)
 - [.toIncludeAllPartialMembers([members])](/docs/matchers/array/#toincludeallpartialmembersmembers)
