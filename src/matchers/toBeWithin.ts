@@ -1,5 +1,5 @@
-export function toBeWithin(actual: unknown, start: number, end: number) {
-  // @ts-expect-error OK to have implicit any for this.utils
+import type { MatcherContext } from 'expect';
+export function toBeWithin(this: MatcherContext, actual: unknown, start: number, end: number) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const pass = (typeof actual === 'number' || typeof actual === 'bigint') && actual >= start && actual < end;

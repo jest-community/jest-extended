@@ -1,5 +1,5 @@
-export function toBeNaN(actual: any) {
-  // @ts-expect-error OK to have implicit any for this.utils
+import type { MatcherContext } from 'expect';
+export function toBeNaN(this: MatcherContext, actual: any) {
   const { printReceived, matcherHint } = this.utils;
 
   const pass = isNaN(actual);

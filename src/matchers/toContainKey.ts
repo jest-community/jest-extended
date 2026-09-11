@@ -1,5 +1,5 @@
-export function toContainKey<E = unknown>(actual: unknown, expected: keyof E | string) {
-  // @ts-expect-error OK to have implicit any for this.utils
+import type { MatcherContext } from 'expect';
+export function toContainKey<E = unknown>(this: MatcherContext, actual: unknown, expected: keyof E | string) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const pass =
