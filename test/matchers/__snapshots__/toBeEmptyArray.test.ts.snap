@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.not.toBeEmptyArray fails when given an empty array 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeEmptyArray()</intensity>
+
+Expected value to not be an empty array, received:
+  <red>[]</color>"
+`;
+
+exports[`.toBeEmptyArray fails when given type of () => { } which is not an array 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeEmptyArray()</intensity>
+
+Expected value to be an empty array, received:
+  <red>[Function anonymous]</color>"
+`;
+
+exports[`.toBeEmptyArray fails when given type of {} which is not an array 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeEmptyArray()</intensity>
+
+Expected value to be an empty array, received:
+  <red>{}</color>"
+`;
+
+exports[`.toBeEmptyArray fails when given type of 0 which is not an array 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeEmptyArray()</intensity>
+
+Expected value to be an empty array, received:
+  <red>0</color>"
+`;
+
+exports[`.toBeEmptyArray fails when given type of NaN which is not an array 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeEmptyArray()</intensity>
+
+Expected value to be an empty array, received:
+  <red>NaN</color>"
+`;
+
+exports[`.toBeEmptyArray fails when given type of false which is not an array 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeEmptyArray()</intensity>
+
+Expected value to be an empty array, received:
+  <red>false</color>"
+`;
+
+exports[`.toBeEmptyArray fails when given type of null which is not an array 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeEmptyArray()</intensity>
+
+Expected value to be an empty array, received:
+  <red>null</color>"
+`;
+
+exports[`.toBeEmptyArray fails when given type of true which is not an array 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeEmptyArray()</intensity>
+
+Expected value to be an empty array, received:
+  <red>true</color>"
+`;
+
+exports[`.toBeEmptyArray fails when given type of undefined which is not an array 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeEmptyArray()</intensity>
+
+Expected value to be an empty array, received:
+  <red>undefined</color>"
+`;

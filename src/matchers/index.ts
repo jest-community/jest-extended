@@ -12,6 +12,7 @@ export { toBeBoolean } from './toBeBoolean';
 export { toBeDate } from './toBeDate';
 export { toBeDateString } from './toBeDateString';
 export { toBeEmpty } from './toBeEmpty';
+export { toBeEmptyArray } from './toBeEmptyArray';
 export { toBeEmptyObject } from './toBeEmptyObject';
 export { toBeEven } from './toBeEven';
 export { toBeExtensible } from './toBeExtensible';
