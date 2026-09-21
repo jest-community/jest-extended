@@ -1,5 +1,5 @@
-export function toBeBetween(actual: unknown, startDate: Date, endDate: Date) {
-  // @ts-expect-error OK to have implicit any for this.utils
+import type { MatcherContext } from 'expect';
+export function toBeBetween(this: MatcherContext, actual: unknown, startDate: Date, endDate: Date) {
   const { matcherHint, printReceived } = this.utils;
 
   const pass = actual instanceof Date && actual >= startDate && actual <= endDate;

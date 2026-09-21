@@ -1,5 +1,5 @@
-export function toBeBefore(actual: unknown, expected: Date) {
-  // @ts-expect-error OK to have implicit any for this.utils
+import type { MatcherContext } from 'expect';
+export function toBeBefore(this: MatcherContext, actual: unknown, expected: Date) {
   const { matcherHint, printReceived } = this.utils;
 
   const pass = actual instanceof Date && actual < expected;
