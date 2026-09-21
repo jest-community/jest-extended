@@ -31,7 +31,7 @@ Thanks for being willing to contribute!
 
 Once you are ready to commit the changes, please use the below commands
 
-1. `git add <files to be comitted>`
+1. `git add <files to be committed>`
 2. `git commit -m 'A meaningful message`
 
 _Note: please use present tense in commit messages i.e. `Add feature X` and not ~`Added feature X`~_
