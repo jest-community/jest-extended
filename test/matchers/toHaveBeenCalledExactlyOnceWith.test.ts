@@ -42,6 +42,11 @@ describe('.toHaveBeenCalledExactlyOnceWith', () => {
     mock('not hello');
     expect(() => expect(mock).toHaveBeenCalledExactlyOnceWith('hello')).toThrowErrorMatchingSnapshot();
   });
+
+  test('fails when one given value is not the expected one', () => {
+    mock('hello', 'there');
+    expect(() => expect(mock).toHaveBeenCalledExactlyOnceWith('hello', 'where')).toThrowErrorMatchingSnapshot();
+  });
 });
 
 describe('.not.toHaveBeenCalledExactlyOnceWith', () => {
