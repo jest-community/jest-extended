@@ -3,13 +3,13 @@
 exports[`.not.toReject fails when passed a promise that rejects 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).not.toReject()</intensity>
 
-Expected promise to resolve, however it rejected.
+Expected promise not to reject, however it was rejected with: "<red>{"abc": "something went wrong"}</color>".
 "
 `;
 
 exports[`.toReject fails when passed a promise that resolved 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toReject()</intensity>
 
-Expected promise to reject, however it resolved.
+Expected promise to reject, however it resolved with: "<red>123</color>".
 "
 `;
