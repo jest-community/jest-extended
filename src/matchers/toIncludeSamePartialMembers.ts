@@ -4,8 +4,11 @@ export function toIncludeSamePartialMembers<E = unknown>(actual: unknown, expect
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;
 
+  // @ts-expect-error OK to have implicit any for this.utils and this.customTesters
+  const equalityTesters = [...(this.customTesters ?? []), this.utils.iterableEquality];
+
   // @ts-expect-error OK to have implicit any for this.equals
-  const pass = predicate((a, b) => this.equals(a, b, this.customTesters), actual, expected);
+  const pass = predicate((a, b) => this.equals(a, b, equalityTesters), actual, expected);
 
   return {
     pass,
