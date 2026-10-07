@@ -27,6 +27,15 @@ Received:
   <red>{"hello": "world"}</color>"
 `;
 
+exports[`.not.toContainValue with arrays fails when given array contains value 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toContainValue(</intensity><green>expected</color><dim>)</intensity>
+
+Expected object to not contain value:
+  <green>"world"</color>
+Received:
+  <red>["world", "foo"]</color>"
+`;
+
 exports[`.toContainValue fails when actual is not an object 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toContainValue(</intensity><green>expected</color><dim>)</intensity>
 
@@ -70,6 +79,15 @@ Expected object to contain value:
   <green>"hello"</color>
 Received:
   <red>{"hello": "world"}</color>"
+`;
+
+exports[`.toContainValue with arrays fails when given array does not contain value 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toContainValue(</intensity><green>expected</color><dim>)</intensity>
+
+Expected object to contain value:
+  <green>"hello"</color>
+Received:
+  <red>["world", "foo"]</color>"
 `;
 
 exports[`toContainValue with custom equality tester fails when custom equality does not match any of the values 1`] = `
