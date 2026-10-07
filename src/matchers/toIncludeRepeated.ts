@@ -1,5 +1,5 @@
-export function toIncludeRepeated(actual: unknown, expected: string, occurrences: number) {
-  // @ts-expect-error OK to have implicit any for this.utils
+import type { MatcherContext } from 'expect';
+export function toIncludeRepeated(this: MatcherContext, actual: unknown, expected: string, occurrences: number) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const pass = typeof actual === 'string' && (actual.match(new RegExp(expected, 'g')) || []).length === occurrences;

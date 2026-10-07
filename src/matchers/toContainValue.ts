@@ -1,7 +1,7 @@
+import type { MatcherContext } from 'expect';
 import { contains } from 'src/utils';
 
-export function toContainValue<E = unknown>(actual: unknown, expected: E) {
-  // @ts-expect-error OK to have implicit any for this.utils
+export function toContainValue<E = unknown>(this: MatcherContext, actual: unknown, expected: E) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   let pass = false;
