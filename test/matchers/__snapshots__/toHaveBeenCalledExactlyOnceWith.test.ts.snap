@@ -6,6 +6,18 @@ exports[`.not.toHaveBeenCalledExactlyOnceWith fails if mock was invoked exactly 
 Expected mock to be invoked some number of times other than once or once with arguments other than <green>["hello"]</color>, but was invoked <red>1</color> times with <red>"hello"</color>"
 `;
 
+exports[`.toHaveBeenCalledExactlyOnceWith fails if comparing two \`Map\`s with different entries 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toHaveBeenCalledExactlyOnceWith(</intensity><green>expected</color><dim>)</intensity>
+
+Expected mock function to have been called exactly once with <green>[Map {"key3" => "value3", "key4" => "value4"}]</color>, but it was called with <red>Map {"key1" => "value1", "key2" => "value2"}</color>"
+`;
+
+exports[`.toHaveBeenCalledExactlyOnceWith fails if comparing two \`Set\`s with different entries 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toHaveBeenCalledExactlyOnceWith(</intensity><green>expected</color><dim>)</intensity>
+
+Expected mock function to have been called exactly once with <green>[Set {"value3", "value4"}]</color>, but it was called with <red>Set {"value1", "value2"}</color>"
+`;
+
 exports[`.toHaveBeenCalledExactlyOnceWith fails if mock was invoked more than once, indicating how many times it was invoked 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toHaveBeenCalledExactlyOnceWith(</intensity><green>expected</color><dim>)</intensity>
 

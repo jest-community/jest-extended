@@ -4,13 +4,16 @@ export function toContainAllValues<E = unknown>(actual: unknown, expected: reado
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;
 
+  // @ts-expect-error OK to have implicit any for this.utils and this.customTesters
+  const equalityTesters = [...(this.customTesters ?? []), this.utils.iterableEquality];
+
   let pass = false;
   if (typeof actual === 'object' && actual !== null && !Array.isArray(actual)) {
     const values = Object.values(actual as Record<string, unknown>);
     pass =
       values.length === expected.length &&
       // @ts-expect-error OK to have implicit any for this.equals
-      values.every(objectValue => contains((a, b) => this.equals(a, b, this.customTesters), expected, objectValue));
+      values.every(objectValue => contains((a, b) => this.equals(a, b, equalityTesters), expected, objectValue));
   }
 
   return {
