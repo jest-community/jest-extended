@@ -4,11 +4,14 @@ export function toIncludeAnyMembers<E = unknown>(actual: unknown, expected: read
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;
 
+  // @ts-expect-error OK to have implicit any for this.utils and this.customTesters
+  const equalityTesters = [...(this.customTesters ?? []), this.utils.iterableEquality];
+
   const pass =
     Array.isArray(actual) &&
     Array.isArray(expected) &&
     // @ts-expect-error OK to have implicit any for this.equals
-    expected.some(member => contains((a, b) => this.equals(a, b, this.customTesters), actual, member));
+    expected.some(member => contains((a, b) => this.equals(a, b, equalityTesters), actual, member));
 
   return {
     pass,

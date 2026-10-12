@@ -7,11 +7,14 @@ export function toContainAnyEntries<E = unknown>(
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;
 
+  // @ts-expect-error OK to have implicit any for this.utils and this.customTesters
+  const equalityTesters = [...(this.customTesters ?? []), this.utils.iterableEquality];
+
   let pass = false;
   if (typeof actual === 'object' && actual !== null && !Array.isArray(actual)) {
     const entries = Object.entries(actual as Record<string, unknown>);
     // @ts-expect-error OK to have implicit any for this.equals
-    pass = expected.some(entry => contains((a, b) => this.equals(a, b, this.customTesters), entries, entry));
+    pass = expected.some(entry => contains((a, b) => this.equals(a, b, equalityTesters), entries, entry));
   }
 
   return {
