@@ -7,6 +7,11 @@ describe('.toBeInteger', () => {
     expect(1).toBeInteger();
   });
 
+  test('passes when given BigInt', () => {
+    expect(42n).toBeInteger();
+    expect(-123n).toBeInteger();
+  });
+
   test('fails when given fraction', () => {
     expect(() => expect(1.5).toBeInteger()).toThrowErrorMatchingSnapshot();
   });
