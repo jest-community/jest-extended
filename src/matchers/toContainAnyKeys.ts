@@ -1,5 +1,9 @@
-export function toContainAnyKeys<E = unknown>(actual: unknown, expected: readonly (keyof E | string)[]) {
-  // @ts-expect-error OK to have implicit any for this.utils
+import type { MatcherContext } from 'expect';
+export function toContainAnyKeys<E = unknown>(
+  this: MatcherContext,
+  actual: unknown,
+  expected: readonly (keyof E | string)[],
+) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const pass = expected.some(key => actual != null && Object.hasOwn(actual as object, key));

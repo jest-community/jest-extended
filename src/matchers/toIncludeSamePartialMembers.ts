@@ -1,7 +1,7 @@
+import type { MatcherContext } from 'expect';
 import { containsEntry } from '../utils';
 
-export function toIncludeSamePartialMembers<E = unknown>(actual: unknown, expected: E) {
-  // @ts-expect-error OK to have implicit any for this.utils
+export function toIncludeSamePartialMembers<E = unknown>(this: MatcherContext, actual: unknown, expected: E) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   // @ts-expect-error OK to have implicit any for this.equals

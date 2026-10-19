@@ -1,7 +1,7 @@
+import type { MatcherContext } from 'expect';
 import { isJestMockOrSpy } from 'src/utils';
 
-export function toHaveBeenCalledOnce(actual: unknown) {
-  // @ts-expect-error OK to have implicit any for this.utils
+export function toHaveBeenCalledOnce(this: MatcherContext, actual: unknown) {
   const { printReceived, printWithType, matcherHint } = this.utils;
 
   if (!isJestMockOrSpy(actual)) {
