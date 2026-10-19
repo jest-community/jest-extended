@@ -23,6 +23,7 @@ describe('.toContainAllKeys', () => {
 
   test('fails when actual is not an object', () => {
     expect(() => expect(null).toContainAllKeys(['a', 'b'])).toThrowErrorMatchingSnapshot();
+    expect(() => expect(undefined).toContainAllKeys(['a', 'b'])).toThrowErrorMatchingSnapshot();
     expect(() => expect(42).toContainAllKeys(['a', 'b'])).toThrowErrorMatchingSnapshot();
   });
 });
