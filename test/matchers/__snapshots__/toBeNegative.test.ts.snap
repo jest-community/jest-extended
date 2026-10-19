@@ -21,6 +21,13 @@ Expected value to be a negative number received:
   <red>Infinity</color>"
 `;
 
+exports[`.toBeNegative fails when given negative Infinity 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeNegative()</intensity>
+
+Expected value to be a negative number received:
+  <red>-Infinity</color>"
+`;
+
 exports[`.toBeNegative fails when given positive BigInt 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toBeNegative()</intensity>
 
