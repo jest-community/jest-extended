@@ -27,6 +27,17 @@ Thanks for being willing to contribute!
 - Docs for the new matcher should be updated in the API section of the `README.md` to no longer say `Unimplemented`.
 - Type definitions for the new matchers should be added to `types/index.d.ts`.
 
+## Documentation previews
+
+Vercel deploys the `main` and `next` branches automatically. Deployments for other branches are manual, so opening or
+updating a pull request does not automatically request a Vercel preview.
+
+If a preview is needed, ask a maintainer with access to the Vercel project to create one. In the Vercel dashboard, open the
+project's **Deployments** page, select **Create Deployment**, and enter the branch or commit to preview. See
+[creating a deployment from a Git reference](https://vercel.com/docs/git#creating-a-deployment-from-a-git-reference).
+For fork pull requests, a maintainer can also use the [Vercel CLI](https://vercel.com/docs/cli/deploy) from a reviewed local
+checkout linked to the existing Vercel project.
+
 ## Committing and Pushing changes
 
 Once you are ready to commit the changes, please use the below commands
