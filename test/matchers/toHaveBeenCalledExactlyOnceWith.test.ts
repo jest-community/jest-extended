@@ -42,6 +42,56 @@ describe('.toHaveBeenCalledExactlyOnceWith', () => {
     mock('not hello');
     expect(() => expect(mock).toHaveBeenCalledExactlyOnceWith('hello')).toThrowErrorMatchingSnapshot();
   });
+
+  test('passes if comparing two empty `Map`s', () => {
+    const mapMock = jest.fn();
+    mapMock(new Map());
+    expect(mapMock).toHaveBeenCalledExactlyOnceWith(new Map());
+  });
+
+  test('passes if comparing two `Map`s with the same entries', () => {
+    const mapMock = jest.fn();
+    const testMap = new Map([
+      ['key1', 'value1'],
+      ['key2', 'value2'],
+    ]);
+    mapMock(testMap);
+    expect(mapMock).toHaveBeenCalledExactlyOnceWith(
+      new Map([
+        ['key1', 'value1'],
+        ['key2', 'value2'],
+      ]),
+    );
+  });
+
+  test('passes if comparing two `Set`s with the same entries', () => {
+    const setMock = jest.fn();
+    const testSet = new Set(['value1', 'value2']);
+    setMock(testSet);
+    expect(setMock).toHaveBeenCalledExactlyOnceWith(new Set(['value1', 'value2']));
+  });
+
+  test('fails if comparing two `Map`s with different entries', () => {
+    const mapMock = jest.fn();
+    const testMap1 = new Map([
+      ['key1', 'value1'],
+      ['key2', 'value2'],
+    ]);
+    const testMap2 = new Map([
+      ['key3', 'value3'],
+      ['key4', 'value4'],
+    ]);
+    mapMock(testMap1);
+    expect(() => expect(mapMock).toHaveBeenCalledExactlyOnceWith(testMap2)).toThrowErrorMatchingSnapshot();
+  });
+
+  test('fails if comparing two `Set`s with different entries', () => {
+    const setMock = jest.fn();
+    setMock(new Set(['value1', 'value2']));
+    expect(() =>
+      expect(setMock).toHaveBeenCalledExactlyOnceWith(new Set(['value3', 'value4'])),
+    ).toThrowErrorMatchingSnapshot();
+  });
 });
 
 describe('.not.toHaveBeenCalledExactlyOnceWith', () => {
