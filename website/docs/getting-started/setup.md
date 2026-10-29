@@ -71,7 +71,29 @@ export default defineConfig({
 
 To use Vitest with TypeScript, create a file named `jest-extended.d.ts` with the content below in addition to the setup above.
 
-#### Vitest >= 0.31.0
+#### Vitest >= 5.0.0
+
+Vitest 5 no longer reads matcher declarations from the global `jest.Matchers` interface (see the
+[migration guide](https://vitest.dev/guide/migration.html)) and takes custom matchers through `Matchers<R, T>` instead.
+
+```typescript
+import type CustomMatchers from 'jest-extended';
+import 'vitest';
+
+declare module 'vitest' {
+  interface Matchers<R, T> extends CustomMatchers<R> {}
+}
+```
+
+This also covers `.not`, `.resolves` / `.rejects` and asymmetric matchers such as `expect.toStartWith()`.
+
+:::note
+With this declaration, `expect.extend(matchers)` can report a type error, because the `CustomMatchers` signatures are
+not assignable to Vitest's `MatchersObject`. Cast the argument in your setup script until this is resolved:
+`expect.extend(matchers as unknown as Parameters<typeof expect.extend>[0])`.
+:::
+
+#### Vitest >= 0.31.0 and < 5.0.0
 
 ```typescript
 import type CustomMatchers from 'jest-extended';
