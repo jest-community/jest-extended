@@ -1,5 +1,5 @@
-export function toBeAfterOrEqualTo(actual: unknown, expected: Date) {
-  // @ts-expect-error OK to have implicit any for this.utils
+import type { MatcherContext } from 'expect';
+export function toBeAfterOrEqualTo(this: MatcherContext, actual: unknown, expected: Date) {
   const { printReceived, matcherHint } = this.utils;
 
   const pass = actual instanceof Date && actual >= expected;

@@ -1,5 +1,5 @@
-export function toEndWith(actual: unknown, expected: string) {
-  // @ts-expect-error OK to have implicit any for this.utils
+import type { MatcherContext } from 'expect';
+export function toEndWith(this: MatcherContext, actual: unknown, expected: string) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const pass = typeof actual === 'string' && actual.endsWith(expected);

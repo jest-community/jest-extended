@@ -1,5 +1,5 @@
-export function toBeExtensible(actual: unknown) {
-  // @ts-expect-error OK to have implicit any for this.utils
+import type { MatcherContext } from 'expect';
+export function toBeExtensible(this: MatcherContext, actual: unknown) {
   const { matcherHint, printExpected, printReceived } = this.utils;
 
   const pass = Object.isExtensible(actual);
