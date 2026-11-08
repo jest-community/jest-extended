@@ -96,6 +96,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
+      - name: Use npm 11 for the packed consumer
+        run: npm install --global npm@11.20.0
       - run: yarn install --immutable
       - run: yarn build
       - run: yarn test:vitest
