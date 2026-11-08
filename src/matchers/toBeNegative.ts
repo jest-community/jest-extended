@@ -3,7 +3,8 @@ export function toBeNegative(actual: unknown) {
   const { printReceived, matcherHint } = this.utils;
 
   const pass =
-    (typeof actual === 'number' && !isNaN(actual) && actual < 0) || (typeof actual === 'bigint' && actual < BigInt(0));
+    (typeof actual === 'number' && Number.isFinite(actual) && actual < 0) ||
+    (typeof actual === 'bigint' && actual < BigInt(0));
 
   return {
     pass,
