@@ -4427,11 +4427,14 @@ __metadata:
   peerDependencies:
     jest: ">=27.2.5"
     typescript: ">=5.0.0"
+    vitest: ">=5.0.0"
   peerDependenciesMeta:
     jest:
       optional: true
     typescript:
       optional: false
+    vitest:
+      optional: true
   languageName: unknown
   linkType: soft
 
