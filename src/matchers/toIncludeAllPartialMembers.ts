@@ -4,6 +4,9 @@ export function toIncludeAllPartialMembers<E = unknown>(actual: unknown, expecte
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;
 
+  // @ts-expect-error OK to have implicit any for this.utils and this.customTesters
+  const equalityTesters = [...(this.customTesters ?? []), this.utils.iterableEquality];
+
   const pass =
     Array.isArray(actual) &&
     Array.isArray(expected) &&
@@ -12,7 +15,7 @@ export function toIncludeAllPartialMembers<E = unknown>(actual: unknown, expecte
       return actual.some(value =>
         entries.every(entry =>
           // @ts-expect-error OK to have implicit any for this.equals
-          containsEntry((a, b) => this.equals(a, b, this.customTesters), value, entry),
+          containsEntry((a, b) => this.equals(a, b, equalityTesters), value, entry),
         ),
       );
     });
