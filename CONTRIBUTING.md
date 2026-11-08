@@ -12,6 +12,9 @@ Thanks for being willing to contribute!
 3. `$ yarn test` to validate you've got it working
 4. Create a branch for your PR
 
+`yarn build` and `yarn typecheck` use TypeScript 7, installed as `@typescript/native`. The `typescript` dependency aliases
+`@typescript/typescript6` to provide the JavaScript compiler API required by `ts-jest` and ESLint tooling.
+
 ## Making changes
 
 - All changes should have unit tests
