@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "incremental": true,
+    "declaration": true,
     "tsBuildInfoFile": "./.tsbuildinfo",
     "target": "es2022",
     "module": "CommonJS",

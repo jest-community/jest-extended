@@ -82,10 +82,28 @@ jobs:
           else
             echo "No disallowed .js files found in src/ or test/. Check passed."
           fi
+  test-vitest:
+    name: Test Vitest 5 on Node.js v${{ matrix.node-version }}
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [22.x, 24.x]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - run: corepack enable
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'yarn'
+      - run: yarn install --immutable
+      - run: yarn build
+      - run: yarn test:vitest
+
   release:
     name: Run publish action
     if: ${{ github.event_name == 'push' && (github.event.ref == 'refs/heads/main' || github.event.ref == 'refs/heads/next') }}
-    needs: [lint, test-node, test-os]
+    needs: [lint, test-node, test-os, test-vitest]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo

@@ -97,7 +97,7 @@ module.exports = defineConfig([globalIgnores(["**/dist", "**/examples", "**/webs
         "import/no-default-export": "error",
     },
 }, {
-    files: ["**/*.ts"],
+    files: ["**/*.ts", "**/*.mts"],
     extends: compat.extends("plugin:@typescript-eslint/recommended"),
 
     plugins: {
