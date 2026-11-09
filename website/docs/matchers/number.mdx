@@ -133,11 +133,15 @@ This matcher does not coerce values. Numeric strings and boxed numbers are not i
 
 Use `.toBeInRange` when checking if an array's elements all fall within a range (min inclusive, max exclusive). Now supports `BigInt` values.
 
+Elements must be Number or BigInt primitives; values are not coerced. `NaN`, `undefined`, and sparse array holes fail the check. Mixed Number and BigInt values are supported, and empty arrays pass.
+
 <TestFile name="toBeInRange">
   {`test('passes when all array elements are in range', () => {
   expect([4, 5, 7, 9]).toBeInRange(4, 10);
   expect([4n, 5n, 7n, 9n]).toBeInRange(4n, 10n);
   expect([4, 5, 10]).not.toBeInRange(4, 10);
+  expect(['4']).not.toBeInRange(4, 10);
+  expect([NaN]).not.toBeInRange(4, 10);
 });`}
 </TestFile>
 
