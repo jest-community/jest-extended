@@ -17,10 +17,14 @@ Use `.toBeNumber` when checking if a value is a `Number`.
 
 Use `.toBeNaN` when checking a value is `NaN`.
 
+This matcher does not coerce values. Strings, objects, `undefined`, and `BigInt` values are not `NaN`.
+
 <TestFile name="toBeNaN">
   {`test('passes when value is NaN', () => {
   expect(NaN).toBeNaN();
   expect(1).not.toBeNaN();
+  expect('not a number').not.toBeNaN();
+  expect(1n).not.toBeNaN();
 });`}
 </TestFile>
 
@@ -113,12 +117,15 @@ Use `.toBeWithin` when checking if a number is in between the given bounds of: s
 
 Use `.toBeInteger` when checking if a value is an integer `Number` or any `BigInt`.
 
+This matcher does not coerce values. Numeric strings and boxed numbers are not integers.
+
 <TestFile name="toBeInteger">
   {`test('passes when value is an integer or bigint', () => {
   expect(1).toBeInteger();
   expect(1.0).toBeInteger();
   expect(BigInt(42)).toBeInteger();
   expect(1.1).not.toBeInteger();
+  expect('1').not.toBeInteger();
 });`}
 </TestFile>
 
@@ -161,4 +168,3 @@ Use `.toChangeTo` when checking if a function call changes a value to a specifie
   expect(() => { value = 3 }).not.toChangeTo(() => value, 2);
 });`}
 </TestFile>
-
