@@ -10,7 +10,11 @@ export function toContainAllValues<E = unknown>(actual: unknown, expected: reado
     pass =
       values.length === expected.length &&
       // @ts-expect-error OK to have implicit any for this.equals
-      values.every(objectValue => contains((a, b) => this.equals(a, b, this.customTesters), expected, objectValue));
+      values.every(objectValue => contains((a, b) => this.equals(a, b, this.customTesters), expected, objectValue)) &&
+      expected.every(expectedValue =>
+        // @ts-expect-error OK to have implicit any for this.equals
+        values.some(objectValue => this.equals(expectedValue, objectValue, this.customTesters)),
+      );
   }
 
   return {

@@ -7,6 +7,27 @@ Expected value to not be a hexadecimal, received:
   <red>"#eeffee"</color>"
 `;
 
+exports[`.toBeHexadecimal fails when given hexadecimal followed by other text 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeHexadecimal()</intensity>
+
+Expected value to be a hexadecimal, received:
+  <red>"#fff garbage"</color>"
+`;
+
+exports[`.toBeHexadecimal fails when given hexadecimal followed by other text 2`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeHexadecimal()</intensity>
+
+Expected value to be a hexadecimal, received:
+  <red>"#abcdef!!"</color>"
+`;
+
+exports[`.toBeHexadecimal fails when given hexadecimal followed by other text 3`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeHexadecimal()</intensity>
+
+Expected value to be a hexadecimal, received:
+  <red>"#123456; color: red"</color>"
+`;
+
 exports[`.toBeHexadecimal fails when given non-string 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toBeHexadecimal()</intensity>
 

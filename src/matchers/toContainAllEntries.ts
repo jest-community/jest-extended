@@ -18,6 +18,12 @@ export function toContainAllEntries<E = unknown>(
     expected.every(entry =>
       // @ts-expect-error containsEntry takes an any type
       containsEntry((a, b) => this.equals(a, b, this.customTesters), actual, entry as [any, any]),
+    ) &&
+    Object.entries(actual as Record<string, unknown>).every(([key, value]) =>
+      expected.some(entry =>
+        // @ts-expect-error containsEntry takes an any type
+        containsEntry((a, b) => this.equals(a, b, this.customTesters), { [key]: value }, entry as [any, any]),
+      ),
     );
 
   return {

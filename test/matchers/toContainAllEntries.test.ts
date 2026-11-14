@@ -22,6 +22,15 @@ describe('.toContainAllEntries', () => {
     ).toThrowErrorMatchingSnapshot();
   });
 
+  test('fails when expected entries contain duplicates and miss one of the object entries', () => {
+    expect(() =>
+      expect({ a: 1, b: 1 }).toContainAllEntries([
+        ['a', 1],
+        ['a', 1],
+      ]),
+    ).toThrowErrorMatchingSnapshot();
+  });
+
   test('fails when actual is not an object', () => {
     expect(() =>
       expect(null).toContainAllEntries([
