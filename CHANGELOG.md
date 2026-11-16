@@ -1,5 +1,12 @@
 # jest-extended
 
+## 7.0.1
+
+### Patch Changes
+
+- ef9d2c2: Fix `toBeInteger` throwing a TypeError for BigInt values.
+- f6bfebf: Fix `toBeNegative` to reject `-Infinity`, matching its documented behavior and `toBePositive`'s handling of `Infinity`.
+
 ## 7.0.0
 
 ### Major Changes
