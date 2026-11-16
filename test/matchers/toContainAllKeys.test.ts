@@ -25,6 +25,10 @@ describe('.toContainAllKeys', () => {
     expect(() => expect(null).toContainAllKeys(['a', 'b'])).toThrowErrorMatchingSnapshot();
     expect(() => expect(42).toContainAllKeys(['a', 'b'])).toThrowErrorMatchingSnapshot();
   });
+
+  test('fails when expected keys contain duplicates and miss one of the object keys', () => {
+    expect(() => expect(data).toContainAllKeys(['a', 'a'])).toThrowErrorMatchingSnapshot();
+  });
 });
 
 describe('.not.toContainAllKeys', () => {
