@@ -4,8 +4,11 @@ export function toContainEntry<E = unknown>(actual: unknown, expected: readonly 
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;
 
+  // @ts-expect-error OK to have implicit any for this.utils and this.customTesters
+  const equalityTesters = [...(this.customTesters ?? []), this.utils.iterableEquality];
+
   // @ts-expect-error containsEntry takes an any type
-  const pass = containsEntry((a, b) => this.equals(a, b, this.customTesters), actual, expected);
+  const pass = containsEntry((a, b) => this.equals(a, b, equalityTesters), actual, expected);
 
   return {
     pass,
