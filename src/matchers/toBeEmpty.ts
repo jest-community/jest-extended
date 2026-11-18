@@ -1,8 +1,7 @@
-export function toBeEmpty(actual: unknown) {
-  // @ts-expect-error OK to have implicit any for this.utils
+import type { MatcherContext } from 'expect';
+export function toBeEmpty(this: MatcherContext, actual: unknown) {
   const { printReceived, matcherHint } = this.utils;
 
-  // @ts-expect-error OK to have implicit any for this.equals
   const pass = this.equals({}, actual, this.customTesters) || isEmptyIterable(actual);
 
   return {

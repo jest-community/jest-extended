@@ -1,5 +1,5 @@
-export function toSatisfyAll<E = unknown>(actual: E[], expected: (x: E) => boolean) {
-  // @ts-expect-error OK to have implicit any for this.utils
+import type { MatcherContext } from 'expect';
+export function toSatisfyAll<E = unknown>(this: MatcherContext, actual: E[], expected: (x: E) => boolean) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   if (typeof expected !== 'function') {
