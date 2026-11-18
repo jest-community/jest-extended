@@ -2,14 +2,11 @@ export function toBeInRange(actual: unknown[], min: number | bigint, max: number
   // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  const element = actual.find((option: any) => {
-    if (typeof option === 'bigint' && typeof min === 'bigint' && typeof max === 'bigint') {
-      return option < min || option >= max;
-    }
-    return option < min || option >= max;
-  });
+  const invalidIndex = actual.findIndex(
+    option => !((typeof option === 'number' || typeof option === 'bigint') && option >= min && option < max),
+  );
 
-  const pass = element === undefined;
+  const pass = invalidIndex === -1;
 
   return {
     pass,
@@ -23,6 +20,6 @@ export function toBeInRange(actual: unknown[], min: number | bigint, max: number
         : matcherHint('.toBeInRange') +
           '\n\n' +
           `Expected: Array elements to be in range (${printExpected(min)}, ${printExpected(max)})\n` +
-          `Received: Array element out of range ${printReceived(element)}`,
+          `Received: Array element out of range ${printReceived(actual[invalidIndex])}`,
   };
 }
