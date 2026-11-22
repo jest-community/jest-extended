@@ -29,3 +29,10 @@ exports[`.toBeInRange fails when given array is not in a given range 1`] = `
 Expected: Array elements to be in range (<green>4</color>, <green>8</color>)
 Received: Array element out of range <red>9</color>"
 `;
+
+exports[`.toBeInRange reports undefined as the invalid element 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toBeInRange(</intensity><green>expected</color><dim>)</intensity>
+
+Expected: Array elements to be in range (<green>0</color>, <green>10</color>)
+Received: Array element out of range <red>undefined</color>"
+`;
