@@ -21,7 +21,7 @@ export function toBeEmpty(actual: unknown) {
 }
 
 const isEmptyIterable = (value: any) => {
-  if (typeof value[Symbol.iterator] !== 'function') {
+  if (value == null || typeof value[Symbol.iterator] !== 'function') {
     return false;
   }
   const firstIteration = value[Symbol.iterator]().next();
