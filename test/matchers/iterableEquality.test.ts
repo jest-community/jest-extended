@@ -20,7 +20,7 @@ describe('matchers comparing iterables', () => {
     ['key4', 'value4'],
   ]);
 
-  test.each([
+  const cases: [string, () => void, () => void][] = [
     ['toBeOneOf', () => expect(map).toBeOneOf([equalMap]), () => expect(map).toBeOneOf([differentMap])],
     [
       'toContainEntry',
@@ -63,6 +63,19 @@ describe('matchers comparing iterables', () => {
       () => expect({ key: map }).toContainValues([differentMap]),
     ],
     [
+      'toHaveBeenCalledExactlyOnceWith',
+      () => {
+        const mock = jest.fn();
+        mock(map);
+        expect(mock).toHaveBeenCalledExactlyOnceWith(equalMap);
+      },
+      () => {
+        const mock = jest.fn();
+        mock(map);
+        expect(mock).toHaveBeenCalledExactlyOnceWith(differentMap);
+      },
+    ],
+    [
       'toIncludeSameMembers',
       () => expect([map]).toIncludeSameMembers([equalMap]),
       () => expect([map]).toIncludeSameMembers([differentMap]),
@@ -92,8 +105,31 @@ describe('matchers comparing iterables', () => {
       () => expect([{ key: map }]).toIncludeSamePartialMembers([{ key: equalMap }]),
       () => expect([{ key: map }]).toIncludeSamePartialMembers([{ key: differentMap }]),
     ],
-  ])('%s distinguishes Maps by their entries', (_name, passAssertion, failAssertion) => {
+  ];
+
+  test.each(cases)('%s distinguishes Maps by their entries', (_name, passAssertion, failAssertion) => {
     passAssertion();
     expect(failAssertion).toThrow();
+  });
+
+  describe('without customTesters in the matcher context', () => {
+    beforeAll(() => {
+      const withoutCustomTesters = Object.entries(matchers).map(([name, matcher]) => [
+        name,
+        function (this: jest.MatcherContext, ...args: unknown[]) {
+          return (matcher as (...args: unknown[]) => unknown).call({ ...this, customTesters: undefined }, ...args);
+        },
+      ]);
+      expect.extend(Object.fromEntries(withoutCustomTesters));
+    });
+
+    afterAll(() => {
+      expect.extend(matchers);
+    });
+
+    test.each(cases)('%s distinguishes Maps by their entries', (_name, passAssertion, failAssertion) => {
+      passAssertion();
+      expect(failAssertion).toThrow();
+    });
   });
 });
