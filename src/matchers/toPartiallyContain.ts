@@ -1,4 +1,4 @@
-import type { MatcherContext } from 'expect';
+import type { MatcherContext } from 'src/utils';
 import { containsEntry } from 'src/utils';
 
 export function toPartiallyContain<E = unknown>(this: MatcherContext, actual: unknown, expected: E) {

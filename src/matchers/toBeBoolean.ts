@@ -1,4 +1,4 @@
-import type { MatcherContext } from 'expect';
+import type { MatcherContext } from 'src/utils';
 
 export function toBeBoolean(this: MatcherContext, actual: unknown) {
   const { matcherHint, printReceived } = this.utils;

@@ -1,4 +1,4 @@
-import type { MatcherContext } from 'expect';
+import type { MatcherContext } from 'src/utils';
 
 export async function toResolve(this: MatcherContext, actual: Promise<unknown>) {
   const { matcherHint } = this.utils;

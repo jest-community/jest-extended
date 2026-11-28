@@ -1,4 +1,4 @@
-import type { MatcherContext } from 'expect';
+import type { MatcherContext } from 'src/utils';
 
 export function toIncludeSameMembers<E = unknown>(this: MatcherContext, actual: unknown, expected: readonly E[]) {
   const { printReceived, printExpected, matcherHint } = this.utils;

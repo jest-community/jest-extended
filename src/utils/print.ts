@@ -1,5 +1,5 @@
-import type { MatcherContext } from 'expect';
 import { DIFF_DELETE, DIFF_EQUAL, DIFF_INSERT, type Diff } from 'jest-diff';
+import type { MatcherContext } from './index';
 
 interface Token {
   value: string;

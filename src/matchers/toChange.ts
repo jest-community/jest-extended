@@ -1,4 +1,4 @@
-import type { MatcherContext } from 'expect';
+import type { MatcherContext } from 'src/utils';
 
 /**
  * Use `.toChange` when checking if a value has changed.

@@ -1,4 +1,4 @@
-import type { MatcherContext } from 'expect';
+import type { MatcherContext } from 'src/utils';
 
 export function toBeEven(this: MatcherContext, actual: unknown) {
   const { printReceived, matcherHint } = this.utils;

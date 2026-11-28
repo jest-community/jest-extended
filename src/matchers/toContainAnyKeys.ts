@@ -1,4 +1,4 @@
-import type { MatcherContext } from 'expect';
+import type { MatcherContext } from 'src/utils';
 
 export function toContainAnyKeys<E = unknown>(
   this: MatcherContext,

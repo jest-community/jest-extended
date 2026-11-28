@@ -1,4 +1,4 @@
-import type { MatcherContext } from 'expect';
+import type { MatcherContext } from 'src/utils';
 
 export function toSatisfyAll<E = unknown>(this: MatcherContext, actual: E[], expected: (x: E) => boolean) {
   const { printReceived, printExpected, matcherHint } = this.utils;

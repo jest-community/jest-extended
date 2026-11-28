@@ -1,4 +1,4 @@
-import type { MatcherContext } from 'expect';
+import type { MatcherContext } from 'src/utils';
 
 const predicate = (error: any, type: any, message: any) => {
   if (message instanceof RegExp) {

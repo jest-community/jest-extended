@@ -1,4 +1,4 @@
-import type { MatcherContext } from 'expect';
+import type { MatcherContext } from 'src/utils';
 
 export function toBeSymbol(this: MatcherContext, actual: unknown) {
   const { printReceived, matcherHint } = this.utils;

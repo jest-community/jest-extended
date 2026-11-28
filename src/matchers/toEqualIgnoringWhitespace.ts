@@ -1,5 +1,5 @@
-import type { MatcherContext } from 'expect';
 import { diffStringsRaw, DIFF_EQUAL } from 'jest-diff';
+import type { MatcherContext } from 'src/utils';
 import { printExpected, printReceived } from '../utils/print';
 
 const removeWhitespace = (str: any) => str.trim().replace(/\s+/g, '');

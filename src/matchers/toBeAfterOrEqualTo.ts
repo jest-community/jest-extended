@@ -1,4 +1,4 @@
-import type { MatcherContext } from 'expect';
+import type { MatcherContext } from 'src/utils';
 
 export function toBeAfterOrEqualTo(this: MatcherContext, actual: unknown, expected: Date) {
   const { printReceived, matcherHint } = this.utils;

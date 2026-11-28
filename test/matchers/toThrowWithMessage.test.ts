@@ -1,6 +1,6 @@
-import type { MatcherContext } from 'expect';
 import { matcherHint, printExpected, printReceived } from 'jest-matcher-utils';
 import * as matcher from 'src/matchers/toThrowWithMessage';
+import type { MatcherContext } from 'src/utils';
 const { toThrowWithMessage } = matcher;
 
 expect.extend(matcher);

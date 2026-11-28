@@ -1,4 +1,4 @@
-import type { MatcherContext } from 'expect';
+import type { MatcherContext } from 'src/utils';
 
 export function toBeAfter(this: MatcherContext, actual: unknown, after: Date) {
   const { printReceived, matcherHint } = this.utils;

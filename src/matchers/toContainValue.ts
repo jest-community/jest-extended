@@ -1,4 +1,4 @@
-import type { MatcherContext } from 'expect';
+import type { MatcherContext } from 'src/utils';
 import { contains } from 'src/utils';
 
 export function toContainValue<E = unknown>(this: MatcherContext, actual: unknown, expected: E) {

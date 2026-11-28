@@ -1,4 +1,4 @@
-import type { MatcherContext } from 'expect';
+import type { MatcherContext } from 'src/utils';
 import { determinePropertyMessage } from 'src/utils';
 
 export function toBeArrayOfSize(this: MatcherContext, actual: unknown, expected: number) {

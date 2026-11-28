@@ -1,4 +1,4 @@
-import type { MatcherContext } from 'expect';
+import type { MatcherContext } from 'src/utils';
 
 export function toBeBetween(this: MatcherContext, actual: unknown, startDate: Date, endDate: Date) {
   const { matcherHint, printReceived } = this.utils;

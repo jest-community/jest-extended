@@ -1,4 +1,4 @@
-import type { MatcherContext } from 'expect';
+import type { MatcherContext } from 'src/utils';
 import { containsEntry } from '../utils';
 
 export function toIncludeSamePartialMembers<E = unknown>(this: MatcherContext, actual: unknown, expected: E) {

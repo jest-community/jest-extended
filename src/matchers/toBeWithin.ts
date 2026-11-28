@@ -1,4 +1,4 @@
-import type { MatcherContext } from 'expect';
+import type { MatcherContext } from 'src/utils';
 
 export function toBeWithin(this: MatcherContext, actual: unknown, start: number, end: number) {
   const { printReceived, printExpected, matcherHint } = this.utils;

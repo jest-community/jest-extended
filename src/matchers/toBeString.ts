@@ -1,4 +1,4 @@
-import type { MatcherContext } from 'expect';
+import type { MatcherContext } from 'src/utils';
 
 export function toBeString(this: MatcherContext, expected: unknown) {
   const { printReceived, printExpected, matcherHint } = this.utils;

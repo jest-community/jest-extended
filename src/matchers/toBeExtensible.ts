@@ -1,4 +1,4 @@
-import type { MatcherContext } from 'expect';
+import type { MatcherContext } from 'src/utils';
 
 export function toBeExtensible(this: MatcherContext, actual: unknown) {
   const { matcherHint, printExpected, printReceived } = this.utils;
