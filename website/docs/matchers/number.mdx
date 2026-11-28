@@ -17,10 +17,14 @@ Use `.toBeNumber` when checking if a value is a `Number`.
 
 Use `.toBeNaN` when checking a value is `NaN`.
 
+This matcher does not coerce values. Strings, objects, `undefined`, and `BigInt` values are not `NaN`.
+
 <TestFile name="toBeNaN">
   {`test('passes when value is NaN', () => {
   expect(NaN).toBeNaN();
   expect(1).not.toBeNaN();
+  expect('not a number').not.toBeNaN();
+  expect(1n).not.toBeNaN();
 });`}
 </TestFile>
 
@@ -113,12 +117,15 @@ Use `.toBeWithin` when checking if a number is in between the given bounds of: s
 
 Use `.toBeInteger` when checking if a value is an integer `Number` or any `BigInt`.
 
+This matcher does not coerce values. Numeric strings and boxed numbers are not integers.
+
 <TestFile name="toBeInteger">
   {`test('passes when value is an integer or bigint', () => {
   expect(1).toBeInteger();
   expect(1.0).toBeInteger();
   expect(BigInt(42)).toBeInteger();
   expect(1.1).not.toBeInteger();
+  expect('1').not.toBeInteger();
 });`}
 </TestFile>
 
@@ -126,11 +133,15 @@ Use `.toBeInteger` when checking if a value is an integer `Number` or any `BigIn
 
 Use `.toBeInRange` when checking if an array's elements all fall within a range (min inclusive, max exclusive). Now supports `BigInt` values.
 
+Elements must be Number or BigInt primitives; values are not coerced. `NaN`, `undefined`, and sparse array holes fail the check. Mixed Number and BigInt values are supported, and empty arrays pass.
+
 <TestFile name="toBeInRange">
   {`test('passes when all array elements are in range', () => {
   expect([4, 5, 7, 9]).toBeInRange(4, 10);
   expect([4n, 5n, 7n, 9n]).toBeInRange(4n, 10n);
   expect([4, 5, 10]).not.toBeInRange(4, 10);
+  expect(['4']).not.toBeInRange(4, 10);
+  expect([NaN]).not.toBeInRange(4, 10);
 });`}
 </TestFile>
 
@@ -161,4 +172,3 @@ Use `.toChangeTo` when checking if a function call changes a value to a specifie
   expect(() => { value = 3 }).not.toChangeTo(() => value, 2);
 });`}
 </TestFile>
-

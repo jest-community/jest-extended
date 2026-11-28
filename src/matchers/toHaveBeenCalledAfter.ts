@@ -1,27 +1,25 @@
+import type { JestMockOrSpy, MatcherContext, MatcherUtils } from 'src/utils';
 import { isJestMockOrSpy } from 'src/utils';
 
 export function toHaveBeenCalledAfter(
+  this: MatcherContext,
   actual: unknown,
-  expected: jest.MockInstance<any, any[]>,
+  expected: JestMockOrSpy,
   failIfNoFirstInvocation: boolean = true,
 ) {
-  // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   if (!isJestMockOrSpy(actual)) {
-    // @ts-expect-error OK to have implicit any for this.utils
     return { pass: false, message: mockCheckFailMessage(this.utils, actual, true) };
   }
 
   if (!isJestMockOrSpy(expected)) {
-    // @ts-expect-error OK to have implicit any for this.utils
     return { pass: false, message: mockCheckFailMessage(this.utils, expected, false) };
   }
 
   let pass = false;
   let firstInvocationCallOrder = null;
   let secondInvocationCallOrder = null;
-  // @ts-expect-error isJestMockOrSpy provides the type check
   firstInvocationCallOrder = actual.mock.invocationCallOrder;
   secondInvocationCallOrder = expected.mock.invocationCallOrder;
   pass = predicate(firstInvocationCallOrder, secondInvocationCallOrder, failIfNoFirstInvocation);
@@ -61,7 +59,7 @@ const predicate = (
   return firstSmallest > secondSmallest;
 };
 
-const mockCheckFailMessage = (utils: any, value: unknown, isReceivedValue: boolean) => () => {
+const mockCheckFailMessage = (utils: MatcherUtils, value: unknown, isReceivedValue: boolean) => () => {
   const valueKind = isReceivedValue ? 'Received' : 'Expected';
   const valueKindPrintFunc = isReceivedValue ? utils.printReceived : utils.printExpected;
 

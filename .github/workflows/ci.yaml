@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v7
       - run: corepack enable
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
@@ -50,7 +50,7 @@ jobs:
       - if: runner.os == 'Windows'
         run: npm install --global --force corepack@latest
       - run: corepack enable
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7
         with:
           node-version: lts/*
           cache: 'yarn'
@@ -65,7 +65,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - run: corepack enable
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7
         with:
           node-version: lts/*
           cache: 'yarn'
@@ -82,10 +82,30 @@ jobs:
           else
             echo "No disallowed .js files found in src/ or test/. Check passed."
           fi
+  test-vitest:
+    name: Test Vitest 5 on Node.js v${{ matrix.node-version }}
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [22.x, 24.x]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - run: corepack enable
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'yarn'
+      - name: Use npm 11 for the packed consumer
+        run: npm install --global npm@11.20.0
+      - run: yarn install --immutable
+      - run: yarn build
+      - run: yarn test:vitest
+
   release:
     name: Run publish action
     if: ${{ github.event_name == 'push' && (github.event.ref == 'refs/heads/main' || github.event.ref == 'refs/heads/next') }}
-    needs: [lint, test-node, test-os]
+    needs: [lint, test-node, test-os, test-vitest]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -95,7 +115,7 @@ jobs:
         run: corepack enable
 
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: lts/*
           cache: 'yarn'
@@ -105,9 +125,9 @@ jobs:
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
-        uses: changesets/action@v1
+        uses: changesets/action@v2.1.2
         with:
-          publish: yarn changeset publish
+          publish-script: yarn changeset publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

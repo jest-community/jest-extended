@@ -99,12 +99,12 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Jest Twitter',
-                href: 'https://twitter.com/fbjest',
+                label: 'Jest X',
+                href: 'https://x.com/jestjs_',
               },
               {
-                label: 'Matt Phillips Twitter',
-                href: 'https://twitter.com/mattphillipsio',
+                label: 'Matt Phillips X',
+                href: 'https://x.com/mattphillipsio',
               },
               {
                 label: 'Jest-community Github Org',

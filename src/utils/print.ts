@@ -1,4 +1,5 @@
-import { DIFF_DELETE, DIFF_EQUAL, DIFF_INSERT } from 'jest-diff';
+import { DIFF_DELETE, DIFF_EQUAL, DIFF_INSERT, type Diff } from 'jest-diff';
+import type { MatcherContext } from './index';
 
 interface Token {
   value: string;
@@ -46,8 +47,8 @@ const colorTokens = (str: string, color: (value: string) => string): string => {
   return tokens.reduce((acc, { value, isWhitespace }) => acc + (isWhitespace ? value : color(value)), '');
 };
 
-export const printExpected = (utils: any, diff: [number, string][]): string =>
-  diff.reduce((acc: string, diffObject: [number, string]) => {
+export const printExpected = (utils: MatcherContext['utils'], diff: Diff[]): string =>
+  diff.reduce((acc: string, diffObject: Diff) => {
     const operation = diffObject[0];
     const value = diffObject[1];
 
@@ -57,8 +58,8 @@ export const printExpected = (utils: any, diff: [number, string][]): string =>
     return acc;
   }, '');
 
-export const printReceived = (utils: any, diff: [number, string][]): string =>
-  diff.reduce((acc: string, diffObject: [number, string]) => {
+export const printReceived = (utils: MatcherContext['utils'], diff: Diff[]): string =>
+  diff.reduce((acc: string, diffObject: Diff) => {
     const operation = diffObject[0];
     const value = diffObject[1];
 
