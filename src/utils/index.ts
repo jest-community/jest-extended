@@ -9,7 +9,7 @@ export interface MatcherUtils {
   matcherHint: (matcherName: string, received?: string, expected?: string, options?: MatcherHintOptions) => string;
   printExpected: (value: unknown) => string;
   printReceived: (object: unknown) => string;
-  printWithType: <T>(name: string, value: T, print: (value: T) => string) => string;
+  printWithType: (name: string, value: unknown, print: (value: unknown) => string) => string;
 }
 
 export interface MatcherContext {
