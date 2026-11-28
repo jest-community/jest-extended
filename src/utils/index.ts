@@ -29,8 +29,20 @@ export const determinePropertyMessage = (actual: any, property: any, message = '
   return actual != null && Object.hasOwn(actual, property) ? actual[property] : message;
 };
 
-export const isJestMockOrSpy: any = (value: any) => {
-  return !!(value && value._isMockFunction === true && typeof value.mock === 'object');
+export interface JestMockOrSpy {
+  _isMockFunction?: boolean;
+  mock: {
+    calls: unknown[][];
+    invocationCallOrder: number[];
+  };
+}
+
+export const isJestMockOrSpy = (value: unknown): value is JestMockOrSpy => {
+  return !!(
+    value &&
+    (value as { _isMockFunction?: unknown })._isMockFunction === true &&
+    typeof (value as { mock?: unknown }).mock === 'object'
+  );
 };
 
 export const containsEntry = (

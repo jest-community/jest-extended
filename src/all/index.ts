@@ -1,7 +1,6 @@
 import * as matchers from '../matchers';
 
-// @ts-expect-error expect will be hoisted into global
-const jestExpect = global.expect;
+const jestExpect = (globalThis as { expect?: { extend: (matchers: Record<string, any>) => void } }).expect;
 
 if (jestExpect !== undefined) {
   jestExpect.extend(matchers);

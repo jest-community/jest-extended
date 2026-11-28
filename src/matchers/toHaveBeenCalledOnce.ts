@@ -16,7 +16,6 @@ export function toHaveBeenCalledOnce(this: MatcherContext, actual: unknown) {
     };
   }
 
-  // @ts-expect-error isJestMockOrSpy provides the type check
   const pass = actual.mock.calls.length === 1;
 
   return {
@@ -29,7 +28,6 @@ export function toHaveBeenCalledOnce(this: MatcherContext, actual: unknown) {
         : matcherHint('.toHaveBeenCalledOnce') +
           '\n\n' +
           'Expected mock function to have been called exactly once, but it was called:\n' +
-          // @ts-expect-error isJestMockOrSpy provides the type check
           `  ${printReceived(actual.mock.calls.length)} times`,
     actual: actual,
   };

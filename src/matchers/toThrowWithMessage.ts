@@ -1,4 +1,4 @@
-import type { MatcherContext } from 'src/utils';
+import type { MatcherContext, MatcherUtils } from 'src/utils';
 
 const predicate = (error: any, type: any, message: any) => {
   if (message instanceof RegExp) {
@@ -7,13 +7,13 @@ const predicate = (error: any, type: any, message: any) => {
   return error && error instanceof type && error.message === message;
 };
 
-const positiveHint = (utils: any) =>
+const positiveHint = (utils: MatcherUtils) =>
   utils.matcherHint('.toThrowWithMessage', 'function', 'type', { secondArgument: 'message' });
 
-const negativeHint = (utils: any) =>
+const negativeHint = (utils: MatcherUtils) =>
   utils.matcherHint('.not.toThrowWithMessage', 'function', 'type', { secondArgument: 'message' });
 
-const passMessage = (utils: any, received: any, expected: any) =>
+const passMessage = (utils: MatcherUtils, received: unknown, expected: unknown) =>
   negativeHint(utils) +
   '\n\n' +
   'Expected not to throw:\n' +
@@ -21,7 +21,7 @@ const passMessage = (utils: any, received: any, expected: any) =>
   'Thrown:\n' +
   `  ${utils.printReceived(received)}\n`;
 
-const failMessage = (utils: any, received: any, expected: any) =>
+const failMessage = (utils: MatcherUtils, received: unknown, expected: unknown) =>
   positiveHint(utils) +
   '\n\n' +
   'Expected to throw:\n' +
