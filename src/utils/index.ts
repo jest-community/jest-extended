@@ -1,8 +1,4 @@
 export interface MatcherHintOptions {
-  comment?: string;
-  isDirectExpectCall?: boolean;
-  isNot?: boolean;
-  promise?: string;
   secondArgument?: string;
 }
 
@@ -20,7 +16,7 @@ export interface MatcherContext {
   readonly customTesters?: any[];
   readonly isNot?: boolean;
   readonly promise?: string;
-  equals: (a: unknown, b: unknown, customTesters?: any[], strictCheck?: boolean) => boolean;
+  equals: (a: unknown, b: unknown, customTesters?: any[]) => boolean;
   utils: MatcherUtils;
 }
 
