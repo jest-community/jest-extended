@@ -1,8 +1,9 @@
+import type { MatcherContext } from 'src/utils';
+
 /**
  * Use `.toChange` when checking if a value has changed.
  */
-export function toChange(mutator: () => unknown | void, checker: () => number) {
-  // @ts-expect-error OK to have implicit any for this.utils
+export function toChange(this: MatcherContext, mutator: () => unknown | void, checker: () => unknown) {
   const { printReceived: print, matcherHint: hint } = this.utils;
 
   const before = checker();

@@ -1,5 +1,6 @@
-export function toBeFinite(actual: unknown) {
-  // @ts-expect-error OK to have implicit any for this.utils
+import type { MatcherContext } from 'src/utils';
+
+export function toBeFinite(this: MatcherContext, actual: unknown) {
   const { printReceived, matcherHint } = this.utils;
 
   const pass = Number.isFinite(actual) || typeof actual === 'bigint';

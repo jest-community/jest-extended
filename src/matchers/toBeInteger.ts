@@ -1,8 +1,9 @@
-export function toBeInteger(actual: unknown) {
-  // @ts-expect-error OK to have implicit any for this.utils
+import type { MatcherContext } from 'src/utils';
+
+export function toBeInteger(this: MatcherContext, actual: unknown) {
   const { printReceived, matcherHint } = this.utils;
 
-  const pass = typeof actual === 'bigint' || (isNumber(actual) && isInteger(actual));
+  const pass = typeof actual === 'bigint' || Number.isInteger(actual);
 
   return {
     pass,
@@ -18,6 +19,3 @@ export function toBeInteger(actual: unknown) {
           `  ${printReceived(actual)}`,
   };
 }
-
-const isNumber = (value: any) => !isNaN(parseInt(value));
-const isInteger = (value: any) => Number.isInteger(+value);

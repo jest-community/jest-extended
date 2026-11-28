@@ -1,5 +1,6 @@
-export function toBeOdd(actual: unknown) {
-  // @ts-expect-error OK to have implicit any for this.utils
+import type { MatcherContext } from 'src/utils';
+
+export function toBeOdd(this: MatcherContext, actual: unknown) {
   const { printReceived, matcherHint } = this.utils;
 
   const pass = (isNumber(actual) || isBigInt(actual)) && isOdd(actual);
@@ -19,9 +20,9 @@ export function toBeOdd(actual: unknown) {
   };
 }
 
-const isNumber = (expected: any) => typeof expected === 'number' && Number.isFinite(expected);
-const isBigInt = (expected: any) => typeof expected === 'bigint';
-const isOdd = (expected: any) => {
+const isNumber = (expected: unknown): expected is number => typeof expected === 'number' && Number.isFinite(expected);
+const isBigInt = (expected: unknown): expected is bigint => typeof expected === 'bigint';
+const isOdd = (expected: number | bigint) => {
   if (isBigInt(expected)) return expected % 2n === 1n || expected % 2n === -1n;
   return Math.abs(expected % 2) === 1;
 };

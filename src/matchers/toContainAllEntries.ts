@@ -1,13 +1,14 @@
+import type { MatcherContext } from 'src/utils';
 import { containsEntry } from 'src/utils';
 
 export function toContainAllEntries<E = unknown>(
+  this: MatcherContext,
   actual: unknown,
   expected: readonly (readonly [keyof E, E[keyof E]])[],
 ): {
   pass: boolean;
   message: () => string;
 } {
-  // @ts-expect-error OK to have implicit any for this.utils
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const pass =
@@ -15,15 +16,9 @@ export function toContainAllEntries<E = unknown>(
     actual !== null &&
     !Array.isArray(actual) &&
     expected.length == Object.keys(actual as Record<string, unknown>).length &&
-    expected.every(entry =>
-      // @ts-expect-error containsEntry takes an any type
-      containsEntry((a, b) => this.equals(a, b, this.customTesters), actual, entry as [any, any]),
-    ) &&
+    expected.every(entry => containsEntry((a, b) => this.equals(a, b, this.customTesters), actual, entry)) &&
     Object.entries(actual as Record<string, unknown>).every(([key, value]) =>
-      expected.some(entry =>
-        // @ts-expect-error containsEntry takes an any type
-        containsEntry((a, b) => this.equals(a, b, this.customTesters), { [key]: value }, entry as [any, any]),
-      ),
+      expected.some(entry => containsEntry((a, b) => this.equals(a, b, this.customTesters), { [key]: value }, entry)),
     );
 
   return {

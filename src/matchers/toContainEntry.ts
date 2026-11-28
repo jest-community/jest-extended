@@ -1,10 +1,13 @@
+import type { MatcherContext } from 'src/utils';
 import { containsEntry } from 'src/utils';
 
-export function toContainEntry<E = unknown>(actual: unknown, expected: readonly [keyof E, E[keyof E]]) {
-  // @ts-expect-error OK to have implicit any for this.utils
+export function toContainEntry<E = unknown>(
+  this: MatcherContext,
+  actual: unknown,
+  expected: readonly [keyof E, E[keyof E]],
+) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  // @ts-expect-error containsEntry takes an any type
   const pass = containsEntry((a, b) => this.equals(a, b, this.customTesters), actual, expected);
 
   return {

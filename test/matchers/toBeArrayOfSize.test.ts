@@ -28,17 +28,17 @@ describe('.toBeArrayOfSize', () => {
   );
 
   test('fails when not given an array', () => {
-    // @ts-expect-error TODO: fix
+    // @ts-expect-error testing invalid input
     expect(() => expect().toBeArrayOfSize(5)).toThrowErrorMatchingSnapshot();
   });
 
   test('fails when not given a parameter', () => {
-    // @ts-expect-error TODO: fix
+    // @ts-expect-error testing invalid input
     expect(() => expect([1]).toBeArrayOfSize()).toThrowErrorMatchingSnapshot();
   });
 
   test('fails when given neither a parameter nor an array', () => {
-    // @ts-expect-error TODO: fix
+    // @ts-expect-error testing invalid input
     expect(() => expect([]).toBeArrayOfSize()).toThrowErrorMatchingSnapshot();
   });
 });

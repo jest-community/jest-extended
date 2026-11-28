@@ -1,7 +1,11 @@
+import type { MatcherContext } from 'src/utils';
 import { contains } from 'src/utils';
 
-export function toContainAllKeys<E = unknown>(actual: unknown, expected: readonly (keyof E | string)[]) {
-  // @ts-expect-error OK to have implicit any for this.utils
+export function toContainAllKeys<E = unknown>(
+  this: MatcherContext,
+  actual: unknown,
+  expected: readonly (keyof E | string)[],
+) {
   const { printExpected, printReceived, matcherHint } = this.utils;
 
   let pass = false;
@@ -9,12 +13,8 @@ export function toContainAllKeys<E = unknown>(actual: unknown, expected: readonl
     const objectKeys = Object.keys(actual as Record<string, unknown>);
     pass =
       objectKeys.length === expected.length &&
-      // @ts-expect-error OK to have implicit any for this.equals
       expected.every(key => contains((a, b) => this.equals(a, b, this.customTesters), objectKeys, key)) &&
-      objectKeys.every(objectKey =>
-        // @ts-expect-error OK to have implicit any for this.equals
-        expected.some(key => this.equals(objectKey, key, this.customTesters)),
-      );
+      objectKeys.every(objectKey => expected.some(key => this.equals(objectKey, key, this.customTesters)));
   }
 
   return {

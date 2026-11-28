@@ -2,7 +2,13 @@ import * as matcher from 'src/matchers/toBeEmpty';
 
 expect.extend(matcher);
 
+const nonIterablePrimitives = [null, undefined, false, 0, Symbol('empty')];
+
 describe('.toBeEmpty', () => {
+  test.each(nonIterablePrimitives)('fails when given %p', actual => {
+    expect(() => expect(actual).toBeEmpty()).toThrowErrorMatchingSnapshot();
+  });
+
   test('passes when given empty string', () => {
     expect('').toBeEmpty();
   });
@@ -39,6 +45,10 @@ describe('.toBeEmpty', () => {
 });
 
 describe('.not.toBeEmpty', () => {
+  test.each(nonIterablePrimitives)('passes when given %p', actual => {
+    expect(actual).not.toBeEmpty();
+  });
+
   test('passes when given a non-empty string', () => {
     expect('string').not.toBeEmpty();
   });
