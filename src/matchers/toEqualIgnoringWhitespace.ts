@@ -2,7 +2,7 @@ import { diffStringsRaw, DIFF_EQUAL } from 'jest-diff';
 import type { MatcherContext } from 'src/utils';
 import { printExpected, printReceived } from '../utils/print';
 
-const removeWhitespace = (str: any) => str.trim().replace(/\s+/g, '');
+const removeWhitespace = (str: string) => str.trim().replace(/\s+/g, '');
 
 const getDiff = (received: string, expected: string) => {
   /* calculate diff of received w.r.t expected string */

@@ -1,10 +1,10 @@
-import type { MatcherContext } from 'src/utils';
+import type { JestMockOrSpy, MatcherContext, MatcherUtils } from 'src/utils';
 import { isJestMockOrSpy } from 'src/utils';
 
 export function toHaveBeenCalledBefore(
   this: MatcherContext,
   actual: unknown,
-  expected: jest.MockInstance<any, any[]>,
+  expected: JestMockOrSpy,
   failIfNoSecondInvocation: boolean = true,
 ) {
   const { printReceived, printExpected, matcherHint } = this.utils;
@@ -20,7 +20,6 @@ export function toHaveBeenCalledBefore(
   let pass = false;
   let firstInvocationCallOrder = null;
   let secondInvocationCallOrder = null;
-  // @ts-expect-error isJestMockOrSpy provides the type check
   firstInvocationCallOrder = actual.mock.invocationCallOrder;
   secondInvocationCallOrder = expected.mock.invocationCallOrder;
   pass = predicate(firstInvocationCallOrder, secondInvocationCallOrder, failIfNoSecondInvocation);
@@ -44,7 +43,7 @@ export function toHaveBeenCalledBefore(
   };
 }
 
-const mockCheckFailMessage = (utils: any, value: unknown, isReceivedValue: boolean) => () => {
+const mockCheckFailMessage = (utils: MatcherUtils, value: unknown, isReceivedValue: boolean) => () => {
   const valueKind = isReceivedValue ? 'Received' : 'Expected';
   const valueKindPrintFunc = isReceivedValue ? utils.printReceived : utils.printExpected;
 
