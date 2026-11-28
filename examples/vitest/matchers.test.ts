@@ -78,6 +78,15 @@ test('incorrect values fail assertions', () => {
   expect(() => expect({ message: 'goodbye' }).toEqual({ message: expect.toStartWith('hello') })).toThrow();
 });
 
+test('exactly-once mock assertions show a diff for mismatched arguments', () => {
+  const mock = vi.fn();
+  mock('hello', 'there');
+
+  expect(() => expect(mock).toHaveBeenCalledExactlyOnceWith('hello', 'where')).toThrow(
+    /Expected arguments[\s\S]*Received arguments[\s\S]*where[\s\S]*there/,
+  );
+});
+
 test('native membership retains Set support', () => {
   expect('hello').toBeOneOf(new Set(['hello', 'world']));
   expect({ message: 'hello' }).toEqual({ message: expect.toBeOneOf(new Set(['hello', 'world'])) });

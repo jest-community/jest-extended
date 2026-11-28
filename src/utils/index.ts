@@ -14,6 +14,7 @@ export interface MatcherUtils {
 
 export interface MatcherContext {
   readonly customTesters?: any[];
+  readonly expand?: boolean;
   readonly isNot?: boolean;
   readonly promise?: string;
   equals: (a: unknown, b: unknown, customTesters?: any[]) => boolean;
