@@ -1,5 +1,6 @@
-export function toBeOdd(actual: unknown) {
-  // @ts-expect-error OK to have implicit any for this.utils
+import type { MatcherContext } from 'src/utils';
+
+export function toBeOdd(this: MatcherContext, actual: unknown) {
   const { printReceived, matcherHint } = this.utils;
 
   const pass = (isNumber(actual) || isBigInt(actual)) && isOdd(actual);

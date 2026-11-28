@@ -1,5 +1,6 @@
-export function toBeSealed(actual: unknown) {
-  // @ts-expect-error OK to have implicit any for this.utils
+import type { MatcherContext } from 'src/utils';
+
+export function toBeSealed(this: MatcherContext, actual: unknown) {
   const { matcherHint } = this.utils;
 
   const pass = Object.isSealed(actual);

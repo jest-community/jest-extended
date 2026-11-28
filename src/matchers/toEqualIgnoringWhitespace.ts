@@ -1,4 +1,5 @@
 import { diffStringsRaw, DIFF_EQUAL } from 'jest-diff';
+import type { MatcherContext } from 'src/utils';
 import { printExpected, printReceived } from '../utils/print';
 
 const removeWhitespace = (str: any) => str.trim().replace(/\s+/g, '');
@@ -16,8 +17,7 @@ const getDiff = (received: string, expected: string) => {
   return diff;
 };
 
-export function toEqualIgnoringWhitespace(actual: unknown, expected: string) {
-  // @ts-expect-error OK to have implicit any for this.utils
+export function toEqualIgnoringWhitespace(this: MatcherContext, actual: unknown, expected: string) {
   const { matcherHint, EXPECTED_COLOR } = this.utils;
 
   /* determine whether strings are equal after removing white-space */
@@ -38,9 +38,7 @@ export function toEqualIgnoringWhitespace(actual: unknown, expected: string) {
             matcherHint('.toEqualIgnoringWhitespace') +
             '\n\n' +
             'Expected values to be equal while ignoring white-space (using ===):\n' +
-            // @ts-expect-error OK to have implicit any for this.utils
             `Expected:\n  ${printExpected(this.utils, diff)}\n\n` +
-            // @ts-expect-error OK to have implicit any for this.utils
             `Received:\n  ${printReceived(this.utils, diff)}`
           );
         },

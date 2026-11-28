@@ -1,13 +1,12 @@
+import type { MatcherContext } from 'src/utils';
 import { contains } from 'src/utils';
 
-export function toContainValue<E = unknown>(actual: unknown, expected: E) {
-  // @ts-expect-error OK to have implicit any for this.utils
+export function toContainValue<E = unknown>(this: MatcherContext, actual: unknown, expected: E) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   let pass = false;
   if (typeof actual === 'object' && actual !== null && !Array.isArray(actual)) {
     const values = Object.values(actual as Record<string, unknown>);
-    // @ts-expect-error OK to have implicit any for this.equals
     pass = contains((a, b) => this.equals(a, b, this.customTesters), values, expected);
   }
 
