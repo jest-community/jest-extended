@@ -91,10 +91,13 @@ Use `.toInclude` when checking if a `String` includes the given `String` substri
 
 Use `.toIncludeRepeated` when checking if a `String` includes the given `String` substring the correct number of times.
 
+The substring is matched literally, including characters such as `.` and `[`. Matches do not overlap.
+
 <TestFile name="toIncludeRepeated">
   {`test('passes when value includes substring n times', () => {
   expect('hello hello world').toIncludeRepeated('hello', 2);
   expect('hello hello world').not.toIncludeRepeated('hello', 1);
+  expect('a..').toIncludeRepeated('.', 2);
 });`}
 </TestFile>
 

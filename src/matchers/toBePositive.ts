@@ -1,5 +1,6 @@
-export function toBePositive(actual: unknown) {
-  // @ts-expect-error OK to have implicit any for this.utils
+import type { MatcherContext } from 'src/utils';
+
+export function toBePositive(this: MatcherContext, actual: unknown) {
   const { printReceived, matcherHint } = this.utils;
 
   const pass = (isNumber(actual) || isBigInt(actual)) && isPositive(actual);
@@ -19,9 +20,9 @@ export function toBePositive(actual: unknown) {
   };
 }
 
-const isNumber = (value: any) => typeof value === 'number' && !isNaN(value) && isFinite(value);
-const isBigInt = (value: any) => typeof value === 'bigint';
-const isPositive = (value: any) => {
+const isNumber = (value: unknown): value is number => typeof value === 'number' && !isNaN(value) && isFinite(value);
+const isBigInt = (value: unknown): value is bigint => typeof value === 'bigint';
+const isPositive = (value: number | bigint) => {
   if (typeof value === 'bigint') return value > 0n;
   return value > 0;
 };

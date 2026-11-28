@@ -5,6 +5,26 @@ expect.extend(matcher);
 const string = 'hello world';
 
 describe('.toIncludeRepeated', () => {
+  test.each([
+    ['a..', '.'],
+    ['a[b[', '['],
+    ['a[.]b[.].', '[.]'],
+    ['a\\db\\d', '\\d'],
+    ['^$.*+?()[]{}|\\^$.*+?()[]{}|\\', '^$.*+?()[]{}|\\'],
+  ])('counts literal occurrences of %j containing %j', (actual, substring) => {
+    expect(actual).toIncludeRepeated(substring, 2);
+    expect(actual).not.toIncludeRepeated(substring, 3);
+  });
+
+  test('counts non-overlapping occurrences', () => {
+    expect('aaa').toIncludeRepeated('aa', 1);
+  });
+
+  test('counts empty substrings at every boundary', () => {
+    expect('abc').toIncludeRepeated('', 4);
+    expect('').toIncludeRepeated('', 1);
+  });
+
   test('passes when a string includes a given substring 1 time', () => {
     expect(string).toIncludeRepeated('ell', 1);
   });

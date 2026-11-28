@@ -3,6 +3,7 @@
     "incremental": true,
     "tsBuildInfoFile": "./.tsbuildinfo",
     "target": "es2022",
+    "types": ["jest", "node"],
     "module": "CommonJS",
     "rootDirs": ["src", "test"],
     "outDir": "dist",
@@ -15,13 +16,12 @@
     "noImplicitOverride": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "baseUrl": ".",
     "paths": {
       "src/*": [
-        "src/*"
+        "./src/*"
       ],
       "test/*": [
-        "test/*"
+        "./test/*"
       ]
     },
   },

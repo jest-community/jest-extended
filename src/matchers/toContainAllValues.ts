@@ -1,10 +1,9 @@
+import type { MatcherContext } from 'src/utils';
 import { contains } from 'src/utils';
 
-export function toContainAllValues<E = unknown>(actual: unknown, expected: readonly E[]) {
-  // @ts-expect-error OK to have implicit any for this.utils
+export function toContainAllValues<E = unknown>(this: MatcherContext, actual: unknown, expected: readonly E[]) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  // @ts-expect-error OK to have implicit any for this.utils and this.customTesters
   const equalityTesters = [...(this.customTesters ?? []), this.utils.iterableEquality];
 
   let pass = false;
@@ -12,7 +11,6 @@ export function toContainAllValues<E = unknown>(actual: unknown, expected: reado
     const values = Object.values(actual as Record<string, unknown>);
     pass =
       values.length === expected.length &&
-      // @ts-expect-error OK to have implicit any for this.equals
       values.every(objectValue => contains((a, b) => this.equals(a, b, equalityTesters), expected, objectValue));
   }
 

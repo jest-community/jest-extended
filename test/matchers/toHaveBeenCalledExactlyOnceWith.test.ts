@@ -43,6 +43,11 @@ describe('.toHaveBeenCalledExactlyOnceWith', () => {
     expect(() => expect(mock).toHaveBeenCalledExactlyOnceWith('hello')).toThrowErrorMatchingSnapshot();
   });
 
+  test('fails when one given value is not the expected one', () => {
+    mock('hello', 'there');
+    expect(() => expect(mock).toHaveBeenCalledExactlyOnceWith('hello', 'where')).toThrowErrorMatchingSnapshot();
+  });
+
   test('passes if comparing two empty `Map`s', () => {
     const mapMock = jest.fn();
     mapMock(new Map());

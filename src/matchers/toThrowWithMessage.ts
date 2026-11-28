@@ -1,3 +1,5 @@
+import type { MatcherContext, MatcherUtils } from 'src/utils';
+
 const predicate = (error: any, type: any, message: any) => {
   if (message instanceof RegExp) {
     return error && error instanceof type && message.test(error.message);
@@ -5,13 +7,13 @@ const predicate = (error: any, type: any, message: any) => {
   return error && error instanceof type && error.message === message;
 };
 
-const positiveHint = (utils: any) =>
+const positiveHint = (utils: MatcherUtils) =>
   utils.matcherHint('.toThrowWithMessage', 'function', 'type', { secondArgument: 'message' });
 
-const negativeHint = (utils: any) =>
+const negativeHint = (utils: MatcherUtils) =>
   utils.matcherHint('.not.toThrowWithMessage', 'function', 'type', { secondArgument: 'message' });
 
-const passMessage = (utils: any, received: any, expected: any) =>
+const passMessage = (utils: MatcherUtils, received: unknown, expected: unknown) =>
   negativeHint(utils) +
   '\n\n' +
   'Expected not to throw:\n' +
@@ -19,7 +21,7 @@ const passMessage = (utils: any, received: any, expected: any) =>
   'Thrown:\n' +
   `  ${utils.printReceived(received)}\n`;
 
-const failMessage = (utils: any, received: any, expected: any) =>
+const failMessage = (utils: MatcherUtils, received: unknown, expected: unknown) =>
   positiveHint(utils) +
   '\n\n' +
   'Expected to throw:\n' +
@@ -42,6 +44,7 @@ const getExpectedError = (type: any, message: any) => {
 };
 
 export function toThrowWithMessage(
+  this: MatcherContext,
   callbackOrPromiseReturn: () => void,
   type:
     | (new (...args: any[]) => { message: string })
@@ -49,9 +52,7 @@ export function toThrowWithMessage(
     | ((...args: any[]) => { message: string }),
   message: string | RegExp,
 ) {
-  // @ts-expect-error OK to have implicit any for this.utils
   const utils = this.utils;
-  // @ts-expect-error OK to have implicit any for this.promise
   const isFromReject = this && this.promise === 'rejects'; // See https://github.com/facebook/jest/pull/7621#issue-244312550
   if ((!callbackOrPromiseReturn || typeof callbackOrPromiseReturn !== 'function') && !isFromReject) {
     return {

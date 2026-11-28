@@ -1,5 +1,6 @@
-export async function toReject(actual: Promise<unknown>) {
-  // @ts-expect-error OK to have implicit any for this.utils
+import type { MatcherContext } from 'src/utils';
+
+export async function toReject(this: MatcherContext, actual: Promise<unknown>) {
   const { matcherHint } = this.utils;
 
   const pass = await actual.then(

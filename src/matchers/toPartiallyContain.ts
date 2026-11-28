@@ -1,10 +1,9 @@
+import type { MatcherContext } from 'src/utils';
 import { containsEntry } from 'src/utils';
 
-export function toPartiallyContain<E = unknown>(actual: unknown, expected: E) {
-  // @ts-expect-error OK to have implicit any for this.utils
+export function toPartiallyContain<E = unknown>(this: MatcherContext, actual: unknown, expected: E) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  // @ts-expect-error OK to have implicit any for this.utils and this.customTesters
   const equalityTesters = [...(this.customTesters ?? []), this.utils.iterableEquality];
 
   const pass =
@@ -16,7 +15,6 @@ export function toPartiallyContain<E = unknown>(actual: unknown, expected: E) {
           typeof partial === 'object' &&
           partial != null &&
           Object.entries(partial).every(entry =>
-            // @ts-expect-error OK to have implicit any for this.equals
             containsEntry((a, b) => this.equals(a, b, equalityTesters), value, entry),
           ),
       ),

@@ -1,5 +1,6 @@
-export function toBeArray(expected: unknown) {
-  // @ts-expect-error OK to have implicit any for this.utils
+import type { MatcherContext } from 'src/utils';
+
+export function toBeArray(this: MatcherContext, expected: unknown) {
   const { matcherHint, printReceived } = this.utils;
 
   const pass = Array.isArray(expected);

@@ -1,13 +1,11 @@
+import type { MatcherContext } from 'src/utils';
 import { containsEntry } from '../utils';
 
-export function toIncludeSamePartialMembers<E = unknown>(actual: unknown, expected: E) {
-  // @ts-expect-error OK to have implicit any for this.utils
+export function toIncludeSamePartialMembers<E = unknown>(this: MatcherContext, actual: unknown, expected: E) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  // @ts-expect-error OK to have implicit any for this.utils and this.customTesters
   const equalityTesters = [...(this.customTesters ?? []), this.utils.iterableEquality];
 
-  // @ts-expect-error OK to have implicit any for this.equals
   const pass = predicate((a, b) => this.equals(a, b, equalityTesters), actual, expected);
 
   return {
@@ -29,7 +27,7 @@ export function toIncludeSamePartialMembers<E = unknown>(actual: unknown, expect
   };
 }
 
-const predicate = (equals: any, actual: unknown, expected: any) => {
+const predicate = (equals: (a: unknown, b: unknown) => boolean, actual: unknown, expected: any) => {
   if (!Array.isArray(actual) || !Array.isArray(expected) || actual.length !== expected.length) {
     return false;
   }
