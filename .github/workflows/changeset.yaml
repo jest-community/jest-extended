@@ -1,0 +1,46 @@
+name: Changeset policy
+
+on:
+  pull_request:
+    branches: [main, next]
+    types: [opened, synchronize, reopened, edited, labeled, unlabeled]
+
+permissions:
+  pull-requests: read
+
+concurrency:
+  group: changeset-policy-PR_NUMBER
+  cancel-in-progress: true
+
+jobs:
+  changeset:
+    name: Changeset or exemption
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v9
+        with:
+          script: |
+            const pullRequest = { ...context.repo, pull_number: context.payload.pull_request.number };
+            const { data } = await github.rest.pulls.get(pullRequest);
+            if (data.labels.some(label => label.name === 'no-changeset')) return;
+
+            for await (const { data: files } of github.paginate.iterator(github.rest.pulls.listFiles, {
+              ...pullRequest,
+              per_page: 100,
+            })) {
+              const hasChangeset = files.some(({ filename, status, patch }) => {
+                if (status !== 'added' || filename === '.changeset/README.md' || !/^\.changeset\/[^/]+\.md$/.test(filename)) {
+                  return false;
+                }
+
+                const content = patch
+                  ?.split('\n')
+                  .filter(line => line.startsWith('+'))
+                  .map(line => line.slice(1))
+                  .join('\n');
+                return /^---[ \t]*\r?\n(['"]?)jest-extended\1:[ \t]*(?:patch|minor|major)[ \t]*\r?\n---[ \t]*\r?\n\s*\S/.test(content ?? '');
+              });
+              if (hasChangeset) return;
+            }
+
+            core.setFailed('Add a patch, minor, or major changeset with yarn changeset, or ask a maintainer to apply the no-changeset label.');

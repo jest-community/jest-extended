@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`.not.toBeNaN fails when given a non-number 1`] = `
+exports[`.not.toBeNaN fails when given NaN 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).not.toBeNaN()</intensity>
 
-Expected value to be a number received:
-  <red>undefined</color>"
+Expected value to not be NaN received:
+  <red>NaN</color>"
 `;
 
 exports[`.toBeNaN fails when given a number 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toBeNaN()</intensity>
 
-Expected value to not be a number received:
+Expected value to be NaN received:
   <red>3</color>"
 `;

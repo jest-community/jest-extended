@@ -1,5 +1,6 @@
-export function toBeObject(actual: unknown) {
-  // @ts-expect-error OK to have implicit any for this.utils
+import type { MatcherContext } from 'src/utils';
+
+export function toBeObject(this: MatcherContext, actual: unknown) {
   const { printReceived, matcherHint } = this.utils;
 
   const pass = typeof actual === 'object' && actual !== null && !Array.isArray(actual);

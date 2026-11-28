@@ -1,5 +1,12 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
+exports[`.not.toBeInteger fails when given BigInt 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).not.toBeInteger()</intensity>
+
+Expected value to not be an integer received:
+  <red>42n</color>"
+`;
+
 exports[`.not.toBeInteger fails when given integer 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).not.toBeInteger()</intensity>
 

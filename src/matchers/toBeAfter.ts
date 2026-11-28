@@ -1,5 +1,6 @@
-export function toBeAfter(actual: unknown, after: Date) {
-  // @ts-expect-error OK to have implicit any for this.utils
+import type { MatcherContext } from 'src/utils';
+
+export function toBeAfter(this: MatcherContext, actual: unknown, after: Date) {
   const { printReceived, matcherHint } = this.utils;
 
   const pass = actual instanceof Date && actual > after;
