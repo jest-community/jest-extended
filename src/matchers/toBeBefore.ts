@@ -1,4 +1,5 @@
 import type { MatcherContext } from 'expect';
+
 export function toBeBefore(this: MatcherContext, actual: unknown, expected: Date) {
   const { matcherHint, printReceived } = this.utils;
 

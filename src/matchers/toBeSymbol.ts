@@ -1,4 +1,5 @@
 import type { MatcherContext } from 'expect';
+
 export function toBeSymbol(this: MatcherContext, actual: unknown) {
   const { printReceived, matcherHint } = this.utils;
 

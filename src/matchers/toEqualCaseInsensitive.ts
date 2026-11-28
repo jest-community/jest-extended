@@ -1,4 +1,5 @@
 import type { MatcherContext } from 'expect';
+
 export function toEqualCaseInsensitive(this: MatcherContext, actual: unknown, expected: string) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 

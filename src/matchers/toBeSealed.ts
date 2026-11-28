@@ -1,4 +1,5 @@
 import type { MatcherContext } from 'expect';
+
 export function toBeSealed(this: MatcherContext, actual: unknown) {
   const { matcherHint } = this.utils;
 

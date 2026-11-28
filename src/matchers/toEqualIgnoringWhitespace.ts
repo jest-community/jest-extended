@@ -33,7 +33,7 @@ export function toEqualIgnoringWhitespace(this: MatcherContext, actual: unknown,
           'Expected values to not be equal while ignoring white-space (using ===):\n' +
           `Expected: not  ${EXPECTED_COLOR(expected)}\n\n`
       : () => {
-          const diff = getDiff(String(actual), expected) as [number, string][];
+          const diff = getDiff(String(actual), expected);
           return (
             matcherHint('.toEqualIgnoringWhitespace') +
             '\n\n' +

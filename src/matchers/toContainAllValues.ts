@@ -9,7 +9,6 @@ export function toContainAllValues<E = unknown>(this: MatcherContext, actual: un
     const values = Object.values(actual as Record<string, unknown>);
     pass =
       values.length === expected.length &&
-      // @ts-expect-error OK to have implicit any for this.equals
       values.every(objectValue => contains((a, b) => this.equals(a, b, this.customTesters), expected, objectValue));
   }
 

@@ -1,4 +1,5 @@
 import type { MatcherContext } from 'expect';
+
 export function toBeFrozen(this: MatcherContext, actual: unknown) {
   const { matcherHint } = this.utils;
 

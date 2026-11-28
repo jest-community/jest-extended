@@ -1,4 +1,5 @@
 import type { MatcherContext } from 'expect';
+
 export function toBeNumber(this: MatcherContext, actual: unknown) {
   const { printReceived, matcherHint } = this.utils;
 

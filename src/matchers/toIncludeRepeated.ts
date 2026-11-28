@@ -1,4 +1,5 @@
 import type { MatcherContext } from 'expect';
+
 export function toIncludeRepeated(this: MatcherContext, actual: unknown, expected: string, occurrences: number) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 

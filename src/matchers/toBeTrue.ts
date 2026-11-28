@@ -1,4 +1,5 @@
 import type { MatcherContext } from 'expect';
+
 export function toBeTrue(this: MatcherContext, actual: unknown) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 

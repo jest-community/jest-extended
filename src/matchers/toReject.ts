@@ -1,4 +1,5 @@
 import type { MatcherContext } from 'expect';
+
 export async function toReject(this: MatcherContext, actual: Promise<unknown>) {
   const { matcherHint } = this.utils;
 

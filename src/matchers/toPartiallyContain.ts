@@ -13,7 +13,6 @@ export function toPartiallyContain<E = unknown>(this: MatcherContext, actual: un
           typeof partial === 'object' &&
           partial != null &&
           Object.entries(partial).every(entry =>
-            // @ts-expect-error OK to have implicit any for this.equals
             containsEntry((a, b) => this.equals(a, b, this.customTesters), value, entry),
           ),
       ),

@@ -1,4 +1,5 @@
 import type { MatcherContext } from 'expect';
+
 /**
  * Use `.toChangeBy` when checking if a value changed by an amount.
  */

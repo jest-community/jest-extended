@@ -1,4 +1,5 @@
 import type { MatcherContext } from 'expect';
+
 export function toContainKey<E = unknown>(this: MatcherContext, actual: unknown, expected: keyof E | string) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 

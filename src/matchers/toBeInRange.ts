@@ -1,4 +1,5 @@
 import type { MatcherContext } from 'expect';
+
 export function toBeInRange(this: MatcherContext, actual: unknown[], min: number | bigint, max: number | bigint) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 

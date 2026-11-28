@@ -1,4 +1,5 @@
 import type { MatcherContext } from 'expect';
+
 export function toBeString(this: MatcherContext, expected: unknown) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 

@@ -14,10 +14,7 @@ export function toIncludeAllPartialMembers<E = unknown>(
     expected.every(partial => {
       const entries = Object.entries(partial);
       return actual.some(value =>
-        entries.every(entry =>
-          // @ts-expect-error OK to have implicit any for this.equals
-          containsEntry((a, b) => this.equals(a, b, this.customTesters), value, entry),
-        ),
+        entries.every(entry => containsEntry((a, b) => this.equals(a, b, this.customTesters), value, entry)),
       );
     });
 

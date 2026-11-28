@@ -1,4 +1,5 @@
 import type { MatcherContext } from 'expect';
+
 export function toBeArray(this: MatcherContext, expected: unknown) {
   const { matcherHint, printReceived } = this.utils;
 

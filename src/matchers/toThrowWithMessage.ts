@@ -1,4 +1,5 @@
 import type { MatcherContext } from 'expect';
+
 const predicate = (error: any, type: any, message: any) => {
   if (message instanceof RegExp) {
     return error && error instanceof type && message.test(error.message);

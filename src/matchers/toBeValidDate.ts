@@ -1,4 +1,5 @@
 import type { MatcherContext } from 'expect';
+
 export function toBeValidDate(this: MatcherContext, actual: unknown) {
   const { printReceived, matcherHint } = this.utils;
 

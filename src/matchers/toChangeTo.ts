@@ -1,4 +1,5 @@
 import type { MatcherContext } from 'expect';
+
 /**
  * Use `.toChangeTo` when checking if a value changed to a specific value.
  */

@@ -1,4 +1,5 @@
 import type { MatcherContext } from 'expect';
+
 export function toBeDate(this: MatcherContext, actual: unknown) {
   const { matcherHint, printReceived } = this.utils;
 

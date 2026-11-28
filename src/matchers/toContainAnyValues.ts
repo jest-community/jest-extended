@@ -7,7 +7,6 @@ export function toContainAnyValues<E = unknown>(this: MatcherContext, actual: un
   let pass = false;
   if (typeof actual === 'object' && actual !== null && !Array.isArray(actual)) {
     const objectValues = Object.values(actual as Record<string, unknown>);
-    // @ts-expect-error OK to have implicit any for this.equals
     pass = expected.some(value => contains((a, b) => this.equals(a, b, this.customTesters), objectValues, value));
   }
 

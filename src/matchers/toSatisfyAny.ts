@@ -1,4 +1,5 @@
 import type { MatcherContext } from 'expect';
+
 export function toSatisfyAny(this: MatcherContext, actual: unknown, expected: (x: unknown) => boolean) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 

@@ -8,7 +8,6 @@ export function toContainEntries<E = unknown>(
 ) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  // @ts-expect-error containsEntry takes an any type
   const pass = expected.every(entry => containsEntry((a, b) => this.equals(a, b, this.customTesters), actual, entry));
 
   return {

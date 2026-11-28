@@ -1,4 +1,5 @@
 import type { MatcherContext } from 'expect';
+
 export function toIncludeMultiple(this: MatcherContext, actual: unknown, expected: readonly string[]) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 

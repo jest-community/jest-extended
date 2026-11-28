@@ -1,4 +1,5 @@
 import type { MatcherContext } from 'expect';
+
 export function toStartWith(this: MatcherContext, actual: unknown, expected: string) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 

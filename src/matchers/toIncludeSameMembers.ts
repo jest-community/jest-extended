@@ -1,11 +1,11 @@
 import type { MatcherContext } from 'expect';
+
 export function toIncludeSameMembers<E = unknown>(this: MatcherContext, actual: unknown, expected: readonly E[]) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   const pass =
     Array.isArray(actual) &&
     Array.isArray(expected) &&
-    // @ts-expect-error OK to have implicit any for this.equals
     predicate((a, b) => this.equals(a, b, this.customTesters), actual, expected);
 
   return {
@@ -27,7 +27,7 @@ export function toIncludeSameMembers<E = unknown>(this: MatcherContext, actual: 
   };
 }
 
-const predicate = (equals: any, actual: any, expected: any) => {
+const predicate = (equals: (a: unknown, b: unknown) => boolean, actual: any, expected: any) => {
   if (!Array.isArray(actual) || !Array.isArray(expected) || actual.length !== expected.length) {
     return false;
   }
