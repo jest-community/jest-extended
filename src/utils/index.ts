@@ -6,6 +6,7 @@ export interface MatcherUtils {
   EXPECTED_COLOR: (str: string) => string;
   INVERTED_COLOR: (str: string) => string;
   RECEIVED_COLOR: (str: string) => string;
+  iterableEquality?: (...args: any[]) => boolean | undefined;
   matcherHint: (matcherName: string, received?: string, expected?: string, options?: MatcherHintOptions) => string;
   printExpected: (value: unknown) => string;
   printReceived: (object: unknown) => string;

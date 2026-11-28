@@ -20,7 +20,8 @@ export function toHaveBeenCalledExactlyOnceWith(this: MatcherContext, received: 
   const actual = received.mock.calls[0];
   const invokedOnce = received.mock.calls.length === 1;
   const oneArgument = actual?.length === 1 && expected.length === 1;
-  const pass = invokedOnce && this.equals(expected, actual, this.customTesters);
+  const equalityTesters = [...(this.customTesters ?? []), this.utils.iterableEquality];
+  const pass = invokedOnce && this.equals(expected, actual, equalityTesters);
 
   return {
     pass,

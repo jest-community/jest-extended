@@ -4,7 +4,9 @@ import { contains } from 'src/utils';
 export function toBeOneOf<E = unknown>(this: MatcherContext, actual: unknown, expected: readonly E[]) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  const pass = contains((a, b) => this.equals(a, b, this.customTesters), expected, actual);
+  const equalityTesters = [...(this.customTesters ?? []), this.utils.iterableEquality];
+
+  const pass = contains((a, b) => this.equals(a, b, equalityTesters), expected, actual);
 
   return {
     pass,

@@ -4,7 +4,9 @@ import { containsEntry } from '../utils';
 export function toIncludeSamePartialMembers<E = unknown>(this: MatcherContext, actual: unknown, expected: E) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  const pass = predicate((a, b) => this.equals(a, b, this.customTesters), actual, expected);
+  const equalityTesters = [...(this.customTesters ?? []), this.utils.iterableEquality];
+
+  const pass = predicate((a, b) => this.equals(a, b, equalityTesters), actual, expected);
 
   return {
     pass,

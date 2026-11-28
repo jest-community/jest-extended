@@ -8,13 +8,15 @@ export function toIncludeAllPartialMembers<E = unknown>(
 ) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
+  const equalityTesters = [...(this.customTesters ?? []), this.utils.iterableEquality];
+
   const pass =
     Array.isArray(actual) &&
     Array.isArray(expected) &&
     expected.every(partial => {
       const entries = Object.entries(partial);
       return actual.some(value =>
-        entries.every(entry => containsEntry((a, b) => this.equals(a, b, this.customTesters), value, entry)),
+        entries.every(entry => containsEntry((a, b) => this.equals(a, b, equalityTesters), value, entry)),
       );
     });
 

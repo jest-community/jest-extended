@@ -8,10 +8,12 @@ export function toContainAnyEntries<E = unknown>(
 ) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
+  const equalityTesters = [...(this.customTesters ?? []), this.utils.iterableEquality];
+
   let pass = false;
   if (typeof actual === 'object' && actual !== null && !Array.isArray(actual)) {
     const entries = Object.entries(actual as Record<string, unknown>);
-    pass = expected.some(entry => contains((a, b) => this.equals(a, b, this.customTesters), entries, entry));
+    pass = expected.some(entry => contains((a, b) => this.equals(a, b, equalityTesters), entries, entry));
   }
 
   return {

@@ -4,10 +4,12 @@ import { contains } from 'src/utils';
 export function toIncludeAllMembers<E = unknown>(this: MatcherContext, actual: unknown[], expected: readonly E[] | E) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
+  const equalityTesters = [...(this.customTesters ?? []), this.utils.iterableEquality];
+
   const pass =
     Array.isArray(actual) &&
     Array.isArray(expected) &&
-    expected.every(val => contains((a: unknown, b: unknown) => this.equals(a, b, this.customTesters), actual, val));
+    expected.every(val => contains((a: unknown, b: unknown) => this.equals(a, b, equalityTesters), actual, val));
 
   return {
     pass,

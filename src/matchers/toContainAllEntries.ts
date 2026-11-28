@@ -11,12 +11,14 @@ export function toContainAllEntries<E = unknown>(
 } {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
+  const equalityTesters = [...(this.customTesters ?? []), this.utils.iterableEquality];
+
   const pass =
     typeof actual === 'object' &&
     actual !== null &&
     !Array.isArray(actual) &&
     expected.length == Object.keys(actual as Record<string, unknown>).length &&
-    expected.every(entry => containsEntry((a, b) => this.equals(a, b, this.customTesters), actual, entry));
+    expected.every(entry => containsEntry((a, b) => this.equals(a, b, equalityTesters), actual, entry));
 
   return {
     pass,

@@ -8,7 +8,9 @@ export function toContainEntries<E = unknown>(
 ) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  const pass = expected.every(entry => containsEntry((a, b) => this.equals(a, b, this.customTesters), actual, entry));
+  const equalityTesters = [...(this.customTesters ?? []), this.utils.iterableEquality];
+
+  const pass = expected.every(entry => containsEntry((a, b) => this.equals(a, b, equalityTesters), actual, entry));
 
   return {
     pass,

@@ -4,10 +4,12 @@ import { contains } from 'src/utils';
 export function toContainAnyValues<E = unknown>(this: MatcherContext, actual: unknown, expected: readonly E[]) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
+  const equalityTesters = [...(this.customTesters ?? []), this.utils.iterableEquality];
+
   let pass = false;
   if (typeof actual === 'object' && actual !== null && !Array.isArray(actual)) {
     const objectValues = Object.values(actual as Record<string, unknown>);
-    pass = expected.some(value => contains((a, b) => this.equals(a, b, this.customTesters), objectValues, value));
+    pass = expected.some(value => contains((a, b) => this.equals(a, b, equalityTesters), objectValues, value));
   }
 
   return {
