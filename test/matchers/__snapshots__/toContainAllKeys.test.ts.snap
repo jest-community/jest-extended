@@ -29,6 +29,15 @@ Received:
   <red>["a", "b"]</color>"
 `;
 
+exports[`.toContainAllKeys fails when expected keys contain duplicates and miss one of the object keys 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toContainAllKeys(</intensity><green>expected</color><dim>)</intensity>
+
+Expected object to contain all keys:
+  <green>["a", "a"]</color>
+Received:
+  <red>["a", "b"]</color>"
+`;
+
 exports[`.toContainAllKeys fails when given an empty object 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toContainAllKeys(</intensity><green>expected</color><dim>)</intensity>
 

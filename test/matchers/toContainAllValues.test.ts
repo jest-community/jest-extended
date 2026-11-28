@@ -46,6 +46,14 @@ describe('.toContainAllValues', () => {
     expect(() => expect(null).toContainAllValues(['world', 0, false])).toThrowErrorMatchingSnapshot();
     expect(() => expect(42).toContainAllValues(['world', 0, false])).toThrowErrorMatchingSnapshot();
   });
+
+  test('passes when given object and expected values contain the same duplicates', () => {
+    expect({ a: 1, b: 1 }).toContainAllValues([1, 1]);
+  });
+
+  test('fails when given object has duplicate values and expected has a value not in the object', () => {
+    expect(() => expect({ a: 1, b: 1 }).toContainAllValues([1, 2])).toThrowErrorMatchingSnapshot();
+  });
 });
 
 describe('.not.toContainAllValues', () => {

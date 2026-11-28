@@ -13,7 +13,8 @@ export function toContainAllKeys<E = unknown>(
     const objectKeys = Object.keys(actual as Record<string, unknown>);
     pass =
       objectKeys.length === expected.length &&
-      expected.every(key => contains((a, b) => this.equals(a, b, this.customTesters), objectKeys, key));
+      expected.every(key => contains((a, b) => this.equals(a, b, this.customTesters), objectKeys, key)) &&
+      objectKeys.every(objectKey => expected.some(key => this.equals(objectKey, key, this.customTesters)));
   }
 
   return {

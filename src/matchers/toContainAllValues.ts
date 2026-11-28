@@ -9,7 +9,10 @@ export function toContainAllValues<E = unknown>(this: MatcherContext, actual: un
     const values = Object.values(actual as Record<string, unknown>);
     pass =
       values.length === expected.length &&
-      values.every(objectValue => contains((a, b) => this.equals(a, b, this.customTesters), expected, objectValue));
+      values.every(objectValue => contains((a, b) => this.equals(a, b, this.customTesters), expected, objectValue)) &&
+      expected.every(expectedValue =>
+        values.some(objectValue => this.equals(expectedValue, objectValue, this.customTesters)),
+      );
   }
 
   return {

@@ -27,6 +27,15 @@ Received:
   <red>42</color>"
 `;
 
+exports[`.toContainAllEntries fails when expected entries contain duplicates and miss one of the object entries 1`] = `
+"<dim>expect(</intensity><red>received</color><dim>).toContainAllEntries(</intensity><green>expected</color><dim>)</intensity>
+
+Expected object to only contain all of the given entries:
+  <green>[["a", 1], ["a", 1]]</color>
+Received:
+  <red>{"a": 1, "b": 1}</color>"
+`;
+
 exports[`.toContainAllEntries fails when object does not only contain all of the given entries 1`] = `
 "<dim>expect(</intensity><red>received</color><dim>).toContainAllEntries(</intensity><green>expected</color><dim>)</intensity>
 

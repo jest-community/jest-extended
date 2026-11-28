@@ -3,8 +3,7 @@ import type { MatcherContext } from 'src/utils';
 export function toBeHexadecimal(this: MatcherContext, actual: unknown) {
   const { printReceived, matcherHint } = this.utils;
 
-  const pass =
-    (typeof actual === 'string' && longRegex.test(actual)) || (typeof actual === 'string' && shortRegex.test(actual));
+  const pass = typeof actual === 'string' && hexRegex.test(actual);
 
   return {
     pass,
@@ -21,5 +20,4 @@ export function toBeHexadecimal(this: MatcherContext, actual: unknown) {
   };
 }
 
-const longRegex = /^#\b[a-f0-9]{6}\b/i;
-const shortRegex = /^#\b[a-f0-9]{3}\b/i;
+const hexRegex = /^#(?:[a-f0-9]{3}|[a-f0-9]{6})$/i;
