@@ -2,7 +2,7 @@ import type { MatcherContext } from 'expect';
 /**
  * Use `.toChange` when checking if a value has changed.
  */
-export function toChange(this: MatcherContext, mutator: () => unknown | void, checker: () => number) {
+export function toChange(this: MatcherContext, mutator: () => unknown | void, checker: () => unknown) {
   const { printReceived: print, matcherHint: hint } = this.utils;
 
   const before = checker();

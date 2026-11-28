@@ -2,7 +2,9 @@ import type { MatcherContext } from 'expect';
 export function toIncludeRepeated(this: MatcherContext, actual: unknown, expected: string, occurrences: number) {
   const { printReceived, printExpected, matcherHint } = this.utils;
 
-  const pass = typeof actual === 'string' && (actual.match(new RegExp(expected, 'g')) || []).length === occurrences;
+  const pass =
+    typeof actual === 'string' &&
+    (actual.match(new RegExp(expected.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g')) || []).length === occurrences;
 
   return {
     pass,

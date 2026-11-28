@@ -2,7 +2,7 @@ import type { MatcherContext } from 'expect';
 export function toBeInteger(this: MatcherContext, actual: unknown) {
   const { printReceived, matcherHint } = this.utils;
 
-  const pass = isNumber(actual) && isInteger(actual);
+  const pass = typeof actual === 'bigint' || Number.isInteger(actual);
 
   return {
     pass,
@@ -18,6 +18,3 @@ export function toBeInteger(this: MatcherContext, actual: unknown) {
           `  ${printReceived(actual)}`,
   };
 }
-
-const isNumber = (value: any) => !isNaN(parseInt(value));
-const isInteger = (value: any) => Number.isInteger(+value);

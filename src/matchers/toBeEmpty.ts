@@ -20,7 +20,7 @@ export function toBeEmpty(this: MatcherContext, actual: unknown) {
 }
 
 const isEmptyIterable = (value: any) => {
-  if (typeof value[Symbol.iterator] !== 'function') {
+  if (value === undefined || value === null || typeof value[Symbol.iterator] !== 'function') {
     return false;
   }
   const firstIteration = value[Symbol.iterator]().next();
