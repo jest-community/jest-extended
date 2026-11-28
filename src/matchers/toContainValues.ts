@@ -5,7 +5,7 @@ export function toContainValues<E = unknown>(this: MatcherContext, actual: unkno
   const { printReceived, printExpected, matcherHint } = this.utils;
 
   let pass = false;
-  if (typeof actual === 'object' && actual !== null && !Array.isArray(actual)) {
+  if (typeof actual === 'object' && actual !== null) {
     const values = Object.values(actual as Record<string, unknown>);
     pass = expected.every(value => contains((a, b) => this.equals(a, b, this.customTesters), values, value));
   }
