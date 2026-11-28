@@ -16,6 +16,8 @@ export function toContainAllKeys<E = unknown>(
       expected.every(key => contains((a, b) => this.equals(a, b, this.customTesters), objectKeys, key));
   }
 
+  const received = actual == null ? actual : Object.keys(actual as Record<string, unknown>);
+
   return {
     pass,
     message: () =>
@@ -25,12 +27,12 @@ export function toContainAllKeys<E = unknown>(
           'Expected object to not contain all keys:\n' +
           `  ${printExpected(expected)}\n` +
           'Received:\n' +
-          `  ${printReceived(Object.keys(actual as Record<string, unknown>))}`
+          `  ${printReceived(received)}`
         : matcherHint('.toContainAllKeys') +
           '\n\n' +
           'Expected object to contain all keys:\n' +
           `  ${printExpected(expected)}\n` +
           'Received:\n' +
-          `  ${printReceived(Object.keys(actual as Record<string, unknown>))}`,
+          `  ${printReceived(received)}`,
   };
 }
