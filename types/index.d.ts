@@ -48,6 +48,11 @@ declare namespace jest {
     toBeArray(): R;
 
     /**
+     * Use `.toBeEmptyArray` when checking if a value is an empty `Array`.
+     */
+    toBeEmptyArray(): R;
+
+    /**
      * Use `.toBeArrayOfSize` when checking if a value is an `Array` of size x.
      * @param {Number} x
      */
