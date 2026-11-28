@@ -1,8 +1,9 @@
+import { printDiffOrStringify } from 'jest-matcher-utils';
 import type { MatcherContext } from 'src/utils';
 import { isJestMockOrSpy } from 'src/utils';
 
 export function toHaveBeenCalledExactlyOnceWith(this: MatcherContext, received: unknown, ...expected: unknown[]) {
-  const { printReceived, printExpected, printDiffOrStringify, printWithType, matcherHint } = this.utils;
+  const { printReceived, printExpected, printWithType, matcherHint } = this.utils;
 
   if (!isJestMockOrSpy(received)) {
     return {

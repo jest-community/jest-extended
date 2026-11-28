@@ -7,13 +7,6 @@ export interface MatcherUtils {
   INVERTED_COLOR: (str: string) => string;
   RECEIVED_COLOR: (str: string) => string;
   matcherHint: (matcherName: string, received?: string, expected?: string, options?: MatcherHintOptions) => string;
-  printDiffOrStringify: (
-    expected: unknown,
-    received: unknown,
-    expectedLabel: string,
-    receivedLabel: string,
-    expand: boolean,
-  ) => string;
   printExpected: (value: unknown) => string;
   printReceived: (object: unknown) => string;
   printWithType: (name: string, value: unknown, print: (value: unknown) => string) => string;
